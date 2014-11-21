@@ -1,0 +1,282 @@
+
+  /* =Third Party Fonts
+  -----------------------------------------------
+  This CSS resource incorporates links to font software which is the valuable copyrighted
+  property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+  redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+  Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
+  ----------------------------------------------- */
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix");
+    src: url("fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix") format("eot"),
+         url("fonts/e56ecb6d-da41-4bd9-982d-2d295bec9ab0.woff") format("woff"),
+         url("fonts/2aff4f81-3e97-4a83-9e6c-45e33c024796.ttf") format("truetype"),
+         url("fonts/ab9cd062-380f-4b53-b1a7-c0bec7402235.svg#ab9cd062-380f-4b53-b1a7-c0bec7402235") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("fonts/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix");
+    src: url("fonts/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix") format("eot"),
+         url("fonts/9c69c878-2255-4027-8632-ed3635cddf45.woff") format("woff"),
+         url("fonts/b7eb3871-e910-4522-9982-effb425a2714.ttf") format("truetype"),
+         url("fonts/a0d89860-20e5-4bc0-b6c5-eae8ae0ebbbf.svg#a0d89860-20e5-4bc0-b6c5-eae8ae0ebbbf") format("svg");
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix");
+    src: url("fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix") format("eot"),
+         url("fonts/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff") format("woff"),
+         url("fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf") format("truetype"),
+         url("fonts/8152bc4e-d700-4c78-b6be-326893e6f53f.svg#8152bc4e-d700-4c78-b6be-326893e6f53f") format("svg");
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face{
+    font-family:"Proxima Nova";
+    src: url("fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix");
+    src: url("fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix") format("eot"),
+         url("fonts/19dd5cf2-ac2d-48d5-901a-c432fd291ee2.woff") format("woff"),
+         url("fonts/22cfbfa4-f607-4751-92eb-6fa194353e57.ttf") format("truetype"),
+         url("fonts/3d6b6348-e05f-4123-b19a-3bfd02c7f361.svg#3d6b6348-e05f-4123-b19a-3bfd02c7f361") format("svg");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+  /* =Elements
+  ----------------------------------------------- */
+  html, body {
+    height: 100%;
+  }
+  body {
+    font: 100%/1.5 "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    text-decoration: underline;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  /* =Containers
+  ----------------------------------------------- */
+  body {
+    display: table;
+  }
+  header,
+  footer,
+  main {
+    display: table-row;
+  }
+  .container {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  header .container,
+  footer .container {
+    height: 1px;
+  }
+
+  header .container,
+  footer .about,
+  footer .legal {
+    padding: 0.75em;
+    background: rgb(51, 51, 51);
+    color: white;
+    text-align: center;
+  }
+  main .container {
+    padding: 1.5em;
+  }
+  footer .about {
+    background: black;
+  }
+
+
+  /* =Header / Footer
+  ----------------------------------------------- */
+  header h2 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+
+    /* @hidden-accessible-text */
+    text-indent: -9999px;
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Data URI encoded from ctzn-white.svg */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MHB4IiBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9IjAgMCAxMDAgMzgiPgogIDxwYXRoIGZpbGw9IndoaXRlIiBkPSJNOC43NzYsMzYuNzAyYy0xLjc4OS0wLjc0NC0zLjMzOC0xLjc3OS00LjY0NC0zLjEwNlMxLjgxLDMwLjY2LDEuMDg2LDI4Ljc3QzAuMzYyLDI2Ljg4LDAsMjQuNzg5LDAsMjIuNDk4CiAgICBjMC0yLjI5MiwwLjM2Mi00LjM3MywxLjA4Ni02LjI0M2MwLjcyNC0xLjg3LDEuNzM5LTMuNDc4LDMuMDQ2LTQuODI1czIuODU1LTIuMzgyLDQuNjQ0LTMuMTA2YzEuNzg5LTAuNzI0LDMuNzUtMS4wODYsNS44ODEtMS4wODYKICAgIGMyLjU3MywwLDQuNzM1LDAuNDMyLDYuNDg0LDEuMjk3YzEuNzQ5LDAuODY0LDMuMDI2LDEuNzU5LDMuODMsMi42ODRsLTQuNzY1LDcuMDU3Yy0wLjUyMy0wLjYwMy0xLjEzNi0xLjA5Ni0xLjg0LTEuNDc4CiAgICBjLTAuNzA0LTAuMzgyLTEuNTE4LTAuNTczLTIuNDQzLTAuNTczYy0xLjUyOCwwLTIuODI1LDAuNTQzLTMuODksMS42MjljLTEuMDY2LDEuMDg2LTEuNTk4LDIuNjM0LTEuNTk4LDQuNjQ0CiAgICBjMCwyLjAxLDAuNTMzLDMuNTY5LDEuNTk4LDQuNjc0YzEuMDY2LDEuMTA2LDIuMzYyLDEuNjU5LDMuODksMS42NTljMC45MjUsMCwxLjczOS0wLjIwMSwyLjQ0My0wLjYwMwogICAgYzAuNzA0LTAuNDAyLDEuMzE3LTAuOTA1LDEuODQtMS41MDhsNC43NjUsNy4xMTdjLTAuODA0LDAuOTI1LTIuMDgxLDEuODE5LTMuODMsMi42ODRjLTEuNzQ5LDAuODY0LTMuOTEsMS4yOTctNi40ODQsMS4yOTcKICAgIEMxMi41MjUsMzcuODE4LDEwLjU2NSwzNy40NDYsOC43NzYsMzYuNzAyeiIvPgogIDxwYXRoIGZpbGw9IndoaXRlIiBkPSJNMzEuNjA0LDM1LjYxNmMtMS40NDgtMS40NjgtMi4xNzEtMy42ODktMi4xNzEtNi42NjVWMTYuNzY4aC0zLjY3OVY3Ljk2MmgzLjY3OVYwaDEwLjE5M3Y3Ljk2Mmg0LjU4NAogICAgdjguODA2aC00LjU4NHY5LjU5YzAsMC43NjQsMC4xNjEsMS4zNjcsMC40ODIsMS44MDlzMC43ODQsMC42NjMsMS4zODcsMC42NjNjMC4zNjIsMCwwLjcxNC0wLjA1LDEuMDU2LTAuMTUxCiAgICBjMC4zNDItMC4xMDEsMC41NzMtMC4yMzEsMC42OTQtMC4zOTJsMS42ODksNy45NjJjLTAuNTYzLDAuNDQyLTEuMzk3LDAuODE0LTIuNTAzLDEuMTE2Yy0xLjEwNiwwLjMwMi0yLjQyMywwLjQ1Mi0zLjk1MSwwLjQ1MgogICAgQzM1LjM0NCwzNy44MTgsMzMuMDUyLDM3LjA4NCwzMS42MDQsMzUuNjE2eiIvPgogIDxwYXRoIGZpbGw9IndoaXRlIiBkPSJNNDcuMzQ2LDI5LjYxNWw5LjQ2OS0xMi44NDdoLTkuNDY5VjcuOTYyaDIyLjU1OHY3LjE3N2wtOS41OSwxMy4xNDloOS44MzF2OC44MDZINDcuMzQ2VjI5LjYxNXoiLz4KICA8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTg5LjgwNywxOS40ODJjMC0xLjE2Ni0wLjI2MS0yLTAuNzg0LTIuNTAzYy0wLjUyMy0wLjUwMy0xLjI2Ny0wLjc1NC0yLjIzMi0wLjc1NAogICAgcy0xLjc1OSwwLjI4Mi0yLjM4MywwLjg0NGMtMC42MjMsMC41NjMtMS4xMTYsMS4xMjYtMS40NzgsMS42ODl2MTguMzM2SDcyLjc5OFY3Ljk2MmgxMC4xMzN2My4zNzgKICAgIGMwLjcyNC0xLjAwNSwxLjg2LTEuOTQsMy40MDgtMi44MDVjMS41NDgtMC44NjUsMy4zMjctMS4yOTcsNS4zMzgtMS4yOTdjMi45MzUsMCw1LjA1NiwwLjc3NCw2LjM2MywyLjMyMgogICAgYzEuMzA3LDEuNTQ4LDEuOTYsMy40NjgsMS45Niw1Ljc2djIxLjc3NEg4OS44MDdWMTkuNDgyeiIvPgo8L3N2Zz4K);
+  }
+  footer .about {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 1.5em;
+    color: rgb(153, 153, 153);
+  }
+  footer .about a {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+
+    /* @hidden-accessible-text */
+    text-indent: -9999px;
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDNweCIgaGVpZ2h0PSI1NS43OTVweCIgdmlld0JveD0iMCAwIDEwMyA1NS43OTUiPg0KPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik05NS4xOTgsNDQuMTM4YzAsMi4xNDItMS43NDgsMy44ODUtMy45MDEsMy44ODVoLTMuOTAxVjcuNzY1aDMuOTAxYzIuMTUzLDAsMy45MDEsMS43NDMsMy45MDEsMy44ODNWNDQuMTM4eiBNOTEuMjk3LDANCglIODAuMzA1Yy0wLjM5MiwwLTAuNzA5LDAuMzEzLTAuNzA5LDAuNzA1djU0LjM4YzAsMC4zOTQsMC4zMTcsMC43MSwwLjcwOSwwLjcxaDEwLjk5MkM5Ny43NSw1NS43OTQsMTAzLDUwLjU2LDEwMyw0NC4xMzh2LTMyLjQ5DQoJQzEwMyw1LjIyNSw5Ny43NSwwLDkxLjI5NywweiBNNjguNjY4LDQ0LjEzOGMwLDIuMTQyLTEuNzUsMy44ODUtMy45MDEsMy44ODVzLTMuOTA0LTEuNzQzLTMuOTA0LTMuODg1di0zMi40OQ0KCWMwLTIuMTM5LDEuNzUzLTMuODgzLDMuOTA0LTMuODgzczMuOTAxLDEuNzQzLDMuOTAxLDMuODgzVjQ0LjEzOHogTTY0Ljc2NywwYy02LjQ1MywwLTExLjcwMiw1LjIyNS0xMS43MDIsMTEuNjQ4djMyLjQ5DQoJYzAsNi40MjEsNS4yNDgsMTEuNjU2LDExLjcwMiwxMS42NTZjNi40NTMsMCwxMS43MDEtNS4yMzQsMTEuNzAxLTExLjY1NnYtMzIuNDlDNzYuNDY3LDUuMjI1LDcxLjIyLDAsNjQuNzY3LDB6IE0xMS43MDEsMA0KCUM1LjI1LDAsMCw1LjIyNSwwLDExLjY0OHYzMi40OWMwLDYuNDIxLDUuMjUsMTEuNjU2LDExLjcwMSwxMS42NTZjMi43NDUsMCw1LjI2Mi0wLjk1NSw3LjI2LTIuNTMybDAuODk3LDIuNTMyaDIuODM1DQoJYzAuMzkyLDAsMC43MDktMC4zMTYsMC43MDktMC43MVYyMy4zMDVjMC0wLjM5MS0wLjMxNy0wLjcwNS0wLjcwOS0wLjcwNUgxMi4wNThjLTAuMzk0LDAtMC43MTIsMC4zMTMtMC43MTIsMC43MDV2Ni4zNTQNCgljMCwwLjM5NCwwLjMxOCwwLjcwNywwLjcxMiwwLjcwN2gzLjU0NHYxMy43NzNjMCwyLjE0Mi0xLjc1LDMuODg1LTMuOTAxLDMuODg1UzcuOCw0Ni4yODEsNy44LDQ0LjEzOXYtMzIuNDkNCgljMC0yLjEzOSwxLjc1LTMuODgzLDMuOTAxLTMuODgzczMuOTAxLDEuNzQzLDMuOTAxLDMuODgzdjIuNDc1YzAsMC4zODcsMC4zMTgsMC43MDUsMC43MTIsMC43MDVoNi4zNzkNCgljMC4zOTIsMCwwLjcwOS0wLjMxOCwwLjcwOS0wLjcwNXYtMi40NzVDMjMuNDAyLDUuMjI1LDE4LjE1NSwwLDExLjcwMSwweiBNNDIuMTM1LDQ0LjEzOGMwLDIuMTQyLTEuNzUyLDMuODg1LTMuOTAxLDMuODg1DQoJYy0yLjE1MSwwLTMuOTAxLTEuNzQzLTMuOTAxLTMuODg1di0zMi40OWMwLTIuMTM5LDEuNzUtMy44ODMsMy45MDEtMy44ODNjMi4xNDksMCwzLjkwMSwxLjc0MywzLjkwMSwzLjg4M1Y0NC4xMzh6IE0zOC4yMzQsMA0KCUMzMS43ODEsMCwyNi41Myw1LjIyNSwyNi41MywxMS42NDh2MzIuNDljMCw2LjQyMSw1LjI1LDExLjY1NiwxMS43MDMsMTEuNjU2czExLjcwMS01LjIzNCwxMS43MDEtMTEuNjU2di0zMi40OQ0KCUM0OS45MzUsNS4yMjUsNDQuNjg3LDAsMzguMjM0LDB6Ii8+DQo8L3N2Zz4NCg==);
+  }
+  footer .legal {
+    margin: 0;
+    color: rgb(102, 102, 102);
+    font-size: 0.75em;
+    line-height: 2em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+
+  /* =Main
+  ----------------------------------------------- */
+  main {
+    background-color: rgb(203, 253, 128); /* @lime */
+    color: black;
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    font-size: 125%;
+    text-transform: lowercase;
+  }
+  main h1.logo {
+    /* @hidden-accessible-text */
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 280px;
+    height: 110px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+
+    /* Data URI encoded from ctzn-black.svg */
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMzcuODE4cHgiIHZpZXdCb3g9IjAgMCAxMDAgMzcuODE4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMzcuODE4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGQ9Ik04Ljc3NiwzNi43MDJjLTEuNzg5LTAuNzQ0LTMuMzM4LTEuNzc5LTQuNjQ0LTMuMTA2UzEuODEsMzAuNjYsMS4wODYsMjguNzdDMC4zNjIsMjYuODgsMCwyNC43ODksMCwyMi40OTgNCgkJYzAtMi4yOTIsMC4zNjItNC4zNzMsMS4wODYtNi4yNDNjMC43MjQtMS44NywxLjczOS0zLjQ3OCwzLjA0Ni00LjgyNXMyLjg1NS0yLjM4Miw0LjY0NC0zLjEwNmMxLjc4OS0wLjcyNCwzLjc1LTEuMDg2LDUuODgxLTEuMDg2DQoJCWMyLjU3MywwLDQuNzM1LDAuNDMyLDYuNDg0LDEuMjk3YzEuNzQ5LDAuODY0LDMuMDI2LDEuNzU5LDMuODMsMi42ODRsLTQuNzY1LDcuMDU3Yy0wLjUyMy0wLjYwMy0xLjEzNi0xLjA5Ni0xLjg0LTEuNDc4DQoJCWMtMC43MDQtMC4zODItMS41MTgtMC41NzMtMi40NDMtMC41NzNjLTEuNTI4LDAtMi44MjUsMC41NDMtMy44OSwxLjYyOWMtMS4wNjYsMS4wODYtMS41OTgsMi42MzQtMS41OTgsNC42NDQNCgkJYzAsMi4wMSwwLjUzMywzLjU2OSwxLjU5OCw0LjY3NGMxLjA2NiwxLjEwNiwyLjM2MiwxLjY1OSwzLjg5LDEuNjU5YzAuOTI1LDAsMS43MzktMC4yMDEsMi40NDMtMC42MDMNCgkJYzAuNzA0LTAuNDAyLDEuMzE3LTAuOTA1LDEuODQtMS41MDhsNC43NjUsNy4xMTdjLTAuODA0LDAuOTI1LTIuMDgxLDEuODE5LTMuODMsMi42ODRjLTEuNzQ5LDAuODY0LTMuOTEsMS4yOTctNi40ODQsMS4yOTcNCgkJQzEyLjUyNSwzNy44MTgsMTAuNTY1LDM3LjQ0Niw4Ljc3NiwzNi43MDJ6Ii8+DQoJPHBhdGggZD0iTTMxLjYwNCwzNS42MTZjLTEuNDQ4LTEuNDY4LTIuMTcxLTMuNjg5LTIuMTcxLTYuNjY1VjE2Ljc2OGgtMy42NzlWNy45NjJoMy42NzlWMGgxMC4xOTN2Ny45NjJoNC41ODQNCgkJdjguODA2aC00LjU4NHY5LjU5YzAsMC43NjQsMC4xNjEsMS4zNjcsMC40ODIsMS44MDlzMC43ODQsMC42NjMsMS4zODcsMC42NjNjMC4zNjIsMCwwLjcxNC0wLjA1LDEuMDU2LTAuMTUxDQoJCWMwLjM0Mi0wLjEwMSwwLjU3My0wLjIzMSwwLjY5NC0wLjM5MmwxLjY4OSw3Ljk2MmMtMC41NjMsMC40NDItMS4zOTcsMC44MTQtMi41MDMsMS4xMTZjLTEuMTA2LDAuMzAyLTIuNDIzLDAuNDUyLTMuOTUxLDAuNDUyDQoJCUMzNS4zNDQsMzcuODE4LDMzLjA1MiwzNy4wODQsMzEuNjA0LDM1LjYxNnoiLz4NCgk8cGF0aCBkPSJNNDcuMzQ2LDI5LjYxNWw5LjQ2OS0xMi44NDdoLTkuNDY5VjcuOTYyaDIyLjU1OHY3LjE3N2wtOS41OSwxMy4xNDloOS44MzF2OC44MDZINDcuMzQ2VjI5LjYxNXoiLz4NCgk8cGF0aCBkPSJNODkuODA3LDE5LjQ4MmMwLTEuMTY2LTAuMjYxLTItMC43ODQtMi41MDNjLTAuNTIzLTAuNTAzLTEuMjY3LTAuNzU0LTIuMjMyLTAuNzU0DQoJCXMtMS43NTksMC4yODItMi4zODMsMC44NDRjLTAuNjIzLDAuNTYzLTEuMTE2LDEuMTI2LTEuNDc4LDEuNjg5djE4LjMzNkg3Mi43OThWNy45NjJoMTAuMTMzdjMuMzc4DQoJCWMwLjcyNC0xLjAwNSwxLjg2LTEuOTQsMy40MDgtMi44MDVjMS41NDgtMC44NjUsMy4zMjctMS4yOTcsNS4zMzgtMS4yOTdjMi45MzUsMCw1LjA1NiwwLjc3NCw2LjM2MywyLjMyMg0KCQljMS4zMDcsMS41NDgsMS45NiwzLjQ2OCwxLjk2LDUuNzZ2MjEuNzc0SDg5LjgwN1YxOS40ODJ6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==);
+  }
+
+  main.lime {
+    background-color: rgb(203, 253, 128); /* @lime */
+  }
+  main.cucumber {
+    background-color: rgb(150, 254, 166); /* @cucumber */
+  }
+  main.blueberry {
+    background-color: rgb(99, 204, 203); /* @blueberry */
+  }
+  main.boysenberry {
+    background-color: rgb(101, 156, 247); /* @boysenberry */
+  }
+  main.plumb {
+    background-color: rgb(193, 77, 166); /* @plumb */
+  }
+  main.strawberry {
+    background-color: rgb(255, 49, 102); /* @strawberry */
+  }
+  main.apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  main.tangerine {
+    background-color: rgb(255, 202, 72); /* @tangerine */
+  }
+  main.orange {
+    background-color: rgb(242, 64, 41); /* @orange */
+  }
+
+  main a {
+    color: black;
+  }
+  main p {
+    margin: 1.5em 0 0;
+  }
+
+
+  /* =Buttons
+  ----------------------------------------------- */
+  button {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 0.375em 1.125em;
+    line-height: 1.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    text-transform: lowercase;
+  }
+  button:hover,
+  button:active,
+  button:focus {
+    background-color: black;
+    color: white;
+  }
+
+
+  /* =Forms
+  ----------------------------------------------- */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.375em 0.75em;
+    line-height: 1.5;
+    box-sizing: border-box;
+    border-width: 0;
+    display: inline-block;
+    border-width: 0;
+  }
+
+  ::-webkit-input-placeholder {
+    text-transform: lowercase;
+  }
+  ::-moz-placeholder {
+    text-transform: lowercase;
+  }
+  :-ms-input-placeholder {
+    text-transform: lowercase;
+  }
+
+  .supports-placeholder label > span:first-child {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  .supports-placeholder label br {
+    display: none;
+  }
+
