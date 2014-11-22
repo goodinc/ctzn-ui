@@ -47,8 +47,8 @@
       cursor++;
       if (cursor > colors.length - 1) cursor = 0;
       var main = document.getElementsByTagName('main');
-      if (main[0]) main[0].className = colors[cursor];
-      else setTimeout(startColorAnimation, 10);
+      if (main.length > 0) main[0].className = colors[cursor];
+      else setTimeout(update, 10);
     }
 
     setInterval(update, 3000);
