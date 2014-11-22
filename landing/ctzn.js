@@ -24,4 +24,37 @@
     html.className += " supports-svg";
   }
 
+  function startColorAnimation() {
+    var colors = [
+      'apple',
+      'blueberry',
+      'strawberry',
+      'cucumber',
+      'plumb',
+      'orange',
+      'boysenberry',
+      'lime',
+      'tangerine'
+    ];
+
+    var min = 0;
+    var max = colors.length - 1;
+
+    var random = Math.floor(Math.random() * (max - min + 1) + min);
+    var cursor = random;
+
+    function update() {
+      cursor++;
+      if (cursor > colors.length - 1) cursor = 0;
+      var main = document.getElementsByTagName('main');
+      if (main[0]) main[0].className = colors[cursor];
+      else setTimeout(startColorAnimation, 10);
+    }
+
+    setInterval(update, 3000);
+    update();
+  }
+
+  startColorAnimation();
+
 })();

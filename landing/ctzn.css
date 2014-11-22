@@ -167,6 +167,7 @@
     text-align: center;
     font-size: 125%;
     text-transform: lowercase;
+    transition: background-color 0.2s;
   }
   main h1.logo {
     /* @hidden-accessible-text */
