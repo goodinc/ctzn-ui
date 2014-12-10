@@ -1,0 +1,694 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CTZN Recap</title>
+
+  <style>
+    body {
+      font: 100%/1.5 Arial, "Helvetica Neue", Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: white;
+      color: black;
+    }
+
+    body > header,
+    body > section,
+    body > footer {
+      padding: 1.5em;
+    }
+    body > section,
+    body > footer {
+      border-top: 1px solid rgb(237, 237, 237);
+    }
+
+    a {
+      background-color: rgb(237, 237, 237);
+      color: inherit;
+      text-decoration: none;
+      padding: 0 0.5em;
+      transition: color 0.2s, background-color 0.2s;
+      display: inline-block;
+    }
+    a:hover,
+    a:active,
+    a:focus {
+      color: rgb(255, 49, 102); /* @strawberry */
+    }
+
+    /*
+    *:first-child {
+      margin-top: 0;
+    }
+    *:last-child {
+      margin-bottom: 0;
+    }
+    */
+
+    section h2 {
+      font-family: "Arial Black", Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 24px;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+    h3 .number {
+      font-family: "Arial Black", Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 36px;
+      border: 5px solid rgb(237, 237, 237);
+      border-radius: 100%;
+      width: 2.75em;
+      line-height: 2.75;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+    }
+    h3 .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    li + li {
+      margin-top: 0.75em;
+    }
+
+
+    /* =Avatar
+    ----------------------------------------------- */
+    .avatar img {
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    .avatar > span {
+      display: inline-block;
+      background: rgb(203, 253, 128); /* @lime */
+      color: white;
+      width       : 1.5em;
+      line-height : 1.5em;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    .avatar .lime {
+      background: rgb(203, 253, 128); /* @lime */
+      color: black;
+    }
+    .avatar .cucumber {
+      background-color: rgb(150, 254, 166); /* @cucumber */
+      color: black;
+    }
+    .avatar .blueberry {
+      background: rgb(99, 204, 203); /* @blueberry */
+    }
+    .avatar .boysenberry {
+      background: rgb(101, 156, 247); /* @boysenberry */
+    }
+    .avatar .plumb {
+      background: rgb(193, 77, 166); /* @plumb */
+    }
+    .avatar .strawberry {
+      background: rgb(255, 49, 102); /* @strawberry */
+    }
+    .avatar .apple {
+      background-color: rgb(255, 49, 59); /* @apple */
+    }
+    .avatar .tangerine {
+      background: rgb(255, 202, 72); /* @tangerine */
+    }
+    .avatar .orange {
+      background: rgb(242, 64, 41); /* @orange */
+    }
+
+    .avatar .size30 {
+      font-size: 1.25em; /* 2/3 x 30px / @font-size */
+    }
+    .avatar .size35 {
+      font-size: 1.4583333333em; /* 2/3 x 35px / @font-size */
+    }
+    .avatar .size100 {
+      font-size: 4.1666666667em; /* 2/3 x 30px / @font-size */
+    }
+
+    .avatar [data-content]:after {
+      display: block;
+      content: attr(data-content);
+      speak: none;
+      font-style: normal;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+
+    ul, li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .member-list li {
+      padding-left: 3em;
+    }
+    .member-list li .avatar {
+      position: absolute;
+      margin-left: -3em;
+    }
+
+    .mix-list li {
+      margin-top: 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .mix-list li > a {
+      padding: 0;
+      position: relative;
+      background: black;
+      color: white;
+    }
+    .mix-list li > a > img:first-child {
+      display: block;
+    }
+    .mix-list li > a > span {
+      font-size: 11px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.75em;
+    }
+    .mix-list li.more > a {
+      display: block;
+      width: 135px;
+      text-align: center;
+      line-height: 135px;
+      font-weight: bold;
+    }
+
+
+    /* =Header
+    ----------------------------------------------- */
+    header h2 {
+      font-weight: inherit;
+      font-size: 1.125em; /* 18px / @font-size */
+    }
+    header time {
+      color: rgb(102, 102, 102);
+    }
+
+
+    /* =Pushes
+    ----------------------------------------------- */
+    .pushes li a:before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 1.5em;
+      background-color: rgb(203, 253, 128); /* @lime */
+      vertical-align: top;
+      border-right: 0.5em solid white;
+      margin-right: 0.5em;
+      margin-left: -0.5em;
+    }
+    .pushes li.lime a:before {
+      background-color: rgb(203, 253, 128); /* @lime */
+    }
+    .pushes li.cucumber a:before {
+      background-color: rgb(150, 254, 166); /* @cucumber */
+    }
+    .pushes li.blueberry a:before {
+      background-color: rgb(99, 204, 203); /* @blueberry */
+    }
+    .pushes li.boysenberry a:before {
+      background-color: rgb(101, 156, 247); /* @boysenberry */
+    }
+    .pushes li.plumb a:before {
+      background-color: rgb(193, 77, 166); /* @plumb */
+    }
+    .pushes li.strawberry a:before {
+      background-color: rgb(255, 49, 102); /* @strawberry */
+    }
+    .pushes li.apple a:before {
+      background-color: rgb(255, 49, 59); /* @apple */
+    }
+    .pushes li.tangerine a:before {
+      background-color: rgb(255, 202, 72); /* @tangerine */
+    }
+    .pushes li.orange a:before {
+      background-color: rgb(242, 64, 41); /* @orange */
+    }
+
+
+    /* =Push
+    ----------------------------------------------- */
+    .push h2:before {
+      content: "";
+      display: inline-block;
+      width: 100px;
+      height: 1.5em;
+      background-color: rgb(203, 253, 128); /* @lime */
+      margin-right: 0.5em;
+      vertical-align: top;
+    }
+    .push h2.lime:before {
+      background-color: rgb(203, 253, 128); /* @lime */
+    }
+    .push h2.cucumber:before {
+      background-color: rgb(150, 254, 166); /* @cucumber */
+    }
+    .push h2.blueberry:before {
+      background-color: rgb(99, 204, 203); /* @blueberry */
+    }
+    .push h2.boysenberry:before {
+      background-color: rgb(101, 156, 247); /* @boysenberry */
+    }
+    .push h2.plumb:before {
+      background-color: rgb(193, 77, 166); /* @plumb */
+    }
+    .push h2.strawberry:before {
+      background-color: rgb(255, 49, 102); /* @strawberry */
+    }
+    .push h2.apple:before {
+      background-color: rgb(255, 49, 59); /* @apple */
+    }
+    .push h2.tangerine:before {
+      background-color: rgb(255, 202, 72); /* @tangerine */
+    }
+    .push h2.orange:before {
+      background-color: rgb(242, 64, 41); /* @orange */
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>
+      <svg aria-label="Citizen" xmlns="http://www.w3.org/2000/svg" width="120px" height="46px" viewBox="0 0 120 45.382">
+        <path fill="black" d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998
+          c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303
+          c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774
+          c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573
+          s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81
+          l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z
+          "/>
+        <path fill="black" d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501
+          v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181
+          s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38
+          C42.413,45.382,39.662,44.501,37.925,42.739z"/>
+        <path fill="black" d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/>
+        <path fill="black" d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905
+          s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054
+          c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129
+          h-12.232V23.378z"/>
+        CTZN
+      </svg>
+    </h1>
+    <h2>
+      Recap for<br />
+      <time datetime="">December 01, 2014</time>
+    </h2>
+  </header>
+
+  <section class="pushes">
+    <h3><span class="number">15</span> <span class="label">Pushes Updated</span></h3>
+    <ul>
+      <li class="plumb"><a href="">CicLAvia</a></li>
+      <li class="tangerine"><a href="">Imagination LA</a></li>
+      <li class="strawberry"><a href="">826LA Volunteers</a></li>
+      <li class="lime"><a href="">Rootdown LA</a></li>
+      <li class="boysenberry"><a href="">Broccoli City</a></li>
+      <li class="apple"><a href="">League of Creative Interventionists</a></li>
+      <li class="cucumber"><a href="">Dignitiy &amp; Power Now</a></li>
+      <li class="orange"><a href="">Cardboard Challenge</a></li>
+      <li class="blueberry"><a href="">LA80X50</a></li>
+      <li><a href="">&amp; 5 more…</a></li>
+    </ul>
+  </section>
+
+  <section class="push">
+    <h2 class="orange">Imagination LA Updates</h2>
+
+    <section>
+      <h3><span class="number">1</span> <span class="label">New Person</span></h3>
+
+      <ul>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+            </span>
+            @brian
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="push">
+    <h2 class="plumb">CicLAvia Updates</h2>
+
+    <section>
+      <h3><span class="number">100</span> <span class="label">New People</span></h3>
+
+      <ul class="member-list">
+        <li>
+          <a href="">
+            <span class="avatar">
+              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+            </span>
+            @brian
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 cucumber" data-content="s"></span>
+            </span>
+            @supervolunteerla
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 boysenberry" data-content="c"></span>
+            </span>
+            @citizenlovebot
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 apple" data-content="u"></span>
+            </span>
+            @username001
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 orange" data-content="u"></span>
+            </span>
+            @username002
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 plumb" data-content="u"></span>
+            </span>
+            @username003
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 lime" data-content="u"></span>
+            </span>
+            @username004
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 tangerine" data-content="u"></span>
+            </span>
+            @username005
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 blueberry" data-content="u"></span>
+            </span>
+            @username006
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 plumb" data-content="u"></span>
+            </span>
+            @username007
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 boysenberry" data-content="u"></span>
+            </span>
+            @username008
+          </a>
+        </li>
+        <li class="more"><a href="">&amp; 90 more…</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3><span class="number">125</span> <span class="label">New Mix Material</span></h3>
+
+      <ul class="mix-list">
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/d595d7242292fd1ced4533e70d42b232bd98ce8a=c500x500" width="135" height="135" alt=" " />
+            <span>
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+              </span>
+              @brian
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 apple" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/8ecb5abdad49cc9c4a954ab98302e5a5c3a44dd6=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 boysenberry" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/9a339d74c1f5bf8dc9f70eb5a052acce52985473=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 blueberry" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 cucumber" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 strawberry" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 tangerine" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/5a3f33b1a41dd91832077aef9e246b41ca4ff1b4=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 orange" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 orange" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/088c3da3e9bc4ebcb24e9e1cff3bb6f49b21008c=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 boysenberry" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://m.ctznapp.com/s3/ctzn/2491b744224ed5ebd9d6a7ef1fd77e3d08c06356=c500x500" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 plumb" data-content="u"></span>
+              </span>
+              @username001
+            </span>
+          </a>
+        </li>
+        <li class="more"><a href="">&amp; more…</a></li>
+      </ul>
+
+      <p class="add"><a href="">Create New Mix</a></p>
+    </section>
+
+    <section>
+      <h3><span class="number">10</span> <span class="label">New Posts</span></h3>
+
+      <article>
+        <h4>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 boysenberry" data-content="u"></span>
+            </span>
+            @username001
+          </a>
+        </h4>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <figure>
+          <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" width="135" height="135" alt="Image 1" />
+        </figure>
+
+        <ul>
+          <li><a href="">300 people like this</a></li>
+          <li><a href="">2 comments</a></li>
+        </ul>
+      </article>
+
+      <article>
+        <h4>
+          <a href="">
+            <span class="avatar">
+              <span class="size30 boysenberry" data-content="u"></span>
+            </span>
+            @username001
+          </a>
+        </h4>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <figure>
+          <img src="https://m.ctznapp.com/s3/ctzn/f73e20bdb19689e365f39cda909be3b81d8fdaac=c500x500" width="135" height="135" alt="Image 1" />
+          <img src="https://m.ctznapp.com/s3/ctzn/e584d08f72e0acef49a95335f087c0087669df56=c500x500" width="135" height="135" alt="Image 2" />
+        </figure>
+
+        <ul>
+          <li><a href="">I like this</a></li>
+          <li><a href="">Comment</a></li>
+        </ul>
+      </article>
+
+    </section>
+
+
+    <section>
+      <h3><span class="number">6</span> <span class="label">New Comments</span></h3>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+      <p><a href="">original post</a> from <a href="">@username001</a></p>
+
+      <ul>
+        <li><a href="">I like this</a></li>
+        <li><a href="">Comment</a></li>
+      </ul>
+
+      <h4>
+        <a href="">
+          <span class="avatar">
+            <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+          </span>
+          @brian
+        </a>
+      </h4>
+
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+      <h4>
+        <a href="">
+          <span class="avatar">
+            <span class="size30 boysenberry" data-content="u"></span>
+          </span>
+          @username002
+        </a>
+      </h4>
+
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <ul>
+        <li><a href="">Comment</a></li>
+      </ul>
+
+    </section>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a href="">getctzn.com</a></li>
+      <li><a href="">unsubscribe</a></li>
+      <li><a href="">ctzn on Instagram</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
