@@ -7,10 +7,11 @@
   <style>
     body {
       font: 100%/1.5 Arial, "Helvetica Neue", Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
       background: white;
       color: black;
+      max-width: 40em;
+      margin: 0 auto;
+      padding: 0;
     }
 
     body > header,
@@ -46,12 +47,25 @@
     }
     */
 
+    figure {
+      margin-left: 0;
+    }
+
+    p.action,
+    footer + article,
+    article + article,
+    section + section {
+      margin-top: 2.25em;
+    }
+    h1 {
+      margin-top: 0;
+    }
     section h2 {
+      margin-top: 0;
       font-family: "Arial Black", Arial, "Helvetica Neue", Helvetica, sans-serif;
       font-size: 24px;
     }
-
-    h1 {
+    h3 {
       margin-top: 0;
     }
     h3 .number {
@@ -64,11 +78,26 @@
       display: inline-block;
       text-align: center;
       vertical-align: middle;
+      margin-right: 0.5em;
     }
     h3 .label {
       font-size: 11px;
       text-transform: uppercase;
       font-weight: normal;
+    }
+
+    @media (min-width: 40em) {
+      h3 .number {
+        position: absolute;
+        margin-left: -130px;
+      }
+      h3,
+      h3 ~ ul,
+      h3 ~ article,
+      h3 ~ section,
+      h3 ~ .action {
+        margin-left: 130px;
+      }
     }
 
     li + li {
@@ -148,12 +177,50 @@
       padding-left: 0;
     }
 
+    article h4,
     .member-list li {
       padding-left: 3em;
     }
+    article h4 .avatar,
     .member-list li .avatar {
       position: absolute;
       margin-left: -3em;
+    }
+    .footer {
+      margin-top: 0.75em;
+    }
+    .footer li {
+      display: inline;
+    }
+    .footer li + li {
+      margin-left: 0.375em;
+    }
+    .footer a {
+      display: inline-block;
+      background: white;
+      color: rgb(204, 204, 204);
+      text-decoration: none;
+      padding: 0.1875em 0.75em;
+      line-height: 1.5;
+      border-radius: 0.25em;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(204, 204, 204);
+      transition: all 0.2s;
+    }
+    .footer a:hover,
+    .footer a:active,
+    .footer a:focus {
+      background-color: rgb(222, 222, 222);
+      color: rgb(153, 153, 153);
+    }
+
+    .action a {
+      background: black;
+      color: white;
+      font-weight: bold;
+      padding: 0.375em 1.5em;
+      border-radius: 0.125em;
     }
 
     .mix-list li {
@@ -191,12 +258,25 @@
 
     /* =Header
     ----------------------------------------------- */
+    header:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    header h1 {
+      float: left;
+      margin-bottom: 0;
+    }
     header h2 {
-      font-weight: inherit;
+      margin-top: 0;
+      margin-bottom: 0;
       font-size: 1.125em; /* 18px / @font-size */
+      float: right;
+      text-align: right;
     }
     header time {
       color: rgb(102, 102, 102);
+      font-weight: normal;
     }
 
 
@@ -247,10 +327,10 @@
     .push h2:before {
       content: "";
       display: inline-block;
-      width: 100px;
+      width: 110px;
       height: 1.5em;
       background-color: rgb(203, 253, 128); /* @lime */
-      margin-right: 0.5em;
+      margin-right: 20px;
       vertical-align: top;
     }
     .push h2.lime:before {
@@ -281,6 +361,33 @@
       background-color: rgb(242, 64, 41); /* @orange */
     }
 
+
+    /* =Footer
+    ----------------------------------------------- */
+    body > footer ul,
+    body > footer li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    body > footer li {
+      margin: 0;
+      display: inline;
+    }
+    body > footer li:last-child {
+      float: right;
+    }
+    body > footer li + li {
+      margin-left: 0.75em;
+    }
+    body > footer a {
+      background-color: transparent;
+      color: inherit;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+
   </style>
 
 </head>
@@ -288,7 +395,7 @@
 
   <header>
     <h1>
-      <svg aria-label="Citizen" xmlns="http://www.w3.org/2000/svg" width="120px" height="46px" viewBox="0 0 120 45.382">
+      <svg aria-label="Citizen" width="120px" height="46px" viewBox="0 0 120 45.382">
         <path fill="black" d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998
           c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303
           c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774
@@ -336,7 +443,7 @@
     <section>
       <h3><span class="number">1</span> <span class="label">New Person</span></h3>
 
-      <ul>
+      <ul class="member-list">
         <li>
           <a href="">
             <span class="avatar">
@@ -576,7 +683,7 @@
         <li class="more"><a href="">&amp; more…</a></li>
       </ul>
 
-      <p class="add"><a href="">Create New Mix</a></p>
+      <p class="action"><a href="">Create New Mix</a></p>
     </section>
 
     <section>
@@ -603,10 +710,12 @@
           <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" width="135" height="135" alt="Image 1" />
         </figure>
 
-        <ul>
-          <li><a href="">300 people like this</a></li>
-          <li><a href="">2 comments</a></li>
-        </ul>
+        <footer class="footer">
+          <ul>
+            <li><a href="">300 people like this</a></li>
+            <li><a href="">2 comments</a></li>
+          </ul>
+        </footer>
       </article>
 
       <article>
@@ -631,10 +740,12 @@
           <img src="https://m.ctznapp.com/s3/ctzn/e584d08f72e0acef49a95335f087c0087669df56=c500x500" width="135" height="135" alt="Image 2" />
         </figure>
 
-        <ul>
-          <li><a href="">I like this</a></li>
-          <li><a href="">Comment</a></li>
-        </ul>
+        <footer class="footer">
+          <ul>
+            <li><a href="">I like this</a></li>
+            <li><a href="">Comment</a></li>
+          </ul>
+        </footer>
       </article>
 
     </section>
@@ -643,40 +754,46 @@
     <section>
       <h3><span class="number">6</span> <span class="label">New Comments</span></h3>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-      <p><a href="">original post</a> from <a href="">@username001</a></p>
+        <p><a href="">original post</a> from <a href="">@username001</a></p>
 
-      <ul>
-        <li><a href="">I like this</a></li>
-        <li><a href="">Comment</a></li>
-      </ul>
+        <footer class="footer">
+          <ul>
+            <li><a href="">I like this</a></li>
+            <li><a href="">Comment</a></li>
+          </ul>
+        </footer>
 
-      <h4>
-        <a href="">
-          <span class="avatar">
-            <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
-          </span>
-          @brian
-        </a>
-      </h4>
+        <article>
+          <h4>
+            <a href="">
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+              </span>
+              @brian
+            </a>
+          </h4>
 
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </article>
 
-      <h4>
-        <a href="">
-          <span class="avatar">
-            <span class="size30 cranberry" data-content="u"></span>
-          </span>
-          @username002
-        </a>
-      </h4>
+        <article>
+          <h4>
+            <a href="">
+              <span class="avatar">
+                <span class="size30 cranberry" data-content="u"></span>
+              </span>
+              @username002
+            </a>
+          </h4>
 
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </article>
 
-      <ul>
-        <li><a href="">Comment</a></li>
-      </ul>
+        <p class="action"><a href="">Comment</a></p>
+      </section>
 
     </section>
   </section>
@@ -684,8 +801,8 @@
   <footer>
     <ul>
       <li><a href="">getctzn.com</a></li>
-      <li><a href="">unsubscribe</a></li>
-      <li><a href="">ctzn on Instagram</a></li>
+      <li><a href="">Unsubscribe</a></li>
+      <li class="instagram"><a href="">Instagram</a></li>
     </ul>
   </footer>
 
