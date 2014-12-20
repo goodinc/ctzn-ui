@@ -16,8 +16,13 @@
       font: 18px/1.25 Arial, "Helvetica Neue", Helvetica, sans-serif;
       background: white;
       color: rgb(102, 102, 102);
-      max-width: 40em;
+      max-width: 33em;
       margin: 0 auto;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, ul {
+      margin-top: 1.25em; /* @line-height */
+      margin-bottom: 1.25em;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -29,9 +34,21 @@
     .container > footer {
       padding: 1.25em;
     }
+    .container > section {
+      padding-bottom: 0;
+    }
+    .container > header + section {
+      margin-top: 0;
+    }
     .container > section,
     .container > footer {
+      margin-top: 1.875em; /* @line-height x 1.5 */
       border-top: 1px solid rgb(237, 237, 237);
+    }
+    .container > footer {
+      margin-top: 2.5em;
+      padding-top: 1.875em;
+      padding-bottom: 1.875em; /* @line-height x 3/2 */
     }
 
     a {
@@ -49,24 +66,14 @@
       color: rgb(255, 49, 102); /* @strawberry */
     }
 
-    /*
-    *:first-child {
-      margin-top: 0;
-    }
-    *:last-child {
-      margin-bottom: 0;
-    }
-    */
-
     figure {
       margin-left: 0;
     }
 
-    p.action,
     footer + article,
     article + article,
     section + section {
-      margin-top: 2.25em;
+      margin-top: 1.875em; /* @line-height x 1.5 */
     }
     h1 {
       margin-top: 0;
@@ -98,6 +105,9 @@
     }
 
     @media (min-width: 40em) {
+      .push > section {
+        min-height: 110px; /* number circle height */
+      }
       h2 .icon,
       h3 .number {
         position: absolute;
@@ -138,6 +148,10 @@
     .avatar img {
       border-radius: 100%;
       vertical-align: middle;
+    }
+    .avatar img[width="30"] {
+      width: 1.6666666667em; /* 30px / @font-size */
+      height: 1.6666666667em;
     }
 
     .avatar > span {
@@ -206,14 +220,17 @@
       padding-left: 0;
     }
 
-    article h4,
+    article {
+      padding-left: 2.5em;
+    }
+
     .member-list li {
       padding-left: 2.25em;
     }
     article h4 .avatar,
     .member-list li .avatar {
       position: absolute;
-      margin-left: -2.25em;
+      margin-left: -2.5em;
     }
     .member-list a {
       font-weight: bold;
@@ -316,6 +333,16 @@
       float: left;
       margin-bottom: 0;
     }
+    header h1 svg {
+      width: 60px;
+      height: 23px;
+    }
+    @media (min-width: 30em) {
+      header h1 svg {
+        width: 120px;
+        height: 46px;
+      }
+    }
     header h2 {
       margin-top: 0;
       margin-bottom: 0;
@@ -331,6 +358,14 @@
 
     /* =Pushes
     ----------------------------------------------- */
+    .push   h3,
+    .pushes h3 {
+      margin-bottom: 0;
+    }
+    .push   ul,
+    .pushes ul {
+      margin-top: 0.625em;
+    }
     .pushes li {
       font-weight: bold;
       padding-left: 1.5em;
@@ -354,7 +389,7 @@
     .pushes li .boysenberry {
       background-color: rgb(101, 156, 247); /* @boysenberry */
     }
-    .pushes li.plumb {
+    .pushes li .plumb {
       background-color: rgb(193, 77, 166); /* @plumb */
     }
     .pushes li .strawberry {
@@ -375,16 +410,16 @@
     ----------------------------------------------- */
     .push h2 .icon {
       display: block;
-      width: 110px; /* number circle width */
-      height: 1.25em;
+      height: 1.25em; /* @line-height */
       background-color: rgb(203, 253, 128); /* @lime */
-      margin-right: 20px;
       vertical-align: top;
       margin-bottom: 0.3125em; /* @line-height / 4 */
     }
     @media (min-width: 40em) {
       .push h2 .icon {
         position: absolute;
+        margin-right: 20px;
+        width: 110px; /* number circle width */
       }
     }
     .push h2 .lime {
@@ -558,8 +593,8 @@
 
   <section class="push">
     <h2>
-      <span class="orange icon"></span>
-      Imagination LA Updates
+      <span class="plumb icon"></span>
+      CicLAvia Updates
     </h2>
 
     <section>
@@ -580,8 +615,8 @@
 
   <section class="push">
     <h2>
-      <span class="plumb icon"></span>
-      CicLAvia Updates
+      <span class="orange icon"></span>
+      Project Citizen Updates
     </h2>
 
     <section>
@@ -599,9 +634,73 @@
         <li>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 clover" data-content="s"></span>
+              <span class="size30 cranberry" data-content="v"></span>
             </span>
-            @supervolunteerla
+            @vogg
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <span class="size30 bluebird" data-content="n"></span>
+            </span>
+            @notcot
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <span class="size30 grape" data-content="l"></span>
+            </span>
+            @lou
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="30" height="30" alt="" />
+            </span>
+            @aldo
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <span class="size30 sky" data-content="a"></span>
+            </span>
+            @anton
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <span class="size30 grape" data-content="j"></span>
+            </span>
+            @jelena
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" height="30" width="30" alt="" />
+            </span>
+            @cogg
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" height="30" width="30" alt="" />
+            </span>
+            @eshah
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <span class="size30 clover" data-content="g"></span>
+            </span>
+            @goldhirsh
           </a>
         </li>
         <li>
@@ -609,71 +708,7 @@
             <span class="avatar">
               <span class="size30 kiwi" data-content="c"></span>
             </span>
-            @citizenlovebot
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 grape" data-content="u"></span>
-            </span>
-            @username001
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 bluebird" data-content="u"></span>
-            </span>
-            @username002
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 cantaloupe" data-content="u"></span>
-            </span>
-            @username003
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 cranberry" data-content="u"></span>
-            </span>
-            @username004
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 amethyst" data-content="u"></span>
-            </span>
-            @username005
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 sky" data-content="u"></span>
-            </span>
-            @username006
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 ocean" data-content="u"></span>
-            </span>
-            @username007
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 amethyst" data-content="u"></span>
-            </span>
-            @username008
+            @caseycaplowe
           </a>
         </li>
         <li class="more"><a href="http://getctzn.com">&amp; 90 more…</a></li>
@@ -686,12 +721,12 @@
       <ul class="mix-list">
         <li>
           <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/d595d7242292fd1ced4533e70d42b232bd98ce8a=c500x500" width="135" height="135" alt=" " />
+            <img src="https://m.ctznapp.com/s3/ctzn/e80e435016195f41fdc635b0debe5c0a5d00e416=c500x500" alt="860288042490932272_281893082" width="135" height="135" alt=" " />
             <span>
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+                <span class="size30 sky" data-content="m"></span>
               </span>
-              @brian
+              mixwell
             </span>
           </a>
         </li>
@@ -700,9 +735,9 @@
             <img src="https://m.ctznapp.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 cranberry" data-content="u"></span>
+                <span class="size30 grape" data-content="j"></span>
               </span>
-              @username001
+              jelena
             </span>
           </a>
         </li>
@@ -711,20 +746,9 @@
             <img src="https://m.ctznapp.com/s3/ctzn/8ecb5abdad49cc9c4a954ab98302e5a5c3a44dd6=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 bluebird" data-content="u"></span>
+                <span class="size30 grape" data-content="j"></span>
               </span>
-              @username001
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/9a339d74c1f5bf8dc9f70eb5a052acce52985473=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 sky" data-content="u"></span>
-              </span>
-              @username001
+              jelena
             </span>
           </a>
         </li>
@@ -733,20 +757,20 @@
             <img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 clover" data-content="u"></span>
+                <img src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100" height="30" width="30" alt="" />
               </span>
-              @username001
+              jim
             </span>
           </a>
         </li>
         <li>
           <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c500x500" width="135" height="135" alt="" />
+            <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" alt="859691325795263273_215183" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 cranberry" data-content="u"></span>
+                <span class="size30 cranberry" data-content="v"></span>
               </span>
-              @username001
+              vogg
             </span>
           </a>
         </li>
@@ -755,9 +779,9 @@
             <img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 cantaloupe" data-content="u"></span>
+                <span class="size30 grape" data-content="j"></span>
               </span>
-              @username001
+              jelena
             </span>
           </a>
         </li>
@@ -766,9 +790,9 @@
             <img src="https://m.ctznapp.com/s3/ctzn/5a3f33b1a41dd91832077aef9e246b41ca4ff1b4=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 kiwi" data-content="u"></span>
+                <span class="size30 grape" data-content="j"></span>
               </span>
-              @username001
+              jelena
             </span>
           </a>
         </li>
@@ -777,20 +801,20 @@
             <img src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 kiwi" data-content="u"></span>
+                <span class="size30 bluebird" data-content="n"></span>
               </span>
-              @username001
+              notcot
             </span>
           </a>
         </li>
         <li>
           <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/088c3da3e9bc4ebcb24e9e1cff3bb6f49b21008c=c500x500" width="135" height="135" alt="" />
+            <img src="https://m.ctznapp.com/s3/ctzn/b33f166ec5577df52c5e4cfda33e4ff930aea7fa=c500x500" alt="859710300098755247_14462141" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 ocean" data-content="u"></span>
+                <span class="size30 grape" data-content="l"></span>
               </span>
-              @username001
+              lou
             </span>
           </a>
         </li>
@@ -799,9 +823,20 @@
             <img src="https://m.ctznapp.com/s3/ctzn/2491b744224ed5ebd9d6a7ef1fd77e3d08c06356=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 grape" data-content="u"></span>
+                <span class="size30 grape" data-content="l"></span>
               </span>
-              @username001
+              lou
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="http://getctzn.com">
+            <img src="https://m.ctznapp.com/s3/ctzn/7884b7cdabf53718d489a707d100282db39d4614=c500x500" alt="837439322316855894_5852293" width="135" height="135" alt="" />
+            <span>
+              <span class="avatar">
+                <span class="size30 kiwi" data-content="c"></span>
+              </span>
+              @caseycaplowe
             </span>
           </a>
         </li>
@@ -818,22 +853,17 @@
         <h4>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 bluebird" data-content="u"></span>
+              <span class="size30 cranberry" data-content="v"></span>
             </span>
-            @username001
+            vogg
           </a>
         </h4>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
         <figure>
           <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" width="135" height="135" alt="Image 1" />
         </figure>
+
+        <p>#ctzn #ctznmixer</p>
 
         <footer class="footer">
           <ul>
@@ -847,7 +877,7 @@
                     c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
                   I like this
                 </svg>
-                <span class="count">300</span>
+                <span class="count">3</span>
               </a>
             </li>
             <li>
@@ -861,7 +891,6 @@
         c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
                   Add Comment
                 </svg>
-                <span class="count">2</span>
               </a>
             </li>
           </ul>
@@ -872,18 +901,13 @@
         <h4>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 ocean" data-content="u"></span>
+              <span class="size30 bluebird" data-content="n"></span>
             </span>
-            @username001
+            notcot
           </a>
         </h4>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Loving the @nounproject #CTZN #ctznmixer</p>
 
         <figure>
           <img src="https://m.ctznapp.com/s3/ctzn/f73e20bdb19689e365f39cda909be3b81d8fdaac=c500x500" width="135" height="135" alt="Image 1" />
@@ -921,16 +945,22 @@
         </footer>
       </article>
 
-    </section>
+      <article>
+        <h4>
+          <a href="http://getctzn.com">
+            <span class="avatar">
+              <span class="size30 grape" data-content="n"></span>
+            </span>
+            jelena
+          </a>
+        </h4>
 
-
-    <section>
-      <h3><span class="number">6</span> <span class="label">New Comments</span></h3>
-
-      <section>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-        <p><a href="http://getctzn.com">original post</a> from <a href="http://getctzn.com">@username001</a></p>
+        <p>
+          <img src="https://m.ctznapp.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c100x100" width="135" height="135" alt="Image 1" />
+        </p>
+        <p>
+          Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...
+        </p>
 
         <footer class="footer">
           <ul>
@@ -944,6 +974,7 @@
                     c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
                   I like this
                 </svg>
+                <span class="count">3</span>
               </a>
             </li>
             <li>
@@ -961,31 +992,76 @@
             </li>
           </ul>
         </footer>
+      </article>
+
+    </section>
+
+
+    <section>
+      <h3><span class="number">6</span> <span class="label">New Comments</span></h3>
+
+      <section>
+        <p><img src="https://m.ctznapp.com/s3/ctzn/246f2e8276de41de5f46676f30fb52a58a5e9057=c500x500" alt="Image 1" width="100" height="100" /></p>
+        <p>#goodcitiesproject #ctzn</p>
+
+        <p><a href="http://getctzn.com">original post</a> from <a href="http://getctzn.com">@lou</a></p>
+
+        <footer class="footer">
+          <ul>
+            <li>
+              <a href="http://getctzn.com">
+                <!-- @icon-heart -->
+                <svg aria-label="I like this" class="icon" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
+                  I like this
+                </svg>
+                <span class="count">8</span>
+              </a>
+            </li>
+            <li>
+              <a href="http://getctzn.com">
+                <!-- @icon-add -->
+                <svg aria-label="Add Comment" class="icon" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
+                  Add Comment
+                </svg>
+                <span class="count">1</span>
+              </a>
+            </li>
+          </ul>
+        </footer>
 
         <article>
           <h4>
             <a href="http://getctzn.com">
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+                <span class="size30 kiwi" data-content="g"></span>
               </span>
-              @brian
+              @goldhirsh
             </a>
           </h4>
 
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Hell of a party.</p>
         </article>
 
         <article>
           <h4>
             <a href="http://getctzn.com">
               <span class="avatar">
-                <span class="size30 cranberry" data-content="u"></span>
+                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" height="30" width="30" alt="" />
               </span>
-              @username002
+              @eshah
             </a>
           </h4>
 
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>W00t w00t</p>
         </article>
 
         <p class="action"><a href="http://getctzn.com">Comment</a></p>
