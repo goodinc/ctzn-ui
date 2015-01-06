@@ -60,11 +60,6 @@
       transition: color 0.2s, background-color 0.2s;
       display: inline-block;
     }
-    a:hover,
-    a:active,
-    a:focus {
-      color: rgb(255, 49, 102); /* @strawberry */
-    }
 
     .comments > section + section {
       margin-top: 2.5em;
@@ -128,20 +123,6 @@
     }
 
 
-    /* =Icons (SVG)
-    ----------------------------------------------- */
-    svg.icon {
-      width: 1.25em;
-      height: 1.25em;
-      vertical-align: middle;
-    }
-    svg.icon path,
-    svg.icon polygon {
-      fill: currentColor;
-      transition: color 0.2s;
-    }
-
-
     /* =Avatar
     ----------------------------------------------- */
     .avatar img {
@@ -195,21 +176,14 @@
     .avatar .size30 {
       font-size: 1.25em; /* 2/3 x 30px / @font-size */
     }
-    .avatar .size35 {
-      font-size: 1.4583333333em; /* 2/3 x 35px / @font-size */
-    }
-    .avatar .size100 {
-      font-size: 4.1666666667em; /* 2/3 x 30px / @font-size */
-    }
 
-    .avatar [data-content]:after {
+    .avatar .letter {
       display: block;
-      content: attr(data-content);
       speak: none;
-      font-style: normal;
       text-transform: uppercase;
       text-align: center;
       font-size: 0.8888888889em; /* 16px / @font-size */
+      font-style: normal;
       font-weight: normal;
     }
 
@@ -258,17 +232,12 @@
       min-width: 2.5em;
       text-align: center;
     }
-    .footer a svg {
-      font-size: 0.8em;
+    .footer a img {
+      vertical-align: middle;
+      opacity: 0.25;
     }
     .footer a .count {
       font-size: 0.75em;
-    }
-    .footer a:hover,
-    .footer a:active,
-    .footer a:focus {
-      background-color: rgb(222, 222, 222);
-      color: rgb(153, 153, 153);
     }
 
     .action a {
@@ -281,11 +250,6 @@
       border-radius: 0.125em;
       min-width: 9em;
       text-align: center;
-    }
-    .action a:hover,
-    .action a:active,
-    .action a:focus {
-      background-color: rgb(255, 49, 102); /* @strawberry */
     }
 
     .mix-list li {
@@ -483,15 +447,7 @@
       font-size: inherit;
     }
     .container > footer .instagram a {
-      color: rgb(204, 204, 204);
-    }
-    .container > footer a:hover,
-    .container > footer a:active,
-    .container > footer a:focus,
-    .container > footer .instagram a:hover,
-    .container > footer .instagram a:active,
-    .container > footer .instagram a:focus {
-      color: rgb(255, 49, 102); /* @strawberry */
+      opacity: 0.25;
     }
 
   </style>
@@ -503,25 +459,7 @@
 
   <header>
     <h1>
-      <svg aria-label="Citizen" width="120px" height="46px" viewBox="0 0 120 45.382">
-        <path fill="black" d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998
-          c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303
-          c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774
-          c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573
-          s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81
-          l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z
-          "/>
-        <path fill="black" d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501
-          v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181
-          s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38
-          C42.413,45.382,39.662,44.501,37.925,42.739z"/>
-        <path fill="black" d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/>
-        <path fill="black" d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905
-          s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054
-          c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129
-          h-12.232V23.378z"/>
-        CTZN
-      </svg>
+      <img src="http://jimthoburn.github.io/ctzn/email/images/ctzn.png" width="120" height="45" alt="CTZN" />
     </h1>
     <h2>
       Recap for<br />
@@ -633,7 +571,7 @@
         <li>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 cranberry" data-content="v"></span>
+              <span class="size30 cranberry"><span class="letter">v</span></span>
             </span>
             @vogg
           </a>
@@ -641,7 +579,7 @@
         <li>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 bluebird" data-content="n"></span>
+              <span class="size30 bluebird"><span class="letter">n</span></span>
             </span>
             @notcot
           </a>
@@ -649,7 +587,7 @@
         <li>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 grape" data-content="l"></span>
+              <span class="size30 grape"><span class="letter">l</span></span>
             </span>
             @lou
           </a>
@@ -665,7 +603,7 @@
         <li>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 sky" data-content="a"></span>
+              <span class="size30 sky"><span class="letter">a</span></span>
             </span>
             @anton
           </a>
@@ -673,7 +611,7 @@
         <li>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 grape" data-content="j"></span>
+              <span class="size30 grape"><span class="letter">j</span></span>
             </span>
             @jelena
           </a>
@@ -697,7 +635,7 @@
         <li>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 clover" data-content="g"></span>
+              <span class="size30 clover"><span class="letter">g</span></span>
             </span>
             @goldhirsh
           </a>
@@ -705,7 +643,7 @@
         <li>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 kiwi" data-content="c"></span>
+              <span class="size30 kiwi"><span class="letter">c</span></span>
             </span>
             @caseycaplowe
           </a>
@@ -723,7 +661,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/e80e435016195f41fdc635b0debe5c0a5d00e416=c500x500" alt="860288042490932272_281893082" width="135" height="135" alt=" " />
             <span>
               <span class="avatar">
-                <span class="size30 sky" data-content="m"></span>
+                <span class="size30 sky"><span class="letter">m</span></span>
               </span>
               mixwell
             </span>
@@ -734,7 +672,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 grape" data-content="j"></span>
+                <span class="size30 grape"><span class="letter">j</span></span>
               </span>
               jelena
             </span>
@@ -745,7 +683,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/8ecb5abdad49cc9c4a954ab98302e5a5c3a44dd6=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 grape" data-content="j"></span>
+                <span class="size30 grape"><span class="letter">j</span></span>
               </span>
               jelena
             </span>
@@ -767,7 +705,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" alt="859691325795263273_215183" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 cranberry" data-content="v"></span>
+                <span class="size30 cranberry"><span class="letter">v</span></span>
               </span>
               vogg
             </span>
@@ -778,7 +716,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 grape" data-content="j"></span>
+                <span class="size30 grape"><span class="letter">j</span></span>
               </span>
               jelena
             </span>
@@ -789,7 +727,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/5a3f33b1a41dd91832077aef9e246b41ca4ff1b4=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 grape" data-content="j"></span>
+                <span class="size30 grape"><span class="letter">j</span></span>
               </span>
               jelena
             </span>
@@ -800,7 +738,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 bluebird" data-content="n"></span>
+                <span class="size30 bluebird"><span class="letter">n</span></span>
               </span>
               notcot
             </span>
@@ -811,7 +749,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/b33f166ec5577df52c5e4cfda33e4ff930aea7fa=c500x500" alt="859710300098755247_14462141" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 grape" data-content="l"></span>
+                <span class="size30 grape"><span class="letter">l</span></span>
               </span>
               lou
             </span>
@@ -822,7 +760,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/2491b744224ed5ebd9d6a7ef1fd77e3d08c06356=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 grape" data-content="l"></span>
+                <span class="size30 grape"><span class="letter">l</span></span>
               </span>
               lou
             </span>
@@ -833,9 +771,9 @@
             <img src="https://m.ctznapp.com/s3/ctzn/7884b7cdabf53718d489a707d100282db39d4614=c500x500" alt="837439322316855894_5852293" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <span class="size30 kiwi" data-content="c"></span>
+                <span class="size30 kiwi"><span class="letter">c</span></span>
               </span>
-              @caseycaplowe
+              caseycaplowe
             </span>
           </a>
         </li>
@@ -852,7 +790,7 @@
         <h4>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 cranberry" data-content="v"></span>
+              <span class="size30 cranberry"><span class="letter">v</span></span>
             </span>
             vogg
           </a>
@@ -868,28 +806,13 @@
           <ul>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-heart -->
-                <svg aria-label="I like this" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
-                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
-                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-                  I like this
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
                 <span class="count">3</span>
               </a>
             </li>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-add -->
-                <svg aria-label="Add Comment" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
-        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
-        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
-        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
-        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
-                  Add Comment
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/add.png" width="18" height="18" alt="Add comment" />
               </a>
             </li>
           </ul>
@@ -900,7 +823,7 @@
         <h4>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 bluebird" data-content="n"></span>
+              <span class="size30 bluebird"><span class="letter">n</span></span>
             </span>
             notcot
           </a>
@@ -917,27 +840,12 @@
           <ul>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-heart -->
-                <svg aria-label="I like this" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
-                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
-                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-                  I like this
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
               </a>
             </li>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-add -->
-                <svg aria-label="Add Comment" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
-        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
-        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
-        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
-        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
-                  Add Comment
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/add.png" width="18" height="18" alt="Add comment" />
               </a>
             </li>
           </ul>
@@ -948,7 +856,7 @@
         <h4>
           <a href="http://getctzn.com">
             <span class="avatar">
-              <span class="size30 grape" data-content="n"></span>
+              <span class="size30 grape"><span class="letter">n</span></span>
             </span>
             jelena
           </a>
@@ -965,28 +873,13 @@
           <ul>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-heart -->
-                <svg aria-label="I like this" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
-                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
-                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-                  I like this
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
                 <span class="count">3</span>
               </a>
             </li>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-add -->
-                <svg aria-label="Add Comment" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
-        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
-        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
-        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
-        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
-                  Add Comment
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/add.png" width="18" height="18" alt="Add comment" />
               </a>
             </li>
           </ul>
@@ -1009,28 +902,13 @@
           <ul>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-heart -->
-                <svg aria-label="I like this" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
-                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
-                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-                  I like this
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
                 <span class="count">8</span>
               </a>
             </li>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-add -->
-                <svg aria-label="Add Comment" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
-        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
-        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
-        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
-        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
-                  Add Comment
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/add.png" width="18" height="18" alt="Add comment" />
                 <span class="count">1</span>
               </a>
             </li>
@@ -1041,7 +919,7 @@
           <h4>
             <a href="http://getctzn.com">
               <span class="avatar">
-                <span class="size30 kiwi" data-content="g"></span>
+                <span class="size30 kiwi"><span class="letter">g</span></span>
               </span>
               @goldhirsh
             </a>
@@ -1076,28 +954,13 @@
           <ul>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-heart -->
-                <svg aria-label="I like this" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
-                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
-                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-                  I like this
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
                 <span class="count">1</span>
               </a>
             </li>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-add -->
-                <svg aria-label="Add Comment" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
-        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
-        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
-        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
-        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
-                  Add Comment
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/add.png" width="18" height="18" alt="Add comment" />
                 <span class="count">3</span>
               </a>
             </li>
@@ -1155,28 +1018,13 @@
           <ul>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-heart -->
-                <svg aria-label="I like this" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
-                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
-                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-                  I like this
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
                 <span class="count">3</span>
               </a>
             </li>
             <li>
               <a href="http://getctzn.com">
-                <!-- @icon-add -->
-                <svg aria-label="Add Comment" class="icon" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
-        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
-        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
-        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
-        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
-                  Add Comment
-                </svg>
+                <img src="http://jimthoburn.github.io/ctzn/email/images/add.png" width="18" height="18" alt="Add comment" />
                 <span class="count">1</span>
               </a>
             </li>
@@ -1209,17 +1057,7 @@
       <li><a href="http://getctzn.com">Unsubscribe</a></li>
       <li class="instagram">
         <a href="http://getctzn.com">
-          <!-- @icon-instagram -->
-          <svg aria-label="Instagram" class="icon" width="24" height="24" viewBox="0 0 24 24">
-            <path fill="#030303" d="M4.567,2h14.866C20.845,2,22,3.155,22,4.567v14.866C22,20.845,20.845,22,19.433,22H4.567
-              C3.155,22,2,20.845,2,19.432V4.567C2,3.155,3.155,2,4.567,2L4.567,2z M16.569,4.222c-0.495,0-0.9,0.405-0.9,0.9v2.155
-              c0,0.495,0.405,0.9,0.9,0.9h2.26c0.495,0,0.9-0.405,0.9-0.9V5.122c0-0.495-0.405-0.9-0.9-0.9
-              C18.828,4.222,16.569,4.222,16.569,4.222z M19.74,10.457h-1.76c0.166,0.544,0.256,1.12,0.256,1.715
-              c0,3.326-2.785,6.025-6.216,6.025S5.803,15.5,5.803,12.173c0-0.595,0.09-1.173,0.255-1.715H4.223v8.448
-              c0,0.437,0.357,0.795,0.795,0.795h13.927c0.437,0,0.795-0.357,0.795-0.795L19.74,10.457L19.74,10.457z M12.019,8.065
-              c-2.219,0-4.016,1.743-4.016,3.893s1.798,3.893,4.016,3.893s4.015-1.743,4.015-3.893C16.036,9.807,14.237,8.065,12.019,8.065z"/>
-            Instagram
-          </svg>
+          <img src="http://jimthoburn.github.io/ctzn/email/images/instagram.png" width="22" height="22" alt="Instagram" />
         </a>
       </li>
     </ul>
