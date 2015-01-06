@@ -103,6 +103,7 @@
       }
       h2 .icon,
       h3 .number {
+        display: inline-block;
         position: absolute;
         margin-left: -130px;
       }
@@ -117,8 +118,11 @@
       }
     }
 
-    li + li {
+    li {
       margin-top: 0.75em;
+    }
+    li:first-child {
+      margin-top: 0;
     }
 
 
@@ -127,10 +131,6 @@
     .avatar img {
       border-radius: 100%;
       vertical-align: middle;
-    }
-    .avatar img[width="30"] {
-      width: 1.6666666667em; /* 30px / @font-size */
-      height: 1.6666666667em;
     }
 
     .avatar > span {
@@ -201,6 +201,7 @@
     }
     article h4 .avatar,
     .member-list li .avatar {
+      display: inline-block;
       position: absolute;
       margin-left: -2.5em;
     }
@@ -244,7 +245,6 @@
       color: white;
       font-weight: bold;
       font-size: 0.8888888889em; /* 16px / @font-size */
-      line-height: ;
       padding: 0.65em;
       border-radius: 0.125em;
       min-width: 9em;
@@ -290,11 +290,6 @@
 
     /* =Header
     ----------------------------------------------- */
-    header:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
     header h1 {
       float: left;
       margin-bottom: 0;
@@ -337,6 +332,7 @@
       padding-left: 1.5em;
     }
     .pushes li .icon {
+      display: inline-block;
       position: absolute;
       margin-left: -1.5em;
       width: 0.75em;
@@ -383,6 +379,7 @@
     }
     @media (min-width: 40em) {
       .push h2 .icon {
+        display: inline-block;
         position: absolute;
         margin-right: 20px;
         width: 110px; /* number circle width */
@@ -466,6 +463,7 @@
       Recap for<br />
       <time datetime="">December 19, 2014</time>
     </h2>
+    <div style="clear: both;"></div>
   </header>
 
   <section class="pushes">
@@ -542,7 +540,7 @@
         <li>
           <a href="http://getctzn.com" class="link">
             <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="28" height="28" alt="" />
             </span>
             @brian
           </a>
@@ -564,7 +562,7 @@
         <li>
           <a href="http://getctzn.com" class="link">
             <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="28" height="28" alt="" />
             </span>
             @brian
           </a>
@@ -596,7 +594,7 @@
         <li>
           <a href="http://getctzn.com" class="link">
             <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="30" height="30" alt="" />
+              <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="28" height="28" alt="" />
             </span>
             @aldo
           </a>
@@ -620,7 +618,7 @@
         <li>
           <a href="http://getctzn.com" class="link">
             <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" height="30" width="30" alt="" />
+              <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
             </span>
             @cogg
           </a>
@@ -628,7 +626,7 @@
         <li>
           <a href="http://getctzn.com" class="link">
             <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" height="30" width="30" alt="" />
+              <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
             </span>
             @eshah
           </a>
@@ -695,7 +693,7 @@
             <img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500" width="135" height="135" alt="" />
             <span>
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100" height="30" width="30" alt="" />
+                <img src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100" height="18" width="18" alt="" />
               </span>
               jim
             </span>
@@ -933,7 +931,7 @@
           <h4>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" height="30" width="30" alt="" />
+                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
               </span>
               @eshah
             </a>
@@ -972,7 +970,7 @@
           <h4>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" height="30" width="30" alt="" />
+                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
               </span>
               @cogg
             </a>
@@ -985,7 +983,7 @@
           <h4>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" height="30" width="30" alt="" />
+                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
               </span>
               @aldoatgood
             </a>
@@ -998,7 +996,7 @@
           <h4>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" height="30" width="30" alt="" />
+                <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="28" height="28" alt="" />
               </span>
               @eshah
             </a>
@@ -1036,7 +1034,7 @@
           <h4>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" height="30" width="30" alt="" />
+                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
               </span>
               @cogg
             </a>
