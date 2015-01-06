@@ -51,13 +51,12 @@
       padding-bottom: 1.875em; /* @line-height x 3/2 */
     }
 
-    a {
+    .link {
       background-color: rgb(237, 237, 237);
       color: black;
       font-weight: bold;
       text-decoration: none;
       padding: 0 0.25em;
-      transition: color 0.2s, background-color 0.2s;
       display: inline-block;
     }
 
@@ -228,7 +227,6 @@
       border-width: 1px;
       border-style: solid;
       border-color: rgb(204, 204, 204);
-      transition: all 0.2s;
       min-width: 2.5em;
       text-align: center;
     }
@@ -240,6 +238,8 @@
     }
 
     .action a {
+      text-decoration: none;
+      display: inline-block;
       background-color: black;
       color: white;
       font-weight: bold;
@@ -261,6 +261,9 @@
       position: relative;
       background: black;
       color: white;
+      text-decoration: none;
+      display: inline-block;
+      width: 135px;
     }
     .mix-list li > a > img:first-child {
       display: block;
@@ -268,16 +271,17 @@
     .mix-list li > a > span {
       font-size: 11px;
       font-weight: bold;
-      position: absolute;
-      bottom: 0;
-      left: 0;
       width: 100%;
       box-sizing: border-box;
       padding: 0.75em;
+      line-height: 1;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
     .mix-list li.more > a {
       display: block;
-      width: 135px;
       text-align: center;
       line-height: 135px;
       font-weight: bold;
@@ -441,6 +445,7 @@
       color: black;
       text-transform: uppercase;
       font-weight: normal;
+      text-decoration: none;
     }
     .container > footer .instagram {
       font-size: inherit;
@@ -467,60 +472,60 @@
     <h3><span class="number">15</span> <span class="label">Pushes Updated</span></h3>
     <ul>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="plumb icon"></span>
           CicLAvia
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="tangerine icon"></span>
           Imagination LA
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="strawberry icon"></span>
           826LA Volunteers
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="lime icon"></span>
           Rootdown LA
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="boysenberry icon"></span>
           Broccoli City
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="apple icon"></span>
           League of Creative Interventionists
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="cucumber icon"></span>
           Dignitiy &amp; Power Now
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="orange icon"></span>
           Cardboard Challenge
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com">
+        <a href="http://getctzn.com" class="link">
           <span class="blueberry icon"></span>
           LA80X50
         </a>
       </li>
-      <li class="more"><a href="http://getctzn.com">&amp; 5 more…</a></li>
+      <li class="more"><a href="http://getctzn.com" class="link">&amp; 5 more…</a></li>
     </ul>
   </section>
 
@@ -535,7 +540,7 @@
 
       <ul class="member-list">
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
             </span>
@@ -557,7 +562,7 @@
 
       <ul class="member-list">
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
             </span>
@@ -565,7 +570,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 cranberry"><span class="letter">v</span></span>
             </span>
@@ -573,7 +578,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 bluebird"><span class="letter">n</span></span>
             </span>
@@ -581,7 +586,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 grape"><span class="letter">l</span></span>
             </span>
@@ -589,7 +594,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="30" height="30" alt="" />
             </span>
@@ -597,7 +602,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 sky"><span class="letter">a</span></span>
             </span>
@@ -605,7 +610,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 grape"><span class="letter">j</span></span>
             </span>
@@ -613,7 +618,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" height="30" width="30" alt="" />
             </span>
@@ -621,7 +626,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" height="30" width="30" alt="" />
             </span>
@@ -629,7 +634,7 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 clover"><span class="letter">g</span></span>
             </span>
@@ -637,14 +642,14 @@
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 kiwi"><span class="letter">c</span></span>
             </span>
             @caseycaplowe
           </a>
         </li>
-        <li class="more"><a href="http://getctzn.com">&amp; 90 more…</a></li>
+        <li class="more"><a href="http://getctzn.com" class="link">&amp; 90 more…</a></li>
       </ul>
     </section>
 
@@ -784,7 +789,7 @@
 
       <article>
         <h4>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 cranberry"><span class="letter">v</span></span>
             </span>
@@ -817,7 +822,7 @@
 
       <article>
         <h4>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 bluebird"><span class="letter">n</span></span>
             </span>
@@ -850,7 +855,7 @@
 
       <article>
         <h4>
-          <a href="http://getctzn.com">
+          <a href="http://getctzn.com" class="link">
             <span class="avatar">
               <span class="size30 grape"><span class="letter">n</span></span>
             </span>
@@ -892,7 +897,7 @@
         <p><img src="https://m.ctznapp.com/s3/ctzn/246f2e8276de41de5f46676f30fb52a58a5e9057=c500x500" alt="Image 1" width="135" height="135" /></p>
         <p>#goodcitiesproject #ctzn</p>
 
-        <p><a href="http://getctzn.com">original post</a> from <a href="http://getctzn.com">@lou</a></p>
+        <p><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@lou</a></p>
 
         <footer class="footer">
           <ul>
@@ -913,7 +918,7 @@
 
         <article>
           <h4>
-            <a href="http://getctzn.com">
+            <a href="http://getctzn.com" class="link">
               <span class="avatar">
                 <span class="size30 kiwi"><span class="letter">g</span></span>
               </span>
@@ -926,7 +931,7 @@
 
         <article>
           <h4>
-            <a href="http://getctzn.com">
+            <a href="http://getctzn.com" class="link">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" height="30" width="30" alt="" />
               </span>
@@ -944,7 +949,7 @@
         <p><img src="https://m.ctznapp.com/s3/ctzn/a9af7c0834c646a8c294eb143be3eaed1501d346=c500x500" width="135" height="135" alt="Image 1" /></p>
         <p>On the ✈️ #santazen</p>
 
-        <p><a href="http://getctzn.com">original post</a> from <a href="http://getctzn.com">@lou</a></p>
+        <p><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@lou</a></p>
 
         <footer class="footer">
           <ul>
@@ -965,7 +970,7 @@
 
         <article>
           <h4>
-            <a href="http://getctzn.com">
+            <a href="http://getctzn.com" class="link">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" height="30" width="30" alt="" />
               </span>
@@ -978,7 +983,7 @@
 
         <article>
           <h4>
-            <a href="http://getctzn.com">
+            <a href="http://getctzn.com" class="link">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" height="30" width="30" alt="" />
               </span>
@@ -991,7 +996,7 @@
 
         <article>
           <h4>
-            <a href="http://getctzn.com">
+            <a href="http://getctzn.com" class="link">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" height="30" width="30" alt="" />
               </span>
@@ -1008,7 +1013,7 @@
       <section>
         <p><img src="https://m.ctznapp.com/s3/ctzn/7c2af93991eaa557a3509265d419addbfb40bc06=c500x500" width="100" height="100" alt="Image 1" /></p>
 
-        <p><a href="http://getctzn.com">original post</a> from <a href="http://getctzn.com">@dan</a></p>
+        <p><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@dan</a></p>
 
         <footer class="footer">
           <ul>
@@ -1029,7 +1034,7 @@
 
         <article>
           <h4>
-            <a href="http://getctzn.com">
+            <a href="http://getctzn.com" class="link">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" height="30" width="30" alt="" />
               </span>
