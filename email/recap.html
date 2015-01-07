@@ -48,7 +48,7 @@
       padding-bottom: 1.875em; /* @line-height x 3/2 */
     }
     .container > .section.pushes {
-      margin-top: 0;
+      margin-top: 0 !important;
     }
 
     .link {
@@ -78,8 +78,12 @@
       margin-top: 0;
       margin-bottom: 1.875em; /* @line-height x 1.5 */
     }
+    .posts    a,
+    .comments a {
+      text-decoration: none;
+    }
     h1 {
-      margin-top: 0;
+      margin-top: 0;.
     }
     .section h2 {
       margin-top: 0;
@@ -105,29 +109,6 @@
       font-size: 11px;
       text-transform: uppercase;
       font-weight: normal;
-    }
-
-    @media (min-width: 40em) {
-      .push > .section {
-        min-height: 110px; /* number circle height */
-      }
-      h2 .icon,
-      h3 .number {
-        display: inline-block;
-        position: absolute;
-        margin-left: -130px;
-      }
-      h2,
-      h3,
-      h3 ~ ul,
-      h3 ~ .article,
-      h3 ~ .section,
-      h3 ~ .action {
-        margin-left: 130px !important;
-      }
-      .container > .footer {
-        padding-left: 8.4722222222em !important; /* (130px / @font-size) + @line-height */
-      }
     }
 
     li {
@@ -205,6 +186,7 @@
       margin-left: 0;
     }
 
+    /*
     .article {
       padding-left: 2.5em;
     }
@@ -212,17 +194,29 @@
     .member-list li {
       padding-left: 2.25em;
     }
+    */
     .article .avatar,
     .member-list li .avatar {
       display: inline-block;
+      margin-right: 0.25em;
+      /*
       position: absolute;
       margin-left: -2.5em;
+      */
     }
     .article h5 {
       font-size: inherit;
     }
+    .article .body,
+    .article .footer {
+      padding-left: 2.25em;
+    }
     .member-list a {
       font-weight: bold;
+      text-decoration: none;
+    }
+    .member-list li.more {
+      padding-left: 2.125em;
     }
     .article .footer,
     .section .footer {
@@ -317,12 +311,6 @@
       width: 60px;
       height: 23px;
     }
-    @media (min-width: 30em) {
-      .header h1 svg {
-        width: 120px;
-        height: 46px;
-      }
-    }
     .header h2 {
       margin-top: 0;
       margin-bottom: 0;
@@ -330,7 +318,7 @@
       float: right;
       text-align: right;
     }
-    .header time {
+    .header .time {
       color: rgb(102, 102, 102);
       font-weight: normal;
     }
@@ -348,15 +336,16 @@
     }
     .pushes li {
       font-weight: bold;
-      padding-left: 1.5em;
     }
     .pushes li .icon {
       display: inline-block;
-      position: absolute;
-      margin-left: -1.5em;
+      vertical-align: top;
       width: 0.75em;
-      height: 1.25em;
-      background-color: rgb(203, 253, 128); /* @lime */
+      height: 1.2222222222em; /* @line-height */
+      margin-right: 0.25em;
+    }
+    .pushes li a {
+      text-decoration: none;
     }
     .pushes li .lime {
       background-color: rgb(203, 253, 128); /* @lime */
@@ -385,6 +374,9 @@
     .pushes li .orange {
       background-color: rgb(242, 64, 41); /* @orange */
     }
+    .pushes .more {
+      padding-left: 1.25em;
+    }
 
 
     /* =Push
@@ -396,10 +388,9 @@
       vertical-align: top;
       margin-bottom: 0.3125em; /* @line-height / 4 */
     }
-    @media (min-width: 40em) {
+    @media (min-width: 4000000em) {
       .push h2 .icon {
         display: inline-block;
-        position: absolute;
         margin-right: 20px;
         width: 110px; /* number circle width */
       }
@@ -479,7 +470,7 @@
     </h1>
     <h2>
       Recap for<br />
-      <time datetime="2015-01-06">January 6, 2015</time>
+      <time datetime="2015-01-06"><span class="time">January 6, 2015</span></time>
     </h2>
     <div style="clear: both;"></div>
   </div><!-- /.header -->
@@ -488,60 +479,64 @@
     <h3><span class="number">15</span> <span class="label">Pushes Updated</span></h3>
     <ul>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="plumb icon"></span>
-          CicLAvia
+          <span class="link">CicLAvia</span>
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="tangerine icon"></span>
-          Imagination LA
+          <span class="link">Imagination LA</span>
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="strawberry icon"></span>
-          826LA Volunteers
+          <span class="link">826LA Volunteers</span>
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="lime icon"></span>
-          Rootdown LA
+          <span class="link">Rootdown LA</span>
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="boysenberry icon"></span>
-          Broccoli City
+          <span class="link">Broccoli City</span>
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="apple icon"></span>
-          League of Creative Interventionists
+          <span class="link">League of Creative Interventionists</span>
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="cucumber icon"></span>
-          Dignitiy &amp; Power Now
+          <span class="link">Dignitiy &amp; Power Now</span>
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="orange icon"></span>
-          Cardboard Challenge
+          <span class="link">Cardboard Challenge</span>
         </a>
       </li>
       <li>
-        <a href="http://getctzn.com" class="link">
+        <a href="http://getctzn.com">
           <span class="blueberry icon"></span>
-          LA80X50
+          <span class="link">LA80X50</span>
         </a>
       </li>
-      <li class="more"><a href="http://getctzn.com" class="link">&amp; 5 more…</a></li>
+      <li class="more">
+        <a href="http://getctzn.com">
+          <span class="link">&amp; 5 more…</span>
+        </a>
+      </li>
     </ul>
   </div><!-- /.section -->
 
@@ -556,11 +551,11 @@
 
       <ul class="member-list">
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="28" height="28" alt="" />
             </span>
-            @brian
+            <span class="link">@brian</span>
           </a>
         </li>
       </ul>
@@ -578,94 +573,98 @@
 
       <ul class="member-list">
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="28" height="28" alt="" />
             </span>
-            @brian
+            <span class="link">@brian</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 cranberry"><span class="letter">v</span></span>
             </span>
-            @vogg
+            <span class="link">@vogg</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 bluebird"><span class="letter">n</span></span>
             </span>
-            @notcot
+            <span class="link">@notcot</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 grape"><span class="letter">l</span></span>
             </span>
-            @lou
+            <span class="link">@lou</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="28" height="28" alt="" />
             </span>
-            @aldo
+            <span class="link">@aldo</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 sky"><span class="letter">a</span></span>
             </span>
-            @anton
+            <span class="link">@anton</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 grape"><span class="letter">j</span></span>
             </span>
-            @jelena
+            <span class="link">@jelena</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
             </span>
-            @cogg
+            <span class="link">@cogg</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
             </span>
-            @eshah
+            <span class="link">@eshah</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 clover"><span class="letter">g</span></span>
             </span>
-            @goldhirsh
+            <span class="link">@goldhirsh</span>
           </a>
         </li>
         <li>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 kiwi"><span class="letter">c</span></span>
             </span>
-            @caseycaplowe
+            <span class="link">@caseycaplowe</span>
           </a>
         </li>
-        <li class="more"><a href="http://getctzn.com" class="link">&amp; 90 more…</a></li>
+        <li class="more">
+          <a href="http://getctzn.com">
+            <span class="link">&amp; 90 more…</span>
+          </a>
+        </li>
       </ul>
     </div><!-- /.section -->
 
@@ -805,19 +804,21 @@
 
       <div class="article">
         <h4>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 cranberry"><span class="letter">v</span></span>
             </span>
-            vogg
+            <span class="link">vogg</span>
           </a>
         </h4>
 
-        <p>
-          <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" width="135" height="135" alt="Image 1" />
-        </p>
+        <div class="body">
+          <p>
+            <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" width="135" height="135" alt="Image 1" />
+          </p>
 
-        <p>#ctzn #ctznmixer</p>
+          <p>#ctzn #ctznmixer</p>
+        </div>
 
         <div class="footer">
           <ul>
@@ -838,20 +839,22 @@
 
       <div class="article">
         <h4>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 bluebird"><span class="letter">n</span></span>
             </span>
-            notcot
+            <span class="link">notcot</span>
           </a>
         </h4>
 
-        <p>Loving the @nounproject #CTZN #ctznmixer</p>
+        <div class="body">
+          <p>Loving the @nounproject #CTZN #ctznmixer</p>
 
-        <p>
-          <img src="https://m.ctznapp.com/s3/ctzn/f73e20bdb19689e365f39cda909be3b81d8fdaac=c500x500" width="135" height="135" alt="Image 1" />
-          <img src="https://m.ctznapp.com/s3/ctzn/e584d08f72e0acef49a95335f087c0087669df56=c500x500" width="135" height="135" alt="Image 2" />
-        </p>
+          <p>
+            <img src="https://m.ctznapp.com/s3/ctzn/f73e20bdb19689e365f39cda909be3b81d8fdaac=c500x500" width="135" height="135" alt="Image 1" />
+            <img src="https://m.ctznapp.com/s3/ctzn/e584d08f72e0acef49a95335f087c0087669df56=c500x500" width="135" height="135" alt="Image 2" />
+          </p>
+        </div>
 
         <div class="footer">
           <ul>
@@ -871,20 +874,22 @@
 
       <div class="article">
         <h4>
-          <a href="http://getctzn.com" class="link">
+          <a href="http://getctzn.com">
             <span class="avatar">
               <span class="size30 grape"><span class="letter">n</span></span>
             </span>
-            jelena
+            <span class="link">jelena</span>
           </a>
         </h4>
 
-        <p>
-          <img src="https://m.ctznapp.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c100x100" width="135" height="135" alt="Image 1" />
-        </p>
-        <p>
-          Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...
-        </p>
+        <div class="body">
+          <p>
+            <img src="https://m.ctznapp.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c100x100" width="135" height="135" alt="Image 1" />
+          </p>
+          <p>
+            Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...
+          </p>
+        </div>
 
         <div class="footer">
           <ul>
@@ -934,28 +939,32 @@
 
         <div class="article">
           <h5>
-            <a href="http://getctzn.com" class="link">
+            <a href="http://getctzn.com">
               <span class="avatar">
                 <span class="size30 kiwi"><span class="letter">g</span></span>
               </span>
-              @goldhirsh
+              <span class="link">@goldhirsh</span>
             </a>
           </h5>
 
-          <p>Hell of a party.</p>
+          <div class="body">
+            <p>Hell of a party.</p>
+          </div>
         </div><!-- /.article -->
 
         <div class="article">
           <h5>
-            <a href="http://getctzn.com" class="link">
+            <a href="http://getctzn.com">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
               </span>
-              @eshah
+              <span class="link">@eshah</span>
             </a>
           </h5>
 
-          <p>W00t w00t</p>
+          <div class="body">
+            <p>W00t w00t</p>
+          </div>
         </div><!-- /.article -->
 
         <p class="action"><a href="http://getctzn.com">Comment</a></p>
@@ -986,41 +995,47 @@
 
         <div class="article">
           <h5>
-            <a href="http://getctzn.com" class="link">
+            <a href="http://getctzn.com">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
               </span>
-              @cogg
+              <span class="link">@cogg</span>
             </a>
           </h5>
 
-          <p>I am surprised the plane emoji worked</p>
+          <div class="body">
+            <p>I am surprised the plane emoji worked</p>
+          </div>
         </div><!-- /.article -->
 
         <div class="article">
           <h5>
-            <a href="http://getctzn.com" class="link">
+            <a href="http://getctzn.com">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="28" height="28" alt="" />
               </span>
-              @aldoatgood
+              <span class="link">@aldoatgood</span>
             </a>
           </h5>
 
-          <p>@cogg cool huh! Side note I have 2 notes stuck in pending. CommentIng to see if that works.</p>
+          <div class="body">
+            <p>@cogg cool huh! Side note I have 2 notes stuck in pending. CommentIng to see if that works.</p>
+          </div>
         </div><!-- /.article -->
 
         <div class="article">
           <h5>
-            <a href="http://getctzn.com" class="link">
+            <a href="http://getctzn.com">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
               </span>
-              @eshah
+              <span class="link">@eshah</span>
             </a>
           </h5>
 
-          <p>@cogg @aldoatgood: emojis are working only on phones. Not visible on desktop which is way cooler!! :)</p>
+          <div class="body">
+            <p>@cogg @aldoatgood: emojis are working only on phones. Not visible on desktop which is way cooler!! :)</p>
+          </div>
         </div><!-- /.article -->
 
         <p class="action"><a href="http://getctzn.com">Comment</a></p>
@@ -1050,15 +1065,17 @@
 
         <div class="article">
           <h5>
-            <a href="http://getctzn.com" class="link">
+            <a href="http://getctzn.com">
               <span class="avatar">
                 <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
               </span>
-              @cogg
+              <span class="link">@cogg</span>
             </a>
           </h5>
 
-          <p>This makes me happy every time I see it. Nice shot</p>
+          <div class="body">
+            <p>This makes me happy every time I see it. Nice shot</p>
+          </div>
         </div><!-- /.article -->
 
         <p class="action"><a href="http://getctzn.com">Comment</a></p>
