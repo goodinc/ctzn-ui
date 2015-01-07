@@ -29,25 +29,25 @@
       color: black;
     }
 
-    .container > header,
-    .container > section,
-    .container > footer {
+    .container > .header,
+    .container > .section,
+    .container > .footer {
       padding: 1.25em;
     }
-    .container > section {
+    .container > .section {
       padding-bottom: 0;
     }
-    .container > section,
-    .container > footer {
+    .container > .section,
+    .container > .footer {
       margin-top: 1.875em; /* @line-height x 1.5 */
       border-top: 1px solid rgb(237, 237, 237);
     }
-    .container > footer {
+    .container > .footer {
       margin-top: 2.5em;
       padding-top: 1.875em;
       padding-bottom: 1.875em; /* @line-height x 3/2 */
     }
-    .container > section.pushes {
+    .container > .section.pushes {
       margin-top: 0;
     }
 
@@ -60,28 +60,28 @@
       display: inline-block;
     }
 
-    .comments > section {
+    .comments > .section {
       margin-bottom: 2.5em; /* @line-height x 2 */
     }
-    .comments > section:first-child {
+    .comments > .section:first-child {
       margin-top: 0;
     }
-    .container > section.push,
+    .container > .section.push,
     .posts,
     .mixes,
     .comments {
       margin-top: 1.875em; /* @line-height x 1.5 */
     }
-    .posts article,
-    .comments footer,
-    .comments article {
+    .posts .article,
+    .comments .footer,
+    .comments .article {
       margin-top: 0;
       margin-bottom: 1.875em; /* @line-height x 1.5 */
     }
     h1 {
       margin-top: 0;
     }
-    section h2 {
+    .section h2 {
       margin-top: 0;
       font-family: "Arial Black", Arial, "Helvetica Neue", Helvetica, sans-serif;
       font-size: 24px;
@@ -108,7 +108,7 @@
     }
 
     @media (min-width: 40em) {
-      .push > section {
+      .push > .section {
         min-height: 110px; /* number circle height */
       }
       h2 .icon,
@@ -120,12 +120,12 @@
       h2,
       h3,
       h3 ~ ul,
-      h3 ~ article,
-      h3 ~ section,
+      h3 ~ .article,
+      h3 ~ .section,
       h3 ~ .action {
         margin-left: 130px !important;
       }
-      .container > footer {
+      .container > .footer {
         padding-left: 8.4722222222em !important; /* (130px / @font-size) + @line-height */
       }
     }
@@ -205,35 +205,36 @@
       margin-left: 0;
     }
 
-    article {
+    .article {
       padding-left: 2.5em;
     }
 
     .member-list li {
       padding-left: 2.25em;
     }
-    article .avatar,
+    .article .avatar,
     .member-list li .avatar {
       display: inline-block;
       position: absolute;
       margin-left: -2.5em;
     }
-    article h5 {
+    .article h5 {
       font-size: inherit;
     }
     .member-list a {
       font-weight: bold;
     }
-    .footer {
+    .article .footer,
+    .section .footer {
       margin-top: 0.75em;
     }
-    .footer li {
+    .article .footer li,
+    .section .footer li {
       display: inline;
+      margin-right: 0.375em;
     }
-    .footer li + li {
-      margin-left: 0.375em;
-    }
-    .footer a {
+    .article .footer a,
+    .section .footer a {
       display: inline-block;
       background: white;
       color: rgb(204, 204, 204);
@@ -247,10 +248,12 @@
       min-width: 2.5em;
       text-align: center;
     }
-    .footer a img {
+    .article .footer a img,
+    .section .footer a img {
       vertical-align: middle;
     }
-    .footer a .count {
+    .article .footer a .count,
+    .section .footer a .count {
       font-size: 0.75em;
     }
 
@@ -306,28 +309,28 @@
 
     /* =Header
     ----------------------------------------------- */
-    header h1 {
+    .header h1 {
       float: left;
       margin-bottom: 0;
     }
-    header h1 svg {
+    .header h1 svg {
       width: 60px;
       height: 23px;
     }
     @media (min-width: 30em) {
-      header h1 svg {
+      .header h1 svg {
         width: 120px;
         height: 46px;
       }
     }
-    header h2 {
+    .header h2 {
       margin-top: 0;
       margin-bottom: 0;
       font-size: inherit;
       float: right;
       text-align: right;
     }
-    header time {
+    .header time {
       color: rgb(102, 102, 102);
       font-weight: normal;
     }
@@ -432,35 +435,34 @@
 
     /* =Footer
     ----------------------------------------------- */
-    .container > footer ul,
-    .container > footer li {
+    .container > .footer ul,
+    .container > .footer li {
       list-style: none;
       margin-left: 0;
       padding-left: 0;
     }
-    .container > footer ul {
+    .container > .footer ul {
       margin: 0;
     }
-    .container > footer li {
+    .container > .footer li {
       margin: 0;
+      margin-right: 0.75em;
       display: inline;
       font-size: 11px;
       line-height: 22px;
     }
-    .container > footer li:last-child {
+    .container > .footer li:last-child {
       float: right;
+      margin-right: 0;
     }
-    .container > footer li + li {
-      margin-left: 0.75em;
-    }
-    .container > footer a {
+    .container > .footer a {
       background-color: transparent;
       color: black;
       text-transform: uppercase;
       font-weight: normal;
       text-decoration: none;
     }
-    .container > footer .instagram {
+    .container > .footer .instagram {
       font-size: inherit;
     }
 
@@ -471,7 +473,7 @@
 
 <div class="container">
 
-  <header>
+  <div class="header">
     <h1>
       <img src="http://jimthoburn.github.io/ctzn/email/images/ctzn.png" width="120" height="45" alt="CTZN" />
     </h1>
@@ -480,9 +482,9 @@
       <time datetime="2015-01-06">January 6, 2015</time>
     </h2>
     <div style="clear: both;"></div>
-  </header>
+  </div><!-- /.header -->
 
-  <section class="pushes">
+  <div class="section pushes">
     <h3><span class="number">15</span> <span class="label">Pushes Updated</span></h3>
     <ul>
       <li>
@@ -541,15 +543,15 @@
       </li>
       <li class="more"><a href="http://getctzn.com" class="link">&amp; 5 more…</a></li>
     </ul>
-  </section>
+  </div><!-- /.section -->
 
-  <section class="push">
+  <div class="section push">
     <h2>
       <span class="plumb icon"></span>
       CicLAvia Updates
     </h2>
 
-    <section>
+    <div class="section">
       <h3><span class="number">1</span> <span class="label">New Person</span></h3>
 
       <ul class="member-list">
@@ -562,16 +564,16 @@
           </a>
         </li>
       </ul>
-    </section>
-  </section>
+    </div><!-- /.section -->
+  </div><!-- /.section -->
 
-  <section class="push">
+  <div class="section push">
     <h2>
       <span class="orange icon"></span>
       Project Citizen Updates
     </h2>
 
-    <section>
+    <div class="section">
       <h3><span class="number">100</span> <span class="label">New People</span></h3>
 
       <ul class="member-list">
@@ -665,9 +667,9 @@
         </li>
         <li class="more"><a href="http://getctzn.com" class="link">&amp; 90 more…</a></li>
       </ul>
-    </section>
+    </div><!-- /.section -->
 
-    <section class="mixes">
+    <div class="section mixes">
       <h3><span class="number">125</span> <span class="label">New Mix Material</span></h3>
 
       <ul class="mix-list">
@@ -796,12 +798,12 @@
       </ul>
 
       <p class="action"><a href="http://getctzn.com">Create New Mix</a></p>
-    </section>
+    </div><!-- /.section -->
 
-    <section class="posts">
+    <div class="section posts">
       <h3><span class="number">10</span> <span class="label">New Posts</span></h3>
 
-      <article>
+      <div class="article">
         <h4>
           <a href="http://getctzn.com" class="link">
             <span class="avatar">
@@ -817,7 +819,7 @@
 
         <p>#ctzn #ctznmixer</p>
 
-        <footer class="footer">
+        <div class="footer">
           <ul>
             <li>
               <a href="http://getctzn.com">
@@ -831,10 +833,10 @@
               </a>
             </li>
           </ul>
-        </footer>
-      </article>
+        </div><!-- /.footer -->
+      </div><!-- /.article -->
 
-      <article>
+      <div class="article">
         <h4>
           <a href="http://getctzn.com" class="link">
             <span class="avatar">
@@ -851,7 +853,7 @@
           <img src="https://m.ctznapp.com/s3/ctzn/e584d08f72e0acef49a95335f087c0087669df56=c500x500" width="135" height="135" alt="Image 2" />
         </p>
 
-        <footer class="footer">
+        <div class="footer">
           <ul>
             <li>
               <a href="http://getctzn.com">
@@ -864,10 +866,10 @@
               </a>
             </li>
           </ul>
-        </footer>
-      </article>
+        </div><!-- /.footer -->
+      </div><!-- /.article -->
 
-      <article>
+      <div class="article">
         <h4>
           <a href="http://getctzn.com" class="link">
             <span class="avatar">
@@ -884,7 +886,7 @@
           Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...
         </p>
 
-        <footer class="footer">
+        <div class="footer">
           <ul>
             <li>
               <a href="http://getctzn.com">
@@ -898,22 +900,22 @@
               </a>
             </li>
           </ul>
-        </footer>
-      </article>
+        </div><!-- /.footer -->
+      </div><!-- /.article -->
 
-    </section>
+    </div><!-- /.section -->
 
 
-    <section class="comments">
+    <div class="section comments">
       <h3><span class="number">6</span> <span class="label">New Comments</span></h3>
 
-      <section>
+      <div class="section">
         <p><img src="https://m.ctznapp.com/s3/ctzn/246f2e8276de41de5f46676f30fb52a58a5e9057=c500x500" alt="Image 1" width="135" height="135" /></p>
         <p>#goodcitiesproject #ctzn</p>
 
         <h4><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@lou</a></h4>
 
-        <footer class="footer">
+        <div class="footer">
           <ul>
             <li>
               <a href="http://getctzn.com">
@@ -928,9 +930,9 @@
               </a>
             </li>
           </ul>
-        </footer>
+        </div><!-- /.footer -->
 
-        <article>
+        <div class="article">
           <h5>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
@@ -941,9 +943,9 @@
           </h5>
 
           <p>Hell of a party.</p>
-        </article>
+        </div><!-- /.article -->
 
-        <article>
+        <div class="article">
           <h5>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
@@ -954,18 +956,18 @@
           </h5>
 
           <p>W00t w00t</p>
-        </article>
+        </div><!-- /.article -->
 
         <p class="action"><a href="http://getctzn.com">Comment</a></p>
-      </section>
+      </div><!-- /.section -->
 
-      <section>
+      <div class="section">
         <p><img src="https://m.ctznapp.com/s3/ctzn/a9af7c0834c646a8c294eb143be3eaed1501d346=c500x500" width="135" height="135" alt="Image 1" /></p>
         <p>On the ✈️ #santazen</p>
 
         <h4><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@lou</a></h4>
 
-        <footer class="footer">
+        <div class="footer">
           <ul>
             <li>
               <a href="http://getctzn.com">
@@ -980,9 +982,9 @@
               </a>
             </li>
           </ul>
-        </footer>
+        </div><!-- /.footer -->
 
-        <article>
+        <div class="article">
           <h5>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
@@ -993,9 +995,9 @@
           </h5>
 
           <p>I am surprised the plane emoji worked</p>
-        </article>
+        </div><!-- /.article -->
 
-        <article>
+        <div class="article">
           <h5>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
@@ -1006,9 +1008,9 @@
           </h5>
 
           <p>@cogg cool huh! Side note I have 2 notes stuck in pending. CommentIng to see if that works.</p>
-        </article>
+        </div><!-- /.article -->
 
-        <article>
+        <div class="article">
           <h5>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
@@ -1019,17 +1021,17 @@
           </h5>
 
           <p>@cogg @aldoatgood: emojis are working only on phones. Not visible on desktop which is way cooler!! :)</p>
-        </article>
+        </div><!-- /.article -->
 
         <p class="action"><a href="http://getctzn.com">Comment</a></p>
-      </section>
+      </div><!-- /.section -->
 
-      <section>
+      <div class="section">
         <p><img src="https://m.ctznapp.com/s3/ctzn/7c2af93991eaa557a3509265d419addbfb40bc06=c500x500" width="100" height="100" alt="Image 1" /></p>
 
         <h4><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@dan</a></h4>
 
-        <footer class="footer">
+        <div class="footer">
           <ul>
             <li>
               <a href="http://getctzn.com">
@@ -1044,9 +1046,9 @@
               </a>
             </li>
           </ul>
-        </footer>
+        </div><!-- /.footer -->
 
-        <article>
+        <div class="article">
           <h5>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
@@ -1057,16 +1059,16 @@
           </h5>
 
           <p>This makes me happy every time I see it. Nice shot</p>
-        </article>
+        </div><!-- /.article -->
 
         <p class="action"><a href="http://getctzn.com">Comment</a></p>
-      </section>
+      </div><!-- /.section -->
 
-    </section>
+    </div><!-- /.section -->
 
-  </section>
+  </div><!-- /.section -->
 
-  <footer>
+  <div class="footer">
     <ul>
       <li><a href="http://getctzn.com">getctzn.com</a></li>
       <li><a href="http://getctzn.com">Unsubscribe</a></li>
@@ -1076,7 +1078,7 @@
         </a>
       </li>
     </ul>
-  </footer>
+  </div><!-- /.footer -->
 
 </div><!-- ./container -->
 
