@@ -37,9 +37,6 @@
     .container > section {
       padding-bottom: 0;
     }
-    .container > header + section {
-      margin-top: 0;
-    }
     .container > section,
     .container > footer {
       margin-top: 1.875em; /* @line-height x 1.5 */
@@ -49,6 +46,9 @@
       margin-top: 2.5em;
       padding-top: 1.875em;
       padding-bottom: 1.875em; /* @line-height x 3/2 */
+    }
+    .container > section.pushes {
+      margin-top: 0;
     }
 
     .link {
@@ -60,13 +60,23 @@
       display: inline-block;
     }
 
-    .comments > section + section {
-      margin-top: 2.5em;
+    .comments > section {
+      margin-bottom: 2.5em; /* @line-height x 2 */
     }
-    footer + article,
-    article + article,
-    section + section {
+    .comments > section:first-child {
+      margin-top: 0;
+    }
+    .container > section.push,
+    .posts,
+    .mixes,
+    .comments {
       margin-top: 1.875em; /* @line-height x 1.5 */
+    }
+    .posts article,
+    .comments footer,
+    .comments article {
+      margin-top: 0;
+      margin-bottom: 1.875em; /* @line-height x 1.5 */
     }
     h1 {
       margin-top: 0;
@@ -112,9 +122,11 @@
       h3 ~ ul,
       h3 ~ article,
       h3 ~ section,
-      h3 ~ .action,
+      h3 ~ .action {
+        margin-left: 130px !important;
+      }
       .container > footer {
-        margin-left: 130px;
+        padding-left: 8.4722222222em !important; /* (130px / @font-size) + @line-height */
       }
     }
 
@@ -190,6 +202,7 @@
     ul, li {
       list-style: none;
       padding-left: 0;
+      margin-left: 0;
     }
 
     article {
@@ -651,7 +664,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="mixes">
       <h3><span class="number">125</span> <span class="label">New Mix Material</span></h3>
 
       <ul class="mix-list">
@@ -782,7 +795,7 @@
       <p class="action"><a href="http://getctzn.com">Create New Mix</a></p>
     </section>
 
-    <section>
+    <section class="posts">
       <h3><span class="number">10</span> <span class="label">New Posts</span></h3>
 
       <article>
@@ -983,7 +996,7 @@
           <h4>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
+                <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="28" height="28" alt="" />
               </span>
               @aldoatgood
             </a>
@@ -996,7 +1009,7 @@
           <h4>
             <a href="http://getctzn.com" class="link">
               <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="28" height="28" alt="" />
+                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
               </span>
               @eshah
             </a>
