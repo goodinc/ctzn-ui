@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="page">
+    <header>
+      <h1>Join Push</h1>
+
+      <a href="#back" class="back" data-bind="click: backClicked">
+        Go Back
+      </a>
+    </header>
+
+    <form class="has-icon" data-bind="submit: onSubmit, disable: inProgress" method="post">
+      <p class="text">
+        <label>
+          <span class="icon hashtag-circle">Enter invite code…</span><br />
+          <input data-bind='textInput: inviteCode, disable: inProgress' type="text" placeholder="Enter invite code…" spellcheck="false" autocapitalize="off" autocorrect="off" />
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit" data-bind='enable: inviteCode && !inProgress()'>Join</button>
+      </p>
+
+      <!-- ko with: errorMessage -->
+      <p style="color: red;" data-bind="text: $data"></p>
+      <!-- /ko -->
+    </form>
+
+    <!-- ko with: progressMessage -->
+    <section class="upload-message" role="status">
+      <h1>
+        <span data-bind="text: $data"></span>
+        <span class="icon loading"></span>
+      </h1>
+    </section>
+    <!-- /ko -->
+
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="mixes page">
+    <header>
+      <h1>My Mixes</h1>
+
+      <a href="#push" class="back" data-bind="click: function(){ good.currentScreen({ name: 'push' }) }">
+        Go Back
+      </a>
+    </header>
+
+    <div>
+      <ul class="mix-list">
+        <li class="add">
+          <a href="#new-mix" data-bind="click: good.onNavClick">
+            <span class="icon mix"></span>
+            <span>New Mix</span>
+          </a>
+        </li>
+        <!-- ko foreach: mixes -->
+
+          <!-- ko if: rendered_at -->
+          <li>
+            <a href="#mix" data-bind="click: good.onNavClick">
+              <img data-bind="attr: { src: sizedS3Image(preview_image_url, good.S3_MIXPOSTER_SIZE), alt: title }" />
+            </a>
+          </li>
+          <!-- /ko -->
+
+          <!-- ko if: errored_at -->
+          <li class="mix-error">
+            <!-- TODO: cogg - make this more useful -->
+            <span>Mix Error…<br />“<span data-bind="text: title"></span>”</span>
+          </li>
+          <!-- /ko -->
+
+          <!-- ko if: !errored_at && !rendered_at -->
+          <li class="mix-loading">
+            <span>
+              <span class="loading-icon"></span>
+              <span class="text">Creating mix… “<span data-bind="text: title"></span>”</span>
+            </span>
+          </li>
+          <!-- /ko -->
+
+        <!-- /ko -->
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>

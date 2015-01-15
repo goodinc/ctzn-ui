@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="edit-profile page">
+    <header>
+      <h1>Edit Profile</h1>
+
+      <a href="#profile" class="cancel" data-bind="click: handleBackClicked">
+        Cancel
+      </a>
+    </header>
+
+    <!-- ko if: inProgress -->
+    <section class="upload-message" role="status">
+      <h1>
+        <!-- @placeholder-image -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+        Sending
+        <span class="icon loading"></span>
+      </h1>
+    </section>
+    <!-- /ko -->
+
+    <!-- ko if: errorMessage() -->
+    <!-- good-code-map[An example of a “banner” error message, which we’re using for errors that happen while sending data.] -->
+    <section class="upload-message error" role="status">
+      <h1>
+        <span data-bind="text: errorMessage()"></span>
+      </h1>
+    </section>
+    <!-- /ko -->
+
+    <!-- ko with: good.currentUser -->
+    <form class="has-icon" data-bind="submit: $root.onSubmitProfile, disable: $root.inProgress">
+      <p class="file">
+        <label>
+          <input
+            type='file'
+            accept='image/*'
+            id='profileImage'
+            data-bind="disable: $root.inProgress, event: { change: function() { $root.handleImageSelected($element) } }"
+          />
+
+          <!-- ko if: $root.profile_image() === undefined -->
+          <span>
+            <span class="avatar">
+              <span class="size100" data-bind="{ attr: { 'data-content': username[0].replace('[', '*') }, css: good.avatarColor(id) }"></span>
+            </span>
+            <br />
+            <span>Add photo</span>
+          </span>
+          <!-- /ko -->
+
+          <span data-bind="with: $root.profile_image">
+            <img data-bind="attr: { src: $root.profile_image }, css: $root.imageClass" height="100" width="100" alt="" />
+            <br />
+            <span>Change photo</span>
+          </span>
+        </label>
+      </p>
+
+      <p class="text full-name">
+        <label>
+          <span class="icon user">Full Name</span><br />
+          <input type="text" placeholder="Full Name" name="full_name" data-bind="textInput: $root.full_name, disable: $root.inProgress" />
+        </label>
+      </p>
+      <p class="text disabled">
+        <label>
+          <span class="icon user-circle">Username</span><br />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" data-bind="textInput: username" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <span class="icon info">Biography</span><br />
+          <textarea placeholder="Bio" name="bio" data-bind="textInput: $root.bio, disable: $root.inProgress"></textarea>
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit">
+          <span data-bind="css: $root.inProgress() ? 'loading icon' : ''"></span>
+          <span data-bind="visible: !$root.inProgress()">Done</span>
+        </button>
+      </p>
+    </form>
+    <!-- /ko -->
+
+    <aside>
+      <ul>
+        <li>
+          <button data-bind="click: handleChangePasswordClicked, disable: inProgress">
+            <span class="icon padlock"></span>
+            Change Password
+          </button>
+        </li>
+        <li>
+          <button data-bind="click: handleLogOutClicked, disable: inProgress">
+            <span class="icon exit-to-app"></span>
+            Log Out
+          </button>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <button data-bind="click: handleDeleteProfileClicked, disable: inProgress">
+            <span class="icon close-circle"></span>
+            Delete Profile
+          </button>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+</body>
+</html>

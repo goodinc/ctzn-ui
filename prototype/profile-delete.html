@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="page">
+    <header>
+      <h1>Delete Profile</h1>
+
+      <a href="#edit-profile" class="back" data-bind="click: handleBackClicked">
+        Go Back
+      </a>
+    </header>
+
+    <!-- ko if: inProgress() -->
+    <section class="upload-message" role="status">
+      <h1>
+        Sending
+        <span class="icon loading"></span>
+      </h1>
+    </section>
+    <!-- /ko -->
+
+    <!-- ko if: errorMessage() -->
+    <section class="upload-message" role="status">
+      <h1 data-bind="text: errorMessage()"></h1>
+    </section>
+    <!-- /ko -->
+
+    <form class="has-icon" data-bind="submit: onSubmit">
+      <p>For security reasons</p>
+      <p class="text" data-bind="css: validationMessage() ? 'error' : ''">
+        <label>
+          <span class="icon padlock">Enter password</span><br />
+          <input type="password" name="password" placeholder="Enter password" data-bind="textInput: password, disable: inProgress" />
+        </label>
+      </p>
+      <!-- ko if: validationMessage() -->
+      <p class="validation-message" data-bind="text: validationMessage()"></p>
+      <!-- /ko -->
+
+      <p class="submit warning">
+        <button type="submit" data-bind='enable: canSubmit'>Delete my profile</button>
+      </p>
+    </form>
+  </section>
+
+</body>
+</html>

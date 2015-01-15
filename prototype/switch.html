@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="switch">
+    <div>
+      <ul data-bind="foreach: good.globalDataModel().pushes">
+        <li data-bind="css: good.pushColor(id)">
+          <a href="#push" data-bind="click: function() { $parent.switchPush(id) }">
+            <h2 data-bind="text: name"></h2>
+            <p data-bind="text: body"></p>
+          </a>
+        </li>
+      </ul>
+      <h2 class="join">
+        <a href="#join-push" data-bind="click: good.onNavClick">
+          <!-- @icon-add-circle -->
+          <svg aria-label="Join Another Push" class="icon" viewBox="0 0 24 24">
+            <path d="M12,2C6.478,2,2,6.477,2,12c0,5.523,4.478,10,10,10c5.523,0,10-4.477,10-10C22,6.477,17.523,2,12,2z M12,20.906
+              c-4.911,0-8.906-3.995-8.906-8.906S7.089,3.094,12,3.094S20.906,7.089,20.906,12S16.911,20.906,12,20.906z"/>
+            <polygon points="13,8.25 11,8.25 11,11 8.25,11 8.25,13 11,13 11,15.75 13,15.75 13,13 15.75,13 15.75,11 13,11  "/>
+            <foreignobject>Join Another Push</foreignobject>
+          </svg>
+        </a>
+      </h2>
+    </div>
+  </section>
+
+</body>
+</html>

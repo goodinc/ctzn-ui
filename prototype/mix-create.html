@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <!-- ko if: currentState() == "loading" -->
+  <!-- good-code-map[An example of a “full screen” loading message.] -->
+  <section class="loading" role="status">
+    <div><div>
+      <h1><span class="loading-icon"></span> <span class="message">Loading images...</span></h1>
+    </div></div>
+  </section>
+  <!-- /ko -->
+
+  <!-- ko if: currentState() == "choosing" -->
+  <section class="mix-editor page">
+    <header>
+      <h1>Create Mix</h1>
+
+      <a href="#push" class="back" data-bind='click: function(){ window.history.back(); }'>
+        Go Back
+      </a>
+    </header>
+
+    <!-- ko if: images().length < 2 -->
+    <div class="no-images">
+      <h1>Add Images To Create A Mix</h1>
+      <p>A mix requires at least two images to be posted to your push.</p>
+      <p class="action"><a href="#push" data-bind="click: good.showPostEditor">Create a new post</a></p>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko if: images().length >= 2 -->
+    <form>
+      <div class="selected-images">
+        <h2 data-bind="visible: selectedImages().length == 0">Select images</h2>
+
+        <ol id='selectedImageList' data-bind='visible: selectedImages().length > 0'>
+          <!-- ko foreach: selectedImages -->
+          <li role="button" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }">
+            <img data-bind='attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: "Selected Image " + ($index() + 1) }' width='50' height='50'>
+          </li>
+          <!-- /ko -->
+        </ol>
+      </div>
+
+      <!-- ko if: !oneImageLoaded() -->
+      <div class="empty-images">
+        <span class="loading-icon"></span>
+      </div>
+      <!-- /ko -->
+
+      <ul id='unselectedImageList' class="image-list">
+        <!-- ko foreach: images -->
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" />
+          <span class="number" data-bind="if: selected()"><span data-bind='text: number'></span></span>
+        </li>
+        <!-- /ko -->
+      </ul>
+
+      <p class="submit">
+        <button data-bind='click: finishChoosingClicked, enable: selectedImages().length > 1'>Next</button>
+      </p>
+
+    </form>
+    <!-- /ko -->
+
+  </section>
+  <!-- /ko -->
+
+  <!-- ko if: currentState() == "addTitle" || currentState() == "submitting" -->
+  <section class="mix-editor page">
+    <header>
+      <h1>Finish Mix</h1>
+
+      <a href="#back" class="back" data-bind='click: backFromTitleClicked'>
+        Go Back
+      </a>
+    </header>
+
+    <form>
+      <p class="text title">
+        <label>
+          <span>Enter Title</span><br />
+          <input placeholder="Enter Title" type='text' data-bind='textInput: mixTitle, enable: currentState() !== "submitting"' />
+        </label>
+      </p>
+      <div class="preview" data-bind='css: good.pushColor(good.currentPush().push.id)'>
+        <img data-bind='attr: { src: sizedS3Image(selectedImages()[0].url, good.S3_MIXPOSTER_SIZE) }' width='300' height'300' alt="">
+      </div>
+      <p class="submit">
+        <button data-bind='enable: mixTitle().length > 0 && currentState() !== "submitting", click: doneClicked'>Done</button>
+      </p>
+    </form>
+  </section>
+  <!-- /ko -->
+
+</body>
+</html>
+

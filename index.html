@@ -2,22 +2,127 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>CTZN UI</title>
+  <title>CTZN User Interface</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/pattern.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "f90e5d12-8fa4-47b1-a316-b233141d7f51";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+  <style type="text/css">
+    html, body, body > .container, body > .container {
+      height: 100%;
+    }
+    body {
+      font-size: 125%;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    /*
+    a:visited {
+      color: inherit;
+    }
+    h1, h2, h3 {
+      font-family: inherit;
+    }
+    */
+    h1.logotype {
+      margin-top: 0;
+      margin-bottom: 0;
+      letter-spacing: 0;
+      font-size: 155px;
+    }
+    h2 {
+      font-family: inherit;
+      font-size: 1.25em;
+      line-height: inherit;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 1.75em;
+      padding-bottom: 0.875em;
+      border-bottom: 2px solid rgb(218, 220, 224); /* @magnesium */;
+    }
+    h3 {
+      margin-bottom: 0; 
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: inherit;
+    }
+    h3 + p {
+      margin-top: 0;
+      max-width: 25em;
+    }
+    section {
+      margin-top: 1.75em;
+    }
+    body > .container {
+      margin: 0 auto;
+      display: table;
+      padding: 2em;
+    }
+    body > .container > .container {
+      display: table-cell;
+      vertical-align: middle;
+      margin: 0 auto;
+    }
+    body > .container > .container > .container {
+      margin: 1.75em auto;
+    }
+  </style>
 </head>
-<body>
+<body class="pattern">
+  <div class="container">
+    <div class="container">
+      <div class="container">
 
-<h1>ctzn</h1>
+        <h1 class="logotype">CTZN</h1>
+        <h2>User Interface</h2>
 
-<h2>Landing</h2>
-<ol>
-  <li><a href="landing/subscribe.html">Subscribe</a></li>
-  <li><a href="landing/confirm.html">Confirmation</a></li>
-</ol>
-
-<h2>Email</h2>
-<ol>
-  <li><a href="email/recap.html">Recap</a></li>
-</ol>
-
+        <section>
+          <a href="patterns/">
+            <h3>Patterns</h3>
+            <p>Reusable pieces of HTML, for new content and pages</p>
+          </a>
+        </section>
+        <!--
+        </section>
+          <a href="html/messages/">
+            <h3>Messages</h3>
+            <p>Notices that appear after a visitor performs an action</p>
+          </a>
+        </section>
+        -->
+        <section>
+          <a href="prototype/">
+            <h3>Prototype</h3>
+            <p>Example pages, features, and content</p>
+          </a>
+        </section>
+        <section>
+          <a href="email/recap.html">
+            <h3>Email</h3>
+            <p>A new design for the daily digest that arrives by email</p>
+          </a>
+        </section>
+        <section>
+          <a href="landing/">
+            <h3>Landing</h3>
+            <p>A new design for the daily digest that arrives by email</p>
+          </a>
+        </section>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+

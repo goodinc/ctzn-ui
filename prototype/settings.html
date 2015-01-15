@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="hashtags page">
+    <header>
+      <h1>My Settings</h1>
+    </header>
+
+    <!-- ko with: good.currentPush() -->
+
+    <div class="push-card" data-bind="css: good.pushColor(good.currentPush().push.id)">
+      <h2 data-bind="text: good.currentPush().push.name"></h2>
+    </div>
+
+    <!-- ko if: $root.inProgress() -->
+    <section class="upload-message" role="status">
+      <h1>
+        Sending
+        <span class="icon loading"></span>
+      </h1>
+    </section>
+    <!-- /ko -->
+
+    <!-- ko if: $root.errorMessage() -->
+    <section class="upload-message error" role="status">
+      <h1>
+        <span data-bind="text: $root.errorMessage()"></span>
+      </h1>
+    </section>
+    <!-- /ko -->
+
+    <div class="tag-list" data-bind="if: good.currentPush().pushHashtags.length > 0">
+      <h3>Pull These Hashtags</h3>
+      <ul data-bind="foreach: good.currentPush().pushHashtags">
+        <li class="item">
+          <a href="#remove-hashtag" data-bind="click: function(){$parents[1].removeHashtag($data)}">
+            <span data-bind="text: hashtag"></span>
+
+            <!-- @icon-close -->
+            <svg class="icon" viewBox="0 0 24 24">
+              <polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+              <foreignobject>Remove</foreignobject>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="add-hashtag">
+      <p class="item">
+        <a href="#add-hashtag" data-bind="click: good.onNavClick">
+          <!-- @icon-add -->
+          <svg viewBox="0 0 24 24" class="icon">
+            <path d="M24,13.714H13.714V24h-3.429V13.714H0v-3.429h10.286V0h3.429v10.286H24V13.714z"/>
+          </svg>
+          <!-- ko if: good.currentPush().pushHashtags.length <= 0 -->
+            <span>Add a hashtag</span>
+          <!-- /ko -->
+          <!-- ko if: good.currentPush().pushHashtags.length > 0 -->
+            <span>Add another hashtag</span>
+          <!-- /ko -->
+        </a>
+      </p>
+    </div>
+
+    <div class="account-list">
+      <h3>From These Accounts</h3>
+      <ul>
+        <!-- ko foreach: good.globalDataModel().socialMediaFeeds.instagram -->
+        <li class="item active">
+          <a href="#instagram" data-bind="click: function() {$parents[1].unlinkFeed($data);}">
+            <span class="icon instagram">Instagram</span>
+            @<span data-bind="text: foreign_username"></span>
+          </a>
+        </li>
+        <!-- /ko -->
+        <li class="item" data-bind="if: !good.globalDataModel().socialMediaFeeds.instagram">
+          <a href="#instagram-add" data-bind="click: $parent.linkInstagram">
+            <span class="icon instagram">Sync my Instagram</span>
+            <span>Sync my Instagram</span>
+          </a>
+        </li>
+        <!-- ko foreach: good.globalDataModel().socialMediaFeeds.twitter -->
+        <li class="item active">
+          <a href="#twitter-remove" data-bind="click: function() {$parents[1].unlinkFeed($data);}">
+            <span class="icon twitter">Twitter</span>
+            @<span data-bind="text: foreign_username"></span>
+          </a>
+        </li>
+        <!-- /ko -->
+        <li class="item" data-bind="if: !good.globalDataModel().socialMediaFeeds.twitter">
+          <a href="#twitter-add" data-bind="click: $parent.linkTwitter">
+            <span class="icon twitter">Sync my Twitter</span>
+            <span>Sync my Twitter</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- TODO: (Jim) Get this button working.
+    <aside>
+      <ul>
+        <li>
+          <button>Leave Push</button>
+        </li>
+      </ul>
+    </aside>
+    -->
+
+    <form>
+      <p class="submit"><button type="submit" data-bind="click: $parent.onboardingSaveSettings, text: $root.doneButtonText"></button></p>
+    </form>
+
+    <!-- /ko -->
+
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Avatars / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/pattern.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
+    (function() {
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body class="pattern">
+
+  <h2 class="logotype"><a href="../">CTZN</a></h2>
+  <nav>
+    <ul>
+      <li class="active"><a href="../patterns/">Patterns</a></li>
+      <!--
+      <li><a href="../messages/">Messages</a></li>
+      -->
+      <li><a href="../prototype/">Prototype</a></li>
+    </ul>
+  </nav>
+
+<section>
+  <h1>Avatars</h1>
+
+
+  <section>
+    <h2>Size</h2>
+
+    <figure>
+      <span class="avatar">
+        <span class="size25" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span class=&quot;size25&quot; data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>25 x 25 pixels</figcaption>
+    </figure>
+
+
+    <figure>
+      <span class="avatar">
+        <span class="size30" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span class=&quot;size30&quot; data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>30 x 30 pixels</figcaption>
+    </figure>
+
+
+    <figure>
+      <span class="avatar">
+        <span class="size60" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span class=&quot;size60&quot; data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>60 x 60 pixels</figcaption>
+    </figure>
+
+
+    <figure>
+      <span class="avatar">
+        <span class="size80" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span class=&quot;size80&quot; data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>80 x 80 pixels</figcaption>
+    </figure>
+
+
+    <figure>
+      <span class="avatar">
+        <span class="size130" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span class=&quot;size130&quot; data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>130 x 130 pixels</figcaption>
+    </figure>
+  </section>
+
+
+  <section>
+    <h2>Color</h2>
+
+    <figure>
+      <span class="avatar">
+        <span class="banana" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span class=&quot;banana&quot; data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>banana</figcaption>
+    </figure>
+
+
+    <figure>
+      <span class="avatar">
+        <span class="sky" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span class=&quot;sky&quot; data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>sky</figcaption>
+    </figure>
+
+
+    <figure>
+      <span class="avatar">
+        <span class="tangerine" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span class=&quot;tangerine&quot; data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>tangerine</figcaption>
+    </figure>
+  </section>
+
+
+  <section>
+    <h2>Name</h2>
+    <p>Add a “name” element if the avatar represents content (just like an “alt” attribute for an <code>&lt;img&gt;</code> element).</p>
+
+    <figure>
+      <p>
+        <a href="http://community.good.is/members/agusechague">
+          <span class="avatar">
+            <span class="tangerine size130" data-content="À"></span>
+            <span class="name">Àgus Echagüe</span>
+          </span>
+        </a>
+      </p>
+      <pre><code>&lt;p&gt;
+  &lt;a href=&quot;http://community.good.is/members/agusechague&quot;&gt;
+    &lt;span class=&quot;avatar&quot;&gt;
+      &lt;span class=&quot;tangerine size130&quot; data-content=&quot;&Agrave;&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;<mark>name</mark>&quot;&gt;&Agrave;gus Echag&uuml;e&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+</code></pre>
+      <figcaption>In this example, the member’s avatar is used as a link. By adding a “name” element, the link will make more sense to software like search engines and screen readers.</figcaption>
+    </figure>
+
+    <figure>
+      <p>
+        <a href="http://community.good.is/members/agusechague">
+          <span class="avatar">
+            <span class="tangerine size130" data-content="À"></span>
+          </span><br />
+          Àgus Echagüe
+        </a>
+      </p>
+      <pre><code>&lt;p&gt;
+  &lt;a href=&quot;http://community.good.is/members/agusechague&quot;&gt;
+    &lt;span class=&quot;avatar&quot;&gt;
+      &lt;span class=&quot;tangerine size130&quot; data-content=&quot;&Agrave;&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;&lt;br /&gt;
+    &Agrave;gus Echag&uuml;e
+  &lt;/a&gt;
+&lt;/p&gt;
+</code></pre>
+      <figcaption>In this example, the member’s name is presented next to the avatar, so a “name” element isn’t necessary.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>You can make up new sizes</h2>
+
+    <figure>
+      <span class="avatar">
+        <span style="font-size: 10em; /* targetSize(240px) × ⅔ ÷ fontSize(16px) */" class="banana" data-content="M"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span style=&quot;font-size: 10em; /* targetSize(240px) × ⅔ ÷ fontSize(16px) */&quot; class="banana" data-content=&quot;M&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>240 x 240 pixels</figcaption>
+    </figure>
+
+    <h3>And new colors</h3>
+
+    <figure>
+      <span class="avatar">
+        <span style="background-color: rgb(62, 197, 149);" class="size130" data-content="J"></span>
+      </span>
+      <pre><code>&lt;span class=&quot;avatar&quot;&gt;
+  &lt;span style=&quot;background-color: rgb(62, 197, 149);&quot; class=&quot;size130&quot; data-content=&quot;J&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+      <figcaption>mega man</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Examples</h2>
+
+    <h3>Followers</h3>
+    <ul class="follow-list">
+      <li>
+        <h3>
+          <a href="member.html"><img src="http://images-2.good.is/albums/crop?image_url=http%3A%2F%2Fs3.amazonaws.com%2Fproduction.calumet.good.is%2Fusers%2Favatars%2F001%2F127%2F174%2Foriginal%2FKatie_18_sq.jpg&amp;geometry=130x130%23" alt="" width="80" height="80"> Katie Crepeau</a>
+        </h3>
+        <div class="meta">
+          <p>32 Followers</p>
+        </div>
+        <p class="introduction">architect, blogger, health nut, happiness builder</p>
+
+        <form action="" method="post" class="follow">
+          <p><button type="submit">Follow</button></p>
+        </form>
+      </li>
+      <li>
+        <h3>
+          <a href="member.html">
+            <span class="avatar"><span class="sky size80" data-content="K"></span></span>
+            Katie Crepeau
+          </a>
+        </h3>
+        <div class="meta">
+          <p>32 Followers</p>
+        </div>
+        <p class="introduction">architect, blogger, health nut, happiness builder</p>
+
+        <form action="" method="post" class="follow">
+          <p><button type="submit">Follow</button></p>
+        </form>
+      </li>
+    </ul>
+
+    <h3>Comments</h3>
+    <ul class="comment-list">
+      <li>
+        <article>
+          <h3 class="source has-image">
+            <a href="">
+              <img src="http://images-4.good.is/albums/crop?image_url=http%3A%2F%2Fs3.amazonaws.com%2Fproduction.calumet.good.is%2Fusers%2Favatars%2F002%2F260%2F378%2Foriginal%2F371448_760274872_1396902646_n.jpg&amp;geometry=60x60%23" alt="" width="60" height="60" />
+              Javiera Avendaño
+            </a>
+            <time datetime="2014-01-08T20:47:04Z">
+            About a month ago
+            </time>
+          </h3>
+          <p>
+            Been following your amazing trip on Instagram, it is very inspiring <br />
+            Greetings from Chile
+          </p>
+        </article>
+      </li>
+      <li>
+        <article>
+          <h3 class="source has-image">
+            <a href="">
+              <span class="avatar"><span class="tangerine size60" data-content="J"></span></span>
+              Javiera Avendaño
+            </a>
+            <time datetime="2014-01-08T20:47:04Z">
+            About a month ago
+            </time>
+          </h3>
+          <p>
+            Been following your amazing trip on Instagram, it is very inspiring <br />
+            Greetings from Chile
+          </p>
+        </article>
+      </li>
+    </ul>
+
+    <h3>Activity</h3>
+    <ul class="activity-list">
+      <li>
+        <section class="activity-item" data-slug="how-to-build-sharing-cities" data-title="How to Build Sharing Cities">
+          <p class="source has-image">
+            <a href="member.html">
+              <img src="http:&#47;&#47;images-2.good.is&#47;albums&#47;crop?image_url=http%3A%2F%2Fs3.amazonaws.com%2Fproduction.calumet.good.is%2Fusers%2Favatars%2F002%2F326%2F574%2Foriginal%2F372355_100003471026998_1372991005_n.jpg&amp;geometry=60x60%23" alt="" width="60" height="60" />
+              Sara Horowitz
+            </a>
+            shared a link
+          </p>
+          <p class="time">
+            <time datetime="2014-01-08T14:36:26Z">
+              <abbr title="2 days ago">
+                2 d
+              </abbr>
+            </time>
+          </p>
+          <section class="post link">
+            <h3 class=" has-image">
+              <a href="post-link.html">
+                <span class="image">
+                  <img src="http:&#47;&#47;images-4.good.is&#47;albums&#47;crop?image_url=http%3A%2F%2Fs3.amazonaws.com%2Fproduction.calumet.good.is%2Fbookmarks%2Fphotos%2F000%2F285%2F312%2Foriginal%2FBuildingSharingCities-Homepage.png&amp;geometry=60x60%23" alt="" width="60" height="60" />
+                </span>
+                How to Build Sharing Cities
+              </a>
+              &nbsp; 
+              <small class="source">
+                via 
+                <a href="http://www.freelancersunion.org/blog/2014/01/07/how-build-sharing-cities/" target="_blank">
+                  freelancersunion.org
+                </a>
+              </small>
+            </h3>
+            <div class="meta">
+              <form action="" method="post" class="vote">
+                <p>
+                  <button type="submit" title="7 people think this is good">
+                    7
+                  </button>
+                </p>
+              </form>
+              <p class="comments">
+                <a href="post-link.html#discuss">
+                  <abbr title="5 people commented">
+                    5
+                  </abbr>
+                </a>
+              </p>
+              <section class="tags">
+                <h4>
+                  <span>
+                    Tags
+                  </span>
+                </h4>
+                <ul>
+                  <li>
+                    <a href="/cities">
+                      Cities
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/community">
+                      Community
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/community-building">
+                      Community Building
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </section>
+        </section>
+      </li>
+      <li>
+        <section class="activity-item" data-slug="how-to-build-sharing-cities" data-title="How to Build Sharing Cities">
+          <p class="source has-image">
+            <a href="member.html">
+              <span class="avatar"><span class="banana size60" data-content="S"></span></span>
+              Sara Horowitz
+            </a>
+            shared a link
+          </p>
+          <p class="time">
+            <time datetime="2014-01-08T14:36:26Z">
+              <abbr title="2 days ago">
+                2 d
+              </abbr>
+            </time>
+          </p>
+          <section class="post link">
+            <h3 class=" has-image">
+              <a href="post-link.html">
+                <span class="image">
+                  <img src="http:&#47;&#47;images-4.good.is&#47;albums&#47;crop?image_url=http%3A%2F%2Fs3.amazonaws.com%2Fproduction.calumet.good.is%2Fbookmarks%2Fphotos%2F000%2F285%2F312%2Foriginal%2FBuildingSharingCities-Homepage.png&amp;geometry=60x60%23" alt="" width="60" height="60" />
+                </span>
+                How to Build Sharing Cities
+              </a>
+              &nbsp; 
+              <small class="source">
+                via 
+                <a href="http://www.freelancersunion.org/blog/2014/01/07/how-build-sharing-cities/" target="_blank">
+                  freelancersunion.org
+                </a>
+              </small>
+            </h3>
+            <div class="meta">
+              <form action="" method="post" class="vote">
+                <p>
+                  <button type="submit" title="7 people think this is good">
+                    7
+                  </button>
+                </p>
+              </form>
+              <p class="comments">
+                <a href="post-link.html#discuss">
+                  <abbr title="5 people commented">
+                    5
+                  </abbr>
+                </a>
+              </p>
+              <section class="tags">
+                <h4>
+                  <span>
+                    Tags
+                  </span>
+                </h4>
+                <ul>
+                  <li>
+                    <a href="/cities">
+                      Cities
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/community">
+                      Community
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/community-building">
+                      Community Building
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </section>
+        </section>
+      </li>
+    </ul>
+
+    <h3>Voters &amp; Doers</h3>
+    <p>129 people think this is good</p>
+    <ul>
+      <li><a href="http://community.good.is/members/kirby_steele"><img src="http://images-4.good.is/albums/crop?image_url=http%3A%2F%2Fs3.amazonaws.com%2Fproduction.calumet.good.is%2Fusers%2Favatars%2F002%2F312%2F966%2Foriginal%2F394179_1478921576628_1711800389_n.jpg&amp;geometry=25x25%23" alt="Kirby Culbertson"></a></li>
+      <li><a href="http://community.good.is/members/kirby_steele"><span class="avatar"><span class="sky size25" data-content="K"></span><span class="name">Kirby Culbertson</span></span></a></li>
+    </ul>
+
+  </section>
+
+</body>
+</html>

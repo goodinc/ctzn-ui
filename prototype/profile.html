@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <!-- ko if: !userInfo() -->
+  <section class="loading" role="status">
+    <div><div>
+      <h1><span class="loading-icon"></span> <span class="message">Loading user profile...</span></h1>
+    </div></div>
+  </section>
+  <!-- /ko -->
+
+  <!-- ko if: userInfo() -->
+  <section class="profile page">
+    <header>
+      <!-- ko with: userInfo -->
+      <h1 data-bind="text: user.username"></h1>
+      <!-- /ko -->
+
+      <!-- ko if: $root.isCurrentUser -->
+      <a href="#edit-profile" class="next" data-bind="click: good.onNavClick">
+        <!-- @icon-write -->
+        <svg aria-label="Edit Profile" class="icon" viewBox="0 0 24 24">
+          <g><polygon points="3.538,15.187 16.725,2 22,7.275 8.813,20.462" /></g>
+          <g><polygon points="7.275,22 2,22 2,16.725" /></g>
+          <foreignobject>Edit Profile</foreignobject>
+        </svg>
+      </a>
+      <!-- /ko -->
+
+      <a href="#push" class="back" data-bind="click: function(){ window.history.back() }">
+        Go Back
+      </a>
+    </header>
+
+    <!-- ko with: userInfo -->
+    <div class="image" data-bind="css: good.pushColor(good.currentPush().push.id)">
+      <!-- ko if: !user.profile_image -->
+        <span class="avatar">
+          <span class="size100" data-bind="{ attr: { 'data-content': user.username[0].replace('[', '*') }, css: good.avatarColor(user.id) }"></span>
+        </span>
+      <!-- /ko -->
+      <!-- ko if: user.profile_image -->
+        <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE), alt: user.username + '’s photo' }" height="100" width="100" />
+      <!-- /ko -->
+    </div>
+    <div class="details"><div class="container">
+
+      <h2 data-bind="text: user.full_name ? user.full_name : user.username"></h2>
+
+      <!-- ko if: user.bio -->
+      <p data-bind="text: user.bio"></p>
+      <!-- /ko -->
+
+      <p class="meta">Joined <time data-bind="attr: { datetime: user.created_at }, text: good.timeAgo.inWords(user.created_at)"></time></p>
+
+      <!-- ko if: $data.hasOwnProperty('posts') && posts.length > 0 -->
+      <p class="meta">
+        <span class="icon document">Posts</span>
+        <span data-bind="text: posts.length"></span>
+      </p>
+      <!-- /ko -->
+    </div></div>
+
+    <div class="push-list">
+      <ul data-bind="foreach: $root.userInfo().pushes">
+        <!-- TODO: (Jim) Link to the push (or a preview if the signed in user isn’t a member yet)
+        <li><a href="#push-preview" data-bind="text: name, click: good.onNavClick"></a></li>
+        -->
+        <li data-bind="text: name" class="deprecated"></li>
+      </ul>
+    </div>
+
+    <ul class="image-list" data-bind="foreach: $root.images">
+      <li><img data-bind="attr: { src: sizedS3Image($data, good.S3_POST_SIZE), alt: 'image-' + $index() }" width="100" height="100" /></li>
+    </ul>
+
+    <!-- ko if: $root.loadingError() -->
+    <!-- good-code-map[An example of a “in situ” error message, which we’re using for errors that happen while loading content.] -->
+    <section class="error-message">
+      <h1 role="status" data-bind="text: $root.loadingError()"></h1>
+      <p><button data-bind="click: $root.loadData"><span class="icon refresh">Try again</span></button></p>
+    </section>
+    <!-- /ko -->
+
+    <!-- ko if: !$root.userInfo().pushes && !$root.loadingError() -->
+    <!-- good-code-map[An example of a “in situ” loading message.] -->
+    <section class="loading-message" role="status">
+      <h1><span class="loading-icon"></span> <span class="message">Loading...</span></h1>
+    </section>
+    <!-- /ko -->
+
+    <!-- /ko -->
+  </section>
+  <!-- /ko -->
+
+</body>
+</html>

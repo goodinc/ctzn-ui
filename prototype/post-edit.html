@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="editor page" data-bind="css: transitionOut() ? 'outro' : ''">
+    <a href="#push" data-bind="click: handleBackClicked, visible: !inProgress()">
+      <!-- @icon-close -->
+      <svg aria-label="Go back to the push" class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+        <foreignobject>Go back to the push</foreignobject>
+      </svg>
+    </a>
+
+    <form data-bind="submit: onSubmit, disable: inProgress">
+      <h1>
+        <span class="avatar" data-bind="if: good.currentUser().profile_image">
+          <img data-bind="attr: { src: sizedS3Image(good.currentUser().profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" />
+        </span>
+        <span class="avatar" data-bind="if: !good.currentUser().profile_image">
+          <span class="size30" data-bind="{ attr: { 'data-content': good.currentUser().username.charAt(0).replace('[', '*') }, css: good.avatarColor(good.currentUser().id) }"></span>
+        </span>
+        <span data-bind="text: good.currentUser().username"></span>
+      </h1>
+
+      <p class="text">
+        <label>
+          <span>Write a note…</span><br />
+          <textarea placeholder="Write a note…" data-bind="textInput: noteText"></textarea>
+        </label>
+      </p>
+
+      <!-- ko if: images().length > 0 -->
+      <ol class="images" data-bind="foreach: images">
+        <li>
+          <img data-bind="attr: { src: data_url, alt: filename }" width="30" height="30" />
+
+          <span data-bind="text: filename"></span>
+          <button data-bind="click: function(){ $root.images.remove($data) }, disable: $root.inProgress">
+            <!-- @icon-close -->
+            <svg aria-label="Remove image" class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+              Remove image
+            </svg>
+          </button>
+        </li>
+      </ol>
+      <!-- /ko -->
+
+      <div class="submit">
+        <!-- ko if: allowMoreImages -->
+        <label>
+          <!--
+          inputInstance is a hack to allow me to replace the "input" element with a new element
+          every time files are chosen. This is needed because there is no way to clear the files out of
+          the input. If we don't replace the element, files cannot be selected, removed and then selected again.
+          -->
+          <!-- ko with: inputInstance -->
+          <input
+            type="file"
+            accept="image/*"
+            multiple
+            data-bind="disable: $root.inProgress, event: { change: function() { $root.handleImagesSelected($element) } }"
+            >
+          <!-- /ko -->
+          <span class="icon picture"></span>
+          <span>Add image</span>
+        </label>
+        <!-- /ko -->
+        <button type="submit" data-bind='enable: canSubmit'>Post</button>
+      </div>
+      <!-- ko if: errorMessage -->
+      <p style="color: red; margin-top: 1em;" data-bind='text: errorMessage'></p>
+      <!-- /ko -->
+    </form>
+  </section>
+
+</body>
+</html>

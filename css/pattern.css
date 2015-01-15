@@ -1,0 +1,48 @@
+
+/*-----------------------------------------------
+    Styles for pages in the UI documentation
+  ----------------------------------------------- */
+
+  body.pattern {
+    padding: 1.75em 1.75em 7em;
+    background: rgb(253, 254, 255);
+  }
+  .pattern.index h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  .pattern-list h3 {
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 1.25em;
+    line-height: inherit;
+  }
+  @media (min-width: 40em) {  
+    .pattern-list {
+      text-align: center;
+    }
+    .pattern.index h1 {
+      text-align: center;
+    }
+    .pattern-list section {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 1.75em 1.75em;
+      text-align: left;
+      font-size: 125%;
+    }
+  }
+  .pattern-list ul,
+  .pattern-list li {
+    /* @reset-list-style */
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .pattern-list li a {
+    display: block;
+  }
+  .pattern-list li a:visited {
+    color: rgb(101, 102, 103);
+  }
+
