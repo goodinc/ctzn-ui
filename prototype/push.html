@@ -21,100 +21,71 @@
 </head>
 <body>
 
-  <header id="header" class="primary" data-bind="visible: good.currentScreen().name === 'push'">
-    <h1>
+  <header id="header" class="primary" data-bind="visible: good.currentScreen() === 'push'"><h1>
       <a href="#sync" data-bind="click: onSyncClicked">
-        <svg aria-label="Citizen" class="icon" viewBox="0 0 100 37.818">
-          <path d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
+        <svg aria-label="Citizen" class="icon" viewBox="0 0 100 37.818"><path d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
             c0-2.292,0.362-4.373,1.086-6.243c0.724-1.87,1.739-3.478,3.046-4.825s2.855-2.382,4.644-3.106c1.789-0.724,3.75-1.086,5.881-1.086
             c2.573,0,4.735,0.432,6.484,1.297c1.749,0.864,3.026,1.759,3.83,2.684l-4.765,7.057c-0.523-0.603-1.136-1.096-1.84-1.478
             c-0.704-0.382-1.518-0.573-2.443-0.573c-1.528,0-2.825,0.543-3.89,1.629c-1.066,1.086-1.598,2.634-1.598,4.644
             c0,2.01,0.533,3.569,1.598,4.674c1.066,1.106,2.362,1.659,3.89,1.659c0.925,0,1.739-0.201,2.443-0.603
             c0.704-0.402,1.317-0.905,1.84-1.508l4.765,7.117c-0.804,0.925-2.081,1.819-3.83,2.684c-1.749,0.864-3.91,1.297-6.484,1.297
-            C12.525,37.818,10.565,37.446,8.776,36.702z"/>
-          <path d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
+            C12.525,37.818,10.565,37.446,8.776,36.702z"></path><path d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
             v8.806h-4.584v9.59c0,0.764,0.161,1.367,0.482,1.809s0.784,0.663,1.387,0.663c0.362,0,0.714-0.05,1.056-0.151
             c0.342-0.101,0.573-0.231,0.694-0.392l1.689,7.962c-0.563,0.442-1.397,0.814-2.503,1.116c-1.106,0.302-2.423,0.452-3.951,0.452
-            C35.344,37.818,33.052,37.084,31.604,35.616z"/>
-          <path d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"/>
-          <path d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
+            C35.344,37.818,33.052,37.084,31.604,35.616z"></path><path d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"></path><path d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
             s-1.759,0.282-2.383,0.844c-0.623,0.563-1.116,1.126-1.478,1.689v18.336H72.798V7.962h10.133v3.378
             c0.724-1.005,1.86-1.94,3.408-2.805c1.548-0.865,3.327-1.297,5.338-1.297c2.935,0,5.056,0.774,6.363,2.322
-            c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"/>
-          <foreignobject>Citizen</foreignobject>
-        </svg>
-      </a>
+            c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"></path><foreignObject>Citizen</foreignObject></svg></a>
 
       <span class="icon loading" data-bind="css: showNetworkIndicator() ? 'active' : ''"></span>
     </h1>
 
     <a href="#notifications" class="notifications" data-bind="click: good.onNavClick, css: unreadNotifications().length > 0? 'active' : ''">
-      <!-- @icon-bell -->
-      <svg aria-label="Notifications" class="icon" viewBox="0 0 24 24">
-        <path d="M17.497,10.444c0-3.93-1.976-5.69-3.572-6.47C13.916,2.882,13.03,2,11.937,2
+      
+      <svg aria-label="Notifications" class="icon" viewBox="0 0 24 24"><path d="M17.497,10.444c0-3.93-1.976-5.69-3.572-6.47C13.916,2.882,13.03,2,11.937,2
         c-1.099,0-1.989,0.89-1.989,1.989c0,0.016,0.002,0.032,0.003,0.048c-1.572,0.81-3.447,2.577-3.447,6.407
-        c0,0,0.447,5.82-3.012,5.736v1.726h8.446h0.126h8.447V16.18C17.05,16.264,17.497,10.444,17.497,10.444z"/>
-        <path d="M8.77,18.919C8.885,20.64,10.313,22,12.063,22s3.178-1.361,3.292-3.082H8.77z"/>
-        <foreignobject>Notifications</foreignobject>
-      </svg>
-    </a>
+        c0,0,0.447,5.82-3.012,5.736v1.726h8.446h0.126h8.447V16.18C17.05,16.264,17.497,10.444,17.497,10.444z"></path><path d="M8.77,18.919C8.885,20.64,10.313,22,12.063,22s3.178-1.361,3.292-3.082H8.77z"></path><foreignObject>Notifications</foreignObject></svg></a>
 
     <a href="#profile" class="profile" data-bind="click: handleMyProfileClicked">
       <span class="avatar" data-bind="if: good.currentUser().profile_image">
-        <img data-bind="attr: { src: sizedS3Image(good.currentUser().profile_image, good.S3_AVATAR_SIZE), alt: good.currentUser().username }" height="30" width="30" />
-      </span>
-      <span class="avatar" data-bind="if: !good.currentUser().profile_image">
-        <span class="size30" data-bind="{ attr: { 'data-content': good.currentUser().username.charAt(0).replace('[', '*') }, css: good.avatarColor(good.currentUser().id) }"></span>
-        <span class="name" data-bind="text: good.currentUser().username"></span>
-      </span>
+        <img data-bind="attr: { src: sizedS3Image(good.currentUser().profile_image, good.S3_AVATAR_SIZE), alt: good.currentUser().username }" height="30" width="30" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100" alt="jim"></span>
+      <span class="avatar" data-bind="if: !good.currentUser().profile_image"></span>
     </a>
   </header>
 
-  <section class="push" data-bind="visible: good.currentScreen().name === 'push'">
-    <!-- ko with: good.currentPush -->
-    <header data-bind="css: good.pushColor(push.id)">
-      <p class="new-posts">
-        <!--button hidden?="{{!newPostsAvailable || newCodeAvailable}}" on-click="{{showNewPosts}}">
-          <span class="icon cached"></span>
-          New Posts
-        </button-->
+  <section class="push" data-bind="visible: good.currentScreen() === 'push'">
+  <!-- ko with: good.currentPush -->
+  <header data-bind="css: good.pushColor(push.id)" class="orange"><p class="new-posts">
+        
 
-        <!-- ko if: good.appCacheStatus() == 'UPDATE_AVAILABLE' -->
-        <button data-bind='click: $root.reloadCode'>
-          <span class="icon cached"></span>
-          Update
-        </button>
-        <!-- /ko -->
+        <!-- ko if: good.appCacheStatus() == 'UPDATE_AVAILABLE' --><!-- /ko -->
       </p>
 
       <div class="details">
-        <h1 data-bind="text: push.name"></h1>
-        <h2 data-bind="text: push.body"></h2>
-        <!-- ko if: push.site && push.display_site -->
-        <p class="website"><a data-bind="attr: { href: push.site }, text: push.display_site"></a></p>
-        <!-- /ko -->
+        <h1 data-bind="text: push.name">Project Citizen</h1>
+        <h2 data-bind="text: push.body">Helping social creatives celebrate the work they do</h2>
+        <!-- ko if: push.site && push.display_site --><!-- /ko -->
 
         <div class="meta">
 
           <!-- ko if: posts.length > 0 -->
           <p>
-            <span class="count" data-bind='text: posts.length'></span>
-            <span class="label">Posts</span>
+            <span class="count" data-bind="text: posts.length">328</span>
+            <span class="label">Moments</span>
           </p>
           <!-- /ko -->
 
           <p>
             <a href="#members" data-bind="click: $root.onShowUserList">
-              <span class="count" data-bind="text: participants.length"></span>
-              <span class="label">People</span>
+              <span class="count" data-bind="text: participants.length">36</span>
+              <span class="label">Members</span>
             </a>
           </p>
 
           <p class="hashtags">
             <a href="#settings" data-bind="click: good.onNavClick">
-              <!-- @icon-settings -->
-              <svg aria-label="My Settings" class="icon" viewBox="0 0 24 24">
-                <path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
+              
+              <svg aria-label="My Settings" class="icon" viewBox="0 0 24 24"><path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
                   l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
                   c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
                   L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
@@ -122,18 +93,12 @@
                   c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
                   h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
                   c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
-                  c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"/>
-                <foreignobject>My Settings</foreignobject>
-              </svg>
-            </a>
+                  c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"></path><foreignObject>My Settings</foreignObject></svg></a>
           </p>
         </div>
       </div>
-    </header>
-    <!-- /ko -->
-
-    <ul class="create">
-      <li>
+    </header><!-- /ko --><ul class="create">
+<li>
         <a href="#switch" data-bind="click: good.onNavClick">
           <span class="icon switch"></span>
           Switch Push
@@ -158,157 +123,1411 @@
         </a>
       </li>
     </ul>
-
-    <!-- ko if: good.uploadQueue().state() == 'PROCESSING_ITEM' -->
-    <section class="upload-message" role="status">
-      <h1>
-        <!-- @placeholder-image -->
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
-        Sending
-        <span class="icon loading"></span>
-      </h1>
-    </section>
-    <!-- /ko -->
-
-    <!-- ko with: good.uploadQueue().lastError()  -->
-    <section class="upload-message error" role="status">
-      <h1>
-        <!-- @placeholder-image -->
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
-        <span data-bind='text: error'></span>
-      </h1>
-      <ul>
-        <!-- ko ifnot: error.permanentFailure -->
-        <li>
-          <button data-bind='click: function(){ good.uploadQueue().attemptProcessing() }'>
-            <!-- @icon-refresh -->
-            <svg aria-label="Try again" class="icon" viewBox="0 0 24 24">
-              <path d="M21.768,11.583l-2.9,2.901c-0.149,0.149-0.351,0.232-0.561,0.232s-0.41-0.083-0.561-0.232l-2.898-2.901
-                c-0.309-0.309-0.309-0.811,0-1.122c0.309-0.309,0.811-0.309,1.122,0l1.544,1.546V12c0-3.84-3.122-6.963-6.963-6.963
-                S3.586,8.16,3.586,12s3.124,6.963,6.965,6.963c1.86,0,3.608-0.724,4.925-2.038c0.309-0.309,0.811-0.309,1.12,0
-                c0.309,0.309,0.309,0.811,0,1.12c-1.614,1.616-3.761,2.504-6.045,2.504C5.836,20.549,2,16.714,2,12s3.836-8.549,8.551-8.549
-                S19.099,7.285,19.099,12v0.008l1.546-1.546c0.309-0.309,0.811-0.309,1.122,0C22.077,10.773,22.077,11.274,21.768,11.583z"/>
-              <foreignobject>Try again</foreignobject>
-            </svg>
-          </button>
-        </li>
-        <!-- /ko -->
-        <li>
-          <button data-bind='click: function(){ $root.removeUploadQueueError($data) }'>
-            <!-- @icon-close -->
-            <svg aria-label="Cancel" class="icon" viewBox="0 0 24 24">
-              <polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
-              <foreignobject>Cancel</foreignobject>
-            </svg>
-          </button>
-        </li>
-      </ul>
-    </section>
-    <!-- /ko -->
-
-    <!-- ko if: showEmptyPushMessage -->
-    <section class="empty-message">
-      <h1>Start Pushing!</h1>
-      <ul class="action">
-        <li><a href="#settings" data-bind="click: good.onNavClick">Connect social accounts</a></li>
-        <li><a href="#edit-post" data-bind="click: onNewPost">Create a new post</a></li>
-      </ul>
-    </section>
-    <!-- /ko -->
-
-    <ol class="post-list">
-      <!-- ko if: showPrevButton -->
-      <li class="previous">
+<!-- ko if: good.uploadQueue().state() == 'PROCESSING_ITEM' --><!-- /ko --><!-- ko with: good.uploadQueue().lastError()  --><!-- /ko --><!-- ko if: showEmptyPushMessage --><!-- /ko --><ol class="post-list">
+<!-- ko if: showPrevButton --><li class="previous">
         <a href="#previous" data-bind="click: onPreviousPage">
-          <!-- @icon-expand-less -->
-          <svg aria-label="Previous Page" class="icon" viewBox="0 0 24 24"><polygon points="12,8 6,14 7.4,15.4 12,10.8 16.6,15.4 18,14 "></polygon>
-            <foreignobject>Previous Page</foreignobject>
-          </svg>
-        </a>
+          
+          <svg aria-label="Previous Page" class="icon" viewBox="0 0 24 24"><polygon points="12,8 6,14 7.4,15.4 12,10.8 16.6,15.4 18,14 "></polygon><foreignObject>Previous Page</foreignObject></svg></a>
       </li>
       <!-- /ko -->
 
       <!-- ko foreach: visiblePosts -->
-      <li data-bind="attr: { id: 'post-' + id }">
-        <article>
-          <header>
-            <h3>
+      <li data-bind="attr: { id: 'post-' + id }" id="post-765">
+        <article><header><h3>
               <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" />
-                </span>
+                <span class="avatar" data-bind="if: user.profile_image"></span>
                 <span class="avatar" data-bind="if: !user.profile_image">
-                  <span class="size30" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }"></span>
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
                 </span>
-                <span data-bind="text: user.username"></span>
+                <span data-bind="text: user.username">jelena</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"><span class="icon" data-bind="css: source">via <span data-bind="text: source"></span></span></p>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
             <p>
               <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
-                <time data-bind="attr: { datetime: created_at }">
-                  <abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)"></abbr>
-                </time>
-              </a>
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:18:12+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
             </p>
-          </header>
+          </header><div class="video"></div>
 
-          <div class="video"></div>
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" alt="859740640865532394_1451549205">
+@workandprogress meeting Brandon of @broccolicity at #CTZN #CTZNmixer</p></div>
 
-          <div class="body" data-bind="html: good.postBodyToHtml(body)"></div>
-
-          <footer>
-            <p>
-              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }">
-                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><!-- @icon-heart -->
-                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
                     C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
                     C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-                  <foreignobject>I like this</foreignobject>
-                </svg>
-                <span class="count" data-bind="if: attaboys().length > 0">
-                  <span data-bind="text: attaboys().length"></span>
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
                 </span>
               </button>
             </p>
             <p>
               <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
-                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><!-- @icon-add -->
-                  <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
         l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
         s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
         c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
-        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
-                  <foreignobject>Add Comment</foreignobject>
-                </svg>
-                <span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
               </a>
             </p>
-            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentUser().id === good.currentPush().push.owner_id, click: $root.onShowOptions">
-              <!-- @icon-more-horiz -->
-              <svg aria-label="Options" class="icon" viewBox="0 0 24 24">
-                <path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path>
-                <foreignobject>Options</foreignobject>
-              </svg>
-            </a>
-          </footer>
-        </article>
-      </li>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-766">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:17:15+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/5a3f33b1a41dd91832077aef9e246b41ca4ff1b4=c500x500" alt="859740159451707839_1451549205">
+Can't get enough of these crowd shots! #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">4</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-767">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:16:38+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/824ecdba72ed238ea4211a1ad362d8f2932d7b7d=c500x500" alt="859739849203310777_215183">
+Head of #ctzn speaking, aka The Mister. #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">2</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-761">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:13:43+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/260cfa866273f3207ff8689419bec20d069124fd=c500x500" alt="859738380467101734_215183"></p>
+
+<p>#ctzn #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">3</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-760">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="l"></span>
+                </span>
+                <span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:12:03+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/8b356b1f2fd22eff15e98661e249a0cf5acee25b=c500x500" alt="859737544737257646_14462141">
+hanging out with the changemakers @ #ctzn</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">2</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-759">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:10:09+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/c779836e94329ea6d6fd1a34f41daa82642fac10=c500x500" alt="859736587607586998_1451549205">
+Crowd hearing about #CTZN app for the first time at #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-758">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:09:21+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/813a667e406d2dbf8658c5e4f8cbcecb55e38f1d=c500x500" alt="859736185885538457_1451549205">
+@cogggram addressing the #CTZN #CTZNmixer crowd opening with "you can do good and still get laid." </p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0"></span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-757">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:47:50+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/479997fcccf69067c26df92712e79f913ec18080=c500x500" alt="859725354120624497_1451549205">
+From above! #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0"></span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-756">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:41:52+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/f90e453a2edb97165eb32b9bcbeb87f97beeebb0=c500x500" alt="859722351435167839_1451549205">
+Crowd hanging and enjoying the vegan gourmet food at #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">3</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-755">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 bluebird" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="n"></span>
+                </span>
+                <span data-bind="text: user.username">notcot</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:36:58+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/008cb6df070fda20e2ab4b4b2adf1cc187778601=c500x500" alt="859719887706124944_187896019">
+:)</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-754">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 bluebird" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="n"></span>
+                </span>
+                <span data-bind="text: user.username">notcot</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:32:22+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=c500x500" alt="859717566251135412_187896019">
+What does this mean to you? I thought it was a spy dead drop @nounproject</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-753">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:27:52+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/1490e73ee767b92b76a5431e0385b308105f317c=c500x500" alt="859715301942606311_1451549205">
+DJ Mixwell spinning at #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">2</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-752">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="l"></span>
+                </span>
+                <span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:17:55+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/b33f166ec5577df52c5e4cfda33e4ff930aea7fa=c500x500" alt="859710300098755247_14462141"></p>
+
+<p>#ctzn</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">3</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-750">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:12:26+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/a355437d0014214a7204d95564db391e11d2a85a=c500x500" alt="859707537824529205_1451549205">
+Deep in conversation. #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-751">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 bluebird" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="n"></span>
+                </span>
+                <span data-bind="text: user.username">notcot</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:11:48+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/9d96fb010bdf621973cb7e43f613ac4c9dd4dc8e=c500x500" alt="859707218659897874_187896019"></p>
+
+<p>#CTZN #ctznmixer goodies</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">2</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-749">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T01:02:43+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/3adac066bd531a1665818d6e1f057c03ffc4681f=c500x500" alt="859702644388772277_1451549205">
+Come on in! #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-748">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:52:28+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/088c3da3e9bc4ebcb24e9e1cff3bb6f49b21008c=c500x500" alt="859697484094618558_1451549205">
+Sun sets over #CTZNmixer. Get here! 1617 Broadway in Santa Monica.</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">2</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-746">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="l"></span>
+                </span>
+                <span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:50:47+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/2491b744224ed5ebd9d6a7ef1fd77e3d08c06356=c500x500" alt="859696639334513149_14462141">
+Enroute to the mixer #ctzn</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">3</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-747">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:49:39+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/c0e9144576741473bfea6a3c77faf08b28ec2666=c500x500" alt="859696067791479072_215183"></p>
+
+<p>#ctzn #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-745">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:40:13+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" alt="859691325795263273_215183"></p>
+
+<p>#ctzn #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">3</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-743">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:38:10+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/875777e269beaffa542f1253ca93df909fb7bde4=c500x500" alt="859690292083876570_215183"></p>
+
+<p>#ctzn #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-744">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 bluebird" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="n"></span>
+                </span>
+                <span data-bind="text: user.username">notcot</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:35:42+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/f73e20bdb19689e365f39cda909be3b81d8fdaac=c500x500" alt="859689046946870135_187896019">
+Loving the @nounproject #CTZN #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-741">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:32:17+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/2fff0d4f86055ec8d5ce5b432a8123605d70685b=c500x500" alt="859687332071268835_215183"></p>
+
+<p>#ctzn #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-740">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:27:10+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/3b51bf8154d794a226c87e4ee8e69ab258349317=c500x500" alt="859684757078991085_215183"></p>
+
+<p>#ctzn #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-739">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T00:16:43+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/e584d08f72e0acef49a95335f087c0087669df56=c500x500" alt="859679492749320958_215183"></p>
+
+<p>#ctzn #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-738">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-22T23:57:33+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/b7db941b23975c6f6da12596c4693238693bc574=c500x500" alt="859669843685860201_215183"></p>
+
+<p>#ctzn event at General Assembly at Innovative Artists. #santamonica</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-737">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-22T23:53:02+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/d467019fcdb81748b658af11076b3ee85bf45902=c500x500" alt="859667573015503484_215183"></p>
+
+<p>#ctzn</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-734">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-22T00:54:21+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/3a40d357bedac416cc04712da1744e6e1c19ad41=c500x500" alt="858973661980376041_1451549205">
+Are you joining us tomorrow? #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">5</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-733">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-21T22:08:50+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/7e3921ec622aad539e8e0be19c98c96efa9dc0a2=c500x500" alt="858890351786703424_1451549205">
+Sneak peek... #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-731">
+        <article><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-21T19:49:38+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/4543b955ebd73c1a1817d8cb6f70a3d9065f2f69=c500x500" alt="858820294545095588_1451549205">
+Important. #CTZN</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">2</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
       <!-- /ko -->
 
       <!-- ko if: $root.showNextButton -->
       <li class="next">
         <a href="#next" data-bind="click: onNextPage">
-          <!-- @icon-expand-more -->
-          <svg aria-label="Next Page" class="icon" viewBox="0 0 24 24"><polygon points="16.6,8.6 12,13.2 7.4,8.6 6,10 12,16 18,10 "></polygon>
-            <foreignobject>Next Page</foreignobject>
-          </svg>
-        </a>
+          
+          <svg aria-label="Next Page" class="icon" viewBox="0 0 24 24"><polygon points="16.6,8.6 12,13.2 7.4,8.6 6,10 12,16 18,10 "></polygon><foreignObject>Next Page</foreignObject></svg></a>
       </li>
       <!-- /ko -->
-    </ol>
-  </section>
+    </ol></section>
 
 </body>
 </html>

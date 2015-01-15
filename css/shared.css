@@ -1888,10 +1888,18 @@
             animation: slide-down 0.3s both;
   }
 
+
+  /* SHIM: This can be removed once the image gallery has been removed from the profile screen. */
   section.profile.page {
     background: black;
     color: white;
   }
+  section.profile.page .post-list {
+    background: white;
+    color: black;
+  }
+
+
   .page > div,
   .page > form,
   .page > aside {
