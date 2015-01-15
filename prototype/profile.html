@@ -21,97 +21,180 @@
 </head>
 <body>
 
-  <!-- ko if: !userInfo() -->
-  <section class="loading" role="status">
-    <div><div>
-      <h1><span class="loading-icon"></span> <span class="message">Loading user profile...</span></h1>
-    </div></div>
-  </section>
-  <!-- /ko -->
-
-  <!-- ko if: userInfo() -->
-  <section class="profile page">
-    <header>
-      <!-- ko with: userInfo -->
-      <h1 data-bind="text: user.username"></h1>
-      <!-- /ko -->
-
-      <!-- ko if: $root.isCurrentUser -->
-      <a href="#edit-profile" class="next" data-bind="click: good.onNavClick">
-        <!-- @icon-write -->
-        <svg aria-label="Edit Profile" class="icon" viewBox="0 0 24 24">
-          <g><polygon points="3.538,15.187 16.725,2 22,7.275 8.813,20.462" /></g>
-          <g><polygon points="7.275,22 2,22 2,16.725" /></g>
-          <foreignobject>Edit Profile</foreignobject>
-        </svg>
-      </a>
-      <!-- /ko -->
-
-      <a href="#push" class="back" data-bind="click: function(){ window.history.back() }">
+<section class="profile page">
+  <header>
+    <h1>jelena</h1>
+      <a href="#push" class="back">
         Go Back
       </a>
     </header>
-
-    <!-- ko with: userInfo -->
-    <div class="image" data-bind="css: good.pushColor(good.currentPush().push.id)">
-      <!-- ko if: !user.profile_image -->
-        <span class="avatar">
-          <span class="size100" data-bind="{ attr: { 'data-content': user.username[0].replace('[', '*') }, css: good.avatarColor(user.id) }"></span>
-        </span>
-      <!-- /ko -->
-      <!-- ko if: user.profile_image -->
-        <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE), alt: user.username + '’s photo' }" height="100" width="100" />
-      <!-- /ko -->
+    <div class="image orange">
+      <span class="avatar">
+        <span class="size100 grape" data-content="j"></span>
+      </span>
     </div>
     <div class="details"><div class="container">
 
-      <h2 data-bind="text: user.full_name ? user.full_name : user.username"></h2>
+      <h2>Jelena Woehr</h2>
 
-      <!-- ko if: user.bio -->
-      <p data-bind="text: user.bio"></p>
-      <!-- /ko -->
+      <p class="meta">Joined <time datetime="2014-09-30T19:19:50.000+00:00">15 weeks ago</time></p>
 
-      <p class="meta">Joined <time data-bind="attr: { datetime: user.created_at }, text: good.timeAgo.inWords(user.created_at)"></time></p>
-
-      <!-- ko if: $data.hasOwnProperty('posts') && posts.length > 0 -->
       <p class="meta">
         <span class="icon document">Posts</span>
-        <span data-bind="text: posts.length"></span>
+        <span>103</span>
       </p>
-      <!-- /ko -->
     </div></div>
 
     <div class="push-list">
       <ul data-bind="foreach: $root.userInfo().pushes">
-        <!-- TODO: (Jim) Link to the push (or a preview if the signed in user isn’t a member yet)
-        <li><a href="#push-preview" data-bind="text: name, click: good.onNavClick"></a></li>
-        -->
-        <li data-bind="text: name" class="deprecated"></li>
+        <li data-bind="text: name" class="deprecated">Project Citizen</li>
+
+        <li data-bind="text: name" class="deprecated">826LA Volunteers</li>
+
+        <li data-bind="text: name" class="deprecated">Rootdown LA</li>
+
+        <li data-bind="text: name" class="deprecated">G.R.E.E.D.Y. City</li>
       </ul>
     </div>
 
     <ul class="image-list" data-bind="foreach: $root.images">
-      <li><img data-bind="attr: { src: sizedS3Image($data, good.S3_POST_SIZE), alt: 'image-' + $index() }" width="100" height="100" /></li>
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c500x500" alt="image-0"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/19c61c97aa9543f759f9adc44641b7fa45618e31=c500x500" alt="image-1"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/3c1cf5a2d8847591cd9ca7accb2bcb65d891980e=c500x500" alt="image-2"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/d186195dc2283a33e43be61ee34da55a37a37c8d=c500x500" alt="image-3"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/47ef0e222f55c7f998a6dd562f4fa0fc6216eb3b=c500x500" alt="image-4"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/a19afe0227edda359af3c4922a374f664eab2b3f=c500x500" alt="image-5"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/1624aba62a7be73db28b760b636f9ca27ff7bbbc=c500x500" alt="image-6"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/f0ebcbf829adb777fd7a3ab6ad473361ffa48575=c500x500" alt="image-7"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/d595d7242292fd1ced4533e70d42b232bd98ce8a=c500x500" alt="image-8"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=c500x500" alt="image-9"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/8ecb5abdad49cc9c4a954ab98302e5a5c3a44dd6=c500x500" alt="image-10"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/9a339d74c1f5bf8dc9f70eb5a052acce52985473=c500x500" alt="image-11"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" alt="image-12"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/5a3f33b1a41dd91832077aef9e246b41ca4ff1b4=c500x500" alt="image-13"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/c779836e94329ea6d6fd1a34f41daa82642fac10=c500x500" alt="image-14"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/813a667e406d2dbf8658c5e4f8cbcecb55e38f1d=c500x500" alt="image-15"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/479997fcccf69067c26df92712e79f913ec18080=c500x500" alt="image-16"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/f90e453a2edb97165eb32b9bcbeb87f97beeebb0=c500x500" alt="image-17"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/1490e73ee767b92b76a5431e0385b308105f317c=c500x500" alt="image-18"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/a355437d0014214a7204d95564db391e11d2a85a=c500x500" alt="image-19"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/3adac066bd531a1665818d6e1f057c03ffc4681f=c500x500" alt="image-20"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/088c3da3e9bc4ebcb24e9e1cff3bb6f49b21008c=c500x500" alt="image-21"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/3a40d357bedac416cc04712da1744e6e1c19ad41=c500x500" alt="image-22"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/7e3921ec622aad539e8e0be19c98c96efa9dc0a2=c500x500" alt="image-23"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/4543b955ebd73c1a1817d8cb6f70a3d9065f2f69=c500x500" alt="image-24"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/87eb69e43b8ddea6e7c6b1b490b0ed016b20d5ce=c500x500" alt="image-25"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/7c97cf0ab49cb14aa27a7b3672c4b14611e4fdbe=c500x500" alt="image-26"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/8b6c162da11bd082b8d82d2ca5ff84ced52a34b3=c500x500" alt="image-27"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/87b00c8e6fd49bcff01dfce16bda5b6f13e8a668=c500x500" alt="image-28"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/09ee43f3546d5364b3533da09e3eb2a2452fa5be=c500x500" alt="image-29"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/bf3f2a1fa2ad06133f2426f5e3b53c14c9c76c64=c500x500" alt="image-30"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/ad302c90973b49cb89fdb28c7eb787afc02b171c=c500x500" alt="image-31"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/2e3bc08ed2a4182a79251a9200a3ebe22edf4a9f=c500x500" alt="image-32"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c500x500" alt="image-33"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/370b16aeac2078ae53e8bf1a5e2ab401d70de810=c500x500" alt="image-34"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/09ea4f7dfbebb798fa9fd66c789ff81aa1a69305=c500x500" alt="image-35"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/8b4c578a4a8787e165b34afd872d6f0ea8dca648=c500x500" alt="image-36"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/f38a4987170e738664414ae88d13bd9f03f7f652=c500x500" alt="image-37"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/42cb0522f76d5479a35f2708e3a33a2e8a2db00b=c500x500" alt="image-38"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/53f3cea36051bf2966d5eee8b0cda3a2e90d2845=c500x500" alt="image-39"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/99527aff06b1584d9d7b40187beda993bcfa21f1=c500x500" alt="image-40"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/d7aa39845737769b7e3c9cfcfd4b45412511ffc5=c500x500" alt="image-41"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/9c46ed3daa97a6ff3f1fa5624acb2bd0fc16eb14=c500x500" alt="image-42"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/71835682a92725c2a13d83d6b24dcacba83614a0=c500x500" alt="image-43"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/d6f500e75957708c103954f8d7c915e05f56b2d2=c500x500" alt="image-44"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/f430b8995a18b042c1963c132c17ad4218276de4=c500x500" alt="image-45"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/3821cdbc291288cbccd99fe4b3ce7a70f5149ba1=c500x500" alt="image-46"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/8bbfcde5323db390d3b9930593ef54a5ba3b41b2=c500x500" alt="image-47"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/c862361c852d279c2f39b39702f32049d797b53a=c500x500" alt="image-48"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/31310cc1bfb87c193d6cc61e08c90a526209a12b=c500x500" alt="image-49"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/193b81725c95f62d10d400aad40d6abfc5bbd0cf=c500x500" alt="image-50"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/81b5f3f3fb4bc97f12cd2bcc1e6b806abcc89630=c500x500" alt="image-51"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/e59c13bf0a20758767592f73368237daa4ed5818=c500x500" alt="image-52"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/146cb07fc35f5e963e3444fffe02dda533e139f4=c500x500" alt="image-53"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/6d92038f0ecbe984181e4fc83553e2e3f55f22da=c500x500" alt="image-54"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/881eabdbb1d9a9dbbb1c1a78f95ad985fb4ee0b7=c500x500" alt="image-55"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/0604e48124f5307806d521d7512cf1905189dbb4=c500x500" alt="image-56"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/57fda2afb795ca607f4c7f055bee1dd8718478b4=c500x500" alt="image-57"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/522f7dbcb668610f886a5507dae1a45e2d2b6e90=c500x500" alt="image-58"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/33fe1ad7b714f053783110f0de33c23d10af2435=c500x500" alt="image-59"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/f7ab330bdf1bc754649ff2b6b32dd62dd19fad0b=c500x500" alt="image-60"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/afc412d51473da2dba2eacf9e14a2d2f80aadfa0=c500x500" alt="image-61"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/6a75a691292145346a4df6a16a4c6e6f7777c93d=c500x500" alt="image-62"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/7d589882593a718129263f561d284b06d412a166=c500x500" alt="image-63"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/bc0d94308fa3673bc1a780e44663e2272d49a83b=c500x500" alt="image-64"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/156b4c1d54c3d922ddf6ada5afabe487dc04b10b=c500x500" alt="image-65"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/5f3aac8fb35e4f1b3e70c41a9e30c52c231ae135=c500x500" alt="image-66"></li>
+          
+      <li><img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/847b63d62912410bf582d50228b7a4cc6d76b66a=c500x500" alt="image-67"></li>
     </ul>
-
-    <!-- ko if: $root.loadingError() -->
-    <!-- good-code-map[An example of a “in situ” error message, which we’re using for errors that happen while loading content.] -->
-    <section class="error-message">
-      <h1 role="status" data-bind="text: $root.loadingError()"></h1>
-      <p><button data-bind="click: $root.loadData"><span class="icon refresh">Try again</span></button></p>
-    </section>
-    <!-- /ko -->
-
-    <!-- ko if: !$root.userInfo().pushes && !$root.loadingError() -->
-    <!-- good-code-map[An example of a “in situ” loading message.] -->
-    <section class="loading-message" role="status">
-      <h1><span class="loading-icon"></span> <span class="message">Loading...</span></h1>
-    </section>
-    <!-- /ko -->
-
-    <!-- /ko -->
   </section>
-  <!-- /ko -->
 
 </body>
 </html>
