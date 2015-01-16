@@ -403,6 +403,59 @@
   }
 
 
+  /* =Push Avatars
+  ----------------------------------------------- */
+  .avatar .lime {
+    background-color: rgb(203, 253, 128); /* @lime */
+    color: black;
+  }
+  .avatar .cucumber {
+    background-color: rgb(150, 254, 166); /* @cucumber */
+    color: black;
+  }
+  .avatar .blueberry {
+    background-color: rgb(99, 204, 203); /* @blueberry */
+    color: white;
+  }
+  .avatar .boysenberry {
+    background-color: rgb(101, 156, 247); /* @boysenberry */
+    color: white;
+  }
+  .avatar .plumb {
+    background-color: rgb(193, 77, 166); /* @plumb */
+    color: white;
+  }
+  .avatar .strawberry {
+    background-color: rgb(255, 49, 102); /* @strawberry */
+    color: white;
+  }
+  .avatar .apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+    color: white;
+  }
+  .avatar .tangerine {
+    background-color: rgb(255, 202, 72); /* @tangerine */
+    color: white;
+  }
+  .avatar .orange {
+    background-color: rgb(242, 64, 41); /* @orange */
+    color: white;
+  }
+
+  /* OPTIONAL: Give push avatars square shape */
+  .avatar .lime,
+  .avatar .cucumber,
+  .avatar .blueberry,
+  .avatar .boysenberry,
+  .avatar .plumb,
+  .avatar .strawberry,
+  .avatar .apple,
+  .avatar .tangerine,
+  .avatar .orange {
+    border-radius: 0;
+  }
+
+
   /* =Icons (SVG)
   ----------------------------------------------- */
   svg.icon {
@@ -955,7 +1008,6 @@
   }
   .login.page .note a {
     text-transform: lowercase;
-    font-weight: bold;
     text-decoration: none;
   }
 
@@ -975,6 +1027,7 @@
   }
   section.profile > .container {
     max-width: none;
+    padding-bottom: 0;
   }
   section.profile > .image {
     background: rgb(203, 253, 128); /* @lime */
@@ -989,8 +1042,8 @@
   }
   section.profile h2 {
     font-weight: 900;
-    font-size: 1.75em;
-    line-height: 1.25;
+    font-size: 1.875em;
+    line-height: 1.2;
   }
   section.profile .details,
   section.profile .push-list {
@@ -1003,7 +1056,7 @@
   section.profile .push-list {
     max-width: none;
     padding: 0.75em 0.75em 0.375em 0.75em;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgb(222, 222, 222);
   }
   section.profile .container .push-list {
     margin: 0 -1.25em -1.25em -1.25em;
@@ -1054,8 +1107,8 @@
     background: rgb(242, 64, 41); /* @orange */
   }
 
-  .push-list ul,
-  .push-list li {
+  section.profile .push-list ul,
+  section.profile .push-list li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
@@ -1078,9 +1131,6 @@
     opacity: 0.75;
     margin: 0;
   }
-  section.profile .meta {
-    border-bottom: 0.1em solid rgba(255, 255, 255, 0.25);
-  }
 
   .push-card h3 {
     margin-top: 0;
@@ -1091,8 +1141,8 @@
     margin-bottom: 0;
   }
   .push-card .hashtag,
-  .push-list li.deprecated,
-  .push-list li a {
+  section.profile .push-list li.deprecated,
+  section.profile .push-list li a {
     display: inline-block;
     background: white;
     color: black;
@@ -1102,17 +1152,17 @@
     font-weight: bold;
     border-radius: 0.15em;
   }
-  .push-list li {
+  section.profile .push-list li {
     margin-right: 0.25em;
     margin-bottom: 0.375em;
     display: inline-block;
   }
-  .push-list li a {
+  section.profile .push-list li a {
     display: block;
     text-decoration: none;
   }
-  .push-list li a:active,
-  .push-list li a:focus {
+  section.profile .push-list li a:active,
+  section.profile .push-list li a:focus {
     background-color: rgb(204, 204, 204); /* @aluminum */
   }
   .profile .image-list {
@@ -3070,6 +3120,15 @@
   .push-card.page .action {
     margin-top: 3em;
   }
+  @media (min-height: 500px) {
+    .push-card.page .details {
+      margin-top: 3em;
+    }
+    .push-card.page .submit,
+    .push-card.page .action {
+      margin-top: 6em;
+    }
+  }
   .push-card.page .submit button,
   .push-card.page .action a {
     background: black;
@@ -3730,69 +3789,70 @@
     background-color: rgb(242, 64, 41); /* @orange */
   }
 
-  /* =JIM!   Put these wherever you want and modify as you'd like!
+
+  /* =Image Upload Preview
   ----------------------------------------------- */
 
   .img-preview-rotate-90 {
     -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
+       -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+         -o-transform: rotate(90deg);
+            transform: rotate(90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   }
 
   .img-preview-rotate-180 {
     -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   }
 
   .img-preview-rotate-270 {
     -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    transform: rotate(270deg);
+       -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+         -o-transform: rotate(270deg);
+            transform: rotate(270deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   }
 
   .img-preview-flip-horizontal {
     -webkit-transform: scale(-1, 1);
-    -moz-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    transform: scale(-1, 1);
+       -moz-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
+         -o-transform: scale(-1, 1);
+            transform: scale(-1, 1);
   }
 
   .img-preview-flip-vertical {
     -webkit-transform: scale(1, -1);
-    -moz-transform: scale(1, -1);
-    -ms-transform: scale(1, -1);
-    -o-transform: scale(1, -1);
-    transform: scale(1, -1);
+       -moz-transform: scale(1, -1);
+        -ms-transform: scale(1, -1);
+         -o-transform: scale(1, -1);
+            transform: scale(1, -1);
   }
 
 
-  /* =User List
+  /* =List (Users & Pushes)
   ----------------------------------------------- */
-  .user-list ul,
-  .user-list li {
+  .list ul,
+  .list li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .user-list ul {
+  .list ul {
     margin: 0 -1.25em;
   }
-  .user-list li {
+  .list li {
     margin: 0.75em 0;
     position: relative;
   }
-  .user-list li a {
+  .list li a {
     display: block;
     vertical-align: middle;
     padding: 0.5625em 1.125em;
@@ -3803,46 +3863,46 @@
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
   }
-  .user-list li a:active,
-  .user-list li a:focus {
+  .list li a:active,
+  .list li a:focus {
     background-color: rgb(222, 222, 222);
   }
-  .user-list li a .avatar {
+  .list li a .avatar {
     position: absolute;
     left: 0.65em;
     top: 50%;
     margin-top: -0.9375em; /* avatar height / 2 */
   }
-  .user-list li a .name {
+  .list li a .name {
     display: table;
   }
-  .user-list li a .name > span {
+  .list li a .name > span {
     display: table-row;
   }
-  .user-list li a .name > span > span {
+  .list li a .name > span > span {
     display: table-cell;
     vertical-align: middle;
     height: 3em;
   }
-  .user-list ul h3,
-  .user-list ul p {
+  .list ul h3,
+  .list ul p {
     margin: 0;
     font-size: inherit;
   }
-  .user-list ul h3 {
+  .list ul h3 {
     color: black;
   }
   @media (max-width: 34.25em) {
-    .user-list li {
+    .list li {
       margin-top: 0;
       margin-bottom: 0;
     }
-    .user-list li a {
+    .list li a {
       border-left-width: 0;
       border-right-width: 0;
       border-radius: 0;
     }
-    .user-list li + li a {
+    .list li + li a {
       border-top-width: 0;
     }
   }

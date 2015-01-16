@@ -7,6 +7,11 @@
     padding: 1.75em 1.75em 7em;
     background: rgb(253, 254, 255);
   }
+
+  body.pattern mark {
+    background-color: rgb(255, 255, 153); /* @banana */
+  }
+
   .pattern.index h1 {
     font-weight: normal;
     text-transform: uppercase;
@@ -45,4 +50,5 @@
   .pattern-list li a:visited {
     color: rgb(101, 102, 103);
   }
+
 
