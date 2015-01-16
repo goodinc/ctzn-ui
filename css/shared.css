@@ -1688,9 +1688,11 @@
     letter-spacing: 1px;
     line-height: 1;
   }
+  .profile       .meta p + p,
   .push > header .meta p + p {
     margin-left: 1.5em;
   }
+  .profile       .meta p a,
   .push > header .meta p a {
     display: block;
     color: inherit;
@@ -1698,10 +1700,14 @@
     margin: -0.5em -0.75em -0.75em;
     padding: 0.5em 0.75em 0.75em;
   }
+  .profile       .meta p a:active,
+  .profile       .meta p a:focus,
   .push > header .meta p a:active,
   .push > header .meta p a:focus {
     background-color: rgba(0, 0, 0, 0.1);
   }
+  .profile       .meta p a:active .label,
+  .profile       .meta p a:focus  .label,
   .push > header .meta p a:active .label,
   .push > header .meta p a:focus  .label {
     color: white;
@@ -2386,6 +2392,7 @@
   .notifications .post-list li:last-child {
     border-bottom: 0.1em solid rgb(222, 222, 222);
   }
+  .list h2,
   .notifications h2 {
     margin-top: 1.125em;
     font-size: 0.75em;
