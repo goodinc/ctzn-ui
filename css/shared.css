@@ -968,10 +968,16 @@
   }
   section.profile .image {
     max-width: none;
-    border-bottom: 0.1em solid rgb(222, 222, 222);
-    background: rgb(203, 253, 128); /* @lime */
     text-align: center;
     padding: 1.25em;
+    margin: -1.25em -1.25em 0;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  section.profile > .container {
+    max-width: none;
+  }
+  section.profile > .image {
+    background: rgb(203, 253, 128); /* @lime */
   }
   section.profile .image .avatar {
     display: inline-block;
@@ -983,39 +989,68 @@
   }
   section.profile h2 {
     font-weight: 900;
+    font-size: 1.75em;
+    line-height: 1.25;
+  }
+  section.profile .details,
+  section.profile .push-list {
+    color: black;
+  }
+  section.profile > .details,
+  section.profile > .push-list {
+    background: rgb(204, 204, 204);
   }
   section.profile .push-list {
-    border-top: 0.1em solid rgb(222, 222, 222);
-    background-color: rgb(246, 246, 246);
     max-width: none;
-    padding: 0.75em;
+    padding: 0.75em 0.75em 0.375em 0.75em;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  section.profile .container .push-list {
+    margin: 0 -1.25em -1.25em -1.25em;
   }
 
-  section.profile .image.lime {
+  section.profile .details {
+    margin: 0 auto;
+    max-width: 31.25em;
+    padding: 1.25em 1.5em;
+  }
+  section.profile .details h2,
+  section.profile .details p {
+    text-align: center;
+  }
+  section.profile .details h2 {
+    color: white;
+
+    /* OPTIONAL: Handle the case where a username really long and won’t wrap naturally. */
+    word-wrap     : break-word; /* Currently supported in most browsers */
+    overflow-wrap : break-word; /* TBD: Proposed standard that will be supported everywhere eventually? */
+  }
+
+  section.profile .lime {
     background: rgb(203, 253, 128); /* @lime */
   }
-  section.profile .image.cucumber {
+  section.profile .cucumber {
     background-color: rgb(150, 254, 166); /* @cucumber */
   }
-  section.profile .image.blueberry {
+  section.profile .blueberry {
     background: rgb(99, 204, 203); /* @blueberry */
   }
-  section.profile .image.boysenberry {
+  section.profile .boysenberry {
     background: rgb(101, 156, 247); /* @boysenberry */
   }
-  section.profile .image.plumb {
+  section.profile .plumb {
     background: rgb(193, 77, 166); /* @plumb */
   }
-  section.profile .image.strawberry {
+  section.profile .strawberry {
     background: rgb(255, 49, 102); /* @strawberry */
   }
-  section.profile .image.apple {
+  section.profile .apple {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  section.profile .image.tangerine {
+  section.profile .tangerine {
     background: rgb(255, 202, 72); /* @tangerine */
   }
-  section.profile .image.orange {
+  section.profile .orange {
     background: rgb(242, 64, 41); /* @orange */
   }
 
@@ -1025,39 +1060,26 @@
     margin-left: 0;
     padding-left: 0;
   }
-  section.profile .details {
-    background: white;
-    color: black;
-    max-width: none;
-  }
   section.profile .details .container,
   section.profile .push-list ul {
     max-width: 31.25em; /* image.width / font-size (500px / 16px) */
     margin: 0 auto;
   }
-  section.profile .details {
-    padding: 1.5em;
-  }
   section.profile .details h2 {
     margin: 0;
   }
   section.profile .details h2 + p {
-    margin-top: 0;
+    margin: 0;
+  }
+  section.profile .joined {
+    font-size: 0.75em;
+    line-height: 2;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin: 0;
   }
   section.profile .meta {
-    font-size: 0.75em;
-    text-transform: uppercase;
-    display: inline;
-    font-weight: bold;
-    margin: 0;
-    opacity: 0.25;
-  }
-  section.profile .meta + .meta {
-    margin-left: 1.5em;
-  }
-  section.profile .meta + .meta:last-child {
-    margin-top: 0.375em;
-    float: right;
+    border-bottom: 0.1em solid rgba(255, 255, 255, 0.25);
   }
 
   .push-card h3 {
@@ -1588,17 +1610,14 @@
     font-weight: inherit;
     text-align: center;
   }
+  .profile       .meta,
   .push > header .meta {
     background: black;
     background: rgba(0, 0, 0, 0.1);
     margin: 0 -1.25em 0;
     padding: 0.75em 1.25em;
   }
-  .push > header .meta:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  .profile       .meta p,
   .push > header .meta p {
     margin: 0;
     text-transform: uppercase;
@@ -1606,10 +1625,12 @@
 
     display: inline-block;
   }
+  .profile       .meta p .count,
   .push > header .meta p .count {
     display: block;
     font-weight: bold;
   }
+  .profile       .meta p .label,
   .push > header .meta p .label {
     color: black;
     font-size: 0.6875em;
