@@ -13,10 +13,11 @@
   }
 
   .pattern.index h1 {
-    font-weight: normal;
     text-transform: uppercase;
+    font-size: 3em;
+    margin: 0;
   }
-  .pattern-list h3 {
+  .pattern-list h2 {
     font-weight: bold;
     font-family: inherit;
     font-size: 1.25em;

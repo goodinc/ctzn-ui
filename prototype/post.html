@@ -23,126 +23,66 @@
 <body>
 
   <section class="post page">
-    <header>
-      <h1>Post</h1>
-
+    <header><h1>Post</h1>
       <a href="#push" class="back" data-bind="click: backClicked">
         Go Back
       </a>
     </header>
-
     <div class="details">
-      <article data-bind="with: postViewModel">
-        <header>
-          <h3>
+      <article data-bind="with: postViewModel"><header><h3>
             <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
-              <span class="avatar" data-bind="if: user.profile_image">
-                <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" />
-              </span>
+              <span class="avatar" data-bind="if: user.profile_image"></span>
               <span class="avatar" data-bind="if: !user.profile_image">
-                <span class="size30" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }"></span>
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
               </span>
-              <span data-bind="text: user.username"></span>
+              <span data-bind="text: user.username">jelena</span>
             </a>
           </h3>
-          <p class="source" data-bind="if: source"><span class="icon" data-bind="css: source">via <span data-bind="text: source"></span></span></p>
+          <p class="source" data-bind="if: source"></p>
           <p>
-            <time data-bind="attr: { datetime: created_at }">
-              <abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)"></abbr>
-            </time>
-          </p>
-        </header>
+            <time data-bind="attr: { datetime: created_at }" datetime="2014-12-01T06:40:08+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="7 weeks ago">7w</abbr>
+            </time></p>
+        </header><div class="video"></div>
 
-        <div class="video"></div>
+        <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Whee!</p>
 
-        <div class="body" data-bind="html: good.postBodyToHtml(body)"></div>
+        <p><img src="https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c500x500"></p></div>
 
-        <footer>
-          <p>
-            <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }">
-              <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><!-- @icon-heart -->
-                <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+        <footer><p>
+            <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+              <svg aria-label="I like this" class="icon" viewBox="0 0 24 24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
                   C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
                   C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                  c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-                <foreignobject>I like this</foreignobject>
-              </svg>
-              <span class="count" data-bind="if: attaboys().length > 0">
-                <span data-bind="text: attaboys().length"></span>
+                  c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                <span data-bind="text: attaboys().length">2</span>
               </span>
             </button>
           </p>
           <p>
             <a href="#add-comment" data-bind="click: $root.onAddComment">
-              <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><!-- @icon-add -->
-                <path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+              <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
       l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
       s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
       c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
-      c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"/>
-                <foreignobject>Add Comment</foreignobject>
-              </svg>
-              <span class="count" data-bind="text: comments().length > 0 ? comments().length : ''"></span>
+      c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments().length > 0 ? comments().length : ''"></span>
             </a>
           </p>
           <a href="#post-options" class="options" data-bind="if: $root.shouldHaveOptions, click: $root.onShowOptions">
-            <!-- @icon-more-horiz -->
-            <svg aria-label="Options" class="icon" viewBox="0 0 24 24">
-              <path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path>
-              <foreignobject>Options</foreignobject>
-            </svg>
-          </a>
-        </footer>
-      </article>
+            
+            <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+        </footer></article>
     </div>
 
     <div class="comments">
       <h2>Comments</h2>
 
-      <!-- ko if: postViewModel().comments().length > 0 -->
-      <ol data-bind="foreach: postViewModel().comments">
-        <li>
-          <article>
-            <header>
-              <h3 data-bind="text: user.username"></h3>
-              <p>
-                <time data-bind="attr: { datetime: created_at }">
-                  <abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)"></abbr>
-                </time>
-              </p>
-            </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"></div>
-          </article>
-        </li>
-      </ol>
-      <!-- /ko -->
-
-      <!-- ko if: syncing -->
-      <section class="upload-message" role="status">
-        <h1>
-          Sending
-          <span class="icon loading"></span>
-        </h1>
-      </section>
-      <!-- /ko -->
-
-      <!-- ko if: errorMessage() -->
-      <section class="upload-message error" role="status">
-        <h1>
-          <span data-bind="text: errorMessage()"></span>
-        </h1>
-      </section>
-      <!-- /ko -->
-
       <form data-bind="submit: onSubmitComment, disable: commentUploading" id="add-comment">
         <p class="text">
           <label>
-            <span>Add a comment…</span><br />
-            <textarea placeholder="Add a comment…" name="comment" data-bind="textInput: commentBody, disable: commentUploading"></textarea>
-          </label>
+            <span>Add a comment…</span><br><textarea placeholder="Add a comment…" name="comment" data-bind="textInput: commentBody, disable: commentUploading"></textarea></label>
         </p>
         <p class="submit">
-          <button data-bind='enable: canSubmit'>Send</button>
+          <button data-bind="enable: canSubmit" disabled="">Send</button>
         </p>
       </form>
     </div>

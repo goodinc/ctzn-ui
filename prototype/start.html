@@ -22,28 +22,25 @@
 </head>
 <body>
 
-  <section class="start page" data-bind="css: backgroundColor">
+  <section class="start page boysenberry">
     <div>
       <h1>
         <span>Welcome to</span>
         <abbr title="Citizen">ctzn</abbr>
       </h1>
-      <form>
+      <form action="preview.html" method="post">
         <p class="text">
           <label>
             <span>Enter invite code…</span><br />
-            <input type="text" data-bind='textInput: good.inviteCode' placeholder="Enter invite code…" spellcheck="false" autocapitalize="off" />
+            <input type="text" placeholder="Enter invite code…" spellcheck="false" autocapitalize="off" />
           </label>
         </p>
         <p class="submit">
-          <button data-bind='click: goClicked, enable: good.inviteCode().length > 0'>Start</button>
+          <button>Start</button>
         </p>
       </form>
-      <!-- ko if: errorMessage -->
-      <p style="color: red; background-color: white; padding: 0.5em;" data-bind='text: errorMessage'></p>
-      <!-- /ko -->
       <aside>
-        <p><a href="" data-bind='click: loginClicked'>Log in</a></p>
+        <p><a href="login.html">Log in</a></p>
       </aside>
     </div>
   </section>
