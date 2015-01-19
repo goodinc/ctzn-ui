@@ -5,17 +5,52 @@
 
   body.pattern {
     padding: 1.75em 1.75em 7em;
-    background: rgb(253, 254, 255);
+
+    /* TBD: Can this moved to shared.css ? */
+    height: auto;
+    min-height: 100%;
+    box-sizing: border-box;
   }
 
   body.pattern mark {
     background-color: rgb(255, 255, 153); /* @banana */
   }
 
+  body.pattern > h2:first-child,
+  body.pattern > h2:first-child + nav {
+    text-transform: lowercase;
+  }
+  body.pattern > h2:first-child {
+    font-weight: 900;
+  }
+  body.pattern > h2:first-child,
+  body.pattern > h2:first-child + nav,
+  body.pattern > h2:first-child + nav ul,
+  body.pattern > h2:first-child + nav li {
+    display: inline;
+  }
+  body.pattern > h2:first-child + nav ul,
+  body.pattern > h2:first-child + nav li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  body.pattern > h2:first-child + nav li {
+    margin-left: 1.5em;
+  }
+  body.pattern > h2:first-child a,
+  body.pattern > h2:first-child + nav a {
+    color: inherit;
+  }
+  .pattern.index h1,
+  .pattern-list {
+    text-transform: lowercase;
+  }
   .pattern.index h1 {
-    text-transform: uppercase;
+    font-weight: 900;
     font-size: 3em;
-    margin: 0;
+    margin-top: 1em;
+    margin-bottom: 0;
   }
   .pattern-list h2 {
     font-weight: bold;
@@ -47,9 +82,19 @@
   }
   .pattern-list li a {
     display: block;
+    color: rgba(255, 255, 255, 0.25);
   }
-  .pattern-list li a:visited {
-    color: rgb(101, 102, 103);
+  .pattern-list li a[href] {
+    color: rgb(203, 253, 128); /* @lime */
+    color: rgb(242, 64, 41); /* @orange */
+    color: rgb(101, 156, 247); /* @boysenberry */
+    color: rgb(99, 204, 203); /* @blueberry */
+    color: rgb(150, 254, 166); /* @cucumber */
+    color: rgb(255, 202, 72); /* @tangerine */
+    color: rgb(255, 49, 102); /* @strawberry */
+  }
+  .pattern-list li a[href]:visited {
+    color: inherit;
   }
 
 

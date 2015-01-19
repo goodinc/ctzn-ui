@@ -22,7 +22,7 @@
   }
 
   @font-face {
-    font-family:"Proxima Nova";
+    font-family: "Proxima Nova";
     src:url(/s3/fonts/b7eb3871-e910-4522-9982-effb425a2714.ttf) format("truetype");
     font-weight: normal;
     font-style: italic;
@@ -38,7 +38,7 @@
   @font-face {
     font-family: "Proxima Nova";
     src: url(/s3/fonts/22cfbfa4-f607-4751-92eb-6fa194353e57.ttf) format("truetype");
-    font-weight: 900;
+    font-weight: 900; /* @extra-bold */
     font-style: normal;
   }
 
@@ -55,8 +55,8 @@
     font: 100%/1.5 "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(255, 255, 254);
-    color: rgb(1, 1, 0);
+    background: rgb(51, 51, 51);
+    color: white;
   }
 
   a {
@@ -1064,7 +1064,7 @@
     margin: 0 auto;
   }
   section.profile h2 {
-    font-weight: 900;
+    font-weight: 900; /* @extra-bold */
     font-size: 1.875em;
     line-height: 1.2;
   }
@@ -1323,16 +1323,16 @@
   .hashtags .account-list h2 {
     text-align: center;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.125em; /* 18px / @font-size */
+    line-height: 1.3333333333em;
     color: rgb(102, 102, 102); /* @tin */
     margin-bottom: 3em;
   }
   .hashtags .tag-list     h2 strong,
   .hashtags .account-list h2 strong {
-    font-size: 24px;
+    font-size: 1.3333333333em; /* 24px / 18px */
     color: black;
-    font-weight: 900;
+    font-weight: 900; /* @extra-bold */
   }
   .hashtags aside {
     text-align: center;
@@ -1662,7 +1662,7 @@
   .push > header h1 {
     font-size: 1.875em;
     line-height: 1.2; /* @line-height x 1.5 / 1.875em */
-    font-weight: 900;
+    font-weight: 900; /* @extra-bold */
     color: white;
     color: rgba(255, 255, 255, 0.95);
     opacity: 0.95;
@@ -3046,7 +3046,7 @@
   .switch li h2 {
     font-size: 1.875em;
     line-height: 1.2; /* @line-height x 1.5 / 1.875em */
-    font-weight: 900;
+    font-weight: 900; /* @extra-bold */
     color: white;
     color: rgba(255, 255, 255, 0.95);
     opacity: 0.95;

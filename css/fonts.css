@@ -2,35 +2,40 @@
   /* This style sheet is a shim to get fonts working in GitHub pages. (It isn’t needed in the actual app.) */
 
 
-  /* =Third Party Fonts
+  /* =Fonts
+  -----------------------------------------------
+  -----------------------------------------------
   -----------------------------------------------
   This CSS resource incorporates links to font software which is the valuable copyrighted
   property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
   redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
   Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
   ----------------------------------------------- */
-  @font-face{
-  font-family:"Proxima Nova";
-  src:url("../fonts/2aff4f81-3e97-4a83-9e6c-45e33c024796.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  }
-  @font-face{
-  font-family:"Proxima Nova";
-  src:url("../fonts/b7eb3871-e910-4522-9982-effb425a2714.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-  }
-  @font-face{
-  font-family:"Proxima Nova";
-  src:url("../fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  }
-  @font-face{
-  font-family:"Proxima Nova";
-  src:url("../fonts/22cfbfa4-f607-4751-92eb-6fa194353e57.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
+
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url(../fonts/2aff4f81-3e97-4a83-9e6c-45e33c024796.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
   }
 
+  @font-face {
+    font-family: "Proxima Nova";
+    src:url(../fonts/b7eb3871-e910-4522-9982-effb425a2714.ttf) format("truetype");
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url(../fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url(../fonts/22cfbfa4-f607-4751-92eb-6fa194353e57.ttf) format("truetype");
+    font-weight: 900; /* @extra-bold */
+    font-style: normal;
+  }
