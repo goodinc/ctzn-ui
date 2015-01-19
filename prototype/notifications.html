@@ -6,8 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/shared.css" />
   <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -22,132 +22,255 @@
 </head>
 <body>
 
-  <section class="notifications page">
-    <header>
-      <h1>Notifications</h1>
+<section class="notifications page"><header><h1>Notifications</h1>
 
       <a href="#push" class="back" data-bind="click: good.onNavClick">
         Go Back
       </a>
-    </header>
-
-    <div>
-      <!-- ko if: notifications().length == 0 -->
-      <p>You don’t have any notifications just yet.</p>
-      <!-- /ko -->
+    </header><div>
+      <!-- ko if: notifications().length == 0 && unreadNotifications().length == 0 --><!-- /ko -->
 
       <!-- ko if: unreadNotifications().length > 0 -->
       <h2>Recent</h2>
       <ol class="post-list" data-bind="foreach: unreadNotifications">
-        <li>
-          <article data-bind="click: function() { $root.handleNotificationClicked($data) }">
-            <header>
-              <h3>
+<li>
+          <article data-bind="click: function() { $root.handleNotificationClicked($data) }"><header><h3>
                 <!-- ko with: notifier -->
                 <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
                   <span class="avatar" data-bind="if: profile_image">
-                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" />
-                  </span>
-                  <span class="avatar" data-bind="if: !profile_image">
-                    <span class="size30" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }"></span>
-                  </span>
-                  <span data-bind="text: username"></span>
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">cogg</span>
                 </a>
                 <!-- /ko -->
 
-                <!-- ko if: type == 0 -->
-                mentioned you in a post on <span data-bind='text: push.name'></span>:
-                <!-- /ko -->
+                <!-- ko if: type == 0 --><!-- /ko -->
 
-                <!-- ko if: type == 1 -->
-                mentioned you in a comment on <span data-bind='text: push.name'></span>:
-                <!-- /ko -->
+                <!-- ko if: type == 1 --><!-- /ko -->
 
-                <!-- ko if: type == 2 -->
-                commented on your post on <span data-bind='text: push.name'></span>:
-                <!-- /ko -->
+                <!-- ko if: type == 2 --><!-- /ko -->
 
-                <!-- ko if: type == 3 -->
-                gave your post on <span data-bind='text: push.name'></span> some love:
-                <!-- /ko -->
+                <!-- ko if: type == 3 --><!-- /ko -->
 
-                <!-- ko if: type == 4 -->
-                gave your mix some love:
-                <!-- /ko -->
+                <!-- ko if: type == 4 --><!-- /ko -->
 
                 <!-- ko if: type == 5 -->
-                commented on a post you've commented on in <span data-bind='text: push.name'></span>:
+                commented on a post you've commented on in <span data-bind="text: push.name">Santa Zen</span>:
                 <!-- /ko -->
 
               </h3>
-            </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(post.body)"></div>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Given how bad I am at flying it right now I think I will wait a while before attempting that</p></div>
             <p class="time">
-              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)"></time>
-            </p>
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-19T01:39:42+00:00">21 hours ago</time></p>
           </article>
-        </li>
+</li>
+      
+<li>
+          <article data-bind="click: function() { $root.handleNotificationClicked($data) }"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image"></span>
+                  <span class="avatar" data-bind="if: !profile_image">
+                    <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="c"></span>
+                  </span>
+                  <span data-bind="text: username">coggtest</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 --><!-- /ko -->
+
+                <!-- ko if: type == 3 --><!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 -->
+                commented on a post you've commented on in <span data-bind="text: push.name">Santa Zen</span>:
+                <!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>This should give you the correct notifications now Aldo</p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-17T03:09:13+00:00">3 days ago</time></p>
+          </article>
+</li>
       </ol>
-      <!-- /ko -->
-
-      <!-- ko if: notifications().length > 0 -->
-
-        <!-- ko if: unreadNotifications().length > 0 -->
-          <h2>Older</h2>
+<!-- /ko --><!-- ko if: notifications().length > 0 --><!-- ko if: unreadNotifications().length > 0 --><h2>Older</h2>
         <!-- /ko -->
 
       <ol class="post-list" data-bind="foreach: notifications">
-        <li>
-          <article data-bind="click: function() { $root.handleNotificationClicked($data) }">
-            <header>
-              <h3>
+<li>
+          <article data-bind="click: function() { $root.handleNotificationClicked($data) }"><header><h3>
                 <!-- ko with: notifier -->
                 <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
                   <span class="avatar" data-bind="if: profile_image">
-                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" />
-                  </span>
-                  <span class="avatar" data-bind="if: !profile_image">
-                    <span class="size30" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }"></span>
-                  </span>
-                  <span data-bind="text: username"></span>
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">cogg</span>
                 </a>
                 <!-- /ko -->
 
-                <!-- ko if: type == 0 -->
-                mentioned you in a post on <span data-bind='text: push.name'></span>:
-                <!-- /ko -->
+                <!-- ko if: type == 0 --><!-- /ko -->
 
-                <!-- ko if: type == 1 -->
-                mentioned you in a comment on <span data-bind='text: push.name'></span>:
-                <!-- /ko -->
+                <!-- ko if: type == 1 --><!-- /ko -->
 
-                <!-- ko if: type == 2 -->
-                commented on your post on <span data-bind='text: push.name'></span>:
-                <!-- /ko -->
+                <!-- ko if: type == 2 --><!-- /ko -->
 
-                <!-- ko if: type == 3 -->
-                gave your post on <span data-bind='text: push.name'></span> some love:
-                <!-- /ko -->
+                <!-- ko if: type == 3 --><!-- /ko -->
 
-                <!-- ko if: type == 4 -->
-                gave your mix some love:
-                <!-- /ko -->
+                <!-- ko if: type == 4 --><!-- /ko -->
 
                 <!-- ko if: type == 5 -->
-                commented on a post you've commented on in <span data-bind='text: push.name'></span>:
+                commented on a post you've commented on in <span data-bind="text: push.name">Santa Zen</span>:
                 <!-- /ko -->
 
               </h3>
-            </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(post.body)"></div>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>@dan nice job</p></div>
             <p class="time">
-              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)"></time>
-            </p>
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-17T02:36:34+00:00">3 days ago</time></p>
           </article>
-        </li>
+</li>
+      
+<li>
+          <article data-bind="click: function() { $root.handleNotificationClicked($data) }"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image"></span>
+                  <span class="avatar" data-bind="if: !profile_image">
+                    <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="d"></span>
+                  </span>
+                  <span data-bind="text: username">dan</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 --><!-- /ko -->
+
+                <!-- ko if: type == 3 -->
+                gave your post on <span data-bind="text: push.name">Santa Zen</span> some love:
+                <!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 --><!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Chelsea got a free taxi ride to the elevator on Friday…</p>
+
+<p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/fa0d842251e5964f766fdf918f1426760c413304=c500x500"></p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-13T21:03:20+00:00">6 days ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article data-bind="click: function() { $root.handleNotificationClicked($data) }"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image">
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/d8ac6892373777925f9d892e3764f08e3a2526f7=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">eshah</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 --><!-- /ko -->
+
+                <!-- ko if: type == 3 -->
+                gave your post on <span data-bind="text: push.name">Santa Zen</span> some love:
+                <!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 --><!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Chelsea got a free taxi ride to the elevator on Friday…</p>
+
+<p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/fa0d842251e5964f766fdf918f1426760c413304=c500x500"></p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-11T18:24:14+00:00">1 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article data-bind="click: function() { $root.handleNotificationClicked($data) }"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image">
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">cogg</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 -->
+                commented on your post on <span data-bind="text: push.name">Santa Zen</span>:
+                <!-- /ko -->
+
+                <!-- ko if: type == 3 --><!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 --><!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Looks like we are going the wrong way on a one way street...</p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-11T15:40:26+00:00">1 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article data-bind="click: function() { $root.handleNotificationClicked($data) }"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image">
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">brian</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 --><!-- /ko -->
+
+                <!-- ko if: type == 3 -->
+                gave your post on <span data-bind="text: push.name">Santa Zen</span> some love:
+                <!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 --><!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Chelsea got a free taxi ride to the elevator on Friday…</p>
+
+<p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/fa0d842251e5964f766fdf918f1426760c413304=c500x500"></p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-11T00:39:30+00:00">1 weeks ago</time></p>
+          </article>
+</li>
       </ol>
-      <!-- /ko -->
-    </div>
+<!-- /ko -->
+</div>
   </section>
 
 </body>

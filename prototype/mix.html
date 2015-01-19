@@ -6,8 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/shared.css" />
   <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -22,62 +22,29 @@
 </head>
 <body>
 
-  <section class="mix page">
-    <header>
-      <h1>Mix</h1>
+<section class="mix page"><header><h1>Mix</h1>
 
       <a href="#mixes" class="back" data-bind="click: good.onNavClick">
         Go Back
       </a>
-    </header>
-
-    <div class="preview" data-bind="css: good.pushColor(good.currentPush().id)">
+    </header><div class="preview orange" data-bind="css: good.pushColor(good.currentPush().id)">
       <div>
         <!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 -->
-        <video data-bind="attr: { poster: sizedS3Image(mix().preview_image_url, good.S3_MIXPOSTER_SIZE) }" type="video/mp4" width="640" height="640" preload="meta" controls>
-          <!-- ko foreach: movieFiles -->
-          <source data-bind="attr: { src: url, type: type }" />
-          <!-- /ko -->
-
-          <h1>BZZZ!</h1>
+        <video data-bind="attr: { poster: sizedS3Image(mix().preview_image_url, good.S3_MIXPOSTER_SIZE) }" type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640"><!-- ko foreach: movieFiles --><source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.m4v" type="video/mp4"><source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.webm" type="video/webm"><!-- /ko --><h1>BZZZ!</h1>
           <p>Looks like you’re using a browser that doesn’t support HTML5 video. We suggest using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.apple.com/safari/" target="_blank">Safari</a> to watch this mix.</p>
-        </video>
-        <!-- /ko -->
-        <!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 -->
-        <img data-bind="attr: { src: sizedS3Image(mix().preview_image_url, good.S3_MIXPOSTER_SIZE) }" width="640" height="640">
-        <!-- /ko -->
-      </div>
+        </video><!-- /ko --><!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 --><!-- /ko -->
+</div>
     </div>
 
     <div>
-      <!-- Commented out by Jim (since we only show mixes to the author, at present).
-      <footer>
-        <p>
-          <button data-bind="css: mix().attaboyed ? 'attaboyed' : ''">
-            <svg aria-label="I like this" class="icon" viewBox="0 0 24 24">
-              <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
-                C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
-                C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
-                c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"/>
-              <foreignobject>I like this</foreignobject>
-            </svg>
-            <span class="count" data-bind="text: mix().attaboys &amp;&amp; mix().attaboys.length > 0 ? mix().attaboys.length : ''"></span>
-          </button>
-        </p>
-      </footer>
-      -->
+      
 
-      <section class="share">
-        <!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 -->
-        <h2>Share this:</h2>
+      <section class="share"><!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 --><h2>Share this:</h2>
         <!-- /ko -->
-        <!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 -->
-        <h2>Open in Safari to play video:</h2>
-        <!-- /ko -->
-        <p><a data-bind="text: shareURL(), attr: { href: shareURL() }" target="_blank"></a></p>
+        <!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 --><!-- /ko -->
+        <p><a data-bind="text: shareURL(), attr: { href: shareURL() }" target="_blank" href="http://www.ctznapp.com/mix/84C0E923">http://www.ctznapp.com/mix/84C0E923</a></p>
       </section>
-
-    </div>
+</div>
   </section>
 
 </body>

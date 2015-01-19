@@ -1,0 +1,885 @@
+
+
+  /* =Lists
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+
+  /* =Create
+  ----------------------------------------------- */
+  .create,
+  .create li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .create {
+    margin: 0;
+    background: rgb(51, 51, 51);
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+    transition: opacity 0.2s;
+    text-align: center;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: stretch;
+            justify-content: stretch;
+  }
+  .create li {
+    display: inline-block;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+  }
+  .create a {
+    display: block;
+    text-decoration: none;
+    text-transform: lowercase;
+    color: rgb(153, 153, 153);
+    font-size: 0.75em;
+    line-height: 1;
+    padding: 0.75em 0 1em;
+    text-align: center;
+  }
+  .create a:active,
+  .create a:focus {
+    color: white;
+  }
+  .create li:first-child a {
+    padding-left: 0.375em;
+  }
+  .create li:last-child a {
+    padding-right: 0.375em;
+  }
+  .create li a span.icon {
+    width  : 2.25em; /* 27px / @font-size */
+    height : 2.25em;
+    display: block;
+    margin: 0 auto 0.25em;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  .create li a:active span.icon,
+  .create li a:focus  span.icon {
+    opacity: 1;
+  }
+  .create li a span.icon:before {
+    width  : 2.25em;
+    height : 2.25em;
+  }
+
+
+  /* =Switch Push
+  ----------------------------------------------- */
+  section.switch {
+    background: rgb(51, 51, 51);
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    min-height: 100%;
+    box-sizing: border-box;
+  }
+  .switch ul,
+  .switch li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .switch ul {
+    margin-top: 0;
+  }
+  .push-card,
+  .switch li > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 2.25em 1.25em 0.75em; /* 36px 20px*/
+    background: rgb(203, 253, 128); /* @lime */
+  }
+
+  .page > .push-card {
+    max-width: none;
+  }
+
+  /* SHIM: Reapply the “.page” styles */
+  .push-card.page {
+    padding: 0;
+  }
+  @media (min-height: 20em) and (min-width: 20em) {
+    .push-card.page {
+      padding-top: 3em;
+    }
+  }
+
+
+  /* OPTIONAL: Scale up the items on big screens. */
+  @media (min-width: 1000px) {
+    .push > header .details,
+    .page > .push-card,
+    .switch li > a {
+      font-size: 2vw;
+    }
+  }
+
+  .push-card.lime,
+  .switch li.lime a {
+    background: rgb(203, 253, 128); /* @lime */
+  }
+  .push-card.cucumber,
+  .switch li.cucumber a {
+    background-color: rgb(150, 254, 166); /* @cucumber */
+  }
+  .push-card.blueberry,
+  .switch li.blueberry a {
+    background: rgb(99, 204, 203); /* @blueberry */
+  }
+  .push-card.boysenberry,
+  .switch li.boysenberry a {
+    background: rgb(101, 156, 247); /* @boysenberry */
+  }
+  .push-card.plumb,
+  .switch li.plumb a {
+    background: rgb(193, 77, 166); /* @plumb */
+  }
+  .push-card.strawberry,
+  .switch li.strawberry a {
+    background: rgb(255, 49, 102); /* @strawberry */
+  }
+  .push-card.apple,
+  .switch li.apple a {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .push-card.tangerine,
+  .switch li.tangerine a {
+    background: rgb(255, 202, 72); /* @tangerine */
+  }
+  .push-card.orange,
+  .switch li.orange a {
+    background: rgb(242, 64, 41); /* @orange */
+  }
+
+  .switch li a:active,
+  .switch li a:focus {
+    opacity: 0.75;
+    color: inherit;
+  }
+  .switch li > a:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .push-card h2,
+  .switch li h2 {
+    font-size: 1.875em;
+    line-height: 1.2; /* @line-height x 1.5 / 1.875em */
+    font-weight: 900; /* @extra-bold */
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    opacity: 0.95;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .push-card.lime       h2,
+  .switch li.lime     a h2,
+  .push-card.cucumber   h2,
+  .switch li.cucumber a h2 {
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .push-card p.hashtag {
+    margin-bottom: 0;
+  }
+  .push-card .meta,
+  .hashtags  .meta,
+  .switch li .meta {
+    background: black;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 1.125em -1.25em -1.25em;
+    padding: 0.75em 1.5em;
+    color: white;
+  }
+  .push-card .meta:after,
+  .hashtags  .meta:after,
+  .switch li .meta:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .switch li > a {
+    padding: 1.5em;
+  }
+  .switch li h2 + p {
+    margin: 0;
+    color: black;
+  }
+  .push-card .meta p,
+  .hashtags  .meta p,
+  .switch li .meta p {
+    margin: 0;
+    text-transform: uppercase;
+    color: white;
+
+    display: inline-block;
+  }
+  .push-card .meta p .count,
+  .hashtags  .meta p .count,
+  .switch li .meta p .count {
+    display: block;
+    font-weight: bold;
+  }
+  .push-card .meta p .label,
+  .hashtags  .meta p .label,
+  .switch li .meta p .label {
+    color: black;
+    font-size: 0.6875em;
+    display: block;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .push-card .meta p + p,
+  .hashtags  .meta p + p,
+  .switch li .meta p + p {
+    margin-left: 1.5em;
+  }
+  .switch li .meta .icon {
+    opacity: 1;
+  }
+  .switch .join {
+    text-align: center;
+    font-size: inherit;
+  }
+  .join a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1.5em;
+    color: inherit;
+  }
+  .switch .join a .icon {
+    font-size: 2em;
+  }
+
+
+  .push-card h2,
+  .push-card h3 {
+    text-align: center;
+  }
+  .push-card .meta {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+  section.push-card > div {
+    max-width: 20em;
+  }
+  .push-card.page form,
+  .push-card.page .action {
+    margin-top: 3em;
+  }
+  @media (min-height: 500px) {
+    section.start > div,
+    .push-card.page .details {
+      margin-top: 3em;
+    }
+    section.start form,
+    .push-card.page form,
+    .push-card.page .action {
+      margin-top: 6em;
+    }
+  }
+  .push-card.page .action a {
+    background: black;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    width: 100%;
+    font-weight: normal;
+    font-size: 1.5em; /* 24px / @font-size */
+    border-radius: 4px;
+    line-height: 2.0833333333em; /* 50px / 24px */
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .push-card.page .action a:active,
+  .push-card.page .action a:focus {
+    background: black;
+  }
+
+
+  /* =Notifications
+  ----------------------------------------------- */
+  .notifications.page > div {
+    padding-top: 0;
+  }
+  .notifications .post-list  .new header h3:before {
+    content: "";
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 100%;
+    background-color: rgb(255, 49, 102); /* @strawberry */
+    position: absolute;
+    margin-top: 0.75em;
+    margin-left: -3.875em;
+  }
+  .notifications .post-list {
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+    padding-bottom: 0;
+  }
+  .notifications .post-list .time {
+    margin: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: rgb(153, 153, 153);
+    font-size: 0.6666666667em;
+    text-transform: uppercase;
+  }
+  .notifications .post-list li {
+    background: white;
+  }
+  .notifications .post-list li:first-child {
+    border-top: 0.1em solid rgb(222, 222, 222);
+  }
+  .notifications .post-list li:last-child {
+    border-bottom: 0.1em solid rgb(222, 222, 222);
+  }
+  .list h2,
+  .notifications h2 {
+    margin-top: 1.125em;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162);
+  }
+
+
+
+
+
+  /* =Post List
+  ----------------------------------------------- */
+  .post-list,
+  .post-list > li {
+    list-style: none;
+    padding-left: 0;
+  }
+  .post-list {
+    margin: 0 auto;
+    padding-bottom: 3em;
+  }
+  .post-list > li {
+    margin: 0 auto;
+    max-width: 31.25em; /* image.width / font-size (500px / 16px) */
+    border-bottom: 0.1em solid rgb(222, 222, 222);
+  }
+  .post-list > li:last-child {
+    border-bottom-width: 0;
+  }
+  .post-list .next     a,
+  .post-list .previous a {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+  }
+
+
+  /* =Post
+  ----------------------------------------------- */
+  article {
+    padding: 1.25em 1.25em 1.25em 3.75em; /* 20px 20px 20px 60px */
+  }
+  .notifications article {
+    padding: 0.625em 5em 0.625em 3.125em; /* 10px 80px 10px 50px */
+    position: relative;
+    line-height: 1.25em;
+    min-height: 3.75em; /* image size (60px) / @font-size */
+  }
+  article header {
+    position: relative;
+    text-align: right;
+  }
+  article header h3 {
+    float: left;
+  }
+  .notifications article header {
+    text-align: left;
+    display: inline;
+  }
+  .notifications article header h3 {
+    float: none;
+    display: inline;
+  }
+  article header h3,
+  article header p {
+    margin: 0;
+    font-size: 0.875em; /* 14px / @font-size */
+    line-height: 1.7142857143; /* @line-height / 0.875 */
+    display: inline-block;
+  }
+  .notifications article header h3 {
+    line-height: 1.2857142857; /* @line-height / 0.875 x 3/4 */
+  }
+  article header h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  article header h3 .avatar {
+    font-size: 1.1428571429em; /* 1 / 0.875 */
+  }
+  article header .avatar {
+    position: absolute;
+    margin-left: -2.5em;
+  }
+  article footer {
+    position: relative;
+  }
+  article footer .options {
+    position: absolute;
+    bottom: -0.75em;
+    right: -0.75em;
+    padding: 0.5em 0.75em;
+    color: inherit;
+    opacity: 0.25;
+  }
+  article footer .options:active,
+  article footer .options:focus {
+    color: black;
+    opacity: 1;
+  }
+  article header p {
+    color: rgb(204, 204, 204); /* @aluminum */
+    font-weight: bold;
+  }
+  article header p + p {
+    margin-left: 0.375em;
+  }
+  article header p a {
+    color: inherit;
+    text-decoration: none;
+  }
+  article header p a:active,
+  article header p a:focus {
+    color: black;
+  }
+  article header p .icon {
+    opacity: 0.25;
+    text-align: left;
+  }
+  article .body img {
+    border-radius: 0.125em;
+    width: 100%;
+    height: auto;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+    min-height: 9em;
+  }
+  .notifications article .body img {
+    width      : 4.2857142857em; /* target image size / font size (60px / 14px) */
+    min-height : 4.2857142857em;
+    position: absolute;
+    top : 0.625em; /* 10px / @font-size */
+    right  : 0.625em;
+  }
+  article .video iframe {
+    width: 100%;
+    height: 17.625em; /* column width x YouTube aspect ratio / @font-size (500px times 9/16 divided by 16px) */
+  }
+  article .body {
+    font-size: 1.125em; /* 18px / @font-size */
+    line-height: 1.3333333333; /* @line-height / 1.125 */
+
+    /* OPTIONAL: Handle the case where a URL is really long and won’t wrap naturally. */
+    word-wrap     : break-word; /* Currently supported in most browsers */
+    overflow-wrap : break-word; /* TBD: Proposed standard that will be supported everywhere eventually? */
+  }
+  .notifications article .body {
+    font-size: 0.875em; /* 14px / @font-size */
+    display: inline;
+  }
+  article .body p {
+    margin-top   : 0.625em; /* 1.3333333333 / 2 */
+    margin-bottom: 0.625em;
+  }
+  .notifications article .body p {
+    display: inline;
+    margin: 0;
+  }
+  article .body p:last-child {
+    margin-bottom: 0;
+  }
+  article footer {
+    margin-top: 0.75em;
+  }
+  article footer p {
+    margin: 0;
+    display: inline;
+  }
+  article footer p + p {
+    margin-left: 0.375em;
+  }
+  article footer p a,
+  article footer p button {
+    display: inline-block;
+    color: rgb(204, 204, 204); /* @aluminum */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.1875em 0.75em;
+    line-height: 1.5;
+    border-radius: 0.25em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204); /* @aluminum */
+    transition: all 0.2s;
+  }
+  article footer p a:active,
+  article footer p a:focus,
+  article footer p button:active,
+  article footer p button:focus {
+    background-color: rgb(222, 222, 222);
+    color: rgb(153, 153, 153);
+  }
+  article footer p a      svg.icon,
+  article footer p button svg.icon {
+    font-size: 0.75em;
+  }
+
+  article footer .attaboyed {
+    color: rgb(245, 83, 135) !important; /* @strawberry */
+  }
+  article footer .count {
+    font-size: 0.75em;
+    line-height: 1;
+  }
+
+
+  /* =Post Comments
+  ----------------------------------------------- */
+  .post.page > .details {
+    max-width: none;
+    border-bottom: 0.1em solid rgb(222, 222, 222);
+    background: white;
+  }
+  .post.page > .details article {
+    max-width: 31.25em;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .post.page > .details article header {
+    margin-bottom: 1.125em;
+  }
+  .post.page > .details article header h3 a {
+    padding-left: 3em;
+  }
+  .post.page > div h2 {
+    font-size: inherit;
+  }
+  .comments h2 {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  .comments ol,
+  .comments li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .comments ol {
+    margin: 0 0 1.25em;
+  }
+  .comments li + li {
+    margin-top: 0.8571428571em; /* @line-height / 4 / 0.875 */
+  }
+  .comments article {
+    padding: 0;
+  }
+  .comments article header h3,
+  .comments article header p,
+  .comments article .body {
+    font-size: 0.875em; /* 14px / @font-size */
+    line-height: 1.2857142857; /* @line-height / 0.875 */
+  }
+  .comments article .body p {
+    margin: 0;
+  }
+  .comments p.text label {
+    padding: 0.5em;
+  }
+
+
+
+  /* =List (Users & Pushes)
+  ----------------------------------------------- */
+  .list ul,
+  .list li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .list ul {
+    margin: 0 -1.25em;
+  }
+  .list li {
+    margin: 0.75em 0;
+    position: relative;
+  }
+  .list li a {
+    display: block;
+    vertical-align: middle;
+    padding: 0.5625em 1.125em;
+    padding-left: 3.25em;
+    text-decoration: none;
+    background: white;
+    border: 0.1em solid rgb(222, 222, 222);
+    color: rgb(102, 102, 102); /* @tin */
+    border-radius: 0.25em;
+  }
+  .list li a:active,
+  .list li a:focus {
+    background-color: rgb(222, 222, 222);
+  }
+  .list li a .avatar {
+    position: absolute;
+    left: 0.65em;
+    top: 50%;
+    margin-top: -0.9375em; /* avatar height / 2 */
+  }
+  .list li a .name {
+    display: table;
+  }
+  .list li a .name > span {
+    display: table-row;
+  }
+  .list li a .name > span > span {
+    display: table-cell;
+    vertical-align: middle;
+    height: 3em;
+  }
+  .list ul h3,
+  .list ul p {
+    margin: 0;
+    font-size: inherit;
+  }
+  .list ul h3 {
+    color: black;
+  }
+  @media (max-width: 34.25em) {
+    .list li {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .list li a {
+      border-left-width: 0;
+      border-right-width: 0;
+      border-radius: 0;
+    }
+    .list li + li a {
+      border-top-width: 0;
+    }
+  }
+
+
+
+
+
+
+  /* =Mix
+  ----------------------------------------------- */
+  .mix .preview {
+    padding: 1.5em;
+    max-width: none;
+    background-color: rgb(203, 253, 128); /* @lime */
+  }
+
+  .mix .lime {
+    background-color: rgb(203, 253, 128); /* @lime */
+  }
+  .mix .cucumber {
+    background-color: rgb(150, 254, 166); /* @cucumber */
+  }
+  .mix .blueberry {
+    background-color: rgb(99, 204, 203); /* @blueberry */
+  }
+  .mix .boysenberry {
+    background-color: rgb(101, 156, 247); /* @boysenberry */
+  }
+  .mix .plumb {
+    background-color: rgb(193, 77, 166); /* @plumb */
+  }
+  .mix .strawberry {
+    background-color: rgb(255, 49, 102); /* @strawberry */
+  }
+  .mix .apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .mix .tangerine {
+    background-color: rgb(255, 202, 72); /* @tangerine */
+  }
+  .mix .orange {
+    background-color: rgb(242, 64, 41); /* @orange */
+  }
+
+  .mix .preview div {
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
+    background: black;
+    color: white;
+    margin: 0 auto;
+    display: table;
+  }
+  .mix .preview div h1,
+  .mix .preview div p {
+    margin: 1.5em;
+    font-size: inherit;
+    max-width: 31.5em;
+  }
+  .mix .preview div video,
+  .mix .preview div img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .mix footer {
+    margin-top: 0.75em;
+  }
+  .mix footer p {
+    margin: 0;
+    display: inline;
+  }
+  .mix footer p + p {
+    margin-left: 0.75em;
+  }
+  .mix footer p a {
+    color: rgb(204, 204, 204); /* @aluminum */
+    text-decoration: none;
+  }
+  .mix footer .attaboyed {
+    color: rgb(255, 49, 102); /* @strawberry */
+  }
+  .mix footer p a:active,
+  .mix footer p a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+  .mix footer .count {
+    font-size: 0.75em;
+  }
+  .mix .share h2 {
+    font-size: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .mix .share p {
+    margin-top: 0.375em;
+
+    /* OPTIONAL: Handle the case where a URL is really long and won’t wrap naturally. */
+    word-wrap     : break-word; /* Currently supported in most browsers */
+    overflow-wrap : break-word; /* TBD: Proposed standard that will be supported everywhere eventually? */
+  }
+
+
+  /* =Mix List
+  ----------------------------------------------- */
+  .mix-list,
+  .mix-list li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .mix-list:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .mix-list {
+    margin: 0;
+    padding: 0.1em 0 0 0.1em;
+  }
+  .mix-list li {
+    float: left;
+    margin: 0 0.1em 0.1em 0;
+  }
+  .mix-list a {
+    display: block;
+    width: 7.8125em; /* image size / @font-size (125px / 16px) */
+    height: 7.8125em;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  .mix-list a img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.2s;
+  }
+  .mix-list a:active img,
+  .mix-list a:focus  img {
+    opacity: 0.75;
+  }
+  .mix-list .add a {
+    display: block;
+    background-color: rgb(255, 49, 102); /* @strawberry */
+    color: white;
+    width: 80%; /* image size / @font-size (125px / 16px) */
+    height: 80%;
+    border-radius: 0.25em;
+    margin: 10%;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+    padding: 0.75em 0.5em;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+  .mix-list .add a:active,
+  .mix-list .add a:focus {
+    background-color: rgba(255, 49, 102, 0.85); /* @strawberry */
+  }
+  .mix-list .add span.icon {
+    margin: 0 auto;
+    display: block;
+    width: 1.6875em; /* 27px / @font-size */
+    height: 1.6875em;
+    opacity: 0.6;
+  }
+
+  .mix-list li {
+    width: 32.5%;
+    min-height: 100px;
+  }
+  .mix-list li {
+    width: 32.5vw;
+    height: 32.5vw;
+  }
+  .mix-list li {
+    width: calc(33.333333333vw - 0.1333333333em); /* three per row (image size (100px) / 3) - padding (0.1em) */
+    height: calc(33.333333333vw - 0.1333333333em);
+  }
+  .mix-list li a {
+    width: 95%; /* image size / @font-size (125px / 16px) */
+    height: 95%;
+    margin: 2.5%;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+

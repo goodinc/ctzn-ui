@@ -6,8 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/shared.css" />
   <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -26,51 +26,32 @@
     <header>
       <h1>Log In</h1>
 
-      <a href="#start" class="back" data-bind='click: function(){ good.currentScreen({ name: "start" }) }'>
+      <a href="start.html" class="back">
         Go Back
       </a>
     </header>
 
-    <h2 data-bind="css: backgroundColor">
+    <h2>
       <span>Welcome to</span>
       <abbr title="Citizen">ctzn</abbr>
     </h2>
 
-    <!-- ko if: inProgress() -->
-    <section class="upload-message" role="status">
-      <h1>
-        <!-- @placeholder-image -->
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
-        Sending
-        <span class="icon loading"></span>
-      </h1>
-    </section>
-    <!-- /ko -->
-
-    <!-- ko if: errorMessage() -->
-    <section class="upload-message error" role="status">
-      <h1>
-        <span data-bind="text: errorMessage()"></span>
-      </h1>
-    </section>
-    <!-- /ko -->
-
-    <form class="has-icon" data-bind="submit: onSubmit">
+    <form action="push.html" method="post" class="has-icon">
       <p class="text">
         <label>
           <span class="icon user-circle">Username</span><br />
-          <input type="text" placeholder="Username" data-bind='textInput: username, disable: inProgress' autocapitalize="none" autocorrect="off" />
+          <input type="text" placeholder="Username" autocapitalize="none" autocorrect="off" />
         </label>
       </p>
       <p class="text">
         <label>
           <span class="icon padlock">Password</span><br />
-          <input type="password" placeholder="Password" data-bind='textInput: password, disable: inProgress' />
+          <input type="password" placeholder="Password" />
         </label>
-        <em class="note"><a href="" data-bind='click: function(){ good.currentScreen({ name: "forgot password" }) }'>Forgot?</a></em>
+        <em class="note"><a href="forgot.html">Forgot?</a></em>
       </p>
       <p class="submit">
-        <button data-bind="enable: canSubmit">Next</button>
+        <button>Next</button>
       </p>
     </form>
   </section>

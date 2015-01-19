@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Project Citizen, from day one to Beta</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+
+    /* =Third Party Fonts
+    -----------------------------------------------
+    This CSS resource incorporates links to font software which is the valuable copyrighted
+    property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+    redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+    Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
+    ----------------------------------------------- */
+    @font-face {
+      font-family: "Proxima Nova";
+      src: url(http://assets.goodstatic.com/s3/fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix);
+      src: url(http://assets.goodstatic.com/s3/fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix) format("eot"),
+           url(http://assets.goodstatic.com/s3/fonts/e56ecb6d-da41-4bd9-982d-2d295bec9ab0.woff) format("woff"),
+           url(http://assets.goodstatic.com/s3/fonts/2aff4f81-3e97-4a83-9e6c-45e33c024796.ttf) format("truetype"),
+           url(http://assets.goodstatic.com/s3/fonts/ab9cd062-380f-4b53-b1a7-c0bec7402235.svg#ab9cd062-380f-4b53-b1a7-c0bec7402235) format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Proxima Nova";
+      src: url(http://assets.goodstatic.com/s3/fonts/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix);
+      src: url(http://assets.goodstatic.com/s3/fonts/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix) format("eot"),
+           url(http://assets.goodstatic.com/s3/fonts/9c69c878-2255-4027-8632-ed3635cddf45.woff) format("woff"),
+           url(http://assets.goodstatic.com/s3/fonts/b7eb3871-e910-4522-9982-effb425a2714.ttf) format("truetype"),
+           url(http://assets.goodstatic.com/s3/fonts/a0d89860-20e5-4bc0-b6c5-eae8ae0ebbbf.svg#a0d89860-20e5-4bc0-b6c5-eae8ae0ebbbf) format("svg");
+      font-weight: normal;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: "Proxima Nova";
+      src: url(http://assets.goodstatic.com/s3/fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix);
+      src: url(http://assets.goodstatic.com/s3/fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix) format("eot"),
+           url(http://assets.goodstatic.com/s3/fonts/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff) format("woff"),
+           url(http://assets.goodstatic.com/s3/fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf) format("truetype"),
+           url(http://assets.goodstatic.com/s3/fonts/8152bc4e-d700-4c78-b6be-326893e6f53f.svg#8152bc4e-d700-4c78-b6be-326893e6f53f) format("svg");
+      font-weight: bold;
+      font-style: normal;
+    }
+    @font-face{
+      font-family: "Proxima Nova";
+      src: url(http://assets.goodstatic.com/s3/fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix);
+      src: url(http://assets.goodstatic.com/s3/fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix) format("eot"),
+           url(http://assets.goodstatic.com/s3/fonts/19dd5cf2-ac2d-48d5-901a-c432fd291ee2.woff) format("woff"),
+           url(http://assets.goodstatic.com/s3/fonts/22cfbfa4-f607-4751-92eb-6fa194353e57.ttf) format("truetype"),
+           url(http://assets.goodstatic.com/s3/fonts/3d6b6348-e05f-4123-b19a-3bfd02c7f361.svg#3d6b6348-e05f-4123-b19a-3bfd02c7f361) format("svg");
+      font-weight: 900;
+      font-style: normal;
+    }
+
+
+    /* =Elements
+    ----------------------------------------------- */
+    html, body {
+      height: 100%;
+    }
+    body {
+      font: 100%/1.5 "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    a {
+      color: inherit;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a:hover,
+    a:active,
+    a:focus {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+
+    /* =Containers
+    ----------------------------------------------- */
+    body {
+      display: table;
+    }
+    header,
+    footer,
+    main {
+      display: table-row;
+    }
+    .container {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    header .container,
+    footer .container {
+      height: 1px;
+    }
+
+    header .container,
+    footer .container {
+      padding: 0.75em;
+      background: rgb(51, 51, 51);
+      color: white;
+      text-align: center;
+    }
+    main .container {
+      padding: 1.5em;
+    }
+
+
+    /* =Header / Footer
+    ----------------------------------------------- */
+    h2 {
+      margin: 0;
+      font-size: inherit;
+      font-weight: inherit;
+      padding: 4px 0;
+    }
+    h2 svg {
+      display: block;
+      margin: 0 auto;
+      width: auto;
+      height: 16px;
+    }
+    .legal {
+      margin: 0;
+      color: rgb(102, 102, 102);
+      font-size: 12px;
+      line-height: 24px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+
+    /* =Main
+    ----------------------------------------------- */
+    main {
+      background-color: rgb(203, 253, 128); /* @lime */
+      color: black;
+      color: rgba(0, 0, 0, 0.75);
+    }
+    main.lime {
+      background-color: rgb(203, 253, 128); /* @lime */
+    }
+    main.cucumber {
+      background-color: rgb(150, 254, 166); /* @cucumber */
+    }
+    main.blueberry {
+      background-color: rgb(99, 204, 203); /* @blueberry */
+    }
+    main.boysenberry {
+      background-color: rgb(101, 156, 247); /* @boysenberry */
+    }
+    main.plumb {
+      background-color: rgb(193, 77, 166); /* @plumb */
+    }
+    main.strawberry {
+      background-color: rgb(255, 49, 102); /* @strawberry */
+    }
+    main.apple {
+      background-color: rgb(255, 49, 59); /* @apple */
+    }
+    main.tangerine {
+      background-color: rgb(255, 202, 72); /* @tangerine */
+    }
+    main.orange {
+      background-color: rgb(242, 64, 41); /* @orange */
+    }
+
+    main a {
+      color: black;
+    }
+    main p {
+      margin: 1.5em 0 0;
+      font-size: 14px;
+    }
+    h1, .video, .about {
+      max-width: 640px;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: inherit;
+      font-weight: inherit;
+      padding-left: 48px;
+      padding-bottom: 8px;
+    }
+    h1 img {
+      border-radius: 50%;
+      margin-left: -48px;
+      position: absolute;
+      margin-top: -8px;
+    }
+    h1 span {
+      font-weight: bold;
+    }
+    h1 strong {
+      color: black;
+    }
+    .video {
+      margin-top: 0.75em;
+      margin-bottom: 1.125em;
+      background: black;
+      color: white;
+      box-shadow: 0 0 10px rgba(102, 102, 102, 0.5);
+    }
+    .video video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      min-height: 50vh;
+    }
+    .about {
+      text-align: center;
+    }
+
+    /* Video not supported message */
+    .video .message {
+      padding: 1.5em;
+    }
+    .video .message h1,
+    .video .message p {
+      margin: 1.5em;
+      font-size: inherit;
+      max-width: 31.5em;
+      text-align: left;
+      padding: 0;
+    }
+    .video .message h1 {
+      font-weight: bold;
+    }
+    .video .message p a {
+      color: white;
+    }
+
+
+    /* =Avatars
+    ----------------------------------------------- */
+    .avatar > span {
+      display: inline-block;
+      background: rgb(203, 253, 128); /* @lime */
+      color: black;
+      width       : 1.5em;
+      line-height : 1.5em;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    .avatar .clover {
+      background-color: rgb(0, 235, 98);
+    }
+    .avatar .kiwi {
+      background-color: rgb(0, 255, 208);
+    }
+    .avatar .grape {
+      background-color: rgb(159, 104, 246);
+    }
+    .avatar .bluebird {
+      background-color: rgb(0, 206,250);
+    }
+    .avatar .cantaloupe {
+      background-color: rgb(255, 203, 117);
+    }
+    .avatar .cranberry {
+      background-color: rgb(251, 59, 147);
+    }
+    .avatar .amethyst {
+      background-color: rgb(255, 152, 248);
+    }
+    .avatar .sky {
+      background-color: rgb(0, 255, 254);
+    }
+    .avatar .ocean {
+      background-color: rgb(24, 57, 245);
+      color: white;
+    }
+
+    .avatar .size30 {
+      font-size: 1.25em; /* 2/3 x 30px / @font-size */
+    }
+    .avatar .size35 {
+      font-size: 1.4583333333em; /* 2/3 x 35px / @font-size */
+    }
+    .avatar .size100 {
+      font-size: 4.1666666667em; /* 2/3 x 30px / @font-size */
+    }
+    .avatar img[width="30"] {
+      width: 1.875em;
+      height: 1.875em;
+    }
+
+    .avatar [data-content]:after {
+      display: block;
+      content: attr(data-content);
+      speak: none;
+      font-weight: bold;
+      font-style: normal;
+      text-transform: uppercase;
+      text-align: center;
+      opacity: 0.75;
+    }
+
+    .avatar .name {
+      /* @hidden-accessible */
+      position: absolute;
+      left: -9999px;
+    }
+
+  </style>
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h2>
+        <svg aria-label="Citizen" xmlns="http://www.w3.org/2000/svg" width="40px" height="16px" viewbox="0 0 100 38"><path fill="white" d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
+            c0-2.292,0.362-4.373,1.086-6.243c0.724-1.87,1.739-3.478,3.046-4.825s2.855-2.382,4.644-3.106c1.789-0.724,3.75-1.086,5.881-1.086
+            c2.573,0,4.735,0.432,6.484,1.297c1.749,0.864,3.026,1.759,3.83,2.684l-4.765,7.057c-0.523-0.603-1.136-1.096-1.84-1.478
+            c-0.704-0.382-1.518-0.573-2.443-0.573c-1.528,0-2.825,0.543-3.89,1.629c-1.066,1.086-1.598,2.634-1.598,4.644
+            c0,2.01,0.533,3.569,1.598,4.674c1.066,1.106,2.362,1.659,3.89,1.659c0.925,0,1.739-0.201,2.443-0.603
+            c0.704-0.402,1.317-0.905,1.84-1.508l4.765,7.117c-0.804,0.925-2.081,1.819-3.83,2.684c-1.749,0.864-3.91,1.297-6.484,1.297
+            C12.525,37.818,10.565,37.446,8.776,36.702z"></path><path fill="white" d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
+            v8.806h-4.584v9.59c0,0.764,0.161,1.367,0.482,1.809s0.784,0.663,1.387,0.663c0.362,0,0.714-0.05,1.056-0.151
+            c0.342-0.101,0.573-0.231,0.694-0.392l1.689,7.962c-0.563,0.442-1.397,0.814-2.503,1.116c-1.106,0.302-2.423,0.452-3.951,0.452
+            C35.344,37.818,33.052,37.084,31.604,35.616z"></path><path fill="white" d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"></path><path fill="white" d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
+            s-1.759,0.282-2.383,0.844c-0.623,0.563-1.116,1.126-1.478,1.689v18.336H72.798V7.962h10.133v3.378
+            c0.724-1.005,1.86-1.94,3.408-2.805c1.548-0.865,3.327-1.297,5.338-1.297c2.935,0,5.056,0.774,6.363,2.322
+            c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"></path>
+          <foreignobject>Citizen</foreignobject>
+        </svg>
+      </h2>
+    </div>
+  </header>
+
+  <main class="orange">
+    <div class="container">
+      <h1>
+          <img src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c40x40" width="40" height="40" alt=""><span>jim</span>’s mix: <strong>Project Citizen, from day one to Beta</strong>
+      </h1>
+
+      <div class="video">
+        <video width="640" height="640" poster="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640" preload="meta" controls><source src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.m4v" type="video/mp4"></source><source src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.webm" type="video/webm"></source><div class="message">
+            <h1>Oops!</h1>
+            <p>It looks like our video player isn’t working in your web browser. We recommend using <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>, <a href="http://www.google.com/chrome/">Chrome</a> or <a href="https://www.apple.com/safari/">Safari</a> to watch this mix.</p>
+          </div>
+        </video>
+      </div>
+
+      <p class="about">made with ctzn, a new app from GOOD.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
+    </div>
+  </footer>
+
+</body>
+</html>

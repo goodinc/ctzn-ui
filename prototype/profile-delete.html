@@ -6,8 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/shared.css" />
   <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -26,40 +26,22 @@
     <header>
       <h1>Delete Profile</h1>
 
-      <a href="#edit-profile" class="back" data-bind="click: handleBackClicked">
+      <a href="#edit-profile" class="back">
         Go Back
       </a>
     </header>
 
-    <!-- ko if: inProgress() -->
-    <section class="upload-message" role="status">
-      <h1>
-        Sending
-        <span class="icon loading"></span>
-      </h1>
-    </section>
-    <!-- /ko -->
-
-    <!-- ko if: errorMessage() -->
-    <section class="upload-message" role="status">
-      <h1 data-bind="text: errorMessage()"></h1>
-    </section>
-    <!-- /ko -->
-
-    <form class="has-icon" data-bind="submit: onSubmit">
+    <form class="has-icon">
       <p>For security reasons</p>
-      <p class="text" data-bind="css: validationMessage() ? 'error' : ''">
+      <p class="text">
         <label>
           <span class="icon padlock">Enter password</span><br />
-          <input type="password" name="password" placeholder="Enter password" data-bind="textInput: password, disable: inProgress" />
+          <input type="password" name="password" placeholder="Enter password" />
         </label>
       </p>
-      <!-- ko if: validationMessage() -->
-      <p class="validation-message" data-bind="text: validationMessage()"></p>
-      <!-- /ko -->
 
       <p class="submit warning">
-        <button type="submit" data-bind='enable: canSubmit'>Delete my profile</button>
+        <button type="submit">Delete my profile</button>
       </p>
     </form>
   </section>

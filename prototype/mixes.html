@@ -6,8 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/shared.css" />
   <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -26,7 +26,7 @@
     <header>
       <h1>My Mixes</h1>
 
-      <a href="#push" class="back" data-bind="click: function(){ good.currentScreen({ name: 'push' }) }">
+      <a href="#push" class="back">
         Go Back
       </a>
     </header>
@@ -39,33 +39,14 @@
             <span>New Mix</span>
           </a>
         </li>
-        <!-- ko foreach: mixes -->
-
-          <!-- ko if: rendered_at -->
-          <li>
-            <a href="#mix" data-bind="click: good.onNavClick">
-              <img data-bind="attr: { src: sizedS3Image(preview_image_url, good.S3_MIXPOSTER_SIZE), alt: title }" />
-            </a>
-          </li>
-          <!-- /ko -->
-
-          <!-- ko if: errored_at -->
-          <li class="mix-error">
-            <!-- TODO: cogg - make this more useful -->
-            <span>Mix Error…<br />“<span data-bind="text: title"></span>”</span>
-          </li>
-          <!-- /ko -->
-
-          <!-- ko if: !errored_at && !rendered_at -->
-          <li class="mix-loading">
-            <span>
-              <span class="loading-icon"></span>
-              <span class="text">Creating mix… “<span data-bind="text: title"></span>”</span>
-            </span>
-          </li>
-          <!-- /ko -->
-
-        <!-- /ko -->
+        <li>
+          <a href="#mix">
+            <img src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640" alt="Project Citizen, from day one to Beta"></a>
+        </li>
+        <li>
+          <a href="#mix">
+            <img src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640" alt="Lights Mix"></a>
+        </li>
       </ul>
     </div>
   </section>

@@ -6,8 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/shared.css" />
   <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -24,16 +24,28 @@
 
   <section class="switch">
     <div>
-      <ul data-bind="foreach: good.globalDataModel().pushes">
-        <li data-bind="css: good.pushColor(id)">
-          <a href="#push" data-bind="click: function() { $parent.switchPush(id) }">
-            <h2 data-bind="text: name"></h2>
-            <p data-bind="text: body"></p>
+      <ul>
+        <li class="orange">
+          <a href="push.html">
+            <h2>Project Citizen</h2>
+            <p>Helping social creatives celebrate the work they do</p>
+          </a>
+        </li>
+        <li class="blueberry">
+          <a href="push.html">
+            <h2>Project Citizen</h2>
+            <p>Helping social creatives celebrate the work they do</p>
+          </a>
+        </li>
+        <li class="lime">
+          <a href="push.html">
+            <h2>Project Citizen</h2>
+            <p>Helping social creatives celebrate the work they do</p>
           </a>
         </li>
       </ul>
       <h2 class="join">
-        <a href="#join-push" data-bind="click: good.onNavClick">
+        <a href="push-join.html" data-bind="click: good.onNavClick">
           <!-- @icon-add-circle -->
           <svg aria-label="Join Another Push" class="icon" viewBox="0 0 24 24">
             <path d="M12,2C6.478,2,2,6.477,2,12c0,5.523,4.478,10,10,10c5.523,0,10-4.477,10-10C22,6.477,17.523,2,12,2z M12,20.906

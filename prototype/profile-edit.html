@@ -6,8 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/shared.css" />
   <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -26,97 +26,53 @@
     <header>
       <h1>Edit Profile</h1>
 
-      <a href="#profile" class="cancel" data-bind="click: handleBackClicked">
+      <a href="#profile" class="cancel">
         Cancel
       </a>
     </header>
-
-    <!-- ko if: inProgress -->
-    <section class="upload-message" role="status">
-      <h1>
-        <!-- @placeholder-image -->
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
-        Sending
-        <span class="icon loading"></span>
-      </h1>
-    </section>
-    <!-- /ko -->
-
-    <!-- ko if: errorMessage() -->
-    <!-- good-code-map[An example of a “banner” error message, which we’re using for errors that happen while sending data.] -->
-    <section class="upload-message error" role="status">
-      <h1>
-        <span data-bind="text: errorMessage()"></span>
-      </h1>
-    </section>
-    <!-- /ko -->
-
-    <!-- ko with: good.currentUser -->
-    <form class="has-icon" data-bind="submit: $root.onSubmitProfile, disable: $root.inProgress">
+    <form class="has-icon">
       <p class="file">
         <label>
-          <input
-            type='file'
-            accept='image/*'
-            id='profileImage'
-            data-bind="disable: $root.inProgress, event: { change: function() { $root.handleImageSelected($element) } }"
-          />
-
-          <!-- ko if: $root.profile_image() === undefined -->
+          <input type="file" accept="image/*" />
           <span>
-            <span class="avatar">
-              <span class="size100" data-bind="{ attr: { 'data-content': username[0].replace('[', '*') }, css: good.avatarColor(id) }"></span>
-            </span>
-            <br />
-            <span>Add photo</span>
-          </span>
-          <!-- /ko -->
-
-          <span data-bind="with: $root.profile_image">
-            <img data-bind="attr: { src: $root.profile_image }, css: $root.imageClass" height="100" width="100" alt="" />
-            <br />
+            <img src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100"  height="100" width="100" alt="" /><br />
             <span>Change photo</span>
           </span>
         </label>
       </p>
-
       <p class="text full-name">
         <label>
           <span class="icon user">Full Name</span><br />
-          <input type="text" placeholder="Full Name" name="full_name" data-bind="textInput: $root.full_name, disable: $root.inProgress" />
+          <input type="text" placeholder="Full Name" name="full_name" />
         </label>
       </p>
       <p class="text disabled">
         <label>
           <span class="icon user-circle">Username</span><br />
-          <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" data-bind="textInput: username" />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" />
         </label>
       </p>
       <p class="text">
         <label>
           <span class="icon info">Biography</span><br />
-          <textarea placeholder="Bio" name="bio" data-bind="textInput: $root.bio, disable: $root.inProgress"></textarea>
+          <textarea placeholder="Bio" name="bio"></textarea>
         </label>
       </p>
       <p class="submit">
-        <button type="submit">
-          <span data-bind="css: $root.inProgress() ? 'loading icon' : ''"></span>
-          <span data-bind="visible: !$root.inProgress()">Done</span>
-        </button>
+        <button type="submit">Done</button>
       </p>
     </form>
-    <!-- /ko -->
 
     <aside>
       <ul>
         <li>
-          <button data-bind="click: handleChangePasswordClicked, disable: inProgress">
+          <button>
             <span class="icon padlock"></span>
             Change Password
           </button>
         </li>
         <li>
-          <button data-bind="click: handleLogOutClicked, disable: inProgress">
+          <button>
             <span class="icon exit-to-app"></span>
             Log Out
           </button>
@@ -124,7 +80,7 @@
       </ul>
       <ul>
         <li>
-          <button data-bind="click: handleDeleteProfileClicked, disable: inProgress">
+          <button>
             <span class="icon close-circle"></span>
             Delete Profile
           </button>
