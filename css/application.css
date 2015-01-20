@@ -463,26 +463,22 @@
   }
 
 
-
-
-
-  /* =Error Message (for “in situ” error messages that we show when content fails to load)
+  /* =Loading/Error Message (for “in situ” messages that we show when content hasn’t loaded yet, or has failed to load)
   ----------------------------------------------- */
+    .error-message,
   .loading-message {
-    background: black;
-    color: white;
-  }
-  .loading-message,
-  .error-message {
+    color: rgb(255, 255, 255); /* @snow */
+    background: rgb(0, 0, 0); /* @midnight */
     text-align: center;
     padding: 1.5em;
-    margin: 1.5em 0;
   }
-  .loading-message h1,
-  .error-message   h1 {
-    font-size: inherit;
+    .error-message h1,
+  .loading-message h1 {
+    font-size: inherit !important; /* SHIM: This is !important to override the .page h1 style
+                                            which happens to come later… */
   }
-  .error-message   a {
+    .error-message a,
+  .loading-message a {
     color: inherit;
   }
 

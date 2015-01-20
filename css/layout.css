@@ -127,16 +127,6 @@
   }
 
 
-  /* SHIM: This can be removed once the image gallery has been removed from the profile screen. */
-  section.profile.page {
-    background: black;
-    color: white;
-  }
-  section.profile.page .post-list {
-    background: white;
-    color: black;
-  }
-
 
   .page > div,
   .page > form,
@@ -556,10 +546,6 @@
 
   /* =Profile
   ----------------------------------------------- */
-  section.profile {
-    background: black;
-    min-height: 100%;
-  }
   section.profile .image {
     max-width: none;
     text-align: center;
@@ -587,21 +573,11 @@
     font-size: 1.875em;
     line-height: 1.2;
   }
-  section.profile .details,
-  section.profile .push-list {
+  section.profile .details {
     color: black;
   }
-  section.profile > .details,
-  section.profile > .push-list {
+  section.profile > .details {
     background: rgb(204, 204, 204); /* aluminum */
-  }
-  section.profile .push-list {
-    max-width: none;
-    padding: 0.75em 0.75em 0.375em 0.75em;
-    background: rgb(222, 222, 222); /* @silver*/
-  }
-  section.profile .container .push-list {
-    margin: 0 -1.25em -1.25em -1.25em;
   }
 
   section.profile .details {
@@ -649,14 +625,8 @@
     background: rgb(242, 64, 41); /* @orange */
   }
 
-  section.profile .push-list ul,
-  section.profile .push-list li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  section.profile .details .container,
-  section.profile .push-list ul {
+
+  section.profile .details .container {
     max-width: 31.25em; /* image.width / font-size (500px / 16px) */
     margin: 0 auto;
   }
@@ -681,106 +651,6 @@
   }
   .push-card h3:last-child {
     margin-bottom: 0;
-  }
-  .push-card .hashtag,
-  section.profile .push-list li a {
-    display: inline-block;
-    background: white;
-    color: black;
-    padding: 0 0.5em;
-    font-size: 0.875em;
-    line-height: 1.7142857143; /* @line-height / 0.875em */
-    font-weight: bold;
-    border-radius: 0.15em;
-  }
-  section.profile .push-list li {
-    margin-right: 0.25em;
-    margin-bottom: 0.375em;
-    display: inline-block;
-  }
-  section.profile .push-list li a {
-    display: block;
-    text-decoration: none;
-  }
-  section.profile .push-list li a:active,
-  section.profile .push-list li a:focus {
-    background-color: rgb(204, 204, 204); /* @aluminum */
-  }
-  .profile .image-list {
-    margin: 0;
-    background: rgb(51, 51, 51); /* @iron */
-    padding: 0.1em 0 0 0.1em;
-    background: black;
-  }
-  .profile .image-list:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .profile .image-list,
-  .profile .image-list li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .profile .image-list li {
-    float: left;
-    margin: 0 0.1em 0.1em 0;
-  }
-  .profile .image-list li img {
-    display: block;
-  }
-  .profile ul.image-list img {
-    height: auto;
-    width: 6.25em; /* 100px / @font-size */
-  }
-
-  /* OPTIONAL: Scale the images to the available horizontal space, while keeping the image close to its native size (100px) */
-  .profile ul.image-list li img {
-    height: auto;
-    width: calc(33.333333333vw - 0.1em); /* three per row (image size (100px) / 3) - padding (0.1em) */
-  }
-
-  @media (min-width: 400px) {
-    .profile ul.image-list li img {
-      width: calc(25vw - 0.1em); /* 100px / 4 */
-    }
-  }
-
-  @media (min-width: 500px) {
-    .profile ul.image-list li img {
-      width: calc(20vw - 0.1em); /* 100px / 5 */
-    }
-  }
-
-  @media (min-width: 600px) {
-    .profile ul.image-list li img {
-      width: calc(16.666666667vw - 0.1em); /* 100px / 6 */
-    }
-  }
-
-  @media (min-width: 700px) {
-    .profile ul.image-list li img {
-      width: calc(14.285714286vw - 0.1em); /* 100px / 7 */
-    }
-  }
-
-  @media (min-width: 800px) {
-    .profile ul.image-list li img {
-      width: calc(12.5vw - 0.1em); /* 100px / 8 */
-    }
-  }
-
-  @media (min-width: 900px) {
-    .profile ul.image-list li img {
-      width: calc(11.111111111vw - 0.1em); /* 100px / 9 */
-    }
-  }
-
-  @media (min-width: 1000px) {
-    .profile ul.image-list li img {
-      width: calc(10vw - 0.1em); /* 100px / 10 */
-    }
   }
 
 
@@ -946,14 +816,6 @@
     background-repeat: no-repeat;
     background-position: 100% 50%;
     background-position: calc(100% - 1.5em) 50%;
-  }
-  .item.active span.icon.instagram:before {
-    /* Data URI encoded from: ocean/instagram.svg */
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnIGlkPSJpbnN0YWdyYW0iPg0KCTxwYXRoIGZpbGw9InJnYig0MCwgODEsIDEyNykiIGQ9Ik00LjU2NywyaDE0Ljg2NkMyMC44NDUsMiwyMiwzLjE1NSwyMiw0LjU2N3YxNC44NjZDMjIsMjAuODQ1LDIwLjg0NSwyMiwxOS40MzMsMjJINC41NjcNCgkJQzMuMTU1LDIyLDIsMjAuODQ1LDIsMTkuNDMyVjQuNTY3QzIsMy4xNTUsMy4xNTUsMiw0LjU2NywyTDQuNTY3LDJ6IE0xNi41NjksNC4yMjJjLTAuNDk1LDAtMC45LDAuNDA1LTAuOSwwLjl2Mi4xNTUNCgkJYzAsMC40OTUsMC40MDUsMC45LDAuOSwwLjloMi4yNmMwLjQ5NSwwLDAuOS0wLjQwNSwwLjktMC45VjUuMTIyYzAtMC40OTUtMC40MDUtMC45LTAuOS0wLjkNCgkJQzE4LjgyOCw0LjIyMiwxNi41NjksNC4yMjIsMTYuNTY5LDQuMjIyeiBNMTkuNzQsMTAuNDU3aC0xLjc2YzAuMTY2LDAuNTQ0LDAuMjU2LDEuMTIsMC4yNTYsMS43MTUNCgkJYzAsMy4zMjYtMi43ODUsNi4wMjUtNi4yMTYsNi4wMjVTNS44MDMsMTUuNSw1LjgwMywxMi4xNzNjMC0wLjU5NSwwLjA5LTEuMTczLDAuMjU1LTEuNzE1SDQuMjIzdjguNDQ4DQoJCWMwLDAuNDM3LDAuMzU3LDAuNzk1LDAuNzk1LDAuNzk1aDEzLjkyN2MwLjQzNywwLDAuNzk1LTAuMzU3LDAuNzk1LTAuNzk1TDE5Ljc0LDEwLjQ1N0wxOS43NCwxMC40NTd6IE0xMi4wMTksOC4wNjUNCgkJYy0yLjIxOSwwLTQuMDE2LDEuNzQzLTQuMDE2LDMuODkzczEuNzk4LDMuODkzLDQuMDE2LDMuODkzczQuMDE1LTEuNzQzLDQuMDE1LTMuODkzQzE2LjAzNiw5LjgwNywxNC4yMzcsOC4wNjUsMTIuMDE5LDguMDY1eiIvPg0KPC9nPg0KPC9zdmc+DQo=);
-  }
-  .item.active span.icon.twitter:before {
-    /* Data URI encoded from: bluebird/twitter.svg */
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnIGlkPSJ0dW1ibHIiPg0KCTxwYXRoIGZpbGw9InJnYig5NCwgMTcxLCAyNDQpIiBkPSJNMjIsNS43OThjLTAuNzM2LDAuMzI2LTEuNTI3LDAuNTQ3LTIuMzU3LDAuNjQ2YzAuODQ3LTAuNTA4LDEuNDk4LTEuMzEyLDEuODA0LTIuMjcNCgkJYy0wLjc5MywwLjQ3LTEuNjcxLDAuODEyLTIuNjA2LDAuOTk2Yy0wLjc0OC0wLjc5OC0xLjgxNS0xLjI5Ni0yLjk5NS0xLjI5NmMtMi4yNjYsMC00LjEwNCwxLjgzNy00LjEwNCw0LjEwNA0KCQljMCwwLjMyMiwwLjAzNiwwLjYzNSwwLjEwNiwwLjkzNUM4LjQ0MSw4Ljc0LDUuNDE2LDcuMTA3LDMuMzkzLDQuNjI0QzMuMDQsNS4yMzEsMi44MzcsNS45MzUsMi44MzcsNi42ODgNCgkJYzAsMS40MjMsMC43MjQsMi42NzksMS44MjYsMy40MTZDMy45OTEsMTAuMDgyLDMuMzU4LDkuODk4LDIuODA0LDkuNTlDMi44MDMsOS42MDcsMi44MDMsOS42MjQsMi44MDMsOS42NDINCgkJYzAsMS45ODgsMS40MTQsMy42NDYsMy4yOTEsNC4wMjRjLTAuMzQzLDAuMDkzLTAuNzA2LDAuMTQzLTEuMDgxLDAuMTQzYy0wLjI2NCwwLTAuNTIxLTAuMDI2LTAuNzcyLTAuMDczDQoJCWMwLjUyMiwxLjYzLDIuMDM4LDIuODE2LDMuODMzLDIuODQ5Yy0xLjQwNCwxLjEwMS0zLjE3MywxLjc1Ni01LjA5NiwxLjc1NmMtMC4zMzEsMC0wLjY1OC0wLjAxOS0wLjk3OC0wLjA1OA0KCQljMS44MTYsMS4xNjQsMy45NzMsMS44NDMsNi4yOSwxLjg0M2M3LjU0OCwwLDExLjY3NS02LjI1MywxMS42NzUtMTEuNjc1YzAtMC4xNzgtMC4wMDQtMC4zNTUtMC4wMTItMC41MzENCgkJQzIwLjc1NSw3LjM0MywyMS40NSw2LjYyLDIyLDUuNzk4TDIyLDUuNzk4eiIvPg0KPC9nPg0KPC9zdmc+DQo=);
   }
 
   section.hashtags .push-card h3 {

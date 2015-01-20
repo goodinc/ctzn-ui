@@ -6,5 +6,6 @@
   @import url(elements.css);
   @import url(lists.css);
   @import url(application.css);
-  @import url(layouts.css);
+  @import url(layout.css);
+  @import url(shim.css);
  
