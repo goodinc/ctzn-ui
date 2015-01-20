@@ -12,122 +12,6 @@
     min-height: 100%;
     box-sizing: border-box;
   }
-
-  @-webkit-keyframes slide-left {
-    0% {
-      -webkit-transform: translateX(40em);
-              transform: translateX(40em);
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-  }
-
-  @keyframes slide-left {
-    0% {
-      -webkit-transform: translateX(40em);
-              transform: translateX(40em);
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-  }
-
-  @-webkit-keyframes slide-right {
-    0% {
-      -webkit-transform: translateX(-40em);
-              transform: translateX(-40em);
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-  }
-
-  @keyframes slide-right {
-    0% {
-      -webkit-transform: translateX(-40em);
-              transform: translateX(-40em);
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-  }
-
-  @-webkit-keyframes slide-up {
-    0% {
-      -webkit-transform: translateY(40em);
-              transform: translateY(40em);
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-up {
-    0% {
-      -webkit-transform: translateY(40em);
-              transform: translateY(40em);
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-  }
-
-  @-webkit-keyframes slide-down {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(40em);
-              transform: translateY(40em);
-    }
-  }
-
-  @keyframes slide-down {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(40em);
-              transform: translateY(40em);
-    }
-  }
-
-  section.switch li:nth-child(2n+1) {
-    -webkit-animation: slide-left 0.2s both;
-            animation: slide-left 0.2s both;
-  }
-  section.switch li:nth-child(2n) {
-    -webkit-animation: slide-right 0.2s both;
-            animation: slide-right 0.2s both;
-  }
-
-  section.editor.page {
-    position: fixed;
-    z-index: 99;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    -webkit-animation: slide-up 0.3s both;
-            animation: slide-up 0.3s both;
-  }
-  section.editor.page.outro {
-    -webkit-animation: slide-down 0.3s both;
-            animation: slide-down 0.3s both;
-  }
-
-
-
   .page > div,
   .page > form,
   .page > aside {
@@ -149,7 +33,39 @@
   .post.page >     div:last-child {
     padding-bottom: 17.5em;
   }
+  .page .submit {
+    margin-top: 0.75em;
+  }
+  .page > aside {
+    padding-top: 0;
+  }
+  .page aside {
+    margin-top: 1.5em;
+  }
+  .submit + aside {
+    margin-top: 3em;
+  }
 
+  /* For the post editor */
+  .page > a {
+    padding: 1.25em;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .page > a .icon {
+    width: 1.875em;
+    height: 1.875em;
+  }
+  .page h1 {
+    margin-top: 0;
+    font-size: 1.125em; /* 18px / @font-size */
+    line-height: 1.3333333333; /* 1.5 / 1.125 */
+  }
+
+
+  /* =Header
+  ----------------------------------------------- */
   .page > header {
     text-align: center;
     padding: 0.75em;
@@ -160,8 +76,6 @@
   }
   .page > header h1 {
     margin: 0;
-    font-size: 1.125em;
-    line-height: 1.3333333333; /* @line-height / 1.125 */
     font-weight: inherit;
     text-transform: lowercase;
   }
@@ -199,7 +113,6 @@
     width: 1.125em;
     height: 1.125em;
   }
-
   .page > header .back {
     background-repeat: no-repeat;
     background-position: 0.75em 1em; /* “centered” works here too, but looks slightly too high up */
@@ -308,32 +221,594 @@
     }
   }
 
-  .page > aside {
-    padding-top: 0;
+
+  /* =CTZN Header
+  ----------------------------------------------- */
+  .primary {
+    background-color: rgb(51, 51, 51); /* @iron */
+    color: rgb(204, 204, 204); /* @aluminum */
+    position: relative;
+    padding: 0.75em 0.75em 0.75em 1.25em;
+    z-index: 9;
+    box-sizing: border-box;
+    border-bottom: 0.1em solid rgb(51, 51, 51); /* @iron */
   }
-  .page h1 {
-    margin-top: 0;
-    font-size: 1.125em; /* 18px / @font-size */
-    line-height: 1.3333333333; /* 1.5 / 1.125 */
+  .primary h1 {
+    margin: 0;
+    font-size: inherit;
+    color: white;
+    display: block;
+    height: 1.5em;
   }
-  .page > a {
-    padding: 1.25em;
+  .primary h1 a {
+    display: block;
+    float: left;
+    line-height: 1;
+    color: white;
+    padding: 0.75em 0.9em;
+    line-height: 1;
+    border-radius: 0.25em;
+    margin: -0.5em -0.9375em;
+  }
+  .primary h1 a svg.icon {
+    width: 3em;
+    height: 1em;
+    vertical-align: top;
+  }
+  .primary .icon.loading {
+    margin-top: 0.5em;
+    margin-left: 1.5em;
+    float: left;
+    transition: opacity 0.2s;
+    opacity: 0;
+  }
+  .primary .icon.loading.active {
+    opacity: 1;
+  }
+  .primary nav h2 {
+    background-color: rgb(51, 51, 51); /* @iron */
+    font-size: inherit;
+    color: white;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.75em;
+  }
+  .primary > a {
+    border-left: 0.1em solid rgb(44, 44, 44); /* @thorium */
+  }
+  .primary .notifications {
+    position: absolute;
+    top: 0;
+    right: 3em;
+    padding: 0.7em 0.75em;
+  }
+  .primary .notifications .icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .primary .profile {
     position: absolute;
     top: 0;
     right: 0;
+    padding: 0.55em 0.6em;
   }
-  .page > a .icon {
-    width: 1.875em;
-    height: 1.875em;
+  .primary .profile:active,
+  .primary .profile:focus {
+    opacity: 0.75;
   }
-  .page .submit {
-    margin-top: 0.75em;
+  .primary .notifications.active:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: rgb(255, 49, 102); /* @strawberry */
+    width: 0.325em;
+    height: 0.325em;
+    border-radius: 100%;
+    margin-top: 0.675em;
+    margin-left: -0.25em;
   }
-  .page aside {
+  .primary > a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .primary > a:active,
+  .primary > a:focus {
+    color: white;
+  }
+
+
+  /* =Page Options
+  -----------------------------------------------
+  TODO: Consider combining these with styles for items on the settings page.
+  ----------------------------------------------- */
+  .page aside ul,
+  .page aside li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .page aside li {
+    margin: 0.75em 0;
+  }
+  .page aside ul + ul {
     margin-top: 1.5em;
   }
-  .submit + aside {
+  .page aside a      .icon,
+  .page aside button .icon {
+    margin-right: 0.75em;
+    margin-left: -0.5em;
+    width: 1.875em;
+    height: 1.875em;
+    opacity: 0.25;
+  }
+  span.icon.exit-to-app:before {
+    background-size: 1.5em auto;
+  }
+  .page aside a,
+  .page aside button {
+    display: block;
+    width: 100%;
+    box-sizing: content-box;
+    text-align: left;
+    padding: 0.375em 1.25em;
+    margin: 0 -1.25em;
+    line-height: 1.5em;
+    text-decoration: none;
+    font-weight: normal;
+    background: white;
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    color: rgb(102, 102, 102); /* @tin */
+    border-radius: 0.25em;
+  }
+  .page aside a,
+  .page aside button {
+    /* Data URI encoded from: midnight/forward.svg */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+DQo8cGF0aCBmaWxsPSJyZ2IoMjA0LCAyMDQsIDIwNCkiIGQ9Ik05LjUsMTljLTAuMzg0LDAtMC43NjgtMC4xNDYtMS4wNjEtMC40MzljLTAuNTg2LTAuNTg2LTAuNTg2LTEuNTM1LDAtMi4xMjFsMy45MzktMy45MzlMOC40MzksOC41NjENCgljLTAuNTg2LTAuNTg1LTAuNTg2LTEuNTM2LDAtMi4xMjFjMC41ODYtMC41ODYsMS41MzUtMC41ODYsMi4xMjEsMGw1LDVjMC41ODYsMC41ODUsMC41ODYsMS41MzYsMCwyLjEyMWwtNSw1DQoJQzEwLjI2OCwxOC44NTQsOS44ODQsMTksOS41LDE5eiIvPg0KPC9zdmc+DQo=);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-position: calc(100% - 1.5em) 50%;
+  }
+  @media (max-width: 34.25em) {
+    .page aside ul + ul {
+      margin-top: 0.75em;
+    }
+    .page aside li {
+      margin-bottom: 0;
+    }
+    .page aside li + li {
+      margin-top: 0;
+    }
+    .page aside li + li a,
+    .page aside li + li button {
+      border-top-width: 0;
+    }
+    .page aside a,
+    .page aside button {
+      border-left-width: 0;
+      border-right-width: 0;
+      border-radius: 0;
+    }
+  }
+  .page aside a:active,
+  .page aside a:focus,
+  .page aside button:active,
+  .page aside button:focus {
+    background-color: rgb(222, 222, 222); /* @silver*/
+  }
+  .page aside,
+  .page aside ul {
+    margin-top: 0;
+  }
+  .page aside a {
+    text-transform: lowercase;
+  }
+
+
+  /* =Switch Push
+  ----------------------------------------------- */
+  section.switch {
+    background: rgb(51, 51, 51); /* @iron */
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    min-height: 100%;
+    box-sizing: border-box;
+  }
+  .switch ul,
+  .switch li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .switch ul {
+    margin-top: 0;
+  }
+  .switch li > a:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .switch li > a {
+    padding: 1.5em;
+  }
+  .switch li a:active,
+  .switch li a:focus {
+    opacity: 0.75;
+    color: inherit;
+  }
+  .switch li h2 + p {
+    margin: 0;
+    color: black;
+  }
+  .switch .join {
+    text-align: center;
+    font-size: inherit;
+  }
+  .switch .join a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1.5em;
+    color: inherit;
+  }
+  .switch .join a .icon {
+    font-size: 2em;
+  }
+
+
+  /* =Push Card
+  ----------------------------------------------- */
+  .push-card,
+  .switch li > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 2.25em 1.25em 0.75em; /* 36px 20px*/
+    background: rgb(203, 253, 128); /* @lime */
+  }
+  .push-card.lime,
+  .switch li.lime a {
+    background: rgb(203, 253, 128); /* @lime */
+  }
+  .push-card.cucumber,
+  .switch li.cucumber a {
+    background-color: rgb(150, 254, 166); /* @cucumber */
+  }
+  .push-card.blueberry,
+  .switch li.blueberry a {
+    background: rgb(99, 204, 203); /* @blueberry */
+  }
+  .push-card.boysenberry,
+  .switch li.boysenberry a {
+    background: rgb(101, 156, 247); /* @boysenberry */
+  }
+  .push-card.plumb,
+  .switch li.plumb a {
+    background: rgb(193, 77, 166); /* @plumb */
+  }
+  .push-card.strawberry,
+  .switch li.strawberry a {
+    background: rgb(255, 49, 102); /* @strawberry */
+  }
+  .push-card.apple,
+  .switch li.apple a {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .push-card.tangerine,
+  .switch li.tangerine a {
+    background: rgb(255, 202, 72); /* @tangerine */
+  }
+  .push-card.orange,
+  .switch li.orange a {
+    background: rgb(242, 64, 41); /* @orange */
+  }
+  .push-card h2,
+  .push-card h3 {
+    text-align: center;
+  }
+  .push-card h2,
+  .switch li h2 {
+    font-size: 1.875em;
+    line-height: 1.2; /* @line-height x 1.5 / 1.875em */
+    font-weight: 900; /* @extra-bold */
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    opacity: 0.95;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .push-card.lime       h2,
+  .switch li.lime     a h2,
+  .push-card.cucumber   h2,
+  .switch li.cucumber a h2 {
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .push-card h3 {
+    margin-top: 0;
+    font-weight: inherit;
+    font-size: inherit;
+  }
+  .push-card h3:last-child {
+    margin-bottom: 0;
+  }
+  .push-card .meta {
+    background: black;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: 1.5em;     /* @line-height */
+    padding: 0.75em 1.5em; /* @line-height / 2 */
+    color: white;
+  }
+  .push-card .meta {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+  .push-card .meta p {
+    margin: 0;
+    text-transform: uppercase;
+    color: white;
+    display: inline-block;
+  }
+  .push-card .meta p + p {
+    margin-left: 1.5em;
+  }
+  .push-card .meta p .count {
+    display: block;
+    font-weight: bold;
+  }
+  .push-card .meta p .label {
+    color: black;
+    font-size: 0.6875em;
+    display: block;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  /* For the settings page */
+  .page > .push-card {
+    max-width: none;
+  }
+
+
+  /* =Push Card (preview page)
+  ----------------------------------------------- */
+
+  /* SHIM: Reapply the “.page” styles */
+  .push-card.page {
+    padding: 0;
+  }
+  @media (min-height: 20em) and (min-width: 20em) {
+    .push-card.page {
+      padding-top: 3em;
+    }
+  }
+
+  section.push-card > div {
+    max-width: 20em;
+  }
+  .push-card.page form,
+  .push-card.page .action {
     margin-top: 3em;
+  }
+
+  @media (min-height: 500px) {
+    section.start > div,
+    .push-card.page .details {
+      margin-top: 3em;
+    }
+    section.start form,
+    .push-card.page form,
+    .push-card.page .action {
+      margin-top: 4.5em;
+    }
+  }
+  .push-card.page .action a {
+    background: black;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    width: 100%;
+    font-weight: normal;
+    font-size: 1.5em; /* 24px / @font-size */
+    border-radius: 4px;
+    line-height: 2.0833333333em; /* 50px / 24px */
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .push-card.page .action a:active,
+  .push-card.page .action a:focus {
+    background: black;
+  }
+
+
+  /* =Push Header
+  ----------------------------------------------- */
+  section.push > header {
+    margin: 0;
+    padding: 1.25em 1.25em 0;
+    position: relative;
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    background: rgb(203, 253, 128); /* @lime */
+  }
+
+  .push > header.lime {
+    background: rgb(203, 253, 128); /* @lime */
+  }
+  .push > header.cucumber {
+    background-color: rgb(150, 254, 166); /* @cucumber */
+  }
+  .push > header.blueberry {
+    background: rgb(99, 204, 203); /* @blueberry */
+  }
+  .push > header.boysenberry {
+    background: rgb(101, 156, 247); /* @boysenberry */
+  }
+  .push > header.plumb {
+    background: rgb(193, 77, 166); /* @plumb */
+  }
+  .push > header.strawberry {
+    background: rgb(255, 49, 102); /* @strawberry */
+  }
+  .push > header.apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .push > header.tangerine {
+    background: rgb(255, 202, 72); /* @tangerine */
+  }
+  .push > header.orange {
+    background: rgb(242, 64, 41); /* @orange */
+  }
+
+  .push > header h1 {
+    font-size: 1.875em;
+    line-height: 1.2; /* @line-height x 1.5 / 1.875em */
+    font-weight: 900; /* @extra-bold */
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    opacity: 0.95;
+    margin-top: 0;
+    margin-bottom: 0.2em; /* @line-height / 4 / 1.875em */
+    text-align: center;
+  }
+  .push > header.lime     h1,
+  .push > header.cucumber h1 {
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .push > header h2 {
+    margin-top: 0;
+    margin-bottom: 1.5em; /* @line-height */
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: center;
+  }
+  .profile       .meta,
+  .push > header .meta {
+    background: black;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0 -1.25em 0;
+    padding: 0.75em 1.25em;
+  }
+  .profile       .meta p,
+  .push > header .meta p {
+    margin: 0;
+    text-transform: uppercase;
+    color: white;
+
+    display: inline-block;
+  }
+  .profile       .meta p .count,
+  .push > header .meta p .count {
+    display: block;
+    font-weight: bold;
+  }
+  .profile       .meta p .label,
+  .push > header .meta p .label {
+    color: black;
+    font-size: 0.6875em;
+    display: block;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .profile       .meta p + p,
+  .push > header .meta p + p {
+    margin-left: 1.5em;
+  }
+  .profile       .meta p a,
+  .push > header .meta p a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    margin: -0.5em -0.75em -0.75em;
+    padding: 0.5em 0.75em 0.75em;
+  }
+  .profile       .meta p a:active,
+  .profile       .meta p a:focus,
+  .push > header .meta p a:active,
+  .push > header .meta p a:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .profile       .meta p a:active .label,
+  .profile       .meta p a:focus  .label,
+  .push > header .meta p a:active .label,
+  .push > header .meta p a:focus  .label {
+    color: white;
+  }
+  .push > header .website {
+    margin-top: 0;
+  }
+  .push > header .website a {
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+  .push > header .website a:active,
+  .push > header .website a:focus {
+    color: white;
+  }
+  .push > header .meta .hashtags {
+    margin: 0.15em 0 0;
+    float: right;
+  }
+  .push > header .meta .hashtags a {
+    display: block;
+    color: white;
+    color: rgba(255, 255, 255, 0.85);
+    border: 0.1em solid white;
+    border-color: rgba(255, 255, 255, 0.85);
+    padding: 0.5625em 1.5em;
+    line-height: 1;
+    border-radius: 0.375em;
+    margin: 0;
+  }
+  .push > header .meta .hashtags a:active,
+  .push > header .meta .hashtags a:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  .push > header .meta .hashtags .icon {
+    width: 1em;
+    height: 1em;
+  }
+  .push > header .new-posts {
+    font-size: 0.875em;
+    position: fixed;
+    top: 4em;
+    left: 50%;
+    width: 10em;
+    margin: 0 0 0 -5em;
+    text-align: center;
+    z-index: 9;
+  }
+  .push > header .new-posts button {
+    background: white;
+    color: rgb(255, 49, 102); /* @strawberry */
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    transition: all 0.2s;
+  }
+  .push > header .new-posts button:active,
+  .push > header .new-posts button:focus {
+    background-color: rgb(222, 222, 222); /* @silver*/
+    border-color: rgb(222, 222, 222); /* @silver*/
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+  @media (min-width: 20em) and (min-height: 20em) {
+
+    /* OPTIONAL: Make the header sticky */
+    .primary {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    /* Make space for the sticky header */
+    section.push > header {
+      margin-top: 3em;
+    }
   }
 
 
@@ -546,57 +1021,10 @@
 
   /* =Profile
   ----------------------------------------------- */
-  section.profile .image {
-    max-width: none;
-    text-align: center;
-    padding: 1.25em;
-    margin: -1.25em -1.25em 0;
-    background: rgba(255, 255, 255, 0.15);
-  }
   section.profile > .container {
     max-width: none;
     padding-bottom: 0;
   }
-  section.profile > .image {
-    background: rgb(203, 253, 128); /* @lime */
-  }
-  section.profile .image .avatar {
-    display: inline-block;
-  }
-  section.profile .image img {
-    border-radius: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-  section.profile h2 {
-    font-weight: 900; /* @extra-bold */
-    font-size: 1.875em;
-    line-height: 1.2;
-  }
-  section.profile .details {
-    color: black;
-  }
-  section.profile > .details {
-    background: rgb(204, 204, 204); /* aluminum */
-  }
-
-  section.profile .details {
-    margin: 0 auto;
-    max-width: 31.25em;
-    padding: 1.25em 1.5em;
-  }
-  section.profile .details h2,
-  section.profile .details p {
-    text-align: center;
-  }
-  section.profile .details h2 {
-    color: white;
-
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-  }
-
   section.profile .lime {
     background: rgb(203, 253, 128); /* @lime */
   }
@@ -625,16 +1053,44 @@
     background: rgb(242, 64, 41); /* @orange */
   }
 
-
-  section.profile .details .container {
-    max-width: 31.25em; /* image.width / font-size (500px / 16px) */
+  section.profile .image {
+    max-width: none;
+    text-align: center;
+    padding: 1.25em;
+    margin: -1.25em -1.25em 0;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  section.profile .image .avatar {
+    display: inline-block;
+  }
+  section.profile .image img {
+    border-radius: 100%;
+    display: block;
     margin: 0 auto;
   }
-  section.profile .details h2 {
-    margin: 0;
+
+  section.profile .details {
+    margin: 0 auto;
+    max-width: 31.25em;
+    padding: 1.25em 1.5em;
   }
+  section.profile .details h2,
+  section.profile .details p {
+    text-align: center;
+  }
+  section.profile .details h2,
   section.profile .details h2 + p {
     margin: 0;
+  }
+  section.profile .details h2 {
+    font-weight: 900; /* @extra-bold */
+    font-size: 1.875em;
+    line-height: 1.2;
+    color: white;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   section.profile .joined {
     font-size: 0.75em;
@@ -644,17 +1100,8 @@
     margin: 0;
   }
 
-  .push-card h3 {
-    margin-top: 0;
-    font-weight: inherit;
-    font-size: inherit;
-  }
-  .push-card h3:last-child {
-    margin-bottom: 0;
-  }
 
-
-  /* =Hashtags
+  /* =Settings
   ----------------------------------------------- */
   section.hashtags {
     padding-bottom: 4.5em;
@@ -853,104 +1300,6 @@
 
   /* =Push
   ----------------------------------------------- */
-
-  /* CTZN Header */
-  .primary {
-    background-color: rgb(51, 51, 51); /* @iron */
-    color: rgb(204, 204, 204); /* @aluminum */
-    position: relative;
-    padding: 0.75em 0.75em 0.75em 1.25em;
-    z-index: 9;
-    box-sizing: border-box;
-    border-bottom: 0.1em solid rgb(51, 51, 51); /* @iron */
-  }
-  .primary h1 {
-    margin: 0;
-    font-size: inherit;
-    color: white;
-    display: block;
-    height: 1.5em;
-  }
-
-  .primary h1 a {
-    display: block;
-    float: left;
-    line-height: 1;
-    color: white;
-    padding: 0.75em 0.9em;
-    line-height: 1;
-    border-radius: 0.25em;
-    margin: -0.5em -0.9375em;
-  }
-
-  .primary h1 a svg.icon {
-    width: 3em;
-    height: 1em;
-    vertical-align: top;
-  }
-  .primary .icon.loading {
-    margin-top: 0.5em;
-    margin-left: 1.5em;
-    float: left;
-    transition: opacity 0.2s;
-    opacity: 0;
-  }
-  .primary .icon.loading.active {
-    opacity: 1;
-  }
-  .primary nav h2 {
-    background-color: rgb(51, 51, 51); /* @iron */
-    font-size: inherit;
-    color: white;
-    font-weight: normal;
-    margin: 0;
-    padding: 0.75em;
-  }
-  .primary > a {
-    border-left: 0.1em solid rgb(44, 44, 44); /* @thorium */
-  }
-  .primary .notifications {
-    position: absolute;
-    top: 0;
-    right: 3em;
-    padding: 0.7em 0.75em;
-  }
-  .primary .notifications .icon {
-    width: 1.5em;
-    height: 1.5em;
-  }
-  .primary .profile {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.55em 0.6em;
-  }
-  .primary .profile:active,
-  .primary .profile:focus {
-    opacity: 0.75;
-  }
-  .primary .notifications.active:before {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: rgb(255, 49, 102); /* @strawberry */
-    width: 0.325em;
-    height: 0.325em;
-    border-radius: 100%;
-    margin-top: 0.675em;
-    margin-left: -0.25em;
-  }
-  .primary > a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-  .primary > a:active,
-  .primary > a:focus {
-    color: white;
-  }
-
-  /* Push Header */
   section.push {
     background: rgb(255, 255, 255); /* @snow */
     color: rgb(0, 0, 0); /* @midnight */
@@ -958,223 +1307,8 @@
     /* Make space for “.create” */
     padding-bottom: 1.5em;
   }
-  section.push > header {
-    margin: 0;
-    padding: 1.25em 1.25em 0;
-    position: relative;
-    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
-    background: rgb(203, 253, 128); /* @lime */
-  }
   section.push .post-list {
     margin-top: 0.375em; /* @line-height / 4 */
-  }
-
-  @media (min-width: 20em) and (min-height: 20em) {
-
-    /* OPTIONAL: Make the header sticky */
-    .primary {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-    /* Make space for the sticky header */
-    section.push > header {
-      margin-top: 3em;
-    }
-  }
-
-  .push > header.lime {
-    background: rgb(203, 253, 128); /* @lime */
-  }
-  .push > header.cucumber {
-    background-color: rgb(150, 254, 166); /* @cucumber */
-  }
-  .push > header.blueberry {
-    background: rgb(99, 204, 203); /* @blueberry */
-  }
-  .push > header.boysenberry {
-    background: rgb(101, 156, 247); /* @boysenberry */
-  }
-  .push > header.plumb {
-    background: rgb(193, 77, 166); /* @plumb */
-  }
-  .push > header.strawberry {
-    background: rgb(255, 49, 102); /* @strawberry */
-  }
-  .push > header.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
-  }
-  .push > header.tangerine {
-    background: rgb(255, 202, 72); /* @tangerine */
-  }
-  .push > header.orange {
-    background: rgb(242, 64, 41); /* @orange */
-  }
-
-  .push > header .mix {
-    background: rgba(255, 255, 255, 0.25);
-    margin: -1.5em -1.5em 0;
-    padding: 1.5em;
-  }
-  .push > header .mix > a {
-    background: black;
-    display: block;
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
-    width: 12.5em;
-    height: 12.5em;
-    margin: 0 auto;
-  }
-  .push > header .mix > a img {
-    width: 100%;
-    height: auto;
-  }
-  .push > header .details {
-    position: relative;
-  }
-  .push > header .mix ~ .details {
-    margin-top: 1.5em;
-  }
-  .push > header .details:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  .push > header h1 {
-    font-size: 1.875em;
-    line-height: 1.2; /* @line-height x 1.5 / 1.875em */
-    font-weight: 900; /* @extra-bold */
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
-    opacity: 0.95;
-    margin-top: 0;
-    margin-bottom: 0.2em; /* @line-height / 4 / 1.875em */
-    text-align: center;
-  }
-  .push > header.lime     h1,
-  .push > header.cucumber h1 {
-    color: black;
-    color: rgba(0, 0, 0, 0.95);
-  }
-  .push > header h2 {
-    margin-top: 0;
-    margin-bottom: 1.5em; /* @line-height */
-    font-size: inherit;
-    font-weight: inherit;
-    text-align: center;
-  }
-  .profile       .meta,
-  .push > header .meta {
-    background: black;
-    background: rgba(0, 0, 0, 0.1);
-    margin: 0 -1.25em 0;
-    padding: 0.75em 1.25em;
-  }
-  .profile       .meta p,
-  .push > header .meta p {
-    margin: 0;
-    text-transform: uppercase;
-    color: white;
-
-    display: inline-block;
-  }
-  .profile       .meta p .count,
-  .push > header .meta p .count {
-    display: block;
-    font-weight: bold;
-  }
-  .profile       .meta p .label,
-  .push > header .meta p .label {
-    color: black;
-    font-size: 0.6875em;
-    display: block;
-    letter-spacing: 1px;
-    line-height: 1;
-  }
-  .profile       .meta p + p,
-  .push > header .meta p + p {
-    margin-left: 1.5em;
-  }
-  .profile       .meta p a,
-  .push > header .meta p a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    margin: -0.5em -0.75em -0.75em;
-    padding: 0.5em 0.75em 0.75em;
-  }
-  .profile       .meta p a:active,
-  .profile       .meta p a:focus,
-  .push > header .meta p a:active,
-  .push > header .meta p a:focus {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  .profile       .meta p a:active .label,
-  .profile       .meta p a:focus  .label,
-  .push > header .meta p a:active .label,
-  .push > header .meta p a:focus  .label {
-    color: white;
-  }
-  .push > header .website {
-    margin-top: 0;
-  }
-  .push > header .website a {
-    color: inherit;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.75em;
-    font-weight: bold;
-  }
-  .push > header .website a:active,
-  .push > header .website a:focus {
-    color: white;
-  }
-  .push > header .meta .hashtags {
-    margin: 0.15em 0 0;
-    float: right;
-  }
-  .push > header .meta .hashtags a {
-    display: block;
-    color: white;
-    color: rgba(255, 255, 255, 0.85);
-    border: 0.1em solid white;
-    border-color: rgba(255, 255, 255, 0.85);
-    padding: 0.5625em 1.5em;
-    line-height: 1;
-    border-radius: 0.375em;
-    margin: 0;
-  }
-  .push > header .meta .hashtags a:active,
-  .push > header .meta .hashtags a:focus {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-  }
-  .push > header .meta .hashtags .icon {
-    width: 1em;
-    height: 1em;
-  }
-  .push > header .new-posts {
-    font-size: 0.875em;
-    position: fixed;
-    top: 4em;
-    left: 50%;
-    width: 10em;
-    margin: 0 0 0 -5em;
-    text-align: center;
-    z-index: 9;
-  }
-  .push > header .new-posts button {
-    background: white;
-    color: rgb(255, 49, 102); /* @strawberry */
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
-    transition: all 0.2s;
-  }
-  .push > header .new-posts button:active,
-  .push > header .new-posts button:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
-    border-color: rgb(222, 222, 222); /* @silver*/
-    color: rgb(193, 16, 65); /* @raspberry */
   }
 
 
@@ -1191,91 +1325,7 @@
   }
 
 
-
-  /* =Post Options
-  ----------------------------------------------- */
-  .post-options {
-    background: black;
-    background: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.2s;
-    z-index: 9;
-  }
-  .post-options.active {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-  }
-  .post-options ul,
-  .post-options li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .post-options ul {
-    margin: 0;
-    border-radius: 0.15em;
-  }
-  .post-options ul + ul {
-    margin-top: 0.375em;
-  }
-  .post-options div {
-    background: rgb(246, 246, 246);
-    padding: 0.375em;
-    color: rgb(51, 51, 51); /* @iron */
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    position: absolute;
-    left: -9999px;
-
-    transition: -webkit-transform 0.3s;
-    transition:         transform 0.3s;
-
-    -webkit-transform: translateY(30em);
-            transform: translateY(30em);
-  }
-  .post-options.active div {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding-bottom: 1.5em;
-
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  .post-options ul {
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
-    background: white;
-  }
-  .post-options li + li {
-    border-top: 0.1em solid rgb(222, 222, 222); /* @silver*/
-  }
-  .post-options li button {
-    display: block;
-    width: 100%;
-    text-transform: none;
-    font-size: 1.125em;
-    padding: 0.6666666667em; /* @line-height / 2 / 1.125 */
-    line-height: 1.3333333333; /* @line-height / 1.125 */
-    color: rgb(101, 156, 247); /* @boysenberry */
-    color: rgb(60, 109, 218);
-    font-weight: bold;
-  }
-  .post-options li.warning button {
-    color: rgb(255, 49, 59); /* @apple */
-  }
-  .post-options li button:active,
-  .post-options li button:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
-    border-radius: 0;
-  }
-
-
-  /* =Editor
+  /* =Post Editor
   ----------------------------------------------- */
   .editor.page {
     padding-top: 0;
@@ -1347,8 +1397,6 @@
   }
 
 
-
-
   /* =Mix Editor
   ----------------------------------------------- */
   section.mix-editor.page {
@@ -1363,7 +1411,7 @@
   }
 
 
-  /* =Images
+  /* =Mix Editor Images
   ----------------------------------------------- */
   .mix-editor .selected-images h2 {
     position: relative;
@@ -1572,7 +1620,6 @@
     height: auto;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
   }
-
   .mix-editor form .preview.lime {
     background-color: rgb(203, 253, 128); /* @lime */
   }
@@ -1637,85 +1684,314 @@
     outline-color: rgb(100, 180, 225); /* @gooseberry */
     outline-color: rgb(153, 153, 153); /* @nickel */
   }
-  .page aside ul,
-  .page aside li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .page aside li {
-    margin: 0.75em 0;
-  }
-  .page aside ul + ul {
-    margin-top: 1.5em;
-  }
-  .page aside a      .icon,
-  .page aside button .icon {
-    margin-right: 0.75em;
-    margin-left: -0.5em;
-    width: 1.875em;
-    height: 1.875em;
-    opacity: 0.25;
-  }
-  span.icon.exit-to-app:before {
-    background-size: 1.5em auto;
-  }
-  .page aside a,
-  .page aside button {
-    display: block;
-    width: 100%;
-    box-sizing: content-box;
-    text-align: left;
-    padding: 0.375em 1.25em;
-    margin: 0 -1.25em;
-    line-height: 1.5em;
-    text-decoration: none;
-    font-weight: normal;
+
+
+  /* =Post Details
+  ----------------------------------------------- */
+  .post.page > .details {
+    max-width: none;
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
     background: white;
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
-    color: rgb(102, 102, 102); /* @tin */
-    border-radius: 0.25em;
   }
-  .page aside a,
-  .page aside button {
-    /* Data URI encoded from: midnight/forward.svg */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+DQo8cGF0aCBmaWxsPSJyZ2IoMjA0LCAyMDQsIDIwNCkiIGQ9Ik05LjUsMTljLTAuMzg0LDAtMC43NjgtMC4xNDYtMS4wNjEtMC40MzljLTAuNTg2LTAuNTg2LTAuNTg2LTEuNTM1LDAtMi4xMjFsMy45MzktMy45MzlMOC40MzksOC41NjENCgljLTAuNTg2LTAuNTg1LTAuNTg2LTEuNTM2LDAtMi4xMjFjMC41ODYtMC41ODYsMS41MzUtMC41ODYsMi4xMjEsMGw1LDVjMC41ODYsMC41ODUsMC41ODYsMS41MzYsMCwyLjEyMWwtNSw1DQoJQzEwLjI2OCwxOC44NTQsOS44ODQsMTksOS41LDE5eiIvPg0KPC9zdmc+DQo=);
-    background-repeat: no-repeat;
-    background-position: 100% 50%;
-    background-position: calc(100% - 1.5em) 50%;
+  .post.page > .details article {
+    max-width: 31.25em;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
   }
-  @media (max-width: 34.25em) {
-    .page aside ul + ul {
-      margin-top: 0.75em;
-    }
-    .page aside li {
-      margin-bottom: 0;
-    }
-    .page aside li + li {
-      margin-top: 0;
-    }
-    .page aside li + li a,
-    .page aside li + li button {
-      border-top-width: 0;
-    }
-    .page aside a,
-    .page aside button {
-      border-left-width: 0;
-      border-right-width: 0;
-      border-radius: 0;
-    }
+  .post.page > .details article header {
+    margin-bottom: 1.125em;
   }
-  .page aside a:active,
-  .page aside a:focus,
-  .page aside button:active,
-  .page aside button:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
+  .post.page > .details article header h3 a {
+    padding-left: 3em;
   }
-  .page aside,
-  .page aside ul {
+  .post.page > div h2 {
+    font-size: inherit;
+  }
+
+
+  /* =Mix
+  ----------------------------------------------- */
+  .mix .preview {
+    padding: 1.5em;
+    max-width: none;
+    background-color: rgb(203, 253, 128); /* @lime */
+  }
+
+  .mix .lime {
+    background-color: rgb(203, 253, 128); /* @lime */
+  }
+  .mix .cucumber {
+    background-color: rgb(150, 254, 166); /* @cucumber */
+  }
+  .mix .blueberry {
+    background-color: rgb(99, 204, 203); /* @blueberry */
+  }
+  .mix .boysenberry {
+    background-color: rgb(101, 156, 247); /* @boysenberry */
+  }
+  .mix .plumb {
+    background-color: rgb(193, 77, 166); /* @plumb */
+  }
+  .mix .strawberry {
+    background-color: rgb(255, 49, 102); /* @strawberry */
+  }
+  .mix .apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .mix .tangerine {
+    background-color: rgb(255, 202, 72); /* @tangerine */
+  }
+  .mix .orange {
+    background-color: rgb(242, 64, 41); /* @orange */
+  }
+
+  .mix .preview div {
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
+    background: black;
+    color: white;
+    margin: 0 auto;
+    display: table;
+  }
+  .mix .preview div h1,
+  .mix .preview div p {
+    margin: 1.5em;
+    font-size: inherit;
+    max-width: 31.5em;
+  }
+  .mix .preview div video,
+  .mix .preview div img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .mix footer {
+    margin-top: 0.75em;
+  }
+  .mix footer p {
+    margin: 0;
+    display: inline;
+  }
+  .mix footer p + p {
+    margin-left: 0.75em;
+  }
+  .mix footer p a {
+    color: rgb(204, 204, 204); /* @aluminum */
+    text-decoration: none;
+  }
+  .mix footer .attaboyed {
+    color: rgb(255, 49, 102); /* @strawberry */
+  }
+  .mix footer p a:active,
+  .mix footer p a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+  .mix footer .count {
+    font-size: 0.75em;
+  }
+  .mix .share h2 {
+    font-size: inherit;
     margin-top: 0;
+    margin-bottom: 0;
   }
-  .page aside a {
-    text-transform: lowercase;
+  .mix .share p {
+    margin-top: 0.375em;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+
+
+  /* =Notifications
+  ----------------------------------------------- */
+  .notifications.page > div {
+    padding-top: 0;
+  }
+  .notifications .post-list  .new header h3:before {
+    content: "";
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 100%;
+    background-color: rgb(255, 49, 102); /* @strawberry */
+    position: absolute;
+    margin-top: 0.75em;
+    margin-left: -3.875em;
+  }
+  .notifications .post-list {
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+    padding-bottom: 0;
+  }
+  .notifications .post-list .time {
+    margin: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: rgb(153, 153, 153); /* @nickel */
+    font-size: 0.6666666667em;
+    text-transform: uppercase;
+  }
+  .notifications .post-list li {
+    background: white;
+  }
+  .notifications .post-list li:first-child {
+    border-top: 0.1em solid rgb(222, 222, 222); /* @silver*/
+  }
+  .notifications .post-list li:last-child {
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
+  }
+  .list h2,
+  .notifications h2 {
+    margin-top: 1.125em;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+  .notifications article {
+    padding: 0.625em 5em 0.625em 3.125em; /* 10px 80px 10px 50px */
+    position: relative;
+    line-height: 1.25em;
+    min-height: 3.75em; /* image size (60px) / @font-size */
+  }
+  .notifications article header {
+    text-align: left;
+    display: inline;
+  }
+  .notifications article header h3 {
+    float: none;
+    display: inline;
+  }
+  .notifications article header h3 {
+    line-height: 1.2857142857; /* @line-height / 0.875 x 3/4 */
+  }
+  .notifications article .body img {
+    width      : 4.2857142857em; /* target image size / font size (60px / 14px) */
+    min-height : 4.2857142857em;
+    position: absolute;
+    top : 0.625em; /* 10px / @font-size */
+    right  : 0.625em;
+  }
+  .notifications article .body {
+    font-size: 0.875em; /* 14px / @font-size */
+    display: inline;
+  }
+  .notifications article .body p {
+    display: inline;
+    margin: 0;
+  }
+
+
+  /* =Transitions
+  ----------------------------------------------- */
+  @-webkit-keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(40em);
+              transform: translateX(40em);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(40em);
+              transform: translateX(40em);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+
+  @-webkit-keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(-40em);
+              transform: translateX(-40em);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(-40em);
+              transform: translateX(-40em);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+
+  @-webkit-keyframes slide-up {
+    0% {
+      -webkit-transform: translateY(40em);
+              transform: translateY(40em);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      -webkit-transform: translateY(40em);
+              transform: translateY(40em);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+
+  @-webkit-keyframes slide-down {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(40em);
+              transform: translateY(40em);
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(40em);
+              transform: translateY(40em);
+    }
+  }
+  section.switch li:nth-child(2n+1) {
+    -webkit-animation: slide-left 0.2s both;
+            animation: slide-left 0.2s both;
+  }
+  section.switch li:nth-child(2n) {
+    -webkit-animation: slide-right 0.2s both;
+            animation: slide-right 0.2s both;
+  }
+  section.editor.page {
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    -webkit-animation: slide-up 0.3s both;
+            animation: slide-up 0.3s both;
+  }
+  section.editor.page.outro {
+    -webkit-animation: slide-down 0.3s both;
+            animation: slide-down 0.3s both;
   }
 

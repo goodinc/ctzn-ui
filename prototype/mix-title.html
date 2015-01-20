@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="mix-editor page">
+    <header>
+      <h1>Finish Mix</h1>
+
+      <a href="#back" class="back" data-bind="click: backFromTitleClicked">
+        Go Back
+      </a>
+    </header>
+    <form>
+      <p class="text title">
+        <label>
+          <span>Enter Title</span><br><input placeholder="Enter Title" type="text" data-bind="textInput: mixTitle, enable: currentState() !== &quot;submitting&quot;"></label>
+      </p>
+      <div class="preview orange" data-bind="css: good.pushColor(good.currentPush().push.id)">
+        <img data-bind="attr: { src: sizedS3Image(selectedImages()[0].url, good.S3_MIXPOSTER_SIZE) }" width="300" height="" alt="" src="https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c640x640">
+</div>
+      <p class="submit">
+        <button data-bind="enable: mixTitle().length > 0 &amp;&amp; currentState() !== &quot;submitting&quot;, click: doneClicked" disabled="">Done</button>
+      </p>
+    </form>
+  </section>
+
+</body>
+</html>
+
