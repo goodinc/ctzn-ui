@@ -16,7 +16,7 @@
   }
   .create {
     margin: 0;
-    background: rgb(51, 51, 51);
+    background: rgb(51, 51, 51); /* @iron */
     width: 100%;
     box-sizing: border-box;
     bottom: 0;
@@ -41,7 +41,7 @@
     display: block;
     text-decoration: none;
     text-transform: lowercase;
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
     font-size: 0.75em;
     line-height: 1;
     padding: 0.75em 0 1em;
@@ -78,7 +78,7 @@
   /* =Switch Push
   ----------------------------------------------- */
   section.switch {
-    background: rgb(51, 51, 51);
+    background: rgb(51, 51, 51); /* @iron */
     color: white;
     color: rgba(255, 255, 255, 0.95);
     min-height: 100%;
@@ -336,7 +336,7 @@
     margin: 0;
     display: inline-block;
     white-space: nowrap;
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
     font-size: 0.6666666667em;
     text-transform: uppercase;
   }
@@ -344,21 +344,18 @@
     background: white;
   }
   .notifications .post-list li:first-child {
-    border-top: 0.1em solid rgb(222, 222, 222);
+    border-top: 0.1em solid rgb(222, 222, 222); /* @silver*/
   }
   .notifications .post-list li:last-child {
-    border-bottom: 0.1em solid rgb(222, 222, 222);
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
   }
   .list h2,
   .notifications h2 {
     margin-top: 1.125em;
     font-size: 0.75em;
     text-transform: uppercase;
-    color: rgb(159, 165, 162);
+    color: rgb(159, 165, 162); /* @barium */
   }
-
-
-
 
 
   /* =Post List
@@ -375,7 +372,7 @@
   .post-list > li {
     margin: 0 auto;
     max-width: 31.25em; /* image.width / font-size (500px / 16px) */
-    border-bottom: 0.1em solid rgb(222, 222, 222);
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
   }
   .post-list > li:last-child {
     border-bottom-width: 0;
@@ -491,27 +488,26 @@
     height: 17.625em; /* column width x YouTube aspect ratio / @font-size (500px times 9/16 divided by 16px) */
   }
   article .body {
-    font-size: 1.125em; /* 18px / @font-size */
-    line-height: 1.3333333333; /* @line-height / 1.125 */
-
-    /* OPTIONAL: Handle the case where a URL is really long and won’t wrap naturally. */
-    word-wrap     : break-word; /* Currently supported in most browsers */
-    overflow-wrap : break-word; /* TBD: Proposed standard that will be supported everywhere eventually? */
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+  article .body p {
+    font-size     : 1.125em; /* 18px / @font-size */
+    line-height   : 1.3333333333em; /* @line-height / 1.125 */
+    margin-top    : 0.6666666667em; /* 1.33em / 2 */
+    margin-bottom : 0.6666666667em;
+  }
+  article .body p:last-child {
+    margin-bottom: 0;
   }
   .notifications article .body {
     font-size: 0.875em; /* 14px / @font-size */
     display: inline;
   }
-  article .body p {
-    margin-top   : 0.625em; /* 1.3333333333 / 2 */
-    margin-bottom: 0.625em;
-  }
   .notifications article .body p {
     display: inline;
     margin: 0;
-  }
-  article .body p:last-child {
-    margin-bottom: 0;
   }
   article footer {
     margin-top: 0.75em;
@@ -541,8 +537,8 @@
   article footer p a:focus,
   article footer p button:active,
   article footer p button:focus {
-    background-color: rgb(222, 222, 222);
-    color: rgb(153, 153, 153);
+    background-color: rgb(222, 222, 222); /* @silver*/
+    color: rgb(153, 153, 153); /* @nickel */
   }
   article footer p a      svg.icon,
   article footer p button svg.icon {
@@ -562,7 +558,7 @@
   ----------------------------------------------- */
   .post.page > .details {
     max-width: none;
-    border-bottom: 0.1em solid rgb(222, 222, 222);
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
     background: white;
   }
   .post.page > .details article {
@@ -637,13 +633,13 @@
     padding-left: 3.25em;
     text-decoration: none;
     background: white;
-    border: 0.1em solid rgb(222, 222, 222);
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
   }
   .list li a:active,
   .list li a:focus {
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(222, 222, 222); /* @silver*/
   }
   .list li a .avatar {
     position: absolute;
@@ -777,9 +773,9 @@
   .mix .share p {
     margin-top: 0.375em;
 
-    /* OPTIONAL: Handle the case where a URL is really long and won’t wrap naturally. */
-    word-wrap     : break-word; /* Currently supported in most browsers */
-    overflow-wrap : break-word; /* TBD: Proposed standard that will be supported everywhere eventually? */
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
 
 

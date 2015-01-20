@@ -50,19 +50,19 @@
     color: white;
   }
   .warning button {
-    color: rgb(255, 102, 102);
+    color: rgb(255, 102, 102); /* @peach */
   }
   .warning button:active,
   .warning button:focus {
-    color: rgb(255, 51, 51);
+    color: rgb(255, 49, 59); /* @apple */
   }
   .submit.warning button {
-    background-color: rgb(255, 102, 102);
+    background-color: rgb(255, 102, 102); /* @peach */
     color: white;
   }
   .submit.warning button:active,
   .submit.warning button:focus {
-    background-color: rgb(255, 51, 51);
+    background-color: rgb(255, 49, 59); /* @apple */
     color: white;
   }
 
@@ -81,7 +81,7 @@
   }
   p.text label {
     background: white;
-    border: 0.1em solid rgb(222, 222, 222);
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
     display: block;
     border-radius: 0.25em;
     margin-left: -1.25em;
@@ -166,11 +166,11 @@
   }
   input[type="text"]:disabled {
     background-color: transparent;
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
 
     /* TRICKY: WebKit doesn’t appear to respect the usual “color” attribute, if the field is disabled:
     http://stackoverflow.com/questions/262158/disabled-input-text-color */
-    -webkit-text-fill-color: rgb(153, 153, 153);
+    -webkit-text-fill-color: rgb(153, 153, 153); /* @nickel */
   }
   form p + p {
     margin-top: 0.75em;
@@ -181,7 +181,7 @@
     font-style: italic;
     font-size: 0.875em;
     margin-top: 0.75em;
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
   }
 
   .text label span:first-child {
@@ -388,8 +388,9 @@
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   }
   section.developer-tools ul.logs li {
-    word-wrap     : break-word; /* Currently supported in most browsers */
-    overflow-wrap : break-word; /* TBD: Proposed standard that will be supported everywhere eventually? */
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   section.developer-tools ul.logs time {
     opacity: 0.5;
@@ -524,7 +525,7 @@
   section.upload-message {
     padding: 0.625em 1.5em;
     box-sizing: border-box;
-    border-bottom: 0.1em solid rgb(222, 222, 222);
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
     line-height: 1.3333333333; /* @line-height / 1.125em */
     position: relative;
   }
@@ -537,7 +538,7 @@
   /* On the post page, the upload message appears after the related content. */
   .comments section.upload-message {
     border-bottom-width: 0;
-    border-top: 0.1em solid rgb(222, 222, 222);
+    border-top: 0.1em solid rgb(222, 222, 222); /* @silver*/
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
@@ -611,7 +612,7 @@
 
   @-webkit-keyframes blink {
     0% {
-      background-color: rgb(225, 225, 225); /* @silver*/
+      background-color: rgb(222, 222, 222); /* @silver*/
     }
     66% {
       background-color: rgb(255, 49, 102); /* @strawberry */
@@ -624,7 +625,7 @@
 
   @keyframes blink {
     0% {
-      background-color: rgb(225, 225, 225); /* @silver*/
+      background-color: rgb(222, 222, 222); /* @silver*/
     }
     66% {
       background-color: rgb(255, 49, 102); /* @strawberry */
@@ -639,7 +640,7 @@
   span.icon.loading:after {
     display: inline-block;
     vertical-align: middle;
-    background-color: rgb(225, 225, 225); /* @silver*/
+    background-color: rgb(222, 222, 222); /* @silver*/
     width  : 0.6111111111em; /* 11px / 18px */
     height : 0.6111111111em;
     border-radius: 100%;
@@ -769,7 +770,8 @@
   ----------------------------------------------- */
   section.message {
     background-color: white;
-    color: rgb(51, 51, 51);
+    color: rgb(51, 51, 51); /* @iron */
+    font-weight: bold;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
     z-index: 9999; /* @infinity */
     width: 100%;
@@ -794,23 +796,11 @@
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-
-  section.flash-message {
-    display: none;
-  }
-  section.flash-message.active {
-    display: block;
-  }
-
   section.message > div {
     max-width: 31.25em;
     margin: 0 auto;
   }
-  [data-screen="flash-messages-screen"] {
-    font-weight: bold;
-  }
-  [data-screen="flash-messages-screen"] .error {
-    color: rgb(220, 0, 0);
-    font-weight: bold;
+  section.message .error {
+    color: rgb(255, 102, 102); /* @peach */
   }
 

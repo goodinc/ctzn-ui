@@ -13,7 +13,7 @@
     font: 100%/1.5 "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: rgb(51, 51, 51);
+    background: rgb(51, 51, 51); /* @iron */
     color: white;
   }
 
@@ -32,8 +32,36 @@
   }
 
 
-  /* =Text
+  /* =Type
   ----------------------------------------------- */
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top    : 1.5em;  /* @line-height */
+    margin-bottom : 0.75em; /* @line-height / 2 */
+  }
+  p, ol, ul, dl {
+    margin-top    : 0.75em; /* @line-height / 2 */
+    margin-bottom : 0.75em;
+  }
+
+  h1 {
+    font-size     : 3em;       /* 48px / @font-size */
+    line-height   : 1.25em;    /* 60px / 48px */
+    margin-top    : 1.25em;
+    margin-bottom : 0.625em;   /* 1.25em / 2 */
+  }
+  h2 {
+    font-size     : 1.875em;   /* 30px / @font-size */
+    line-height   : 1.2em;     /* 36px / 30px  */
+    margin-top    : 1.2em;
+    margin-bottom : 0.6em;     /* 1.2em / 2 */
+  }
+  h3 {
+    font-size     : 1.5em;     /* 24px / @font-size */
+  }
+  h4, h5, h6 {
+    font-size: inherit;
+  }
 
   /* OPTIONAL: Increase the font size on big screens. */
 
@@ -97,31 +125,31 @@
   }
 
   .avatar .clover {
-    background-color: rgb(0, 235, 98);
+    background-color: rgb(0, 235, 98); /* @clover */
   }
   .avatar .kiwi {
-    background-color: rgb(0, 255, 208);
+    background-color: rgb(0, 255, 208); /* @kiwi */
   }
   .avatar .grape {
-    background-color: rgb(159, 104, 246);
+    background-color: rgb(159, 104, 246); /* @grape */
   }
   .avatar .bluebird {
-    background-color: rgb(0, 206,250);
+    background-color: rgb(0, 206,250); /* @bluebird */
   }
   .avatar .cantaloupe {
-    background-color: rgb(255, 203, 117);
+    background-color: rgb(255, 203, 117); /* @cantaloupe */
   }
   .avatar .cranberry {
-    background-color: rgb(251, 59, 147);
+    background-color: rgb(251, 59, 147); /* @cranberry */
   }
   .avatar .amethyst {
-    background-color: rgb(255, 152, 248);
+    background-color: rgb(255, 152, 248); /* @amethyst */
   }
   .avatar .sky {
-    background-color: rgb(0, 255, 254);
+    background-color: rgb(0, 255, 254); /* @sky */
   }
   .avatar .ocean {
-    background-color: rgb(24, 57, 245);
+    background-color: rgb(24, 57, 245); /* @ocean */
     color: white;
   }
 

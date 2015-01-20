@@ -82,9 +82,13 @@
   }
   .pattern-list li a {
     display: block;
+  }
+  .pattern-list li a,
+  body.pattern > h2:first-child + nav a {
     color: rgba(255, 255, 255, 0.25);
   }
-  .pattern-list li a[href] {
+  .pattern-list li a[href],
+  body.pattern > h2:first-child + nav a[href] {
     color: rgb(203, 253, 128); /* @lime */
     color: rgb(242, 64, 41); /* @orange */
     color: rgb(101, 156, 247); /* @boysenberry */
@@ -93,6 +97,7 @@
     color: rgb(255, 202, 72); /* @tangerine */
     color: rgb(255, 49, 102); /* @strawberry */
   }
+  body.pattern > h2:first-child + nav a[href]:visited,
   .pattern-list li a[href]:visited {
     color: inherit;
   }

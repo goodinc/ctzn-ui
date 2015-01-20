@@ -1,6 +1,10 @@
 
+/*-----------------------------------------------
+    Shared styles, for all screens in the CTZN app.
+  ----------------------------------------------- */
+
   @import url(elements.css);
-  @import url(application.css);
   @import url(lists.css);
-  @import url(pages.css);
+  @import url(application.css);
+  @import url(layouts.css);
  

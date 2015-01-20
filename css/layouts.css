@@ -7,8 +7,8 @@
   /* =Page
   ----------------------------------------------- */
   section.page {
-    background-color: rgb(250, 250, 250);
-    color: rgb(1, 1, 0);
+    background-color: rgb(250, 250, 250); /* @casper */
+    color: rgb(5, 5, 5); /* @tungsten */
     min-height: 100%;
     box-sizing: border-box;
   }
@@ -164,9 +164,9 @@
     text-align: center;
     padding: 0.75em;
     box-sizing: border-box;
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(51, 51, 51); /* @iron */
     color: white;
-    border-bottom: 0.1em solid rgb(51, 51, 51);
+    border-bottom: 0.1em solid rgb(51, 51, 51); /* @iron */
   }
   .page > header h1 {
     margin: 0;
@@ -188,7 +188,7 @@
     position: absolute;
     top: 0;
     padding: 0.75em;
-    border: 0 solid rgb(44, 44, 44);
+    border: 0 solid rgb(44, 44, 44); /* @thorium */
   }
   .page > header .next {
     right: 0;
@@ -238,7 +238,7 @@
   .edit-profile.page > header {
     background-color: white;
     color: black;
-    border-bottom-color: rgb(222, 222, 222);
+    border-bottom-color: rgb(222, 222, 222); /* @silver*/
   }
   .mix.page          > header .back,
   .mixes.page        > header .back,
@@ -593,12 +593,12 @@
   }
   section.profile > .details,
   section.profile > .push-list {
-    background: rgb(204, 204, 204);
+    background: rgb(204, 204, 204); /* aluminum */
   }
   section.profile .push-list {
     max-width: none;
     padding: 0.75em 0.75em 0.375em 0.75em;
-    background: rgb(222, 222, 222);
+    background: rgb(222, 222, 222); /* @silver*/
   }
   section.profile .container .push-list {
     margin: 0 -1.25em -1.25em -1.25em;
@@ -616,9 +616,9 @@
   section.profile .details h2 {
     color: white;
 
-    /* OPTIONAL: Handle the case where a username really long and won’t wrap naturally. */
-    word-wrap     : break-word; /* Currently supported in most browsers */
-    overflow-wrap : break-word; /* TBD: Proposed standard that will be supported everywhere eventually? */
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
 
   section.profile .lime {
@@ -708,7 +708,7 @@
   }
   .profile .image-list {
     margin: 0;
-    background: rgb(51, 51, 51);
+    background: rgb(51, 51, 51); /* @iron */
     padding: 0.1em 0 0 0.1em;
     background: black;
   }
@@ -793,7 +793,7 @@
     margin-top: 0;
     font-size: 0.75em;
     text-transform: uppercase;
-    color: rgb(159, 165, 162);
+    color: rgb(159, 165, 162); /* @barium */
   }
 
   section.hashtags .add-hashtag .item a {
@@ -856,7 +856,7 @@
   .hashtags aside {
     text-align: center;
     font-style: italic;
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
   }
   .hashtags aside h3 {
     text-transform: none;
@@ -881,7 +881,7 @@
     text-decoration: none;
     text-transform: lowercase;
     background: white;
-    border: 0.1em solid rgb(222, 222, 222);
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
     border-radius: 0.25em;
   }
   .tag-list     .item a,
@@ -894,7 +894,7 @@
   .hashtags .item a .icon:last-child {
     float: right;
     margin-right: 0;
-    color: rgb(204, 204, 204);
+    color: rgb(204, 204, 204); /* aluminum */
   }
   @media (max-width: 34.25em) {
     section.hashtags .add-hashtag {
@@ -925,11 +925,11 @@
     height: 1.875em;
   }
   .account-list .item a {
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
   }
   .account-list .item a:active,
   .account-list .item a:focus {
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(222, 222, 222); /* @silver*/
     color: rgb(102, 102, 102); /* @tin */
   }
   .account-list .item.active a span.icon.twitter,
@@ -994,13 +994,13 @@
 
   /* CTZN Header */
   .primary {
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(51, 51, 51); /* @iron */
     color: rgb(204, 204, 204); /* @aluminum */
     position: relative;
     padding: 0.75em 0.75em 0.75em 1.25em;
     z-index: 9;
     box-sizing: border-box;
-    border-bottom: 0.1em solid rgb(51, 51, 51);
+    border-bottom: 0.1em solid rgb(51, 51, 51); /* @iron */
   }
   .primary h1 {
     margin: 0;
@@ -1037,7 +1037,7 @@
     opacity: 1;
   }
   .primary nav h2 {
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(51, 51, 51); /* @iron */
     font-size: inherit;
     color: white;
     font-weight: normal;
@@ -1045,7 +1045,7 @@
     padding: 0.75em;
   }
   .primary > a {
-    border-left: 0.1em solid rgb(44, 44, 44);
+    border-left: 0.1em solid rgb(44, 44, 44); /* @thorium */
   }
   .primary .notifications {
     position: absolute;
@@ -1090,16 +1090,17 @@
 
   /* Push Header */
   section.push {
-    background: white;
-    color: rgb(1, 1, 0);
+    background: rgb(255, 255, 255); /* @snow */
+    color: rgb(0, 0, 0); /* @midnight */
 
     /* Make space for “.create” */
     padding-bottom: 1.5em;
   }
   section.push > header {
+    margin: 0;
     padding: 1.25em 1.25em 0;
     position: relative;
-    border-bottom: 0.1em solid rgb(222, 222, 222);
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
     background: rgb(203, 253, 128); /* @lime */
   }
   section.push .post-list {
@@ -1116,7 +1117,7 @@
       width: 100%;
     }
     /* Make space for the sticky header */
-    .push > header {
+    section.push > header {
       margin-top: 3em;
     }
   }
@@ -1304,13 +1305,13 @@
   .push > header .new-posts button {
     background: white;
     color: rgb(255, 49, 102); /* @strawberry */
-    border: 0.1em solid rgb(222, 222, 222);
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
     transition: all 0.2s;
   }
   .push > header .new-posts button:active,
   .push > header .new-posts button:focus {
-    background-color: rgb(222, 222, 222);
-    border-color: rgb(222, 222, 222);
+    background-color: rgb(222, 222, 222); /* @silver*/
+    border-color: rgb(222, 222, 222); /* @silver*/
     color: rgb(193, 16, 65); /* @raspberry */
   }
 
@@ -1318,7 +1319,7 @@
   /* =Mixes
   ----------------------------------------------- */
   section.mixes {
-    background: rgb(51, 51, 51);
+    background: rgb(51, 51, 51); /* @iron */
     color: white;
     min-height: 100%;
   }
@@ -1362,7 +1363,7 @@
   .post-options div {
     background: rgb(246, 246, 246);
     padding: 0.375em;
-    color: rgb(51, 51, 51);
+    color: rgb(51, 51, 51); /* @iron */
     text-align: center;
     width: 100%;
     box-sizing: border-box;
@@ -1385,11 +1386,11 @@
             transform: translateY(0);
   }
   .post-options ul {
-    border: 0.1em solid rgb(222, 222, 222);
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
     background: white;
   }
   .post-options li + li {
-    border-top: 0.1em solid rgb(222, 222, 222);
+    border-top: 0.1em solid rgb(222, 222, 222); /* @silver*/
   }
   .post-options li button {
     display: block;
@@ -1407,7 +1408,7 @@
   }
   .post-options li button:active,
   .post-options li button:focus {
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(222, 222, 222); /* @silver*/
     border-radius: 0;
   }
 
@@ -1438,9 +1439,9 @@
   .editor li {
     margin: 0 0 0.75em;
     padding: 0.375em;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(250, 250, 250); /* @casper */
     background: white;
-    border: 0.1em solid rgb(222, 222, 222);
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
   }
   .editor li img {
     height: 1.5em;
@@ -1467,13 +1468,13 @@
   }
   .editor input[type="file"]:focus ~ span {
     color: rgb(100, 180, 225); /* @gooseberry */
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
   }
   .editor input[type="file"]:focus ~ span.icon {
     outline-width: 0.1em;
     outline-style: solid;
     outline-color: rgb(100, 180, 225); /* @gooseberry */
-    outline-color: rgb(153, 153, 153);
+    outline-color: rgb(153, 153, 153); /* @nickel */
   }
   .editor .submit label {
     opacity: 0.5;
@@ -1489,7 +1490,7 @@
   /* =Mix Editor
   ----------------------------------------------- */
   section.mix-editor.page {
-    background: rgb(31, 31, 31);
+    background: rgb(31, 31, 31); /* @steel */
     color: white;
   }
   .mix-editor.page > div,
@@ -1504,7 +1505,7 @@
   ----------------------------------------------- */
   .mix-editor .selected-images h2 {
     position: relative;
-    color: rgb(222, 222, 222);
+    color: rgb(222, 222, 222); /* @silver*/
     padding: 0 1.5em;
     text-align: center;
     border-width: 0.1em 0;
@@ -1749,7 +1750,7 @@
   }
   .edit-profile .file {
     text-align: center;
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
   }
   .edit-profile .file .avatar {
     display: block;
@@ -1766,13 +1767,13 @@
   }
   .edit-profile input[type="file"]:focus ~ span span {
     color: rgb(100, 180, 225); /* @gooseberry */
-    color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153); /* @nickel */
   }
   .edit-profile input[type="file"]:focus ~ span img {
     outline-width: 0.1em;
     outline-style: solid;
     outline-color: rgb(100, 180, 225); /* @gooseberry */
-    outline-color: rgb(153, 153, 153);
+    outline-color: rgb(153, 153, 153); /* @nickel */
   }
   .page aside ul,
   .page aside li {
@@ -1816,7 +1817,7 @@
     text-decoration: none;
     font-weight: normal;
     background: white;
-    border: 0.1em solid rgb(222, 222, 222);
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
   }
@@ -1845,7 +1846,7 @@
   .page aside a:focus,
   .page aside button:active,
   .page aside button:focus {
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(222, 222, 222); /* @silver*/
   }
   .page aside,
   .page aside ul {
