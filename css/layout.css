@@ -463,7 +463,7 @@
     box-sizing: border-box;
     padding-top: 0.75em;
     padding-bottom: 0.75em;
-    background-color: transparent;
+    background: transparent;
     border-width: 0;
   }
   section.start aside a:active,
@@ -1649,13 +1649,6 @@
   .page aside ul + ul {
     margin-top: 1.5em;
   }
-  .edit-profile.page aside a {
-    /* Data URI encoded from: midnight/forward.svg */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+DQo8cGF0aCBmaWxsPSJyZ2IoMjA0LCAyMDQsIDIwNCkiIGQ9Ik05LjUsMTljLTAuMzg0LDAtMC43NjgtMC4xNDYtMS4wNjEtMC40MzljLTAuNTg2LTAuNTg2LTAuNTg2LTEuNTM1LDAtMi4xMjFsMy45MzktMy45MzlMOC40MzksOC41NjENCgljLTAuNTg2LTAuNTg1LTAuNTg2LTEuNTM2LDAtMi4xMjFjMC41ODYtMC41ODYsMS41MzUtMC41ODYsMi4xMjEsMGw1LDVjMC41ODYsMC41ODUsMC41ODYsMS41MzYsMCwyLjEyMWwtNSw1DQoJQzEwLjI2OCwxOC44NTQsOS44ODQsMTksOS41LDE5eiIvPg0KPC9zdmc+DQo=);
-    background-repeat: no-repeat;
-    background-position: 100% 50%;
-    background-position: calc(100% - 1.5em) 50%;
-  }
   .page aside a      .icon,
   .page aside button .icon {
     margin-right: 0.75em;
@@ -1682,6 +1675,14 @@
     border: 0.1em solid rgb(222, 222, 222); /* @silver*/
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
+  }
+  .page aside a,
+  .page aside button {
+    /* Data URI encoded from: midnight/forward.svg */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+DQo8cGF0aCBmaWxsPSJyZ2IoMjA0LCAyMDQsIDIwNCkiIGQ9Ik05LjUsMTljLTAuMzg0LDAtMC43NjgtMC4xNDYtMS4wNjEtMC40MzljLTAuNTg2LTAuNTg2LTAuNTg2LTEuNTM1LDAtMi4xMjFsMy45MzktMy45MzlMOC40MzksOC41NjENCgljLTAuNTg2LTAuNTg1LTAuNTg2LTEuNTM2LDAtMi4xMjFjMC41ODYtMC41ODYsMS41MzUtMC41ODYsMi4xMjEsMGw1LDVjMC41ODYsMC41ODUsMC41ODYsMS41MzYsMCwyLjEyMWwtNSw1DQoJQzEwLjI2OCwxOC44NTQsOS44ODQsMTksOS41LDE5eiIvPg0KPC9zdmc+DQo=);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-position: calc(100% - 1.5em) 50%;
   }
   @media (max-width: 34.25em) {
     .page aside ul + ul {
