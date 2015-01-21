@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Messages / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/pattern.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
+    (function() {
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body class="pattern">
+
+  <h2><a href="../">CTZN</a></h2>
+  <nav>
+    <ul>
+      <li class="active"><a href="../patterns/">Patterns</a></li>
+      <li><a href="../messages/">Messages</a></li>
+      <li><a href="../prototype/">Prototype</a></li>
+    </ul>
+  </nav>
+
+  <h1>Developer Tools</h1>
+
+  <p class="developer action">
+    <a href="#developer-tools" data-bind="click: activate">
+      <!-- @icon-settings -->
+      <svg aria-label="Show Developer Tools" class="icon" viewBox="0 0 24 24">
+        <path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
+          l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
+          c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
+          L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
+          c0,0.362-0.121,0.724-0.121,1.206s0,0.844,0.121,1.206l-2.533,2.05c-0.241,0.241-0.241,0.482-0.121,0.724l2.412,4.221
+          c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
+          h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
+          c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
+          c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"/>
+        <foreignobject>Show Developer Tools</foreignobject>
+      </svg>
+    </a>
+  </p>
+
+  <section class="developer-tools">
+
+    <h1>Developer Tools</h1>
+    <button class="close">
+      <!-- @icon-close -->
+      <svg class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+      </svg>
+      Close
+    </button>
+
+    <ul class="action">
+      <li>
+        <button data-bind='click: reload'>Reload</button>
+      </li>
+      <li>
+        <button onclick="good.reinstall();">Reinstall</button>
+      </li>
+      <li>
+        <button data-bind='click: uploadLogs'>Upload logs</button>
+      </li>
+      <li>
+        <button data-bind='click: clearUploadQueue'>Clear upload queue</button>
+      </li>
+    </ul>
+
+    <dl>
+      <dt>Version</dt>
+      <dd data-bind='text: codeVersion'></dd>
+      <dt>DB</dt>
+      <dd data-bind='text: dbVersion'></dd>
+    </dl>
+
+    <h2>Simulators</h2>
+    <p>
+      <label>
+        <span>Simulate server call delay (in seconds):</span><br />
+        <input type='number' data-bind='textInput: good.serverCallDelay'>
+      </label>
+    </p>
+    <p>
+      <label>
+        <span>Simulate error on all server calls</span><br />
+        <select data-bind='value: good.serverCallSimulatedError'>
+          <option value=''></option>
+          <option value='CONNECTION_ERROR'>CONNECTION_ERROR</option>
+          <option value='NOT_FOUND'>NOT_FOUND</option>
+          <option value='SERVICE_UNAVAILABLE_ERROR'>Service Outage</option>
+          <option value='MUST_UPDATE_ERROR'>Required Update</option>
+        </select>
+      </label>
+    </p>
+
+    <h2>Diagnostic Report:</h2>
+    <!-- ko ifnot: diagnosticReport() -->
+    <p class="action">
+      <button data-bind='click: generateDiagnosticReport'>Generate</button>
+    </p>
+    <!-- /ko -->
+    <!-- ko if: diagnosticReport() -->
+    <pre data-bind='text: diagnosticReport'></pre>
+    <!-- /ko -->
+
+    <h2>Logs:</h2>
+    <ul class="logs" data-bind='foreach: logs'>
+      <li>
+        <time data-bind='text: time, attr { datetime: time }'></time>
+        <span data-bind='text: msg'></span>
+      </li>
+    </ul>
+
+    <p class="action">
+      <button data-bind="click: close">
+        Close
+      </button>
+    </p>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+  /* =Edit Profile
+  ----------------------------------------------- */
+  .edit-profile > form > p:first-child {
+    margin-top: 0;
+  }
+  .edit-profile .full-name input[type="text"] {
+    font-weight: bold;
+  }
+  .edit-profile .file {
+    text-align: center;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .edit-profile .file .avatar {
+    display: block;
+    margin: 0 auto 0.75em;
+  }
+  .edit-profile .file img {
+    display: block;
+    margin: 0 auto 0.75em;
+    border-radius: 100%;
+  }
+  .edit-profile input[type="file"] {
+    position: absolute;
+    left: -9999px;
+  }
+  .edit-profile input[type="file"]:focus ~ span span {
+    color: rgb(100, 180, 225); /* @gooseberry */
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .edit-profile input[type="file"]:focus ~ span img {
+    outline-width: 0.1em;
+    outline-style: solid;
+    outline-color: rgb(100, 180, 225); /* @gooseberry */
+    outline-color: rgb(153, 153, 153); /* @nickel */
+  }

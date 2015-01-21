@@ -1,0 +1,179 @@
+
+
+  /* =Full Screen Overlay
+  ----------------------------------------------- */
+  section.loading,
+  section.developer-tools {
+    margin: 0;
+    background: black;
+    color: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 1;
+  }
+  section.loading         .close,
+  section.developer-tools .close {
+    position: absolute;
+    top: 0.375em;
+    right: 0;
+    color: inherit;
+    font-size: 1.25em;
+  }
+
+
+  /* =Loading Screen
+  ----------------------------------------------- */
+  section.loading {
+    display: table;
+    text-align: center;
+  }
+  section.loading.error {
+    -webkit-animation-name: none;
+            animation-name: none;
+    position: fixed;
+  }
+  section.loading.has-details {
+    display: block;
+    overflow: scroll;
+  }
+  section.loading.inactive {
+    opacity: 0;
+  }
+  section.loading > div {
+    display: table-row;
+  }
+  section.loading > div > div {
+    display: table-cell;
+    padding: 3em 1.5em;
+    vertical-align: middle;
+  }
+  section.loading h1 {
+    font-size: inherit;
+    display: inline;
+  }
+  section.loading h1 svg {
+    margin-bottom: 1.5em;
+  }
+  section.loading h1 + p:before {
+    content: " — ";
+  }
+  section.loading p {
+    display: inline;
+  }
+  section.loading a {
+    color: inherit;
+  }
+  section.loading .loading-icon + .message {
+    margin-left: 0.375em;
+  }
+  section.loading section {
+    margin-top: 3em;
+    text-align: left;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section.loading section h2 {
+    font-size: inherit;
+    font-weight: normal;
+  }
+  section.loading .action {
+    margin-top: 1.5em;
+    display: block;
+  }
+
+
+  /* =Launch Button
+  ----------------------------------------------- */
+  .developer.action {
+    position: fixed;
+    top: 50%;
+    left: 0.375em;
+    height: 6em;
+    margin-top: -3em;
+    z-index: 9999;
+  }
+  .developer.action a {
+    background-color: black;
+    padding: 0.375em;
+  }
+
+
+  /* =Developer Tools
+  ----------------------------------------------- */
+  section.developer-tools {
+    padding: 1.5em;
+    box-sizing: border-box;
+    position: fixed;
+    overflow-y: scroll;
+
+    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+    -webkit-overflow-scrolling: touch;
+  }
+  section.developer-tools dt:after {
+    content: ":";
+  }
+  section.developer-tools dd {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  section.developer-tools dd + dt {
+    margin-top: 0.75em;
+  }
+  section.developer-tools label br {
+    display: block;
+  }
+  section.developer-tools input[type="number"] {
+    width: 7em;
+  }
+  section.developer-tools select {
+    font-size: inherit;
+  }
+  section.developer-tools h1 {
+    margin-top: 2em;
+    font-size: 2em;
+  }
+  section.developer-tools h2,
+  section.developer-tools ul.action {
+    margin-top: 1.5em;
+  }
+  section.developer-tools ul.action,
+  section.developer-tools ul.action li,
+  section.developer-tools ul.logs,
+  section.developer-tools ul.logs li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  section.developer-tools ul.action li + li {
+    margin-top: 0.75em;
+  }
+  section.developer-tools ul.logs   li + li {
+    margin-top: 1.5em;
+  }
+  section.developer-tools pre,
+  section.developer-tools ul.logs {
+    background: white;
+    color: black;
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    padding: 1.5em;
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  }
+  section.developer-tools ul.logs li {
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+  section.developer-tools ul.logs time {
+    opacity: 0.5;
+    display: block;
+  }
+  section.developer-tools .action:last-child {
+    margin-top: 3em;
+  }
+

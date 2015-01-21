@@ -1,0 +1,23 @@
+
+  /* =Post Details
+  ----------------------------------------------- */
+  .post.page > .details {
+    max-width: none;
+    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    background: white;
+  }
+  .post.page > .details article {
+    max-width: 31.25em;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .post.page > .details article header {
+    margin-bottom: 1.125em;
+  }
+  .post.page > .details article header h3 a {
+    padding-left: 3em;
+  }
+  .post.page > div h2 {
+    font-size: inherit;
+  }

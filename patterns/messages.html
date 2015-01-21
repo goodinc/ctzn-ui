@@ -27,14 +27,35 @@
   <nav>
     <ul>
       <li class="active"><a href="../patterns/">Patterns</a></li>
-      <!--
       <li><a href="../messages/">Messages</a></li>
-      -->
       <li><a href="../prototype/">Prototype</a></li>
     </ul>
   </nav>
 
   <h1>Messages</h1>
+
+  <section class="upload-message" role="status">
+    <h1>
+      <!-- @placeholder-image -->
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+      Sending
+      <span class="icon loading"></span>
+    </h1>
+  </section>
+
+  <div style="margin-top: 3em"></div>
+
+  <section class="upload-message error" role="status">
+    <h1>Oops! That email address isn’t valid.</p>
+  </section>
+
+  <div style="margin-top: 3em"></div>
+
+  <section class="confirmation-message">
+    <h1>Roger that.</h1>
+    <p role="status">Instructions have been sent to citizen@gmail.com</p>
+    <p class="action"><a href="#login">Log In</a></p>
+  </section>
 
   <section class="message active" role="status">
     <div>

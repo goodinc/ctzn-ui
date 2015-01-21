@@ -1,0 +1,226 @@
+
+  /* =Forms
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  form p + p {
+    margin-top: 0.75em;
+  }
+  form p.submit {
+    text-align: right;
+  }
+
+  form .note {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-size: 0.875em;
+    margin-top: 0.75em;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+
+  form .validation-message {
+    color: red;
+  }
+
+  /* OPTIONAL: Make forms more compact on small screens */
+  @media (max-width: 34.25em) {
+    form p.text {
+      margin-bottom: 0;
+    }
+    form p.text + p.text {
+      margin-top: 0;
+    }
+    form p.text + p.text label {
+      border-top-width: 0;
+    }
+    form p.text label {
+      border-left-width: 0;
+      border-right-width: 0;
+      border-radius: 0;
+    }
+  }
+
+
+  /* =Fields
+  ----------------------------------------------- */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+    padding: 0.375em 0.75em;
+    line-height: 1.5;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    border-width: 0;
+    display: inline-block;
+  }
+  textarea {
+    display: block;
+  }
+  input[type="text"]:disabled {
+    background-color: transparent;
+    color: rgb(153, 153, 153); /* @nickel */
+
+    /* TRICKY: WebKit doesn’t appear to respect the usual “color” attribute, if the field is disabled:
+    http://stackoverflow.com/questions/262158/disabled-input-text-color */
+    -webkit-text-fill-color: rgb(153, 153, 153); /* @nickel */
+  }
+
+
+  /* =Labels
+  ----------------------------------------------- */
+  label {
+    text-transform: lowercase;
+  }
+  label br {
+    display: none;
+  }
+  .text label {
+    background: white;
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    display: block;
+    border-radius: 0.25em;
+    padding-top: 0.1875em;
+    padding-bottom: 0.1875em;
+    position: relative;
+
+    /* OPTIONAL: Make fields touch the edges of the screen, on small devices */
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+    padding-left: 1.25em;
+
+    /* Make space for the success & error icons */
+    padding-right: 1.75em;
+  }
+  .error label {
+    border-color: rgb(255, 49, 59); /* @apple */
+  }
+  .text label span:first-child {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  .disabled label {
+    /* Data URI encoded from: snow/zebra.svg */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNzJweCIgaGVpZ2h0PSI4NHB4IiB2aWV3Qm94PSIwIDAgNzIgODQiPg0KPHJlY3QgZmlsbD0icmdiKDI1MywgMjUzLCAyNTMpIiB4PSIyMC42NDkiIHk9Ii00Ny43OTQiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTE1OCAwLjQwMTcgLTAuNDAxNyAwLjkxNTggMTkuNTY2NyAtMTEuMDg2NikiIHdpZHRoPSIzMS4xNDEiIGhlaWdodD0iMTc3LjgxNSIvPg0KPC9zdmc+DQo=);
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+  }
+  .error   label:after,
+  .success label:after {
+    content: "";
+    position: absolute;
+    right: 0.25em;
+    top: 0;
+    width: 1.5em;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .error label:after {
+    /* Data URI encoded from: apple/close.svg */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij4NCjxwb2x5Z29uIGZpbGw9InJnYigyNTUsIDQ5LCA1OSkiIHBvaW50cz0iMjQsMi40IDIxLjYsMCAxMiw5LjYgMi40LDAgMCwyLjQgOS42LDEyIDAsMjEuNiAyLjQsMjQgMTIsMTQuNCAyMS42LDI0IDI0LDIxLjYgMTQuNCwxMiAiLz4NCjwvc3ZnPg0K);
+    background-size: 1em auto;
+  }
+  .success label:after {
+    /* Data URI encoded from: clover/checkmark.svg */
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9InJnYigxMDIsIDIwNCwgMCkiIGQ9Ik05LjQzMSwxOC42MjZsLTUuNTg1LTUuOTI0QzMuMjc3LDEyLjEsMy4zMDUsMTEuMTUsMy45MDgsMTAuNTgyYzAuNjA0LTAuNTY5LDEuNTU0LTAuNTQsMi4xMjEsMC4wNjJsMy40NjYsMy42NzYNCglsOC41MDctOC41MDdjMC41ODYtMC41ODYsMS41MzUtMC41ODYsMi4xMjEsMGMwLjU4NiwwLjU4NSwwLjU4NiwxLjUzNiwwLDIuMTIxTDkuNDMxLDE4LjYyNnoiLz4NCjwvc3ZnPg0K);
+  }
+
+
+  /* =Label Icons
+  ----------------------------------------------- */
+  form.has-icon .text label {
+    padding-left: 3em;
+  }
+  .text label .icon:first-child {
+    opacity: 0.25;
+    position: absolute;
+    left: auto;
+    margin-left: -2.25em;
+    margin-top: 0.25em;
+    width: 1.875em;
+    height: 1.875em;
+  }
+  .disabled label .icon:first-child {
+    opacity: 0.1;
+  }
+
+
+  /* =Placeholders
+  ----------------------------------------------- */
+  ::-webkit-input-placeholder {
+    text-transform: lowercase;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  ::-moz-placeholder {
+    text-transform: lowercase;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  :-ms-input-placeholder {
+    text-transform: lowercase;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+
+  input[disabled]::-webkit-input-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  input[disabled]::-moz-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  input[disabled]:-ms-input-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+
+
+  /* =Image Upload Preview
+  ----------------------------------------------- */
+
+  .img-preview-rotate-90 {
+    -webkit-transform: rotate(90deg);
+       -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+         -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  }
+
+  .img-preview-rotate-180 {
+    -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  }
+
+  .img-preview-rotate-270 {
+    -webkit-transform: rotate(270deg);
+       -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+         -o-transform: rotate(270deg);
+            transform: rotate(270deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  }
+
+  .img-preview-flip-horizontal {
+    -webkit-transform: scale(-1, 1);
+       -moz-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
+         -o-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+  }
+
+  .img-preview-flip-vertical {
+    -webkit-transform: scale(1, -1);
+       -moz-transform: scale(1, -1);
+        -ms-transform: scale(1, -1);
+         -o-transform: scale(1, -1);
+            transform: scale(1, -1);
+  }

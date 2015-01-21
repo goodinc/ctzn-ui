@@ -1,0 +1,196 @@
+
+  /* =Settings
+  ----------------------------------------------- */
+  section.hashtags {
+    padding-bottom: 4.5em;
+  }
+  section.hashtags h3 {
+    margin-top: 0;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+
+  section.hashtags .add-hashtag .item a {
+    /* Data URI encoded from: aluminum/forward.svg */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+DQo8cGF0aCBmaWxsPSJyZ2IoMjA0LCAyMDQsIDIwNCkiIGQ9Ik05LjUsMTljLTAuMzg0LDAtMC43NjgtMC4xNDYtMS4wNjEtMC40MzljLTAuNTg2LTAuNTg2LTAuNTg2LTEuNTM1LDAtMi4xMjFsMy45MzktMy45MzlMOC40MzksOC41NjENCgljLTAuNTg2LTAuNTg1LTAuNTg2LTEuNTM2LDAtMi4xMjFjMC41ODYtMC41ODYsMS41MzUtMC41ODYsMi4xMjEsMGw1LDVjMC41ODYsMC41ODUsMC41ODYsMS41MzYsMCwyLjEyMWwtNSw1DQoJQzEwLjI2OCwxOC44NTQsOS44ODQsMTksOS41LDE5eiIvPg0KPC9zdmc+DQo=);
+
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-position: calc(100% - 1em) 50%;
+  }
+  section.hashtags .add-hashtag .item a .icon {
+    width: 0.75em;
+    height: 0.75em;
+    margin-right: 0.5em;
+  }
+
+  /* Onboarding button */
+  section.hashtags > form:last-child {
+    position: absolute;
+    top: 0.25em;
+    right: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hashtags ul,
+  .hashtags .item {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .hashtags p.item,
+  .hashtags .tag-list     ul,
+  .hashtags .account-list ul {
+    margin: 0 -1.25em;
+  }
+  .hashtags .tag-list     > svg:first-child,
+  .hashtags .account-list > svg:first-child {
+    display: block;
+    width: 4.5em;
+    height: 4.5em;
+    margin: -0.375em auto;
+    opacity: 0.15;
+  }
+  .hashtags .tag-list     h2,
+  .hashtags .account-list h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.125em; /* 18px / @font-size */
+    line-height: 1.3333333333em;
+    color: rgb(102, 102, 102); /* @tin */
+    margin-bottom: 3em;
+  }
+  .hashtags .tag-list     h2 strong,
+  .hashtags .account-list h2 strong {
+    font-size: 1.3333333333em; /* 24px / 18px */
+    color: black;
+    font-weight: 900; /* @extra-bold */
+  }
+  .hashtags aside {
+    text-align: center;
+    font-style: italic;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .hashtags aside h3 {
+    text-transform: none;
+    color: inherit;
+    font-size: inherit;
+    margin-bottom: 0;
+    text-transform: lowercase;
+  }
+  .hashtags aside p {
+    margin-top: 0;
+  }
+  .hashtags aside p:first-letter {
+    text-transform: lowercase;
+  }
+  .hashtags .item {
+    position: relative;
+    margin: 0.75em 0;
+  }
+  .hashtags .item a {
+    display: block;
+    padding: 0.5625em 1.125em;
+    text-decoration: none;
+    text-transform: lowercase;
+    background: white;
+    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-radius: 0.25em;
+  }
+  .tag-list     .item a,
+  .account-list .item a {
+    color: inherit;
+  }
+  .hashtags .item a .icon {
+    margin-right: 0.75em;
+  }
+  .hashtags .item a .icon:last-child {
+    float: right;
+    margin-right: 0;
+    color: rgb(204, 204, 204); /* aluminum */
+  }
+  @media (max-width: 34.25em) {
+    section.hashtags .add-hashtag {
+      padding-top: 0;
+    }
+    .hashtags .item {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .hashtags .item + .item a {
+      border-top-width: 0;
+    }
+    .hashtags .item[hidden] + .item a {
+      border-top-width: 0.1em;
+    }
+    .hashtags .item a {
+      border-left-width: 0;
+      border-right-width: 0;
+      border-radius: 0;
+    }
+  }
+
+  /* OPTIONAL: Light up the active social icons */
+  .account-list .item a span.icon.twitter,
+  .account-list .item a span.icon.instagram {
+    opacity: 0.25;
+    width: 1.875em;
+    height: 1.875em;
+  }
+  .account-list .item a {
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .account-list .item a:active,
+  .account-list .item a:focus {
+    background-color: rgb(222, 222, 222); /* @silver*/
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .account-list .item.active a span.icon.twitter,
+  .account-list .item.active a span.icon.instagram {
+    opacity: 1;
+  }
+  .account-list .item.active a {
+    color: inherit;
+    opacity: 1;
+  }
+  .account-list .item.active a {
+    /* Data URI encoded from: clover/checkmark.svg */
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9InJnYigxMDIsIDIwNCwgMCkiIGQ9Ik05LjQzMSwxOC42MjZsLTUuNTg1LTUuOTI0QzMuMjc3LDEyLjEsMy4zMDUsMTEuMTUsMy45MDgsMTAuNTgyYzAuNjA0LTAuNTY5LDEuNTU0LTAuNTQsMi4xMjEsMC4wNjJsMy40NjYsMy42NzYNCglsOC41MDctOC41MDdjMC41ODYtMC41ODYsMS41MzUtMC41ODYsMi4xMjEsMGMwLjU4NiwwLjU4NSwwLjU4NiwxLjUzNiwwLDIuMTIxTDkuNDMxLDE4LjYyNnoiLz4NCjwvc3ZnPg0K);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-position: calc(100% - 1.5em) 50%;
+  }
+
+  section.hashtags .push-card h3 {
+    color: white;
+    font-weight: bold;
+  }
+  .hashtag-list {
+    background: black;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 1.25em -1.25em 0;
+    padding: 0.75em 1.25em 0.375em;
+  }
+  .hashtag-list ul {
+    margin: -0.375em -0.375em 0.375em;
+  }
+  .hashtag-list li {
+    margin: 0.375em;
+    display: inline-block;
+  }
+  .hashtag-list a {
+    display: block;
+    text-decoration: none;
+    background-color: white;
+    color: inherit;
+    padding: 0.375em 0.75em;
+    border-radius: 0.125em;
+  }
+  .hashtag-list a .icon {
+    margin-left: 0.75em;
+    opacity: 0.5;
+    width: 1em;
+    height: 1em;
+  }

@@ -1,0 +1,92 @@
+
+  /* =Mix
+  ----------------------------------------------- */
+  .mix .preview {
+    padding: 1.5em;
+    max-width: none;
+    background-color: rgb(203, 253, 128); /* @lime */
+  }
+
+  .mix .lime {
+    background-color: rgb(203, 253, 128); /* @lime */
+  }
+  .mix .cucumber {
+    background-color: rgb(150, 254, 166); /* @cucumber */
+  }
+  .mix .blueberry {
+    background-color: rgb(99, 204, 203); /* @blueberry */
+  }
+  .mix .boysenberry {
+    background-color: rgb(101, 156, 247); /* @boysenberry */
+  }
+  .mix .plumb {
+    background-color: rgb(193, 77, 166); /* @plumb */
+  }
+  .mix .strawberry {
+    background-color: rgb(255, 49, 102); /* @strawberry */
+  }
+  .mix .apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .mix .tangerine {
+    background-color: rgb(255, 202, 72); /* @tangerine */
+  }
+  .mix .orange {
+    background-color: rgb(242, 64, 41); /* @orange */
+  }
+
+  .mix .preview div {
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
+    background: black;
+    color: white;
+    margin: 0 auto;
+    display: table;
+  }
+  .mix .preview div h1,
+  .mix .preview div p {
+    margin: 1.5em;
+    font-size: inherit;
+    max-width: 31.5em;
+  }
+  .mix .preview div video,
+  .mix .preview div img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .mix footer {
+    margin-top: 0.75em;
+  }
+  .mix footer p {
+    margin: 0;
+    display: inline;
+  }
+  .mix footer p + p {
+    margin-left: 0.75em;
+  }
+  .mix footer p a {
+    color: rgb(204, 204, 204); /* @aluminum */
+    text-decoration: none;
+  }
+  .mix footer .attaboyed {
+    color: rgb(255, 49, 102); /* @strawberry */
+  }
+  .mix footer p a:active,
+  .mix footer p a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+  .mix footer .count {
+    font-size: 0.75em;
+  }
+  .mix .share h2 {
+    font-size: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .mix .share p {
+    margin-top: 0.375em;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
