@@ -2,43 +2,11 @@
 
   /* =Profile
   ----------------------------------------------- */
-  section.profile > .container {
-    max-width: none;
-    padding-bottom: 0;
-  }
-  section.profile .lime {
-    background: rgb(203, 253, 128); /* @lime */
-  }
-  section.profile .cucumber {
-    background-color: rgb(150, 254, 166); /* @cucumber */
-  }
-  section.profile .blueberry {
-    background: rgb(99, 204, 203); /* @blueberry */
-  }
-  section.profile .boysenberry {
-    background: rgb(101, 156, 247); /* @boysenberry */
-  }
-  section.profile .plumb {
-    background: rgb(193, 77, 166); /* @plumb */
-  }
-  section.profile .strawberry {
-    background: rgb(255, 49, 102); /* @strawberry */
-  }
-  section.profile .apple {
-    background-color: rgb(255, 49, 59); /* @apple */
-  }
-  section.profile .tangerine {
-    background: rgb(255, 202, 72); /* @tangerine */
-  }
-  section.profile .orange {
-    background: rgb(242, 64, 41); /* @orange */
-  }
-
   section.profile .image {
     max-width: none;
     text-align: center;
     padding: 1.25em;
-    margin: -1.25em -1.25em 0;
+    margin: -1.5em -1.25em 0; /* @line-height */
     background: rgba(255, 255, 255, 0.15);
   }
   section.profile .image .avatar {
@@ -50,28 +18,8 @@
     margin: 0 auto;
   }
 
-  section.profile .details {
-    margin: 0 auto;
-    max-width: 31.25em;
-    padding: 1.25em 1.5em;
-  }
-  section.profile .details h2,
-  section.profile .details p {
-    text-align: center;
-  }
-  section.profile .details h2,
-  section.profile .details h2 + p {
-    margin: 0;
-  }
-  section.profile .details h2 {
-    font-weight: 900; /* @extra-bold */
-    font-size: 1.875em;
-    line-height: 1.2;
-    color: white;
-
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
+  section.profile .push-card .details {
+    margin-top: 1.5em;
   }
   section.profile .joined {
     font-size: 0.75em;
@@ -80,3 +28,4 @@
     opacity: 0.75;
     margin: 0;
   }
+

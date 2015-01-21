@@ -55,52 +55,49 @@
     </a>
   </header>
 
-  <section class="push" data-bind="visible: good.currentScreen() === 'push'">
-  <!-- ko with: good.currentPush -->
-  <header data-bind="css: good.pushColor(push.id)" class="orange"><p class="new-posts">
-        
+  <section class="push">
 
-        <!-- ko if: good.appCacheStatus() == 'UPDATE_AVAILABLE' --><!-- /ko -->
-      </p>
+    <p class="new-posts">
+      <button>
+        <span class="icon cached"></span>
+        Update
+      </button>
+    </p>
+    <header class="orange header push-card">
+      <h2>Project Citizen</h2>
+      <p>Helping social creatives celebrate the work they do</p>
 
-      <div class="details">
-        <h1 data-bind="text: push.name">Project Citizen</h1>
-        <h2 data-bind="text: push.body">Helping social creatives celebrate the work they do</h2>
-        <!-- ko if: push.site && push.display_site --><!-- /ko -->
-
-        <div class="meta">
-
-          <!-- ko if: posts.length > 0 -->
-          <p>
-            <span class="count" data-bind="text: posts.length">328</span>
-            <span class="label">Moments</span>
-          </p>
-          <!-- /ko -->
-
-          <p>
-            <a href="#members" data-bind="click: $root.onShowUserList">
-              <span class="count" data-bind="text: participants.length">36</span>
-              <span class="label">Members</span>
-            </a>
-          </p>
-
-          <p class="hashtags">
-            <a href="#settings" data-bind="click: good.onNavClick">
-              
-              <svg aria-label="My Settings" class="icon" viewBox="0 0 24 24"><path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
-                  l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
-                  c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
-                  L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
-                  c0,0.362-0.121,0.724-0.121,1.206s0,0.844,0.121,1.206l-2.533,2.05c-0.241,0.241-0.241,0.482-0.121,0.724l2.412,4.221
-                  c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
-                  h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
-                  c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
-                  c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"></path><foreignObject>My Settings</foreignObject></svg></a>
-          </p>
-        </div>
+      <div class="meta">
+        <p>
+          <span class="count" data-bind="text: posts.length">328</span>
+          <span class="label">Moments</span>
+        </p>
+        <p>
+          <a href="#members" data-bind="click: $root.onShowUserList">
+            <span class="count" data-bind="text: participants.length">36</span>
+            <span class="label">Members</span>
+          </a>
+        </p>
+        <p class="hashtags">
+          <a href="#settings">
+            <svg aria-label="My Settings" class="icon" viewBox="0 0 24 24">
+              <path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
+                l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
+                c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
+                L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
+                c0,0.362-0.121,0.724-0.121,1.206s0,0.844,0.121,1.206l-2.533,2.05c-0.241,0.241-0.241,0.482-0.121,0.724l2.412,4.221
+                c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
+                h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
+                c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
+                c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"></path>
+              <foreignObject>My Settings</foreignObject>
+            </svg>
+          </a>
+        </p>
       </div>
-    </header><!-- /ko --><ul class="create">
-<li>
+    </header>
+    <ul class="create">
+      <li>
         <a href="#switch" data-bind="click: good.onNavClick">
           <span class="icon switch"></span>
           Switch Push
@@ -125,17 +122,21 @@
         </a>
       </li>
     </ul>
-<!-- ko if: good.uploadQueue().state() == 'PROCESSING_ITEM' --><!-- /ko --><!-- ko with: good.uploadQueue().lastError()  --><!-- /ko --><!-- ko if: showEmptyPushMessage --><!-- /ko --><ol class="post-list">
-<!-- ko if: showPrevButton --><li class="previous">
-        <a href="#previous" data-bind="click: onPreviousPage">
-          
-          <svg aria-label="Previous Page" class="icon" viewBox="0 0 24 24"><polygon points="12,8 6,14 7.4,15.4 12,10.8 16.6,15.4 18,14 "></polygon><foreignObject>Previous Page</foreignObject></svg></a>
-      </li>
-      <!-- /ko -->
 
-      <!-- ko foreach: visiblePosts -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-765">
-        <article><header><h3>
+    <ol class="post-list">
+      <li class="previous">
+        <a href="#previous">
+          <svg aria-label="Previous Page" class="icon" viewBox="0 0 24 24">
+            <polygon points="12,8 6,14 7.4,15.4 12,10.8 16.6,15.4 18,14 "></polygon>
+            <foreignObject>Previous Page</foreignObject>
+          </svg>
+        </a>
+      </li>
+
+      <li id="post-765">
+        <article>
+          <header>
+            <h3>
               <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
                 <span class="avatar" data-bind="if: user.profile_image"></span>
                 <span class="avatar" data-bind="if: !user.profile_image">
@@ -150,10 +151,12 @@
                 <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:18:12+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
                 </time></a>
             </p>
-          </header><div class="video"></div>
+          </header>
 
-          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" alt="859740640865532394_1451549205">
-@workandprogress meeting Brandon of @broccolicity at #CTZN #CTZNmixer</p></div>
+          <div class="body">
+            <p><img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" alt="859740640865532394_1451549205">
+@workandprogress meeting Brandon of @broccolicity at #CTZN #CTZNmixer</p>
+</div>
 
           <footer><p>
               <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
@@ -1519,17 +1522,15 @@ Important. #CTZN</p></div>
               
               <svg aria-label="Options" class="icon" viewBox="0 0 24 24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
           </footer></article>
-</li>
-      <!-- /ko -->
+      </li>
 
-      <!-- ko if: $root.showNextButton -->
       <li class="next">
         <a href="#next" data-bind="click: onNextPage">
           
           <svg aria-label="Next Page" class="icon" viewBox="0 0 24 24"><polygon points="16.6,8.6 12,13.2 7.4,8.6 6,10 12,16 18,10 "></polygon><foreignObject>Next Page</foreignObject></svg></a>
       </li>
-      <!-- /ko -->
-    </ol></section>
+    </ol>
+  </section>
 
 </body>
 </html>

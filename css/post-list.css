@@ -12,7 +12,7 @@
   }
   .post-list > li {
     margin: 0 auto;
-    max-width: 31.25em; /* image.width / font-size (500px / 16px) */
+    max-width: 31.25em; /* image.width / @font-size (500px / 16px) */
     border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
   }
   .post-list > li:last-child {
@@ -99,10 +99,6 @@
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
     background-color: rgba(0, 0, 0, 0.25);
     min-height: 9em;
-  }
-  article .video iframe {
-    width: 100%;
-    height: 17.625em; /* column width x YouTube aspect ratio / @font-size (500px times 9/16 divided by 16px) */
   }
   article .body {
     /* @wrap-long-words */

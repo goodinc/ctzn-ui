@@ -27,10 +27,9 @@
   @import url(post-options.css);
   @import url(post.css);
   @import url(profile.css);
-  @import url(push-header.css);
-  @import url(push-summary.css);
-  @import url(push-tools.css);
   @import url(push.css);
+  @import url(push-card.css);
+  @import url(push-tools.css);
   @import url(settings.css);
   @import url(start.css);
   @import url(switch.css);

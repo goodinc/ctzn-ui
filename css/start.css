@@ -1,46 +1,7 @@
 
   /* =Start
   ----------------------------------------------- */
-  section.start {
-    text-align: center;
-    min-height: 100%;
-    box-sizing: border-box;
-    transition: background-color 0.4s;
-    background: rgb(203, 253, 128); /* @lime */
-  }
-  section.start > div {
-    max-width: 20em;
-  }
-
-  section.start.lime {
-    background: rgb(203, 253, 128); /* @lime */
-  }
-  section.start.cucumber {
-    background-color: rgb(150, 254, 166); /* @cucumber */
-  }
-  section.start.blueberry {
-    background: rgb(99, 204, 203); /* @blueberry */
-  }
-  section.start.boysenberry {
-    background: rgb(101, 156, 247); /* @boysenberry */
-  }
-  section.start.plumb {
-    background: rgb(193, 77, 166); /* @plumb */
-  }
-  section.start.strawberry {
-    background: rgb(255, 49, 102); /* @strawberry */
-  }
-  section.start.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
-  }
-  section.start.tangerine {
-    background: rgb(255, 202, 72); /* @tangerine */
-  }
-  section.start.orange {
-    background: rgb(242, 64, 41); /* @orange */
-  }
-
-  section.start h1 {
+  .start.page h1 {
     font-size: 1.875em;
     line-height: 1.2; /* @line-height x 1.5 / 1.875 */
     font-weight: normal;
@@ -48,7 +9,7 @@
     text-transform: lowercase;
     margin-bottom: 0;
   }
-  section.start h1 abbr {
+  .start.page h1 abbr {
     display: block;
     margin: 0.5em auto 0;
     /* Data URI encoded from black/ctzn.svg */
@@ -58,53 +19,7 @@
     text-indent: -9999px;
     overflow: hidden;
   }
-  section.start form {
-    margin-top: 1.875em; /* 30px / @font-size */
-  }
-  .push-card.page label,
-  section.start   label {
-    background: transparent;
-    border-width: 0;
-    padding: 0;
-    margin: 0;
-  }
-  .push-card.page input[type="text"],
-  section.start   input[type="text"] {
-    text-align: center;
-    font-size: 1.125em; /* 18px / @font-size */
-    border-radius: 4px;
-    line-height: 2.7777777778em; /* 50px / 18px */
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .push-card.page button,
-  section.start   button {
-    background: black;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
-    width: 100%;
-    font-weight: normal;
-    font-size: 1.5em; /* 24px / @font-size */
-    border-radius: 4px;
-    line-height: 2.0833333333em; /* 50px / 24px */
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .push-card.page button:active,
-  .push-card.page button:focus,
-  section.start   button:active,
-  section.start   button:focus {
-    background: black;
-  }
-  section.start a {
-    color: white;
-    text-transform: lowercase;
-  }
-  section.start a:active,
-  section.start a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
-  }
-  section.start aside {
+  .start.page aside {
     margin: 0;
     position: absolute;
     top: 0;
@@ -113,11 +28,11 @@
     text-align: right;
     background: rgba(0, 0, 0, 0.05);
   }
-  section.start aside p {
+  .start.page aside p {
     margin-top: 0;
     margin-bottom: 0;
   }
-  section.start aside a {
+  .start.page aside a {
     color: black;
     text-align: right;
     margin-left: auto;
@@ -128,8 +43,8 @@
     background: transparent;
     border-width: 0;
   }
-  section.start aside a:active,
-  section.start aside a:focus {
+  .start.page aside a:active,
+  .start.page aside a:focus {
     background: rgba(0, 0, 0, 0.15);
     color: white;
   }
