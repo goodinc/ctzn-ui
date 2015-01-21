@@ -3,36 +3,40 @@
     Shared styles, for all screens in the CTZN app.
   ----------------------------------------------- */
 
+  /* Atoms */
   @import url(elements.css);
-
   @import url(avatar.css);
-  @import url(buttons.css);
-  @import url(edit-profile.css);
-  @import url(forms.css);
-  @import url(header.css);
   @import url(icons.css);
-  @import url(list.css);
-  @import url(login.css);
-  @import url(overlay.css);
+  @import url(buttons.css);
+  @import url(forms.css);
   @import url(message.css);
-  @import url(mix-editor.css);
-  @import url(mix-list.css);
-  @import url(mix.css);
-  @import url(notifications.css);
+
+  /* Molecules */
+  @import url(list.css);
+  @import url(post-list.css);
+  @import url(post-item.css);
+  @import url(push-card.css);
+  @import url(header.css);
   @import url(page.css);
   @import url(page-options.css);
-  @import url(post-comments.css);
-  @import url(post-editor.css);
-  @import url(post-list.css);
-  @import url(post-options.css);
-  @import url(post.css);
-  @import url(profile.css);
+  @import url(overlay.css);
+
+  /* Pages */
   @import url(push.css);
-  @import url(push-card.css);
-  @import url(push-tools.css);
-  @import url(settings.css);
+  @import url(post.css);
+  @import url(post-editor.css);
+  @import url(profile.css);
+  @import url(edit-profile.css);
+  @import url(mixes.css);
+  @import url(mix.css);
+  @import url(mix-editor.css);
   @import url(start.css);
+  @import url(login.css);
   @import url(switch.css);
+  @import url(notifications.css);
+  @import url(settings.css);
+
+  /* Extras */
   @import url(transitions.css);
- 
   @import url(shim.css);
+

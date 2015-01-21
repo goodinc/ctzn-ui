@@ -76,6 +76,53 @@
     <div class="comments">
       <h2>Comments</h2>
 
+<ol data-bind="foreach: postViewModel().comments">
+<li>
+          <article><header><h3 data-bind="text: user.username">brian</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T06:00:33+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="2 days ago">2d</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Didn't end up even playing the bass, just spent a lot of time talking with a friend I don't see enough of.   Did play a few songs, rocked some Dio, barbecued, and just had a nice day off.</p></div>
+          </article>
+</li>
+      
+<li>
+          <article><header><h3 data-bind="text: user.username">cogg</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T07:30:45+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="2 days ago">2d</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Sounds great. We have a have a cheap bass that we got when my son wanted to learn it. If you are just looking for something to play with, happy to gift it just to see it get used.</p></div>
+          </article>
+</li>
+      
+<li>
+          <article><header><h3 data-bind="text: user.username">brian</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T17:35:03+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="1 days ago">1d</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>That'd be awesome, I've been meaning to get a bass for a while now.</p></div>
+          </article>
+</li>
+      
+<li>
+          <article><header><h3 data-bind="text: user.username">cogg</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T20:54:15+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="1 days ago">1d</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Apparently my nephew called dibs and has already taken possession. Sorry for getting your hopes up.</p></div>
+          </article>
+</li>
+      
+<li>
+          <article><header><h3 data-bind="text: user.username">brian</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T22:20:42+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="23 hours ago">23h</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>My soul.   It is crushed.</p></div>
+          </article>
+</li>
+      </ol>
+
       <form data-bind="submit: onSubmitComment, disable: commentUploading" id="add-comment">
         <p class="text">
           <label>
