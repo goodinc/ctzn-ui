@@ -1371,6 +1371,25 @@
     max-width: none;
   }
 
+  .push-card.page > header {
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  .push-card.page > header .back {
+    border-right-width: 0;
+
+    /* Data URI encoded from: snow/back.svg */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwb2x5Z29uIGZpbGw9IndoaXRlIiBwb2ludHM9IjIsMTIgMTIsMjIgMTQuNDc4LDE5LjUyMiA4LjcwOCwxMy43NTIgMjIsMTMuNzUyIDIyLDEwLjI0OCA4LjcwOCwxMC4yNDggMTQuNDc4LDQuNDc4IDEyLDIgIi8+DQo8L3N2Zz4NCg==);
+  }
+  .push-card.page > header .next {
+    border-left-width: 0;
+    color: white;
+  }
+  .push-card.page > header .next .icon {
+    font-size: 1.25em;
+  }
+
   /* Sometimes the push-card is a link */
   a.push-card {
     display: block;
@@ -1393,13 +1412,6 @@
     overflow-wrap : break-word;
   }
 
-  /* Use a darker headline color if the background is light. */
-  .push-card.lime     h2,
-  .push-card.cucumber h2 {
-    color: black;
-    color: rgba(0, 0, 0, 0.95);
-  }
-
   .push-card h3,
   .push-card h2 + p {
     margin-top: 0.375em;
@@ -1410,39 +1422,38 @@
 
   /* Meta */
   .push-card .meta {
-    background: rgb(204, 204, 204); /* @aluminum */
-    background: rgba(0, 0, 0, 0.1);
-
     margin-top: 1.5em;     /* @line-height */
     margin-left: auto;
     margin-right: auto;
-    padding: 0 0 0 0.5em;
-    display: table;
-    text-align: left;
   }
   .push-card .meta p {
+    background: rgb(204, 204, 204); /* @aluminum */
+    background: rgba(0, 0, 0, 0.1);
     margin: 0;
     text-transform: uppercase;
     display: inline-block;
-    padding: 0.75em; /* @line-height / 2 */
+    padding: 0.75em 1.125em; /* @line-height / 2 */
+    text-align: left;
+    min-width: 3em;
   }
   .push-card .meta p .count {
     display: block;
     font-weight: bold;
     color: white;
+    line-height: 1.25em; /* 20px / 16px */
   }
   .push-card .meta p .label {
-    font-size: 0.6875em;
+    font-size: 0.6875em; /* 11px / @font-size */
+    line-height: 1.4545454545em; /* 16px / 11px */
     display: block;
     letter-spacing: 1px;
-    line-height: 1;
   }
   .push-card .meta p a {
     display: block;
     color: inherit;
     text-decoration: none;
-    margin: -0.75em;
-    padding: 0.75em;
+    margin: -0.75em -1.125em;
+    padding: 0.75em  1.125em;
   }
   .push-card .meta p a:active,
   .push-card .meta p a:focus {
@@ -1450,9 +1461,9 @@
   }
 
   /* Join Button */
-  .push-card form,
-  .push-card .action {
-    margin-top: 3em;
+  .push-card form {
+    margin: 3em auto 0;
+    max-width: 20em;
   }
   .push-card label {
     background: transparent;
@@ -1487,8 +1498,20 @@
     background: black;
   }
 
-  section.push-card > div {
-    max-width: 20em;
+  /* Make the content darker if the background is light. */
+  .push-card.lime     h2,
+  .push-card.cucumber h2 {
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .lime.push-card.page     > header .back,
+  .cucumber.push-card.page > header .back {
+    /* Data URI encoded from: midnight/back.svg */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwb2x5Z29uIHBvaW50cz0iMiwxMiAxMiwyMiAxNC40NzgsMTkuNTIyIDguNzA4LDEzLjc1MiAyMiwxMy43NTIgMjIsMTAuMjQ4IDguNzA4LDEwLjI0OCAxNC40NzgsNC40NzggMTIsMiAiLz4NCjwvc3ZnPg0K);
+   }
+  .lime.push-card.page     > header .next,
+  .cucumber.push-card.page > header .next {
+    color: black;
   }
 
   /* OPTIONAL: Space things out a little more on tall screens */
@@ -1502,42 +1525,43 @@
     }
   }
 
-  /* Header (For the push & profile pages) */
+  /* OPTIONAL: Make the headline larger on the preview page. */
+  .push-card.page h2 {
+    /* @h1 */
+    font-size     : 3em;       /* 48px / @font-size */
+    line-height   : 1.25em;    /* 60px / 48px */
+  }
+
+  /* OPTIONAL: Make the meta data stick to the bottom of
+               the card, on the push and profile pages. */
   .header.push-card {
     border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
   }
   .header.push-card .meta {
+    background: rgb(204, 204, 204); /* @aluminum */
+    background: rgba(0, 0, 0, 0.1);
     display: block;
     text-align: left;
     margin-left   : -1.25em;
     margin-right  : -1.25em;
     margin-bottom : -1.5em; /* @line-height */
+
+    /* FUSSY: Line up with the left margin of the page */
+    padding-left: 0.125em; /* 1.25em - 1.125em */
+  }
+  .header.push-card .meta p {
+    background-color: transparent;
   }
 
   /* Settings button (for the push page) */
-  .push-card .meta .hashtags {
+  .push-card .meta .settings {
     margin: 0;
     float: right;
+    min-width: 0;
   }
-  .push-card .meta .hashtags a {
-    display: block;
+  .push-card .meta .settings a {
     color: white;
-    color: rgba(255, 255, 255, 0.85);
-    border: 0.1em solid white;
-    border-color: rgba(255, 255, 255, 0.85);
-    padding: 0.5em 1.5em;
-    line-height: 1;
-    border-radius: 0.375em;
-    margin: 0;
-  }
-  .push-card .meta .hashtags a:active,
-  .push-card .meta .hashtags a:focus {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-  }
-  .push-card .meta .hashtags .icon {
-    width: 1em;
-    height: 1em;
+    line-height: 2.25em;
   }
 
 
@@ -2090,16 +2114,16 @@
     border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
     background: white;
   }
-  .post.page .post-item {
+  .post.page .details .post-item {
     max-width: 31.25em;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 0;
   }
-  .post.page .post-item header {
+  .post.page .details .post-item header {
     margin-bottom: 1.125em;
   }
-  .post.page .post-item header h3 a {
+  .post.page .details .post-item header h3 a {
     padding-left: 3em;
   }
 
@@ -2881,11 +2905,11 @@
 
   /* =Push Settings
   ----------------------------------------------- */
-  section.hashtags {
+  section.settings {
     padding-bottom: 4.5em;
   }
 
-  .hashtags h3 {
+  .settings h3 {
     margin-top: 0;
 
     /* @tiny-headline */
@@ -2894,7 +2918,7 @@
     color: rgb(159, 165, 162); /* @barium */
   }
 
-  .hashtags .add-hashtag .item a {
+  .settings .add-hashtag .item a {
     /* Data URI encoded from: aluminum/forward.svg */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCI+DQo8cGF0aCBmaWxsPSJyZ2IoMjA0LCAyMDQsIDIwNCkiIGQ9Ik05LjUsMTljLTAuMzg0LDAtMC43NjgtMC4xNDYtMS4wNjEtMC40MzljLTAuNTg2LTAuNTg2LTAuNTg2LTEuNTM1LDAtMi4xMjFsMy45MzktMy45MzlMOC40MzksOC41NjENCgljLTAuNTg2LTAuNTg1LTAuNTg2LTEuNTM2LDAtMi4xMjFjMC41ODYtMC41ODYsMS41MzUtMC41ODYsMi4xMjEsMGw1LDVjMC41ODYsMC41ODUsMC41ODYsMS41MzYsMCwyLjEyMWwtNSw1DQoJQzEwLjI2OCwxOC44NTQsOS44ODQsMTksOS41LDE5eiIvPg0KPC9zdmc+DQo=);
 
@@ -2902,14 +2926,14 @@
     background-position: 100% 50%;
     background-position: calc(100% - 1em) 50%;
   }
-  .hashtags .add-hashtag .item a .icon {
+  .settings .add-hashtag .item a .icon {
     width: 0.75em;
     height: 0.75em;
     margin-right: 0.5em;
   }
 
   /* Onboarding button */
-  section.hashtags > form:last-child {
+  section.settings > form:last-child {
     position: absolute;
     top: 0.25em;
     right: 0;
@@ -2917,27 +2941,27 @@
     padding: 0;
   }
 
-  .hashtags ul,
-  .hashtags .item {
+  .settings ul,
+  .settings .item {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .hashtags p.item,
-  .hashtags .tag-list     ul,
-  .hashtags .account-list ul {
+  .settings p.item,
+  .settings .tag-list     ul,
+  .settings .account-list ul {
     margin: 0 -1.25em;
   }
-  .hashtags .tag-list     > svg:first-child,
-  .hashtags .account-list > svg:first-child {
+  .settings .tag-list     > svg:first-child,
+  .settings .account-list > svg:first-child {
     display: block;
     width: 4.5em;
     height: 4.5em;
     margin: -0.375em auto;
     opacity: 0.15;
   }
-  .hashtags .tag-list     h2,
-  .hashtags .account-list h2 {
+  .settings .tag-list     h2,
+  .settings .account-list h2 {
     text-align: center;
     font-weight: normal;
     font-size: 1.125em; /* 18px / @font-size */
@@ -2945,35 +2969,35 @@
     color: rgb(102, 102, 102); /* @tin */
     margin-bottom: 3em;
   }
-  .hashtags .tag-list     h2 strong,
-  .hashtags .account-list h2 strong {
+  .settings .tag-list     h2 strong,
+  .settings .account-list h2 strong {
     font-size: 1.3333333333em; /* 24px / 18px */
     color: black;
     font-weight: 900; /* @extra-bold */
   }
-  .hashtags aside {
+  .settings aside {
     text-align: center;
     font-style: italic;
     color: rgb(153, 153, 153); /* @nickel */
   }
-  .hashtags aside h3 {
+  .settings aside h3 {
     text-transform: none;
     color: inherit;
     font-size: inherit;
     margin-bottom: 0;
     text-transform: lowercase;
   }
-  .hashtags aside p {
+  .settings aside p {
     margin-top: 0;
   }
-  .hashtags aside p:first-letter {
+  .settings aside p:first-letter {
     text-transform: lowercase;
   }
-  .hashtags .item {
+  .settings .item {
     position: relative;
     margin: 0.75em 0;
   }
-  .hashtags .item a {
+  .settings .item a {
     display: block;
     padding: 0.5625em 1.125em;
     text-decoration: none;
@@ -2986,29 +3010,29 @@
   .account-list .item a {
     color: inherit;
   }
-  .hashtags .item a .icon {
+  .settings .item a .icon {
     margin-right: 0.75em;
   }
-  .hashtags .item a .icon:last-child {
+  .settings .item a .icon:last-child {
     float: right;
     margin-right: 0;
     color: rgb(204, 204, 204); /* aluminum */
   }
   @media (max-width: 34.25em) {
-    .hashtags.page .add-hashtag {
+    .settings.page .add-hashtag {
       padding-top: 0;
     }
-    .hashtags .item {
+    .settings .item {
       margin-top: 0;
       margin-bottom: 0;
     }
-    .hashtags .item + .item a {
+    .settings .item + .item a {
       border-top-width: 0;
     }
-    .hashtags .item[hidden] + .item a {
+    .settings .item[hidden] + .item a {
       border-top-width: 0.1em;
     }
-    .hashtags .item a {
+    .settings .item a {
       border-left-width: 0;
       border-right-width: 0;
       border-radius: 0;

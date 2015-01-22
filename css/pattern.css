@@ -38,8 +38,9 @@
     margin-left: 0;
     padding-left: 0;
   }
+  body.pattern > h2:first-child,
   body.pattern > h2:first-child + nav li {
-    margin-left: 1.5em;
+    margin-right: 1.5em;
   }
   body.pattern > h2:first-child a,
   body.pattern > h2:first-child + nav a {
