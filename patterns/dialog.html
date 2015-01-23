@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Dialog / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="page">
+    <header>
+      <h1>Page Title</h1>
+
+      <a href="" class="back">
+        Go Back
+      </a>
+    </header>
+
+    <div>
+      <h2>The Page</h2>
+      <p>This should be covered up entirely by the dialog.</p>
+    </div>
+
+  </section>
+
+  <!--
+    SHIM: Add a class of “error” to make the dialog completely cover the content behind it.
+          Add a class of “has-details” to make the dialog scrollable (instead of centered vertically).
+  -->
+  <section class="loading">
+    <div>
+      <div>
+
+        <h1>Headline</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        <p class="action">
+          <a href="">Action to take</a>
+        </p>
+
+        <button class="close">
+          <!-- @icon-close -->
+          <svg aria-label="Hide this message" class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+            <foreignobject>Hide this message</foreignobject>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

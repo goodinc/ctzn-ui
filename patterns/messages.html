@@ -34,6 +34,31 @@
 
   <h1>Messages</h1>
 
+  <section class="loading-message" role="status">
+    <h1><span class="loading-icon"></span> <span class="message">Loading...</span></h1>
+  </section>
+
+  <div style="margin-top: 3em"></div>
+
+  <section class="error-message">
+    <h1 role="status">Well, this is embarrassing. Our server appears to be offline</p></h1>
+    <p><button><span class="icon refresh">Try again</span></button></p>
+  </section>
+
+  <section class="empty-message">
+    <h1>Empty Content</h1>
+    <ul class="action">
+      <li><a href="#settings">Action to take</a></li>
+      <li><a href="#edit-post">Another action to take</a></li>
+    </ul>
+  </section>
+
+  <section class="upload-message error" role="status">
+    <h1>Oops! That email address isn’t valid.</p>
+  </section>
+
+  <div style="margin-top: 3em"></div>
+
   <section class="upload-message" role="status">
     <h1>
       <!-- @placeholder-image -->
@@ -41,12 +66,6 @@
       Sending
       <span class="icon loading"></span>
     </h1>
-  </section>
-
-  <div style="margin-top: 3em"></div>
-
-  <section class="upload-message error" role="status">
-    <h1>Oops! That email address isn’t valid.</p>
   </section>
 
   <div style="margin-top: 3em"></div>

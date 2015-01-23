@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Push Card / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <section class="push-card page">
+    <header>
+      <h1>Page Title</h1>
+
+      <a href="#start" class="back">
+        Go Back
+      </a>
+
+      <a href="#start" class="next">
+        <svg aria-label="Close" class="icon" viewBox="0 0 24 24" width="24" height="24">
+          <!-- @icon-close -->
+          <polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+          <foreignobject>Close</foreignobject>
+        </svg>
+      </a>
+    </header>
+
+    <div class="details">
+      <h2>Headline</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+  </section>
+
+  <script>
+  (function() {
+
+    function startColorAnimation() {
+      var colors = [
+        'apple',
+        'blueberry',
+        'strawberry',
+        'cucumber',
+        'plumb',
+        'orange',
+        'boysenberry',
+        'lime',
+        'tangerine'
+      ];
+
+      var min = 0;
+      var max = colors.length - 1;
+
+      var random = Math.floor(Math.random() * (max - min + 1) + min);
+      var cursor = random;
+
+      function update() {
+        var main = document.getElementsByTagName('section');
+        if (main.length > 0) {
+
+          // Remove the current color
+          main[0].className = main[0].className.replace(colors[cursor], '');
+
+          // Add a new color
+          cursor++;
+          if (cursor > colors.length - 1) cursor = 0;
+          main[0].className += (' ' + colors[cursor]);
+        }
+        else setTimeout(update, 10);
+      }
+
+      // Update every three seconds
+      setInterval(update, 3000);
+      update();
+    }
+
+    startColorAnimation();
+
+  })();
+  </script>
+
+</body>
+</html>

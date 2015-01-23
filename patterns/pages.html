@@ -1,0 +1,1687 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Pages / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/pattern.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
+    (function() {
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+  <style>
+
+    /* Override the default style, for demonstration purposes. */
+    .page > header {
+      position: relative;
+    }
+    .page > header ~ form .submit {
+      position: static;
+    }
+
+    section.push,
+    section.page {
+      padding-top: 0;
+      margin-bottom: 3em;
+    }
+
+    .start.page aside {
+      position: relative;
+    }
+
+    /* SHIM: Add extra padding to the bottom of pages with forms, to prevent the virtual keyboard
+             from obscuring the fields and buttons on Android (in standalone webview mode). */
+    .page >         form:last-child,
+    .page > form ~ aside:last-child,
+    .start.page >    div:last-child,
+    .post.page >     div:last-child {
+      padding-bottom: 0;
+    }
+
+    .mix-editor .selected-images {
+      position: relative;
+      top: 0;
+    }
+
+    header.primary,
+    ul.create {
+      position: relative;
+    }
+
+    section.editor.page {
+      position: relative;
+    }
+
+    section.loading,
+    section.loading.error,
+    section.developer-tools {
+      position: relative;
+      height: auto;
+    }
+
+    .developer.action {
+      position: static;
+      margin-top: 1.5em;
+    }
+
+  </style>
+
+</head>
+<body class="pattern">
+
+  <h2><a href="../">CTZN</a></h2>
+  <nav>
+    <ul>
+      <li class="active"><a href="../patterns/">Patterns</a></li>
+      <li><a href="../messages/">Messages</a></li>
+      <li><a href="../prototype/">Prototype</a></li>
+    </ul>
+  </nav>
+
+  <h1>Pages</h1>
+
+  <section class="page">
+    <header>
+      <h1>Page Title</h1>
+
+      <a href="" class="back">
+        Go Back
+      </a>
+    </header>
+
+    <div>
+      <h2>Content</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <form>
+      <h2>Form</h2>
+      <p class="text">
+        <label>
+          <span>Field label</span><br />
+          <input type="text" placeholder="Field label" />
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit">Submit</button>
+      </p>
+    </form>
+
+    <aside>
+      <h3>Side Note</h3>
+      <p>You can tell us which hashtags you use for 826LA Volunteers, next…</p>
+    </aside>
+  </section>
+
+  <h2>Edit</h2>
+
+  <section class="edit page">
+    <header>
+      <h1>Password</h1>
+
+      <a href="" class="cancel">
+        Cancel
+      </a>
+    </header>
+
+    <form class="has-icon">
+      <p class="text">
+        <label>
+          <span class="icon padlock">Current Password</span><br />
+          <input type="password" placeholder="Current Password" name="current_password" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <span class="icon padlock">New Password</span><br />
+          <input type="password" placeholder="New Password" name="password" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <span class="icon padlock">New Password, Again</span><br />
+          <input type="password" placeholder="New Password, Again" name="repeat_password" />
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit">Done</button>
+      </p>
+    </form>
+  </section>
+
+  <h2>Settings</h2>
+
+  <section class="settings page">
+    <header>
+      <h1>Connect</h1>
+
+      <a href="#push" class="cancel">
+        Cancel
+      </a>
+    </header>
+
+    <div class="account-list">
+      <!-- @icon-connect -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M17,6.2c-1.4,0-2.8,0.5-3.9,1.4c0,0-0.1,0.1-0.1,0.2c0,0.1,0,0.1,0.1,0.2l1,1.2c0,0,0.1,0.1,0.2,0.1
+          c0.1,0,0.1,0,0.2-0.1C15.1,8.6,16,8.2,17,8.2c2.2,0,3.9,1.7,3.9,3.8s-1.8,3.8-3.9,3.8c-0.8,0-1.6-0.2-2.2-0.7
+          c-0.7-0.4-1.2-1.1-1.5-1.9c-0.1-0.2-0.1-0.4-0.2-0.7c0-0.2,0-0.3,0-0.5v-0.2c0,0,0,0,0-0.1c0-0.3,0-0.6-0.1-0.9
+          c-0.3-1.6-1.2-2.9-2.6-3.8c-1-0.6-2.1-1-3.3-1c-3.3,0-6,2.6-6,5.9c0,3.2,2.7,5.8,6,5.8c1.5,0,2.9-0.5,4-1.5c0.1-0.1,0.1-0.2,0-0.3
+          L10,14.8c-0.1-0.1-0.2-0.1-0.3,0c-0.7,0.6-1.6,1-2.6,1c-2.2,0-3.9-1.7-3.9-3.8c0-2.1,1.8-3.8,3.9-3.8c0.8,0,1.6,0.2,2.2,0.7
+          c0.9,0.6,1.5,1.4,1.7,2.4c0,0.3,0.1,0.5,0.1,0.7c0,0.4,0,0.7,0.1,0.9c0.1,0.4,0.1,0.7,0.3,1c0.4,1.2,1.3,2.2,2.3,2.9
+          c1,0.7,2.1,1,3.3,1c3.3,0,6-2.6,6-5.8C23,8.8,20.3,6.2,17,6.2z"/>
+      </svg>
+      <h2>
+        Automatically grab your<br />
+        <strong>826LA Volunteers</strong><br />
+        Instagrams and Tweets when you connect your&nbsp;accounts.
+      </h2>
+      <h3>Your Acccounts</h3>
+      <ul>
+        <li class="item active">
+          <a href="#instagram">
+            <span class="icon instagram">Instagram</span>
+            <span>@supervolunteerla</span>
+          </a>
+        </li>
+        <li class="item">
+          <a href="#twitter-add" data-bind="click: $parent.linkTwitter">
+            <span class="icon twitter">Sync my Twitter</span>
+            <span>Sync my Twitter</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <form>
+      <p class="submit"><button type="submit">Next</button></p>
+    </form>
+
+    <aside>
+      <h3>Pssst…</h3>
+      <p>You can tell us which hashtags you use for 826LA Volunteers, next…</p>
+    </aside>
+
+  </section>
+
+
+  <section class="login page">
+    <header>
+      <h1>Log In</h1>
+
+      <a href="start.html" class="back">
+        Go Back
+      </a>
+    </header>
+
+    <div class="push-card tangerine">
+      <h2>
+        <span>Welcome to</span>
+        <abbr title="Citizen">ctzn</abbr>
+      </h2>
+    </div>
+
+    <form action="push.html" method="post" class="has-icon">
+      <p class="text">
+        <label>
+          <span class="icon user-circle">Username</span><br />
+          <input type="text" placeholder="Username" autocapitalize="none" autocorrect="off" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <span class="icon padlock">Password</span><br />
+          <input type="password" placeholder="Password" />
+        </label>
+        <em class="note"><a href="forgot.html">Forgot?</a></em>
+      </p>
+      <p class="submit">
+        <button>Next</button>
+      </p>
+    </form>
+  </section>
+
+  <section class="page">
+    <header>
+      <h1>Project Citizen</h1>
+      <a href="#push" class="back" data-bind="click: function() { window.history.back() }">
+        Go Back
+      </a>
+    </header>
+
+    <div class="list">
+      <ul data-bind="foreach: good.currentPush().participants.filter(function(p) { return p.username.indexOf('[anonymous') != 0; }).sort(function(a, b) { if(a.username > b.username) { return 1; } if(a.username < b.username) { return -1; } return 0; } )">
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+            </span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">aaron</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Aaron Hopkins</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+            </span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">aldoatgood</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Aldo Puicon</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="a"></span>
+              <!-- /ko -->
+            </span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">aldopuicon</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Aldo Puicon</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+      </ul>
+    </div>
+  </section>
+
+<section class="notifications page"><header><h1>Notifications</h1>
+
+      <a href="#push" class="back" data-bind="click: good.onNavClick">
+        Go Back
+      </a>
+    </header><div>
+      <!-- ko if: notifications().length == 0 && unreadNotifications().length == 0 --><!-- /ko -->
+
+      <!-- ko if: unreadNotifications().length > 0 -->
+      <h2>Recent</h2>
+      <ol class="post-list" data-bind="foreach: unreadNotifications">
+<li>
+          <article class="post-item"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image">
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">cogg</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 --><!-- /ko -->
+
+                <!-- ko if: type == 3 --><!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 -->
+                commented on a post you've commented on in <span data-bind="text: push.name">Santa Zen</span>:
+                <!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Given how bad I am at flying it right now I think I will wait a while before attempting that</p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-19T01:39:42+00:00">21 hours ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image"></span>
+                  <span class="avatar" data-bind="if: !profile_image">
+                    <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="c"></span>
+                  </span>
+                  <span data-bind="text: username">coggtest</span>
+                </a>
+                <!-- /ko -->
+
+                commented on a post you've commented on in <span data-bind="text: push.name">Santa Zen</span>:
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>This should give you the correct notifications now Aldo</p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-17T03:09:13+00:00">3 days ago</time></p>
+          </article>
+        </li>
+      </ol>
+
+      <h2>Older</h2>
+
+      <ol class="post-list" data-bind="foreach: notifications">
+        <li>
+          <article class="post-item"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image">
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">cogg</span>
+                </a>
+                commented on a post you've commented on in <span data-bind="text: push.name">Santa Zen</span>:
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>@dan nice job</p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-17T02:36:34+00:00">3 days ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image"></span>
+                  <span class="avatar" data-bind="if: !profile_image">
+                    <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="d"></span>
+                  </span>
+                  <span data-bind="text: username">dan</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 --><!-- /ko -->
+
+                <!-- ko if: type == 3 -->
+                gave your post on <span data-bind="text: push.name">Santa Zen</span> some love:
+                <!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 --><!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Chelsea got a free taxi ride to the elevator on Friday…</p>
+
+<p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/fa0d842251e5964f766fdf918f1426760c413304=c500x500"></p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-13T21:03:20+00:00">6 days ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image">
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/d8ac6892373777925f9d892e3764f08e3a2526f7=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">eshah</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 --><!-- /ko -->
+
+                <!-- ko if: type == 3 -->
+                gave your post on <span data-bind="text: push.name">Santa Zen</span> some love:
+                <!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 --><!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Chelsea got a free taxi ride to the elevator on Friday…</p>
+
+<p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/fa0d842251e5964f766fdf918f1426760c413304=c500x500"></p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-11T18:24:14+00:00">1 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image">
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">cogg</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 -->
+                commented on your post on <span data-bind="text: push.name">Santa Zen</span>:
+                <!-- /ko -->
+
+                <!-- ko if: type == 3 --><!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 --><!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Looks like we are going the wrong way on a one way street...</p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-11T15:40:26+00:00">1 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                <!-- ko with: notifier -->
+                <a href="" data-bind="click: function(){ $root.handleUserClicked($data) }, clickBubble: false">
+                  <span class="avatar" data-bind="if: profile_image">
+                    <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"></span>
+                  <span class="avatar" data-bind="if: !profile_image"></span>
+                  <span data-bind="text: username">brian</span>
+                </a>
+                <!-- /ko -->
+
+                <!-- ko if: type == 0 --><!-- /ko -->
+
+                <!-- ko if: type == 1 --><!-- /ko -->
+
+                <!-- ko if: type == 2 --><!-- /ko -->
+
+                <!-- ko if: type == 3 -->
+                gave your post on <span data-bind="text: push.name">Santa Zen</span> some love:
+                <!-- /ko -->
+
+                <!-- ko if: type == 4 --><!-- /ko -->
+
+                <!-- ko if: type == 5 --><!-- /ko -->
+
+              </h3>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(post.body)"><p>Chelsea got a free taxi ride to the elevator on Friday…</p>
+
+<p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/fa0d842251e5964f766fdf918f1426760c413304=c500x500"></p></div>
+            <p class="time">
+              <time data-bind="attr: { datetime: createdAt }, text: good.timeAgo.inWords(createdAt)" datetime="2015-01-11T00:39:30+00:00">1 weeks ago</time></p>
+          </article>
+</li>
+      </ol>
+<!-- /ko -->
+</div>
+  </section>
+
+  <section class="strawberry push-card page">
+    <header>
+      <h1>Joining…</h1>
+
+      <a href="#start" class="back">
+        Go Back
+      </a>
+
+      <a href="#start" class="next">
+        <svg aria-label="Close" class="icon" viewBox="0 0 24 24" width="24" height="24">
+          <!-- @icon-close -->
+          <polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+          <foreignobject>Close</foreignobject>
+        </svg>
+      </a>
+    </header>
+
+    <div class="details">
+      <h2>LA 2050</h2>
+      <h3>Short description of push can go here — probably at least two lines of text is preferred.</h3>
+
+      <div class="meta">
+        <p>
+          <span class="count">124</span>
+          <span class="label">Posts</span>
+        </p>
+        <p>
+          <span class="count">15</span>
+          <span class="label">People</span>
+        </p>
+        <p>
+          <span class="count">8</span>
+          <span class="label">Mixes</span>
+        </p>
+      </div>
+
+      <form>
+        <p class="submit">
+          <button type="submit">Join</button>
+        </p>
+      </form>
+    </div>
+
+  </section>
+
+  <section class="edit-profile page">
+    <header>
+      <h1>Edit Profile</h1>
+
+      <a href="#profile" class="cancel">
+        Cancel
+      </a>
+    </header>
+    <form class="has-icon">
+      <p class="file">
+        <label>
+          <input type="file" accept="image/*" />
+          <span>
+            <img src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100"  height="100" width="100" alt="" /><br />
+            <span>Change photo</span>
+          </span>
+        </label>
+      </p>
+      <p class="text full-name">
+        <label>
+          <span class="icon user">Full Name</span><br />
+          <input type="text" placeholder="Full Name" name="full_name" />
+        </label>
+      </p>
+      <p class="text disabled">
+        <label>
+          <span class="icon user-circle">Username</span><br />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <span class="icon info">Biography</span><br />
+          <textarea placeholder="Bio" name="bio"></textarea>
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit">Done</button>
+      </p>
+    </form>
+
+    <aside>
+      <ul>
+        <li>
+          <button>
+            <span class="icon padlock"></span>
+            Change Password
+          </button>
+        </li>
+        <li>
+          <button>
+            <span class="icon exit-to-app"></span>
+            Log Out
+          </button>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <button>
+            <span class="icon close-circle"></span>
+            Delete Profile
+          </button>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="profile page">
+
+    <header>
+      <h1>jelena</h1>
+
+      <a href="#edit-profile" class="next">  
+        <svg aria-label="Edit Profile" class="icon" viewBox="0 0 24 24" width="24" height="24"><g><polygon points="3.538,15.187 16.725,2 22,7.275 8.813,20.462"></polygon></g><g><polygon points="7.275,22 2,22 2,16.725"></polygon></g><foreignObject>Edit Profile</foreignObject></svg>
+      </a>
+
+      <a href="#push" class="back">
+        Go Back
+      </a>
+    </header>
+
+    <div class="orange header push-card">
+
+      <div class="image">
+        <span class="avatar">
+          <span class="size100 grape" data-content="j"></span>
+        </span>
+      </div>
+
+      <div class="details">
+        <h2>Jelena Woehr</h2>
+        <h3>Land cuttlefish. Word aficionado. Director of Community at GOOD.</h3>
+
+        <p class="joined">Joined <time datetime="2014-09-30T19:19:50.000+00:00">15 weeks ago</time></p>
+      </div>
+
+      <div class="meta">
+        <p>
+          <span class="count">103</span>
+          <span class="label">Posts</span>
+        </p>
+        <p>
+          <a href="pushes.html">
+            <span class="count">9</span>
+            <span class="label">Pushes</span>
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+    <ol class="post-list">
+      <li>
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="#">
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source">
+              <span class="icon twitter">via <span>twitter</span></span>
+            </p>
+            <p>
+              <a href="#post">
+                <time datetime="2014-12-05T00:18:52+00:00">
+                  <abbr title="6 weeks ago">6w</abbr>
+                </time>
+              </a>
+            </p>
+          </header>
+
+          <div class="video"></div>
+
+          <div class="body">
+            <p>Tomorrow, Heartbeats dance party in Santa Monica - at the same space I used for my last #CTZN party: https://t.co/wtRpx4qc6u #mydayinla</p>
+          </div>
+
+          <footer>
+            <p>
+              <button>
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24" width="24" height="24">
+                  <path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg>
+                <span class="count" data-bind="if: attaboys().length > 0"></span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg>
+                  <span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-815">
+        <article class="post-item"><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-12-01T06:40:08+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="7 weeks ago">7w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Whee!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c500x500"></p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">3</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-814">
+        <article class="post-item"><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-30T04:31:03+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="7 weeks ago">7w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>These thanks givers match Lou's Lil push. What did everyone do for the holiday? </p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/19c61c97aa9543f759f9adc44641b7fa45618e31=c500x500"></p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">3</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-793">
+        <article class="post-item"><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-25T08:39:38+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="7 weeks ago">7w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Ran into a protest on Wilshire on my way home and joined up. Only got slightly run over by a car. All good. Thought I'd post these in case y'all saw me on the news or something, there were a lot of cameras. Home safely. </p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/3c1cf5a2d8847591cd9ca7accb2bcb65d891980e=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/d186195dc2283a33e43be61ee34da55a37a37c8d=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/47ef0e222f55c7f998a6dd562f4fa0fc6216eb3b=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/a19afe0227edda359af3c4922a374f664eab2b3f=c500x500"></p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+    </ol>
+  </section>
+
+  <section class="boysenberry start push-card page">
+    <div>
+      <h1>
+        <span>Welcome to</span>
+        <abbr title="Citizen">ctzn</abbr>
+      </h1>
+      <form action="preview.html" method="post">
+        <p class="text">
+          <label>
+            <span>Enter invite code…</span><br />
+            <input type="text" placeholder="Enter invite code…" spellcheck="false" autocapitalize="off" />
+          </label>
+        </p>
+        <p class="submit">
+          <button>Start</button>
+        </p>
+      </form>
+      <aside>
+        <p><a href="login.html">Log in</a></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="switch">
+    <div>
+      <ul>
+        <li>
+          <a href="push.html" class="push-card orange">
+            <h2>Project Citizen</h2>
+            <p>Helping social creatives celebrate the work they do</p>
+          </a>
+        </li>
+        <li>
+          <a href="push.html" class="push-card blueberry">
+            <h2>cicLAvia</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+          </a>
+        </li>
+        <li>
+          <a href="push.html" class="push-card lime">
+            <h2>LA 2050</h2>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.</p>
+          </a>
+        </li>
+      </ul>
+      <h2 class="join">
+        <a href="push-join.html">
+          <!-- @icon-add-circle -->
+          <svg aria-label="Join Another Push" class="icon" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12,2C6.478,2,2,6.477,2,12c0,5.523,4.478,10,10,10c5.523,0,10-4.477,10-10C22,6.477,17.523,2,12,2z M12,20.906
+              c-4.911,0-8.906-3.995-8.906-8.906S7.089,3.094,12,3.094S20.906,7.089,20.906,12S16.911,20.906,12,20.906z"/>
+            <polygon points="13,8.25 11,8.25 11,11 8.25,11 8.25,13 11,13 11,15.75 13,15.75 13,13 15.75,13 15.75,11 13,11  "/>
+            <foreignobject>Join Another Push</foreignobject>
+          </svg>
+        </a>
+      </h2>
+    </div>
+  </section>
+
+<section class="mix-editor page">
+
+  <header><h1>Create Mix</h1>
+
+      <a href="#push" class="back" data-bind="click: function(){ window.history.back(); }">
+        Go Back
+      </a>
+    </header><!-- ko if: images().length < 2 --><!-- /ko -->
+
+    <!-- ko if: images().length >= 2 -->
+    <form>
+      <div class="selected-images">
+        <h2 data-bind="visible: selectedImages().length == 0">Select images</h2>
+
+        <ol id="selectedImageList" data-bind="visible: selectedImages().length > 0" style="display: none;">
+<!-- ko foreach: selectedImages --><!-- /ko -->
+        </ol>
+</div>
+
+      <!-- ko if: !oneImageLoaded() --><!-- /ko -->
+
+      <ul id="unselectedImageList" class="image-list">
+<!-- ko foreach: images --><li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/d57c255137d7d7da952b60f1fa2a59cc27f6e5c2=c100x100" alt="Image 1"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/d94e7e5b8f05943a7302645f8d3f7fc080e406e1=c100x100" alt="Image 2"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/254cecb53682ff0a4c8f6e45c0f184be781e9147=c100x100" alt="Image 3"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c100x100" alt="Image 4"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/19c61c97aa9543f759f9adc44641b7fa45618e31=c100x100" alt="Image 5"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/532f67eea11a197b11fa55583a2fb4fc73f7b691=c100x100" alt="Image 6"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/3c1cf5a2d8847591cd9ca7accb2bcb65d891980e=c100x100" alt="Image 7"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/d186195dc2283a33e43be61ee34da55a37a37c8d=c100x100" alt="Image 8"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/47ef0e222f55c7f998a6dd562f4fa0fc6216eb3b=c100x100" alt="Image 9"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/a19afe0227edda359af3c4922a374f664eab2b3f=c100x100" alt="Image 10"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <li role="checkbox" tabindex="0" data-bind="click: function(){ $root.imageClicked($data) }, event:{ keypress: function(data, event){ $root.imageKeypress(data, event) } }, attr: { 'aria-checked': selected() ? 'true' : 'false' }, css: selected() ? 'selected' : ''" aria-checked="false">
+          <img data-bind="attr: { src: sizedS3Image(url, good.S3_MIXTHUMBNAIL_SIZE), alt: 'Image ' + ($index() + 1) }, event: { load: function() { $root.oneImageLoaded(true); } }" width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/dde73c130885635a45911a503c11a3f9a59f66e1=c100x100" alt="Image 11"><span class="number" data-bind="if: selected()"></span>
+        </li>
+        <!-- /ko -->
+      </ul>
+<p class="submit">
+        <button data-bind="click: finishChoosingClicked, enable: selectedImages().length > 1" disabled="">Next</button>
+      </p>
+
+    </form>
+    <!-- /ko -->
+
+  </section>
+
+  <section class="mix-editor page">
+    <header>
+      <h1>Finish Mix</h1>
+
+      <a href="#back" class="back" data-bind="click: backFromTitleClicked">
+        Go Back
+      </a>
+    </header>
+    <form>
+      <p class="text title">
+        <label>
+          <span>Enter Title</span><br><input placeholder="Enter Title" type="text" data-bind="textInput: mixTitle, enable: currentState() !== &quot;submitting&quot;"></label>
+      </p>
+      <div class="preview orange" data-bind="css: good.pushColor(good.currentPush().push.id)">
+        <img data-bind="attr: { src: sizedS3Image(selectedImages()[0].url, good.S3_MIXPOSTER_SIZE) }" width="300" height="" alt="" src="https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c640x640">
+</div>
+      <p class="submit">
+        <button data-bind="enable: mixTitle().length > 0 &amp;&amp; currentState() !== &quot;submitting&quot;, click: doneClicked" disabled="">Done</button>
+      </p>
+    </form>
+  </section>
+
+  <section class="mixes page">
+    <header>
+      <h1>My Mixes</h1>
+
+      <a href="#push" class="back">
+        Go Back
+      </a>
+    </header>
+
+    <div>
+      <ul class="mix-list">
+        <li class="add">
+          <a href="#new-mix" data-bind="click: good.onNavClick">
+            <span class="icon mix"></span>
+            <span>New Mix</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mix">
+            <img src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640" alt="Project Citizen, from day one to Beta"></a>
+        </li>
+        <li>
+          <a href="#mix">
+            <img src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640" alt="Lights Mix"></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+<section class="mix page"><header><h1>Mix</h1>
+
+      <a href="#mixes" class="back" data-bind="click: good.onNavClick">
+        Go Back
+      </a>
+    </header><div class="preview orange" data-bind="css: good.pushColor(good.currentPush().id)">
+      <div>
+        <!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 -->
+        <video data-bind="attr: { poster: sizedS3Image(mix().preview_image_url, good.S3_MIXPOSTER_SIZE) }" type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640"><!-- ko foreach: movieFiles --><source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.m4v" type="video/mp4"><source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.webm" type="video/webm"><!-- /ko --><h1>BZZZ!</h1>
+          <p>Looks like you’re using a browser that doesn’t support HTML5 video. We suggest using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.apple.com/safari/" target="_blank">Safari</a> to watch this mix.</p>
+        </video><!-- /ko --><!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 --><!-- /ko -->
+</div>
+    </div>
+
+    <div>
+      
+
+      <section class="share"><!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 --><h2>Share this:</h2>
+        <!-- /ko -->
+        <!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 --><!-- /ko -->
+        <p><a data-bind="text: shareURL(), attr: { href: shareURL() }" target="_blank" href="http://www.ctznapp.com/mix/84C0E923">http://www.ctznapp.com/mix/84C0E923</a></p>
+      </section>
+</div>
+  </section>
+
+  <header id="header" class="primary" data-bind="visible: good.currentScreen() === 'push'"><h1>
+      <a href="#sync" data-bind="click: onSyncClicked">
+        <svg aria-label="Citizen" class="icon" viewBox="0 0 100 37.818" width="100" height="38"><path d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
+            c0-2.292,0.362-4.373,1.086-6.243c0.724-1.87,1.739-3.478,3.046-4.825s2.855-2.382,4.644-3.106c1.789-0.724,3.75-1.086,5.881-1.086
+            c2.573,0,4.735,0.432,6.484,1.297c1.749,0.864,3.026,1.759,3.83,2.684l-4.765,7.057c-0.523-0.603-1.136-1.096-1.84-1.478
+            c-0.704-0.382-1.518-0.573-2.443-0.573c-1.528,0-2.825,0.543-3.89,1.629c-1.066,1.086-1.598,2.634-1.598,4.644
+            c0,2.01,0.533,3.569,1.598,4.674c1.066,1.106,2.362,1.659,3.89,1.659c0.925,0,1.739-0.201,2.443-0.603
+            c0.704-0.402,1.317-0.905,1.84-1.508l4.765,7.117c-0.804,0.925-2.081,1.819-3.83,2.684c-1.749,0.864-3.91,1.297-6.484,1.297
+            C12.525,37.818,10.565,37.446,8.776,36.702z"></path><path d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
+            v8.806h-4.584v9.59c0,0.764,0.161,1.367,0.482,1.809s0.784,0.663,1.387,0.663c0.362,0,0.714-0.05,1.056-0.151
+            c0.342-0.101,0.573-0.231,0.694-0.392l1.689,7.962c-0.563,0.442-1.397,0.814-2.503,1.116c-1.106,0.302-2.423,0.452-3.951,0.452
+            C35.344,37.818,33.052,37.084,31.604,35.616z"></path><path d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"></path><path d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
+            s-1.759,0.282-2.383,0.844c-0.623,0.563-1.116,1.126-1.478,1.689v18.336H72.798V7.962h10.133v3.378
+            c0.724-1.005,1.86-1.94,3.408-2.805c1.548-0.865,3.327-1.297,5.338-1.297c2.935,0,5.056,0.774,6.363,2.322
+            c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"></path><foreignObject>Citizen</foreignObject></svg>
+      </a>
+
+      <span class="sending icon" data-bind="css: showNetworkIndicator() ? 'active' : ''"></span>
+    </h1>
+
+    <a href="#notifications" class="notifications" data-bind="click: good.onNavClick, css: unreadNotifications().length > 0? 'active' : ''">
+      
+      <svg aria-label="Notifications" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M17.497,10.444c0-3.93-1.976-5.69-3.572-6.47C13.916,2.882,13.03,2,11.937,2
+        c-1.099,0-1.989,0.89-1.989,1.989c0,0.016,0.002,0.032,0.003,0.048c-1.572,0.81-3.447,2.577-3.447,6.407
+        c0,0,0.447,5.82-3.012,5.736v1.726h8.446h0.126h8.447V16.18C17.05,16.264,17.497,10.444,17.497,10.444z"></path><path d="M8.77,18.919C8.885,20.64,10.313,22,12.063,22s3.178-1.361,3.292-3.082H8.77z"></path><foreignObject>Notifications</foreignObject></svg></a>
+
+    <a href="#profile" class="profile" data-bind="click: handleMyProfileClicked">
+      <span class="avatar" data-bind="if: good.currentUser().profile_image">
+        <img data-bind="attr: { src: sizedS3Image(good.currentUser().profile_image, good.S3_AVATAR_SIZE), alt: good.currentUser().username }" height="30" width="30" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100" alt="jim"></span>
+      <span class="avatar" data-bind="if: !good.currentUser().profile_image"></span>
+    </a>
+  </header>
+
+  <section class="push">
+
+    <!--
+    <p class="new-posts">
+      <button>
+        <span class="icon cached"></span>
+        Update
+      </button>
+    </p>
+    -->
+    <header class="orange header push-card">
+      <h2>Project Citizen</h2>
+      <h3>Helping social creatives celebrate the work they do</h3>
+
+      <div class="meta">
+        <p>
+          <span class="count">328</span>
+          <span class="label">Moments</span>
+        </p>
+        <p>
+          <a href="members.html">
+            <span class="count">36</span>
+            <span class="label">Members</span>
+          </a>
+        </p>
+        <p class="settings">
+          <a href="settings.html">
+            <svg aria-label="My Settings" class="icon" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
+                l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
+                c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
+                L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
+                c0,0.362-0.121,0.724-0.121,1.206s0,0.844,0.121,1.206l-2.533,2.05c-0.241,0.241-0.241,0.482-0.121,0.724l2.412,4.221
+                c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
+                h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
+                c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
+                c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"></path>
+              <foreignObject>My Settings</foreignObject>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </header>
+    <ul class="create">
+      <li>
+        <a href="#switch" data-bind="click: good.onNavClick">
+          <span class="icon switch"></span>
+          Switch Push
+        </a>
+      </li>
+      <li>
+        <a href="#edit-post" data-bind="click: onNewPost">
+          <span class="icon note"></span>
+          New Post
+        </a>
+      </li>
+      <li>
+        <a href="#new-mix" data-bind="click: good.onNavClick">
+          <span class="icon mix"></span>
+          New Mix
+        </a>
+      </li>
+      <li>
+        <a href="#mixes" data-bind="click: good.onNavClick">
+          <span class="icon mixes"></span>
+          My Mixes
+        </a>
+      </li>
+    </ul>
+
+    <ol class="post-list">
+      <li class="previous">
+        <a href="#previous">
+          <svg aria-label="Previous Page" class="icon" viewBox="0 0 24 24" width="24" height="24">
+            <polygon points="12,8 6,14 7.4,15.4 12,10.8 16.6,15.4 18,14 "></polygon>
+            <foreignObject>Previous Page</foreignObject>
+          </svg>
+        </a>
+      </li>
+
+      <li id="post-765">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:18:12+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header>
+
+          <div class="body">
+            <p><img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" alt="859740640865532394_1451549205">
+@workandprogress meeting Brandon of @broccolicity at #CTZN #CTZNmixer</p>
+</div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">1</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-766">
+        <article class="post-item"><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                <span data-bind="text: user.username">jelena</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:17:15+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/5a3f33b1a41dd91832077aef9e246b41ca4ff1b4=c500x500" alt="859740159451707839_1451549205">
+Can't get enough of these crowd shots! #CTZN #CTZNmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">4</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-767">
+        <article class="post-item"><header><h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="v"></span>
+                </span>
+                <span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"><span class="icon instagram" data-bind="css: source">via <span data-bind="text: source">instagram</span></span></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }" datetime="2014-11-23T02:16:38+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="8 weeks ago">8w</abbr>
+                </time></a>
+            </p>
+          </header><div class="video"></div>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/824ecdba72ed238ea4211a1ad362d8f2932d7b7d=c500x500" alt="859739849203310777_215183">
+Head of #ctzn speaking, aka The Mister. #ctznmixer</p></div>
+
+          <footer><p>
+              <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="">
+                <svg aria-label="I like this" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                    C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                    C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                    c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                  <span data-bind="text: attaboys().length">2</span>
+                </span>
+              </button>
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+        l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+        s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+        c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+        c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments &amp;&amp; comments().length > 0 ? comments().length : ''"></span>
+              </a>
+            </p>
+            <a href="#post-options" class="options" data-bind="if: good.currentUser().is_admin || good.currentUser().id === user.id, click: $root.onShowOptions">
+              
+              <svg aria-label="Options" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+          </footer></article>
+</li>
+      
+
+      <li class="next">
+        <a href="#next" data-bind="click: onNextPage">
+          
+          <svg aria-label="Next Page" class="icon" viewBox="0 0 24 24" width="24" height="24"><polygon points="16.6,8.6 12,13.2 7.4,8.6 6,10 12,16 18,10 "></polygon><foreignObject>Next Page</foreignObject></svg></a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="post page">
+    <header><h1>Post</h1>
+      <a href="#push" class="back" data-bind="click: backClicked">
+        Go Back
+      </a>
+    </header>
+    <div class="details">
+      <article class="post-item">
+        <header>
+          <h3>
+            <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
+              <span class="avatar" data-bind="if: user.profile_image"></span>
+              <span class="avatar" data-bind="if: !user.profile_image">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+              </span>
+              <span data-bind="text: user.username">jelena</span>
+            </a>
+          </h3>
+          <p class="source" data-bind="if: source"></p>
+          <p>
+            <time data-bind="attr: { datetime: created_at }" datetime="2014-12-01T06:40:08+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="7 weeks ago">7w</abbr>
+            </time></p>
+        </header><div class="video"></div>
+
+        <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Whee!</p>
+
+        <p><img src="https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c500x500"></p></div>
+
+        <footer><p>
+            <button data-bind="click: $root.handleAttaboyClicked, css: { attaboyed : currentUserAttaboyed }" class="attaboyed">
+              <svg aria-label="I like this" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M21.639,6.86c-0.498-1.153-1.497-2.124-2.882-2.725c-1.223-0.532-2.541-0.596-3.74-0.27
+                  C13.82,4.189,12.741,5.073,12,6.097c-0.742-1.024-1.82-1.908-3.018-2.232c-1.198-0.326-2.516-0.261-3.74,0.27
+                  C3.858,4.736,2.861,5.706,2.36,6.86c-0.498,1.152-0.501,2.493,0.13,3.823c1.341,2.851,9.466,9.537,9.51,9.651
+                  c0.042-0.114,8.168-6.8,9.512-9.651C22.14,9.352,22.139,8.012,21.639,6.86z"></path><foreignObject>I like this</foreignObject></svg><span class="count" data-bind="if: attaboys().length > 0">
+                <span data-bind="text: attaboys().length">2</span>
+              </span>
+            </button>
+          </p>
+          <p>
+            <a href="#add-comment" data-bind="click: $root.onAddComment">
+              <svg aria-label="Add Comment" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.353,10.235H8.025l2.87-2.87c0.689-0.689,0.689-1.807,0-2.495c-0.689-0.689-1.806-0.689-2.495,0
+      l-5.88,5.88c-0.165,0.164-0.296,0.361-0.386,0.579c-0.004,0.009-0.005,0.018-0.008,0.026C2.047,11.556,2,11.772,2,12
+      s0.047,0.444,0.125,0.644c0.003,0.009,0.005,0.018,0.008,0.026c0.09,0.218,0.221,0.415,0.386,0.579l5.88,5.88
+      c0.345,0.345,0.796,0.517,1.248,0.517c0.452,0,0.903-0.172,1.248-0.517c0.689-0.689,0.689-1.806,0-2.495l-2.87-2.87h6.328
+      c3.865,0,4.108,3.44,4.118,4.118c0,0.974,0.79,1.765,1.765,1.765S22,18.857,22,17.882C22,14.808,19.963,10.235,14.353,10.235z"></path><foreignObject>Add Comment</foreignObject></svg><span class="count" data-bind="text: comments().length > 0 ? comments().length : ''"></span>
+            </a>
+          </p>
+          <a href="#post-options" class="options" data-bind="if: $root.shouldHaveOptions, click: $root.onShowOptions">
+            
+            <svg aria-label="Options" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M6,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S7.1,10,6,10z M18,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S19.1,10,18,10z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2c1.1,0,2-0.9,2-2S13.1,10,12,10z"></path><foreignObject>Options</foreignObject></svg></a>
+        </footer></article>
+    </div>
+
+    <div class="comments">
+      <h2>Comments</h2>
+
+<ol data-bind="foreach: postViewModel().comments">
+<li>
+          <article class="post-item"><header><h3 data-bind="text: user.username">brian</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T06:00:33+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="2 days ago">2d</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Didn't end up even playing the bass, just spent a lot of time talking with a friend I don't see enough of.   Did play a few songs, rocked some Dio, barbecued, and just had a nice day off.</p></div>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3 data-bind="text: user.username">cogg</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T07:30:45+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="2 days ago">2d</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Sounds great. We have a have a cheap bass that we got when my son wanted to learn it. If you are just looking for something to play with, happy to gift it just to see it get used.</p></div>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3 data-bind="text: user.username">brian</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T17:35:03+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="1 days ago">1d</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>That'd be awesome, I've been meaning to get a bass for a while now.</p></div>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3 data-bind="text: user.username">cogg</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T20:54:15+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="1 days ago">1d</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Apparently my nephew called dibs and has already taken possession. Sorry for getting your hopes up.</p></div>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3 data-bind="text: user.username">brian</h3>
+              <p>
+                <time data-bind="attr: { datetime: created_at }" datetime="2015-01-20T22:20:42+00:00"><abbr data-bind="attr: { title: good.timeAgo.inWords(created_at) }, text: good.timeAgo.abbreviated(created_at)" title="23 hours ago">23h</abbr>
+                </time></p>
+            </header><div class="body" data-bind="html: good.postBodyToHtml(body)"><p>My soul.   It is crushed.</p></div>
+          </article>
+</li>
+      </ol>
+
+      <form data-bind="submit: onSubmitComment, disable: commentUploading" id="add-comment">
+        <p class="text">
+          <label>
+            <span>Add a comment…</span><br><textarea placeholder="Add a comment…" name="comment" data-bind="textInput: commentBody, disable: commentUploading"></textarea></label>
+        </p>
+        <p class="submit">
+          <button data-bind="enable: canSubmit" disabled="">Send</button>
+        </p>
+      </form>
+    </div>
+
+  </section>
+
+  <section class="editor page">
+    <a href="#push">  
+      <svg aria-label="Go back to the push" class="icon" viewBox="0 0 24 24" width="24" height="24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon><foreignObject>Go back to the push</foreignObject></svg>
+    </a>
+
+    <form>
+      <h1>
+        <span class="avatar">
+          <img height="30" width="30" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+        </span>
+        <span>jim</span>
+      </h1>
+
+      <p class="text">
+        <label>
+          <span>Write a note…</span><br />
+          <textarea placeholder="Write a note…"></textarea>
+        </label>
+      </p>
+
+      <div class="submit">
+        <label>
+          <input type="file" />
+          <span class="icon picture"></span>
+          <span>Add image</span>
+        </label>
+        <button type="submit">Post</button>
+      </div>
+    </form>
+  </section>
+
+  <h2>Loading</h2>
+
+  <section class="loading" role="status">
+    <div><div>
+      <h1><span class="loading-icon"></span> <span class="message">Loading images...</span></h1>
+    </div></div>
+  </section>
+
+  <h2>Error</h2>
+
+  <!-- TRICKY: Add a class name of “has-details” to make the screen scrollable. -->
+  <section class="loading error has-details">
+    <div>
+      <div>
+        <div style="text-align: center; font-size: 2em; margin-bottom: 0.75em;">
+          <!-- @icon-warning -->
+          <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24">
+            <path d="M21.997,18.267L13.503,3.596c-0.827-1.428-2.18-1.428-3.006,0L2.003,18.267
+              C1.176,19.695,1.85,20.864,3.5,20.864h17C22.15,20.864,22.824,19.695,21.997,18.267z M13.045,17.727h-2.091v-2.091h2.091V17.727z
+               M13.045,13.545h-2.091V9.364h2.091V13.545z"/>
+          </svg>
+        </div>
+
+        <h1>Well, this is embarrassing.</h1>
+
+        <p>Something went wrong while loading this screen. Care to try again?</p>
+
+        <p class="action">
+
+          <button style="background-color: rgb(255, 49, 59); margin-right: 0.375em;">
+            Reinstall
+          </button>
+
+          <a style="background-color: rgb(101, 156, 247);" href="/" on-click="window.location.reload(true); event.preventDefault();">
+            Restart
+          </a>
+
+        </p>
+
+        <button class="close" data-bind="click: function() { hideMessage(true) }">
+          <!-- @icon-close -->
+          <svg aria-label="Hide this message" class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+            <foreignobject>Hide this message</foreignobject>
+          </svg>
+        </button>
+
+        <section class="details">
+          <h2><a href="#details">Details…</a></h2>
+          <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+            <li>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
+            <li>Consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</li>
+            <li>Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <h2>Developer Tools</h2>
+
+  <p class="developer action">
+    <a href="#developer-tools" data-bind="click: activate">
+      <!-- @icon-settings -->
+      <svg aria-label="Show Developer Tools" class="icon" viewBox="0 0 24 24">
+        <path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
+          l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
+          c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
+          L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
+          c0,0.362-0.121,0.724-0.121,1.206s0,0.844,0.121,1.206l-2.533,2.05c-0.241,0.241-0.241,0.482-0.121,0.724l2.412,4.221
+          c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
+          h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
+          c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
+          c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"/>
+        <foreignobject>Show Developer Tools</foreignobject>
+      </svg>
+    </a>
+  </p>
+
+  <section class="developer-tools">
+
+    <h1>Developer Tools</h1>
+    <button class="close">
+      <!-- @icon-close -->
+      <svg class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+      </svg>
+      Close
+    </button>
+
+    <ul class="action">
+      <li>
+        <button data-bind='click: reload'>Reload</button>
+      </li>
+      <li>
+        <button onclick="good.reinstall();">Reinstall</button>
+      </li>
+      <li>
+        <button data-bind='click: uploadLogs'>Upload logs</button>
+      </li>
+      <li>
+        <button data-bind='click: clearUploadQueue'>Clear upload queue</button>
+      </li>
+    </ul>
+
+    <dl>
+      <dt>Version</dt>
+      <dd data-bind='text: codeVersion'></dd>
+      <dt>DB</dt>
+      <dd data-bind='text: dbVersion'></dd>
+    </dl>
+
+    <h2>Simulators</h2>
+    <p>
+      <label>
+        <span>Simulate server call delay (in seconds):</span><br />
+        <input type='number' data-bind='textInput: good.serverCallDelay'>
+      </label>
+    </p>
+    <p>
+      <label>
+        <span>Simulate error on all server calls</span><br />
+        <select data-bind='value: good.serverCallSimulatedError'>
+          <option value=''></option>
+          <option value='CONNECTION_ERROR'>CONNECTION_ERROR</option>
+          <option value='NOT_FOUND'>NOT_FOUND</option>
+          <option value='SERVICE_UNAVAILABLE_ERROR'>Service Outage</option>
+          <option value='MUST_UPDATE_ERROR'>Required Update</option>
+        </select>
+      </label>
+    </p>
+
+    <h2>Diagnostic Report:</h2>
+    <!-- ko ifnot: diagnosticReport() -->
+    <p class="action">
+      <button data-bind='click: generateDiagnosticReport'>Generate</button>
+    </p>
+    <!-- /ko -->
+    <!-- ko if: diagnosticReport() -->
+    <pre data-bind='text: diagnosticReport'></pre>
+    <!-- /ko -->
+
+    <h2>Logs:</h2>
+    <ul class="logs" data-bind='foreach: logs'>
+      <li>
+        <time data-bind='text: time, attr { datetime: time }'></time>
+        <span data-bind='text: msg'></span>
+      </li>
+    </ul>
+
+    <p class="action">
+      <button data-bind="click: close">
+        Close
+      </button>
+    </p>
+  </section>
+
+</body>
+</html>

@@ -407,7 +407,7 @@
 
   .avatar > span {
     display: inline-block;
-    background: rgb(203, 253, 128); /* @lime */
+    background-color: rgb(255, 203, 117); /* @cantaloupe */
     color: black;
     width       : 1.5em;
     line-height : 1.5em;
@@ -447,15 +447,8 @@
   .avatar .size30 {
     font-size: 1.25em; /* 2/3 x 30px / @font-size */
   }
-  .avatar .size35 {
-    font-size: 1.4583333333em; /* 2/3 x 35px / @font-size */
-  }
   .avatar .size100 {
     font-size: 4.1666666667em; /* 2/3 x 30px / @font-size */
-  }
-  .avatar img[width="30"] {
-    width: 1.875em;
-    height: 1.875em;
   }
 
   .avatar [data-content]:after {
@@ -473,6 +466,16 @@
     /* @hidden-accessible */
     position: absolute;
     left: -9999px;
+  }
+
+  /* OPTIONAL: Make image avatars scale with the font size */
+  .avatar img[width="30"] {
+    width : 1.875em; /* 30px / @font-size */
+    height: 1.875em;
+  }
+  .avatar img[width="100"] {
+    width : 6.25em; /* 100px / @font-size */
+    height: 6.25em;
   }
 
 
@@ -788,7 +791,6 @@
         -ms-transform: rotate(90deg);
          -o-transform: rotate(90deg);
             transform: rotate(90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   }
 
   .img-preview-rotate-180 {
@@ -797,7 +799,6 @@
         -ms-transform: rotate(180deg);
          -o-transform: rotate(180deg);
             transform: rotate(180deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   }
 
   .img-preview-rotate-270 {
@@ -806,7 +807,6 @@
         -ms-transform: rotate(270deg);
          -o-transform: rotate(270deg);
             transform: rotate(270deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   }
 
   .img-preview-flip-horizontal {

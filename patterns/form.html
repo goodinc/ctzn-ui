@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Prototype / CTZN</title>
+  <title>Form / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -24,25 +24,39 @@
 
   <section class="edit page">
     <header>
-      <h1>Forgot Password</h1>
+      <h1>Page Title</h1>
 
-      <a href="#login" class="cancel">
+      <a href="" class="cancel">
         Cancel
       </a>
     </header>
 
-    <form class="has-icon">
-      <p>Enter email associated with account</p>
+    <form>
+      <p>Note about the whole form</p>
       <p class="text">
         <label>
-          <span class="icon envelope">Email</span><br />
-          <input type="text" placeholder="Email" name="email_address" />
+          <span>Username</span><br />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" autocorrect="off" />
         </label>
       </p>
+      <p class="text">
+        <label>
+          <span>Email</span><br />
+          <input type="email" placeholder="Email" name="email" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <span>Password</span><br />
+          <input type="password" placeholder="Password" name="password" />
+        </label>
+        <em class="note">Note with details about this field.</em>
+      </p>
       <p class="submit">
-        <button>Send</button>
+        <button>Next</button>
       </p>
     </form>
+
   </section>
 
 </body>
