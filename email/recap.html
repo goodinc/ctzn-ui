@@ -75,7 +75,7 @@
 
     .body {
       font: 14px/18px "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: rgb(238, 238, 238);
+      background: rgb(238, 238, 238); /* @seashell */
       color: black;
     }
     @media (min-width: 600px) {
@@ -93,6 +93,15 @@
     a:focus {
       text-decoration: underline;
       color: rgb(255, 49, 102); /* @strawberry */
+    }
+
+    .more a {
+      display: inline-block;
+      text-transform: uppercase;
+      border: 1px solid rgb(246, 246, 246);
+      padding: 0 18px;
+      font-size: 12px;
+      line-height: 22px
     }
 
     h1 {
@@ -115,8 +124,10 @@
       margin-right: 0.125em;
     }
     h3 {
+      border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+      padding-top: 18px;
       font-size: 12px;
-      color: rgb(153, 153, 153);
+      color: rgb(153, 153, 153); /* @nickel */
       text-transform: uppercase;
       font-weight: normal;
       margin-top: 18px;
@@ -127,7 +138,7 @@
     }
 
     .section p {
-      color: rgb(102, 102, 102);
+      color: rgb(102, 102, 102); /* @tin */
       margin-top: 18px;
       margin-bottom: 18px;
     }
@@ -143,7 +154,6 @@
       margin-bottom: 0;
     }
     .section p b {
-      font-weight: normal;
       color: black;
     }
 
@@ -151,25 +161,26 @@
     /* =Sections
     ----------------------------------------------- */
     .header,
-    .members li,
+    .members,
     .article,
     .footer {
       background-color: white;
       max-width: 564px; /* 600px - (18px x 2) */
-      padding: 18px;
       margin-left: auto;
       margin-right: auto;
     }
     .body > .header,
-    .article,
-    .footer {
+    .article {
       padding: 18px;
     }
     .section > .header,
-    .members li {
+    .members {
       padding: 9px 18px;
     }
-    .members li,
+    .footer {
+      padding: 27px 18px;
+    }
+    .members,
     .article {
       margin-top: 1px;
     }
@@ -183,7 +194,7 @@
     ----------------------------------------------- */
     .body > .header {
       min-height: 100px;
-      color: rgb(153, 153, 153);
+      color: rgb(153, 153, 153); /* @nickel */
     }
     h1 b {
       color: black;
@@ -227,15 +238,24 @@
       padding-left: 0;
     }
     .members li {
-      margin-top: 1px;
-      color: rgb(153, 153, 153);
+      color: rgb(153, 153, 153); /* @nickel */
+      margin-right: -18px;
+      padding-right: 18px;
+      margin-left: 45px;
+    }
+    .members li + li {
+      margin-top: 8px;
+      border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+      padding-top: 9px;
     }
     .members li .avatar {
-      margin-right: 0.5em;
+      margin-right: 9px;
+      margin-left: -45px;
     }
     .members li b {
       font-size: 18px;
       color: black;
+      margin-right: 0.5em;
     }
     .header .action {
       margin-top: 9px; /* 18px / 2 */
@@ -245,7 +265,7 @@
         position: relative;
       }
       .header .action {
-        margin: 0;
+        margin: 0 !important;
         position: absolute;
         top: 18px;
         right: 18px;
@@ -255,6 +275,11 @@
 
     /* =Article
     ----------------------------------------------- */
+    .article img {
+      float: left;
+      margin-right: 18px;
+      margin-bottom: 9px;
+    }
     @media (min-width: 600px) {
       .article {
         position: relative;
@@ -263,7 +288,9 @@
         position: absolute;
         top: 18px;
         right: 18px;
+        margin-right: 0 !important;
       }
+      .article h3,
       .article p {
         margin-right: 118px;
       }
@@ -283,13 +310,13 @@
     }
     .body > .footer li {
       margin: 0;
-      margin-right: 0.75em;
+      margin-right: 38px;
       display: inline;
       font-size: 11px;
     }
     .body > .footer li:last-child {
       float: right;
-      margin-right: 0;
+      margin-right: 9px; /* 18px / 2 */
     }
     .body > .footer a {
       text-transform: uppercase;
@@ -439,24 +466,30 @@
       <div class="members">
         <ul>
           <li>
-            <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
-            </span>
-            <b>@brianatgood</b>
-            <span class="name">Brian</span>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+              </span>
+              <b>@brianatgood</b>
+              <span class="name">Brian</span>
+            </a>
           </li>
           <li>
-            <span class="avatar">
-              <span class="size30 lime"><span class="letter">s</span></span>
-            </span>
-            <b>@supervolunteer</b>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <span class="size30 lime"><span class="letter">s</span></span>
+              </span>
+              <b>@supervolunteer</b>
+            </a>
           </li>
           <li>
-            <span class="avatar">
-              <span class="size30 bluebird"><span class="letter">c</span></span>
-            </span>
-            <b>@casey</b>
-            <span class="name">Casey Caplowe</span>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <span class="size30 bluebird"><span class="letter">c</span></span>
+              </span>
+              <b>@casey</b>
+              <span class="name">Casey Caplowe</span>
+            </a>
           </li>
         </ul>
       </div><!-- /.members -->
@@ -474,26 +507,16 @@
         <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum lectus, ac pulvin…</p>
        
         <p>
-          <img src="http://placehold.it/100" alt="Image 1" />
+          <img src="http://placehold.it/200" width="100" height="100" alt="Image 1" />
         </p>
 
+        <div style="clear: both"></div>
+
         <h3>2 new comments</h3>
 
-        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
+        <p><b><a href="http://ctznapp.com">@username001</a></b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
 
-        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
-
-      </div><!-- /.article -->
-
-      <div class="article">
-
-        <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum lectus, ac pulvin…</p>
-
-        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
-
-        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
-
-        <p><a href="">&amp; 6 more</a></p>
+        <p><b><a href="http://ctznapp.com">@username001</a></b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
 
       </div><!-- /.article -->
 
@@ -503,9 +526,33 @@
 
         <h3>2 new comments</h3>
 
-        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
+        <p><b><a href="http://ctznapp.com">@username001</a></b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
 
-        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
+        <p><b><a href="http://ctznapp.com">@username001</a></b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
+
+        <p class="more"><a href="http://ctznapp.com">&amp; 6 more</a></p>
+
+      </div><!-- /.article -->
+
+      <div class="article">
+
+        <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum lectus, ac pulvin…</p>
+       
+        <p>
+          <img src="http://placehold.it/200" width="100" height="100" alt="Image 1" />
+        </p>
+       
+        <p>
+          <img src="http://placehold.it/200" width="100" height="100" alt="Image 1" />
+        </p>
+
+        <div style="clear: both"></div>
+
+        <h3>2 new comments</h3>
+
+        <p><b><a href="http://ctznapp.com">@username001</a></b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
+
+        <p><b><a href="http://ctznapp.com">@username001</a></b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
 
       </div><!-- /.article -->
 
@@ -519,9 +566,15 @@
 
       <div class="article">
 
-        <h3>@username001</h3>
+        <p><b><a href="http://ctznapp.com">@username001</a></b></p>
 
         <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum lectus, ac pulvinar sapien dolor ac magna.</p>
+       
+        <p>
+          <img src="http://placehold.it/200" width="100" height="100" alt="Image 1" />
+        </p>
+
+        <div style="clear: both"></div>
 
       </div><!-- /.article -->
 
@@ -536,10 +589,26 @@
       <div class="article">
 
         <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum…</p>
+       
+        <p>
+          <img src="http://placehold.it/200" width="100" height="100" alt="Image 1" />
+        </p>
+
+        <div style="clear: both"></div>
 
         <h3>15 loved this post</h3>
 
-        <p><b>username101, username01, username100, username505, username121, username00</b> <a href="">&amp; 10 more…</a></p>
+        <p>
+          <b>
+            <a href="http://ctznapp.com">username101</a>,
+            <a href="http://ctznapp.com">username01</a>,
+            <a href="http://ctznapp.com">username100</a>,
+            <a href="http://ctznapp.com">username505</a>,
+            <a href="http://ctznapp.com">username121</a>,
+            <a href="http://ctznapp.com">username00</a>
+          </b>
+        </p>
+        <p class="more"><a href="http://ctznapp.com">&amp; 10 more…</a></p>
 
       </div><!-- /.article -->
 
