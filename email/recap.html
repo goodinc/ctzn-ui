@@ -3,137 +3,331 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CTZN Recap</title>
+
+  <title>My Kiva F26 Morning Digest</title>
 
   <style>
 
+
+    /* =Fonts
+    -----------------------------------------------
+    -----------------------------------------------
+    -----------------------------------------------
+    This CSS resource incorporates links to font software which is the valuable copyrighted
+    property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+    redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+    Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
+    ----------------------------------------------- */
+
+    @font-face {
+      font-family: "Proxima Nova";
+      src: url(../fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix);
+      src: url(../fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix) format("eot"),
+           url(../fonts/e56ecb6d-da41-4bd9-982d-2d295bec9ab0.woff) format("woff"),
+           url(../fonts/2aff4f81-3e97-4a83-9e6c-45e33c024796.ttf) format("truetype"),
+           url(../fonts/ab9cd062-380f-4b53-b1a7-c0bec7402235.svg#ab9cd062-380f-4b53-b1a7-c0bec7402235) format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /*
+    @font-face {
+      font-family: "Proxima Nova";
+      src: url(../fonts/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix);
+      src: url(../fonts/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix) format("eot"),
+           url(../fonts/9c69c878-2255-4027-8632-ed3635cddf45.woff) format("woff"),
+           url(../fonts/b7eb3871-e910-4522-9982-effb425a2714.ttf) format("truetype"),
+           url(../fonts/a0d89860-20e5-4bc0-b6c5-eae8ae0ebbbf.svg#a0d89860-20e5-4bc0-b6c5-eae8ae0ebbbf) format("svg");
+      font-weight: normal;
+      font-style: italic;
+    }
+    */
+
+    @font-face {
+      font-family: "Proxima Nova";
+      src: url(../fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix);
+      src: url(../fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix) format("eot"),
+           url(../fonts/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff) format("woff"),
+           url(../fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf) format("truetype"),
+           url(../fonts/8152bc4e-d700-4c78-b6be-326893e6f53f.svg#8152bc4e-d700-4c78-b6be-326893e6f53f) format("svg");
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face{
+      font-family: "Proxima Nova";
+      src: url(../fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix);
+      src: url(../fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix) format("eot"),
+           url(../fonts/19dd5cf2-ac2d-48d5-901a-c432fd291ee2.woff) format("woff"),
+           url(../fonts/22cfbfa4-f607-4751-92eb-6fa194353e57.ttf) format("truetype"),
+           url(../fonts/3d6b6348-e05f-4123-b19a-3bfd02c7f361.svg#3d6b6348-e05f-4123-b19a-3bfd02c7f361) format("svg");
+      font-weight: 900; /* @extra-bold */
+      font-style: normal;
+    }
+
+
+    /* =Elements
+    ----------------------------------------------- */
     body {
       margin: 0;
       padding: 0;
     }
 
-    .container {
-      font: 18px/1.25 Arial, "Helvetica Neue", Helvetica, sans-serif;
-      background: white;
-      color: rgb(102, 102, 102);
-      max-width: 33em;
-      margin: 0 auto;
-    }
-
-    h1, h2, h3, h4, h5, h6, p, ul {
-      margin-top: 1.25em; /* @line-height */
-      margin-bottom: 1.25em;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
+    .body {
+      font: 14px/18px "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: rgb(238, 238, 238);
       color: black;
     }
-
-    .container > .header,
-    .container > .section,
-    .container > .footer {
-      padding: 1.25em;
-    }
-    .container > .section {
-      padding-bottom: 0;
-    }
-    .container > .section,
-    .container > .footer {
-      margin-top: 1.875em; /* @line-height x 1.5 */
-      border-top: 1px solid rgb(237, 237, 237);
-    }
-    .container > .footer {
-      margin-top: 2.5em;
-      padding-top: 1.875em;
-      padding-bottom: 1.875em; /* @line-height x 3/2 */
-    }
-    .container > .section.pushes {
-      margin-top: 0 !important;
+    @media (min-width: 600px) {
+      .body {
+        padding: 18px 0;
+      }
     }
 
-    .link {
-      background-color: rgb(237, 237, 237);
-      color: black;
-      font-weight: bold;
+    a {
       text-decoration: none;
-      padding: 0 0.25em;
-      display: inline-block;
+      color: inherit;
+    }
+    a:hover,
+    a:active,
+    a:focus {
+      text-decoration: underline;
+      color: rgb(255, 49, 102); /* @strawberry */
     }
 
-    .comments > .section {
-      margin-bottom: 2.5em; /* @line-height x 2 */
-    }
-    .comments > .section:first-child {
-      margin-top: 0;
-    }
-    .container > .section.push,
-    .posts,
-    .mixes,
-    .comments {
-      margin-top: 1.875em; /* @line-height x 1.5 */
-    }
-    .posts .article,
-    .comments .footer,
-    .comments .article {
-      margin-top: 0;
-      margin-bottom: 1.875em; /* @line-height x 1.5 */
-    }
-    .posts    a,
-    .comments a {
-      text-decoration: none;
-    }
     h1 {
-      margin-top: 0;.
-    }
-    .section h2 {
-      margin-top: 0;
-      font-family: "Arial Black", Arial, "Helvetica Neue", Helvetica, sans-serif;
       font-size: 24px;
+      line-height: 27px; /* 18px x 3/2 */
+      margin-top: 9px;
+      margin-bottom: 0;
     }
-    h3 {
+    h2 {
+      font-size: 12px;
+      line-height: 27px; /* 18px x 3/2 */
       margin-top: 0;
-    }
-    h3 .number {
-      font-family: "Arial Black", Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 36px;
-      border: 5px solid rgb(237, 237, 237);
-      border-radius: 100%;
-      width: 2.75em;
-      line-height: 2.75;
-      display: inline-block;
-      text-align: center;
-      vertical-align: middle;
-      margin-right: 0.5em;
-    }
-    h3 .label {
-      font-size: 11px;
+      margin-bottom: 0;
       text-transform: uppercase;
       font-weight: normal;
     }
-
-    li {
-      margin-top: 0.75em;
+    h2 b {
+      font-size: 24px;
+      font-weight: 900;
+      margin-right: 0.125em;
     }
-    li:first-child {
+    h3 {
+      font-size: 12px;
+      color: rgb(153, 153, 153);
+      text-transform: uppercase;
+      font-weight: normal;
+      margin-top: 18px;
+      margin-bottom: 18px;
+    }
+    h3:first-child {
       margin-top: 0;
     }
 
+    .section p {
+      color: rgb(102, 102, 102);
+      margin-top: 18px;
+      margin-bottom: 18px;
+    }
+    .section ul {
+      margin-top: 18px;
+      margin-bottom: 0;
+    }
+    .section p:first-child {
+      margin-top: 0;
+    }
+    .header  p:last-child,
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+    .section p b {
+      font-weight: normal;
+      color: black;
+    }
 
-    /* =Avatar
+
+    /* =Sections
+    ----------------------------------------------- */
+    .header,
+    .members li,
+    .article,
+    .footer {
+      background-color: white;
+      max-width: 564px; /* 600px - (18px x 2) */
+      padding: 18px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .body > .header,
+    .article,
+    .footer {
+      padding: 18px;
+    }
+    .section > .header,
+    .members li {
+      padding: 9px 18px;
+    }
+    .members li,
+    .article {
+      margin-top: 1px;
+    }
+    .section .header,
+    .footer {
+      margin-top: 18px;
+    }
+
+
+    /* =Header
+    ----------------------------------------------- */
+    .body > .header {
+      min-height: 100px;
+      color: rgb(153, 153, 153);
+    }
+    h1 b {
+      color: black;
+    }
+    .header .avatar {
+      float: left;
+      margin-right: 18px;
+      margin-bottom: 9px;
+    }
+    .header .time {
+      font-size: 18px;
+      margin-top: 9px;
+      line-height: 18px;
+      margin-bottom: 0;
+    }
+    .header .time span,
+    .header .time small {
+      white-space: nowrap;
+    }
+    .header .ctzn {
+      font-variant: small-caps;
+      background: black;
+      color: white;
+      padding: 0 6px;
+      display: table;
+      margin-left: -6px;
+      margin-top: 9px;
+    }
+    .header .ctzn b {
+      font-size: inherit;
+      font-variant: normal;
+    }
+
+
+    /* =Members
+    ----------------------------------------------- */
+    .members ul {
+      list-style: none;
+      margin-top: 1px;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .members li {
+      margin-top: 1px;
+      color: rgb(153, 153, 153);
+    }
+    .members li .avatar {
+      margin-right: 0.5em;
+    }
+    .members li b {
+      font-size: 18px;
+      color: black;
+    }
+    .header .action {
+      margin-top: 9px; /* 18px / 2 */
+    }
+    @media (min-width: 600px) {
+      .header {
+        position: relative;
+      }
+      .header .action {
+        margin: 0;
+        position: absolute;
+        top: 18px;
+        right: 18px;
+      }
+    }
+
+
+    /* =Article
+    ----------------------------------------------- */
+    @media (min-width: 600px) {
+      .article {
+        position: relative;
+      }
+      .article img {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+      }
+      .article p {
+        margin-right: 118px;
+      }
+    }
+
+
+    /* =Footer
+    ----------------------------------------------- */
+    .body > .footer ul,
+    .body > .footer li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .body > .footer ul {
+      margin: 0;
+    }
+    .body > .footer li {
+      margin: 0;
+      margin-right: 0.75em;
+      display: inline;
+      font-size: 11px;
+    }
+    .body > .footer li:last-child {
+      float: right;
+      margin-right: 0;
+    }
+    .body > .footer a {
+      text-transform: uppercase;
+    }
+    .body > .footer .instagram {
+      font-size: inherit;
+    }
+
+
+    /* =Avatars
     ----------------------------------------------- */
     .avatar img {
       border-radius: 100%;
       vertical-align: middle;
     }
-
     .avatar > span {
       display: inline-block;
-      background: rgb(203, 253, 128); /* @lime */
       color: black;
-      width       : 1.25em;
-      line-height : 1.25em;
-      border-radius: 100%;
+      width       : 1.2857142857em; /* 18px / 14px */
+      line-height : 1.2857142857em;
       vertical-align: middle;
+    }
+    .avatar .letter {
+      display: block;
+      speak: none;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 0.8888888889em; /* 16px / 18x */
+      font-style: normal;
+      font-weight: bold;
+    }
+
+
+    /* =Member Avatars
+    ----------------------------------------------- */
+    .avatar .size30 {
+      font-size: 1.6666666667em; /* 30px / 18px */
+      border-radius: 100%;
     }
 
     .avatar .clover {
@@ -146,7 +340,7 @@
       background-color: rgb(159, 104, 246);
     }
     .avatar .bluebird {
-      background-color: rgb(0, 206,250);
+      background-color: rgb(0, 206, 250);
     }
     .avatar .cantaloupe {
       background-color: rgb(255, 203, 117);
@@ -165,926 +359,205 @@
       color: white;
     }
 
-    .avatar .size30 {
-      font-size: 1.25em; /* 2/3 x 30px / @font-size */
-    }
 
-    .avatar .letter {
-      display: block;
-      speak: none;
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 0.8888888889em; /* 16px / @font-size */
-      font-style: normal;
-      font-weight: normal;
-    }
-
-
-    ul, li {
-      list-style: none;
-      padding-left: 0;
-      margin-left: 0;
-    }
-
-    .article .avatar,
-    .member-list li .avatar {
-      display: inline-block;
-      margin-right: 0.25em;
-    }
-    .article h5 {
-      font-size: inherit;
-    }
-    .article .body,
-    .article .footer {
-      padding-left: 2.25em;
-    }
-    .member-list a {
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .member-list li.more {
-      padding-left: 2.125em;
-    }
-    .article .footer,
-    .section .footer {
-      margin-top: 0.75em;
-    }
-    .article .footer li,
-    .section .footer li {
-      display: inline;
-      margin-right: 0.375em;
-    }
-    .article .footer a,
-    .section .footer a {
-      display: inline-block;
-      background: white;
-      color: rgb(204, 204, 204);
-      text-decoration: none;
-      padding: 0.3055555556em 0.625em;
-      line-height: 1.25;
-      border-radius: 0.25em;
-      border-width: 1px;
-      border-style: solid;
-      border-color: rgb(204, 204, 204);
-      min-width: 2.5em;
-      text-align: center;
-    }
-    .article .footer a img,
-    .section .footer a img {
-      vertical-align: middle;
-    }
-    .article .footer a .count,
-    .section .footer a .count {
-      font-size: 0.75em;
-    }
-
-    .action a {
-      text-decoration: none;
-      display: inline-block;
-      background-color: black;
-      color: white;
-      font-weight: bold;
-      font-size: 0.8888888889em; /* 16px / @font-size */
-      padding: 0.65em;
-      border-radius: 0.125em;
-      min-width: 9em;
-      text-align: center;
-    }
-
-    .mix-list li {
-      margin-top: 0;
-      display: inline-block;
-      vertical-align: top;
-    }
-    .mix-list li > a {
-      padding: 0;
-      position: relative;
-      background: black;
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-      width: 135px;
-    }
-    .mix-list li > a > img:first-child {
-      display: block;
-    }
-    .mix-list li > a > span {
-      font-size: 11px;
-      font-weight: bold;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0.75em;
-      line-height: 1;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-    .mix-list li.more > a {
-      display: block;
-      text-align: center;
-      line-height: 135px;
-      font-weight: bold;
-    }
-
-
-    /* =Header
+    /* =Push Avatars
     ----------------------------------------------- */
-    .header h1 {
-      float: left;
-      margin-bottom: 0;
-    }
-    .header h1 svg {
-      width: 60px;
-      height: 23px;
-    }
-    .header h2 {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: inherit;
-      float: right;
-      text-align: right;
-    }
-    .header .time {
-      color: rgb(102, 102, 102);
-      font-weight: normal;
+    .avatar .size100 {
+      font-size: 5.5555555556em; /* 100px / 18px */
     }
 
-
-    /* =Pushes
-    ----------------------------------------------- */
-    .push   h3,
-    .pushes h3 {
-      margin-bottom: 0;
-    }
-    .push   ul,
-    .pushes ul {
-      margin-top: 0.625em;
-    }
-    .pushes li {
-      font-weight: bold;
-    }
-    .pushes li .icon {
-      display: inline-block;
-      vertical-align: top;
-      width: 0.75em;
-      height: 1.2222222222em; /* @line-height */
-      margin-right: 0.25em;
-    }
-    .pushes li a {
-      text-decoration: none;
-    }
-    .pushes li .lime {
+    .avatar .lime {
       background-color: rgb(203, 253, 128); /* @lime */
-    }
-    .pushes li .cucumber {
-      background-color: rgb(150, 254, 166); /* @cucumber */
-    }
-    .pushes li .blueberry {
-      background-color: rgb(99, 204, 203); /* @blueberry */
-    }
-    .pushes li .boysenberry {
-      background-color: rgb(101, 156, 247); /* @boysenberry */
-    }
-    .pushes li .plumb {
-      background-color: rgb(193, 77, 166); /* @plumb */
-    }
-    .pushes li .strawberry {
-      background-color: rgb(255, 49, 102); /* @strawberry */
-    }
-    .pushes li .apple {
-      background-color: rgb(255, 49, 59); /* @apple */
-    }
-    .pushes li .tangerine {
-      background-color: rgb(255, 202, 72); /* @tangerine */
-    }
-    .pushes li .orange {
-      background-color: rgb(242, 64, 41); /* @orange */
-    }
-    .pushes .more {
-      padding-left: 1.25em;
-    }
-
-
-    /* =Push
-    ----------------------------------------------- */
-    .push h2 .icon {
-      display: block;
-      height: 1.25em; /* @line-height */
-      background-color: rgb(203, 253, 128); /* @lime */
-      vertical-align: top;
-      margin-bottom: 0.3125em; /* @line-height / 4 */
-    }
-    @media (min-width: 4000000em) {
-      .push h2 .icon {
-        display: inline-block;
-        margin-right: 20px;
-        width: 110px; /* number circle width */
-      }
-    }
-    .push h2 .lime {
-      background-color: rgb(203, 253, 128); /* @lime */
-    }
-    .push h2 .cucumber {
-      background-color: rgb(150, 254, 166); /* @cucumber */
-    }
-    .push h2 .blueberry {
-      background-color: rgb(99, 204, 203); /* @blueberry */
-    }
-    .push h2 .boysenberry {
-      background-color: rgb(101, 156, 247); /* @boysenberry */
-    }
-    .push h2 .plumb {
-      background-color: rgb(193, 77, 166); /* @plumb */
-    }
-    .push h2 .strawberry {
-      background-color: rgb(255, 49, 102); /* @strawberry */
-    }
-    .push h2 .apple {
-      background-color: rgb(255, 49, 59); /* @apple */
-    }
-    .push h2 .tangerine {
-      background-color: rgb(255, 202, 72); /* @tangerine */
-    }
-    .push h2 .orange {
-      background-color: rgb(242, 64, 41); /* @orange */
-    }
-
-
-    /* =Footer
-    ----------------------------------------------- */
-    .container > .footer ul,
-    .container > .footer li {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-    .container > .footer ul {
-      margin: 0;
-    }
-    .container > .footer li {
-      margin: 0;
-      margin-right: 0.75em;
-      display: inline;
-      font-size: 11px;
-      line-height: 22px;
-    }
-    .container > .footer li:last-child {
-      float: right;
-      margin-right: 0;
-    }
-    .container > .footer a {
-      background-color: transparent;
       color: black;
-      text-transform: uppercase;
-      font-weight: normal;
-      text-decoration: none;
     }
-    .container > .footer .instagram {
-      font-size: inherit;
+    .avatar .cucumber {
+      background-color: rgb(150, 254, 166); /* @cucumber */
+      color: black;
     }
-
+    .avatar .blueberry {
+      background-color: rgb(99, 204, 203); /* @blueberry */
+      color: white;
+    }
+    .avatar .boysenberry {
+      background-color: rgb(101, 156, 247); /* @boysenberry */
+      color: white;
+    }
+    .avatar .plumb {
+      background-color: rgb(193, 77, 166); /* @plumb */
+      color: white;
+    }
+    .avatar .strawberry {
+      background-color: rgb(255, 49, 102); /* @strawberry */
+      color: white;
+    }
+    .avatar .apple {
+      background-color: rgb(255, 49, 59); /* @apple */
+      color: white;
+    }
+    .avatar .tangerine {
+      background-color: rgb(255, 202, 72); /* @tangerine */
+      color: white;
+    }
+    .avatar .orange {
+      background-color: rgb(242, 64, 41); /* @orange */
+      color: white;
+    }
   </style>
 
 </head>
 <body>
 
-<div class="container">
+  <div class="body">
 
-  <div class="header">
-    <h1>
-      <img src="http://jimthoburn.github.io/ctzn/email/images/ctzn.png" width="120" height="45" alt="CTZN" />
-    </h1>
-    <h2>
-      Recap for<br />
-      <time datetime="2015-01-06"><span class="time">January 6, 2015</span></time>
-    </h2>
-    <div style="clear: both;"></div>
-  </div><!-- /.header -->
+    <div class="header">
 
-  <div class="section pushes">
-    <h3><span class="number">15</span> <span class="label">Pushes Updated</span></h3>
-    <ul>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="plumb icon"></span>
-          <span class="link">CicLAvia</span>
-        </a>
-      </li>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="tangerine icon"></span>
-          <span class="link">Imagination LA</span>
-        </a>
-      </li>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="strawberry icon"></span>
-          <span class="link">826LA Volunteers</span>
-        </a>
-      </li>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="lime icon"></span>
-          <span class="link">Rootdown LA</span>
-        </a>
-      </li>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="boysenberry icon"></span>
-          <span class="link">Broccoli City</span>
-        </a>
-      </li>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="apple icon"></span>
-          <span class="link">League of Creative Interventionists</span>
-        </a>
-      </li>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="cucumber icon"></span>
-          <span class="link">Dignitiy &amp; Power Now</span>
-        </a>
-      </li>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="orange icon"></span>
-          <span class="link">Cardboard Challenge</span>
-        </a>
-      </li>
-      <li>
-        <a href="http://getctzn.com">
-          <span class="blueberry icon"></span>
-          <span class="link">LA80X50</span>
-        </a>
-      </li>
-      <li class="more">
-        <a href="http://getctzn.com">
-          <span class="link">&amp; 5 more…</span>
-        </a>
-      </li>
-    </ul>
-  </div><!-- /.section -->
+      <span class="avatar"><span class="size100 blueberry"><span class="letter">k</span></span></span>
 
-  <div class="section push">
-    <h2>
-      <span class="plumb icon"></span>
-      CicLAvia Updates
-    </h2>
+      <h1>My <b>Kiva F26</b> Morning Digest</h1>
+
+      <p class="time">
+        <time datetime="2015-02-06 06:00">
+          <span>Friday, February 6, 2015</span>
+          <small>6:00 A.M. PST</small>
+        </time>
+      </p>
+
+      <p class="ctzn">powered by <b>ctzn</b></p>
+
+    </div><!-- /.header -->
 
     <div class="section">
-      <h3><span class="number">1</span> <span class="label">New Person</span></h3>
 
-      <ul class="member-list">
-        <li>
-          <a href="http://getctzn.com">
+      <div class="header">
+        <h2><b>3</b> new people joined</h2>
+
+        <p class="action">
+          <a href="">@mention all in a New Post</a>
+        </p>
+      </div>
+
+      <div class="members">
+        <ul>
+          <li>
             <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="28" height="28" alt="" />
+              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
             </span>
-            <span class="link">@brian</span>
-          </a>
-        </li>
-      </ul>
-    </div><!-- /.section -->
-  </div><!-- /.section -->
+            <b>@brianatgood</b>
+            <span class="name">Brian</span>
+          </li>
+          <li>
+            <span class="avatar">
+              <span class="size30 lime"><span class="letter">s</span></span>
+            </span>
+            <b>@supervolunteer</b>
+          </li>
+          <li>
+            <span class="avatar">
+              <span class="size30 bluebird"><span class="letter">c</span></span>
+            </span>
+            <b>@casey</b>
+            <span class="name">Casey Caplowe</span>
+          </li>
+        </ul>
+      </div><!-- /.members -->
 
-  <div class="section push">
-    <h2>
-      <span class="orange icon"></span>
-      Project Citizen Updates
-    </h2>
+    </div><!-- /.section -->
 
     <div class="section">
-      <h3><span class="number">100</span> <span class="label">New People</span></h3>
 
-      <ul class="member-list">
-        <li>
+      <div class="header">
+        <h2><b>5</b> new comments in your conversations</h2>
+      </div>
+
+      <div class="article">
+
+        <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum lectus, ac pulvin…</p>
+       
+        <p>
+          <img src="http://placehold.it/100" alt="Image 1" />
+        </p>
+
+        <h3>2 new comments</h3>
+
+        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
+
+        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
+
+      </div><!-- /.article -->
+
+      <div class="article">
+
+        <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum lectus, ac pulvin…</p>
+
+        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
+
+        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
+
+        <p><a href="">&amp; 6 more</a></p>
+
+      </div><!-- /.article -->
+
+      <div class="article">
+
+        <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum lectus, ac pulvin…</p>
+
+        <h3>2 new comments</h3>
+
+        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me. After reaching the station, it seemed unnecessary as not many people got off from the train in the first place, and I stand out as an “outsider” anyway, being the only person wearing sunglasses. After an hour of motorbike ride, we reached our destination. I met Nagraj, the owner of Jyothi Enterprise.</p>
+
+        <p><b>@username001</b> wow this is such an awesome story. how long were you there for? I took the Shatabdi express train for 6 hours to go to Shiggaon district. I decided to wear my grad school University of Minnesota’s Bright Golden Gopher t-shirt so that the guy who is supposed to pick me up from the Haveri station can easily identify me.</p>
+
+      </div><!-- /.article -->
+
+    </div><!-- /.section -->
+
+    <div class="section">
+
+      <div class="header">
+        <h2><b>5</b> new posts to the push</h2>
+      </div>
+
+      <div class="article">
+
+        <h3>@username001</h3>
+
+        <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum lectus, ac pulvinar sapien dolor ac magna.</p>
+
+      </div><!-- /.article -->
+
+    </div><!-- /.section -->
+
+    <div class="section">
+
+      <div class="header">
+        <h2><b>25</b> people loved your posts</h2>
+      </div>
+
+      <div class="article">
+
+        <p><b>@group</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur, ex a ultricies luctus, magna nisi vestibu lum…</p>
+
+        <h3>15 loved this post</h3>
+
+        <p><b>username101, username01, username100, username505, username121, username00</b> <a href="">&amp; 10 more…</a></p>
+
+      </div><!-- /.article -->
+
+    </div><!-- /.section -->
+
+    <div class="footer">
+      <ul>
+        <li><a href="http://getctzn.com">getctzn.com</a></li>
+        <li><a href="http://getctzn.com">Unsubscribe</a></li>
+        <li class="instagram">
           <a href="http://getctzn.com">
-            <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="28" height="28" alt="" />
-            </span>
-            <span class="link">@brian</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 cranberry"><span class="letter">v</span></span>
-            </span>
-            <span class="link">@vogg</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 bluebird"><span class="letter">n</span></span>
-            </span>
-            <span class="link">@notcot</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 grape"><span class="letter">l</span></span>
-            </span>
-            <span class="link">@lou</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="28" height="28" alt="" />
-            </span>
-            <span class="link">@aldo</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 sky"><span class="letter">a</span></span>
-            </span>
-            <span class="link">@anton</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 grape"><span class="letter">j</span></span>
-            </span>
-            <span class="link">@jelena</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
-            </span>
-            <span class="link">@cogg</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
-            </span>
-            <span class="link">@eshah</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 clover"><span class="letter">g</span></span>
-            </span>
-            <span class="link">@goldhirsh</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 kiwi"><span class="letter">c</span></span>
-            </span>
-            <span class="link">@caseycaplowe</span>
-          </a>
-        </li>
-        <li class="more">
-          <a href="http://getctzn.com">
-            <span class="link">&amp; 90 more…</span>
+            <img src="http://jimthoburn.github.io/ctzn/email/images/instagram.png" width="22" height="22" alt="Instagram" />
           </a>
         </li>
       </ul>
-    </div><!-- /.section -->
+    </div><!-- /.footer -->
 
-    <div class="section mixes">
-      <h3><span class="number">125</span> <span class="label">New Mix Material</span></h3>
-
-      <ul class="mix-list">
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/e80e435016195f41fdc635b0debe5c0a5d00e416=c500x500" width="135" height="135" alt=" " />
-            <span>
-              <span class="avatar">
-                <span class="size30 sky"><span class="letter">m</span></span>
-              </span>
-              mixwell
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 grape"><span class="letter">j</span></span>
-              </span>
-              jelena
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/8ecb5abdad49cc9c4a954ab98302e5a5c3a44dd6=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 grape"><span class="letter">j</span></span>
-              </span>
-              jelena
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100" height="18" width="18" alt="" />
-              </span>
-              jim
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 cranberry"><span class="letter">v</span></span>
-              </span>
-              vogg
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 grape"><span class="letter">j</span></span>
-              </span>
-              jelena
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/5a3f33b1a41dd91832077aef9e246b41ca4ff1b4=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 grape"><span class="letter">j</span></span>
-              </span>
-              jelena
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 bluebird"><span class="letter">n</span></span>
-              </span>
-              notcot
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/b33f166ec5577df52c5e4cfda33e4ff930aea7fa=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 grape"><span class="letter">l</span></span>
-              </span>
-              lou
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/2491b744224ed5ebd9d6a7ef1fd77e3d08c06356=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 grape"><span class="letter">l</span></span>
-              </span>
-              lou
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="http://getctzn.com">
-            <img src="https://m.ctznapp.com/s3/ctzn/7884b7cdabf53718d489a707d100282db39d4614=c500x500" width="135" height="135" alt="" />
-            <span>
-              <span class="avatar">
-                <span class="size30 kiwi"><span class="letter">c</span></span>
-              </span>
-              caseycaplowe
-            </span>
-          </a>
-        </li>
-        <li class="more"><a href="http://getctzn.com">&amp; more…</a></li>
-      </ul>
-
-      <p class="action"><a href="http://getctzn.com">Create New Mix</a></p>
-    </div><!-- /.section -->
-
-    <div class="section posts">
-      <h3><span class="number">10</span> <span class="label">New Posts</span></h3>
-
-      <div class="article">
-        <h4>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 cranberry"><span class="letter">v</span></span>
-            </span>
-            <span class="link">vogg</span>
-          </a>
-        </h4>
-
-        <div class="body">
-          <p>
-            <img src="https://m.ctznapp.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c500x500" width="135" height="135" alt="Image 1" />
-          </p>
-
-          <p>#ctzn #ctznmixer</p>
-        </div>
-
-        <div class="footer">
-          <ul>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
-                <span class="count">3</span>
-              </a>
-            </li>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/comment.png" width="18" height="18" alt="Add comment" />
-              </a>
-            </li>
-          </ul>
-        </div><!-- /.footer -->
-      </div><!-- /.article -->
-
-      <div class="article">
-        <h4>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 bluebird"><span class="letter">n</span></span>
-            </span>
-            <span class="link">notcot</span>
-          </a>
-        </h4>
-
-        <div class="body">
-          <p>Loving the @nounproject #CTZN #ctznmixer</p>
-
-          <p>
-            <img src="https://m.ctznapp.com/s3/ctzn/f73e20bdb19689e365f39cda909be3b81d8fdaac=c500x500" width="135" height="135" alt="Image 1" />
-            <img src="https://m.ctznapp.com/s3/ctzn/e584d08f72e0acef49a95335f087c0087669df56=c500x500" width="135" height="135" alt="Image 2" />
-          </p>
-        </div>
-
-        <div class="footer">
-          <ul>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
-              </a>
-            </li>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/comment.png" width="18" height="18" alt="Add comment" />
-              </a>
-            </li>
-          </ul>
-        </div><!-- /.footer -->
-      </div><!-- /.article -->
-
-      <div class="article">
-        <h4>
-          <a href="http://getctzn.com">
-            <span class="avatar">
-              <span class="size30 grape"><span class="letter">n</span></span>
-            </span>
-            <span class="link">jelena</span>
-          </a>
-        </h4>
-
-        <div class="body">
-          <p>
-            <img src="https://m.ctznapp.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c100x100" width="135" height="135" alt="Image 1" />
-          </p>
-          <p>
-            Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...
-          </p>
-        </div>
-
-        <div class="footer">
-          <ul>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
-                <span class="count">3</span>
-              </a>
-            </li>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/comment.png" width="18" height="18" alt="Add comment" />
-              </a>
-            </li>
-          </ul>
-        </div><!-- /.footer -->
-      </div><!-- /.article -->
-
-    </div><!-- /.section -->
-
-
-    <div class="section comments">
-      <h3><span class="number">6</span> <span class="label">New Comments</span></h3>
-
-      <div class="section">
-        <p><img src="https://m.ctznapp.com/s3/ctzn/246f2e8276de41de5f46676f30fb52a58a5e9057=c500x500" alt="Image 1" width="135" height="135" /></p>
-        <p>#goodcitiesproject #ctzn</p>
-
-        <h4><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@lou</a></h4>
-
-        <div class="footer">
-          <ul>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
-                <span class="count">8</span>
-              </a>
-            </li>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/comment.png" width="18" height="18" alt="Add comment" />
-                <span class="count">1</span>
-              </a>
-            </li>
-          </ul>
-        </div><!-- /.footer -->
-
-        <div class="article">
-          <h5>
-            <a href="http://getctzn.com">
-              <span class="avatar">
-                <span class="size30 kiwi"><span class="letter">g</span></span>
-              </span>
-              <span class="link">@goldhirsh</span>
-            </a>
-          </h5>
-
-          <div class="body">
-            <p>Hell of a party.</p>
-          </div>
-        </div><!-- /.article -->
-
-        <div class="article">
-          <h5>
-            <a href="http://getctzn.com">
-              <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
-              </span>
-              <span class="link">@eshah</span>
-            </a>
-          </h5>
-
-          <div class="body">
-            <p>W00t w00t</p>
-          </div>
-        </div><!-- /.article -->
-
-        <p class="action"><a href="http://getctzn.com">Comment</a></p>
-      </div><!-- /.section -->
-
-      <div class="section">
-        <p><img src="https://m.ctznapp.com/s3/ctzn/a9af7c0834c646a8c294eb143be3eaed1501d346=c500x500" width="135" height="135" alt="Image 1" /></p>
-        <p>On the ✈️ #santazen</p>
-
-        <h4><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@lou</a></h4>
-
-        <div class="footer">
-          <ul>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
-                <span class="count">1</span>
-              </a>
-            </li>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/comment.png" width="18" height="18" alt="Add comment" />
-                <span class="count">3</span>
-              </a>
-            </li>
-          </ul>
-        </div><!-- /.footer -->
-
-        <div class="article">
-          <h5>
-            <a href="http://getctzn.com">
-              <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
-              </span>
-              <span class="link">@cogg</span>
-            </a>
-          </h5>
-
-          <div class="body">
-            <p>I am surprised the plane emoji worked</p>
-          </div>
-        </div><!-- /.article -->
-
-        <div class="article">
-          <h5>
-            <a href="http://getctzn.com">
-              <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="28" height="28" alt="" />
-              </span>
-              <span class="link">@aldoatgood</span>
-            </a>
-          </h5>
-
-          <div class="body">
-            <p>@cogg cool huh! Side note I have 2 notes stuck in pending. CommentIng to see if that works.</p>
-          </div>
-        </div><!-- /.article -->
-
-        <div class="article">
-          <h5>
-            <a href="http://getctzn.com">
-              <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" width="28" height="28" alt="" />
-              </span>
-              <span class="link">@eshah</span>
-            </a>
-          </h5>
-
-          <div class="body">
-            <p>@cogg @aldoatgood: emojis are working only on phones. Not visible on desktop which is way cooler!! :)</p>
-          </div>
-        </div><!-- /.article -->
-
-        <p class="action"><a href="http://getctzn.com">Comment</a></p>
-      </div><!-- /.section -->
-
-      <div class="section">
-        <p><img src="https://m.ctznapp.com/s3/ctzn/7c2af93991eaa557a3509265d419addbfb40bc06=c500x500" width="100" height="100" alt="Image 1" /></p>
-
-        <h4><a href="http://getctzn.com" class="link">original post</a> from <a href="http://getctzn.com" class="link">@dan</a></h4>
-
-        <div class="footer">
-          <ul>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/heart.png" width="18" height="18" alt="I like this" />
-                <span class="count">3</span>
-              </a>
-            </li>
-            <li>
-              <a href="http://getctzn.com">
-                <img src="http://jimthoburn.github.io/ctzn/email/images/comment.png" width="18" height="18" alt="Add comment" />
-                <span class="count">1</span>
-              </a>
-            </li>
-          </ul>
-        </div><!-- /.footer -->
-
-        <div class="article">
-          <h5>
-            <a href="http://getctzn.com">
-              <span class="avatar">
-                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="28" height="28" alt="" />
-              </span>
-              <span class="link">@cogg</span>
-            </a>
-          </h5>
-
-          <div class="body">
-            <p>This makes me happy every time I see it. Nice shot</p>
-          </div>
-        </div><!-- /.article -->
-
-        <p class="action"><a href="http://getctzn.com">Comment</a></p>
-      </div><!-- /.section -->
-
-    </div><!-- /.section -->
-
-  </div><!-- /.section -->
-
-  <div class="footer">
-    <ul>
-      <li><a href="http://getctzn.com">getctzn.com</a></li>
-      <li><a href="http://getctzn.com">Unsubscribe</a></li>
-      <li class="instagram">
-        <a href="http://getctzn.com">
-          <img src="http://jimthoburn.github.io/ctzn/email/images/instagram.png" width="22" height="22" alt="Instagram" />
-        </a>
-      </li>
-    </ul>
-  </div><!-- /.footer -->
-
-</div><!-- ./container -->
+  </div><!-- ./body -->
 
 </body>
 </html>
