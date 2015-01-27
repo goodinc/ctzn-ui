@@ -38,31 +38,21 @@
 
   </section>
 
-  <!--
-    SHIM: Add a class of “error” to make the dialog completely cover the content behind it.
-          Add a class of “has-details” to make the dialog scrollable (instead of centered vertically).
-  -->
-  <section class="loading">
+  <section class="dialog page">
+
     <div>
-      <div>
-
-        <h1>Headline</h1>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.</p>
-
-        <p class="action">
-          <a href="">Action to take</a>
-        </p>
-
-        <button class="close">
-          <!-- @icon-close -->
-          <svg aria-label="Hide this message" class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
-            <foreignobject>Hide this message</foreignobject>
-          </svg>
-        </button>
-      </div>
+      <h2>Oops!</h2>
+      <p>Something went wrong while loading this page. <a href="">Care to try again?</a></p>
     </div>
+
+    <a href="">
+      <svg aria-label="Close" class="icon" viewBox="0 0 24 24" width="24" height="24">
+        <!-- @icon-close -->
+        <polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+        <foreignobject>Close</foreignobject>
+      </svg>
+    </a>
+
   </section>
 
 </body>

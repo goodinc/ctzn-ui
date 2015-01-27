@@ -209,13 +209,11 @@
 
   /* =Color Variations
   ----------------------------------------------- */
-  .active span.icon.instagram:before {
-    /* Data URI encoded from: ocean/instagram.svg */
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnIGlkPSJpbnN0YWdyYW0iPg0KCTxwYXRoIGZpbGw9InJnYig0MCwgODEsIDEyNykiIGQ9Ik00LjU2NywyaDE0Ljg2NkMyMC44NDUsMiwyMiwzLjE1NSwyMiw0LjU2N3YxNC44NjZDMjIsMjAuODQ1LDIwLjg0NSwyMiwxOS40MzMsMjJINC41NjcNCgkJQzMuMTU1LDIyLDIsMjAuODQ1LDIsMTkuNDMyVjQuNTY3QzIsMy4xNTUsMy4xNTUsMiw0LjU2NywyTDQuNTY3LDJ6IE0xNi41NjksNC4yMjJjLTAuNDk1LDAtMC45LDAuNDA1LTAuOSwwLjl2Mi4xNTUNCgkJYzAsMC40OTUsMC40MDUsMC45LDAuOSwwLjloMi4yNmMwLjQ5NSwwLDAuOS0wLjQwNSwwLjktMC45VjUuMTIyYzAtMC40OTUtMC40MDUtMC45LTAuOS0wLjkNCgkJQzE4LjgyOCw0LjIyMiwxNi41NjksNC4yMjIsMTYuNTY5LDQuMjIyeiBNMTkuNzQsMTAuNDU3aC0xLjc2YzAuMTY2LDAuNTQ0LDAuMjU2LDEuMTIsMC4yNTYsMS43MTUNCgkJYzAsMy4zMjYtMi43ODUsNi4wMjUtNi4yMTYsNi4wMjVTNS44MDMsMTUuNSw1LjgwMywxMi4xNzNjMC0wLjU5NSwwLjA5LTEuMTczLDAuMjU1LTEuNzE1SDQuMjIzdjguNDQ4DQoJCWMwLDAuNDM3LDAuMzU3LDAuNzk1LDAuNzk1LDAuNzk1aDEzLjkyN2MwLjQzNywwLDAuNzk1LTAuMzU3LDAuNzk1LTAuNzk1TDE5Ljc0LDEwLjQ1N0wxOS43NCwxMC40NTd6IE0xMi4wMTksOC4wNjUNCgkJYy0yLjIxOSwwLTQuMDE2LDEuNzQzLTQuMDE2LDMuODkzczEuNzk4LDMuODkzLDQuMDE2LDMuODkzczQuMDE1LTEuNzQzLDQuMDE1LTMuODkzQzE2LjAzNiw5LjgwNywxNC4yMzcsOC4wNjUsMTIuMDE5LDguMDY1eiIvPg0KPC9nPg0KPC9zdmc+DQo=);
+  .active.instagram {
+    color: rgb(40, 81, 127);
   }
-  .active span.icon.twitter:before {
-    /* Data URI encoded from: bluebird/twitter.svg */
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnIGlkPSJ0dW1ibHIiPg0KCTxwYXRoIGZpbGw9InJnYig5NCwgMTcxLCAyNDQpIiBkPSJNMjIsNS43OThjLTAuNzM2LDAuMzI2LTEuNTI3LDAuNTQ3LTIuMzU3LDAuNjQ2YzAuODQ3LTAuNTA4LDEuNDk4LTEuMzEyLDEuODA0LTIuMjcNCgkJYy0wLjc5MywwLjQ3LTEuNjcxLDAuODEyLTIuNjA2LDAuOTk2Yy0wLjc0OC0wLjc5OC0xLjgxNS0xLjI5Ni0yLjk5NS0xLjI5NmMtMi4yNjYsMC00LjEwNCwxLjgzNy00LjEwNCw0LjEwNA0KCQljMCwwLjMyMiwwLjAzNiwwLjYzNSwwLjEwNiwwLjkzNUM4LjQ0MSw4Ljc0LDUuNDE2LDcuMTA3LDMuMzkzLDQuNjI0QzMuMDQsNS4yMzEsMi44MzcsNS45MzUsMi44MzcsNi42ODgNCgkJYzAsMS40MjMsMC43MjQsMi42NzksMS44MjYsMy40MTZDMy45OTEsMTAuMDgyLDMuMzU4LDkuODk4LDIuODA0LDkuNTlDMi44MDMsOS42MDcsMi44MDMsOS42MjQsMi44MDMsOS42NDINCgkJYzAsMS45ODgsMS40MTQsMy42NDYsMy4yOTEsNC4wMjRjLTAuMzQzLDAuMDkzLTAuNzA2LDAuMTQzLTEuMDgxLDAuMTQzYy0wLjI2NCwwLTAuNTIxLTAuMDI2LTAuNzcyLTAuMDczDQoJCWMwLjUyMiwxLjYzLDIuMDM4LDIuODE2LDMuODMzLDIuODQ5Yy0xLjQwNCwxLjEwMS0zLjE3MywxLjc1Ni01LjA5NiwxLjc1NmMtMC4zMzEsMC0wLjY1OC0wLjAxOS0wLjk3OC0wLjA1OA0KCQljMS44MTYsMS4xNjQsMy45NzMsMS44NDMsNi4yOSwxLjg0M2M3LjU0OCwwLDExLjY3NS02LjI1MywxMS42NzUtMTEuNjc1YzAtMC4xNzgtMC4wMDQtMC4zNTUtMC4wMTItMC41MzENCgkJQzIwLjc1NSw3LjM0MywyMS40NSw2LjYyLDIyLDUuNzk4TDIyLDUuNzk4eiIvPg0KPC9nPg0KPC9zdmc+DQo=);
+  .active.twitter {
+    color: rgb(94, 171, 244);
   }
 
   span.icon.refresh:before {
@@ -252,6 +250,7 @@
     width: 1.5em;
     height: 1.5em;
     vertical-align: middle;
+    fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
   }
   svg.icon path,
   svg.icon polygon {
@@ -1329,11 +1328,18 @@
 
   .push-card {
     text-align: center;
-
     transition: background-color 0.4s;
+  }
+
+  /* SHIM: The extra selectors are here to override the default “.page” and “.page > div” styles. */
+  .push-card,
+  .page.push-card,
+  .page > .push-card {
+    padding: 1.5em 1.25em; /* @line-height */
+    max-width: none;
 
     /* TRICKY: Start with a shade of gray, in case the color is missing. */
-    background-color: rgb(204, 204, 204); /* @aluminum */
+    background-color: rgb(159, 165, 162); /* @barium */
   }
 
   .push-card.lime {
@@ -1364,23 +1370,14 @@
     background-color: rgb(242, 64, 41); /* @orange */
   }
 
-  /* SHIM: There’s an extra selector here to override the “.page > div” style. */
-  .push-card,
-  .page > .push-card {
-    padding: 1.5em 1.25em; /* @line-height */
-    max-width: none;
-  }
-
   .push-card.page > header {
     background-color: transparent;
     border-color: transparent;
     color: transparent;
   }
-  .push-card.page > header .back {
+  .push-card.page > header .cancel {
     border-right-width: 0;
-
-    /* Data URI encoded from: snow/back.svg */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwb2x5Z29uIGZpbGw9IndoaXRlIiBwb2ludHM9IjIsMTIgMTIsMjIgMTQuNDc4LDE5LjUyMiA4LjcwOCwxMy43NTIgMjIsMTMuNzUyIDIyLDEwLjI0OCA4LjcwOCwxMC4yNDggMTQuNDc4LDQuNDc4IDEyLDIgIi8+DQo8L3N2Zz4NCg==);
+    color: white;
   }
   .push-card.page > header .next {
     border-left-width: 0;
@@ -1394,6 +1391,10 @@
   a.push-card {
     display: block;
     text-decoration: none;
+    color: inherit;
+  }
+
+  .push-card.page > a {
     color: inherit;
   }
 
@@ -1504,11 +1505,8 @@
     color: black;
     color: rgba(0, 0, 0, 0.95);
   }
-  .lime.push-card.page     > header .back,
-  .cucumber.push-card.page > header .back {
-    /* Data URI encoded from: midnight/back.svg */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwb2x5Z29uIHBvaW50cz0iMiwxMiAxMiwyMiAxNC40NzgsMTkuNTIyIDguNzA4LDEzLjc1MiAyMiwxMy43NTIgMjIsMTAuMjQ4IDguNzA4LDEwLjI0OCAxNC40NzgsNC40NzggMTIsMiAiLz4NCjwvc3ZnPg0K);
-   }
+  .lime.push-card.page     > header .cancel,
+  .cucumber.push-card.page > header .cancel,
   .lime.push-card.page     > header .next,
   .cucumber.push-card.page > header .next {
     color: black;
@@ -1772,21 +1770,17 @@
   ul.create li:last-child a {
     padding-right: 0.375em;
   }
-  ul.create li a span.icon {
+  ul.create li a .icon {
     width  : 2.25em; /* 27px / @font-size */
     height : 2.25em;
     display: block;
     margin: 0 auto 0.25em;
-    opacity: 0.8;
-    transition: opacity 0.2s;
+    fill: rgb(204, 204, 204); /* @aluminum */
+    transition: fill 0.2s;
   }
-  ul.create li a:active span.icon,
-  ul.create li a:focus  span.icon {
-    opacity: 1;
-  }
-  ul.create li a span.icon:before {
-    width  : 2.25em;
-    height : 2.25em;
+  ul.create li a:active .icon,
+  ul.create li a:focus  .icon {
+    fill: currentColor;
   }
 
 
@@ -1876,18 +1870,16 @@
     color: white;
   }
   .page > header .next,
-  .page > header .back,
   .page > header .cancel {
     position: absolute;
     top: 0;
-    padding: 0.75em;
+    padding: 0.75em 0.875em;
     border: 0 solid rgb(44, 44, 44); /* @thorium */
   }
   .page > header .next {
     right: 0;
     border-left-width: 0.1em;
   }
-  .page > header .back,
   .page > header .cancel {
     left: 0;
     border-right-width: 0.1em;
@@ -1896,29 +1888,10 @@
     text-decoration: none;
     text-transform: lowercase;
     color: rgb(204, 204, 204); /* @aluminum */
-    padding: 0.75em 1.125em;
   }
   .page > header svg.icon {
     width: 1.125em;
     height: 1.125em;
-  }
-  .page > header .back {
-    background-repeat: no-repeat;
-    background-position: 0.75em 1em; /* “centered” works here too, but looks slightly too high up */
-    background-size: 1.125em 1.125em;
-    width: 1.125em;
-
-    /* @hidden-accessible-text */
-    text-indent: -9999px;
-    overflow: hidden;
-
-    /* Data URI encoded from: aluminum/back.svg */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwb2x5Z29uIGZpbGw9InJnYigyMDQsIDIwNCwgMjA0KSIgcG9pbnRzPSIyLDEyIDEyLDIyIDE0LjQ3OCwxOS41MjIgOC43MDgsMTMuNzUyIDIyLDEzLjc1MiAyMiwxMC4yNDggOC43MDgsMTAuMjQ4IDE0LjQ3OCw0LjQ3OCAxMiwyICIvPg0KPC9zdmc+DQo=);
-  }
-  .page > header .back:active,
-  .page > header .back:focus {
-    /* Data URI encoded from: snow/back.svg */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwb2x5Z29uIGZpbGw9IndoaXRlIiBwb2ludHM9IjIsMTIgMTIsMjIgMTQuNDc4LDE5LjUyMiA4LjcwOCwxMy43NTIgMjIsMTMuNzUyIDIyLDEwLjI0OCA4LjcwOCwxMC4yNDggMTQuNDc4LDQuNDc4IDEyLDIgIi8+DQo8L3N2Zz4NCg==);
   }
 
   /* OPTIONAL: Give edit and detail pages a white header. */
@@ -1932,21 +1905,14 @@
     color: black;
     border-bottom-color: rgb(222, 222, 222); /* @silver*/
   }
-  .mix.page          > header .back,
-  .mixes.page        > header .back,
-  .mix-editor        > header .back,
-  .post.page         > header .back,
-  .edit.page         > header .cancel,
-  .edit-profile.page > header .cancel {
+  .mix.page          > header a,
+  .mixes.page        > header a,
+  .mix-editor        > header a,
+  .post.page         > header a,
+  .edit.page         > header a,
+  .edit-profile.page > header a {
     border-color: transparent;
     color: rgb(102, 102, 102); /* @tin */
-  }
-  .mix.page          > header .back,
-  .mixes.page        > header .back,
-  .mix-editor.page   > header .back,
-  .post.page         > header .back {
-    /* Data URI encoded from: tin/back.svg */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwb2x5Z29uIGZpbGw9InJnYigxMDIsIDEwMiwgMTAyKSIgcG9pbnRzPSIyLDEyIDEyLDIyIDE0LjQ3OCwxOS41MjIgOC43MDgsMTMuNzUyIDIyLDEzLjc1MiAyMiwxMC4yNDggOC43MDgsMTAuMjQ4IDE0LjQ3OCw0LjQ3OCAxMiwyICIvPg0KPC9zdmc+DQo=);
   }
   .mix.page          > header a:active,
   .mix.page          > header a:focus,
@@ -1961,17 +1927,6 @@
   .edit-profile.page > header a:active,
   .edit-profile.page > header a:focus {
     color: black;
-  }
-  .mix.page          > header .back:active,
-  .mix.page          > header .back:focus,
-  .mixes.page        > header .back:active,
-  .mixes.page        > header .back:focus,
-  .mix-editor        > header .back:active,
-  .mix-editor        > header .back:focus,
-  .post.page         > header .back:active,
-  .post.page         > header .back:focus {
-    /* Data URI encoded from: midnight/back.svg */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwb2x5Z29uIHBvaW50cz0iMiwxMiAxMiwyMiAxNC40NzgsMTkuNTIyIDguNzA4LDEzLjc1MiAyMiwxMy43NTIgMjIsMTAuMjQ4IDguNzA4LDEwLjI0OCAxNC40NzgsNC40NzggMTIsMiAiLz4NCjwvc3ZnPg0K);
   }
 
   /* OPTIONAL: Position the submit button in the header */
@@ -3204,13 +3159,23 @@
 
 
 
-  /* =Overlay
+  /* =Dialog
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
 
+  .dialog.page {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 
-  /* =Full Screen Overlay
+
+
+
+  /* =Full Screen Overlay (deprecated)
   ----------------------------------------------- */
   section.loading,
   section.developer-tools {

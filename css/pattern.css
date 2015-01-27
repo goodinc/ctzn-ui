@@ -19,31 +19,31 @@
     background-color: rgb(255, 255, 153); /* @banana */
   }
 
-  body.pattern > h2:first-child,
-  body.pattern > h2:first-child + nav {
+  header.pattern h2,
+  header.pattern nav {
     text-transform: lowercase;
   }
-  body.pattern > h2:first-child {
+  header.pattern h2 {
     font-weight: 900;
   }
-  body.pattern > h2:first-child,
-  body.pattern > h2:first-child + nav,
-  body.pattern > h2:first-child + nav ul,
-  body.pattern > h2:first-child + nav li {
+  header.pattern h2,
+  header.pattern nav,
+  header.pattern nav ul,
+  header.pattern nav li {
     display: inline;
   }
-  body.pattern > h2:first-child + nav ul,
-  body.pattern > h2:first-child + nav li {
+  header.pattern nav ul,
+  header.pattern nav li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  body.pattern > h2:first-child,
-  body.pattern > h2:first-child + nav li {
+  header.pattern h2,
+  header.pattern nav li {
     margin-right: 1.5em;
   }
-  body.pattern > h2:first-child a,
-  body.pattern > h2:first-child + nav a {
+  header.pattern h2 a,
+  header.pattern nav a {
     color: inherit;
   }
   .pattern.index h1,
@@ -88,22 +88,14 @@
     display: block;
   }
   .pattern-list li a,
-  body.pattern > h2:first-child + nav a {
+  header.pattern nav a {
     color: rgba(0, 0, 0, 0.25);
   }
   .pattern-list li a[href],
-  body.pattern > h2:first-child + nav a[href] {
-    color: rgb(203, 253, 128); /* @lime */
-    color: rgb(242, 64, 41); /* @orange */
-    color: rgb(101, 156, 247); /* @boysenberry */
-    color: rgb(99, 204, 203); /* @blueberry */
-    color: rgb(150, 254, 166); /* @cucumber */
-    color: rgb(255, 202, 72); /* @tangerine */
+  header.pattern nav a[href] {
     color: rgb(255, 49, 102); /* @strawberry */
   }
-  body.pattern > h2:first-child + nav a[href]:visited,
+  header.pattern nav a[href]:visited,
   .pattern-list li a[href]:visited {
     color: inherit;
   }
-
-

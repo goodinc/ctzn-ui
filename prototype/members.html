@@ -25,554 +25,554 @@
   <section class="page">
     <header>
       <h1>Project Citizen</h1>
-      <a href="#push" class="back" data-bind="click: function() { window.history.back() }">
+      <a href="#push" class="back">
         Go Back
       </a>
     </header>
 
     <div class="list">
-      <ul data-bind="foreach: good.currentPush().participants.filter(function(p) { return p.username.indexOf('[anonymous') != 0; }).sort(function(a, b) { if(a.username > b.username) { return 1; } if(a.username < b.username) { return -1; } return 0; } )">
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+      <ul>
+<li>
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">aaron</h3>
+              <h3>aaron</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Aaron Hopkins</p>
+                <p>Aaron Hopkins</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">aldoatgood</h3>
+              <h3>aldoatgood</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Aldo Puicon</p>
+                <p>Aldo Puicon</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="a"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">aldopuicon</h3>
+              <h3>aldopuicon</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Aldo Puicon</p>
+                <p>Aldo Puicon</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="a"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">anton</h3>
+              <h3>anton</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Anton Sipos</p>
+                <p>Anton Sipos</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="b"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">baxter</h3>
+              <h3>baxter</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Baxter</p>
+                <p>Baxter</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3 data-bind="text: username">brian</h3>
-
-              <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Brian Nilsen</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="c"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3 data-bind="text: username">caseycaplowe</h3>
-
-              <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Casey Caplowe</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">cogg</h3>
+              <h3>brian</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Craig Ogg</p>
+                <p>Brian Nilsen</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/069afeae87c1360ad1d684169e6338315775856e=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi"></span>
+              <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">cogg1126</h3>
+              <h3>caseycaplowe</h3>
+
+              <!-- ko if: full_name -->
+                <p>Casey Caplowe</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li>
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image -->
+                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+            </span>
+
+            <span class="name"><span><span>
+              <h3>cogg</h3>
+
+              <!-- ko if: full_name -->
+                <p>Craig Ogg</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li>
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image -->
+                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+            </span>
+
+            <span class="name"><span><span>
+              <h3>cogg1126</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="d"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">dan</h3>
+              <h3>dan</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Dan Farino</p>
+                <p>Dan Farino</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="d"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">dori</h3>
+              <h3>dori</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/22d396673ea06f36588a7d6f8fd6ef81489f63aa=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">eshah</h3>
+              <h3>eshah</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Esha Shah</p>
+                <p>Esha Shah</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="e"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cantaloupe"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">eshah1113</h3>
+              <h3>eshah1113</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">eshah </p>
+                <p>eshah </p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="e"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">eshah1117</h3>
+              <h3>eshah1117</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Eshah Test</p>
+                <p>Eshah Test</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="e"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">eshah_test</h3>
+              <h3>eshah_test</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Esha Test</p>
+                <p>Esha Test</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="e"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">eshinov</h3>
+              <h3>eshinov</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">eshah novvv</p>
+                <p>eshah novvv</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="g"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 clover"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">goldhirsh</h3>
+              <h3>goldhirsh</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Ben Goldhirsh</p>
+                <p>Ben Goldhirsh</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="h"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cantaloupe"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">hayao</h3>
+              <h3>hayao</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Hayao</p>
+                <p>Hayao</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="j"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">jelena</h3>
+              <h3>jelena</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Jelena Woehr</p>
+                <p>Jelena Woehr</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="http://ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">jim</h3>
+              <h3>jim</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Jim</p>
+                <p>Jim</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="l"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">lfatone</h3>
+              <h3>lfatone</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Lee Fatone</p>
+                <p>Lee Fatone</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="l"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">lou</h3>
+              <h3>lou</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Lou Pizante</p>
+                <p>Lou Pizante</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="m"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 clover"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">mario</h3>
+              <h3>mario</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="m"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">mixwell</h3>
+              <h3>mixwell</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Mixwell</p>
+                <p>Mixwell</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="n"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">notcot</h3>
+              <h3>notcot</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Jean aw</p>
+                <p>Jean aw</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="p"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">parisla</h3>
+              <h3>parisla</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Paris Marron</p>
+                <p>Paris Marron</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="p"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">picollo</h3>
+              <h3>picollo</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="p"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">ponyo</h3>
+              <h3>ponyo</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="t"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">test11066</h3>
+              <h3>test11066</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">resttest</p>
+                <p>resttest</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="t"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">tommaybrier</h3>
+              <h3>tommaybrier</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Tom Maybrier</p>
+                <p>Tom Maybrier</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="t"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">totoro</h3>
+              <h3>totoro</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="v"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">vogg</h3>
+              <h3>vogg</h3>
 
               <!-- ko if: full_name -->
-                <p data-bind="text: full_name">Vangie Ogg</p>
+                <p>Vangie Ogg</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+<li>
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="y"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean"></span>
               <!-- /ko -->
             </span>
 
             <span class="name"><span><span>
-              <h3 data-bind="text: username">yoshi</h3>
+              <h3>yoshi</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>

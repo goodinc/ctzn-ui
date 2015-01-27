@@ -64,25 +64,25 @@
       <h3>From These Accounts</h3>
       <ul>
         <li class="item active">
-          <a href="#instagram" data-bind="click: function() {$parents[1].unlinkFeed($data);}">
+          <a href="#instagram">
             <span class="icon instagram">Instagram</span>
             @<span>santa</span>
           </a>
         </li>
-        <li class="item" data-bind="if: !good.globalDataModel().socialMediaFeeds.instagram">
-          <a href="#instagram-add" data-bind="click: $parent.linkInstagram">
+        <li class="item">
+          <a href="#instagram-add">
             <span class="icon instagram">Sync my Instagram</span>
             <span>Sync my Instagram</span>
           </a>
         </li>
         <li class="item active">
-          <a href="#twitter-remove" data-bind="click: function() {$parents[1].unlinkFeed($data);}">
+          <a href="#twitter-remove">
             <span class="icon twitter">Twitter</span>
             @<span>santa</span>
           </a>
         </li>
-        <li class="item" data-bind="if: !good.globalDataModel().socialMediaFeeds.twitter">
-          <a href="#twitter-add" data-bind="click: $parent.linkTwitter">
+        <li class="item">
+          <a href="#twitter-add">
             <span class="icon twitter">Sync my Twitter</span>
             <span>Sync my Twitter</span>
           </a>
