@@ -210,10 +210,8 @@
         <li class="item">
           <a href="#remove-hashtag">
             <span>#santazen</span>
-
-            <!-- @icon-close -->
             <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
-              <polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+              <use xlink:href="#close" />
               <foreignobject>Remove</foreignobject>
             </svg>
           </a>
@@ -224,9 +222,8 @@
     <div class="add-hashtag">
       <p class="item">
         <a href="#add-hashtag">
-          <!-- @icon-add -->
-          <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M24,13.714H13.714V24h-3.429V13.714H0v-3.429h10.286V0h3.429v10.286H24V13.714z"/>
+          <svg class="icon">
+            <use xlink:href="#add" />
           </svg>
           <span>Add another hashtag</span>
         </a>
@@ -236,27 +233,27 @@
     <div class="account-list">
       <h3>From These Accounts</h3>
       <ul>
-        <li class="item active">
+        <li class="item instagram active">
           <a href="#instagram">
-            <span class="icon instagram">Instagram</span>
+            <svg class="icon"><use xlink:href="#instagram" /><foreignobject>Instagram</foreignobject></svg>
             @<span>santa</span>
           </a>
         </li>
-        <li class="item">
+        <li class="item instagram">
           <a href="#instagram-add">
-            <span class="icon instagram">Sync my Instagram</span>
+            <svg class="icon"><use xlink:href="#instagram" /><foreignobject>Sync my Instagram</foreignobject></svg>
             <span>Sync my Instagram</span>
           </a>
         </li>
-        <li class="item active">
+        <li class="item twitter active">
           <a href="#twitter-remove">
-            <span class="icon twitter">Twitter</span>
+            <svg class="icon"><use xlink:href="#twitter" /><foreignobject>Twitter</foreignobject></svg>
             @<span>santa</span>
           </a>
         </li>
-        <li class="item">
+        <li class="item twitter">
           <a href="#twitter-add">
-            <span class="icon twitter">Sync my Twitter</span>
+            <svg class="icon"><use xlink:href="#twitter" /><foreignobject>Sync my Twitter</foreignobject></svg>
             <span>Sync my Twitter</span>
           </a>
         </li>

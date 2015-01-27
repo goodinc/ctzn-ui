@@ -270,8 +270,8 @@
     <header>
       <h1>Page Title</h1>
 
-      <a href="" class="back">
-        Go Back
+      <a href="" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header>
 
@@ -318,19 +318,19 @@
     <form class="has-icon">
       <p class="text">
         <label>
-          <span class="icon padlock">Current Password</span><br />
+          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>Current Password</foreignobject></svg><br />
           <input type="password" placeholder="Current Password" name="current_password" />
         </label>
       </p>
       <p class="text">
         <label>
-          <span class="icon padlock">New Password</span><br />
+          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>New Password</foreignobject></svg><br />
           <input type="password" placeholder="New Password" name="password" />
         </label>
       </p>
       <p class="text">
         <label>
-          <span class="icon padlock">New Password, Again</span><br />
+          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>New Password, Again</foreignobject></svg><br />
           <input type="password" placeholder="New Password, Again" name="repeat_password" />
         </label>
       </p>
@@ -371,13 +371,13 @@
       <ul>
         <li class="item active">
           <a href="#instagram">
-            <span class="icon instagram">Instagram</span>
+            <svg class="icon"><use xlink:href="#instagram" /><foreignobject>Instagram</foreignobject></svg>
             <span>@supervolunteerla</span>
           </a>
         </li>
         <li class="item">
           <a href="#twitter-add">
-            <span class="icon twitter">Sync my Twitter</span>
+            <svg class="icon"><use xlink:href="#twitter" /><foreignobject>Sync my Twitter</foreignobject></svg>
             <span>Sync my Twitter</span>
           </a>
         </li>
@@ -400,8 +400,8 @@
     <header>
       <h1>Log In</h1>
 
-      <a href="start.html" class="back">
-        Go Back
+      <a href="start.html" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header>
 
@@ -415,13 +415,13 @@
     <form action="push.html" method="post" class="has-icon">
       <p class="text">
         <label>
-          <span class="icon user-circle">Username</span><br />
+          <svg class="icon"><use xlink:href="#user-circle" /><foreignobject>Username</foreignobject></svg><br />
           <input type="text" placeholder="Username" autocapitalize="none" autocorrect="off" />
         </label>
       </p>
       <p class="text">
         <label>
-          <span class="icon padlock">Password</span><br />
+          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>Password</foreignobject></svg><br />
           <input type="password" placeholder="Password" />
         </label>
         <em class="note"><a href="forgot.html">Forgot?</a></em>
@@ -435,8 +435,8 @@
   <section class="page">
     <header>
       <h1>Project Citizen</h1>
-      <a href="#push" class="back">
-        Go Back
+      <a href="#push" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header>
 
@@ -499,8 +499,8 @@
 
 <section class="notifications page"><header><h1>Notifications</h1>
 
-      <a href="#push" class="back">
-        Go Back
+      <a href="#push" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header><div>
       <!-- ko if: notifications().length == 0 && unreadNotifications().length == 0 --><!-- /ko -->
@@ -726,14 +726,13 @@
     <header>
       <h1>Joining…</h1>
 
-      <a href="#start" class="back">
-        Go Back
+      <a href="#start" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
 
       <a href="#start" class="next">
         <svg aria-label="Close" class="icon" viewBox="0 0 24 24" width="24" height="24">
-          <!-- @icon-close -->
-          <polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+          <use xlink:href="#close" />
           <foreignobject>Close</foreignobject>
         </svg>
       </a>
@@ -787,19 +786,19 @@
       </p>
       <p class="text full-name">
         <label>
-          <span class="icon user">Full Name</span><br />
+          <svg class="icon"><use xlink:href="#user" /><foreignobject>Full Name</foreignobject></svg><br />
           <input type="text" placeholder="Full Name" name="full_name" />
         </label>
       </p>
       <p class="text disabled">
         <label>
-          <span class="icon user-circle">Username</span><br />
+          <svg class="icon"><use xlink:href="#user-circle" /><foreignobject>Username</foreignobject></svg><br />
           <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" />
         </label>
       </p>
       <p class="text">
         <label>
-          <span class="icon info">Biography</span><br />
+          <svg class="icon"><use xlink:href="#info" /><foreignobject>Biography</foreignobject></svg><br />
           <textarea placeholder="Bio" name="bio"></textarea>
         </label>
       </p>
@@ -812,13 +811,13 @@
       <ul>
         <li>
           <button>
-            <span class="icon padlock"></span>
+            <svg class="icon"><use xlink:href="#padlock" /><foreignobject></foreignobject></svg>
             Change Password
           </button>
         </li>
         <li>
           <button>
-            <span class="icon exit-to-app"></span>
+            <svg class="icon"><use xlink:href="#exit-to-app" /><foreignobject></foreignobject></svg>
             Log Out
           </button>
         </li>
@@ -826,7 +825,7 @@
       <ul>
         <li>
           <button>
-            <span class="icon close-circle"></span>
+            <svg class="icon"><use xlink:href="#close-circle" /><foreignobject></foreignobject></svg>
             Delete Profile
           </button>
         </li>
@@ -843,8 +842,8 @@
         <svg aria-label="Edit Profile" class="icon" viewBox="0 0 24 24" width="24" height="24"><g><polygon points="3.538,15.187 16.725,2 22,7.275 8.813,20.462"></polygon></g><g><polygon points="7.275,22 2,22 2,16.725"></polygon></g><foreignObject>Edit Profile</foreignObject></svg>
       </a>
 
-      <a href="#push" class="back">
-        Go Back
+      <a href="#push" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header>
 
@@ -891,7 +890,7 @@
               </a>
             </h3>
             <p class="source">
-              <span class="icon twitter">via <span>twitter</span></span>
+              <svg class="icon"><use xlink:href="#twitter" /><foreignobject>via <span>twitter</span></foreignobject></svg>
             </p>
             <p>
               <a href="#post">
@@ -1151,8 +1150,8 @@
 
   <header><h1>Create Mix</h1>
 
-      <a href="#push" class="back">
-        Go Back
+      <a href="#push" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header><!-- ko if: images().length < 2 --><!-- /ko -->
 
@@ -1217,8 +1216,8 @@
     <header>
       <h1>Finish Mix</h1>
 
-      <a href="#back" class="back">
-        Go Back
+      <a href="#back" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header>
     <form>
@@ -1239,8 +1238,8 @@
     <header>
       <h1>My Mixes</h1>
 
-      <a href="#push" class="back">
-        Go Back
+      <a href="#push" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header>
 
@@ -1248,7 +1247,7 @@
       <ul class="mix-list">
         <li class="add">
           <a href="#new-mix">
-            <span class="icon mix"></span>
+            <svg class="icon"><use xlink:href="#mix" /><foreignobject></foreignobject></svg>
             <span>New Mix</span>
           </a>
         </li>
@@ -1266,8 +1265,8 @@
 
 <section class="mix page"><header><h1>Mix</h1>
 
-      <a href="#mixes" class="back">
-        Go Back
+      <a href="#mixes" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header><div class="preview orange">
       <div>
@@ -1327,7 +1326,7 @@
     <!--
     <p class="new-posts">
       <button>
-        <span class="icon cached"></span>
+        <svg class="icon"><use xlink:href="#sync" /><foreignobject></foreignobject></svg>
         Update
       </button>
     </p>
@@ -1368,25 +1367,25 @@
     <ul class="create">
       <li>
         <a href="#switch">
-          <span class="icon switch"></span>
+          <svg class="icon"><use xlink:href="#switch" /><foreignobject></foreignobject></svg>
           Switch Push
         </a>
       </li>
       <li>
         <a href="#edit-post">
-          <span class="icon note"></span>
+          <svg class="icon"><use xlink:href="#note" /><foreignobject></foreignobject></svg>
           New Post
         </a>
       </li>
       <li>
         <a href="#new-mix">
-          <span class="icon mix"></span>
+          <svg class="icon"><use xlink:href="#mix" /><foreignobject></foreignobject></svg>
           New Mix
         </a>
       </li>
       <li>
         <a href="#mixes">
-          <span class="icon mixes"></span>
+          <svg class="icon"><use xlink:href="#mixes" /><foreignobject></foreignobject></svg>
           My Mixes
         </a>
       </li>
@@ -1555,8 +1554,8 @@ Head of #ctzn speaking, aka The Mister. #ctznmixer</p></div>
 
   <section class="post page">
     <header><h1>Post</h1>
-      <a href="#push" class="back">
-        Go Back
+      <a href="#push" class="cancel">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header>
     <div class="details">
@@ -1671,7 +1670,7 @@ Head of #ctzn speaking, aka The Mister. #ctznmixer</p></div>
 
   <section class="editor page">
     <a href="#push">  
-      <svg aria-label="Go back to the push" class="icon" viewBox="0 0 24 24" width="24" height="24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon><foreignObject>Go back to the push</foreignObject></svg>
+      <svg aria-label="Go back to the push" class="icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#close" /><foreignObject>Go back to the push</foreignObject></svg>
     </a>
 
     <form>
@@ -1692,7 +1691,7 @@ Head of #ctzn speaking, aka The Mister. #ctznmixer</p></div>
       <div class="submit">
         <label>
           <input type="file" />
-          <span class="icon picture"></span>
+          <svg class="icon"><use xlink:href="#picture" /><foreignobject></foreignobject></svg>
           <span>Add image</span>
         </label>
         <button type="submit">Post</button>
@@ -1740,8 +1739,7 @@ Head of #ctzn speaking, aka The Mister. #ctznmixer</p></div>
         </p>
 
         <button class="close">
-          <!-- @icon-close -->
-          <svg aria-label="Hide this message" class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+          <svg aria-label="Hide this message" class="icon" viewBox="0 0 24 24"><use xlink:href="#close" />
             <foreignobject>Hide this message</foreignobject>
           </svg>
         </button>
@@ -1785,8 +1783,7 @@ Head of #ctzn speaking, aka The Mister. #ctznmixer</p></div>
 
     <h1>Developer Tools</h1>
     <button class="close">
-      <!-- @icon-close -->
-      <svg class="icon" viewBox="0 0 24 24"><polygon points="19,6.4 17.6,5 12,10.6 6.4,5 5,6.4 10.6,12 5,17.6 6.4,19 12,13.4 17.6,19 19,17.6 13.4,12 "></polygon>
+      <svg class="icon" viewBox="0 0 24 24"><use xlink:href="#close" />
       </svg>
       Close
     </button>
