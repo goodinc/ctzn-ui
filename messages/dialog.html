@@ -209,56 +209,46 @@
     </nav>
   </header>
 
-  <h1>Loading Error (full screen)</h1>
+  <h1>Dialog</h1>
 
-  <!-- TRICKY: Add a class name of “has-details” to make the screen scrollable. -->
-  <section class="loading error has-details">
+  <section class="dialog page">
+
     <div>
-      <div>
-        <div style="text-align: center; font-size: 2em; margin-bottom: 0.75em;">
-          <!-- @icon-warning -->
-          <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24">
-            <path d="M21.997,18.267L13.503,3.596c-0.827-1.428-2.18-1.428-3.006,0L2.003,18.267
-              C1.176,19.695,1.85,20.864,3.5,20.864h17C22.15,20.864,22.824,19.695,21.997,18.267z M13.045,17.727h-2.091v-2.091h2.091V17.727z
-               M13.045,13.545h-2.091V9.364h2.091V13.545z"/>
-          </svg>
-        </div>
+      <svg class="icon alert"><use xlink:href="#alert" /></svg>
 
-        <h1>Well, this is embarrassing.</h1>
+      <h1>Something went wrong while loading this page.</h1>
 
-        <p>Something went wrong while loading this screen. Care to try again?</p>
-
-        <p class="action">
-
-          <button style="background-color: rgb(255, 49, 59); margin-right: 0.375em;">
-            Reinstall
-          </button>
-
-          <a style="background-color: rgb(101, 156, 247);" href="/" on-click="window.location.reload(true); event.preventDefault();">
-            Restart
-          </a>
-
-        </p>
-
-        <button class="close">
-          <svg aria-label="Hide this message" class="icon" viewBox="0 0 24 24"><use xlink:href="#close" />
-            <foreignobject>Hide this message</foreignobject>
-          </svg>
+      <p class="action">
+        <button class="reinstall">
+          Reinstall
         </button>
 
-        <section class="details">
-          <h2><a href="#details">Details…</a></h2>
-          <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
-            <li>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
-            <li>Consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</li>
-            <li>Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-          </ul>
-        </section>
-      </div>
+        <a class="restart" href="/">
+          Restart
+        </a>
+      </p>
+
+      <section class="details">
+        <h2><a href="#details">More details</a></h2>
+        
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+          <li>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
+          <li>Consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</li>
+          <li>Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+        </ul>
+      </section>
     </div>
+
+    <a href="#close">
+      <svg class="icon">
+        <use xlink:href="#close" />
+        <foreignobject>Close</foreignobject>
+      </svg>
+    </a>
+
   </section>
 
 </body>

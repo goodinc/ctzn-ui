@@ -6,11 +6,12 @@
   with an “@” symbol, to help with search and replace.
 
   For example…
+
   @font-size  : 16px;
   @line-height: 1.5em;
 
   Sections are grouped under headings with a “=” symbol,
-  for easier searching searching.
+  for easier searching.
 */
 
 
@@ -1433,7 +1434,6 @@
   header.primary h1 {
     margin: 0;
     font-size: inherit;
-    color: white;
     display: block;
     height: 1.5em;
   }
@@ -1441,7 +1441,6 @@
     display: block;
     float: left;
     line-height: 1;
-    color: white;
     padding: 0.75em 0.9em;
     line-height: 1;
     border-radius: 0.25em;
@@ -1504,13 +1503,13 @@
     margin-top: 0.675em;
     margin-left: -0.25em;
   }
-  header.primary > a {
+  header.primary a {
     display: block;
     color: inherit;
     text-decoration: none;
   }
-  header.primary > a:active,
-  header.primary > a:focus {
+  header.primary a:active,
+  header.primary a:focus {
     color: white;
   }
 
@@ -3009,11 +3008,54 @@
   ----------------------------------------------- */
 
   .dialog.page {
+    text-align: center;
     position: fixed;
     z-index: 9999;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+    -webkit-overflow-scrolling: touch;
+  }
+  .dialog.page .icon.alert {
+    font-size: 2em;
+    margin-bottom: 0.375em;
+  }
+  .dialog.page h1 {
+    max-width: 15em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .dialog.page .reinstall,
+  .dialog.page .restart {
+    vertical-align: top;
+  }
+  .dialog.page .reinstall {
+    background-color: rgb(255, 49, 59);
+    margin-right: 0.375em;
+  }
+  .dialog.page .restart {
+    background-color: rgb(101, 156, 247);
+  }
+  .dialog.page .action {
+    margin-top: 1.5em;
+  }
+  .dialog.page .details {
+    margin-top: 3em;
+  }
+  .dialog.page .details h2 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+  .dialog.page .details h2 a {
+    text-decoration: none;
+  }
+  .dialog.page .details ul {
+    text-align: left;
   }
 
 
@@ -3034,7 +3076,6 @@
     z-index: 9999;
     opacity: 1;
   }
-  section.loading         .close,
   section.developer-tools .close {
     position: absolute;
     top: 0.375em;
@@ -3050,18 +3091,6 @@
     display: table;
     text-align: center;
   }
-  section.loading.error {
-    -webkit-animation-name: none;
-            animation-name: none;
-    position: fixed;
-  }
-  section.loading.has-details {
-    display: block;
-    overflow: scroll;
-  }
-  section.loading.inactive {
-    opacity: 0;
-  }
   section.loading > div {
     display: table-row;
   }
@@ -3072,37 +3101,6 @@
   }
   section.loading h1 {
     font-size: inherit;
-    display: inline;
-  }
-  section.loading h1 svg {
-    margin-bottom: 1.5em;
-  }
-  section.loading h1 + p:before {
-    content: " — ";
-  }
-  section.loading p {
-    display: inline;
-  }
-  section.loading a {
-    color: inherit;
-  }
-  section.loading .loading-icon + .message {
-    margin-left: 0.375em;
-  }
-  section.loading section {
-    margin-top: 3em;
-    text-align: left;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  section.loading section h2 {
-    font-size: inherit;
-    font-weight: normal;
-  }
-  section.loading .action {
-    margin-top: 1.5em;
-    display: block;
   }
 
 
