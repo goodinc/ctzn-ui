@@ -3057,11 +3057,25 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .dialog.page .reinstall {
+  .dialog.page .action a.reinstall,
+  .dialog.page    button.reinstall {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  .dialog.page .restart {
+  .dialog.page .action a.restart,
+  .dialog.page    button.restart {
     background-color: rgb(101, 156, 247); /* @boysenberry */
+  }
+  .dialog.page .action a.reinstall:active,
+  .dialog.page .action a.reinstall:focus,
+  .dialog.page    button.reinstall:active,
+  .dialog.page    button.reinstall:focus {
+    background-color: rgb(215, 34, 44); /* dark apple */
+  }
+  .dialog.page .action a.restart:active,
+  .dialog.page .action a.restart:focus,
+  .dialog.page    button.restart:active,
+  .dialog.page    button.restart:focus {
+    background-color: rgb(85, 141, 207); /* dark boysenberry */
   }
   .dialog.page .action {
     margin-top: 1.5em;
