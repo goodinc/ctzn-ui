@@ -212,97 +212,147 @@
   <h1>Developer Tools</h1>
 
   <p class="developer action">
-    <a href="#developer-tools">
-      <!-- @icon-settings -->
-      <svg aria-label="Show Developer Tools" class="icon" viewBox="0 0 24 24">
-        <path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
-          l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
-          c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
-          L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
-          c0,0.362-0.121,0.724-0.121,1.206s0,0.844,0.121,1.206l-2.533,2.05c-0.241,0.241-0.241,0.482-0.121,0.724l2.412,4.221
-          c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
-          h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
-          c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
-          c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"/>
-        <foreignobject>Show Developer Tools</foreignobject>
-      </svg>
-    </a>
+    <a href="#"><svg class="icon"><use xlink:href="#settings" /><foreignobject>Show Developer Tools</foreignobject></svg></a>
   </p>
 
-  <section class="developer-tools">
+  <section class="dialog page">
 
-    <h1>Developer Tools</h1>
-    <button class="close">
-      <svg class="icon" viewBox="0 0 24 24"><use xlink:href="#close" />
+    <a href="#close">
+      <svg class="icon">
+        <use xlink:href="#close" />
+        <foreignobject>Close</foreignobject>
       </svg>
-      Close
-    </button>
+    </a>
 
-    <ul class="action">
-      <li>
-        <button>Reload</button>
-      </li>
-      <li>
-        <button onclick="good.reinstall();">Reinstall</button>
-      </li>
-      <li>
-        <button>Upload logs</button>
-      </li>
-      <li>
-        <button>Clear upload queue</button>
-      </li>
-    </ul>
+    <div>
+      <svg class="icon"><use xlink:href="#settings" /></svg>
 
-    <dl>
-      <dt>Version</dt>
-      <dd></dd>
-      <dt>DB</dt>
-      <dd></dd>
-    </dl>
+      <h1>Developer Tools</h1>
 
-    <h2>Simulators</h2>
-    <p>
-      <label>
-        <span>Simulate server call delay (in seconds):</span><br />
-        <input type='number'>
-      </label>
-    </p>
-    <p>
-      <label>
-        <span>Simulate error on all server calls</span><br />
-        <select>
-          <option value=''></option>
-          <option value='CONNECTION_ERROR'>CONNECTION_ERROR</option>
-          <option value='NOT_FOUND'>NOT_FOUND</option>
-          <option value='SERVICE_UNAVAILABLE_ERROR'>Service Outage</option>
-          <option value='MUST_UPDATE_ERROR'>Required Update</option>
-        </select>
-      </label>
-    </p>
+      <ul class="action">
+        <li>
+          <button class="restart" data-bind="click: reload">Restart</button>
+        </li>
+        <li>
+          <button class="reinstall" onclick="good.reinstall();">Reinstall</button>
+        </li>
+        <li>
+          <button data-bind="click: uploadLogs">Upload logs</button>
+        </li>
+        <li>
+          <button data-bind="click: clearUploadQueue">Clear upload queue</button>
+        </li>
+      </ul>
 
-    <h2>Diagnostic Report:</h2>
-    <!-- ko ifnot: diagnosticReport() -->
-    <p class="action">
-      <button>Generate</button>
-    </p>
-    <!-- /ko -->
-    <!-- ko if: diagnosticReport() -->
-    <pre></pre>
-    <!-- /ko -->
+      <dl>
+        <dt>Version</dt>
+        <dd data-bind="text: codeVersion">6d97a0c8871a9d945abff65bb1c89b96</dd>
+        <dt>DB</dt>
+        <dd data-bind="text: dbVersion">/1dbQ+ZBhuswZ+4SjyXCpB7CSdg=</dd>
+      </dl>
 
-    <h2>Logs:</h2>
-    <ul class="logs">
-      <li>
-        <time></time>
-        <span></span>
-      </li>
-    </ul>
+      <form>
+        <h2>Diagnostic Report:</h2>
+        <p class="action">
+          <button data-bind="click: generateDiagnosticReport">Generate</button>
+        </p>
+      </form>
 
-    <p class="action">
-      <button>
-        Close
-      </button>
-    </p>
+      <form>
+        <h2>Simulators</h2>
+        <p>
+          <label>
+            <span>Simulate server call delay (in seconds):</span><br />
+            <input type="number" placeholder="Enter a number" />
+          </label>
+        </p>
+        <p>
+          <label>
+            <span>Simulate error on all server calls</span><br />
+            <select data-bind="value: good.serverCallSimulatedError">
+              <option value="">Choose one</option>
+              <option value=""></option>
+              <option value="CONNECTION_ERROR">CONNECTION_ERROR</option>
+              <option value="NOT_FOUND">NOT_FOUND</option>
+              <option value="SERVICE_UNAVAILABLE_ERROR">Service Outage</option>
+              <option value="MUST_UPDATE_ERROR">Required Update</option>
+            </select>
+          </label>
+        </p>
+      </form>
+
+      <div class="logs">
+        <h2>Logs:</h2>
+        <ul>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>LOAD_PUSH_DATA_FROM_WEBSQL (at 49ms): emitted first item</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.currentPush took 0ms</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>LOAD_PUSH_DATA_FROM_WEBSQL (at 49ms): completed successfully</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>Controller "push screen" onResume()</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>showTemplate #push-screen</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>WebSQL tables updated (syncRequestNumber 1). Updating sync metadata.</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>Sync: nothing changed</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.currentPush took 147ms</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.globalDataModel took 148ms</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:16">2015-01-28 21:19:16</time><span>realtime onException: Unable to connect</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:17">2015-01-28 21:19:17</time><span>realtime onException: Unable to connect</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:21">2015-01-28 21:19:21</time><span>realtime onException: Unable to connect</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>Controller "post options" onResume()</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>showTemplate #post-options-toolbar</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>realtime onException: Unable to connect</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:23">2015-01-28 21:19:23</time><span>Controller "post options" onPause()</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:23">2015-01-28 21:19:23</time><span>removeScreen #post-options-toolbar</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>Controller "push screen" onPause()</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>removeScreen #push-screen</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>Controller "post screen" onResume()</span>
+          </li>
+        </ul>
+      </div><!-- /.logs -->
+
+      <p class="action">
+        <a href="#close"><svg class="icon"><use xlink:href="#close" /></svg> Close</a>
+      </p>
+
+    </div>
+
   </section>
 
 </body>

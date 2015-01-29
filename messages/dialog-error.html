@@ -209,15 +209,27 @@
     </nav>
   </header>
 
-  <h1>Loading (full screen)</h1>
+  <h1>Dialog (error)</h1>
 
-  <section class="loading" role="status">
-    <div><div>
-      <h1>
-        <svg class="icon ctzn"><use xlink:href="#ctzn" /><foreignobject>CTZN</foreignobject></svg><br />
-        <span class="loading-icon"></span>
-      </h1>
-    </div></div>
+  <section class="dialog page">
+    <div>
+      <svg class="icon alert"><use xlink:href="#alert" /></svg>
+
+      <h1>Something went wrong while loading CTZN.</h1>
+
+      <ul class="action">
+        <li>
+          <button class="restart">
+            Restart
+          </button>
+        </li>
+        <li>
+          <button class="reinstall">
+            Reinstall
+          </button>
+        </li>
+      </ul>
+    </div>
   </section>
 
 </body>

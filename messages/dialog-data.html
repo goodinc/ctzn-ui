@@ -209,15 +209,29 @@
     </nav>
   </header>
 
-  <h1>Loading (full screen)</h1>
+  <h1>Dialog (error)</h1>
 
-  <section class="loading" role="status">
-    <div><div>
-      <h1>
-        <svg class="icon ctzn"><use xlink:href="#ctzn" /><foreignobject>CTZN</foreignobject></svg><br />
-        <span class="loading-icon"></span>
-      </h1>
-    </div></div>
+  <section class="dialog page">
+    <div>
+      <svg class="icon alert"><use xlink:href="#alert" /></svg>
+
+      <h1>CTZN can’t save data.</h1>
+
+      <p>If this is a private browsing tab, please try opening this page in a regular tab. Otherwise please try again in another browser or on another device.</p>
+
+      <ul class="action">
+        <li>
+          <button class="restart">
+            Restart
+          </button>
+        </li>
+        <li>
+          <button class="reinstall">
+            Reinstall
+          </button>
+        </li>
+      </ul>
+    </div>
   </section>
 
 </body>
