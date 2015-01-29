@@ -176,7 +176,6 @@
     color: black;
     color: rgba(0, 0, 0, 0.75);
     text-align: center;
-    transition: background-color 0.2s;
   }
   main h1.logo {
     font-family: "Proxima N W01 Xbold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @extrabold */
@@ -214,31 +213,34 @@
     color: white;
   }
 
-  main.lime {
+  #color {
+    transition: background-color 0.2s;
+  }
+  .lime {
     background-color: rgb(203, 253, 128); /* @lime */
   }
-  main.cucumber {
+  .cucumber {
     background-color: rgb(150, 254, 166); /* @cucumber */
   }
-  main.blueberry {
+  .blueberry {
     background-color: rgb(99, 204, 203); /* @blueberry */
   }
-  main.boysenberry {
+  .boysenberry {
     background-color: rgb(101, 156, 247); /* @boysenberry */
   }
-  main.plumb {
+  .plumb {
     background-color: rgb(193, 77, 166); /* @plumb */
   }
-  main.strawberry {
+  .strawberry {
     background-color: rgb(255, 49, 102); /* @strawberry */
   }
-  main.apple {
+  .apple {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  main.tangerine {
+  .tangerine {
     background-color: rgb(255, 202, 72); /* @tangerine */
   }
-  main.orange {
+  .orange {
     background-color: rgb(242, 64, 41); /* @orange */
   }
 
