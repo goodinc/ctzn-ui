@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <section class="message" role="status">
+  <section class="message" role="status" id="confirmation-message">
     <div class="container">
       <h1>Thanks for signing up!</h1>
       <p>Please check your email to confirm.</p>
@@ -24,11 +24,11 @@
   <main>
     <div class="container">
       <h1 class="logo">Citizen</h1>
-      <p>Easily connect, organize, and raise awareness.</p>
+      <h2>Helping changemakers easily <strong>connect</strong> + <strong>organize</strong> + <strong>raise awareness</strong></h2>
 
       <!-- Begin MailChimp Signup Form -->
       <form action="//good.us2.list-manage.com/subscribe/post?u=5b63a0823e3b9c105434c46d7&amp;id=f9c7839dae" method="post" name="mc-embedded-subscribe-form">
-        <h2>Stay tuned…</h2>
+        <h3>Stay tuned…</h3>
         <p>
           <label>
             <span>Full name</span><br />
@@ -60,6 +60,21 @@
       <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
     </div>
   </footer>
+
+  <script>
+  (function() {
+
+    setTimeout(function() {
+      var message = document.getElementById('confirmation-message');
+      if (message) {
+        message.getElementsByTagName('div')[0].style.color = 'transparent';
+        message.getElementsByTagName('div')[0].style.height = '1px';
+        message.getElementsByTagName('div')[0].style.padding = '0';
+      }
+    }, 10000);
+
+  })();
+  </script>
 
 </body>
 </html>
