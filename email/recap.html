@@ -103,7 +103,7 @@
     /* =Sections
     ----------------------------------------------- */
     .header,
-    .members,
+    .members li,
     .article,
     .footer {
       background-color: white;
@@ -118,13 +118,13 @@
       padding: 9px 18px;
     }
     .section > .header,
-    .members {
+    .members li {
       padding: 9px 18px;
     }
     .footer {
       padding: 27px 18px;
     }
-    .members,
+    .members li,
     .article {
       margin-top: 1px;
     }
@@ -176,17 +176,15 @@
     ----------------------------------------------- */
     .members ul {
       list-style: none;
-      margin-top: 1px;
       margin-left: 0;
       padding-left: 0;
+      margin-top: 0;
     }
     .members li {
       color: rgb(153, 153, 153); /* @nickel */
     }
-    .members li + li {
-      margin-top: 8px;
-      border-top: 1px solid rgb(238, 238, 238); /* @seashell */
-      padding-top: 9px;
+    .members li a {
+      text-decoration: none;
     }
     .members li .avatar {
       margin-right: 9px;
@@ -225,7 +223,7 @@
       display: inline;
       font-size: 11px;
     }
-    .body > .footer li:last-child {
+    .body > .footer li.instagram {
       float: right;
       margin-right: 9px; /* 18px / 2 */
     }
@@ -360,7 +358,7 @@
         </time>
       </p>
 
-      <p class="ctzn">powered by <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAUCAQAAABo3dZWAAAB3klEQVR4Ab3TO0g9ZBgG8J+fB7xEFEplEdVgdwOFGiL4Uy1BmESGQS42KkEtNhRI5tKSY0QXsaULtNSSi12I+A8VFOQgRqBUJB66iJqD+gYHPr7O4XA8qPR7tucd3uH9Pq3FF5Eth/MktR5fnOR/UlEkA67xt98duhh9bnDoZyd0BHCjFz3hOnDsMwu+8ooxg64A/GkLwybNambOug9ljxryqhGwY84bQoinYj8avRbLkRXi+WhuKoajeD3qjSeMek+vRjc5j2n1Xkh6vCVpVDXjIt1b8YwBxZd+86DrzdhRtWlAF2BfFezaBPS5UvaXVf0ovlY1qhOQxEpkJzEeQvTGs6GWVh+2P36NYiLU3WghhJgvhdiJ7JOQc+qijvg4indCw6JbQognS5H0y77Rvmljsg3Pae6ILDmWdWvXPRZlR56251TJtuwh7enxgS7ZS77VhuSy7H7zKrjVkk6NBpHAortkl73t6lq6tRYT8V/b8WMcRcRsqOXTKNZrR38kmnu5yWN4vBTJR9YU17pbJxbcAaqK2zyAO51JcmLSrkZd3gSfK7jdVc4o4QcP21DvwBJ435qC+5xRBXxnyJQJI/oc2LRi0S/gH5fMe8zN2LbqJ8m7mvneH2ViD2yV5l8B7Ogy1mCf6gAAAABJRU5ErkJggg==" height="10" alt="ctzn" /></p>
+      <p class="ctzn">powered by <b>ctzn</b></p>
 
     </div><!-- /.header -->
 
