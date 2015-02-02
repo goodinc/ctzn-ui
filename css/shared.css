@@ -3140,7 +3140,9 @@
 
   /* =Developer Tools
   ----------------------------------------------- */
-
+  .developer.dialog.page > div {
+    max-width: none;
+  }
   .dialog.page dl,
   .dialog.page .logs,
   .dialog.page form {
@@ -3204,8 +3206,7 @@
     margin-right: -1.25em;
     padding: 1.25em;
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  }
-  .dialog.page .logs li {
+
     /* @wrap-long-words */
     word-wrap     : break-word;
     overflow-wrap : break-word;

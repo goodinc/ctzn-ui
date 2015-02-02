@@ -215,7 +215,7 @@
     <a href="#"><svg class="icon"><use xlink:href="#settings" /><foreignobject>Show Developer Tools</foreignobject></svg></a>
   </p>
 
-  <section class="dialog page">
+  <section class="developer dialog page">
 
     <a href="#close">
       <svg class="icon">
@@ -254,8 +254,52 @@
       <form>
         <h2>Diagnostic Report:</h2>
         <p class="action">
-          <button data-bind="click: generateDiagnosticReport">Generate</button>
+          <button>Generate</button>
         </p>
+        <pre>Generated at Mon Feb 02 2015 15:51:19 GMT-0800 (PST)
+navigator.userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.94 Safari/537.36
+good.currentScreen: {"name":"push"}
+good.realtimeConnectionState: CONNECTED
+good.appCacheStatus: IDLE
+good.IS_HYBRID_APP: false
+GOODConfig.APPCACHE_VERSION: 259345111b2c59164b0f5eae5d24219c
+
+GOODConfig.DB_FORMAT_VERSION: /1dbQ+ZBhuswZ+4SjyXCpB7CSdg=
+GOODConfig.BASE_URL: https://m.ctznapp.demo.goodalpaca.com/
+GOODConfig.BASE_IMAGE_URL: https://m.ctznapp.demo.goodalpaca.com/
+GOODConfig.BASE_WEB_URL: http://www.ctznapp.demo.goodalpaca.com/
+GOODConfig.MIXPANEL_TOKEN: bd1e62b941493af2b6ea7cb737671a05
+GOODConfig.MIXPANEL_API_HOST: https://m.ctznapp.demo.goodalpaca.com/p/mxpnl
+GOODConfig.AIRBRAKE_API_KEY: 6fb40acfe14526118e7985b65a2d8c05
+GOODConfig.REALTIME_APP_KEY: 3u40KC
+GOODConfig.REALTIME_URL: /p/ortc/server/2.1/
+GOODConfig.MAX_POST_SIZE: 10485760
+localStorage.current_push_id: 17
+localStorage.current_user_id: 4
+localStorage.last_logged_in_user_id: 4
+localStorage.last_sync: 2015-02-02 23:51:02
+localStorage.realtime_auth_token: 86fe4489a9a92c766041fc150b967d5b4205bb94
+localStorage.sync_db_format_version: /1dbQ+ZBhuswZ+4SjyXCpB7CSdg=
+localStorage.sync_reference_point: 2015-02-02 23:29:21
+localStorage.sync_schema: soUJxv8JBIzGjIiD1w4S9qT1us4=
+WebSQL database: ctzn
+Error examining table ctzn.__WebKitDatabaseInfoTable__: could not prepare statement (23 access to __WebKitDatabaseInfoTable__.key is prohibited)
+Table persisted_queue__upload_post has 0 row(s), estimated 0 bytes
+Table posts has 468 row(s), estimated 78,239 bytes
+Table users has 25 row(s), estimated 2,701 bytes
+Table push_users has 25 row(s), estimated 925 bytes
+Table attaboys has 352 row(s), estimated 23,232 bytes
+Table pushes has 1 row(s), estimated 100 bytes
+Table social_media_feeds has 0 row(s), estimated 0 bytes
+Table notifications has 23 row(s), estimated 1,771 bytes
+Table mixes has 11 row(s), estimated 2,218 bytes
+Table push_hashtags has 2 row(s), estimated 140 bytes
+Database ctzn estimated size 109,326 bytes
+WebSQL database: ctzn_logs
+Error examining table ctzn_logs.__WebKitDatabaseInfoTable__: could not prepare statement (23 access to __WebKitDatabaseInfoTable__.key is prohibited)
+Table logs has 65 row(s), estimated 63,300 bytes
+Database ctzn_logs estimated size 63,300 bytes
+Estimated app-wide storage: 172,902 bytes</pre>
       </form>
 
       <form>
