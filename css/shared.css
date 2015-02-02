@@ -1974,7 +1974,7 @@
   .comments ol {
     margin: 0 0 1.25em;
   }
-  .comments li + li {
+  .comments ol li + li {
     margin-top: 0.8571428571em; /* @line-height / 4 / 0.875 */
   }
   .comments article {
@@ -2011,23 +2011,23 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .editor ol {
+  .editor .images {
     margin: 1.5em 0 3em;
   }
-  .editor li {
+  .editor .images li {
     margin: 0 0 0.75em;
     padding: 0.375em;
     background-color: rgb(250, 250, 250); /* @casper */
     background: white;
     border: 0.1em solid rgb(222, 222, 222); /* @silver*/
   }
-  .editor li img {
+  .editor .images li img {
     height: 1.5em;
     width: auto;
     vertical-align: middle;
     margin-right: 0.375em;
   }
-  .editor li button {
+  .editor .images li button {
     padding: 0;
     float: right;
     color: inherit;
@@ -3338,15 +3338,17 @@
   /* =Edit Post (intro & outro)
   ----------------------------------------------- */
   section.editor.page {
-    position: fixed;
+    position: absolute;
     z-index: 99;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    overflow: scroll;
+    min-height: 100%;
     -webkit-animation: slide-up 0.3s both;
             animation: slide-up 0.3s both;
+  }
+  section.editor.page.intro {
+    position: fixed;
   }
   section.editor.page.outro {
     -webkit-animation: slide-down 0.3s both;
