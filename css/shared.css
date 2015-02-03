@@ -1712,20 +1712,6 @@
     background-color: rgb(242, 64, 41); /* @orange */
   }
 
-  .push-card.page > header {
-    background-color: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  .push-card.page > header .back {
-    border-right-width: 0;
-    color: white;
-  }
-  .push-card.page > header .next {
-    border-left-width: 0;
-    color: white;
-  }
-
   /* Sometimes the push-card is a link */
   a.push-card {
     display: block;
@@ -1796,8 +1782,17 @@
   }
 
   /* Join Button */
+  .start.page > div,
+  .push-card .details {
+    margin-top: 0.75em;
+  }
   .push-card form {
-    margin: 3em auto 0;
+    margin-top: 1.875em;
+  }
+  .push-card form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
     max-width: 20em;
   }
   .dialog.page .action a,
