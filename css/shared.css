@@ -736,7 +736,9 @@
                                             (which happens to come later in the style sheet). */
   }
     .error-message a,
-  .loading-message a {
+  .loading-message a,
+    .error-message button,
+  .loading-message button {
     color: inherit;
   }
 

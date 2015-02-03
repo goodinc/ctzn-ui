@@ -36,6 +36,10 @@
       margin-bottom: 3em;
     }
 
+    .page {
+      position: relative;
+    }
+
     .start.page aside {
       position: relative;
     }
@@ -80,6 +84,7 @@
 </head>
 <body class="pattern">
 
+  <!-- images/icons.svg -->
   <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
      <symbol id="ctzn" viewBox="0 0 100 37.818">
@@ -288,27 +293,14 @@
     </header>
   </section>
 
-
   <section class="strawberry push-card page">
-    <header>
-      <!-- TODO: Consider removing this headline (it’s currently needed for styling purposes) -->
-      <h1>This page title isn’t visible</h1>
 
-      <a href="#start" class="back">
-        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
-      </a>
+    <a href="#start" class="back"><svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg></a>
 
-      <a href="#start" class="next">
-        <svg aria-label="Close" class="icon" viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#close" />
-          <foreignobject>Close</foreignobject>
-        </svg>
-      </a>
-    </header>
+    <a href="#start"><svg class="icon"><use xlink:href="#close" /><foreignobject>Close</foreignobject></svg></a>
 
     <div class="details">
-      <!-- TOOD: Consider making this a first level headline (h1). -->
-      <h2>LA 2050</h2>
+      <h1 class="name">LA 2050</h1>
     </div>
 
   </section>
@@ -336,8 +328,8 @@
       </div>
 
       <div class="details">
-        <h2>Jelena Woehr</h2>
-        <h3>Land cuttlefish. Word aficionado. Director of Community at GOOD.</h3>
+        <h2 class="name">Jelena Woehr</h2>
+        <h3 class="about">Land cuttlefish. Word aficionado. Director of Community at GOOD.</h3>
 
         <p class="joined">Joined <time datetime="2014-09-30T19:19:50.000+00:00">15 weeks ago</time></p>
       </div>
@@ -365,21 +357,21 @@
       <ul>
         <li>
           <a href="push.html" class="push-card orange">
-            <h2>Project Citizen</h2>
-            <p>Helping social creatives celebrate the work they do</p>
+            <h2 class="name">Project Citizen</h2>
+            <p class="about">Helping social creatives celebrate the work they do</p>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card blueberry">
-            <h2>cicLAvia</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            <h2 class="name">cicLAvia</h2>
+            <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua.</p>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card lime">
-            <h2>LA 2050</h2>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+            <h2 class="name">LA 2050</h2>
+            <p class="about">Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.</p>
           </a>
         </li>
@@ -416,34 +408,26 @@
 
   <header id="header" class="primary"><h1>
       <a href="#sync">
-        <svg aria-label="Citizen" class="icon" viewBox="0 0 100 37.818" width="100" height="38"><path d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
-            c0-2.292,0.362-4.373,1.086-6.243c0.724-1.87,1.739-3.478,3.046-4.825s2.855-2.382,4.644-3.106c1.789-0.724,3.75-1.086,5.881-1.086
-            c2.573,0,4.735,0.432,6.484,1.297c1.749,0.864,3.026,1.759,3.83,2.684l-4.765,7.057c-0.523-0.603-1.136-1.096-1.84-1.478
-            c-0.704-0.382-1.518-0.573-2.443-0.573c-1.528,0-2.825,0.543-3.89,1.629c-1.066,1.086-1.598,2.634-1.598,4.644
-            c0,2.01,0.533,3.569,1.598,4.674c1.066,1.106,2.362,1.659,3.89,1.659c0.925,0,1.739-0.201,2.443-0.603
-            c0.704-0.402,1.317-0.905,1.84-1.508l4.765,7.117c-0.804,0.925-2.081,1.819-3.83,2.684c-1.749,0.864-3.91,1.297-6.484,1.297
-            C12.525,37.818,10.565,37.446,8.776,36.702z"></path><path d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
-            v8.806h-4.584v9.59c0,0.764,0.161,1.367,0.482,1.809s0.784,0.663,1.387,0.663c0.362,0,0.714-0.05,1.056-0.151
-            c0.342-0.101,0.573-0.231,0.694-0.392l1.689,7.962c-0.563,0.442-1.397,0.814-2.503,1.116c-1.106,0.302-2.423,0.452-3.951,0.452
-            C35.344,37.818,33.052,37.084,31.604,35.616z"></path><path d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"></path><path d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
-            s-1.759,0.282-2.383,0.844c-0.623,0.563-1.116,1.126-1.478,1.689v18.336H72.798V7.962h10.133v3.378
-            c0.724-1.005,1.86-1.94,3.408-2.805c1.548-0.865,3.327-1.297,5.338-1.297c2.935,0,5.056,0.774,6.363,2.322
-            c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"></path><foreignObject>Citizen</foreignObject></svg>
+        <svg class="icon" viewBox="0 0 100 37.818" width="100" height="38">
+          <use xlink:href="#ctzn" />
+          <foreignObject>Citizen</foreignObject>
+        </svg>
       </a>
 
       <span class="sending icon active"></span>
     </h1>
 
     <a href="#notifications" class="notifications">
-      
-      <svg aria-label="Notifications" class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M17.497,10.444c0-3.93-1.976-5.69-3.572-6.47C13.916,2.882,13.03,2,11.937,2
-        c-1.099,0-1.989,0.89-1.989,1.989c0,0.016,0.002,0.032,0.003,0.048c-1.572,0.81-3.447,2.577-3.447,6.407
-        c0,0,0.447,5.82-3.012,5.736v1.726h8.446h0.126h8.447V16.18C17.05,16.264,17.497,10.444,17.497,10.444z"></path><path d="M8.77,18.919C8.885,20.64,10.313,22,12.063,22s3.178-1.361,3.292-3.082H8.77z"></path><foreignObject>Notifications</foreignObject></svg></a>
+      <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#bell" />
+        <foreignObject>Notifications</foreignObject>
+      </svg>
+    </a>
 
     <a href="#profile" class="profile">
       <span class="avatar">
-        <img></span>
-      <span class="avatar"></span>
+        <span class="sky size30" data-content="J"></span>
+      </span>
     </a>
   </header>
 
@@ -458,8 +442,8 @@
     </p>
     -->
     <header class="orange header push-card">
-      <h2>Project Citizen</h2>
-      <h3>Helping social creatives celebrate the work they do</h3>
+      <h2 class="name">Project Citizen</h2>
+      <h3 class="about">Helping social creatives celebrate the work they do</h3>
 
       <div class="meta">
         <p>
@@ -474,16 +458,8 @@
         </p>
         <p class="settings">
           <a href="settings.html">
-            <svg aria-label="My Settings" class="icon" viewBox="0 0 24 24" width="24" height="24">
-              <path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
-                l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
-                c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
-                L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
-                c0,0.362-0.121,0.724-0.121,1.206s0,0.844,0.121,1.206l-2.533,2.05c-0.241,0.241-0.241,0.482-0.121,0.724l2.412,4.221
-                c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
-                h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
-                c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
-                c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"></path>
+            <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+              <use xlink:href="#settings" />
               <foreignObject>My Settings</foreignObject>
             </svg>
           </a>
@@ -516,193 +492,6 @@
         </a>
       </li>
     </ul>
-  </section>
-
-  <section class="editor page">
-    <a href="#push">  
-      <svg aria-label="Go back to the push" class="icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#close" /><foreignObject>Go back to the push</foreignObject></svg>
-    </a>
-
-    <form>
-      <h1>
-        <span class="avatar">
-          <img height="30" width="30" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
-        </span>
-        <span>jim</span>
-      </h1>
-
-      <p class="text">
-        <label>
-          <span>Write a note…</span><br />
-          <textarea placeholder="Write a note…"></textarea>
-        </label>
-      </p>
-
-      <div class="submit">
-        <label>
-          <input type="file" />
-          <svg class="icon"><use xlink:href="#picture" /><foreignobject></foreignobject></svg>
-          <span>Add image</span>
-        </label>
-        <button type="submit">Post</button>
-      </div>
-    </form>
-  </section>
-
-  <h2>Loading</h2>
-
-  <section class="loading" role="status">
-    <div><div>
-      <h1><span class="loading-icon"></span> <span class="message">Loading images...</span></h1>
-    </div></div>
-  </section>
-
-  <h2>Error</h2>
-
-  <!-- TRICKY: Add a class name of “has-details” to make the screen scrollable. -->
-  <section class="loading error has-details">
-    <div>
-      <div>
-        <div style="text-align: center; font-size: 2em; margin-bottom: 0.75em;">
-          <!-- @icon-warning -->
-          <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24">
-            <path d="M21.997,18.267L13.503,3.596c-0.827-1.428-2.18-1.428-3.006,0L2.003,18.267
-              C1.176,19.695,1.85,20.864,3.5,20.864h17C22.15,20.864,22.824,19.695,21.997,18.267z M13.045,17.727h-2.091v-2.091h2.091V17.727z
-               M13.045,13.545h-2.091V9.364h2.091V13.545z"/>
-          </svg>
-        </div>
-
-        <h1>Well, this is embarrassing.</h1>
-
-        <p>Something went wrong while loading this screen. Care to try again?</p>
-
-        <p class="action">
-
-          <button style="background-color: rgb(255, 49, 59); margin-right: 0.375em;">
-            Reinstall
-          </button>
-
-          <a style="background-color: rgb(101, 156, 247);" href="/" on-click="window.location.reload(true); event.preventDefault();">
-            Restart
-          </a>
-
-        </p>
-
-        <button class="close">
-          <svg aria-label="Hide this message" class="icon" viewBox="0 0 24 24"><use xlink:href="#close" />
-            <foreignobject>Hide this message</foreignobject>
-          </svg>
-        </button>
-
-        <section class="details">
-          <h2><a href="#details">Details…</a></h2>
-          <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
-            <li>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
-            <li>Consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</li>
-            <li>Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-          </ul>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <h2>Developer Tools</h2>
-
-  <p class="developer action">
-    <a href="#developer-tools">
-      <!-- @icon-settings -->
-      <svg aria-label="Show Developer Tools" class="icon" viewBox="0 0 24 24">
-        <path d="M20.912,13.216c0-0.362,0.121-0.724,0.121-1.206s0-0.844-0.121-1.206l2.533-2.05c0.241-0.241,0.241-0.482,0.121-0.724
-          l-2.412-4.221c-0.121-0.121-0.362-0.241-0.724-0.121l-3.015,1.206c-0.603-0.482-1.327-0.844-2.05-1.206l-0.482-3.136
-          c0.121-0.362-0.241-0.603-0.482-0.603H9.575c-0.241,0-0.603,0.241-0.603,0.482L8.489,3.689C7.766,3.93,7.163,4.412,6.439,4.895
-          L3.545,3.689c-0.362-0.121-0.603,0-0.844,0.241L0.288,8.151c-0.121,0.121,0,0.482,0.241,0.724l2.533,1.93
-          c0,0.362-0.121,0.724-0.121,1.206s0,0.844,0.121,1.206l-2.533,2.05c-0.241,0.241-0.241,0.482-0.121,0.724l2.412,4.221
-          c0.121,0.121,0.362,0.241,0.724,0.121l3.015-1.206c0.603,0.482,1.327,0.844,2.05,1.206l0.482,3.136c0,0.241,0.241,0.482,0.603,0.482
-          h4.824c0.241,0,0.603-0.241,0.603-0.482l0.482-3.136c0.724-0.362,1.447-0.724,2.05-1.206l3.015,1.206
-          c0.241,0.121,0.603,0,0.724-0.241l2.412-4.221c0.121-0.241,0.121-0.603-0.121-0.724L20.912,13.216z M11.987,16.231
-          c-2.291,0-4.221-1.93-4.221-4.221s1.93-4.221,4.221-4.221s4.221,1.93,4.221,4.221S14.278,16.231,11.987,16.231z"/>
-        <foreignobject>Show Developer Tools</foreignobject>
-      </svg>
-    </a>
-  </p>
-
-  <section class="developer-tools">
-
-    <h1>Developer Tools</h1>
-    <button class="close">
-      <svg class="icon" viewBox="0 0 24 24"><use xlink:href="#close" />
-      </svg>
-      Close
-    </button>
-
-    <ul class="action">
-      <li>
-        <button>Reload</button>
-      </li>
-      <li>
-        <button onclick="good.reinstall();">Reinstall</button>
-      </li>
-      <li>
-        <button>Upload logs</button>
-      </li>
-      <li>
-        <button>Clear upload queue</button>
-      </li>
-    </ul>
-
-    <dl>
-      <dt>Version</dt>
-      <dd></dd>
-      <dt>DB</dt>
-      <dd></dd>
-    </dl>
-
-    <h2>Simulators</h2>
-    <p>
-      <label>
-        <span>Simulate server call delay (in seconds):</span><br />
-        <input type='number'>
-      </label>
-    </p>
-    <p>
-      <label>
-        <span>Simulate error on all server calls</span><br />
-        <select>
-          <option value=''></option>
-          <option value='CONNECTION_ERROR'>CONNECTION_ERROR</option>
-          <option value='NOT_FOUND'>NOT_FOUND</option>
-          <option value='SERVICE_UNAVAILABLE_ERROR'>Service Outage</option>
-          <option value='MUST_UPDATE_ERROR'>Required Update</option>
-        </select>
-      </label>
-    </p>
-
-    <h2>Diagnostic Report:</h2>
-    <!-- ko ifnot: diagnosticReport() -->
-    <p class="action">
-      <button>Generate</button>
-    </p>
-    <!-- /ko -->
-    <!-- ko if: diagnosticReport() -->
-    <pre></pre>
-    <!-- /ko -->
-
-    <h2>Logs:</h2>
-    <ul class="logs">
-      <li>
-        <time></time>
-        <span></span>
-      </li>
-    </ul>
-
-    <p class="action">
-      <button>
-        Close
-      </button>
-    </p>
   </section>
 
 </body>
