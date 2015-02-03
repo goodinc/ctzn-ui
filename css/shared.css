@@ -532,7 +532,7 @@
   }
   .text label {
     background: white;
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     display: block;
     border-radius: 0.25em;
     padding-top: 0.1875em;
@@ -681,7 +681,7 @@
     background-color: white;
     color: rgb(51, 51, 51); /* @iron */
     font-weight: bold;
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
     width: 100%;
     padding: 0.75em 1.5em;
     box-sizing: border-box;
@@ -743,7 +743,7 @@
   section.upload-message {
     padding: 0.625em 1.5em;
     box-sizing: border-box;
-    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     line-height: 1.3333333333; /* @line-height / 1.125em */
     position: relative;
   }
@@ -756,7 +756,7 @@
   /* On the post page, the upload message appears after the related content. */
   .comments section.upload-message {
     border-bottom-width: 0;
-    border-top: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
@@ -883,7 +883,7 @@
     padding-left: 3.25em;
     text-decoration: none;
     background: white;
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
   }
@@ -946,7 +946,7 @@
   .post-list > li {
     margin: 0 auto;
     max-width: 31.25em; /* image.width / @font-size (500px / 16px) */
-    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
   }
   .post-list > li:last-child {
     border-bottom-width: 0;
@@ -1144,11 +1144,11 @@
             transform: translateY(0);
   }
   .post-options ul {
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     background: white;
   }
   .post-options li + li {
-    border-top: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver*/
   }
   .post-options li button {
     display: block;
@@ -1185,7 +1185,7 @@
     padding: 0.75em 0.75em 0.75em 1.25em;
     z-index: 9;
     box-sizing: border-box;
-    border-bottom: 0.1em solid rgb(51, 51, 51); /* @iron */
+    border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
   }
   header.primary h1 {
     margin: 0;
@@ -1226,7 +1226,7 @@
     padding: 0.75em;
   }
   header.primary > a {
-    border-left: 0.1em solid rgb(44, 44, 44); /* @thorium */
+    border-left: 0.0625em solid rgb(44, 44, 44); /* @thorium */
   }
   header.primary .notifications {
     position: absolute;
@@ -1297,7 +1297,7 @@
   section.push .new-posts button {
     background: white;
     color: rgb(255, 49, 102); /* @strawberry */
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     transition: all 0.2s;
   }
   section.push .new-posts button:active,
@@ -1462,7 +1462,7 @@
     box-sizing: border-box;
     background-color: rgb(51, 51, 51); /* @iron */
     color: white;
-    border-bottom: 0.1em solid rgb(51, 51, 51); /* @iron */
+    border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
   }
   .page > header h1 {
     margin: 0;
@@ -1480,16 +1480,16 @@
   .page > header .back {
     position: absolute;
     top: 0;
-    padding: 0.75em 1em;
+    padding: 0.75em;
     border: 0 solid rgb(44, 44, 44); /* @thorium */
   }
   .page > header .next {
     right: 0;
-    border-left-width: 0.1em;
+    border-left-width: 0.0625em;
   }
   .page > header .back {
     left: 0;
-    border-right-width: 0.1em;
+    border-right-width: 0.0625em;
   }
   .page > header .back {
     text-decoration: none;
@@ -1510,7 +1510,7 @@
   }
   .mix.page          > header a,
   .mixes.page        > header a,
-  .mix-editor        > header a,
+  .mix-editor.page   > header a,
   .post.page         > header a,
   .edit.page         > header a,
   .edit-profile.page > header a {
@@ -1521,8 +1521,8 @@
   .mix.page          > header a:focus,
   .mixes.page        > header a:active,
   .mixes.page        > header a:focus,
-  .mix-editor        > header a:active,
-  .mix-editor        > header a:focus,
+  .mix-editor.page   > header a:active,
+  .mix-editor.page   > header a:focus,
   .post.page         > header a:active,
   .post.page         > header a:focus,
   .edit.page         > header a:active,
@@ -1610,7 +1610,7 @@
     text-decoration: none;
     font-weight: normal;
     background: white;
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
   }
@@ -1893,7 +1893,7 @@
   /* OPTIONAL: Make the meta data stick to the bottom of
                the card, on the push and profile pages. */
   .header.push-card {
-    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
   }
   .header.push-card .meta {
     background: rgb(204, 204, 204); /* @aluminum */
@@ -1936,7 +1936,7 @@
   }
   .post.page .details {
     max-width: none;
-    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     background: white;
   }
   .post.page .details .post-item {
@@ -2014,7 +2014,7 @@
     padding: 0.375em;
     background-color: rgb(250, 250, 250); /* @casper */
     background: white;
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
   }
   .editor .images li img {
     height: 1.5em;
@@ -2047,7 +2047,7 @@
     color: rgb(153, 153, 153); /* @nickel */
   }
   .editor input[type="file"]:focus ~ .icon {
-    outline-width: 0.1em;
+    outline-width: 0.0625em;
     outline-style: solid;
     outline-color: rgb(100, 180, 225); /* @gooseberry */
     outline-color: rgb(153, 153, 153); /* @nickel */
@@ -2124,7 +2124,7 @@
     color: rgb(153, 153, 153); /* @nickel */
   }
   .edit-profile input[type="file"]:focus ~ span img {
-    outline-width: 0.1em;
+    outline-width: 0.0625em;
     outline-style: solid;
     outline-color: rgb(100, 180, 225); /* @gooseberry */
     outline-color: rgb(153, 153, 153); /* @nickel */
@@ -2166,11 +2166,11 @@
   }
   .mix-list {
     margin: 0;
-    padding: 0.1em 0 0 0.1em;
+    padding: 0.0625em 0 0 0.0625em;
   }
   .mix-list li {
     float: left;
-    margin: 0 0.1em 0.1em 0;
+    margin: 0 0.0625em 0.0625em 0;
   }
   .mix-list a {
     display: block;
@@ -2232,7 +2232,7 @@
     height: 32.5vw;
   }
   .mix-list li {
-    width: calc(33.333333333vw - 0.1333333333em); /* three per row (image size (100px) / 3) - padding (0.1em) */
+    width: calc(33.333333333vw - 0.1333333333em); /* three per row (image size (100px) / 3) - padding (0.0625em) */
     height: calc(33.333333333vw - 0.1333333333em);
   }
   .mix-list li a {
@@ -2314,7 +2314,7 @@
   }
 
   .mix .preview div {
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
     background: black;
     color: white;
     margin: 0 auto;
@@ -2391,7 +2391,7 @@
     color: rgb(222, 222, 222); /* @silver*/
     padding: 0 1.5em;
     text-align: center;
-    border-width: 0.1em 0;
+    border-width: 0.0625em 0;
     border-style: solid;
     border-color: black;
     margin: 0;
@@ -2404,8 +2404,8 @@
     content: "";
     display: block;
     position: absolute;
-    top: 0.1em;
-    left: 0.1em;
+    top: 0.0625em;
+    left: 0.0625em;
     width: 3.125em;
     height: 3.125em;
     background: white;
@@ -2421,10 +2421,10 @@
       left: 0;
       width: 100%;
       background: black;
-      border-bottom: 0.1em solid black;
+      border-bottom: 0.0625em solid black;
     }
     .mix-editor .selected-images ol {
-      padding-top: 0.1em;
+      padding-top: 0.0625em;
       white-space: nowrap;
       overflow-y: hidden;
       overflow-x: scroll;
@@ -2591,7 +2591,7 @@
     width: 18.75em; /* 300px / @font-size */
     max-width: 100%;
     height: auto;
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
   }
   .mix-editor form .preview.lime {
     background-color: rgb(203, 253, 128); /* @lime */
@@ -2820,7 +2820,7 @@
     text-decoration: none;
     text-transform: lowercase;
     background: white;
-    border: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     border-radius: 0.25em;
   }
   .tag-list     .item a,
@@ -2847,7 +2847,7 @@
       border-top-width: 0;
     }
     .settings .item[hidden] + .item a {
-      border-top-width: 0.1em;
+      border-top-width: 0.0625em;
     }
     .settings .item a {
       border-left-width: 0;
@@ -2923,10 +2923,10 @@
     background: white;
   }
   .notifications .post-list li:first-child {
-    border-top: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver*/
   }
   .notifications .post-list li:last-child {
-    border-bottom: 0.1em solid rgb(222, 222, 222); /* @silver*/
+    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
   }
   .list h2,
   .notifications h2 {
@@ -3145,7 +3145,7 @@
   .dialog.page .logs,
   .dialog.page form {
     margin-top: 3em;
-    border-top: 0.1em solid rgba(0, 0, 0, 0.1);
+    border-top: 0.0625em solid rgba(0, 0, 0, 0.1);
     padding-top: 1.5em;
     text-align: left;
   }
