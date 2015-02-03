@@ -99,15 +99,16 @@
   -----------------------------------------------
   ----------------------------------------------- */
   svg.icon {
-    width: 1.5em;
+    width : 1.5em; /* @line-height */
     height: 1.5em;
     vertical-align: middle;
     fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
+    transition: fill 0.2s;
   }
   svg.icon path,
   svg.icon polygon {
     fill: currentColor;
-    transition: color 0.2s;
+    transition: fill 0.2s;
   }
 
 
@@ -1196,14 +1197,14 @@
     display: block;
     float: left;
     line-height: 1;
-    padding: 0.75em 0.9em;
+    padding: 0.75em 1.25em;
     line-height: 1;
     border-radius: 0.25em;
-    margin: -0.5em -0.9375em;
+    margin: -0.75em -1.25em;
   }
   header.primary h1 a svg.icon {
-    width: 3em;
-    height: 1em;
+    width: 2.6315789474em;
+    height: 1.5em;
     vertical-align: top;
   }
   header.primary .icon.sending {
@@ -1479,7 +1480,7 @@
   .page > header .back {
     position: absolute;
     top: 0;
-    padding: 0.75em 0.875em;
+    padding: 0.75em 1em;
     border: 0 solid rgb(44, 44, 44); /* @thorium */
   }
   .page > header .next {
@@ -1537,6 +1538,9 @@
     z-index: 2;
     top: 0.375em;
     right: 0.375em;
+    margin: 0;
+  }
+  .page > header ~ form .submit button {
     margin: 0;
   }
   .page > header ~ form .submit.warning {
