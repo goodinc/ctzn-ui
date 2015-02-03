@@ -2,7 +2,7 @@
 /*
   Shared styles, for screens in the CTZN app.
 
-  This style sheet has psuedo-variables prefixed
+  This style sheet has pseudo-variables prefixed
   with an “@” symbol, to help with search and replace.
 
   For example…
@@ -11,7 +11,7 @@
   @line-height: 1.5em;
 
   Sections are grouped under headings with a “=” symbol,
-  for easier searching.
+  to make searching easier.
 */
 
 
@@ -682,11 +682,11 @@
     color: rgb(51, 51, 51); /* @iron */
     font-weight: bold;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375);
-    z-index: 9999; /* @infinity */
     width: 100%;
     padding: 0.75em 1.5em;
     box-sizing: border-box;
     position: absolute;
+    z-index: 9999; /* @infinity */
     left: -9999px;
 
     transition: -webkit-transform 0.3s;
@@ -1094,11 +1094,11 @@
     background: black;
     background: rgba(0, 0, 0, 0.3);
     position: fixed;
+    z-index: 9999; /* @infinity */
     top: 0;
     left: 0;
     opacity: 0;
     transition: opacity 0.2s;
-    z-index: 9;
   }
   .post-options.active {
     width: 100%;
@@ -3070,7 +3070,7 @@
 
     /* Dialogs appear above other pages */
     position: fixed;
-    z-index: 9999;
+    z-index: 9999; /* @infinity */
     top: 0;
     left: 0;
     width: 100%;
@@ -3124,11 +3124,11 @@
   ----------------------------------------------- */
   .developer.action {
     position: fixed;
+    z-index: 9999; /* @infinity */
     top: 50%;
     left: 0.375em;
     height: 6em;
     margin-top: -3em;
-    z-index: 9999;
   }
   .developer.action a {
     background-color: black;
@@ -3218,6 +3218,7 @@
     margin-top: 3em;
   }
   */
+
 
 
   /* =Transitions
@@ -3336,13 +3337,16 @@
 
   /* =Edit Post (intro & outro)
   ----------------------------------------------- */
-  section.editor.page.intro {
-    position: fixed;
-    z-index: 99;
+  section.editor.page {
+    position: absolute;
+    z-index: 9999; /* @infinity */
     top: 0;
     left: 0;
     width: 100%;
     min-height: 100%;
+  }
+  section.editor.page.intro {
+    position: fixed;
     -webkit-animation: slide-up 0.3s both;
             animation: slide-up 0.3s both;
   }
