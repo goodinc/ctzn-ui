@@ -66,7 +66,8 @@
     .pattern-list {
       text-align: center;
     }
-    .pattern.index h1 {
+    .pattern.index h1,
+    .pattern.index p {
       text-align: center;
     }
     .pattern-list section {

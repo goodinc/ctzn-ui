@@ -564,7 +564,7 @@
   .success label:after {
     content: "";
     position: absolute;
-    right: 0.25em;
+    right: 0.5em;
     top: 0;
     width: 1.5em;
     height: 100%;
@@ -573,7 +573,7 @@
   }
   .success label:after {
     /* @icon-checkmark */ /* @pear */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg>');
   }
 
 
@@ -1182,7 +1182,7 @@
     background-color: rgb(51, 51, 51); /* @iron */
     color: rgb(204, 204, 204); /* @aluminum */
     position: relative;
-    padding: 0.75em 0.75em 0.75em 1.25em;
+    padding: 0.75em 0.75em 0.75em 1em;
     z-index: 9;
     box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
@@ -1197,10 +1197,10 @@
     display: block;
     float: left;
     line-height: 1;
-    padding: 0.75em 1.25em;
+    padding: 0.75em 1em;
     line-height: 1;
     border-radius: 0.25em;
-    margin: -0.75em -1.25em;
+    margin: -0.75em -1em;
   }
   header.primary h1 a svg.icon {
     width: 2.6315789474em;
@@ -1232,7 +1232,7 @@
     position: absolute;
     top: 0;
     right: 3em;
-    padding: 0.7em 0.75em;
+    padding: 0.75em;
   }
   header.primary .notifications .icon {
     width: 1.5em;
@@ -1242,7 +1242,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0.55em 0.6em;
+    padding: 0.5625em; /* (48px - 30px) / 2 / @font-size */
   }
   header.primary .profile:active,
   header.primary .profile:focus {
@@ -2740,7 +2740,7 @@
     background-size: 1.5em auto;
     background-repeat: no-repeat;
     background-position: 100% 50%;
-    background-position: calc(100% - 1em) 50%;
+    background-position: calc(100% - 0.5em) 50%;
 
     /* @icon-right */ /* @aluminum */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg>');
@@ -2816,7 +2816,7 @@
   }
   .settings .item a {
     display: block;
-    padding: 0.5625em 1.125em;
+    padding: 0.5625em 0.75em 0.5625em 1.125em;
     text-decoration: none;
     text-transform: lowercase;
     background: white;
@@ -2878,7 +2878,7 @@
     background-position: calc(100% - 0.5em) 50%;
 
     /* @icon-checkmark */ /* @pear */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg>');
   }
 
   .active.instagram .icon {
