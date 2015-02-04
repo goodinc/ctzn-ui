@@ -8,7 +8,6 @@
 
   <style>
 
-
     /* =Elements
     ----------------------------------------------- */
     body {
@@ -60,7 +59,7 @@
     h2 {
       font-size: 12px;
       line-height: 27px; /* 18px x 3/2 */
-      margin-top: 4px;
+      margin-top: 6px;
       margin-bottom: 0;
       text-transform: uppercase;
       font-weight: normal;
@@ -150,8 +149,8 @@
     }
     .header .time {
       font-size: 18px;
-      margin-top: 9px;
-      line-height: 18px;
+      margin-top: 6px;
+      line-height: 21px;
       margin-bottom: 0;
     }
     .header .time span,
@@ -194,11 +193,32 @@
 
     /* =Article
     ----------------------------------------------- */
-    .article img {
+    .article img {  
+      display: block;   
+      margin-bottom: 9px; /* @line-height / 2 */ 
       max-width: 100%;
       height: auto;
-      display: block;
-      margin-bottom: 9px;
+    }
+    .summary.article img {
+      float: left;
+      margin-right: 9px;
+      margin-bottom: 1px;
+    }
+    @media (min-width: 600px) {
+      .summary.article {
+        position: relative;
+        min-height: 118px; /* image height + article padding */
+      }
+      .summary.article img {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        margin-right: 0 !important;
+      }
+      .summary.article h3,
+      .summary.article p {
+        margin-right: 118px; /* image width + article padding */
+      }
     }
 
 
@@ -334,6 +354,7 @@
       background-color: rgb(242, 64, 41); /* @orange */
       color: white;
     }
+
   </style>
 
 </head>
@@ -404,7 +425,7 @@
       </div>
 
       <div class="article">
-        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0acb4801767ba5838f45c4dbfcc7b38f869154ea=c500x500"></p>
+        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0acb4801767ba5838f45c4dbfcc7b38f869154ea=c600x600"></p>
 
         <div style="clear: both"></div>
 
@@ -476,7 +497,7 @@
         <h4><a href="http://ctznapp.com">@cogg</a></h4>
 
         <p>
-          <img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/cafc6c55d5d6eda96513af518dcec5530148fd5c=c500x500">
+          <img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/cafc6c55d5d6eda96513af518dcec5530148fd5c=c600x600">
           A dedicated pan for Swedish pancakes, untested as of yet.
         </p>
 
@@ -490,7 +511,7 @@
 
         <p>Banking</p>
 
-        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ad1ba1e3809b5a64a31c50faf93d84621904cf49=c500x500"></p>
+        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ad1ba1e3809b5a64a31c50faf93d84621904cf49=c600x600"></p>
 
         <div style="clear: both"></div>
 
@@ -504,11 +525,18 @@
         <h2><b>25</b> people loved your posts</h2>
       </div>
 
-      <div class="article">
+      <div class="summary article">
 
         <p>Korean BBQ</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/28362144dc1c7f995ea0dfbcde321c8a374eefc5=c500x500"></p>
+        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/28362144dc1c7f995ea0dfbcde321c8a374eefc5=c100x100"></p>
+
 
         <div style="clear: both"></div>
 
