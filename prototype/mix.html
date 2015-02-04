@@ -200,15 +200,15 @@
 
 <section class="mix page"><header><h1>Mix</h1>
 
-      <a href="#mixes" class="back" data-bind="click: good.onNavClick">
+      <a href="#mixes" class="back">
         <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use><foreignObject>Go Back</foreignObject></svg>
       </a>
       <a href="" class="next"><svg class="icon"><use xlink:href="#more" /><foreignobject>Options</foreignobject></svg></a>
 
-    </header><div class="preview orange" data-bind="css: good.pushColor(good.currentPush().id)">
+    </header><div class="preview orange">
       <div>
         <!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 -->
-        <video data-bind="attr: { poster: sizedS3Image(mix().preview_image_url, good.S3_MIXPOSTER_SIZE) }" type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640"><!-- ko foreach: movieFiles --><source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v" type="video/mp4"><source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.webm" type="video/webm"><!-- /ko --><h1>Oops!</h1>
+        <video type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640"><!-- ko foreach: movieFiles --><source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v" type="video/mp4"><source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.webm" type="video/webm"><!-- /ko --><h1>Oops!</h1>
           <p>It looks like our video player isn’t working in your web browser. We recommend using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.apple.com/safari/" target="_blank">Safari</a> to watch this mix.</p>
         </video><!-- /ko --><!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 --><!-- /ko -->
 </div>
@@ -218,7 +218,7 @@
       <section class="share"><!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 --><h2>Share this:</h2>
         <!-- /ko -->
         <!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 --><!-- /ko -->
-        <p><a data-bind="text: shareURL(), attr: { href: shareURL() }" target="_blank" href="http://www.ctznapp.com/mix/B9E118C9">http://www.ctznapp.com/mix/B9E118C9</a></p>
+        <p><a target="_blank" href="http://www.ctznapp.com/mix/B9E118C9">http://www.ctznapp.com/mix/B9E118C9</a></p>
       </section>
 </div>
   </section>

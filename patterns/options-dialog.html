@@ -203,25 +203,25 @@
 
   <p>The page itself appears here, underneath the options.</p>
 
-<div class="post-options active" data-bind="css: active() ? 'active' : '', click: onCancel">
+<div class="post-options active">
     <div>
       <ul>
 <!-- ko if: canHide() --><li>
-            <button data-bind="click: onHide, disable: inProgress">
+            <button>
               Hide
             </button>
           </li>
         <!-- /ko -->
         <!-- ko if: canEdit() -->
           <li>
-            <button data-bind="click: onEdit, disable: inProgress">
+            <button>
               Edit
             </button>
           </li>
         <!-- /ko -->
         <!-- ko if: canDelete() -->
           <li class="warning">
-            <button data-bind="click: onDelete, disable: inProgress">
+            <button>
               Delete
             </button>
           </li>
@@ -229,7 +229,7 @@
       </ul>
 <ul>
 <li>
-          <button data-bind="click: onCancel, disable: inProgress">
+          <button>
             Cancel
           </button>
         </li>

@@ -200,18 +200,18 @@
 
 <section class="mix-editor page"><header><h1>Finish Mix</h1>
 
-      <a href="#back" class="back" data-bind="click: backFromTitleClicked">
+      <a href="#back" class="back">
         <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use><foreignObject>Go Back</foreignObject></svg></a>
     </header><form>
       <p class="text title">
         <label>
-          <span>Enter Title</span><br><input placeholder="Enter Title" type="text" data-bind="textInput: mixTitle, enable: currentState() !== &quot;submitting&quot;"></label>
+          <span>Enter Title</span><br><input placeholder="Enter Title" type="text"></label>
       </p>
-      <div class="preview orange" data-bind="css: good.pushColor(good.currentPush().push.id)">
-        <img data-bind="attr: { src: sizedS3Image(selectedImages()[0].url, good.S3_MIXPOSTER_SIZE) }" width="300" height="" alt="" src="https://m.ctznapp.com/s3/ctzn/e21be1b7a4dc912883277ec5117283efe909b435=c640x640">
+      <div class="preview orange">
+        <img width="300" height="" alt="" src="https://m.ctznapp.com/s3/ctzn/e21be1b7a4dc912883277ec5117283efe909b435=c640x640">
 </div>
       <p class="submit">
-        <button data-bind="enable: currentState() !== &quot;submitting&quot;, click: doneClicked">Done</button>
+        <button>Done</button>
       </p>
     </form>
   </section>

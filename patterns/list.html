@@ -216,111 +216,111 @@
 
 <div class="list">
       
-      <ul data-bind="foreach: userInfo().pushes">
+      <ul>
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 orange" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="P"></span>
+              <span class="size30 orange" data-content="P"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">Project Citizen</span>
+              <span>Project Citizen</span>
             </span></span>
           </a>
         </li>
       
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 orange" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="G"></span>
+              <span class="size30 orange" data-content="G"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">G.R.E.E.D.Y. City</span>
+              <span>G.R.E.E.D.Y. City</span>
             </span></span>
           </a>
         </li>
       
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 boysenberry" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="C"></span>
+              <span class="size30 boysenberry" data-content="C"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">Cooking with Gabby</span>
+              <span>Cooking with Gabby</span>
             </span></span>
           </a>
         </li>
       
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 strawberry" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="c"></span>
+              <span class="size30 strawberry" data-content="c"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">cARTel: Collaborative Arts LA</span>
+              <span>cARTel: Collaborative Arts LA</span>
             </span></span>
           </a>
         </li>
       
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 cucumber" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="F"></span>
+              <span class="size30 cucumber" data-content="F"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">Free Lots Angeles</span>
+              <span>Free Lots Angeles</span>
             </span></span>
           </a>
         </li>
       
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 boysenberry" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="8"></span>
+              <span class="size30 boysenberry" data-content="8"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">826LA</span>
+              <span>826LA</span>
             </span></span>
           </a>
         </li>
       
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 strawberry" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="S"></span>
+              <span class="size30 strawberry" data-content="S"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">South LA Organizers</span>
+              <span>South LA Organizers</span>
             </span></span>
           </a>
         </li>
       
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 blueberry" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="C"></span>
+              <span class="size30 blueberry" data-content="C"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">Citizens Of Culture</span>
+              <span>Citizens Of Culture</span>
             </span></span>
           </a>
         </li>
       
 <li>
-          <a href="#push-preview" data-bind="click: function() { $root.onPushClick($data); }">
+          <a href="#push-preview">
             <span class="avatar">
-              <span class="size30 lime" data-bind="{ attr: { 'data-content': name[0].replace('[', '*') }, css: good.pushColor(id) }" data-content="A"></span>
+              <span class="size30 lime" data-content="A"></span>
             </span>
 
             <span class="name"><span>
-              <span data-bind="text: name">Artizen Labs</span>
+              <span>Artizen Labs</span>
             </span></span>
           </a>
         </li>
@@ -332,367 +332,367 @@
 <h2>Members</h2>
 
 <div class="list">
-        <ul data-bind="foreach: $data">
+        <ul>
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
                 <!-- ko if: profile_image -->
-                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Aaron Hopkins</h3>
-                <p>@<span data-bind="text: username">aaron</span></p>
+                <h3>Aaron Hopkins</h3>
+                <p>@<span>aaron</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
                 <!-- ko if: profile_image -->
-                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Aldo Puicon</h3>
-                <p>@<span data-bind="text: username">aldoatgood</span></p>
+                <h3>Aldo Puicon</h3>
+                <p>@<span>aldoatgood</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="a"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-content="a"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Aldo Puicon</h3>
-                <p>@<span data-bind="text: username">aldopuicon</span></p>
+                <h3>Aldo Puicon</h3>
+                <p>@<span>aldopuicon</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="a"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-content="a"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Anton Sipos</h3>
-                <p>@<span data-bind="text: username">anton</span></p>
+                <h3>Anton Sipos</h3>
+                <p>@<span>anton</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="b"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-content="b"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Baxter</h3>
-                <p>@<span data-bind="text: username">baxter</span></p>
+                <h3>Baxter</h3>
+                <p>@<span>baxter</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
                 <!-- ko if: profile_image -->
-                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Brian Nilsen</h3>
-                <p>@<span data-bind="text: username">brian</span></p>
+                <h3>Brian Nilsen</h3>
+                <p>@<span>brian</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="c"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi" data-content="c"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Casey Caplowe</h3>
-                <p>@<span data-bind="text: username">caseycaplowe</span></p>
+                <h3>Casey Caplowe</h3>
+                <p>@<span>caseycaplowe</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
                 <!-- ko if: profile_image -->
-                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Craig Ogg</h3>
-                <p>@<span data-bind="text: username">cogg</span></p>
+                <h3>Craig Ogg</h3>
+                <p>@<span>cogg</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
                 <!-- ko if: profile_image -->
-                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/069afeae87c1360ad1d684169e6338315775856e=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/069afeae87c1360ad1d684169e6338315775856e=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name"></h3>
-                <p>@<span data-bind="text: username">cogg1126</span></p>
+                <h3></h3>
+                <p>@<span>cogg1126</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="d"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-content="d"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Dan Farino</h3>
-                <p>@<span data-bind="text: username">dan</span></p>
+                <h3>Dan Farino</h3>
+                <p>@<span>dan</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
                 <!-- ko if: profile_image -->
-                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/1d91b78200b6535406711a287b8887462383bb63=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/1d91b78200b6535406711a287b8887462383bb63=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name"></h3>
-                <p>@<span data-bind="text: username">esgii</span></p>
+                <h3></h3>
+                <p>@<span>esgii</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
                 <!-- ko if: profile_image -->
-                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Esha </h3>
-                <p>@<span data-bind="text: username">eshah</span></p>
+                <h3>Esha </h3>
+                <p>@<span>eshah</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="e"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-content="e"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name"></h3>
-                <p>@<span data-bind="text: username">eshah.period</span></p>
+                <h3></h3>
+                <p>@<span>eshah.period</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="e"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi" data-content="e"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name"></h3>
-                <p>@<span data-bind="text: username">eshah_0108</span></p>
+                <h3></h3>
+                <p>@<span>eshah_0108</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
                 <!-- ko if: profile_image -->
-                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Ben Goldhirsh</h3>
-                <p>@<span data-bind="text: username">goldhirsh</span></p>
+                <h3>Ben Goldhirsh</h3>
+                <p>@<span>goldhirsh</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="j"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-content="j"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Jake</h3>
-                <p>@<span data-bind="text: username">jake</span></p>
+                <h3>Jake</h3>
+                <p>@<span>jake</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="j"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-content="j"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Jelena Woehr</h3>
-                <p>@<span data-bind="text: username">jelena</span></p>
+                <h3>Jelena Woehr</h3>
+                <p>@<span>jelena</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="j"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-content="j"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Jacob Riskin</h3>
-                <p>@<span data-bind="text: username">jriskin</span></p>
+                <h3>Jacob Riskin</h3>
+                <p>@<span>jriskin</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="l"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-content="l"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name"></h3>
-                <p>@<span data-bind="text: username">lame</span></p>
+                <h3></h3>
+                <p>@<span>lame</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="l"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-content="l"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Lee Fatone</h3>
-                <p>@<span data-bind="text: username">lfatone</span></p>
+                <h3>Lee Fatone</h3>
+                <p>@<span>lfatone</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="l"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-content="l"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Lou Pizante</h3>
-                <p>@<span data-bind="text: username">lou</span></p>
+                <h3>Lou Pizante</h3>
+                <p>@<span>lou</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="m"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-content="m"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Mixwell</h3>
-                <p>@<span data-bind="text: username">mixwell</span></p>
+                <h3>Mixwell</h3>
+                <p>@<span>mixwell</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="n"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-content="n"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Jean aw</h3>
-                <p>@<span data-bind="text: username">notcot</span></p>
+                <h3>Jean aw</h3>
+                <p>@<span>notcot</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="p"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-content="p"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Paris Marron</h3>
-                <p>@<span data-bind="text: username">parisla</span></p>
+                <h3>Paris Marron</h3>
+                <p>@<span>parisla</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="t"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-content="t"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">resttest</h3>
-                <p>@<span data-bind="text: username">test11066</span></p>
+                <h3>resttest</h3>
+                <p>@<span>test11066</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="t"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-content="t"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Tom Maybrier</h3>
-                <p>@<span data-bind="text: username">tommaybrier</span></p>
+                <h3>Tom Maybrier</h3>
+                <p>@<span>tommaybrier</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="u"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-content="u"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">undefined</h3>
-                <p>@<span data-bind="text: username">user12</span></p>
+                <h3>undefined</h3>
+                <p>@<span>user12</span></p>
               </span></span></span>
             </a>
           </li>
         
 <li>
-            <a href="#mention" data-bind="click: $root.suggestedUserPicked">
+            <a href="#mention">
               <span class="avatar">
-                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="v"></span>
+                <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-content="v"></span>
                 <!-- /ko -->
               </span>
               <span class="name"><span><span>
-                <h3 data-bind="text: full_name">Vangie Ogg</h3>
-                <p>@<span data-bind="text: username">vogg</span></p>
+                <h3>Vangie Ogg</h3>
+                <p>@<span>vogg</span></p>
               </span></span></span>
             </a>
           </li>
