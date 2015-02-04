@@ -21,7 +21,7 @@
     height: 100%;
   }
   body {
-    font: 100%/1.5 "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: rgb(51, 51, 51); /* @iron */
@@ -1022,10 +1022,9 @@
     overflow-wrap : break-word;
   }
   .post-item .body p {
-    font-size     : 1.125em; /* 18px / @font-size */
-    line-height   : 1.3333333333em; /* @line-height / 1.125 */
     margin-top    : 0.6666666667em; /* 1.33em / 2 */
     margin-bottom : 0.6666666667em;
+    color: rgb(51, 51, 51); /* @iron */
   }
   .post-item .body p:last-child {
     margin-bottom: 0;
@@ -1233,6 +1232,7 @@
     top: 0;
     right: 3em;
     padding: 0.75em;
+    line-height: 1;
   }
   header.primary .notifications .icon {
     width: 1.5em;
@@ -1480,9 +1480,17 @@
   .page > header .back {
     position: absolute;
     top: 0;
-    padding: 0.75em;
+    padding: 0.75em 1.25em;
     border: 0 solid rgb(44, 44, 44); /* @thorium */
   }
+
+  .page > header .next svg,
+  .page > header .back svg {
+    display: block;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+  }
+
   .page > header .next {
     right: 0;
     border-left-width: 0.0625em;
@@ -3364,6 +3372,7 @@
 
 
   /* SHIM: Make screens fill the viewport. */
+  body > #loading-screen,
   body > #screen,
   body > #screen > div[data-screen] {
     display: inline;
