@@ -100,3 +100,8 @@
   .pattern-list li a[href]:visited {
     color: inherit;
   }
+
+  p + code {
+    margin-top: -0.5em;
+    display: block;
+  }

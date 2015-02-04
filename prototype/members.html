@@ -206,556 +206,580 @@
       </a>
     </header>
 
-    <div class="list">
-      <ul>
-<li>
+<div class="list">
+      <ul data-bind="foreach: good.currentPush().participants.filter(function(p) { return p.username.indexOf('[anonymous') != 0; }).sort(function(a, b) { if(a.username > b.username) { return 1; } if(a.username < b.username) { return -1; } return 0; } )">
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>aaron</h3>
+              <h3 data-bind="text: username">aaron</h3>
 
               <!-- ko if: full_name -->
-                <p>Aaron Hopkins</p>
+                <p data-bind="text: full_name">Aaron Hopkins</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>aldoatgood</h3>
+              <h3 data-bind="text: username">aldoatgood</h3>
 
               <!-- ko if: full_name -->
-                <p>Aldo Puicon</p>
+                <p data-bind="text: full_name">Aldo Puicon</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="a"></span>
               <!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>aldopuicon</h3>
+              <h3 data-bind="text: username">aldopuicon</h3>
 
               <!-- ko if: full_name -->
-                <p>Aldo Puicon</p>
+                <p data-bind="text: full_name">Aldo Puicon</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="a"></span>
               <!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>anton</h3>
+              <h3 data-bind="text: username">anton</h3>
 
               <!-- ko if: full_name -->
-                <p>Anton Sipos</p>
+                <p data-bind="text: full_name">Anton Sipos</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="b"></span>
               <!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>baxter</h3>
+              <h3 data-bind="text: username">baxter</h3>
 
               <!-- ko if: full_name -->
-                <p>Baxter</p>
+                <p data-bind="text: full_name">Baxter</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>brian</h3>
-
-              <!-- ko if: full_name -->
-                <p>Brian Nilsen</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>caseycaplowe</h3>
-
-              <!-- ko if: full_name -->
-                <p>Casey Caplowe</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>cogg</h3>
+              <h3 data-bind="text: username">brian</h3>
 
               <!-- ko if: full_name -->
-                <p>Craig Ogg</p>
+                <p data-bind="text: full_name">Brian Nilsen</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="c"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">caseycaplowe</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Casey Caplowe</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>cogg1126</h3>
+              <h3 data-bind="text: username">cogg</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Craig Ogg</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/069afeae87c1360ad1d684169e6338315775856e=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">cogg1126</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="d"></span>
               <!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>dan</h3>
+              <h3 data-bind="text: username">dan</h3>
 
               <!-- ko if: full_name -->
-                <p>Dan Farino</p>
+                <p data-bind="text: full_name">Dan Farino</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>dori</h3>
-
-              <!-- ko if: full_name --><!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/1d91b78200b6535406711a287b8887462383bb63=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
-            <span class="name"><span><span>
-              <h3>eshah</h3>
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
 
-              <!-- ko if: full_name -->
-                <p>Esha Shah</p>
-              <!-- /ko -->
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">esgii</h3>
+
+              <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cantaloupe"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>eshah1113</h3>
-
-              <!-- ko if: full_name -->
-                <p>eshah </p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>eshah1117</h3>
-
-              <!-- ko if: full_name -->
-                <p>Eshah Test</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>eshah_test</h3>
-
-              <!-- ko if: full_name -->
-                <p>Esha Test</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>eshinov</h3>
-
-              <!-- ko if: full_name -->
-                <p>eshah novvv</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 clover"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>goldhirsh</h3>
-
-              <!-- ko if: full_name -->
-                <p>Ben Goldhirsh</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cantaloupe"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>hayao</h3>
-
-              <!-- ko if: full_name -->
-                <p>Hayao</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>jelena</h3>
-
-              <!-- ko if: full_name -->
-                <p>Jelena Woehr</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>jim</h3>
+              <h3 data-bind="text: username">eshah</h3>
 
               <!-- ko if: full_name -->
-                <p>Jim</p>
+                <p data-bind="text: full_name">Esha </p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="e"></span>
               <!-- /ko -->
             </span>
 
-            <span class="name"><span><span>
-              <h3>lfatone</h3>
-
-              <!-- ko if: full_name -->
-                <p>Lee Fatone</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape"></span>
-              <!-- /ko -->
-            </span>
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
 
             <span class="name"><span><span>
-              <h3>lou</h3>
-
-              <!-- ko if: full_name -->
-                <p>Lou Pizante</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 clover"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>mario</h3>
+              <h3 data-bind="text: username">eshah.period</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="e"></span>
               <!-- /ko -->
             </span>
 
-            <span class="name"><span><span>
-              <h3>mixwell</h3>
-
-              <!-- ko if: full_name -->
-                <p>Mixwell</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird"></span>
-              <!-- /ko -->
-            </span>
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
 
             <span class="name"><span><span>
-              <h3>notcot</h3>
-
-              <!-- ko if: full_name -->
-                <p>Jean aw</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>parisla</h3>
-
-              <!-- ko if: full_name -->
-                <p>Paris Marron</p>
-              <!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst"></span>
-              <!-- /ko -->
-            </span>
-
-            <span class="name"><span><span>
-              <h3>picollo</h3>
+              <h3 data-bind="text: username">eshah_0108</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry"></span>
+              <!-- ko if: profile_image -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">goldhirsh</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Ben Goldhirsh</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="j"></span>
               <!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>ponyo</h3>
+              <h3 data-bind="text: username">jake</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Jake</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="j"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">jelena</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Jelena Woehr</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image -->
+                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">jim</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Jim</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="j"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">jriskin</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Jacob Riskin</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="l"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">lame</h3>
 
               <!-- ko if: full_name --><!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="l"></span>
               <!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>test11066</h3>
+              <h3 data-bind="text: username">lfatone</h3>
 
               <!-- ko if: full_name -->
-                <p>resttest</p>
+                <p data-bind="text: full_name">Lee Fatone</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="l"></span>
               <!-- /ko -->
             </span>
 
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
             <span class="name"><span><span>
-              <h3>tommaybrier</h3>
+              <h3 data-bind="text: username">lou</h3>
 
               <!-- ko if: full_name -->
-                <p>Tom Maybrier</p>
+                <p data-bind="text: full_name">Lou Pizante</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="m"></span>
               <!-- /ko -->
             </span>
 
-            <span class="name"><span><span>
-              <h3>totoro</h3>
-
-              <!-- ko if: full_name --><!-- /ko -->
-            </span></span></span>
-          </a>
-        </li>
-      
-<li>
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry"></span>
-              <!-- /ko -->
-            </span>
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
 
             <span class="name"><span><span>
-              <h3>vogg</h3>
+              <h3 data-bind="text: username">mixwell</h3>
 
               <!-- ko if: full_name -->
-                <p>Vangie Ogg</p>
+                <p data-bind="text: full_name">Mixwell</p>
               <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       
-<li>
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
-              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean"></span>
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="n"></span>
               <!-- /ko -->
             </span>
 
-            <span class="name"><span><span>
-              <h3>yoshi</h3>
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
 
-              <!-- ko if: full_name --><!-- /ko -->
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">notcot</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Jean aw</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="p"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">parisla</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Paris Marron</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="t"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">test11066</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">resttest</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="t"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">tommaybrier</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Tom Maybrier</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="u"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">user12</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">undefined</p>
+              <!-- /ko -->
+            </span></span></span>
+          </a>
+        </li>
+      
+<li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
+          <a href="">
+            <span class="avatar">
+              <!-- ko if: profile_image --><!-- /ko --><!-- ko ifnot: profile_image --><span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(id) }" data-content="v"></span>
+              <!-- /ko -->
+            </span>
+
+            <span style="position: absolute; top: 0.75em; right: 0.75em;" data-bind="click: function() { $root.onNewPost($data); }, clickBubble: false">
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#note"></use></svg></span>
+
+            <span class="name"><span><span>
+              <h3 data-bind="text: username">vogg</h3>
+
+              <!-- ko if: full_name -->
+                <p data-bind="text: full_name">Vangie Ogg</p>
+              <!-- /ko -->
             </span></span></span>
           </a>
         </li>
       </ul>
-    </div>
+</div>
+
   </section>
 
 </body>

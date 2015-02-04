@@ -237,7 +237,17 @@
 
   <div style="margin-top: 3em"></div>
 
-  <p style="color: red; background-color: white; padding: 0.5em;">Oops! There’s something wrong with that field.</p>
+  <form>
+    <p class="validation-message">Oops! There’s something wrong with that field.</p>
+  </form>
+
+  <div class="blueberry push-card">
+    <h1 class="name">Push Card</h1>
+    <p class="about">About this push</p>
+    <form>
+      <p style="color: red; background-color: white; padding: 0.5em;">Oops! There’s something wrong with that field</p>
+    </form>
+  </div>
 
   <div style="margin-top: 3em"></div>
 
@@ -246,7 +256,7 @@
       <!-- @placeholder-image -->
       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
       Sending
-      <svg class="icon"><use xlink:href="#loading" /><foreignobject></foreignobject></svg>
+      <span class="sending icon"></span>
     </h1>
   </section>
 
