@@ -226,40 +226,6 @@
 
   </section>
 
-<div class="post-options active" data-bind="css: active() ? 'active' : '', click: onCancel">
-    <div>
-      <ul>
-<!-- ko if: canHide() --><li>
-            <button data-bind="click: onHide, disable: inProgress">
-              Hide
-            </button>
-          </li>
-        <!-- /ko -->
-        <!-- ko if: canEdit() -->
-          <li>
-            <button data-bind="click: onEdit, disable: inProgress">
-              Edit
-            </button>
-          </li>
-        <!-- /ko -->
-        <!-- ko if: canDelete() -->
-          <li class="warning">
-            <button data-bind="click: onDelete, disable: inProgress">
-              Delete
-            </button>
-          </li>
-        <!-- /ko -->
-      </ul>
-<ul>
-<li>
-          <button data-bind="click: onCancel, disable: inProgress">
-            Cancel
-          </button>
-        </li>
-      </ul>
-<!-- ko if: deletingPost() --><!-- /ko --><!-- ko if: hidingPost() --><!-- /ko --><!-- ko if: errorMessage() --><!-- /ko -->
-</div>
-  </div>
 
 </body>
 </html>
