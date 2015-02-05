@@ -191,7 +191,8 @@
       padding-left: 48px;
       padding-bottom: 8px;
     }
-    h1 .avatar {
+    h1 img {
+      border-radius: 50%;
       margin-left: -48px;
       position: absolute;
       margin-top: -8px;
@@ -241,14 +242,9 @@
 
     /* =Avatars
     ----------------------------------------------- */
-    .avatar img {
-      border-radius: 100%;
-      vertical-align: middle;
-    }
-
     .avatar > span {
       display: inline-block;
-      background-color: rgb(255, 203, 117); /* @cantaloupe */
+      background: rgb(203, 253, 128); /* @lime */
       color: black;
       width       : 1.5em;
       line-height : 1.5em;
@@ -257,36 +253,46 @@
     }
 
     .avatar .clover {
-      background-color: rgb(0, 235, 98); /* @clover */
+      background-color: rgb(0, 235, 98);
     }
     .avatar .kiwi {
-      background-color: rgb(0, 255, 208); /* @kiwi */
+      background-color: rgb(0, 255, 208);
     }
     .avatar .grape {
-      background-color: rgb(159, 104, 246); /* @grape */
+      background-color: rgb(159, 104, 246);
     }
     .avatar .bluebird {
-      background-color: rgb(0, 206,250); /* @bluebird */
+      background-color: rgb(0, 206,250);
     }
     .avatar .cantaloupe {
-      background-color: rgb(255, 203, 117); /* @cantaloupe */
+      background-color: rgb(255, 203, 117);
     }
     .avatar .cranberry {
-      background-color: rgb(251, 59, 147); /* @cranberry */
+      background-color: rgb(251, 59, 147);
     }
     .avatar .amethyst {
-      background-color: rgb(255, 152, 248); /* @amethyst */
+      background-color: rgb(255, 152, 248);
     }
     .avatar .sky {
-      background-color: rgb(0, 255, 254); /* @sky */
+      background-color: rgb(0, 255, 254);
     }
     .avatar .ocean {
-      background-color: rgb(24, 57, 245); /* @ocean */
+      background-color: rgb(24, 57, 245);
       color: white;
     }
 
-    .avatar .size40 {
-      font-size: 1.6666666667em; /* 2/3 x 40px / @font-size */
+    .avatar .size30 {
+      font-size: 1.25em; /* 2/3 x 30px / @font-size */
+    }
+    .avatar .size35 {
+      font-size: 1.4583333333em; /* 2/3 x 35px / @font-size */
+    }
+    .avatar .size100 {
+      font-size: 4.1666666667em; /* 2/3 x 30px / @font-size */
+    }
+    .avatar img[width="30"] {
+      width: 1.875em;
+      height: 1.875em;
     }
 
     .avatar [data-content]:after {
@@ -298,6 +304,12 @@
       text-transform: uppercase;
       text-align: center;
       opacity: 0.75;
+    }
+
+    .avatar .name {
+      /* @hidden-accessible */
+      position: absolute;
+      left: -9999px;
     }
 
   </style>
@@ -516,10 +528,7 @@
   <main class="orange">
     <div class="container">
       <h1>
-        <span class="avatar">
-          <img src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c40x40" width="40" height="40" alt="">
-        </span>
-        <span>jim</span>’s mix: <strong>Project Citizen, from day one to Beta</strong>
+          <img src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c40x40" width="40" height="40" alt=""><span>jim</span>’s mix: <strong>Project Citizen, from day one to Beta</strong>
       </h1>
 
       <div class="video">
