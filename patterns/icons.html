@@ -317,11 +317,36 @@
   <h3><svg class="icon"><use xlink:href="#edit" /></svg></h3>
   <code>&lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#edit&quot; /&gt;&lt;/svg&gt;</code>
 
-  <h3 class="instagram active"><svg class="icon"><use xlink:href="#instagram" /></svg></h3>
-  <code>&lt;li class=&quot;instagram active&quot;&gt;&lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#instagram&quot; /&gt;&lt;/svg&gt;&lt;/li&gt;</code>
+  <h2>Alternate Text</h2>
+  <p>Consider adding alternate text if the icon represents content (just like an <code>alt</code> attribute for an <code>&lt;img&gt;</code> element).</p>
 
-  <h3 class="twitter active"><svg class="icon"><use xlink:href="#twitter" /></svg></h3>
-  <code>&lt;li class=&quot;twitter active&quot;&gt;&lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#twitter&quot; /&gt;&lt;/svg&gt;&lt;/li&gt;</code>
+  <figure>
+    <button>
+      <svg class="icon"><use xlink:href="#add" /><foreignobject>Add</foreignobject></svg>
+    </button>
+    <pre><code>&lt;button&gt;
+  &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#add&quot; /&gt;<mark>&lt;foreignobject&gt;Add&lt;/foreignobject&gt;</mark>&lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+    <figcaption>
+      <p>The <code>&lt;foreignelement/&gt;</code> is useful to software like screen readers, and <a href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/">browsers that don’t understand SVG</a>.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <button>
+      <svg class="icon"><use xlink:href="#add" /></svg>
+      Add
+    </button>
+    <pre><code>&lt;button&gt;
+  &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#add&quot; /&gt;&lt;/svg&gt;
+  <mark>Add</mark>
+&lt;/button&gt;
+</code></pre>
+    <figcaption>
+      <p>If the button has a label, you can skip the <code>&lt;foreignelement/&gt;</code>.</p>
+    </figcaption>
+  </figure>
 
   <h2>Form fields</h2>
 
@@ -400,15 +425,22 @@
       <a href="" class="back">
         <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
+      <a href="" class="next">
+        <svg class="icon"><use xlink:href="#more" /><foreignobject>Options</foreignobject></svg>
+      </a>
     </header>
   </section>
   <pre><code>&lt;section class=&quot;page&quot;&gt;
   &lt;header&gt;
     &lt;h1&gt;Page Title&lt;/h1&gt;
-    &lt;a href=&quot;…&quot; class=&quot;<mark>cancel</mark>&quot;&gt;
+    &lt;a href=&quot;…&quot; class=&quot;<mark>back</mark>&quot;&gt;
       &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#back&quot; /&gt;&lt;foreignobject&gt;Go Back&lt;/foreignobject&gt;&lt;/svg&gt;
     &lt;/a&gt;
+    &lt;a href=&quot;…&quot; class=&quot;<mark>next</mark>&quot;&gt;
+      &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#more&quot; /&gt;&lt;foreignobject&gt;Options&lt;/foreignobject&gt;&lt;/svg&gt;
+    &lt;/a&gt;
   &lt;/header&gt;
+  …
 &lt;/section&gt;
 </code></pre>
 
@@ -502,47 +534,6 @@
     &lt;/ul&gt;
   &lt;/aside&gt;
 &lt;/section&gt;
-</code></pre>
-
-
-  <h2>Alternate Text</h2>
-  <p>Consider adding alternate text if the icon represents content (just like an <code>alt</code> attribute for an <code>&lt;img&gt;</code> element).</p>
-
-  <h3><button><svg class="icon"><use xlink:href="#exit" /><foreignobject>Log Out</foreignobject></svg></button></h3>
-  <pre><code>&lt;button&gt;
-  &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#exit&quot; /&gt;<mark>&lt;foreignobject&gt;Log Out&lt;/foreignobject&gt;</mark>&lt;/svg&gt;
-&lt;/button&gt;</code></pre>
-
-  <a href="">
-    <svg class="icon"><use xlink:href="#add" /><foreignobject>Add</foreignobject></svg>
-  </a>
-  <pre><code>&lt;a href=&quot;…&quot;&gt;
-  &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#add&quot; /&gt;<mark>&lt;foreignobject&gt;Add&lt;/foreignobject&gt;</mark>&lt;/svg&gt;
-&lt;/a&gt;
-</code></pre>
-<p><small>The <code>foreignobject</code> element is useful to software like screen readers, and <a href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/">browsers that don’t understand SVG</a>.</small></p>
-
-  <a href="">
-    <svg class="icon"><use xlink:href="#add" /></svg>
-    Add
-  </a>
-  <pre><code>&lt;a href=&quot;…&quot;&gt;
-  &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#add&quot; /&gt;&lt;/svg&gt;
-  <mark>Add</mark>
-&lt;/a&gt;
-</code></pre>
-<p>In this example the word “Add” is visible text within the link, so a <code>foreignelement</code> isn’t necessary.</p>
-
-<p class="developer action" style="position: relative; margin: 3em 0 0;">
-  <a href="#developer-tools">
-    <svg class="icon"><use xlink:href="#settings" /><foreignObject>Show Developer Tools</foreignObject></svg>
-  </a>
-</p>
-<pre><code>&lt;p class=&quot;developer action&quot;&gt;
-  &lt;a href=&quot;…&quot;&gt;
-    &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#settings&quot; /&gt;&lt;foreignObject&gt;Show Developer Tools&lt;/foreignObject&gt;&lt;/svg&gt;
-  &lt;/a&gt;
-&lt;/p&gt;
 </code></pre>
 
 </body>

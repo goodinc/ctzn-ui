@@ -1,20 +1,4 @@
 
-/*
-  Monotype fonts…
-
-  Regular:
-  "Proxima N W01 Reg"
-
-  Italic:
-  "Proxima N W01 Reg It"
-
-  Bold:
-  "Proxima N W01 Bold"
-
-  Extra bold:
-  "Proxima N W01 Xbold"
-*/
-
 
   /* =Elements
   ----------------------------------------------- */
@@ -22,23 +6,15 @@
     height: 100%;
   }
   body {
-    font: 100%/1.5 "Proxima N W01 Reg", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @regular */
+    font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; /* @regular */
     padding: 0;
     margin: 0;
     width: 100%;
   }
-  i, em {
-    font-family: "Proxima N W01 Reg It", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @italic */
-    font-style: inherit;
-  }
-  b, strong, h1, h2, h3, h4, h5, h6 {
-    font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @bold */
-    font-weight: inherit;
-  }
 
   a {
     color: inherit;
-    font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @bold */
+    font-weight: bold;
     text-decoration: none;
   }
   a:hover,
@@ -148,6 +124,7 @@
     display: inline-block;
     width: 40px;
     height: 20px;
+    vertical-align: baseline;
 
     /* @hidden-accessible-text */
     text-indent: -9999px;
@@ -178,9 +155,6 @@
     text-align: center;
   }
   main h1.logo {
-    font-family: "Proxima N W01 Xbold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @extrabold */
-    text-transform: lowercase;
-    font-size: 9em;
     line-height: 1;
     margin: 0;
     color: black;
@@ -201,8 +175,9 @@
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMzcuODE4cHgiIHZpZXdCb3g9IjAgMCAxMDAgMzcuODE4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMzcuODE4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGQ9Ik04Ljc3NiwzNi43MDJjLTEuNzg5LTAuNzQ0LTMuMzM4LTEuNzc5LTQuNjQ0LTMuMTA2UzEuODEsMzAuNjYsMS4wODYsMjguNzdDMC4zNjIsMjYuODgsMCwyNC43ODksMCwyMi40OTgNCgkJYzAtMi4yOTIsMC4zNjItNC4zNzMsMS4wODYtNi4yNDNjMC43MjQtMS44NywxLjczOS0zLjQ3OCwzLjA0Ni00LjgyNXMyLjg1NS0yLjM4Miw0LjY0NC0zLjEwNmMxLjc4OS0wLjcyNCwzLjc1LTEuMDg2LDUuODgxLTEuMDg2DQoJCWMyLjU3MywwLDQuNzM1LDAuNDMyLDYuNDg0LDEuMjk3YzEuNzQ5LDAuODY0LDMuMDI2LDEuNzU5LDMuODMsMi42ODRsLTQuNzY1LDcuMDU3Yy0wLjUyMy0wLjYwMy0xLjEzNi0xLjA5Ni0xLjg0LTEuNDc4DQoJCWMtMC43MDQtMC4zODItMS41MTgtMC41NzMtMi40NDMtMC41NzNjLTEuNTI4LDAtMi44MjUsMC41NDMtMy44OSwxLjYyOWMtMS4wNjYsMS4wODYtMS41OTgsMi42MzQtMS41OTgsNC42NDQNCgkJYzAsMi4wMSwwLjUzMywzLjU2OSwxLjU5OCw0LjY3NGMxLjA2NiwxLjEwNiwyLjM2MiwxLjY1OSwzLjg5LDEuNjU5YzAuOTI1LDAsMS43MzktMC4yMDEsMi40NDMtMC42MDMNCgkJYzAuNzA0LTAuNDAyLDEuMzE3LTAuOTA1LDEuODQtMS41MDhsNC43NjUsNy4xMTdjLTAuODA0LDAuOTI1LTIuMDgxLDEuODE5LTMuODMsMi42ODRjLTEuNzQ5LDAuODY0LTMuOTEsMS4yOTctNi40ODQsMS4yOTcNCgkJQzEyLjUyNSwzNy44MTgsMTAuNTY1LDM3LjQ0Niw4Ljc3NiwzNi43MDJ6Ii8+DQoJPHBhdGggZD0iTTMxLjYwNCwzNS42MTZjLTEuNDQ4LTEuNDY4LTIuMTcxLTMuNjg5LTIuMTcxLTYuNjY1VjE2Ljc2OGgtMy42NzlWNy45NjJoMy42NzlWMGgxMC4xOTN2Ny45NjJoNC41ODQNCgkJdjguODA2aC00LjU4NHY5LjU5YzAsMC43NjQsMC4xNjEsMS4zNjcsMC40ODIsMS44MDlzMC43ODQsMC42NjMsMS4zODcsMC42NjNjMC4zNjIsMCwwLjcxNC0wLjA1LDEuMDU2LTAuMTUxDQoJCWMwLjM0Mi0wLjEwMSwwLjU3My0wLjIzMSwwLjY5NC0wLjM5MmwxLjY4OSw3Ljk2MmMtMC41NjMsMC40NDItMS4zOTcsMC44MTQtMi41MDMsMS4xMTZjLTEuMTA2LDAuMzAyLTIuNDIzLDAuNDUyLTMuOTUxLDAuNDUyDQoJCUMzNS4zNDQsMzcuODE4LDMzLjA1MiwzNy4wODQsMzEuNjA0LDM1LjYxNnoiLz4NCgk8cGF0aCBkPSJNNDcuMzQ2LDI5LjYxNWw5LjQ2OS0xMi44NDdoLTkuNDY5VjcuOTYyaDIyLjU1OHY3LjE3N2wtOS41OSwxMy4xNDloOS44MzF2OC44MDZINDcuMzQ2VjI5LjYxNXoiLz4NCgk8cGF0aCBkPSJNODkuODA3LDE5LjQ4MmMwLTEuMTY2LTAuMjYxLTItMC43ODQtMi41MDNjLTAuNTIzLTAuNTAzLTEuMjY3LTAuNzU0LTIuMjMyLTAuNzU0DQoJCXMtMS43NTksMC4yODItMi4zODMsMC44NDRjLTAuNjIzLDAuNTYzLTEuMTE2LDEuMTI2LTEuNDc4LDEuNjg5djE4LjMzNkg3Mi43OThWNy45NjJoMTAuMTMzdjMuMzc4DQoJCWMwLjcyNC0xLjAwNSwxLjg2LTEuOTQsMy40MDgtMi44MDVjMS41NDgtMC44NjUsMy4zMjctMS4yOTcsNS4zMzgtMS4yOTdjMi45MzUsMCw1LjA1NiwwLjc3NCw2LjM2MywyLjMyMg0KCQljMS4zMDcsMS41NDgsMS45NiwzLjQ2OCwxLjk2LDUuNzZ2MjEuNzc0SDg5LjgwN1YxOS40ODJ6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==);
   }
   main h2 {
-    font-size: 1.5em;
-    font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @bold */
+    font-size: 1.875em;
+    line-height: 1.2;
+    font-weight: bold;
   }
   main .logo + h2 {
     max-width: 17em;
@@ -260,7 +235,7 @@
     color: white;
     border-width: 0;
     font-size: inherit;
-    font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @bold */
+    font-weight: bold;
     padding: 0.375em 1.125em;
     line-height: 1.5em;
     border-radius: 0.25em;
@@ -352,5 +327,168 @@
   }
   section.message p:before {
     content: " – ";
+  }
+
+
+  /* =Confirmation
+  ----------------------------------------------- */
+  .confirmation {
+    text-align: left;
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .confirmation h1,
+  .confirmation p {
+    font-size: 1.5em;
+    line-height: 1.25;
+  }
+  .confirmation h1 {
+    margin-top: 0.75em;
+    margin-bottom: 0.375em;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .confirmation h1 + p {
+    margin-top: 0;
+  }
+  .confirmation p {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .confirmation p.finish {
+    margin-top: 1.125em;
+    color: white;
+    display: table;
+  }
+  .confirmation p.finish:before {
+    content: "";
+    display: block;
+    border-top: 0.25em solid black;
+    border-top-color: rgba(0, 0, 0, 0.95);
+    margin-bottom: 1.125em;
+  }
+
+
+  /* =Mix
+  ----------------------------------------------- */
+  .mix {
+    max-width: 640px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .mix h1 {
+    font-size: inherit;
+    font-weight: inherit;
+    padding-left: 48px;
+    padding-bottom: 8px;
+  }
+  .mix h1 .avatar {
+    margin-left: -48px;
+    position: absolute;
+    margin-top: -8px;
+  }
+  .mix h1 span {
+    font-weight: bold;
+  }
+  .mix h1 strong {
+    color: black;
+  }
+  .mix .video {
+    margin-top: 0.75em;
+    margin-bottom: 1.125em;
+    background: black;
+    color: white;
+    box-shadow: 0 0 10px rgba(102, 102, 102, 0.5);
+  }
+  .mix .video video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+  .mix .about {
+    text-align: center;
+  }
+
+  /* Video not supported message */
+  .video .message {
+    padding: 1.5em;
+  }
+  .video .message h1,
+  .video .message p {
+    margin: 1.5em;
+    font-size: inherit;
+    max-width: 31.5em;
+    text-align: left;
+    padding: 0;
+  }
+  .video .message h1 {
+    font-weight: bold;
+  }
+  .video .message p a {
+    color: white;
+  }
+
+
+  /* =Avatars
+  ----------------------------------------------- */
+  .avatar img {
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  .avatar > span {
+    display: inline-block;
+    background-color: rgb(255, 203, 117); /* @cantaloupe */
+    color: black;
+    width       : 1.5em;
+    line-height : 1.5em;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  .avatar .clover {
+    background-color: rgb(0, 235, 98); /* @clover */
+  }
+  .avatar .kiwi {
+    background-color: rgb(0, 255, 208); /* @kiwi */
+  }
+  .avatar .grape {
+    background-color: rgb(159, 104, 246); /* @grape */
+  }
+  .avatar .bluebird {
+    background-color: rgb(0, 206,250); /* @bluebird */
+  }
+  .avatar .cantaloupe {
+    background-color: rgb(255, 203, 117); /* @cantaloupe */
+  }
+  .avatar .cranberry {
+    background-color: rgb(251, 59, 147); /* @cranberry */
+  }
+  .avatar .amethyst {
+    background-color: rgb(255, 152, 248); /* @amethyst */
+  }
+  .avatar .sky {
+    background-color: rgb(0, 255, 254); /* @sky */
+  }
+  .avatar .ocean {
+    background-color: rgb(24, 57, 245); /* @ocean */
+    color: white;
+  }
+
+  .avatar .size40 {
+    font-size: 1.6666666667em; /* 2/3 x 40px / @font-size */
+  }
+
+  .avatar [data-content]:after {
+    display: block;
+    content: attr(data-content);
+    speak: none;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.75;
   }
 

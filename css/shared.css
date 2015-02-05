@@ -709,22 +709,19 @@
   -----------------------------------------------
   (for “in situ” messages that we show when content hasn’t loaded yet, or has failed to load)
   ----------------------------------------------- */
-    .error-message,
+  .error-message,
   .loading-message {
     color: rgb(255, 255, 255); /* @snow */
     background: rgb(0, 0, 0); /* @midnight */
     text-align: center;
     padding: 1.5em;
   }
-    .error-message h1,
+  .error-message   h1,
   .loading-message h1 {
     font-size: inherit !important; /* SHIM: This is “important” to override the .page h1 style
                                             (which happens to come later in the style sheet). */
   }
-    .error-message a,
-  .loading-message a,
-    .error-message button,
-  .loading-message button {
+  .error-message a {
     color: inherit;
   }
 
