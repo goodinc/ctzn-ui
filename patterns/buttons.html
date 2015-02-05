@@ -218,62 +218,173 @@
   </header>
 
 <section>
+
   <h1>Buttons</h1>
 
-  <section>
-    <h2>Primary</h2>
+  <figure>
+    <figcaption>Link</figcaption>
+    <p class="action">
+      <a href="">Next</a>
+    </p>
+    <pre><code>&lt;p class=&quot;<mark>action</mark>&quot;&gt;
+  &lt;a href=&quot;…&quot;&gt;Next&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+  </figure>
 
-    <figure>
-      <button>Submit</button></p>
-      <pre><code>&lt;button&gt;Submit&lt;/button&gt;</code></pre>
-      <figcaption>Button</figcaption>
-    </figure>
+  <figure>
+    <figcaption>Button</figcaption>
+    <p class="submit">
+      <button type="submit">Send</button>
+    </p>
+    <pre><code>&lt;p class=&quot;submit&quot;&gt;
+  &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+&lt;/p&gt;</code></pre>
+  </figure>
 
-    <figure>
-      <p class="action"><a href="">Take Action</a></p>
-      <pre><code>&lt;p class=&quot;action&quot;&gt;&lt;a href=&quot;…&quot;&gt;Take Action&lt;/a&gt;&lt;/p&gt;</code></pre>
-      <figcaption>Link</figcaption>
-    </figure>
-  </section>
+  <figure>
+    <figcaption>Disabled</figcaption>
+    <p class="submit">
+      <button type="submit" disabled="disabled">Send</button>
+    </p>
+    <pre><code>&lt;p class=&quot;submit&quot;&gt;
+  &lt;button type=&quot;submit&quot; disabled=&quot;disabled&quot;&gt;Send&lt;/button&gt;
+&lt;/p&gt;</code></pre>
+  </figure>
 
-  <section id="secondary">
-    <h2>Secondary</h2>
-
-    <figure>
-      <form action="" method="post" class="secondary">
-        <button type="submit">Flag this post</button>
-      </form>
-      <pre><code>&lt;form action=&quot;…&quot; method=&quot;post&quot; class=&quot;<mark>secondary</mark>&quot;&gt;
-  &lt;button type=&quot;submit&quot;&gt;Flag this post&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-      <figcaption>Button</figcaption>
-    </figure>
-
-    <figure>
-      <p class="action secondary"><a href="">Skip this</a></p>
-      <pre><code>&lt;p class=&quot;action <mark>secondary</mark>&quot;&gt;&lt;a href=&quot;…&quot;&gt;Skip this&lt;/a&gt;&lt;/p&gt;</code></pre>
-      <figcaption>Link</figcaption>
-    </figure>
-
-    <figure>
-      <p class="action secondary edit"><a href="" title="Edit this post">Edit this post</a></p>
-      <pre><code>&lt;p class=&quot;action secondary <mark>edit</mark>&quot;&gt;&lt;a href=&quot;&quot;&gt;Edit this post&lt;/a&gt;&lt;/p&gt;</code></pre>
-      <figcaption>Link</figcaption>
-    </figure>
-  </section>
-
-  <section id="warning">
-    <h2>Warning</h2>
-
-    <figure>
-      <form action="" method="post" class="warning">
-        <button type="submit">Delete</button>
-      </form>
-      <pre><code>&lt;form action=&quot;…&quot; method=&quot;post&quot; class=&quot;warning&quot;&gt;
+  <figure>
+    <figcaption>Warning</figcaption>
+    <p class="submit warning">
+      <button type="submit">Delete</button>
+    </p>
+    <pre><code>&lt;p class=&quot;submit <mark>warning</mark>&quot;&gt;
   &lt;button type=&quot;submit&quot;&gt;Delete&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-    </figure>
-  </section>
+&lt;/p&gt;</code></pre>
+  </figure>
+
+  <figure>
+    <figcaption>Like</figcaption>
+    <div class="post-item">
+      <footer>
+        <p>
+          <button>
+            <svg class="icon">
+              <use xlink:href="#heart" />
+              <foreignObject>I like this</foreignObject>
+            </svg>
+            <span class="count">4</span>
+          </button>
+        </p>
+        <p>
+          <button class="attaboyed">
+            <svg class="icon">
+              <use xlink:href="#heart" />
+              <foreignObject>I like this</foreignObject>
+            </svg>
+            <span class="count">5</span>
+          </button>
+        </p>
+      </footer>
+    </div>
+    <pre><code>&lt;div class=&quot;post-item&quot;&gt;
+  &lt;footer&gt;
+    &lt;p&gt;
+      &lt;button&gt;
+        &lt;svg class=&quot;icon&quot;&gt;
+          &lt;use xlink:href=&quot;#heart&quot; /&gt;
+          &lt;foreignObject&gt;I like this&lt;/foreignObject&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;count&quot;&gt;4&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;button class=&quot;<mark>attaboyed</mark>&quot;&gt;
+        &lt;svg class=&quot;icon&quot;&gt;
+          &lt;use xlink:href=&quot;#heart&quot; /&gt;
+          &lt;foreignObject&gt;I like this&lt;/foreignObject&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;count&quot;&gt;5&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+  </figure>
+
+  <figure>
+    <figcaption>Push Card</figcaption>
+    <div class="push-card">
+      <form style="margin-top: 0">
+        <p>
+          <button type="submit">Join</button>
+        </p>
+      </form>
+    </div>
+    <pre><code>&lt;div class=&quot;push-card&quot;&gt;
+  &lt;form&gt;
+    &lt;p&gt;
+      &lt;button type=&quot;submit&quot;&gt;Join&lt;/button&gt;
+    &lt;/p&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+  </figure>
+
+  <figure>
+    <figcaption>Dialog</figcaption>
+    <div class="dialog page" style="position: static;">
+      <p class="action">
+        <button>Take Action</button>
+      </p>
+    </div>
+    <pre><code>&lt;div class=&quot;dialog page&quot;&gt;
+  &lt;p class=&quot;action&quot;&gt;
+    &lt;button&gt;Take Action&lt;/button&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+  </figure>
+
+  <figure>
+    <figcaption>Options</figcaption>
+    <div class="post-options active" style="position: static; background: transparent;">
+      <div style="position: static;">
+        <ul>
+            <li>
+              <button>
+                Edit
+              </button>
+            </li>
+            <li class="warning">
+              <button>
+                Delete
+              </button>
+            </li>
+        </ul>
+        <ul>
+          <li>
+            <button>
+              Cancel
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <pre><code>&lt;div class=&quot;post-options active&quot;&gt;
+  &lt;div&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+          &lt;button&gt;Edit&lt;/button&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;warning&quot;&gt;
+          &lt;button&gt;Delete&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;button&gt;Cancel&lt;/button&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </figure>
 
 </body>
 </html>

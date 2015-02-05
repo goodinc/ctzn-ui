@@ -379,12 +379,12 @@
   ----------------------------------------------- */
   button,
   .action a {
-    background-color: transparent;
     border-width: 0;
     font-family: inherit;
     font-size: inherit;
     font-weight: bold;
-    color: rgb(255, 49, 102); /* @strawberry */
+    background-color: rgb(255, 49, 102); /* @strawberry */
+    color: white;
     padding: 0.375em 1.125em;
     line-height: 1.5em;
     border-radius: 0.25em;
@@ -393,46 +393,24 @@
     text-transform: lowercase;
     margin: 0;
   }
+  .action a:active,
+  .action a:focus,
   button:active,
   button:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    background-color: rgb(193, 16, 65); /* @raspberry */
+    color: white;
   }
   .action a {
     display: inline-block;
     text-decoration: none;
   }
-  .submit button,
-  .action a,
-  .action button,
-  .push > header button {
-    background-color: rgb(255, 49, 102); /* @strawberry */
-    color: white;
-  }
-  .submit button:active,
-  .submit button:focus,
-  .action a:active,
-  .action a:focus,
-  .action button:active,
-  .action button:focus,
-  .push > header button:active,
-  .push > header button:focus {
-    background-color: rgb(193, 16, 65); /* @raspberry */
-    color: white;
-  }
   .warning button {
-    color: rgb(255, 102, 102); /* @peach */
+    background-color: rgb(255, 49, 59); /* @apple */
+    color: white;
   }
   .warning button:active,
   .warning button:focus {
-    color: rgb(255, 49, 59); /* @apple */
-  }
-  .submit.warning button {
-    background-color: rgb(255, 102, 102); /* @peach */
-    color: white;
-  }
-  .submit.warning button:active,
-  .submit.warning button:focus {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 29, 39);
     color: white;
   }
 
@@ -441,6 +419,23 @@
     color: white;
     opacity: 0.5;
     cursor: default;
+  }
+
+  /* OPTIONAL: Make buttons lighter if they appear on a dark background. */
+  .error-message          button,
+  section.push .new-posts button {
+    background: white;
+    color: rgb(255, 49, 102); /* @strawberry */
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    transition: all 0.2s;
+  }
+  .error-message          button:active,
+  .error-message          button:focus,
+  section.push .new-posts button:active,
+  section.push .new-posts button:focus {
+    background-color: rgb(222, 222, 222); /* @silver*/
+    border-color: rgb(222, 222, 222); /* @silver*/
+    color: rgb(193, 16, 65); /* @raspberry */
   }
 
 
@@ -951,7 +946,8 @@
   .post-list .previous a {
     display: block;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
+    padding: 0.5em;
   }
 
 
@@ -1039,6 +1035,7 @@
   .post-item footer p a,
   .post-item footer p button {
     display: inline-block;
+    background: white;
     color: rgb(204, 204, 204); /* @aluminum */
     text-decoration: none;
     font-weight: bold;
@@ -1152,6 +1149,7 @@
     font-size: 1.125em;
     padding: 0.6666666667em; /* @line-height / 2 / 1.125 */
     line-height: 1.3333333333; /* @line-height / 1.125 */
+    background: white;
     color: rgb(101, 156, 247); /* @boysenberry */
     color: rgb(60, 109, 218);
     font-weight: bold;
@@ -1289,18 +1287,6 @@
     margin: 0 0 0 -5em;
     text-align: center;
     z-index: 9;
-  }
-  section.push .new-posts button {
-    background: white;
-    color: rgb(255, 49, 102); /* @strawberry */
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
-    transition: all 0.2s;
-  }
-  section.push .new-posts button:active,
-  section.push .new-posts button:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
-    border-color: rgb(222, 222, 222); /* @silver*/
-    color: rgb(193, 16, 65); /* @raspberry */
   }
 
 
@@ -2039,6 +2025,7 @@
     position: absolute;
     top  : 0.375em; /* @line-height / 4 */
     right: 0.375em;
+    background: white;
     color: rgb(102, 102, 102); /* @tin */
   }
   .editor .images li button:focus,
@@ -2706,15 +2693,6 @@
     margin: 0.375em auto;
     height: 3em;
     width: auto;
-  }
-  .login.page .submit button {
-    background: transparent;
-    color: rgb(255, 49, 102); /* @strawberry */
-  }
-  .login.page .submit button:active,
-  .login.page .submit button:focus {
-    background: rgb(193, 16, 65); /* @raspberry */
-    color: white;
   }
   .login.page .note {
     font-size: 0.875em
