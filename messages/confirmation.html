@@ -21,7 +21,7 @@
   </script>
 
 </head>
-<body class="pattern">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -199,42 +199,54 @@
     </defs>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../">CTZN</a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../patterns/">Patterns</a></li>
-        <li><a href="../messages/">Messages</a></li>
-        <li><a href="../prototype/">Prototype</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section class="profile page">
 
-  <h1>Confirmation</h1>
+    <header>
+      <h1>jelena</h1>
 
-  <section class="upload-message" role="status">
-    <h1>
-      <!-- @placeholder-image -->
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
-      Sending
-      <span class="sending icon"></span>
-    </h1>
-  </section>
+      <a href="#edit-profile" class="next">  
+        <svg class="icon"><use xlink:href="#edit" /><foreignobject>Edit Profile</foreignobject></svg>
+      </a>
 
-  <div style="margin-top: 3em"></div>
+      <a href="#push" class="back">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
+      </a>
+    </header>
 
-  <section class="confirmation-message">
-    <h1>Roger that.</h1>
-    <p role="status">Instructions have been sent to citizen@gmail.com</p>
-    <p class="action"><a href="#login">Log In</a></p>
+    <div class="orange header push-card">
+
+      <div class="image">
+        <span class="avatar">
+          <span class="size100 grape" data-content="j"></span>
+        </span>
+      </div>
+
+      <div class="details">
+        <h2 class="name">Jelena Woehr</h2>
+        <h3 class="about">Land cuttlefish. Word aficionado. Director of Community at GOOD.</h3>
+
+        <p class="joined">Joined <time datetime="2014-09-30T19:19:50.000+00:00">15 weeks ago</time></p>
+      </div>
+
+      <div class="meta">
+        <p>
+          <span class="count">103</span>
+          <span class="label">Posts</span>
+        </p>
+        <p>
+          <a href="pushes.html">
+            <span class="count">9</span>
+            <span class="label">Pushes</span>
+          </a>
+        </p>
+      </div>
+
+    </div>
   </section>
 
   <section class="message active" role="status">
     <div>
       <p>Profile Saved. That profile update looks great on you.</p>
-    </div>
-    <div class="error">
-      <p>Well, this is embarrassing. Something went wrong when updating your profile. Care to try again?</p>
     </div>
     <!-- /ko -->
   </section>

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Options / CTZN</title>
+  <title>Messages / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -12,11 +12,11 @@
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
     (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
@@ -199,36 +199,25 @@
     </defs>
   </svg>
 
-  <h1>Options</h1>
-
-  <p>The rest of the screen appears here, underneath the options.</p>
-
-  <h2>Tricky</h2>
-  <p>Add a class name of <code>active</code> to the options element, to make it appear.</p>
-
-  <div class="post-options active">
-    <div>
+  <header class="pattern">
+    <h2><a href="../">CTZN</a></h2>
+    <nav>
       <ul>
-          <li>
-            <button>
-              Edit
-            </button>
-          </li>
-          <li class="warning">
-            <button>
-              Delete
-            </button>
-          </li>
+        <li class="active"><a href="../patterns/">Patterns</a></li>
+        <li><a href="../messages/">Messages</a></li>
+        <li><a href="../prototype/">Prototype</a></li>
       </ul>
-      <ul>
-        <li>
-          <button>
-            Cancel
-          </button>
-        </li>
-      </ul>
+    </nav>
+  </header>
+
+  <h1>Confirmation</h1>
+
+  <section class="message active" role="status">
+    <div class="error">
+      <p>Well, this is embarrassing. Something went wrong when updating your profile. Care to try again?</p>
     </div>
-  </div>
+    <!-- /ko -->
+  </section>
 
 </body>
 </html>

@@ -24,6 +24,7 @@
     text-transform: lowercase;
   }
   header.pattern h2 {
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900;
   }
   header.pattern h2,

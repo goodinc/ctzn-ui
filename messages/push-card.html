@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Options / CTZN</title>
+  <title>Push Card / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../css/fonts.css" />
   <link rel="stylesheet" href="../css/shared.css" />
-  <link rel="stylesheet" href="../css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -21,7 +20,7 @@
   </script>
 
 </head>
-<body class="pattern">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -199,36 +198,44 @@
     </defs>
   </svg>
 
-  <h1>Options</h1>
+  <svg style="display: none;">
+    <defs>
+      <g id="icon-close">
+        <use xlink:href="#close" />
+      </g>
+    </defs>
+  </svg>
 
-  <p>The rest of the screen appears here, underneath the options.</p>
+  <section class="strawberry push-card page">
 
-  <h2>Tricky</h2>
-  <p>Add a class name of <code>active</code> to the options element, to make it appear.</p>
+    <div class="details">
+      <h1 class="name">Headline</h1>
 
-  <div class="post-options active">
-    <div>
-      <ul>
-          <li>
-            <button>
-              Edit
-            </button>
-          </li>
-          <li class="warning">
-            <button>
-              Delete
-            </button>
-          </li>
-      </ul>
-      <ul>
-        <li>
-          <button>
-            Cancel
-          </button>
-        </li>
-      </ul>
+      <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.</p>
+
+      <form>
+        <p class="text">
+          <label>
+            <span>Field Label</span><br />
+            <input type="email" placeholder="Field Label" name="email" />
+          </label>
+        </p>
+        <p>
+          <button type="submit">Action to take</button>
+        </p>
+        <p style="color: red; background-color: white; padding: 0.5em;">Oops! There’s something wrong with that field</p>
+      </form>
     </div>
-  </div>
+
+    <a href="">
+      <svg aria-label="Close" class="icon" viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#close" />
+        <foreignobject>Close</foreignobject>
+      </svg>
+    </a>
+
+  </section>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Options / CTZN</title>
+  <title>Messages / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -12,16 +12,16 @@
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
     (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
 </head>
-<body class="pattern">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -199,44 +199,21 @@
     </defs>
   </svg>
 
-  <h1>Options (dialog)</h1>
+  <section class="edit page">
+    <header>
+      <h1>Forgot Password</h1>
 
-  <p>The page itself appears here, underneath the options.</p>
+      <a href="#login" class="back">
+        Cancel
+      </a>
+    </header>
 
-<div class="post-options active">
-    <div>
-      <ul>
-<!-- ko if: canHide() --><li>
-            <button>
-              Hide
-            </button>
-          </li>
-        <!-- /ko -->
-        <!-- ko if: canEdit() -->
-          <li>
-            <button>
-              Edit
-            </button>
-          </li>
-        <!-- /ko -->
-        <!-- ko if: canDelete() -->
-          <li class="warning">
-            <button>
-              Delete
-            </button>
-          </li>
-        <!-- /ko -->
-      </ul>
-<ul>
-<li>
-          <button>
-            Cancel
-          </button>
-        </li>
-      </ul>
-<!-- ko if: deletingPost() --><!-- /ko --><!-- ko if: hidingPost() --><!-- /ko --><!-- ko if: errorMessage() --><!-- /ko -->
-</div>
-  </div>
+    <section class="confirmation-message">
+      <h1>Roger that.</h1>
+      <p role="status">Instructions have been sent to citizen@gmail.com</p>
+      <p class="action"><a href="#login">Log In</a></p>
+    </section>
+  </section>
 
 </body>
 </html>
