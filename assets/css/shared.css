@@ -961,6 +961,7 @@
   /* =Post Item
   ----------------------------------------------- */
   .post-item {
+    background: white;
     padding: 1.25em 1.25em 1.25em 3.75em; /* 20px 20px 20px 60px */
   }
   .post-item header {
@@ -1274,14 +1275,14 @@
   /* =Push
   ----------------------------------------------- */
   section.push {
-    background: rgb(255, 255, 255); /* @snow */
-    color: rgb(0, 0, 0); /* @midnight */
+    background-color: rgb(250, 250, 250); /* @casper */
+    color: rgb(5, 5, 5); /* @tungsten */
+
+    min-height: 100%;
+    box-sizing: border-box;
 
     /* Make space for “.create” */
     padding-bottom: 1.5em;
-  }
-  section.push .post-list {
-    margin-top: 0.375em; /* @line-height / 4 */
   }
 
   /* Update Indicator */
@@ -1387,6 +1388,7 @@
   section.page {
     background-color: rgb(250, 250, 250); /* @casper */
     color: rgb(5, 5, 5); /* @tungsten */
+
     min-height: 100%;
     box-sizing: border-box;
   }
@@ -1669,6 +1671,13 @@
 
   .push-card {
     text-align: center;
+
+    background-color: rgb(5, 5, 5); /* @tungsten */
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .switch .push-card .name {
+    font-size: 1.5em; /* 24px / @font-size */
   }
   .push-card.animated {
     transition: background-color 0.4s;
@@ -1714,7 +1723,6 @@
   a.push-card {
     display: block;
     text-decoration: none;
-    color: inherit;
   }
 
   .push-card.page > a {
@@ -1722,9 +1730,10 @@
   }
 
   .push-card .name {
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900; /* @extra-bold */
     font-size: 1.875em;
     line-height: 1.2; /* @line-height x 1.5 / 1.875em */
-    font-weight: 900; /* @extra-bold */
     margin-top: 0;
     margin-bottom: 0;
 
@@ -1974,6 +1983,7 @@
   }
   .comments article {
     padding: 0;
+    background-color: transparent;
   }
   .comments article header h3,
   .comments article header p,
@@ -2787,6 +2797,7 @@
   .settings .account-list h2 strong {
     font-size: 1.3333333333em; /* 24px / 18px */
     color: black;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
   }
   .settings aside {
@@ -2986,6 +2997,9 @@
   .switch ul {
     margin-top: 0;
   }
+  .switch li {
+    margin-bottom: 0.0625em; /* 1px */
+  }
   .switch li > a:after {
     content: "";
     display: table;
@@ -2993,6 +3007,7 @@
   }
   .switch li > a {
     padding: 1.5em;
+    text-align: left;
   }
   .switch li a:active,
   .switch li a:focus {
