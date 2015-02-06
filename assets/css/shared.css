@@ -867,8 +867,7 @@
   .list li a {
     display: block;
     vertical-align: middle;
-    padding: 0.5625em 1.125em;
-    padding-left: 3.25em;
+    padding: 0.75em 3em 0.75em 3.375em;
     text-decoration: none;
     background: white;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
@@ -894,15 +893,26 @@
   .list li a .name > span > span {
     display: table-cell;
     vertical-align: middle;
-    height: 3em;
   }
   .list ul h3,
   .list ul p {
     margin: 0;
     font-size: inherit;
+    display: inline;
   }
   .list ul h3 {
     color: black;
+    margin-right: 0.5em;
+  }
+  .list li p {
+    color: rgb(153, 153, 153); /* @nickel */
+    font-size: 0.875em; /* 14px / @font-size */
+    white-space: nowrap;
+  }
+  .list ul .message {
+    position: absolute;
+    top: 0.75em;
+    right: 0.75em;
   }
   @media (max-width: 34.25em) {
     .list li {
