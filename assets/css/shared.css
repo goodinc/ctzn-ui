@@ -1428,10 +1428,15 @@
 
   /* For the editor, preview and dialog pages */
   .page > a {
-    padding: 1.25em;
+    padding: 0.75em 1.25em;
     position: absolute;
     top: 0;
     right: 0;
+  }
+  .page > a svg {
+    display: block;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
   }
   /* For the preview page */
   .page > a.back {
@@ -1676,6 +1681,14 @@
     color: black;
     color: rgba(0, 0, 0, 0.95);
   }
+
+  /* Sometimes the push card is a link. */
+  .push-card:focus,
+  .push-card:active {
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+  }
+
   .switch .push-card .name {
     font-size: 1.5em; /* 24px / @font-size */
   }
@@ -1954,11 +1967,14 @@
     box-sizing: border-box;
     padding: 0;
   }
-  .post.page .details .post-item header {
-    margin-bottom: 1.125em;
+  .post.page .post-item header .avatar {
+    position: static;
+    display: inline;
+    margin-left: 0;
+    margin-right: 0.375em;
   }
-  .post.page .details .post-item header h3 a {
-    padding-left: 3em;
+  .post.page .post-item header {
+    margin-bottom: 1.125em;
   }
 
 
@@ -1979,7 +1995,7 @@
     margin: 0 0 1.25em;
   }
   .comments ol li + li {
-    margin-top: 0.8571428571em; /* @line-height / 4 / 0.875 */
+    margin-top: 1.5em; /* @line-height */
   }
   .comments article {
     padding: 0;
@@ -1990,9 +2006,6 @@
   .comments article .body {
     font-size: 0.875em; /* 14px / @font-size */
     line-height: 1.2857142857; /* @line-height / 0.875 */
-  }
-  .comments article .body p {
-    margin: 0;
   }
   .comments p.text label {
     padding: 0.5em;
@@ -3012,7 +3025,6 @@
   .switch li a:active,
   .switch li a:focus {
     opacity: 0.75;
-    color: inherit;
   }
   .switch li h2 + p {
     margin: 0;
