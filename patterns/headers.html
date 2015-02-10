@@ -20,67 +20,6 @@
     })();
   </script>
 
-  <style>
-
-    /* Override the default style, for demonstration purposes. */
-    .page > header {
-      position: relative;
-    }
-    .page > header ~ form .submit {
-      position: static;
-    }
-
-    section.push,
-    section.page {
-      padding-top: 0;
-      margin-bottom: 3em;
-    }
-
-    .page {
-      position: relative;
-    }
-
-    .start.page aside {
-      position: relative;
-    }
-
-    /* SHIM: Add extra padding to the bottom of pages with forms, to prevent the virtual keyboard
-             from obscuring the fields and buttons on Android (in standalone webview mode). */
-    .page >         form:last-child,
-    .page > form ~ aside:last-child,
-    .start.page >    div:last-child,
-    .post.page >     div:last-child {
-      padding-bottom: 0;
-    }
-
-    .mix-editor .selected-images {
-      position: relative;
-      top: 0;
-    }
-
-    header.primary,
-    ul.create {
-      position: relative;
-    }
-
-    section.editor.page {
-      position: relative;
-    }
-
-    section.loading,
-    section.loading.error,
-    section.developer-tools {
-      position: relative;
-      height: auto;
-    }
-
-    .developer.action {
-      position: static;
-      margin-top: 1.5em;
-    }
-
-  </style>
-
 </head>
 <body class="pattern">
 
@@ -267,6 +206,7 @@
         <li class="active"><a href="../patterns/">Patterns</a></li>
         <li><a href="../messages/">Messages</a></li>
         <li><a href="../prototype/">Prototype</a></li>
+        <li><a href="../email/">Email</a></li>
       </ul>
     </nav>
   </header>
@@ -338,6 +278,38 @@
 
   </section>
 
+  <section class="editor page">
+    <a href="#push">  
+      <svg class="icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#close" /><foreignObject>Go back to the push</foreignObject></svg>
+    </a>
+
+    <form>
+      <h1>
+        <span class="avatar">
+          <img height="30" width="30" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" alt="eshah">
+        </span>
+        <span>@eshah</span>
+      </h1>
+
+      <p class="text">
+        <label>
+          <span>Field label…</span><br />
+          <textarea placeholder="Field label…"></textarea>
+        </label>
+      </p>
+
+
+      <div class="submit">
+        <label>
+          <input type="file" />
+          <svg class="icon"><use xlink:href="#picture" /><foreignobject></foreignobject></svg>
+          <span>Add image</span>
+        </label>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+
   <section class="boysenberry start push-card page">
     <div>
       <h1>
@@ -360,22 +332,17 @@
       <ul>
         <li>
           <a href="push.html" class="push-card orange">
-            <h2 class="name">Project Citizen</h2>
-            <p class="about">Helping social creatives celebrate the work they do</p>
+            <span class="name">Project Citizen</span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card blueberry">
-            <h2 class="name">cicLAvia</h2>
-            <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
+            <span class="name">cicLAvia</span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card lime">
-            <h2 class="name">LA 2050</h2>
-            <p class="about">Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.</p>
+            <span class="name">LA 2050</span>
           </a>
         </li>
       </ul>

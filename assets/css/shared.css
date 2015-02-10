@@ -461,7 +461,14 @@
   }
 
   form .validation-message {
-    color: red;
+    color: rgb(255, 49, 59); /* @apple */
+  }
+  form .submit + .validation-message {
+    margin-top: 1.5em;
+    color: inherit;
+  }
+  .push-card .validation-message {
+    color: inherit;
   }
 
   /* OPTIONAL: Make forms more compact on small screens */
@@ -531,9 +538,9 @@
     position: relative;
 
     /* OPTIONAL: Make fields touch the edges of the screen, on small devices */
-    margin-left: -1.25em;
-    margin-right: -1.25em;
-    padding-left: 1.25em;
+    margin-left: -1.25em; /* @page-padding */
+    margin-right: -1.25em; /* @page-padding */
+    padding-left: 1.25em; /* @page-padding */
 
     /* Make space for the success & error icons */
     padding-right: 1.75em;
@@ -576,7 +583,7 @@
   .text label .icon:first-child {
     position: absolute;
     left: auto;
-    margin-left: -2.25em;
+    margin-left: -1.875em;
     margin-top: 0.25em;
 
     /* @item-icon */
@@ -745,8 +752,8 @@
   .comments section.upload-message {
     border-bottom-width: 0;
     border-top: 0.0625em solid rgb(222, 222, 222); /* @silver*/
-    margin-left: -1.25em;
-    margin-right: -1.25em;
+    margin-left: -1.25em; /* @page-padding */
+    margin-right: -1.25em; /* @page-padding */
   }
 
   .upload-message.error {
@@ -858,7 +865,7 @@
     padding-left: 0;
   }
   .list ul {
-    margin: 0 -1.25em;
+    margin: 0 -1.25em; /* @page-padding */
   }
   .list li {
     margin: 0.75em 0;
@@ -867,7 +874,7 @@
   .list li a {
     display: block;
     vertical-align: middle;
-    padding: 0.75em 3em 0.75em 3.375em;
+    padding: 0.75em 3em 0.75em 3.5em;
     text-decoration: none;
     background: white;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
@@ -880,7 +887,7 @@
   }
   .list li a .avatar {
     position: absolute;
-    left: 0.65em;
+    left: 0.75em;
     top: 50%;
     margin-top: -0.9375em; /* avatar height / 2 */
   }
@@ -913,6 +920,9 @@
     position: absolute;
     top: 0.75em;
     right: 0.75em;
+  }
+  .list ul .message svg {
+    display: block;
   }
   @media (max-width: 34.25em) {
     .list li {
@@ -962,7 +972,7 @@
   ----------------------------------------------- */
   .post-item {
     background: white;
-    padding: 1.25em 1.25em 1.25em 3.75em; /* 20px 20px 20px 60px */
+    padding: 0.75em 1.25em 1.5em 3.5em; /* 12px 20px 24px 56px */
   }
   .post-item header {
     position: relative;
@@ -977,6 +987,10 @@
     font-size: 0.875em; /* 14px / @font-size */
     line-height: 1.7142857143; /* @line-height / 0.875 */
     display: inline-block;
+    vertical-align: top;
+  }
+  .post-item header p svg.icon {
+    height: 1.7142857143em; /* @line-height / 0.875 */
   }
   .post-item header h3 a {
     color: inherit;
@@ -987,14 +1001,15 @@
   }
   .post-item header .avatar {
     position: absolute;
-    margin-left: -2.5em;
+    top:-0.1875em; /* 3px / @font-size */
+    left: -2.75em; /* 3.5em - 0.75em */
   }
   .post-item header p {
     color: rgb(204, 204, 204); /* @aluminum */
     font-weight: bold;
   }
   .post-item header p + p {
-    margin-left: 0.375em;
+    margin-left: 0.125em;
   }
   .post-item header p a {
     color: inherit;
@@ -1395,7 +1410,7 @@
   .page > div,
   .page > form,
   .page > aside {
-    padding: 1.25em;
+    padding: 1.25em; /* @page-padding */
     max-width: 31.25em; /* image.width / font-size (500px / 16px) */
     margin: 0 auto;
   }
@@ -1428,25 +1443,29 @@
 
   /* For the editor, preview and dialog pages */
   .page > a {
-    padding: 0.75em 1.25em;
+    padding: 0.75em 1em; /* @line-height / 2 */ /* @font-size */
     position: absolute;
     top: 0;
     right: 0;
   }
   .page > a svg {
+    margin-left: -0.25em; /* @header-padding - 0.75em */
+    margin-right: -0.25em;
     display: block;
-    margin-left: -0.5em;
-    margin-right: -0.5em;
   }
+
   /* For the preview page */
   .page > a.back {
     right: auto;
     left: 0;
   }
+
+  /* For the editor */
   .page h1 {
     margin-top: 0;
-    font-size: 1.125em; /* 18px / @font-size */
-    line-height: 1.3333333333; /* 1.5 / 1.125 */
+    margin-bottom: 0.75em;
+    font-size: inherit;
+    line-height: inherit;
   }
 
 
@@ -1476,15 +1495,15 @@
   .page > header .back {
     position: absolute;
     top: 0;
-    padding: 0.75em 1.25em;
+    padding: 0.75em 1em; /* @line-height */ /* @header-padding */
     border: 0 solid rgb(44, 44, 44); /* @thorium */
   }
 
   .page > header .next svg,
   .page > header .back svg {
     display: block;
-    margin-left: -0.5em;
-    margin-right: -0.5em;
+    margin-left: -0.25em; /* @header-padding - 0.75em */
+    margin-right: -0.25em;
   }
 
   .page > header .next {
@@ -1591,8 +1610,7 @@
   }
   .page aside a      .icon,
   .page aside button .icon {
-    margin-right: 0.75em;
-    margin-left: -0.5em;
+    margin-right: 0.5em; /* SHIM: 0.75em - one whitespace character */
 
     /* @item-icon */
     width: 1.875em;
@@ -1605,9 +1623,8 @@
     width: 100%;
     box-sizing: content-box;
     text-align: left;
-    padding: 0.375em 1.25em;
-    margin: 0 -1.25em;
-    line-height: 1.5em;
+    padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
+    margin: 0 -1.25em 0 -1.25em; /* @page-padding */
     text-decoration: none;
     font-weight: normal;
     background: white;
@@ -1622,7 +1639,7 @@
     background-size: 1.5em auto;
     background-repeat: no-repeat;
     background-position: 100% 50%;
-    background-position: calc(100% - 0.5em) 50%;
+    background-position: calc(100% - 0.75em) 50%;
 
     /* @icon-right */ /* @aluminum */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg>');
@@ -1677,7 +1694,7 @@
   .push-card {
     text-align: center;
 
-    background-color: rgb(5, 5, 5); /* @tungsten */
+    background-color: rgb(250, 250, 250); /* @casper */
     color: black;
     color: rgba(0, 0, 0, 0.95);
   }
@@ -1700,7 +1717,7 @@
   .push-card,
   .page.push-card,
   .page > .push-card {
-    padding: 1.5em 1.25em; /* @line-height */
+    padding: 1.5em 1.25em; /* @page-padding */
     max-width: none;
   }
 
@@ -1802,19 +1819,25 @@
   }
 
   /* Join Button */
-  .start.page > div,
+  .start.page > div {
+    margin-top: 1.5em;
+  }
   .push-card .details {
     margin-top: 0.75em;
   }
   .push-card form {
     margin-top: 1.875em;
+    margin-bottom: 0;
   }
-  .push-card form {
+  .push-card.page p.submit {
+    text-align: center;
+  }
+  .push-card.page p.text {
+    max-width: 20em;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0;
-    max-width: 20em;
   }
+  .push-card.page button,
   .dialog.page .action a,
   .dialog.page .action button {
     max-width: 13.333333333em;
@@ -1872,7 +1895,7 @@
     color: rgba(0, 0, 0, 0.95);
   }
 
-  /* Make the content lighter if the background is dark. */
+  /* OPTIONAL: Make the content lighter if the background is dark. */
   .push-card.blueberry   .name,
   .push-card.boysenberry .name,
   .push-card.plumb       .name,
@@ -1890,6 +1913,46 @@
   .push-card.apple       > a,
   .push-card.tangerine   > a,
   .push-card.orange      > a {
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .push-card.blueberry   .validation-message,
+  .push-card.boysenberry .validation-message,
+  .push-card.plumb       .validation-message,
+  .push-card.strawberry  .validation-message,
+  .push-card.apple       .validation-message,
+  .push-card.tangerine   .validation-message,
+  .push-card.orange      .validation-message {
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .start.page.blueberry   aside a,
+  .start.page.boysenberry aside a,
+  .start.page.plumb       aside a,
+  .start.page.strawberry  aside a,
+  .start.page.apple       aside a,
+  .start.page.tangerine   aside a,
+  .start.page.orange      aside a {
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .start.page.blueberry   h1 span,
+  .start.page.boysenberry h1 span,
+  .start.page.plumb       h1 span,
+  .start.page.strawberry  h1 span,
+  .start.page.apple       h1 span,
+  .start.page.tangerine   h1 span,
+  .start.page.orange      h1 span {
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .login.page .blueberry   h2 span,
+  .login.page .boysenberry h2 span,
+  .login.page .plumb       h2 span,
+  .login.page .strawberry  h2 span,
+  .login.page .apple       h2 span,
+  .login.page .tangerine   h2 span,
+  .login.page .orange      h2 span {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
@@ -1922,12 +1985,12 @@
     background: rgba(0, 0, 0, 0.1);
     display: block;
     text-align: left;
-    margin-left   : -1.25em;
-    margin-right  : -1.25em;
+    margin-left   : -1.25em; /* @page-padding */
+    margin-right  : -1.25em; /* @page-padding */
     margin-bottom : -1.5em; /* @line-height */
 
     /* FUSSY: Line up with the left margin of the page */
-    padding-left: 0.125em; /* 1.25em - 1.125em */
+    padding-left: 0.125em; /* @page-padding - 1.125em */
   }
   .header.push-card .meta p {
     background-color: transparent;
@@ -1992,7 +2055,7 @@
     padding-left: 0;
   }
   .comments ol {
-    margin: 0 0 1.25em;
+    margin: 0 0 1.5em; /* @line-height */
   }
   .comments ol li + li {
     margin-top: 1.5em; /* @line-height */
@@ -2016,12 +2079,17 @@
   ----------------------------------------------- */
   .editor.page {
     padding-top: 0;
-    min-height: 100%;
+  }
+  .editor.page form {
+    padding-top: 0.75em;
   }
 
   .editor h1 .avatar {
-    margin-right: 0.25em;
-    font-size: 0.8888888889em; /* 1 / 1.125em */
+    margin-right: 0.375em;
+    display: inline-block;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    vertical-align: top;
   }
   .editor ol,
   .editor li {
@@ -2030,10 +2098,10 @@
     padding-left: 0;
   }
   .editor .images {
-    margin: 1.5em 0 3em;
+    margin: 1em 0 1.5em;
   }
   .editor .images li {
-    margin: 0 0 0.75em;
+    margin: 0 0 1em;
     padding: 0.375em 2.25em 0.375em 0.375em; /* @line-height / 4 */
     background-color: rgb(250, 250, 250); /* @casper */
     background: white;
@@ -2066,9 +2134,10 @@
     padding: 0;
   }
   .editor textarea {
-    font-size: 1.5em;
-    line-height: 1.5;
-    height: 6em;
+    font-size: 1.25em;
+    padding: 1em; /* @page-padding / 1.25em */
+    line-height: 1.2;
+    height: 9.6em; /* 1.2 x 8 */
   }
   .editor input[type="file"] {
     position: absolute;
@@ -2101,8 +2170,8 @@
   .profile.page .image {
     max-width: none;
     text-align: center;
-    padding: 1.25em;
-    margin: -1.5em -1.25em 0; /* @line-height */
+    padding: 1.25em 1em; /* @page-padding */
+    margin: -1.5em -1em 0; /* @page-padding */
     background: rgba(255, 255, 255, 0.15);
   }
   .profile.page .image .avatar {
@@ -2617,7 +2686,6 @@
     padding: 1.5em;
   }
   .mix-editor form .preview img {
-    width: 18.75em; /* 300px / @font-size */
     max-width: 100%;
     height: auto;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
@@ -2664,14 +2732,11 @@
     text-transform: lowercase;
     margin-bottom: 0;
   }
-  .start.page h1 span {
-    color: white;
-  }
   .start.page h1 svg {
     display: block;
     margin: 0.5em auto 0;
     height: 3em;
-    width: auto;
+    width: 100%;
   }
 
   .start.page aside {
@@ -2715,9 +2780,6 @@
     text-transform: lowercase;
     text-align: center;
   }
-  .login.page h2 span {
-    color: white;
-  }
   .login.page h2 svg {
     display: block;
     margin: 0.375em auto;
@@ -2746,7 +2808,7 @@
   }
 
   .settings h3 {
-    margin-top: 0;
+    margin-top: 1em; /* @line-height / 2 / 0.75em */
 
     /* @tiny-headline */
     font-size: 0.75em;
@@ -2755,12 +2817,13 @@
   }
 
   .settings .add-hashtag .item a {
+    padding-right: 2em;
 
     /* @background-icon */
     background-size: 1.5em auto;
     background-repeat: no-repeat;
     background-position: 100% 50%;
-    background-position: calc(100% - 0.5em) 50%;
+    background-position: calc(100% - 0.75em) 50%;
 
     /* @icon-right */ /* @aluminum */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg>');
@@ -2787,7 +2850,7 @@
   .settings p.item,
   .settings .tag-list     ul,
   .settings .account-list ul {
-    margin: 0 -1.25em;
+    margin: 0 -1.25em; /* @page-padding */
   }
   .settings .tag-list     > svg:first-child,
   .settings .account-list > svg:first-child {
@@ -2837,7 +2900,7 @@
   }
   .settings .item a {
     display: block;
-    padding: 0.5625em 0.75em 0.5625em 1.125em;
+    padding: 0.5625em 0.75em 0.5625em 1.25em;
     text-decoration: none;
     text-transform: lowercase;
     background: white;
@@ -2896,7 +2959,7 @@
     background-size: auto 1.5em;
     background-repeat: no-repeat;
     background-position: 100% 50%;
-    background-position: calc(100% - 0.5em) 50%;
+    background-position: calc(100% - 0.75em) 50%;
 
     /* @icon-checkmark */ /* @pear */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg>');
@@ -2928,8 +2991,8 @@
     margin-left: -3.875em;
   }
   .notifications .post-list {
-    margin-left: -1.25em;
-    margin-right: -1.25em;
+    margin-left: -1.25em; /* @page-padding */
+    margin-right: -1.25em; /* @page-padding */
     padding-bottom: 0;
   }
   .notifications .post-list .time {
@@ -2951,7 +3014,7 @@
   }
   .list h2,
   .notifications h2 {
-    margin-top: 1.125em;
+    margin-top: 2em; /* @line-height / 0.75em */
 
     /* @tiny-headline */
     font-size: 0.75em;
@@ -2959,32 +3022,28 @@
     color: rgb(159, 165, 162); /* @barium */
   }
   .notifications .post-item {
-    padding: 0.625em 5em 0.625em 3.125em; /* 10px 80px 10px 50px */
+    padding: 0.8571428571em 5.7142857143em 0.8571428571em 4em; /* 12px 80px 12px 56px */
     position: relative;
-    line-height: 1.25em;
-    min-height: 3.75em; /* image size (60px) / @font-size */
-  }
-  .notifications .post-item header {
-    text-align: left;
-    display: inline;
-  }
-  .notifications .post-item header h3 {
-    float: none;
-    display: inline;
-  }
-  .notifications .post-item header h3 {
+    min-height: 4.2857142857em; /* image size (60px) / @font-size */
+
+    font-size: 0.875em; /* 14px / @font-size */
     line-height: 1.2857142857; /* @line-height / 0.875 x 3/4 */
   }
   .notifications .post-item .body img {
     width      : 4.2857142857em; /* target image size / font size (60px / 14px) */
     min-height : 4.2857142857em;
     position: absolute;
-    top : 0.625em; /* 10px / @font-size */
-    right  : 0.625em;
+    top  : 0.8571428571em; /* 12px / 14px */
+    right: 0.8571428571em;
   }
+  .notifications .post-item header,
+  .notifications .post-item header h3,
   .notifications .post-item .body {
-    font-size: 0.875em; /* 14px / @font-size */
+    float: none;
     display: inline;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: left;
   }
   .notifications .post-item .body p {
     display: inline;
@@ -3224,9 +3283,9 @@
     text-align: left;
     background: white;
     color: black;
-    margin-left: -1.25em;
-    margin-right: -1.25em;
-    padding: 1.25em;
+    margin-left: -1.25em; /* @page-padding */
+    margin-right: -1.25em; /* @page-padding */
+    padding: 1em; /* @page-padding */
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 
     /* @wrap-long-words */

@@ -2,26 +2,25 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Type / CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
     (function() {
-      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
-      t.src = '//fast.fonts.net/t/trackingCode.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
 </head>
-<body class="pattern">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -199,82 +198,35 @@
     </defs>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../">CTZN</a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../patterns/">Patterns</a></li>
-        <li><a href="../messages/">Messages</a></li>
-        <li><a href="../prototype/">Prototype</a></li>
-        <li><a href="../email/">Email</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <h1>Headline 1</h1>
-  <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-  <h2>Headline 2</h2>
-  <p>Duis aute irure dolor in. Ut enim ad, quis nostrud exercitation ullamco laboris. Cillum dolore eu fugiat nulla pariatur.</p>
-  <h3>Headline 3</h3>
-  <p>Labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse. Cupidatat non proident, sunt in culpa qui officia</p>
-  <h4>Headline 4</h4>
-  <p>Ut enim ad, quis nostrud exercitation. Sed do eiusmod tempor incididunt ut labore et dolore. Reprehenderit in voluptate velit esse cillum.</p>
-  <h5>Headline 5</h5>
-  <p>Aliquip ex ea commodo consequat. Quis nostrud exercitation ullamco laboris. Officia deserunt mollit anim id est laborum.</p>
-  <h6>Headline 6</h6>
-  <p>Reprehenderit in voluptate velit esse. Aliquip ex ea commodo consequat duis aute. Duis aute irure dolor in reprehenderit in voluptate.</p>
-  <h3>Quotation</h3>
-  <blockquote>
-    <p>Ut enim ad, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p>Mattis Pulvinar, Laboris</p>
-  </blockquote>
-  <h3>Figure</h3>
-  <figure>
-    <div class="image">
-      <img src="http://placehold.it/320x160" alt="" width="320" height="160" />
+  <section class="boysenberry start push-card page">
+    <div>
+      <h1>
+        <span>Welcome to</span>
+        <svg class="icon">
+          <use xlink:href="#ctzn" />
+          <foreignobject>ctzn</foreignobject>
+        </svg>
+      </h1>
+      <form action="preview.html" method="post">
+        <p class="text">
+          <label>
+            <span>Enter invite code…</span><br />
+            <input type="text" placeholder="Enter invite code…" spellcheck="false" autocapitalize="off" />
+          </label>
+        </p>
+        <p class="submit">
+          <button>Start</button>
+        </p>
+        <p class="validation-message">
+          <svg class="icon"><use xlink:href="#alert" /></svg>
+          Oops! That invite code isn’t valid. Care to try again?
+        </p>
+      </form>
+      <aside>
+        <p><a href="login.html">Log in</a></p>
+      </aside>
     </div>
-    <figcaption>Image Caption – Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat.</figcaption>
-  </figure>
-  <h3>Unordered List</h3>
-  <ul>
-    <li>Item A</li>
-    <li>Item B</li>
-    <li>Item C</li>
-  </ul>
-  <h3>Ordered List</h3>
-  <ol>
-    <li>Item</li>
-    <li>Item</li>
-    <li>Item</li>
-  </ol>
-  <h3>Description List</h3>
-  <dl>
-    <dt>Name–Lorem ipsum dolor</dt>
-    <dd>Value–Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-    <dt>Excepteur sint occaecat cupidatat</dt>
-    <dd>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</dd>
-    <dt>Labore et dolore magna</dt>
-    <dd>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-  </dl>
-
-  <h1>Dimensions</h1>
-
-  <h3>Base Font Size</h3>
-  <code>16px (device default)</code>
-
-  <h3>Line Height</h3>
-  <code>1.5em</code>
-
-  <h1>Typefaces</h1>
-
-  <h2 style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;'>Helvetica</h2>
-  <code>font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;</code>
-
-  <h2 style='font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 900;'>Proxima Nova (Extra Bold)</h2>
-  <code>font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;</code>
+  </section>
 
 </body>
 </html>

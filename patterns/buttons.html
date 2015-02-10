@@ -20,13 +20,6 @@
     })();
   </script>
 
-  <style>
-    ol,
-    ol li {
-      margin-top: 3.5em;
-    }
-  </style>
-
 </head>
 <body class="pattern">
 
@@ -213,6 +206,7 @@
         <li class="active"><a href="../patterns/">Patterns</a></li>
         <li><a href="../messages/">Messages</a></li>
         <li><a href="../prototype/">Prototype</a></li>
+        <li><a href="../email/">Email</a></li>
       </ul>
     </nav>
   </header>
@@ -222,6 +216,36 @@
   <h1>Buttons</h1>
 
   <figure>
+    <figcaption>Button</figcaption>
+    <p>
+      <button type="submit">Send</button>
+    </p>
+    <pre><code>&lt;p&gt;
+  &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+&lt;/p&gt;</code></pre>
+  </figure>
+
+  <figure>
+    <figcaption>Disabled</figcaption>
+    <p>
+      <button type="submit" disabled="disabled">Send</button>
+    </p>
+    <pre><code>&lt;p&gt;
+  &lt;button type=&quot;submit&quot; <mark>disabled</mark>&gt;Send&lt;/button&gt;
+&lt;/p&gt;</code></pre>
+  </figure>
+
+  <figure>
+    <figcaption>Warning</figcaption>
+    <p class="warning">
+      <button type="submit">Delete</button>
+    </p>
+    <pre><code>&lt;p class=&quot;<mark>warning</mark>&quot;&gt;
+  &lt;button type=&quot;submit&quot;&gt;Delete&lt;/button&gt;
+&lt;/p&gt;</code></pre>
+  </figure>
+
+  <figure>
     <figcaption>Link</figcaption>
     <p class="action">
       <a href="">Next</a>
@@ -229,36 +253,7 @@
     <pre><code>&lt;p class=&quot;<mark>action</mark>&quot;&gt;
   &lt;a href=&quot;…&quot;&gt;Next&lt;/a&gt;
 &lt;/p&gt;</code></pre>
-  </figure>
-
-  <figure>
-    <figcaption>Button</figcaption>
-    <p class="submit">
-      <button type="submit">Send</button>
-    </p>
-    <pre><code>&lt;p class=&quot;submit&quot;&gt;
-  &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
-&lt;/p&gt;</code></pre>
-  </figure>
-
-  <figure>
-    <figcaption>Disabled</figcaption>
-    <p class="submit">
-      <button type="submit" disabled="disabled">Send</button>
-    </p>
-    <pre><code>&lt;p class=&quot;submit&quot;&gt;
-  &lt;button type=&quot;submit&quot; disabled=&quot;disabled&quot;&gt;Send&lt;/button&gt;
-&lt;/p&gt;</code></pre>
-  </figure>
-
-  <figure>
-    <figcaption>Warning</figcaption>
-    <p class="submit warning">
-      <button type="submit">Delete</button>
-    </p>
-    <pre><code>&lt;p class=&quot;submit <mark>warning</mark>&quot;&gt;
-  &lt;button type=&quot;submit&quot;&gt;Delete&lt;/button&gt;
-&lt;/p&gt;</code></pre>
+    <figcaption></figcaption>
   </figure>
 
   <figure>
@@ -385,6 +380,43 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
   </figure>
+
+  <section class="edit page">
+    <header>
+      <h1>Page Title</h1>
+
+      <a href="" class="back">
+        Cancel
+      </a>
+    </header>
+
+    <form>
+      <p>Note about the whole form</p>
+      <p class="text">
+        <label>
+          <span>Username</span><br />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" autocorrect="off" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <span>Email</span><br />
+          <input type="email" placeholder="Email" name="email" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <span>Password</span><br />
+          <input type="password" placeholder="Password" name="password" />
+        </label>
+        <em class="note">Note with details about this field.</em>
+      </p>
+      <p class="submit">
+        <button>Next</button>
+      </p>
+    </form>
+
+  </section>
 
 </body>
 </html>

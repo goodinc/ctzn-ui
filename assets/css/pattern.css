@@ -19,19 +19,22 @@
     background-color: rgb(255, 255, 153); /* @banana */
   }
 
-  header.pattern h2,
-  header.pattern nav {
-    text-transform: lowercase;
-  }
   header.pattern h2 {
+    margin-top: 0;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900;
   }
   header.pattern h2,
-  header.pattern nav,
-  header.pattern nav ul,
-  header.pattern nav li {
-    display: inline;
+  header.pattern nav {
+    text-transform: lowercase;
+  }
+  @media (min-width: 600px) {
+    header.pattern h2,
+    header.pattern nav,
+    header.pattern nav ul,
+    header.pattern nav li {
+      display: inline;
+    }
   }
   header.pattern nav ul,
   header.pattern nav li {
@@ -41,17 +44,28 @@
   }
   header.pattern h2,
   header.pattern nav li {
-    margin-right: 1.5em;
+    margin-right: 1em;
   }
   header.pattern h2 a,
   header.pattern nav a {
     color: inherit;
+  }
+  header.pattern nav a {
+    padding: 0.125em; /* 2px / @font-size */
+    line-height: 1.25; /* @line-height - padding x 2 */
+  }
+  header.pattern nav .active a,
+  header.pattern nav .active a[href],
+  header.pattern nav .active a[href]:visited {
+    background: black;
+    color: white;
   }
   .pattern.index h1,
   .pattern-list {
     text-transform: lowercase;
   }
   .pattern.index h1 {
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900;
     font-size: 3em;
     margin-top: 1em;
@@ -86,9 +100,6 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .pattern-list li a {
-    display: block;
-  }
   .pattern-list li a,
   header.pattern nav a {
     color: rgba(0, 0, 0, 0.25);
@@ -102,7 +113,7 @@
     color: inherit;
   }
 
-  p + code {
+  body.pattern p + code {
     margin-top: -0.5em;
     display: block;
   }
@@ -110,3 +121,60 @@
   body.pattern figure {
     margin-bottom: 3em;
   }
+
+
+  /* Override the fixed-position styles, for demonstration purposes. */
+   body.pattern section.push,
+   body.pattern section.page {
+    margin-bottom: 3em;
+  }
+  body.pattern .page {
+    position: relative;
+  }
+  body.pattern .page > header {
+    position: absolute;
+  }
+  body.pattern .page > header ~ form .submit {
+    position: absolute;
+  }
+
+  body.pattern .start.page aside {
+    position: relative;
+  }
+
+  /* SHIM: Add extra padding to the bottom of pages with forms, to prevent the virtual keyboard
+           from obscuring the fields and buttons on Android (in standalone webview mode). */
+  body.pattern .page >         form:last-child,
+  body.pattern .page > form ~ aside:last-child,
+  body.pattern .start.page >    div:last-child,
+  body.pattern .post.page >     div:last-child {
+    padding-bottom: 0;
+  }
+
+  body.pattern .mix-editor .selected-images {
+    position: relative;
+    top: 0;
+  }
+
+  body.pattern header.primary,
+  body.pattern ul.create {
+    position: relative;
+  }
+
+  body.pattern section.editor.page {
+    position: relative;
+  }
+
+  body.pattern section.loading,
+  body.pattern section.loading.error,
+  body.pattern section.developer-tools {
+    position: relative;
+    height: auto;
+  }
+
+  body.pattern .developer.action {
+    position: static;
+    margin-top: 1.5em;
+  }
+
+

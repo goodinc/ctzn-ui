@@ -206,7 +206,7 @@
     </defs>
   </svg>
 
-  <section class="strawberry push-card page">
+  <section class="orange push-card page">
 
     <div class="details">
       <h1 class="name">Headline</h1>
@@ -218,13 +218,16 @@
         <p class="text">
           <label>
             <span>Field Label</span><br />
-            <input type="email" placeholder="Field Label" name="email" />
+            <input type="text" placeholder="Field Label" />
           </label>
         </p>
         <p>
-          <button type="submit">Action to take</button>
+          <button type="submit">Submit</button>
         </p>
-        <p style="color: red; background-color: white; padding: 0.5em;">Oops! There’s something wrong with that field</p>
+        <p class="validation-message">
+          <svg class="icon"><use xlink:href="#alert" /></svg>
+          Oops! There’s something wrong with that field.
+        </p>
       </form>
     </div>
 
