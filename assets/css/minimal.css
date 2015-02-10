@@ -11,6 +11,23 @@
   http://www.ctznapp.com/mix/84C0E923
 */
 
+/*
+  Monotype fonts…
+
+  Regular:
+  "Proxima N W01 Reg"
+
+  Italic:
+  "Proxima N W01 Reg It"
+
+  Bold:
+  "Proxima N W01 Bold"
+
+  Extra bold:
+  "Proxima N W01 Xbold"
+*/
+
+
 
   /* =Elements
   ----------------------------------------------- */
@@ -198,9 +215,12 @@
     max-width: 17em;
     margin-left: auto;
     margin-right: auto;
+    font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
+    font-weight: normal;
   }
   main h2 strong {
     color: white;
+    font-weight: normal;
   }
 
   #color {
@@ -319,6 +339,14 @@
   }
   .supports-placeholder label br {
     display: none;
+  }
+
+
+  /* =Subscribe
+  ----------------------------------------------- */
+  .subscribe h3 {
+    font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
+    font-weight: normal;
   }
 
 
@@ -505,5 +533,58 @@
     text-transform: uppercase;
     text-align: center;
     opacity: 0.75;
+  }
+
+
+  /* =About
+  ----------------------------------------------- */
+  .about {
+    margin: -1.5em -1.5em -4.5em;
+  }
+  .about .header {
+    padding: 4em 1.5em 3em;
+  }
+  .about section {
+    display: block;
+    padding: 4em 1.5em 1.5em;
+  }
+  .about section:last-child {
+    padding-bottom: 7.5em;
+  }
+  .about section h3 {
+    font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
+    font-weight: normal;
+    font-size: 1.875em; /* 30px / @font-size */
+    line-height: 1.2; /* 36px / 30px */
+  }
+  .about section h3 strong {
+    color: white;
+    font-weight: normal;
+  }
+  .about .icons svg {
+    margin: 0 0.75em;
+    width: 3em;
+    height: 3em;
+  }
+
+
+  /* =Privacy
+  ----------------------------------------------- */
+  .privacy  {
+    margin: -1.5em -1.5em -4.5em;
+    padding: 3em 1.5em 4.5em;
+    background: white;
+    color: black;
+    text-align: left;
+  }
+  .privacy  h1,
+  .privacy  p,
+  .privacy  article {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .privacy  h1 {
+    margin-top: 0;
   }
 
