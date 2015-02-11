@@ -15,16 +15,21 @@
     font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(83, 83, 83);
-    padding: 36px 0;
+  }
+  @media (min-width: 600px) {
+    .body {
+      padding: 18px 0;
+    }
   }
 
   a {
-    color: rgb(255, 49, 102); /* @strawberry */
+    color: rgb(31, 31, 31); /* @steel */
+    text-decoration: none;
   }
   a:hover,
   a:active,
   a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    text-decoration: underline;
   }
 
   a img {
@@ -51,8 +56,13 @@
   }
   .details h3 {
     font-size: inherit;
+    color: inherit;
     margin-top: 0;
     margin-bottom: 18px;
+  }
+  .details h3 strong {
+    font-weight: inherit;
+    color: rgb(31, 31, 31); /* @steel */
   }
   .details p {
     margin-top: 9px;
@@ -71,11 +81,6 @@
   .footer p {
     margin-top: 0;
     font-size: 12px;
-  }
-  .header a,
-  .footer a {
-    color: black;
-    text-decoration: none;
   }
 
   .summary,
