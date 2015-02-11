@@ -2856,7 +2856,22 @@
     height: 3em;
     width: 100%;
   }
+  .start.page aside a {
+    background: transparent;
+    background: rgba(0, 0, 0, 0.05);
+    color: black;
+    border-width: 0;
+  }
+  .start.page aside a:active,
+  .start.page aside a:focus {
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+  }
 
+  /* OPTIONAL: Position the login button at the top */
+  .start.page {
+    padding-top: 1.5em; 
+  }
   .start.page aside {
     margin: 0;
     position: absolute;
@@ -2864,27 +2879,18 @@
     left: 0;
     width: 100%;
     text-align: right;
-    background: rgba(0, 0, 0, 0.05);
   }
   .start.page aside p {
     margin-top: 0;
     margin-bottom: 0;
   }
   .start.page aside a {
-    color: black;
     text-align: right;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
     padding-top: 0.75em;
     padding-bottom: 0.75em;
-    background: transparent;
-    border-width: 0;
-  }
-  .start.page aside a:active,
-  .start.page aside a:focus {
-    background: rgba(0, 0, 0, 0.15);
-    color: white;
   }
 
 
