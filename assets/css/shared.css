@@ -972,22 +972,15 @@
   ----------------------------------------------- */
   .post-item {
     background: white;
-    padding: 0.75em 1.25em 1.5em 3.25em; /* 12px 20px 24px 56px */
-  }
-  .post-item header {
-    position: relative;
-    text-align: right;
-  }
-  .post-item header h3 {
-    float: left;
+    padding: 0.75em 1.25em 1.5em 1.25em; /* 12px 20px 24px 20px */
   }
   .post-item header h3,
   .post-item header p {
     margin: 0;
     font-size: 0.875em; /* 14px / @font-size */
-    line-height: 1.7142857143; /* @line-height / 0.875 */
+    line-height: 2.1428571429em; /* avatar height / font size  (30px / 14px) */
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
   }
   .post-item header p svg.icon {
     height: 1.7142857143em; /* @line-height / 0.875 */
@@ -996,20 +989,29 @@
     color: inherit;
     text-decoration: none;
   }
+  .post-item header h3 a:active,
+  .post-item header h3 a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+  /* OPTIONAL: Make the header a little more compact */
+  .post-item header {
+    margin: -0.25em 0 0 -0.5em; /* -4px 0 -2px -8px */
+  }
+
   .post-item header h3 .avatar {
     font-size: 1.1428571429em; /* 1 / 0.875 */
-  }
-  .post-item header .avatar {
-    position: absolute;
-    top:-0.1875em; /* 3px / @font-size */
-    left: -2.5em; /* 3.5em - 0.75em */
+    margin-right: 0.375em;
+    display: inline-block;
+    margin-right: 0.375em;
   }
   .post-item header p {
     color: rgb(204, 204, 204); /* @aluminum */
     font-weight: bold;
+    margin-left: 0.375em;
   }
-  .post-item header p + p {
-    margin-left: 0.125em;
+  .post-item header p.source {
+    float: right;
   }
   .post-item header p a {
     color: inherit;
@@ -1052,14 +1054,11 @@
     margin: 0;
     display: inline;
   }
-  .post-item footer p + p {
-    margin-left: 0.375em;
-  }
   .post-item footer p a,
   .post-item footer p button {
     display: inline-block;
     background: white;
-    color: rgb(204, 204, 204); /* @aluminum */
+    color: rgb(135, 135, 135);
     text-decoration: none;
     font-weight: bold;
     padding: 0.1875em 0.75em;
@@ -1067,15 +1066,18 @@
     border-radius: 0.25em;
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(204, 204, 204); /* @aluminum */
+    border-color: rgb(193, 193, 193);
     transition: all 0.2s;
+    min-width: 3.75em;
+    box-sizing: border-box;
+    text-align: center;
   }
   .post-item footer p a:active,
   .post-item footer p a:focus,
   .post-item footer p button:active,
   .post-item footer p button:focus {
     background-color: rgb(222, 222, 222); /* @silver*/
-    color: rgb(153, 153, 153); /* @nickel */
+    color: rgb(102, 102, 102); /* @tin */
   }
   .post-item footer p a      svg.icon,
   .post-item footer p button svg.icon {
@@ -1090,16 +1092,130 @@
   }
   .post-item footer .options {
     position: absolute;
-    bottom: -0.75em;
-    right: -0.75em;
-    padding: 0.5em 0.75em;
-    color: inherit;
-    opacity: 0.25;
+    bottom: 0;
+    right: 0;
   }
-  .post-item footer .options:active,
-  .post-item footer .options:focus {
-    color: black;
-    opacity: 1;
+  .post-item footer .options svg.icon {
+    font-size: inherit;
+  }
+
+
+  /* =Images (for post items)
+  ----------------------------------------------- */
+
+  /* EXPERIMENTAL */
+  .images.n1 img,
+  .images.n2 img,
+  .images.n3 img {
+    margin: 0.75em auto;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 7.5em); /* Make space for the sticky header and footer */
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+    min-height: 9em;
+  }
+  .images.n1,
+  .images.n2,
+  .images.n3 {
+    margin: 0.75em 0;
+  }
+  .images.n1:after,
+  .images.n2:after,
+  .images.n3:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .images.n1 figure,
+  .images.n2 figure,
+  .images.n3 figure {
+    margin: 0;
+    display: block;
+  }
+  .images.n2 .image > span,
+  .images.n3 .image > span {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    height: 250px;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  /* Two images */
+  .images.n2 figure {
+    width: 49%;
+
+    float: left;
+  }
+  .images.n2 figure + figure {
+    margin-left: 2%;
+  }
+  .images.n2 .image > span  {
+    height: 250px;
+  }
+
+  /* Three images */
+  .images.n3 figure {
+    width: 49%;
+    /*
+    width: calc(50vw - 25px);
+    */
+    overflow: hidden;
+
+    float: left;
+  }
+  .images.n3 figure + figure {
+    margin-left: 2%;
+    /*
+    margin-left: calc(10px - 0vw);
+    */
+  }
+  .images.n3 .image > span {
+    height: 250px;
+  }
+  .images.n3 figure:nth-child(2) .image > span,
+  .images.n3 figure:nth-child(3) .image > span {
+    height: 120px;
+  }
+  .images.n3 figure:nth-child(3) .image > span {
+    margin-top: 10px;
+  }
+
+  li:nth-child(2n) .images.n2 figure,
+  li:nth-child(2n) .images.n3 figure {
+    float: right;
+  }
+  li:nth-child(2n) .images.n2 figure + figure,
+  li:nth-child(2n) .images.n3 figure + figure {
+    margin-left: 0;
+    margin-right: 2%;
+    /*
+    margin-right: calc(10px - 0vw);
+    */
+  }
+
+  @media (min-width: 30em) {
+
+    /* Two images */
+    .images.n2 .image > span  {
+      height: 450px;
+    }
+
+    /* Three images */
+    .images.n3 .image > span {
+      height: 450px;
+    }
+    .images.n3 figure:nth-child(2) .image > span,
+    .images.n3 figure:nth-child(3) .image > span {
+      height: 220px;
+    }
   }
 
 
@@ -2040,15 +2156,6 @@
     margin: 0 auto;
     box-sizing: border-box;
     padding: 0;
-  }
-  .post.page .post-item header .avatar {
-    position: static;
-    display: inline;
-    margin-left: 0;
-    margin-right: 0.375em;
-  }
-  .post.page .post-item header {
-    margin-bottom: 1.125em;
   }
 
 
