@@ -874,7 +874,7 @@
   .list li a {
     display: block;
     vertical-align: middle;
-    padding: 0.75em 3em 0.75em 3.5em;
+    padding: 0.75em 3em 0.75em 3.25em;
     text-decoration: none;
     background: white;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
@@ -972,7 +972,7 @@
   ----------------------------------------------- */
   .post-item {
     background: white;
-    padding: 0.75em 1.25em 1.5em 3.5em; /* 12px 20px 24px 56px */
+    padding: 0.75em 1.25em 1.5em 3.25em; /* 12px 20px 24px 56px */
   }
   .post-item header {
     position: relative;
@@ -1002,7 +1002,7 @@
   .post-item header .avatar {
     position: absolute;
     top:-0.1875em; /* 3px / @font-size */
-    left: -2.75em; /* 3.5em - 0.75em */
+    left: -2.5em; /* 3.5em - 0.75em */
   }
   .post-item header p {
     color: rgb(204, 204, 204); /* @aluminum */
@@ -1343,10 +1343,6 @@
     color: rgb(153, 153, 153); /* @nickel */
     width: 100%;
     box-sizing: border-box;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    z-index: 1;
     transition: opacity 0.2s;
     text-align: center;
 
@@ -1356,6 +1352,17 @@
     -webkit-justify-content: stretch;
             justify-content: stretch;
   }
+
+  /* OPTIONAL: Make the create toolbar sticky */
+  @media (min-width: 20em) and (min-height: 20em) {
+    ul.create {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      z-index: 1;
+    }
+  }
+
   ul.create li {
     display: inline-block;
     -webkit-flex-grow: 1;
@@ -1712,13 +1719,26 @@
   .push-card.animated {
     transition: background-color 0.4s;
   }
+  .start.page.animated aside a {
+    transition: color 0.4s;
+  }
+  .start.page.animated h1 span {
+    transition: color 0.4s;
+  }
+  .login.page .animated   h2 span {
+    transition: color 0.4s;
+  }
 
   /* SHIM: The extra selectors are here to override the default “.page” and “.page > div” styles. */
   .push-card,
   .page.push-card,
   .page > .push-card {
-    padding: 1.5em 1.25em; /* @page-padding */
     max-width: none;
+  }
+  .push .push-card,
+  .page .push-card,
+  .page > .push-card {
+    padding: 1.5em 1.25em; /* @page-padding */
   }
 
   .push-card.lime {
@@ -1822,9 +1842,6 @@
   .start.page > div {
     margin-top: 1.5em;
   }
-  .push-card .details {
-    margin-top: 0.75em;
-  }
   .push-card form {
     margin-top: 1.875em;
     margin-bottom: 0;
@@ -1901,7 +1918,6 @@
   .push-card.plumb       .name,
   .push-card.strawberry  .name,
   .push-card.apple       .name,
-  .push-card.tangerine   .name,
   .push-card.orange      .name {
     color: white;
     color: rgba(255, 255, 255, 0.95);
@@ -1911,7 +1927,6 @@
   .push-card.plumb       > a,
   .push-card.strawberry  > a,
   .push-card.apple       > a,
-  .push-card.tangerine   > a,
   .push-card.orange      > a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
@@ -1921,7 +1936,6 @@
   .push-card.plumb       .validation-message,
   .push-card.strawberry  .validation-message,
   .push-card.apple       .validation-message,
-  .push-card.tangerine   .validation-message,
   .push-card.orange      .validation-message {
     color: white;
     color: rgba(255, 255, 255, 0.95);
@@ -1931,7 +1945,6 @@
   .start.page.plumb       aside a,
   .start.page.strawberry  aside a,
   .start.page.apple       aside a,
-  .start.page.tangerine   aside a,
   .start.page.orange      aside a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
@@ -1941,7 +1954,6 @@
   .start.page.plumb       h1 span,
   .start.page.strawberry  h1 span,
   .start.page.apple       h1 span,
-  .start.page.tangerine   h1 span,
   .start.page.orange      h1 span {
     color: white;
     color: rgba(255, 255, 255, 0.95);
@@ -1951,7 +1963,6 @@
   .login.page .plumb       h2 span,
   .login.page .strawberry  h2 span,
   .login.page .apple       h2 span,
-  .login.page .tangerine   h2 span,
   .login.page .orange      h2 span {
     color: white;
     color: rgba(255, 255, 255, 0.95);
@@ -2170,8 +2181,8 @@
   .profile.page .image {
     max-width: none;
     text-align: center;
-    padding: 1.25em 1em; /* @page-padding */
-    margin: -1.5em -1em 0; /* @page-padding */
+    padding: 1.25em; /* @page-padding */
+    margin: -1.5em -1.25em 0; /* @page-padding */
     background: rgba(255, 255, 255, 0.15);
   }
   .profile.page .image .avatar {

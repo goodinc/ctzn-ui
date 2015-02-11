@@ -538,7 +538,7 @@
 
   /* =About
   ----------------------------------------------- */
-  .about {
+  main .container > .about {
     margin: -1.5em -1.5em -4.5em;
   }
   .about .header {
@@ -570,7 +570,7 @@
 
   /* =Privacy
   ----------------------------------------------- */
-  .privacy  {
+  main .container > .privacy  {
     margin: -1.5em -1.5em -4.5em;
     padding: 3em 1.5em 4.5em;
     background: white;
