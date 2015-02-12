@@ -8,7 +8,7 @@
   For example…
 
   @font-size  : 16px;
-  @line-height: 1.5em;
+  @line-height: 24px;
 
   Sections are grouped under headings with a “=” symbol,
   to make searching easier.
@@ -449,6 +449,28 @@
   }
   form p.submit {
     text-align: right;
+  }
+  form ul.submit:after {
+    /* @clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+  form ul.submit li {
+    float: right;
+    margin-left: 0.375em;
+  }
+  form ul.submit a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.375em 1.125em;
+    line-height: 1.5em;
+    color: inherit;
+    opacity: 0.5;
+  }
+  form ul.submit a:active,
+  form ul.submit a:focus {
+    opacity: 1;
   }
 
   form .note {
@@ -2178,13 +2200,13 @@
   .comments ol li + li {
     margin-top: 1.5em; /* @line-height */
   }
-  .comments article {
+  .comments .post-item {
     padding: 0;
     background-color: transparent;
   }
-  .comments article header h3,
-  .comments article header p,
-  .comments article .body {
+  .comments .post-item header h3,
+  .comments .post-item header p,
+  .comments .post-item .body {
     font-size: 0.875em; /* 14px / @font-size */
     line-height: 1.2857142857; /* @line-height / 0.875 */
   }
@@ -3252,14 +3274,23 @@
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
+
   .notifications .post-item {
-    padding: 0.8571428571em 5.7142857143em 0.8571428571em 4em; /* 12px 80px 12px 56px */
     position: relative;
     min-height: 4.2857142857em; /* image size (60px) / @font-size */
-
+    padding: 0.8571428571em 5.7142857143em 0.8571428571em 3.5714285714em; /* 12px 80px 12px 50px */
     font-size: 0.875em; /* 14px / @font-size */
     line-height: 1.2857142857; /* @line-height / 0.875 x 3/4 */
   }
+  .notifications .post-item header {
+    margin: 0;
+  }
+  .notifications .post-item header .avatar {
+    position: absolute;
+    margin-left: -2.5em;
+  }
+
+
   .notifications .post-item .body img {
     width      : 4.2857142857em; /* target image size / font size (60px / 14px) */
     min-height : 4.2857142857em;
@@ -3267,18 +3298,23 @@
     top  : 0.8571428571em; /* 12px / 14px */
     right: 0.8571428571em;
   }
+  .notifications .post-item {
+    font-size: 14px;
+    line-height: 18px;
+  }
   .notifications .post-item header,
   .notifications .post-item header h3,
-  .notifications .post-item .body {
+  .notifications .post-item .body,
+  .notifications .post-item .body p,
+  .notifications .post-item p {
     float: none;
     display: inline;
-    font-size: inherit;
-    line-height: inherit;
+    font-size: 14px;
+    line-height: 18px;
     text-align: left;
-  }
-  .notifications .post-item .body p {
-    display: inline;
     margin: 0;
+    padding: 0;
+    vertical-align: baseline;
   }
 
 

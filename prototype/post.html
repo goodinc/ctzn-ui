@@ -308,28 +308,45 @@
           </article>
 </li>
       
-<li>
-          <article class="post-item"><header><h3><span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>@brian</h3>
+        <li>
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar">
+                  <!-- ko if: profile_image -->
+                  <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
+                </span>@brian
+              </h3>
               <p>
                 <time>23h</abbr>
                 </time></p>
-            </header><div class="body"><p>My soul.   It is crushed.</p></div>
+            </header>
+            <div class="body"><p>My soul.   It is crushed.</p></div>
           </article>
-</li>
+        </li>
       </ol>
 
-      <form>
+      <form class="post-item">
+        <header>
+          <h3>
+            <span class="avatar">
+              <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" />
+            </span>
+            @eshah
+          </h3>
+        </header>
         <p class="text">
           <label>
-            <span>Add a comment…</span><br><textarea placeholder="Add a comment…" name="comment"></textarea></label>
+            <span>Add a comment…</span><br />
+            <textarea placeholder="Add a comment…" name="comment">lorem ipsum</textarea>
+          </label>
         </p>
-        <p class="submit">
-          <button>Send</button>
-        </p>
+        <ul class="submit">
+          <li><button type="submit">Update</button></li>
+          <li><a href="…">Cancel</a></li>
+        </ul>
       </form>
+
     </div>
 
   </section>
