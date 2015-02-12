@@ -2280,6 +2280,113 @@
   }
 
 
+  /* =Image Viewer
+  ----------------------------------------------- */
+  .image-viewer {
+    color: rgb(250, 250, 250); /* @casper */
+    background-color: rgb(5, 5, 5); /* @tungsten */
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+  .image-viewer > div {
+    display: table-row;
+  }
+  .image-viewer > div > div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .image-viewer .image {
+    margin: 0 auto;
+    display: table;
+  }
+  .image-viewer img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+
+  .image-viewer.has-zoom .image {
+    margin: 0;
+    display: block;
+
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+
+    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+    -webkit-overflow-scrolling: touch;
+  }
+  .image-viewer.has-zoom img {
+  }
+  /*
+  .image-viewer.has-zoom img {
+    max-width: none;
+    max-height: none;
+  }
+  */
+
+  .image-viewer .action {
+    position: fixed;
+    z-index: 1;
+    top: 0.375em;
+    right: 0.375em;
+    margin: 0;
+  }
+  .image-viewer .range,
+  .image-viewer .image-options {
+    position: fixed;
+    z-index: 1;
+    bottom: 0.75em;
+    left: 0.75em;
+    width: 100%;
+    margin: 0;
+  }
+  .image-viewer .image-options ul,
+  .image-viewer .image-options li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .image-viewer .image-options ul {
+    margin: 0;
+  }
+  .image-viewer .image-options li {
+    display: inline;
+    margin-right: 0.375em;
+  }
+  .image-viewer .range label span:first-child {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  /*
+  .image-viewer .action {
+    margin: 1.5em 0;
+    text-align: center;
+  }
+  */
+  .image-viewer button,
+  .image-viewer .action a {
+    background-color: transparent;
+    border: 0.125em solid white;
+  }
+  .image-viewer button:active,
+  .image-viewer button:focus,
+  .image-viewer .action a:active,
+  .image-viewer .action a:focus {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .image-viewer .image-options button {
+    border-radius: 50%;
+    padding: 0.375em 0.5em;
+  }
+
+
+
   /* =Profile
   -----------------------------------------------
   -----------------------------------------------

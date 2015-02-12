@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+  <script>
+    function setMaximumScale(newValue) {
+      if (!newValue) return;
+      var viewport = document.querySelector('meta[name="viewport"]');
+      if (viewport) {
+        var content = viewport.getAttribute('content');
+        var maxScale = content.replace(/maximum-scale=[0-9\.]*/g, 'maximum-scale=' + newValue);
+        viewport.setAttribute('content', maxScale);
+      }
+    }
+    setMaximumScale(10);
+  </script>
+
+</head>
+<body>
+
+  <section class="image-viewer">
+    <div>
+      <div>
+
+        <p class="image">
+          <img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/5b008f3cb7adde4c93abcb091b1490c92ed1e579=s2000x2000" alt="Post Image" />
+        </p>
+
+        <p class="action">
+          <a href="#back">Done</a>
+        </p>
+
+<!--
+        <button onclick="setMaximumScale(10)">Scalable</button>
+
+        <button onclick="setMaximumScale(1)">Fixed size</button>
+-->
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
