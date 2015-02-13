@@ -3437,7 +3437,7 @@
     text-align: center;
 
     /* Dialogs appear above other pages */
-    position: fixed;
+    position: absolute;
     z-index: 9999; /* @infinity */
     top: 0;
     left: 0;
