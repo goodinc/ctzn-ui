@@ -240,8 +240,7 @@
   -----------------------------------------------
   ----------------------------------------------- */
 
-  .avatar img,
-  img.avatar {
+  .avatar img {
     border-radius: 100%;
     vertical-align: middle;
   }
@@ -317,6 +316,10 @@
   .avatar img[width="100"] {
     width : 6.25em; /* 100px / @font-size */
     height: 6.25em;
+  }
+  .avatar img {
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
 
@@ -984,7 +987,6 @@
   .post-list > li {
     margin: 0 auto;
     max-width: 31.25em; /* image.width / @font-size (500px / 16px) */
-    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
   }
   .post-list > li:last-child {
     border-bottom-width: 0;
@@ -1004,6 +1006,7 @@
     position: relative;
     background: white;
     padding: 0.75em 1.25em 1.5em 1.25em; /* 12px 20px 24px 20px */
+    margin-bottom: 0.625em;
   }
   .post-item header h3,
   .post-item header p {
@@ -2182,14 +2185,8 @@
     font-size: inherit;
   }
   .post.page .details {
-    max-width: none;
     border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     background: white;
-  }
-  .post.page .details .post-item {
-    max-width: 31.25em;
-    margin: 0 auto;
-    box-sizing: border-box;
     padding: 0;
   }
 
@@ -3251,14 +3248,12 @@
     font-size: 0.6666666667em;
     text-transform: uppercase;
   }
-  .comments .post-list > li {
-    border-color: rgb(232, 232, 232);
-  }
-  .notifications .post-list li:first-child {
-    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver*/
-  }
-  .notifications .post-list li:last-child {
-    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+  .comments      .post-item,
+  .notifications .post-item {
+    margin-bottom: 0.07142857143em;
+    /*
+    border-bottom: 0.07142857143em solid rgb(232, 232, 232);
+    */
   }
   .list          h2,
   .notifications h2 {
@@ -3275,11 +3270,15 @@
     position: relative;
     padding: 0.8571428571em; /* 12px / 14px */
     padding-left: 3.7142857143em; /* 52px / 14px*/
+    padding-left: 50px;
     font-size: 0.875em; /* 14px / @font-size */
     line-height: 1.2857142857; /* @line-height / 0.875 x 3/4 */
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
   .notifications .post-item {
     min-height: 4.2857142857em; /* image size (60px) / @font-size */
+    min-height: 48px;
     padding-right: 5.7142857143em; /* 80px / 14px */
   }
   .comments      .post-item {
@@ -3293,11 +3292,11 @@
   .notifications .post-item header .avatar {
     position: absolute;
     left: 0.8571428571em; /* 12px / 14px */
-    left: 12px;
+    left: 10px;
 
     /* Center vertically. Assume the item is 42 pixels tall and the avatar is 30 pixels tall. (42px - 30px) / 2 = 6px */
     top: 0.4285714286em; /* 6px / 14px */
-    top: 6px;
+    top: 10px;
 
     font-size: 1.1428571429em; /* 1 / 0.875 */
   }
@@ -3308,20 +3307,19 @@
     position: absolute;
     top  : 0.8571428571em; /* 12px / 14px */
     right: 0.8571428571em;
+    top: 10px;
+    right: 10px;
   }
 
   .comments      .post-item header,
   .comments      .post-item header h3,
   .comments      .post-item .body,
   .comments      .post-item .body p,
-  .comments      .post-item p,
-  .comments      .post-item form,
   .comments      .post-item .text label,
   .notifications .post-item header,
   .notifications .post-item header h3,
   .notifications .post-item .body,
-  .notifications .post-item .body p,
-  .notifications .post-item p {
+  .notifications .post-item .body p {
     float: none;
     display: inline;
     font-size: inherit;
@@ -3330,6 +3328,9 @@
     margin: 0;
     padding: 0;
     vertical-align: baseline;
+  }
+  .comments .post-item form {
+    margin-top: -15px;
   }
 
 

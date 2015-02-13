@@ -1,0 +1,75 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<!-- This file is used in the Android app. (It needed a self-contained error page a little style). -->
+<head>
+  <meta charset="utf-8" />
+  <title>Something went wrong while loading CTZN.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: rgb(250, 250, 250);
+      color: rgb(5, 5, 5);
+      text-align: center;
+      margin: 0;
+      padding: 4.5em 1.25em;
+    }
+    h1 {
+      margin: 0.75em auto;
+      font-size: inherit;
+      max-width: 15em;
+    }
+    a {
+      background: black;
+      background: rgb(101, 156, 247); /* boysenberry */
+      color: white;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .action a {
+      text-transform: lowercase;
+      text-decoration: none;
+      display: inline-block;
+      max-width: 13.333333333em;
+      width: 100%;
+      font-size: 1.5em; /* 24px / 16px */
+      border-radius: 0.1666666667em;
+      line-height: 2.0833333333em; /* 50px / 24px */
+    }
+    a:active,
+    a:focus {
+      background: black;
+      background: rgb(85, 141, 207); /* dark boysenberry */
+    }
+    p {
+      margin-top: 1.5em;
+      margin-bottom: 0.75em;
+    }
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+    }
+    .icon path {
+      fill: currentColor;
+      transition: fill 0.2s;
+    }
+    .alert.icon {
+      font-size: 3em;
+    }
+  </style>
+</head>
+<body>
+  <svg class="alert icon" width="40" height="40" viewBox="0 0 20 20">
+    <path d="M17.915 14.961l-6.725-11.615c-0.654-1.131-1.725-1.131-2.38 0l-6.725 11.615c-0.654 1.131-0.121 2.056 1.185 2.056h13.458c1.306 0 1.839-0.925 1.185-2.056zM10.828 14.534h-1.655v-1.655h1.655v1.655zM10.828 11.223h-1.655v-3.31h1.655v3.31z" fill="#888888"></path>
+  </svg>
+  <h1>Something went wrong while loading CTZN.</h1>
+  <p class="action">
+    <a href="" onclick="window.location.reload(true)">
+      <svg class="restart icon" width="40" height="40" viewBox="0 0 20 20">
+        <path d="M19.14 9.652l-2.416 2.418c-0.124 0.124-0.293 0.194-0.468 0.194s-0.341-0.069-0.467-0.194l-2.415-2.418c-0.258-0.258-0.258-0.676 0-0.935s0.676-0.258 0.935 0l1.286 1.289v-0.006c0-3.2-2.601-5.803-5.803-5.803s-5.804 2.602-5.804 5.803 2.604 5.802 5.804 5.802c1.55 0 3.006-0.604 4.104-1.699 0.257-0.258 0.676-0.258 0.934 0s0.257 0.676 0 0.934c-1.345 1.346-3.134 2.086-5.037 2.086-3.929 0-7.126-3.196-7.126-7.124s3.196-7.124 7.126-7.124 7.124 3.195 7.124 7.124v0.006l1.289-1.289c0.258-0.258 0.676-0.258 0.935 0s0.259 0.676 0.001 0.934z" fill="#888888"></path>
+      </svg>
+      Restart
+    </a>
+  </p>
+</body>
+</html>
