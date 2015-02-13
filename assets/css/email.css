@@ -16,7 +16,7 @@
   }
 
   .body {
-    font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(83, 83, 83);
   }
@@ -28,12 +28,6 @@
 
   a {
     color: rgb(31, 31, 31); /* @steel */
-    text-decoration: none;
-  }
-  a:hover,
-  a:active,
-  a:focus {
-    text-decoration: underline;
   }
 
   a img {
@@ -50,11 +44,12 @@
     margin-top: 0;
     margin-bottom: 0;
     font-size: 18px;
-    line-height: 27px;
+    line-height: 18px;
   }
   .details h2 {
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
     margin-top: 0;
     margin-bottom: 18px;
   }
