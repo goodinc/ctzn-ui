@@ -1803,6 +1803,8 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
+    width: 100%;
+    box-sizing: content-box;
 
     /* @background-icon */
     background-size: 1.5em auto;
@@ -1812,8 +1814,6 @@
 
     /* @icon-right */ /* @aluminum */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg>');
-
-    padding-right: 3em;
   }
   @media (max-width: 34.25em) {
     .page aside ul + ul {
@@ -3225,6 +3225,9 @@
   }
   .active.twitter .icon {
     color: rgb(94, 171, 244);
+  }
+  .active.facebook .icon {
+    color: rgb(46, 69, 134);
   }
 
 
