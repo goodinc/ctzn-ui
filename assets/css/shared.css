@@ -1794,8 +1794,6 @@
   .page aside a,
   .page aside button {
     display: block;
-    width: 100%;
-    box-sizing: content-box;
     text-align: left;
     padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
     margin: 0 -1.25em 0 -1.25em; /* @page-padding */
@@ -1805,9 +1803,6 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
-  }
-  .page aside a,
-  .page aside button {
 
     /* @background-icon */
     background-size: 1.5em auto;
@@ -1817,6 +1812,8 @@
 
     /* @icon-right */ /* @aluminum */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg>');
+
+    padding-right: 3em;
   }
   @media (max-width: 34.25em) {
     .page aside ul + ul {
@@ -3437,12 +3434,16 @@
     text-align: center;
 
     /* Dialogs appear above other pages */
-    position: absolute;
+    position: fixed;
     z-index: 9999; /* @infinity */
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+    -webkit-overflow-scrolling: touch;
   }
   .dialog.page > div > .icon:first-child {
     font-size: 2em;
@@ -3502,6 +3503,15 @@
 
   /* =Developer Tools
   ----------------------------------------------- */
+
+  /* TRICKY: Don’t use overflow scroll on the developer page, since it may run long. */
+  .developer.dialog.page {
+    position: absolute;
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+  }
+
   .developer.dialog.page > div {
     max-width: none;
   }
