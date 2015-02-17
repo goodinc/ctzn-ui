@@ -468,6 +468,32 @@
     color: white;
   }
 
+  .mix .share,
+  .mix .share li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .mix .share {
+    margin-top: 3em;
+  }
+  .mix .share li > a,
+  .mix .share li > span {
+    color: inherit;
+    display: block;
+    padding: 0.75em;
+    font-weight: normal;
+  }
+  .mix .share svg {
+    vertical-align: middle;
+    margin-right: 0.375em;
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .mix .share svg path {
+    fill: currentColor;
+  }
+
 
   /* =Avatars
   ----------------------------------------------- */
