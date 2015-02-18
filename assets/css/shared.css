@@ -2201,22 +2201,6 @@
   }
 
 
-  /* =Post Comments
-  ----------------------------------------------- */
-  .comments h2 {
-    /* @hidden-accessible */
-    position: absolute;
-    left: -9999px;
-  }
-  .comments p.text label {
-    padding: 0.5em;
-  }
-  .notifications .post-list,
-  .comments .post-list {
-    margin-top: 0.75em;
-  }
-
-
   /* =Post Editor
   ----------------------------------------------- */
   .editor.page {
@@ -3329,8 +3313,23 @@
   .notifications .post-item .body {
     margin-right: 0.375em;
   }
+  .comments h2 {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  .notifications .post-list,
+  .comments      .post-list {
+    margin-top: 0.75em;
+  }
   .comments .post-item form {
     margin-top: -15px;
+  }
+  .comments .post-item label {
+    border-width: 0;
+  }
+  .comments .post-item textarea {
+    border: 1px solid rgb(222, 222, 222); /* @silver*/
   }
 
 

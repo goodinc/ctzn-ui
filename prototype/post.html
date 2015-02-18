@@ -259,8 +259,8 @@
     <div class="comments">
       <h2>Comments</h2>
 
-<ol class="post-list">
-<li>
+      <ol class="post-list">
+        <li>
           <article class="post-item"><header><h3><span class="avatar">
               <!-- ko if: profile_image -->
                 <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
@@ -270,9 +270,9 @@
                 <time>2 days ago</abbr>
                 </time></p>
           </article>
-</li>
-      
-<li>
+        </li>
+              
+        <li>
           <article class="post-item"><header><h3><span class="avatar">
               <!-- ko if: profile_image -->
                 <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
@@ -282,21 +282,33 @@
                 <time>2 days ago
                 </time></p>
           </article>
-</li>
-      
-<li>
-          <article class="post-item"><header><h3><span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>@brian:</h3>
-            </header><div class="body"><p>That'd be awesome, I've been meaning to get a bass for a while now.</p></div>
-              <p class="time">
-                <time>1 day ago
-                </time></p>
+        </li>
+
+        <li>
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" />
+                </span>
+              </h3>
+            </header>
+            <form>
+              <p class="text">
+                <label>
+                  <span>Edit your comment…</span><br />
+                  <textarea placeholder="Edit your comment…" name="comment">That'd be awesome, I've been meaning to get a bass for a while now.</textarea>
+                </label>
+              </p>
+              <ul class="submit">
+                <li><button type="submit">Update</button></li>
+                <li><a href="…">Cancel</a></li>
+              </ul>
+            </form>
           </article>
-</li>
+        </li>
       
-<li>
+        <li>
           <article class="post-item"><header><h3><span class="avatar">
               <!-- ko if: profile_image -->
                 <img data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"><!-- /ko --><!-- ko ifnot: profile_image --><!-- /ko -->
@@ -306,7 +318,7 @@
                 <time>1 day ago</abbr>
                 </time></p>
           </article>
-</li>
+        </li>
       
         <li>
           <article class="post-item">
@@ -322,35 +334,25 @@
             <p class="time"><time>23 hours ago</time></p>
           </article>
         </li>
-        <li>
-          <article class="post-item">
-            <header>
-              <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" />
-                </span>
-              </h3>
-            </header>
-            <form>
-              <p class="text">
-                <label>
-                  <span>Add a comment…</span><br />
-                  <textarea placeholder="Add a comment…" name="comment"></textarea>
-                </label>
-              </p>
-              <p class="submit">
-                <button type="submit">Send</button>
-              </p>
-              <!--
-              <ul class="submit">
-                <li><button type="submit">Update</button></li>
-                <li><a href="…">Cancel</a></li>
-              </ul>
-              -->
-            </form>
-          </article>
-        </li>
       </ol>
+
+      <form>
+        <p class="text">
+          <label>
+            <span>Add a comment…</span><br />
+            <textarea placeholder="Add a comment…" name="comment"></textarea>
+          </label>
+        </p>
+        <p class="submit">
+          <button type="submit">Send</button>
+        </p>
+        <!--
+        <ul class="submit">
+          <li><button type="submit">Update</button></li>
+          <li><a href="…">Cancel</a></li>
+        </ul>
+        -->
+      </form>
 
     </div>
 
