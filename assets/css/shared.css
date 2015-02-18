@@ -3137,11 +3137,10 @@
     color: rgb(153, 153, 153); /* @nickel */
   }
   .settings aside h3 {
-    text-transform: none;
+    text-transform: lowercase;
     color: inherit;
     font-size: inherit;
     margin-bottom: 0;
-    text-transform: lowercase;
   }
   .settings aside p {
     margin-top: 0;
@@ -3157,7 +3156,6 @@
     display: block;
     padding: 0.5625em 0.75em 0.5625em 1.25em;
     text-decoration: none;
-    text-transform: lowercase;
     background: white;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     border-radius: 0.25em;

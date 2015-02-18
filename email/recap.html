@@ -8,13 +8,15 @@
 
   <style>
 
+
+    /* =Elements
+    ----------------------------------------------- */
     html, body {
       height: 100%;
     }
     .body {
       min-height: 100%;
     }
-
     body {
       margin: 0;
       padding: 0;
@@ -24,6 +26,7 @@
       font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: rgb(238, 238, 238); /* @seashell */
       color: black;
+      box-sizing: border-box;
     }
     @media (min-width: 600px) {
       .body {
@@ -118,10 +121,7 @@
       padding: 18px;
     }
     .article {
-      padding: 9px 18px 18px;
-    }
-    .article h4 {
-      margin-top: 9px;
+      padding: 9px 18px;
     }
     .section > .header,
     .members li {
@@ -209,13 +209,6 @@
       max-width: 100%;
       height: auto;
     }
-    /*
-    .summary.article p img {
-      float: left;
-      margin-right: 9px;
-      margin-bottom: 1px;
-    }
-    */
 
 
     /* =Footer
