@@ -1782,29 +1782,26 @@
   .page aside ul + ul {
     margin-top: 1.5em;
   }
-  .page aside a      .icon,
-  .page aside button .icon {
+  .page aside a .icon {
     margin-right: 0.5em; /* SHIM: 0.75em - one whitespace character */
 
     /* @item-icon */
     width: 1.875em;
     height: 1.875em;
-    color: rgb(204, 204, 204); /* @aluminum */
   }
-  .page aside a,
-  .page aside button {
+  .page aside a {
     display: block;
     text-align: left;
     padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
     margin: 0 -1.25em 0 -1.25em; /* @page-padding */
     text-decoration: none;
     font-weight: normal;
-    background: white;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
-    color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
     width: 100%;
     box-sizing: content-box;
+
+    background: white;
 
     /* @background-icon */
     background-size: 1.5em auto;
@@ -1825,32 +1822,25 @@
     .page aside li + li {
       margin-top: 0;
     }
-    .page aside li + li a,
-    .page aside li + li button {
+    .page aside li + li a {
       border-top-width: 0;
     }
-    .page aside a,
-    .page aside button {
+    .page aside a {
       border-left-width: 0;
       border-right-width: 0;
       border-radius: 0;
     }
   }
   .page aside a:active,
-  .page aside a:focus,
-  .page aside button:active,
-  .page aside button:focus {
+  .page aside a:focus{
     background-color: rgb(222, 222, 222); /* @silver*/
   }
-  .page aside a:active svg,
-  .page aside a:focus svg,
-  .page aside button:active svg,
-  .page aside button:focus svg {
-    color: inherit;
-  }
   .page aside,
-  .page aside ul {
+  .page aside ul:first-child {
     margin-top: 0;
+  }
+  .page aside ul + ul {
+    margin-top: 3em;
   }
   .page aside a {
     text-transform: lowercase;
@@ -2018,10 +2008,14 @@
     margin-left: auto;
     margin-right: auto;
   }
+  aside button,
   .push-card.page button,
   .dialog.page .action a,
   .dialog.page .action button {
+    display: block;
     max-width: 13.333333333em;
+    margin-left: auto;
+    margin-right: auto;
   }
   .push-card label {
     background: transparent;
@@ -2037,6 +2031,7 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+  aside button,
   .dialog.page .action a,
   .dialog.page    button,
   .push-card      button {
@@ -2053,6 +2048,8 @@
     box-sizing: border-box;
     text-align: center;
   }
+  aside button:focus,
+  aside button:active,
   .dialog.page .action a:active,
   .dialog.page .action a:focus,
   .dialog.page    button:active,
@@ -2061,6 +2058,7 @@
   .push-card      button:focus {
     background: black;
   }
+  aside button svg.icon,
   .dialog.page .action a svg.icon,
   .dialog.page    button svg.icon {
     width: 1em;
@@ -3115,14 +3113,14 @@
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
   }
-  .settings aside {
+  .settings aside h3,
+  .settings aside p {
     text-align: center;
     font-style: italic;
     color: rgb(153, 153, 153); /* @nickel */
   }
   .settings aside h3 {
     text-transform: lowercase;
-    color: inherit;
     font-size: inherit;
     margin-bottom: 0;
   }
