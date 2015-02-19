@@ -230,67 +230,61 @@
       <h2 class="name">Free Lots Angeles</h2>
     </div>
 
-    <div class="tag-list">
+    <div class="tags option-list">
       <h3>Pull These Hashtags</h3>
       <ul>
-        <li class="item">
-          <a href="#remove-hashtag">
-            <span>#freelotsangeles</span>
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
-              <use xlink:href="#close" />
-              <foreignobject>Remove</foreignobject>
-            </svg>
+        <li>
+          <a href="#remove" role="checkbox" aria-checked="true">
+            #freelotsangeles
           </a>
         </li>
-        <li class="item">
-          <a href="#remove-hashtag">
-            <span>#myla</span>
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
-              <use xlink:href="#close" />
-              <foreignobject>Remove</foreignobject>
-            </svg>
+        <li>
+          <a href="#remove" role="checkbox" aria-checked="true">
+            #myla
           </a>
         </li>
       </ul>
     </div>
 
-    <div class="add-hashtag">
-      <p class="item">
-        <a href="#add-hashtag">
-          <svg class="icon">
-            <use xlink:href="#add" />
-          </svg>
-          <span>add another hashtag</span>
-        </a>
-      </p>
+    <div class="option-list">
+      <ul>
+        <li>
+          <a href="#add-hashtag">
+            <svg class="icon">
+              <use xlink:href="#add" />
+            </svg>
+            <span>add another hashtag</span>
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <div class="account-list">
+    <div class="option-list">
       <h3>From These Accounts</h3>
       <ul>
-        <li class="item instagram active">
-          <a href="#instagram">
+        <li class="instagram">
+          <a href="#instagram" role="checkbox" aria-checked="true">
             <svg class="icon"><use xlink:href="#instagram" /><foreignobject>Instagram</foreignobject></svg>
             @<span>aldoatgood</span>
           </a>
         </li>
-        <li class="item twitter">
-          <a href="#twitter-add">
-            <svg class="icon"><use xlink:href="#twitter" /><foreignobject>Sync my Twitter</foreignobject></svg>
+        <li class="twitter">
+          <a href="#twitter-add" role="checkbox" aria-checked="false">
+            <svg class="icon"><use xlink:href="#twitter" /><foreignobject>sync my twitter</foreignobject></svg>
             <span>sync my twitter</span>
           </a>
         </li>
-        <li class="item facebook">
-          <a href="#facebook-add">
-            <svg class="icon"><use xlink:href="#facebook" /><foreignobject>Sync my Facebook</foreignobject></svg>
+        <li class="facebook">
+          <a href="#facebook-add" role="checkbox" aria-checked="false">
+            <svg class="icon"><use xlink:href="#facebook" /><foreignobject>sync my facebook</foreignobject></svg>
             <span>sync my facebook</span>
           </a>
         </li>
       </ul>
     </div>
 
-    <aside>
-      <h3>More options</h3>
+    <div class="option-list">
+      <h3>Notifications</h3>
       <ul>
         <li>
           <a href="settings-email.html">Email Notifications</a>
@@ -301,10 +295,12 @@
       </ul>
       <ul>
         <li>
-          <a href="#">Leave Push</a>
+          <form action="" method="post">
+            <button>Leave Push</button>
+          </form>
         </li>
       </ul>
-    </aside>
+    </div>
 
     <form>
       <p class="submit"><button type="submit">Done</button></p>

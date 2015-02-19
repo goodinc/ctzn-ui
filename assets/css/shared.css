@@ -585,12 +585,6 @@
     position: absolute;
     left: -9999px;
   }
-  .disabled label {
-    /* zebra stripes */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 84"><rect fill="rgb(253, 253, 253)" x="20.649" y="-47.794" transform="matrix(0.9158 0.4017 -0.4017 0.9158 19.5667 -11.0866)" width="31.141" height="177.815"/></svg>');
-    background-size: auto 100%;
-    background-repeat: repeat-x;
-  }
   .success label:after {
     content: "";
     position: absolute;
@@ -615,13 +609,13 @@
   .text label .icon:first-child {
     position: absolute;
     left: auto;
-    margin-left: -1.875em;
-    margin-top: 0.25em;
+    margin-left: -1.75em;
+    margin-top: 0.375em;
 
     /* @item-icon */
-    width: 1.875em;
-    height: 1.875em;
-    color: rgb(204, 204, 204); /* @aluminum */
+    width: 1.75em;
+    height: 1.75em;
+    color: rgb(102, 102, 102); /* @tin */
   }
   .disabled label .icon:first-child {
     color: rgb(240, 240, 240);
@@ -1766,30 +1760,33 @@
   }
 
 
-  /* =Page Options
-  -----------------------------------------------
-  TODO: Consider combining these with styles for items on the settings page.
+  /* =Option List
   ----------------------------------------------- */
-  .page aside ul,
-  .page aside li {
+  .option-list h3 {
+    /* @tiny-headline */
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+  .option-list ul,
+  .option-list li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .page aside li {
+  .option-list li {
     margin: 0.75em 0;
   }
-  .page aside ul + ul {
+  .option-list ul + ul {
     margin-top: 1.5em;
   }
-  .page aside a .icon {
+  .option-list a .icon {
     margin-right: 0.5em; /* SHIM: 0.75em - one whitespace character */
 
-    /* @item-icon */
-    width: 1.875em;
-    height: 1.875em;
+    color: rgb(102, 102, 102); /* @tin */
   }
-  .page aside a {
+  .option-list a,
+  .option-list button {
     display: block;
     text-align: left;
     padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
@@ -1800,8 +1797,13 @@
     border-radius: 0.25em;
     width: 100%;
     box-sizing: content-box;
-
     background: white;
+    color: rgb(255, 49, 102); /* @strawberry */
+  }
+  .option-list button {
+    text-align: center;
+  }
+  .option-list a {
 
     /* @background-icon */
     background-size: 1.5em auto;
@@ -1813,36 +1815,40 @@
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg>');
   }
   @media (max-width: 34.25em) {
-    .page aside ul + ul {
+    .option-list ul + ul {
       margin-top: 0.75em;
     }
-    .page aside li {
+    .option-list li {
       margin-bottom: 0;
     }
-    .page aside li + li {
+    .option-list li + li {
       margin-top: 0;
     }
-    .page aside li + li a {
+    .option-list li + li a,
+    .option-list li + li button {
       border-top-width: 0;
     }
-    .page aside a {
+    .option-list a,
+    .option-list button {
       border-left-width: 0;
       border-right-width: 0;
       border-radius: 0;
     }
   }
-  .page aside a:active,
-  .page aside a:focus{
+  .option-list a:active,
+  .option-list a:focus,
+  .option-list button:active,
+  .option-list button:focus {
     background-color: rgb(222, 222, 222); /* @silver*/
   }
-  .page aside,
-  .page aside ul:first-child {
+  .option-list,
+  .option-list ul:first-child {
     margin-top: 0;
   }
-  .page aside ul + ul {
+  .option-list ul + ul {
     margin-top: 3em;
   }
-  .page aside a {
+  .option-list a {
     text-transform: lowercase;
   }
 
@@ -2008,7 +2014,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-  aside button,
   .push-card.page button,
   .dialog.page .action a,
   .dialog.page .action button {
@@ -2031,7 +2036,6 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-  aside button,
   .dialog.page .action a,
   .dialog.page    button,
   .push-card      button {
@@ -2048,8 +2052,6 @@
     box-sizing: border-box;
     text-align: center;
   }
-  aside button:focus,
-  aside button:active,
   .dialog.page .action a:active,
   .dialog.page .action a:focus,
   .dialog.page    button:active,
@@ -2058,7 +2060,6 @@
   .push-card      button:focus {
     background: black;
   }
-  aside button svg.icon,
   .dialog.page .action a svg.icon,
   .dialog.page    button svg.icon {
     width: 1em;
@@ -2248,7 +2249,7 @@
     top  : 0.375em; /* @line-height / 4 */
     right: 0.375em;
     background: white;
-    color: rgb(102, 102, 102); /* @tin */
+    color: rgb(204, 204, 204); /* aluminum */
   }
   .editor .images li button:focus,
   .editor .images li button:active {
@@ -3053,22 +3054,6 @@
     color: rgb(159, 165, 162); /* @barium */
   }
 
-  .settings .add-hashtag .item a {
-    padding-right: 2em;
-
-    /* @background-icon */
-    background-size: 1.5em auto;
-    background-repeat: no-repeat;
-    background-position: 100% 50%;
-    background-position: calc(100% - 0.75em) 50%;
-
-    /* @icon-right */ /* @aluminum */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg>');
-  }
-  .settings .add-hashtag .item a .icon {
-    margin-right: 0.375em;
-  }
-
   /* Onboarding button */
   section.settings > form:last-child {
     position: absolute;
@@ -3078,27 +3063,14 @@
     padding: 0;
   }
 
-  .settings ul,
-  .settings .item {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .settings p.item,
-  .settings .tag-list     ul,
-  .settings .account-list ul {
-    margin: 0 -1.25em; /* @page-padding */
-  }
-  .settings .tag-list     > svg:first-child,
-  .settings .account-list > svg:first-child {
+  .settings .introduction svg.icon {
     display: block;
     width: 4.5em;
     height: 4.5em;
     margin: -0.375em auto;
     opacity: 0.15;
   }
-  .settings .tag-list     h2,
-  .settings .account-list h2 {
+  .settings .introduction h2 {
     text-align: center;
     font-weight: normal;
     font-size: 1.125em; /* 18px / @font-size */
@@ -3106,13 +3078,30 @@
     color: rgb(102, 102, 102); /* @tin */
     margin-bottom: 3em;
   }
-  .settings .tag-list     h2 strong,
-  .settings .account-list h2 strong {
+  .settings .introduction h2 strong {
     font-size: 1.3333333333em; /* 24px / 18px */
     color: black;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
   }
+
+  /* SHIM: Reduce the vertical space between sections, during onboarding */
+  .settings .introduction {
+    padding-bottom: 0;
+  }
+  .settings .introduction + .option-list {
+    padding-top: 0;
+  }
+  .settings > form {
+    padding: 0;
+  }
+  .option-list + .option-list {
+    padding-top: 0;
+  }
+  .option-list ul:last-child {
+    margin-bottom: 0;
+  }
+
   .settings aside h3,
   .settings aside p {
     text-align: center;
@@ -3130,85 +3119,34 @@
   .settings aside p:first-letter {
     text-transform: lowercase;
   }
-  .settings .item {
-    position: relative;
-    margin: 0.75em 0;
-  }
-  .settings .item a {
-    display: block;
-    padding: 0.5625em 0.75em 0.5625em 1.25em;
-    text-decoration: none;
-    background: white;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
-    border-radius: 0.25em;
-  }
-  .tag-list     .item a,
-  .account-list .item a {
-    color: inherit;
-  }
-  .settings .item a .icon {
-    margin-right: 0.375em;
-  }
-  .settings .item a .icon:last-child {
-    float: right;
-    margin-right: 0;
-    color: rgb(204, 204, 204); /* aluminum */
-  }
-  @media (max-width: 34.25em) {
-    .settings.page .add-hashtag {
-      padding-top: 0;
-    }
-    .settings .item {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    .settings .item + .item a {
-      border-top-width: 0;
-    }
-    .settings .item[hidden] + .item a {
-      border-top-width: 0.0625em;
-    }
-    .settings .item a {
-      border-left-width: 0;
-      border-right-width: 0;
-      border-radius: 0;
-    }
-  }
 
-  /* OPTIONAL: Light up the active social icons */
-  .account-list .item a {
+  .option-list .instagram .icon {
+    color: rgb(40, 81, 127);
+  }
+  .option-list .twitter .icon {
+    color: rgb(94, 171, 244);
+  }
+  .option-list .facebook .icon {
+    color: rgb(46, 69, 134);
+  }
+  .option-list a[role="checkbox"][aria-checked="false"] {
     color: rgb(153, 153, 153); /* @nickel */
+    background-image: none;
   }
-  .account-list .item a:active,
-  .account-list .item a:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .account-list .item.active a {
+  .option-list a[role="checkbox"][aria-checked="false"] .icon {
     color: inherit;
-    opacity: 1;
   }
-  .account-list .item.active a {
-
-    /* @background-icon */
-    background-size: auto 1.5em;
-    background-repeat: no-repeat;
-    background-position: 100% 50%;
-    background-position: calc(100% - 0.75em) 50%;
+  .option-list a[role="checkbox"][aria-checked="true"] {
+    color: inherit;
 
     /* @icon-checkmark */ /* @pear */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg>');
   }
+  .tags.option-list a[role="checkbox"][aria-checked="true"] {
+    /* @icon-close */ /* @aluminum */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M17.792 3.766l-1.558-1.559-6.234 6.234-6.234-6.234-1.559 1.558 6.234 6.234-6.234 6.234 1.558 1.558 6.234-6.234 6.234 6.234 1.558-1.558-6.234-6.234z"></path></svg>');
+  }
 
-  .active.instagram .icon {
-    color: rgb(40, 81, 127);
-  }
-  .active.twitter .icon {
-    color: rgb(94, 171, 244);
-  }
-  .active.facebook .icon {
-    color: rgb(46, 69, 134);
-  }
 
 
   /* =Notifications

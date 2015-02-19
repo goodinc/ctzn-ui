@@ -207,7 +207,7 @@
       </a>
     </header>
 
-    <div class="tag-list">
+    <div class="introduction">
       <svg class="icon"><use xlink:href="#hashtag" /></svg>
       <h2>
         Tell us which hashtags you use for<br />
@@ -215,38 +215,35 @@
         (You can also enter any hashtags 
         you’ll want to grab in the&nbsp;future)
       </h2>
+    </div>
+
+    <div class="tags option-list">
       <h3>Your Hashtags</h3>
       <ul>
-        <li class="item">
-          <a href="#remove-hashtag">
+        <li>
+          <a href="#remove-hashtag" role="checkbox" aria-checked="true">
             <span>#ctzn</span>
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
-              <use xlink:href="#close" />
-              <foreignobject>Remove</foreignobject>
-            </svg>
           </a>
         </li>
-        <li class="item">
-          <a href="#remove-hashtag">
+        <li>
+          <a href="#remove-hashtag" role="checkbox" aria-checked="true">
             <span>#projectcitizen</span>
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
-              <use xlink:href="#close" />
-              <foreignobject>Remove</foreignobject>
-            </svg>
           </a>
         </li>
       </ul>
     </div>
 
-    <div class="add-hashtag">
-      <p class="item">
-        <a href="#add-hashtag">
-          <svg class="icon">
-            <use xlink:href="#add" />
-          </svg>
-          <span>Add another hashtag</span>
-        </a>
-      </p>
+    <div class="option-list">
+      <ul>
+        <li>
+          <a href="#add-hashtag">
+            <svg class="icon">
+              <use xlink:href="#add" />
+            </svg>
+            <span>Add another hashtag</span>
+          </a>
+        </li>
+      </ul>
     </div>
 
     <form>
