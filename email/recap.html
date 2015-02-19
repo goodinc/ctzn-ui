@@ -14,23 +14,21 @@
     html, body {
       height: 100%;
     }
-    .body {
-      min-height: 100%;
-    }
     body {
       margin: 0;
       padding: 0;
     }
 
-    .body {
-      font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    .container {
+      min-height: 100%;
+      font: 16px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: rgb(238, 238, 238); /* @seashell */
       color: black;
       box-sizing: border-box;
     }
     @media (min-width: 600px) {
-      .body {
-        padding: 18px 0;
+      .container {
+        padding: 10px 0;
       }
     }
 
@@ -49,47 +47,31 @@
       border-width: 0;
     }
 
-    .more a {
-      display: inline-block;
-      text-transform: uppercase;
-      border: 1px solid rgb(246, 246, 246);
-      padding: 0 18px;
-      font-size: 12px;
-      line-height: 22px
-    }
-
     h1 {
       font-size: 24px;
-      line-height: 27px; /* 18px x 3/2 */
+      line-height: 30px; /* 20px x 3/2 */
       margin-top: 9px;
       margin-bottom: 0;
     }
     h2 {
-      font-size: 12px;
-      line-height: 27px; /* 18px x 3/2 */
-      margin-top: 6px;
+      font-size: 14px;
+      margin-top: 5px;
       margin-bottom: 0;
-      text-transform: uppercase;
-      font-weight: normal;
-    }
-    h2 b {
-      font-size: 24px;
-      margin-right: 0.125em;
     }
     h3 {
       border-top: 1px solid rgb(238, 238, 238); /* @seashell */
-      padding-top: 18px;
+      padding-top: 20px;
       font-size: 12px;
       color: rgb(153, 153, 153); /* @nickel */
       text-transform: uppercase;
       font-weight: normal;
-      margin-top: 18px;
-      margin-bottom: 18px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
     h4 {
       font-size: inherit;
-      margin-top: 18px;
-      margin-bottom: 9px;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
 
     .section p {
@@ -98,7 +80,7 @@
       margin-bottom: 9px;
     }
     .section ul {
-      margin-top: 18px;
+      margin-top: 20px;
       margin-bottom: 0;
     }
     .section p b {
@@ -113,22 +95,25 @@
     .article,
     .footer {
       background-color: white;
-      max-width: 564px; /* 600px - (18px x 2) */
+      max-width: 580px; /* 600px - (10px x 2) */
       margin-left: auto;
       margin-right: auto;
+      box-sizing: border-box;
     }
-    .body > .header {
-      padding: 18px;
+    .container > .header {
+      padding: 20px 15px;
     }
     .article {
-      padding: 9px 18px;
+      padding: 15px 15px 20px;
     }
-    .section > .header,
+    .section > .header {
+      padding: 15px 15px;
+    }
     .members li {
-      padding: 9px 18px;
+      padding: 10px 15px;
     }
     .footer {
-      padding: 27px 18px;
+      padding: 20px 15px;
     }
     .members li,
     .article {
@@ -136,41 +121,35 @@
     }
     .section .header,
     .footer {
-      margin-top: 18px;
+      margin-top: 10px;
     }
 
 
     /* =Header
     ----------------------------------------------- */
-    .body > .header {
-      min-height: 100px;
+    .container > .header {
       color: rgb(153, 153, 153); /* @nickel */
+    }
+    h1 {
+      margin-top: 0;
     }
     h1 b {
       color: black;
     }
     .header .avatar {
       float: left;
-      margin-right: 18px;
-      margin-bottom: 9px;
-    }
-    .header .time {
-      font-size: 18px;
-      margin-top: 6px;
-      line-height: 21px;
-      margin-bottom: 0;
-    }
-    .header .time span,
-    .header .time small {
-      white-space: nowrap;
+      margin-right: 20px;
+      margin-bottom: 10px;
     }
     .header .ctzn {
-      font-variant: small-caps;
-      background: black;
+      margin-top: 20px;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      background: rgb(135, 135, 135);
       color: white;
       padding: 0 6px;
-      display: table;
-      margin-top: 9px;
+      font-size: 10px;
+      display: inline-block;
     }
 
 
@@ -189,17 +168,28 @@
       text-decoration: none;
     }
     .members li .avatar {
-      margin-right: 9px;
+      margin-right: 5px;
+    }
+    .members li .name {
+      font-size: 14px;
     }
     .members li b {
-      font-size: 16px;
       color: black;
-      margin-right: 0.5em;
+      margin-right: 5px;
+    }
+    .members li p {
+      margin: 5px 0;
+      font-size: 14px;
+      font-style: italic;
+      padding-left: 43px;
     }
 
 
     /* =Article
     ----------------------------------------------- */
+    .article h4 {
+      margin-top: 0;
+    }
     .article h4 .avatar {
       margin-right: 7px;
     }
@@ -213,29 +203,29 @@
 
     /* =Footer
     ----------------------------------------------- */
-    .body > .footer ul,
-    .body > .footer li {
+    .container > .footer ul,
+    .container > .footer li {
       list-style: none;
       margin-left: 0;
       padding-left: 0;
     }
-    .body > .footer ul {
+    .container > .footer ul {
       margin: 0;
     }
-    .body > .footer li {
+    .container > .footer li {
       margin: 0;
       margin-right: 38px;
       display: inline;
       font-size: 11px;
     }
-    .body > .footer li.instagram {
+    .container > .footer li.instagram {
       float: right;
-      margin-right: 9px; /* 18px / 2 */
+      margin-right: 10px; /* 20px / 2 */
     }
-    .body > .footer a {
+    .container > .footer a {
       text-transform: uppercase;
     }
-    .body > .footer .instagram a {
+    .container > .footer .instagram a {
       color: rgb(179, 179, 179);
     }
 
@@ -245,12 +235,16 @@
     .avatar img {
       border-radius: 100%;
       vertical-align: middle;
+
+      /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+      background-color: rgba(0, 0, 0, 0.25);
     }
+
     .avatar > span {
       display: inline-block;
       color: black;
-      width       : 1.2857142857em; /* 18px / 14px */
-      line-height : 1.2857142857em;
+      width       : 1.25em; /* 20px / 16px */
+      line-height : 1.25em;
       vertical-align: middle;
     }
     .avatar .letter {
@@ -258,7 +252,7 @@
       speak: none;
       text-transform: uppercase;
       text-align: center;
-      font-size: 0.8888888889em; /* 16px / 18x */
+      font-size: 0.8em; /* 16px / 20px */
       font-style: normal;
       font-weight: bold;
     }
@@ -267,105 +261,146 @@
     /* =Member Avatars
     ----------------------------------------------- */
     .avatar .size30 {
-      font-size: 1.6666666667em; /* 30px / 18px */
+      font-size: 1.5em; /* 30px / 20px */
       border-radius: 100%;
     }
 
     .avatar .clover {
-      background-color: rgb(0, 235, 98);
+      background-color: rgb(0, 235, 98); /* @clover */
     }
     .avatar .kiwi {
-      background-color: rgb(0, 255, 208);
+      background-color: rgb(0, 255, 208); /* @kiwi */
     }
     .avatar .grape {
-      background-color: rgb(159, 104, 246);
+      background-color: rgb(159, 104, 246); /* @grape */
     }
     .avatar .bluebird {
-      background-color: rgb(0, 206, 250);
+      background-color: rgb(0, 206, 250); /* @bluebird */
     }
     .avatar .cantaloupe {
-      background-color: rgb(255, 203, 117);
+      background-color: rgb(255, 203, 117); /* @cantaloupe */
     }
     .avatar .cranberry {
-      background-color: rgb(251, 59, 147);
+      background-color: rgb(251, 59, 147); /* @cranberry */
     }
     .avatar .amethyst {
-      background-color: rgb(255, 152, 248);
+      background-color: rgb(255, 152, 248); /* @amethyst */
     }
     .avatar .sky {
-      background-color: rgb(0, 255, 254);
+      background-color: rgb(0, 255, 254); /* @sky */
     }
     .avatar .ocean {
-      background-color: rgb(24, 57, 245);
+      background-color: rgb(24, 57, 245); /* @ocean */
       color: white;
     }
 
 
-    /* =Push Avatars
+    /* =Push Colors
     ----------------------------------------------- */
-    .avatar .size100 {
-      font-size: 5.5555555556em; /* 100px / 18px */
+    .container > .header {
+      border-top-width: 10px;
+      border-top-style: solid;
+    }
+    .article .body img {
+      display: block;
+      margin: 15px auto;
+    }
+    .article > .summary {
+      margin-top: 0;
+      border-top-width: 0;
+      border-left-width: 10px;
+      border-left-style: solid;
+      padding-left: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-size: 14px;
+      color: rgb(135, 135, 135);
+    }
+    .article .comment,
+    .article .action {
+      padding-top: 10px;
+      border-top: 1px solid rgb(244, 244, 244);
+      margin-top: 10px;
+    }
+    .article .comment h4 {
+      margin: 0;
+    }
+    .article .comment p {
+      margin-top: 0;
+      padding-left: 43px;
+    }
+    .article .action {
+      margin-top: 20px;
+      padding-top: 15px;
+      margin-bottom: 0;
+    }
+    .lime {
+      border-color: rgb(203, 253, 128); /* @lime */
+    }
+    .cucumber {
+      border-color: rgb(150, 254, 166); /* @cucumber */
+    }
+    .blueberry {
+      border-color: rgb(99, 204, 203); /* @blueberry */
+    }
+    .boysenberry {
+      border-color: rgb(101, 156, 247); /* @boysenberry */
+    }
+    .plumb {
+      border-color: rgb(193, 77, 166); /* @plumb */
+    }
+    .strawberry {
+      border-color: rgb(255, 49, 102); /* @strawberry */
+    }
+    .apple {
+      border-color: rgb(255, 49, 59); /* @apple */
+    }
+    .tangerine {
+      border-color: rgb(255, 202, 72); /* @tangerine */
+    }
+    .orange {
+      border-color: rgb(242, 64, 41); /* @orange */
     }
 
-    .avatar .lime {
-      background-color: rgb(203, 253, 128); /* @lime */
-      color: black;
+
+    /* =Icons
+    ----------------------------------------------- */
+    div.icon {
+      height: 0;
+      margin-left: 5px;
     }
-    .avatar .cucumber {
-      background-color: rgb(150, 254, 166); /* @cucumber */
-      color: black;
+
+
+    /* =Action
+    ----------------------------------------------- */
+    .action a {
+      border: 1px solid rgb(193, 193, 193);
+      display: inline-block;
+      padding: 7px 15px;
+      border-radius: 0.25em;
+      font-size: 14px;
+      font-weight: bold;
     }
-    .avatar .blueberry {
-      background-color: rgb(99, 204, 203); /* @blueberry */
-      color: white;
-    }
-    .avatar .boysenberry {
-      background-color: rgb(101, 156, 247); /* @boysenberry */
-      color: white;
-    }
-    .avatar .plumb {
-      background-color: rgb(193, 77, 166); /* @plumb */
-      color: white;
-    }
-    .avatar .strawberry {
-      background-color: rgb(255, 49, 102); /* @strawberry */
-      color: white;
-    }
-    .avatar .apple {
-      background-color: rgb(255, 49, 59); /* @apple */
-      color: white;
-    }
-    .avatar .tangerine {
-      background-color: rgb(255, 202, 72); /* @tangerine */
-      color: white;
-    }
-    .avatar .orange {
-      background-color: rgb(242, 64, 41); /* @orange */
-      color: white;
-    }
+
 
   </style>
 
 </head>
 <body>
 
-  <div class="body">
+  <div class="container">
 
-    <div class="header">
-
-      <span class="avatar"><span class="size100 blueberry"><span class="letter">s</span></span></span>
-
-      <h1>My <b>Santa Zen</b> Morning Digest</h1>
-
-      <p class="time">
-        <time datetime="2015-02-06 06:00">
-          <span>Friday, February 6, 2015</span>
-          <small>6:00 A.M. PST</small>
-        </time>
+    <div class="header blueberry">
+      <h1><b>Santa Zen</b> Morning Digest</h1>
+      <p class="ctzn">
+        powered by
+        <b>
+          <svg viewBox="0 0 120 45.382" width="24" height="9">
+            <path fill="white" d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"/><path fill="white" d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"/><path fill="white" d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/><path fill="white" d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"/>
+            <foreignobject>ctzn</foreignobject>
+          </svg>
+        </b>
       </p>
-
-      <p class="ctzn">powered by <b><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 45.382" width="24" height="9"><path fill="white" d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"/><path fill="white" d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"/><path fill="white" d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/><path fill="white" d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"/><foreignobject>ctzn</foreignobject></svg></b></p>
-
     </div><!-- /.header -->
 
     <div class="section">
@@ -397,6 +432,25 @@
           <li>
             <a href="http://ctznapp.com">
               <span class="avatar">
+                <img src="" width="30" height="30" alt="" />
+              </span>
+              <b>@loading</b>
+              <span class="name">Loading Image</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <span class="size30 grape"><span class="letter">s</span></span>
+              </span>
+              <b>@stevenger</b>
+              <span class="name">Steve Vasquez</span>
+            </a>
+            <p>Cooking with Gabby director of communications, filmmaker, traveler, eater…</p>
+          </li>
+          <li>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
                 <span class="size30 bluebird"><span class="letter">v</span></span>
               </span>
               <b>@vogg</b>
@@ -404,74 +458,6 @@
           </li>
         </ul>
       </div><!-- /.members -->
-
-    </div><!-- /.section -->
-
-    <div class="section">
-
-      <div class="header">
-        <h2><b>15</b> new comments in your conversations</h2>
-      </div>
-
-      <div class="article">
-        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0acb4801767ba5838f45c4dbfcc7b38f869154ea=c100x100"></p>
-
-        <div style="clear: both"></div>
-
-        <h3>2 new comments</h3>
-
-        <h4><a href="http://ctznapp.com">@cogg2d</a></h4> 
-        <p>Is that the new bike?</p>
-
-        <h4><a href="http://ctznapp.com">@brian2d</a></h4>
-        <p>That it is. Trek's 400 series carbon frame, Shimano 105 groupset, and she hit 24.2mph on the way down Fiji in the Marina.</p>
-
-      </div><!-- /.article -->
-
-      <div class="article">
-
-        <p>Looks like we might need to send an ortc message when you read your notifications. If I read them on one device, but no other activity occurs before I get to the other device, the other one still thinks they're unread just because no sync has occurred.</p>
-
-        <div style="clear: both"></div>
-
-        <h3>2 new comments</h3>
-
-        <h4><a href="http://ctznapp.com">@dan</a></h4> 
-        <p>totes</p>
-
-        <h4><a href="http://ctznapp.com">@cogg</a></h4>
-        <p>makes sense</p>
-
-      </div><!-- /.article -->
-
-      <div class="article">
-
-        <p>Helped a friend buy a Trek Silque S today. Forgot to take a picture of her with it. Planning on doing a ride tomorrow, then I can post it.</p>
-
-        <div style="clear: both"></div>
-
-        <h3>1 new comments</h3>
-
-        <h4><a href="http://ctznapp.com">@cogg</a></h4>
-        <p>I am so nerdy i thought you forgot to put Star in fact of Trek...</p>
-
-      </div><!-- /.article -->
-
-      <div class="article">
-
-        <p>I got a native app notification!!! w00t!</p>
-
-        <h3>11 new comments</h3>
-
-        <h4><a href="http://ctznapp.com">@brian</a></h4>
-        <p>On the iOS app?</p>
-
-        <h4><a href="http://ctznapp.com">@aldoatgood</a></h4>
-        <p>Oh haha yea</p>
-
-        <p class="more"><a href="http://ctznapp.com">&amp; 9 more</a></p>
-
-      </div><!-- /.article -->
 
     </div><!-- /.section -->
 
@@ -492,12 +478,14 @@
           </a>
         </h4>
 
-        <p>
-          <img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/cafc6c55d5d6eda96513af518dcec5530148fd5c=c600x600">
-          A dedicated pan for Swedish pancakes, untested as of yet.
-        </p>
+        <div class="body">
+          <p>
+            <img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/cafc6c55d5d6eda96513af518dcec5530148fd5c=s600x600">
+            A dedicated pan for Swedish pancakes, untested as of yet.
+          </p>
+        </div>
 
-        <div style="clear: both"></div>
+        <p class="action"><a href="http://ctznapp.com">Reply to post</a></p>
 
       </div><!-- /.article -->
 
@@ -512,11 +500,13 @@
           </a>
         </h4>
 
-        <p>Banking</p>
+        <div class="body">
+          <p>Banking</p>
 
-        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ad1ba1e3809b5a64a31c50faf93d84621904cf49=c600x600"></p>
+          <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ad1ba1e3809b5a64a31c50faf93d84621904cf49=s600x600"></p>
+        </div>
 
-        <div style="clear: both"></div>
+        <p class="action"><a href="http://ctznapp.com">Reply to post</a></p>
 
       </div><!-- /.article -->
 
@@ -525,63 +515,170 @@
     <div class="section">
 
       <div class="header">
-        <h2><b>25</b> people loved your posts</h2>
+        <h2><b>10</b> new activity on your posts</h2>
       </div>
 
-      <div class="summary article">
+      <div class="article">
 
-        <p>Korean BBQ</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="summary blueberry">
+          <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0acb4801767ba5838f45c4dbfcc7b38f869154ea=c100x100"></p>
+        </div>
 
-        <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/28362144dc1c7f995ea0dfbcde321c8a374eefc5=c100x100"></p>
+        <div class="comment">
+          <div class="icon">
+            <!-- @icon-heart --> <!-- @cranberry -->
+            <svg width="20" height="20" viewBox="0 0 20 20">
+              <path d="M17.631 5.93c-0.394-0.913-1.185-1.682-2.281-2.158-0.968-0.422-2.012-0.471-2.96-0.214s-1.801 0.956-2.388 1.767c-0.588-0.811-1.44-1.511-2.389-1.767-0.949-0.258-1.991-0.207-2.96 0.214-1.096 0.476-1.885 1.243-2.281 2.158-0.394 0.912-0.397 1.974 0.103 3.027 1.062 2.257 7.494 7.55 7.529 7.64 0.033-0.090 6.466-5.383 7.53-7.64 0.498-1.053 0.496-2.115 0.101-3.027z" fill="rgb(251, 59, 147)"></path>
+            </svg>
+          </div>
+          <p>
+            <b>
+              <a href="http://ctznapp.com">@aaron</a>,
+              <a href="http://ctznapp.com">@aldoatgood</a>,
+              <a href="http://ctznapp.com">@brian</a>,
+              <a href="http://ctznapp.com">@caseycaplowe</a>,
+              <a href="http://ctznapp.com">@cogg</a>,
+              <a href="http://ctznapp.com">@eshah</a>
+            </b>
+            gave your post some love
+          </p>
+        </div>
 
+        <div class="comment">
+          <h4>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="30" height="30" alt="" />
+              </span>
+              @cogg
+            </a>
+          </h4> 
+          <p>Is that the new bike?</p>
+        </div>
 
-        <div style="clear: both"></div>
+        <div class="comment">
+          <h4>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+              </span>
+              @brian
+            </a>
+          </h4>
+          <p>That it is. Trek's 400 series carbon frame, Shimano 105 groupset, and she hit 24.2mph on the way down Fiji in the Marina.</p>
+        </div>
 
-        <h3>15 loved this post</h3>
-
-        <p>
-          <b>
-            <a href="http://ctznapp.com">@aaron</a>,
-            <a href="http://ctznapp.com">@aldoatgood</a>,
-            <a href="http://ctznapp.com">@brian</a>,
-            <a href="http://ctznapp.com">@caseycaplowe</a>,
-            <a href="http://ctznapp.com">@cogg</a>,
-            <a href="http://ctznapp.com">@eshah</a>
-          </b>
-        </p>
-        <p class="more"><a href="http://ctznapp.com">&amp; 10 more…</a></p>
+        <p class="action"><a href="http://ctznapp.com">reply to comments</a></p>
 
       </div><!-- /.article -->
 
+      <div class="article">
 
-      <div class="summary article">
+        <div class="summary blueberry">
+          <p>Looks like we might need to send an ortc message when you read your notifications. If I read them on one device, but no other activity occurs before I get to the other device, the other one still thinks they're unread just because no sync has occurred.</p>
+        </div>
 
-        <p>
-          <img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/cafc6c55d5d6eda96513af518dcec5530148fd5c=c100x100">
-          A dedicated pan for Swedish pancakes, untested as of yet.
-        </p>
+        <div class="comment">
+          <div class="icon">
+            <!-- @icon-heart --> <!-- @cranberry -->
+            <svg width="20" height="20" viewBox="0 0 20 20">
+              <path d="M17.631 5.93c-0.394-0.913-1.185-1.682-2.281-2.158-0.968-0.422-2.012-0.471-2.96-0.214s-1.801 0.956-2.388 1.767c-0.588-0.811-1.44-1.511-2.389-1.767-0.949-0.258-1.991-0.207-2.96 0.214-1.096 0.476-1.885 1.243-2.281 2.158-0.394 0.912-0.397 1.974 0.103 3.027 1.062 2.257 7.494 7.55 7.529 7.64 0.033-0.090 6.466-5.383 7.53-7.64 0.498-1.053 0.496-2.115 0.101-3.027z" fill="rgb(251, 59, 147)"></path>
+            </svg>
+          </div>
+          <p>
+            <b>
+              <a href="http://ctznapp.com">@aaron</a>,
+              <a href="http://ctznapp.com">@aldoatgood</a>,
+              <a href="http://ctznapp.com">@brian</a>,
+              <a href="http://ctznapp.com">@caseycaplowe</a>,
+              <a href="http://ctznapp.com">@cogg</a>,
+              <a href="http://ctznapp.com">@eshah</a>
+            </b>
+            gave your post some love
+          </p>
+        </div>
 
-        <div style="clear: both"></div>
+        <div class="comment">
+          <h4>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <span class="size30 sky"><span class="letter">d</span></span>
+              </span>
+              @dan
+            </a>
+          </h4> 
+          <p>totes</p>
+        </div>
 
-        <h3>15 loved this post</h3>
+        <div class="comment">
+          <h4>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="30" height="30" alt="" />
+              </span>
+              @cogg
+            </a>
+          </h4>
+          <p>makes sense</p>
+        </div>
 
-        <p>
-          <b>
-            <a href="http://ctznapp.com">@aaron</a>,
-            <a href="http://ctznapp.com">@aldoatgood</a>,
-            <a href="http://ctznapp.com">@brian</a>,
-            <a href="http://ctznapp.com">@caseycaplowe</a>,
-            <a href="http://ctznapp.com">@cogg</a>,
-            <a href="http://ctznapp.com">@eshah</a>
-          </b>
-        </p>
-        <p class="more"><a href="http://ctznapp.com">&amp; 10 more…</a></p>
+        <p class="action"><a href="http://ctznapp.com">reply to comments</a></p>
+
+      </div><!-- /.article -->
+
+      <div class="article">
+
+        <div class="summary blueberry">
+          <p>Helped a friend buy a Trek Silque S today. Forgot to take a picture of her with it. Planning on doing a ride tomorrow, then I can post it.</p>
+        </div>
+
+        <div class="comment">
+          <h4>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="30" height="30" alt="" />
+              </span>
+              @cogg
+            </a>
+          </h4>
+          <p>I am so nerdy i thought you forgot to put Star in front of Trek...</p>
+        </div>
+
+        <p class="action"><a href="http://ctznapp.com">reply to comments</a></p>
+
+      </div><!-- /.article -->
+
+      <div class="article">
+
+        <div class="summary blueberry">
+          <p>I got a native app notification!!! w00t!</p>
+        </div>
+
+        <div class="comment">
+          <h4>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+              </span>
+              @brian
+            </a>
+          </h4>
+          <p>On the iOS app?</p>
+        </div>
+
+        <div class="comment">
+          <h4>
+            <a href="http://ctznapp.com">
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100" width="30" height="30" alt="" />
+              </span>
+              @aldoatgood
+            </a>
+          </h4>
+          <p>Oh haha yea</p>
+        </div>
+
+        <p class="action"><a href="http://ctznapp.com">reply to comments</a></p>
 
       </div><!-- /.article -->
 
@@ -590,14 +687,17 @@
     <div class="footer">
       <ul>
         <li><a href="http://getctzn.com">getctzn.com</a></li>
+        <!--
         <li><a href="http://ctznapp.com">Unsubscribe</a></li>
         <li class="instagram">
           <a href="http://instagram.com">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20">
-<path d="M4.116 2.083h11.769c1.117 0 2.032 0.914 2.032 2.032v11.769c0 1.117-0.914 2.032-2.032 2.032h-11.769c-1.117 0-2.032-0.914-2.032-2.033v-11.768c0-1.117 0.914-2.032 2.032-2.032v0zM13.617 3.843c-0.392 0-0.713 0.321-0.713 0.713v1.706c0 0.392 0.321 0.713 0.713 0.713h1.79c0.392 0 0.713-0.321 0.713-0.713v-1.706c0-0.392-0.321-0.712-0.713-0.712-0.001 0-1.79 0-1.79 0zM16.127 8.778h-1.393c0.132 0.431 0.203 0.887 0.203 1.357 0 2.633-2.205 4.77-4.921 4.77s-4.922-2.135-4.922-4.769c0-0.471 0.071-0.929 0.202-1.357h-1.452v6.688c0 0.346 0.283 0.629 0.629 0.629h11.026c0.346 0 0.629-0.283 0.629-0.629v-6.689zM10.015 6.885c-1.756 0-3.179 1.38-3.179 3.082s1.424 3.082 3.179 3.082 3.179-1.38 3.179-3.082c0.001-1.703-1.423-3.082-3.179-3.082z" fill="rgb(179, 179, 179)"></path><foreignobject>Instagram</foreignobject>
-</svg>
+            <svg width="24" height="24" viewBox="0 0 20 20">
+              <path d="M4.116 2.083h11.769c1.117 0 2.032 0.914 2.032 2.032v11.769c0 1.117-0.914 2.032-2.032 2.032h-11.769c-1.117 0-2.032-0.914-2.032-2.033v-11.768c0-1.117 0.914-2.032 2.032-2.032v0zM13.617 3.843c-0.392 0-0.713 0.321-0.713 0.713v1.706c0 0.392 0.321 0.713 0.713 0.713h1.79c0.392 0 0.713-0.321 0.713-0.713v-1.706c0-0.392-0.321-0.712-0.713-0.712-0.001 0-1.79 0-1.79 0zM16.127 8.778h-1.393c0.132 0.431 0.203 0.887 0.203 1.357 0 2.633-2.205 4.77-4.921 4.77s-4.922-2.135-4.922-4.769c0-0.471 0.071-0.929 0.202-1.357h-1.452v6.688c0 0.346 0.283 0.629 0.629 0.629h11.026c0.346 0 0.629-0.283 0.629-0.629v-6.689zM10.015 6.885c-1.756 0-3.179 1.38-3.179 3.082s1.424 3.082 3.179 3.082 3.179-1.38 3.179-3.082c0.001-1.703-1.423-3.082-3.179-3.082z" fill="rgb(179, 179, 179)"></path>
+              <foreignobject>Instagram</foreignobject>
+            </svg>
           </a>
         </li>
+        -->
       </ul>
     </div><!-- /.footer -->
 
