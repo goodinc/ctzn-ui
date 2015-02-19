@@ -502,24 +502,6 @@
     color: inherit;
   }
 
-  /* OPTIONAL: Make forms more compact on small screens */
-  @media (max-width: 34.25em) {
-    form p.text {
-      margin-bottom: 0;
-    }
-    form p.text + p.text {
-      margin-top: 0;
-    }
-    form p.text + p.text label {
-      border-top-width: 0;
-    }
-    form p.text label {
-      border-left-width: 0;
-      border-right-width: 0;
-      border-radius: 0;
-    }
-  }
-
 
   /* =Fields
   ----------------------------------------------- */
@@ -569,11 +551,6 @@
     padding-bottom: 0.1875em;
     position: relative;
 
-    /* OPTIONAL: Make fields touch the edges of the screen, on small devices */
-    margin-left: -1.25em; /* @page-padding */
-    margin-right: -1.25em; /* @page-padding */
-    padding-left: 1.25em; /* @page-padding */
-
     /* Make space for the success & error icons */
     padding-right: 1.75em;
   }
@@ -604,7 +581,7 @@
   /* =Label Icons
   ----------------------------------------------- */
   form.has-icon .text label {
-    padding-left: 3em;
+    padding-left: 2.25em;
   }
   .text label .icon:first-child {
     position: absolute;
