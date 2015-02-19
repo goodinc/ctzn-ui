@@ -581,12 +581,12 @@
   /* =Label Icons
   ----------------------------------------------- */
   form.has-icon .text label {
-    padding-left: 2.25em;
+    padding-left: 2.5em;
   }
   .text label .icon:first-child {
     position: absolute;
     left: auto;
-    margin-left: -1.75em;
+    margin-left: -1.875em;
     margin-top: 0.375em;
 
     /* @item-icon */
@@ -2209,6 +2209,7 @@
     background: white;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     position: relative;
+    border-radius: 0.25em;
 
     /* @wrap-long-words */
     word-wrap     : break-word;
@@ -2232,12 +2233,15 @@
   .editor .images li button:active {
     color: black;
   }
+  .editor form {
+    margin-top: 2.25em;
+  }
   .editor p.text label {
     padding: 0;
   }
   .editor textarea {
     font-size: 1.25em;
-    padding: 1em; /* @page-padding / 1.25em */
+    padding: 0.6em; /* 0.75em / 1.25em */
     line-height: 1.2;
     height: 9.6em; /* 1.2 x 8 */
   }
@@ -2246,10 +2250,11 @@
     left: -9999px;
   }
   .editor input[type="file"] ~ .icon {
-    margin-right: 0.375em;
+    margin-right: 0.125em;
   }
   .editor .submit label {
     color: rgb(102, 102, 102); /* @tin */
+    padding-left: 0.375em;
   }
   .editor .submit button {
     float: right;
