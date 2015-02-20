@@ -195,9 +195,20 @@
     }
     .article p img {  
       display: block;   
-      margin-bottom: 9px; /* @line-height / 2 */ 
+
+      /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+    .article .body img {
+      min-width: 200px;
+      min-height: 200px;
+      margin: 15px auto;
       max-width: 100%;
       height: auto;
+    }
+    .article .summary img {
+      min-width: 100px;
+      min-height: 100px;
     }
 
 
@@ -301,10 +312,6 @@
       border-top-width: 10px;
       border-top-style: solid;
     }
-    .article .body img {
-      display: block;
-      margin: 15px auto;
-    }
     .article > .summary {
       margin-top: 0;
       border-top-width: 0;
@@ -378,8 +385,10 @@
     /* =Icon
     ----------------------------------------------- */
     div.heart {
-      position: absolute;
+      height: 0;
       margin-left: 5px;
+      color: rgb(251, 59, 147); /* @cranberry */
+      font-family: "Segoe UI Emoji", "Segoe UI Symbol", NotoColorEmoji, EmojiSymbols, Symbola, Noto, "Android Emoji", AndroidEmoji, "Arial Unicode MS", "Zapf Dingbats", AppleColorEmoji, "Apple Color Emoji", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     svg.icon {
       vertical-align: middle;
@@ -548,6 +557,7 @@
             <!-- @icon-heart --> <!-- @cranberry -->
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
               <path d="M17.631 5.93c-0.394-0.913-1.185-1.682-2.281-2.158-0.968-0.422-2.012-0.471-2.96-0.214s-1.801 0.956-2.388 1.767c-0.588-0.811-1.44-1.511-2.389-1.767-0.949-0.258-1.991-0.207-2.96 0.214-1.096 0.476-1.885 1.243-2.281 2.158-0.394 0.912-0.397 1.974 0.103 3.027 1.062 2.257 7.494 7.55 7.529 7.64 0.033-0.090 6.466-5.383 7.53-7.64 0.498-1.053 0.496-2.115 0.101-3.027z" fill="rgb(251, 59, 147)"></path>
+              <foreignobject>❤</foreignobject>
             </svg>
           </div>
           <p>
@@ -610,6 +620,7 @@
             <!-- @icon-heart --> <!-- @cranberry -->
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
               <path d="M17.631 5.93c-0.394-0.913-1.185-1.682-2.281-2.158-0.968-0.422-2.012-0.471-2.96-0.214s-1.801 0.956-2.388 1.767c-0.588-0.811-1.44-1.511-2.389-1.767-0.949-0.258-1.991-0.207-2.96 0.214-1.096 0.476-1.885 1.243-2.281 2.158-0.394 0.912-0.397 1.974 0.103 3.027 1.062 2.257 7.494 7.55 7.529 7.64 0.033-0.090 6.466-5.383 7.53-7.64 0.498-1.053 0.496-2.115 0.101-3.027z" fill="rgb(251, 59, 147)"></path>
+              <foreignobject>❤</foreignobject>
             </svg>
           </div>
           <p>
