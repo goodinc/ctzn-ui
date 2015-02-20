@@ -603,15 +603,15 @@
   ----------------------------------------------- */
   ::-webkit-input-placeholder {
     text-transform: lowercase;
-    color: rgb(102, 102, 102); /* @tin */
+    color: rgb(153, 153, 153); /* @nickel */
   }
   ::-moz-placeholder {
     text-transform: lowercase;
-    color: rgb(102, 102, 102); /* @tin */
+    color: rgb(153, 153, 153); /* @nickel */
   }
   :-ms-input-placeholder {
     text-transform: lowercase;
-    color: rgb(102, 102, 102); /* @tin */
+    color: rgb(153, 153, 153); /* @nickel */
   }
 
   input[disabled]::-webkit-input-placeholder {
@@ -1767,13 +1767,12 @@
     display: block;
     text-align: left;
     padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
-    margin: 0 -1.25em 0 -1.25em; /* @page-padding */
     text-decoration: none;
     font-weight: normal;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
     border-radius: 0.25em;
     width: 100%;
-    box-sizing: content-box;
+    box-sizing: border-box;
     background: white;
     color: rgb(255, 49, 102); /* @strawberry */
   }
@@ -1810,6 +1809,8 @@
       border-left-width: 0;
       border-right-width: 0;
       border-radius: 0;
+      margin: 0 -1.25em; /* @page-padding */
+      box-sizing: content-box;
     }
   }
   .option-list a:active,
