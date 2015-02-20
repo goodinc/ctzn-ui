@@ -1,0 +1,4 @@
+
+For replacing the icons in each HTML file…
+
+<!-- images/icons.svg -->[\s<a-z0-9A-Z="\.:/>,-/#]+?(?=</svg>)</svg>
