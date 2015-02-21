@@ -158,6 +158,12 @@
       <symbol id="heart" viewBox="0 0 1024 1024">
         <path class="path1" d="M902.701 303.638c-20.186-46.755-60.678-86.093-116.797-110.474-49.552-21.584-102.995-24.138-151.574-10.944s-92.234 48.944-122.269 90.47c-30.096-41.526-73.75-77.338-122.33-90.47-48.579-13.194-101.962-10.579-151.574 10.944-56.118 24.381-96.49 63.658-116.797 110.474-20.186 46.694-20.307 101.050 5.29 154.979 54.355 115.581 383.709 386.566 385.472 391.187 1.702-4.621 331.056-275.606 385.533-391.187 25.475-53.93 25.414-108.285 5.168-154.979z"></path>
       </symbol>
+      <symbol id="star" viewBox="0 0 20 20">
+        <path d="M1.6,7.4c0,0.1,0.1,0.3,0.3,0.5l3.7,3.6l-0.9,5c0,0,0,0.1,0,0.2c0,0.1,0,0.3,0.1,0.4s0.2,0.1,0.3,0.1
+        c0.1,0,0.3,0,0.4-0.1l4.5-2.4l4.5,2.4c0.1,0.1,0.3,0.1,0.4,0.1c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.2,0.1-0.4c0,0,0-0.1,0-0.2l-0.9-5
+        l3.7-3.6c0.2-0.2,0.3-0.3,0.3-0.5c0-0.2-0.2-0.4-0.6-0.5l-5.1-0.7l-2.3-4.6c-0.1-0.3-0.3-0.4-0.5-0.4S9.6,1.3,9.5,1.6L7.2,6.2
+        L2.2,6.9C1.8,7,1.6,7.1,1.6,7.4z"/>
+      </symbol>
       <symbol id="checkmark" viewBox="0 0 1024 1024">
         <path class="path1" d="M402.368 794.688l-238.272-252.736c-24.256-25.664-23.104-66.24 2.624-90.432s66.304-23.040 90.496 2.624l147.904 156.864 362.944-362.944c25.024-25.024 65.472-25.024 90.496 0s25.024 65.536 0 90.496l-456.192 456.192z"></path>
       </symbol>
@@ -311,53 +317,58 @@
       </li>
       <!-- /ko -->
 
-      <!-- ko foreach: visiblePosts -->
 
-      
-      <li id="post-778">
+      <li id="post-776">
         <article class="post-item"><header><h3>
               <a href="">
                 
                 <span class="avatar">
-                  <span class="size30 cranberry" data-content="v"></span>
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                <span>@vogg</span>
+                <span>@jelena</span>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg><!-- /ko --></p>
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T19:15:30+00:00"><abbr title="10 weeks ago">10w</abbr>
+                <time datetime="2014-11-23T19:10:11+00:00"><abbr title="10 weeks ago">10w</abbr>
                 </time></a>
             </p>
-          </header><div class="body"><p>
-This cutie from last night at the #ctznmixer. #latepost</p></div>
+          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/1624aba62a7be73db28b760b636f9ca27ff7bbbc=s600x600" alt="860249990029752670_1451549205">
+Lead or follow? #CTZN @nobudgetfilmfestival</p></div>
 
-          <div class="images n1">
-            <figure>
-              <div class="image">
-                <img src="https://m.ctznapp.com/s3/ctzn/20c64f0751907d8b6ac6e501c3f379a37684b8cc=s600x600" alt="" />
-              </div>
-            </figure>
-          </div>
-
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>3</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count">1</span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use><foreignObject>Featured</foreignObject></svg>
+                </button>
+              </li>
+              <li class="options">
+                <a href="#post-options">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              </li>
+            </ul>
+            <ul class="meta">
+              <li>12 love</li>
+              <li>3 comments</li>
+              <li class="featured">featured</li>
+            </ul>
+          </footer>
+        </article>
+      </li>
 
 
       <li id="post-779">
@@ -394,21 +405,35 @@ This cutie from last night at the #ctznmixer. #latepost</p></div>
             </figure>
           </div>
 
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>5</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use><foreignObject>Featured</foreignObject></svg>
+                </button>
+              </li>
+              <li class="options">
+                <a href="#post-options">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              </li>
+            </ul>
+            <ul class="meta">
+              <li>5 love</li>
+              <li>1 comments</li>
+            </ul>
+          </footer>
+        </article>
 </li>
 
       <li id="post-769">
@@ -462,43 +487,6 @@ This cutie from last night at the #ctznmixer. #latepost</p></div>
               <button class="">
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
                   <span>5</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-
-      <li id="post-776">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T19:10:11+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/1624aba62a7be73db28b760b636f9ca27ff7bbbc=s600x600" alt="860249990029752670_1451549205">
-Lead or follow? #CTZN @nobudgetfilmfestival</p></div>
-
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>2</span>
                 </span>
               </button>
             </p>

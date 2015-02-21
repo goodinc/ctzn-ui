@@ -1068,57 +1068,49 @@
     margin-bottom: 0;
   }
   .post-item footer {
-    position: relative;
     margin-top: 1.5em;
   }
-  .post-item footer p {
-    margin: 0;
+  .post-item footer ul,
+  .post-item footer li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .post-item footer li {
     display: inline;
   }
-  .post-item footer p a,
-  .post-item footer p button {
-    display: inline-block;
+  .post-item footer .action a,
+  .post-item footer .action button {
     background: white;
     color: rgb(135, 135, 135);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.1875em 0.75em;
-    line-height: 1.5;
-    border-radius: 0.25em;
-    border-width: 0.0625em;
-    border-style: solid;
-    border-color: rgb(193, 193, 193);
-    border-color: rgb(204, 204, 204); /* @aluminum */
-    transition: all 0.2s;
-    min-width: 3.75em;
-    box-sizing: border-box;
-    text-align: center;
+    border: 0.0625em solid rgb(204, 204, 204); /* @aluminum */
+    font-size: 0.75em;
+    border-width: 1px;
+    vertical-align: middle;
   }
-  .post-item footer p a:active,
-  .post-item footer p a:focus,
-  .post-item footer p button:active,
-  .post-item footer p button:focus {
-    background-color: rgb(222, 222, 222); /* @silver */
+  .post-item footer .action a:active,
+  .post-item footer .action a:focus,
+  .post-item footer .action button:active,
+  .post-item footer .action button:focus {
+    background: rgb(238, 238, 238); /* @seashell */
     color: rgb(102, 102, 102); /* @tin */
   }
-  .post-item footer p a      svg.icon,
-  .post-item footer p button svg.icon {
-    font-size: 0.75em;
-  }
-  .post-item footer .attaboyed {
+  .post-item footer .action [aria-checked="true"] {
+    background: rgb(238, 238, 238); /* @seashell */
     color: rgb(245, 83, 135) !important; /* @strawberry */
   }
-  .post-item footer .count {
-    font-size: 0.75em;
-    line-height: 1;
+  .post-item footer .action li:last-child {
+    float: right;
+    margin-right: 0;
   }
-  .post-item footer .options {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  .post-item footer .meta {
+    margin-bottom: 0;
   }
-  .post-item footer .options svg.icon {
-    font-size: inherit;
+  .post-item footer .meta li {
+    margin-right: 1em;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: rgb(83, 83, 83);
   }
 
 
