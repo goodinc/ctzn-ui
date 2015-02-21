@@ -171,7 +171,7 @@
 
   @-webkit-keyframes blink {
     0% {
-      background-color: rgb(222, 222, 222); /* @silver*/
+      background-color: rgb(222, 222, 222); /* @silver */
     }
     66% {
       background-color: rgb(255, 49, 102); /* @strawberry */
@@ -182,7 +182,7 @@
   }
   @keyframes blink {
     0% {
-      background-color: rgb(222, 222, 222); /* @silver*/
+      background-color: rgb(222, 222, 222); /* @silver */
     }
     66% {
       background-color: rgb(255, 49, 102); /* @strawberry */
@@ -197,7 +197,7 @@
   span.icon.sending:after {
     display: inline-block;
     vertical-align: middle;
-    background-color: rgb(222, 222, 222); /* @silver*/
+    background-color: rgb(222, 222, 222); /* @silver */
     width  : 0.6111111111em; /* 11px / 18px */
     height : 0.6111111111em;
     border-radius: 100%;
@@ -429,15 +429,15 @@
   section.push .new-posts button {
     background: white;
     color: rgb(255, 49, 102); /* @strawberry */
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     transition: all 0.2s;
   }
   .error-message          button:active,
   .error-message          button:focus,
   section.push .new-posts button:active,
   section.push .new-posts button:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
-    border-color: rgb(222, 222, 222); /* @silver*/
+    background-color: rgb(222, 222, 222); /* @silver */
+    border-color: rgb(222, 222, 222); /* @silver */
     color: rgb(193, 16, 65); /* @raspberry */
   }
 
@@ -544,7 +544,7 @@
   }
   .text label {
     background: white;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     display: block;
     border-radius: 0.25em;
     padding-top: 0.1875em;
@@ -741,7 +741,7 @@
   section.upload-message {
     padding: 0.625em 1.5em;
     box-sizing: border-box;
-    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver */
     line-height: 1.3333333333; /* @line-height / 1.125em */
     position: relative;
   }
@@ -754,7 +754,7 @@
   /* On the post page, the upload message appears after the related content. */
   .comments section.upload-message {
     border-bottom-width: 0;
-    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver */
     margin-left: -1.25em; /* @page-padding */
     margin-right: -1.25em; /* @page-padding */
   }
@@ -880,13 +880,13 @@
     padding: 0.75em 3em 0.75em 3.25em;
     text-decoration: none;
     background: white;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
   }
   .list li a:active,
   .list li a:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
+    background-color: rgb(222, 222, 222); /* @silver */
   }
   .list li a .avatar {
     position: absolute;
@@ -1098,7 +1098,7 @@
   .post-item footer p a:focus,
   .post-item footer p button:active,
   .post-item footer p button:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
+    background-color: rgb(222, 222, 222); /* @silver */
     color: rgb(102, 102, 102); /* @tin */
   }
   .post-item footer p a      svg.icon,
@@ -1297,11 +1297,11 @@
             transform: translateY(0);
   }
   .post-options ul {
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     background: white;
   }
   .post-options li + li {
-    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver */
   }
   .post-options li button {
     display: block;
@@ -1320,7 +1320,7 @@
   }
   .post-options li button:active,
   .post-options li button:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
+    background-color: rgb(222, 222, 222); /* @silver */
     border-radius: 0;
   }
 
@@ -1674,7 +1674,7 @@
   .edit-profile.page > header {
     background-color: white;
     color: black;
-    border-bottom-color: rgb(222, 222, 222); /* @silver*/
+    border-bottom-color: rgb(222, 222, 222); /* @silver */
   }
   .mix.page          > header a,
   .mixes.page        > header a,
@@ -1768,14 +1768,21 @@
     text-align: left;
     padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
     text-decoration: none;
+    text-transform: lowercase;
     font-weight: normal;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     border-radius: 0.25em;
     width: 100%;
     box-sizing: border-box;
     background: white;
     color: rgb(255, 49, 102); /* @strawberry */
   }
+
+  /* TRICKY: Allow uppercase in usernames from social networks on the settings page */
+  .option-list .username {
+    text-transform: none;
+  }
+
   .option-list button {
     text-align: center;
   }
@@ -1817,7 +1824,7 @@
   .option-list a:focus,
   .option-list button:active,
   .option-list button:focus {
-    background-color: rgb(222, 222, 222); /* @silver*/
+    background-color: rgb(222, 222, 222); /* @silver */
   }
   .option-list,
   .option-list ul:first-child {
@@ -1825,9 +1832,6 @@
   }
   .option-list ul + ul {
     margin-top: 3em;
-  }
-  .option-list a {
-    text-transform: lowercase;
   }
 
 
@@ -2130,7 +2134,7 @@
   /* OPTIONAL: Make the meta data stick to the bottom of
                the card, on the push and profile pages. */
   .header.push-card {
-    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver */
   }
   .header.push-card .meta {
     background: rgb(204, 204, 204); /* @aluminum */
@@ -2172,7 +2176,7 @@
     font-size: inherit;
   }
   .post.page .details {
-    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver */
     background: white;
     padding: 0;
   }
@@ -2208,7 +2212,7 @@
     padding: 0.375em 2.25em 0.375em 0.375em; /* @line-height / 4 */
     background-color: rgb(250, 250, 250); /* @casper */
     background: white;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver*/
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     position: relative;
     border-radius: 0.25em;
 
@@ -2701,7 +2705,7 @@
   ----------------------------------------------- */
   .mix-editor .selected-images h2 {
     position: relative;
-    color: rgb(222, 222, 222); /* @silver*/
+    color: rgb(222, 222, 222); /* @silver */
     padding: 0 1.5em;
     text-align: center;
     border-width: 0.0625em 0;
@@ -3248,7 +3252,8 @@
     border-width: 0;
   }
   .comments .post-item textarea {
-    border: 1px solid rgb(222, 222, 222); /* @silver*/
+    border: 1px solid rgb(222, 222, 222); /* @silver */
+    border-radius: 0.25em;
   }
 
 

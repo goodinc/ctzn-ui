@@ -209,6 +209,32 @@
       min-width: 100px;
       min-height: 100px;
     }
+    .article .comment,
+    .article .action {
+      padding-top: 10px;
+      border-top: 1px solid rgb(244, 244, 244);
+      margin-top: 10px;
+    }
+    .article .comment h4 {
+      margin: 0;
+    }
+    .article .comment p {
+      margin-top: 0;
+      padding-left: 42px;
+    }
+    .article .action {
+      margin-top: 20px;
+      padding-top: 20px;
+      margin-bottom: 0;
+    }
+    .article > .summary {
+      margin-top: 0;
+      padding-left: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-size: 14px;
+      color: rgb(135, 135, 135);
+    }
 
 
     /* =Footer
@@ -307,65 +333,42 @@
 
     /* =Push Colors
     ----------------------------------------------- */
-    .container > .header {
-      border-top-width: 10px;
-      border-top-style: solid;
-    }
-    .article > .summary {
-      margin-top: 0;
-      border-top-width: 0;
-      border-left-width: 10px;
-      border-left-style: solid;
-      padding-left: 15px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      font-size: 14px;
-      color: rgb(135, 135, 135);
-    }
-    .article .comment,
-    .article .action {
-      padding-top: 10px;
-      border-top: 1px solid rgb(244, 244, 244);
-      margin-top: 10px;
-    }
-    .article .comment h4 {
-      margin: 0;
-    }
-    .article .comment p {
-      margin-top: 0;
-      padding-left: 42px;
-    }
-    .article .action {
-      margin-top: 20px;
-      padding-top: 20px;
-      margin-bottom: 0;
-    }
     .lime {
-      border-color: rgb(203, 253, 128); /* @lime */
+      border: 10px solid rgb(203, 253, 128); /* @lime */
     }
     .cucumber {
-      border-color: rgb(150, 254, 166); /* @cucumber */
+      border: 10px solid rgb(150, 254, 166); /* @cucumber */
     }
     .blueberry {
-      border-color: rgb(99, 204, 203); /* @blueberry */
+      border: 10px solid rgb(99, 204, 203); /* @blueberry */
     }
     .boysenberry {
-      border-color: rgb(101, 156, 247); /* @boysenberry */
+      border: 10px solid rgb(101, 156, 247); /* @boysenberry */
     }
     .plumb {
-      border-color: rgb(193, 77, 166); /* @plumb */
+      border: 10px solid rgb(193, 77, 166); /* @plumb */
     }
     .strawberry {
-      border-color: rgb(255, 49, 102); /* @strawberry */
+      border: 10px solid rgb(255, 49, 102); /* @strawberry */
     }
     .apple {
-      border-color: rgb(255, 49, 59); /* @apple */
+      border: 10px solid rgb(255, 49, 59); /* @apple */
     }
     .tangerine {
-      border-color: rgb(255, 202, 72); /* @tangerine */
+      border: 10px solid rgb(255, 202, 72); /* @tangerine */
     }
     .orange {
-      border-color: rgb(242, 64, 41); /* @orange */
+      border: 10px solid rgb(242, 64, 41); /* @orange */
+    }
+    .container > .header {
+      border-right-width: 0;
+      border-bottom-width: 0;
+      border-left-width: 0;
+    }
+    .article > .summary {
+      border-top-width: 0;
+      border-right-width: 0;
+      border-bottom-width: 0;
     }
 
 
