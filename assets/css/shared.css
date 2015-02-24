@@ -1432,11 +1432,10 @@
 
   /* Update Indicator */
   section.push .new-posts {
-    font-size: 0.875em;
     position: fixed;
     top: 4em;
     left: 50%;
-    width: 10em;
+    min-width: 10em;
     margin: 0 0 0 -5em;
     text-align: center;
     z-index: 9;
@@ -3519,6 +3518,7 @@
 
   /* =Slide Left
   ----------------------------------------------- */
+  /*
   @-webkit-keyframes slide-left {
     0% {
       -webkit-transform: translateX(40em);
@@ -3539,6 +3539,7 @@
               transform: translateX(0);
     }
   }
+  */
 
 
   /* =Slide Right
@@ -3615,6 +3616,7 @@
 
   /* =Switch Push (intro)
   ----------------------------------------------- */
+  /*
   section.switch li:nth-child(2n+1) {
     -webkit-animation: slide-left 0.2s both;
             animation: slide-left 0.2s both;
@@ -3623,6 +3625,7 @@
     -webkit-animation: slide-right 0.2s both;
             animation: slide-right 0.2s both;
   }
+  */
 
 
   /* =Edit Post (intro & outro)
