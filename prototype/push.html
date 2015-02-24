@@ -250,9 +250,9 @@
       </button>
     </p>
     -->
-    <header class="orange header push-card">
-      <h1 class="name">Project Citizen</h1>
-      <h2 class="about">Helping social creatives celebrate the work they do</h2>
+    <header class="plumb header push-card">
+      <h1 class="name">Good</h1>
+      <h2 class="about">Pushing the world forward</h2>
 
       <div class="meta">
         <p>
@@ -311,32 +311,32 @@
     </ul>
 
 <ol class="post-list">
-<!-- ko if: showPrevButton --><li class="previous">
-        <a href="#previous">
-          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#up"></use><foreignObject>Previous Page</foreignObject></svg></a>
-      </li>
-      <!-- /ko -->
+      <!-- ko if: showPrevButton --><!-- /ko -->
 
-
-      <li id="post-776">
-        <article class="post-item"><header><h3>
+      <!-- ko foreach: visiblePosts -->
+      <li id="post-2684">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
                 <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
                 </span>
-                <span>@jelena</span>
+                <span class="avatar"></span>
+                @<span>caseycaplowe</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T19:10:11+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
+                <time datetime="2015-02-23T08:26:43+00:00">19 hours ago</time>
+              </a>
             </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/1624aba62a7be73db28b760b636f9ca27ff7bbbc=s600x600" alt="860249990029752670_1451549205">
-Lead or follow? #CTZN @nobudgetfilmfestival</p></div>
+          </header>
+
+          <a href="#post" class="body"><p>Another day, a few pages closer to getting this issue shipped.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/69f28936af93f53ec7dbaff07f1f79cc286b2a1b=s500x500"></p></a>
 
           <footer>
             <ul class="action">
@@ -350,60 +350,164 @@ Lead or follow? #CTZN @nobudgetfilmfestival</p></div>
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
                 </a>
               </li>
-              <li>
-                <button role="checkbox" aria-checked="true">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use><foreignObject>Featured</foreignObject></svg>
-                </button>
-              </li>
+
+
               <li class="options">
-                <a href="#post-options">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
               </li>
             </ul>
-            <ul class="meta">
-              <li>12 love</li>
-              <li>3 comments</li>
-              <li class="featured">featured</li>
-            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 --><!-- /ko -->
           </footer>
+
         </article>
       </li>
-
-
-      <li id="post-779">
-        <article class="post-item"><header><h3>
+      
+      <li id="post-2683">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
+                <span class="avatar"></span>
                 <span class="avatar">
-                  <span class="size30 sky" data-content="m"></span>
+                  <span class="size30 sky" data-content="e"></span>
                 </span>
-                <span>@mixwell</span>
+                @<span>ekma</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T20:25:48+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
+                <time datetime="2015-02-23T07:32:01+00:00">20 hours ago</time>
+              </a>
             </p>
           </header>
 
-          <div class="body"><p>Spinning last night at @goodhq and @ga_la #ctzn app launch party #ctznmixer</p></div>
+          <a href="#post" class="body"><p>Supporting GSUSA! Who knew tagalongs were the crowd favorite? &lt; Thin mints</p>
 
-          <div class="images n2">
-            <figure>
-              <div class="image">
-                <span style="background-image: url(https://m.ctznapp.com/s3/ctzn/e80e435016195f41fdc635b0debe5c0a5d00e416=s600x600)"></span>
-              </div>
-            </figure>
-            <figure>
-              <div class="image">
-                <span style="background-image: url(https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=s600x600)"></span>
-              </div>
-            </figure>
-          </div>
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/1e31d54aefbd0f68772d33caf4c6afce5c25a9c9=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 --><!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2666">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>good_marshall</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-21T03:22:52+00:00">3 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>@group any one from NY...this place looks &amp; sounds divine on a cold night!</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6c4bbd942af819bfa716dfa62ab1201904698686=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>2</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2648">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="a"></span>
+                </span>
+                @<span>aubrey</span>
+              </a>
+            </h3>
+            <p class="source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-20T21:44:52+00:00">3 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aa6adfb004bf9431059d90640237c82779aaba72=s500x500" alt="924832878434230703_3757855">
+Essential office supplies at @goodhq</p></a>
 
           <footer>
             <ul class="action">
@@ -417,1053 +521,1714 @@ Lead or follow? #CTZN @nobudgetfilmfestival</p></div>
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
                 </a>
               </li>
-              <li>
-                <button role="checkbox" aria-checked="false">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use><foreignObject>Featured</foreignObject></svg>
-                </button>
-              </li>
-              <li class="options">
-                <a href="#post-options">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              </li>
-            </ul>
-            <ul class="meta">
-              <li>5 love</li>
-              <li>1 comments</li>
-            </ul>
-          </footer>
-        </article>
-</li>
 
-      <li id="post-769">
-        <article class="post-item"><header><h3>
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>6</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>2</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2642">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100"></span>
-                
-                <span>@jim</span>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>caseycaplowe</span>
               </a>
             </h3>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T03:32:11+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
+                <time datetime="2015-02-20T05:51:15+00:00">4 days ago</time>
+              </a>
             </p>
           </header>
 
-          <div class="body">
-            <p>Paint and markers are being put to good use at CTZN mixer!</p>
+          <a href="#post" class="body"><p>Locking down pages and the page plan with @tylerhoehne and @carolinewhodoesnthaveanaccountyet</p>
 
-            <!--
-            <p><img src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=s600x600"></p>
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81e55654b602dec0ed3d3f71801726a3d0660f7e=s500x500"></p></a>
 
-            <p><img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=s600x600"></p>
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
 
-            <p><img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=s600x600"></p>
-            -->
-          </div>
 
-          <div class="images n3">
-            <figure>
-              <div class="image">
-                <span style="background-image: url(https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=s600x600)"></span>
-              </div>
-            </figure>
-            <figure>
-              <div class="image">
-                <span style="background-image: url(https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=s600x600)"></span>
-              </div>
-            </figure>
-            <figure>
-              <div class="image">
-                <span style="background-image: url(https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=s600x600)"></span>
-              </div>
-            </figure>
-          </div>
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>10</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
 
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>5</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-777">
-        <article class="post-item"><header><h3>
+      <li id="post-2634">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
                 <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
                 </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T19:09:03+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/f0ebcbf829adb777fd7a3ab6ad473361ffa48575=s600x600" alt="860249420569098507_1451549205">
-Goal mapping. #CTZN @nobudgetfilmfestival</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-775">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
+                <span class="avatar"></span>
+                @<span>goldhirsh</span>
               </a>
             </h3>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T18:47:18+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p>Bugs from Steve Vasquez:</p>
-
-<p>Not seeing the loader for images when posting from iPhone 5, which makes him hit submit too fast and can't post images.</p>
-
-<p>His mother tried to join and AFTER getting past the invite screen and entering her into to register, got a "invite code required to register" error</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count"></span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count">1</span>
+                <time datetime="2015-02-20T03:33:09+00:00">4 days ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>It's fun to be on the hustle from the south repping GOOD right now. Congrats to the media team for a record traffic month already, to ctzn for allowing me to share this, and for Corps on the AT&amp;T and field and stream deals. Grinding.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0d77401413aa7dccc462f097139c78e70cd526d4=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>8</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>4</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-772">
-        <article class="post-item"><header><h3>
+      <li id="post-2627">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
+                <span class="avatar"></span>
                 <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
+                  <span class="size30 sky" data-content="a"></span>
                 </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T18:29:09+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/d595d7242292fd1ced4533e70d42b232bd98ce8a=s600x600" alt="860229336144394257_1451549205">
-How to know you've made it #CTZN @nobudgetfilmfestival</p></div>
-
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-773">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T18:28:09+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=s600x600" alt="860228831921945540_1451549205"></p>
-
-<p>#CTZN everyone creative in this city is gonna be rocking one of these moleskine notebooks before we're done @nobudgetfilmfestival</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>2</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-774">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T18:25:50+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/8ecb5abdad49cc9c4a954ab98302e5a5c3a44dd6=s600x600" alt="860227663858613038_1451549205">
-@caseycaplowe designed corner of infographics getting love at @nobudgetfilmfestival #CTZN</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-796">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T18:22:39+00:00"><abbr title="10 weeks ago">10w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/9a339d74c1f5bf8dc9f70eb5a052acce52985473=s600x600" alt="860226064720776238_1021098506">
-Where I am this morning... #nbff #ctzn</p></div>
-
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-770">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' -->
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg><!-- /ko --><!-- ko if: source == 'instagram' --><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T04:44:28+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p>RT @Auramvasquez: Sharing the #LA80x2050 love with the @ProjectCTZN @good at the #CTZNmixer @AndyShrader http://t.co/ltNb1mTc3P</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count"></span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-768">
-        <article class="post-item"><header><h3>
-              <a href="">
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"></span>
-                
-                <span>@aldoatgood</span>
+                @<span>anton</span>
               </a>
             </h3>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T02:45:12+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p>These folks are awesome! #la80x50</p>
-
-<p><img src="https://m.ctznapp.com/s3/ctzn/1def9cdbdc44d9f0e0d2c4c603ab5080664f5c88=s600x600"></p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count">1</span>
+                <time datetime="2015-02-19T23:27:28+00:00">4 days ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>Tiny cactus.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/044b59919111f065ff7ae613d107b7f9e2984e81=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>4</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>2</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-765">
-        <article class="post-item"><header><h3>
+      <li id="post-2589">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
+                <span class="avatar"></span>
                 <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
+                  <span class="size30 ocean" data-content="v"></span>
                 </span>
-                <span>@jelena</span>
+                @<span>vandenorth</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T02:18:12+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/d8aef176839f89fb40fd7ce962900dbe3066b82f=s600x600" alt="859740640865532394_1451549205">
-@workandprogress meeting Brandon of @broccolicity at #CTZN #CTZNmixer</p></div>
-
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-19T18:44:57+00:00">4 days ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>Visiting the Louis Vuitton Series 2 exhibit with the GOODcorps crew. @ekma working the red carpet.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/877d0bfe4a62b0dd65e67aa8d617488b26c1e1d7=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>9</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>1</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-766">
-        <article class="post-item"><header><h3>
+      <li id="post-2566">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
                 <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
                 </span>
-                <span>@jelena</span>
+                <span class="avatar"></span>
+                @<span>cogg</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T02:17:15+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/5a3f33b1a41dd91832077aef9e246b41ca4ff1b4=s600x600" alt="859740159451707839_1451549205">
-Can't get enough of these crowd shots! #CTZN #CTZNmixer</p></div>
-
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>4</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-18T18:21:13+00:00">5 days ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>@group Looking for iPhone users that are willing to test out the installable app for us (big difference is that there are push notifications). Reply here if you are willing (you can reply via email)</p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>2</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>9</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-767">
-        <article class="post-item"><header><h3>
+      <li id="post-2554">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
                 <span class="avatar">
-                  <span class="size30 cranberry" data-content="v"></span>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
                 </span>
-                <span>@vogg</span>
+                <span class="avatar"></span>
+                @<span>goldhirsh</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T02:16:38+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/824ecdba72ed238ea4211a1ad362d8f2932d7b7d=s600x600" alt="859739849203310777_215183">
-Head of #ctzn speaking, aka The Mister. #ctznmixer</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>2</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-17T20:33:50+00:00">6 days ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>holy awesome! check out Isis' recent post on Melissa Hunter's project! </p>
+
+<p>http://magazine.good.is/articles/wednesday-addams-catcallers</p>
+
+<p>Melissa worked at GOOD way back in the day, maybe came in through Reason Pictures. Totally wonderful human and so cool to see what she's up to, and to learn about it on good.is.</p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>6</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>1</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-761">
-        <article class="post-item"><header><h3>
+      <li id="post-2546">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
+                <span class="avatar"></span>
                 <span class="avatar">
-                  <span class="size30 cranberry" data-content="v"></span>
+                  <span class="size30 cranberry" data-content="m"></span>
                 </span>
-                <span>@vogg</span>
+                @<span>max</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T02:13:43+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/260cfa866273f3207ff8689419bec20d069124fd=s600x600" alt="859738380467101734_215183"></p>
-
-<p>#ctzn #ctznmixer</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>3</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-17T18:10:41+00:00">6 days ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>@caseycaplowe arrived in Seattle by train from Vancouver and noticed something</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/616f4276f39edd77b4227ec90407b5f1cfd5468a=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>5</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-760">
-        <article class="post-item"><header><h3>
+      <li id="post-2544">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
                 <span class="avatar">
-                  <span class="size30 grape" data-content="l"></span>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
                 </span>
-                <span>@lou</span>
+                <span class="avatar"></span>
+                @<span>goldhirsh</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T02:12:03+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/8b356b1f2fd22eff15e98661e249a0cf5acee25b=s600x600" alt="859737544737257646_14462141">
-hanging out with the changemakers @ #ctzn</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>2</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-17T18:07:25+00:00">6 days ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>kicking it with Will on a conference call with John Johnson - hearing about whether data can be mined across the web to witness what issues are most ripe for social mobilization.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e2244568bf97e130051b160f87b9da0517ac6d48=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>3</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>2</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-759">
-        <article class="post-item"><header><h3>
+      <li id="post-2535">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
                 <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
                 </span>
-                <span>@jelena</span>
+                <span class="avatar"></span>
+                @<span>caseycaplowe</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T02:10:09+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
+                <time datetime="2015-02-17T03:34:23+00:00">1 week ago</time>
+              </a>
             </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/c779836e94329ea6d6fd1a34f41daa82642fac10=s600x600" alt="859736587607586998_1451549205">
-Crowd hearing about #CTZN app for the first time at #CTZNmixer</p></div>
+          </header>
 
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-758">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T02:09:21+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/813a667e406d2dbf8658c5e4f8cbcecb55e38f1d=s600x600" alt="859736185885538457_1451549205">
-@cogggram addressing the #CTZN #CTZNmixer crowd opening with "you can do good and still get laid." </p></div>
+          <a href="#post" class="body"><p>Magazine making over at the NJLA hq in venice. Just a few more days till we ship this issue!</p>
 
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count"></span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-757">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T01:47:50+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/479997fcccf69067c26df92712e79f913ec18080=s600x600" alt="859725354120624497_1451549205">
-From above! #CTZN #CTZNmixer</p></div>
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c56ede2d3c7da7beb483bc9810cea3579f86d768=s500x500"></p></a>
 
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count"></span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-756">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T01:41:52+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/f90e453a2edb97165eb32b9bcbeb87f97beeebb0=s600x600" alt="859722351435167839_1451549205">
-Crowd hanging and enjoying the vegan gourmet food at #CTZN #CTZNmixer</p></div>
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
 
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>3</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-755">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 bluebird" data-content="n"></span>
-                </span>
-                <span>@notcot</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T01:36:58+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/008cb6df070fda20e2ab4b4b2adf1cc187778601=s600x600" alt="859719887706124944_187896019">
-:)</p></div>
 
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-754">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 bluebird" data-content="n"></span>
-                </span>
-                <span>@notcot</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T01:32:22+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=s600x600" alt="859717566251135412_187896019">
-What does this mean to you? I thought it was a spy dead drop @nounproject</p></div>
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>6</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>4</span> comments</li>
+              <!-- /ko -->
 
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-753">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T01:27:52+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/1490e73ee767b92b76a5431e0385b308105f317c=s600x600" alt="859715301942606311_1451549205">
-DJ Mixwell spinning at #CTZN #CTZNmixer</p></div>
 
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>2</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-752">
-        <article class="post-item"><header><h3>
+      <li id="post-2525">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
+                <span class="avatar"></span>
                 <span class="avatar">
                   <span class="size30 grape" data-content="l"></span>
                 </span>
-                <span>@lou</span>
+                @<span>lou</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T01:17:55+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/b33f166ec5577df52c5e4cfda33e4ff930aea7fa=s600x600" alt="859710300098755247_14462141"></p>
-
-<p>#ctzn</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>3</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-15T17:30:01+00:00">1 week ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>HuffPo picks up @gabriel series on Valentine's Day</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f4f913b54e0a94fba3ba22ff22eb4164d1d93226=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>8</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-750">
-        <article class="post-item"><header><h3>
+      <li id="post-2519">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
                 <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
                 </span>
-                <span>@jelena</span>
+                <span class="avatar"></span>
+                @<span>caseycaplowe</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T01:12:26+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/a355437d0014214a7204d95564db391e11d2a85a=s600x600" alt="859707537824529205_1451549205">
-Deep in conversation. #CTZN #CTZNmixer</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-15T05:17:54+00:00">1 week ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>While exploring an awesome park next to the Puget Sound earlier today, Max hopped on the line with @jennsu to work out some ideas/plans related to the upcoming events with sambazon</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/1b8b578d8bf95e8ae6e3dc630898a72392426d98=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>2</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-751">
-        <article class="post-item"><header><h3>
+      <li id="post-2512">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
+                <span class="avatar"></span>
                 <span class="avatar">
-                  <span class="size30 bluebird" data-content="n"></span>
+                  <span class="size30 ocean" data-content="v"></span>
                 </span>
-                <span>@notcot</span>
+                @<span>vandenorth</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T01:11:48+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/9d96fb010bdf621973cb7e43f613ac4c9dd4dc8e=s600x600" alt="859707218659897874_187896019"></p>
-
-<p>#CTZN #ctznmixer goodies</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>2</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-14T21:50:05+00:00">1 week ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>GOOD was all over The Heart Series. Props to Maria for sharing her thoughts on movement building.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/32e90cda680d67f67a3a7c7795005203f61f5fb9=s500x500"></p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a1b052cf97317e30971d4757384c205a08b02ebb=s500x500"></p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/971becedb9c9e822094031c0875619e197f4cf19=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>10</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>4</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       
-      <li id="post-749">
-        <article class="post-item"><header><h3>
+      <li id="post-2511">
+        <article class="post-item">
+          <header>
+            <h3>
               <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T01:02:43+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/3adac066bd531a1665818d6e1f057c03ffc4681f=s600x600" alt="859702644388772277_1451549205">
-Come on in! #CTZN #CTZNmixer</p></div>
-
-          <footer><p>
-              <button class="">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>1</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-748">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
-                <span class="avatar">
-                  <span class="size30 grape" data-content="j"></span>
-                </span>
-                <span>@jelena</span>
-              </a>
-            </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
-            <p>
-              <a href="#post">
-                <time datetime="2014-11-23T00:52:28+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/088c3da3e9bc4ebcb24e9e1cff3bb6f49b21008c=s600x600" alt="859697484094618558_1451549205">
-Sun sets over #CTZNmixer. Get here! 1617 Broadway in Santa Monica.</p></div>
-
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>2</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
-              </a>
-            </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
-      
-      <li id="post-746">
-        <article class="post-item"><header><h3>
-              <a href="">
-                
+                <span class="avatar"></span>
                 <span class="avatar">
                   <span class="size30 grape" data-content="l"></span>
                 </span>
-                <span>@lou</span>
+                @<span>lou</span>
               </a>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --></p>
+            <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-23T00:50:47+00:00"><abbr title="11 weeks ago">11w</abbr>
-                </time></a>
-            </p>
-          </header><div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/2491b744224ed5ebd9d6a7ef1fd77e3d08c06356=s600x600" alt="859696639334513149_14462141">
-Enroute to the mixer #ctzn</p></div>
-
-          <footer><p>
-              <button class="attaboyed">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg><span class="count">
-                  <span>3</span>
-                </span>
-              </button>
-            </p>
-            <p>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg><span class="count"></span>
+                <time datetime="2015-02-14T21:24:57+00:00">1 week ago</time>
               </a>
             </p>
-            <p class="options"><a href="#post-options">
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg></a></p>
-          </footer></article>
-</li>
+          </header>
+
+          <a href="#post" class="body"><p>Bax and Trice Valentine's @group</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5252785aceffdd41f08c40767435295516964969=s500x500"></p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/1f61334466b94b19df22a8fe284b3db467d019ad=s500x500"></p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7f2d72c1b24a2bdadd1e46efd047058f7a0512b9=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>9</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2497">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-14T03:59:09+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>"Create Jobs for USA," our 2011 GOODcorps project with Starbucks is on the big company highlight timeline at the sbux hq!</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/108b8148d87b5a91bd3480474c1534ba74061426=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>9</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>1</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2491">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 sky" data-content="g"></span>
+                </span>
+                @<span>goose</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-13T23:25:38+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Goose and grant chowing down on a Pittsburgh staple - giant sandwiches with fries inside - before our workshop w DSG the next day.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7789c93fd06be9202226d69fd280e2281cc085cd=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>11</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2485">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-13T21:23:53+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Rolling in to sbux hq with max and Jeff dossett. Hopefully Grace's flight gets in soon too.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/740fb1b6d7c4a7fb42a7502577eb1402680570f6=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>6</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2480">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>good_marshall</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-13T21:12:55+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Post sonos, Pre tacos, all ctzn @group @gabriel</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/76602f3ca92182c4b4f439f86b1b1c516b5ca812=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>5</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>4</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2475">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>good_marshall</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-13T19:29:27+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Smokey the sonos dog with @gabriel</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b43c019a26fc51c912ffa8933d0812de3ecda38a=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>4</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>2</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2471">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 ocean" data-content="g"></span>
+                </span>
+                @<span>gabriel</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-13T18:37:32+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>En route to Santa Barbara with @good_marshall to get Sonos excited @group</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ee7cc15588a7575b1dd8cb82b06b3c9aa5132315=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>4</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>4</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2459">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 sky" data-content="e"></span>
+                </span>
+                @<span>ekma</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-13T04:42:32+00:00">2 weeks ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Team DSG owning the Sheraton exec lounge. Workshop ready!</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7fa03e6b04a7586f27f122df694d023707625a2e=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>10</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>1</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2445">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 sky" data-content="j"></span>
+                </span>
+                @<span>jennsu</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-12T21:12:01+00:00">2 weeks ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Here's another possible spot-- who knows where?</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/9f52282454ddd47c32b9ccce55ecf0ee5c392fdc=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>2</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>7</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2444">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 sky" data-content="j"></span>
+                </span>
+                @<span>jennsu</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-12T21:10:41+00:00">2 weeks ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Visiting possible future GOOD party locale #1. Who knows where?</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ec42574a856354f3868e0552051ab623f6a24897=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>6</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>2</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2442">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-12T20:15:24+00:00">2 weeks ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>The big mission at Lululemon up here in Vancouver, b.c.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/22fad683714c5ff9293b1462d2e4bdb573620d30=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>2</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>2</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2440">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>good_marshall</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-12T19:01:26+00:00">2 weeks ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Casey being Casey</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f3747b00d34dbf06eb3630a8a3ae03643040bee=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>5</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2436">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 ocean" data-content="v"></span>
+                </span>
+                @<span>vandenorth</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-12T16:15:16+00:00">2 weeks ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>GOOD letters are in full force this morning at The Heart Series. Maria is speaking on building movements tomorrow (because she's rad). @group</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/03e5f5ac0997abb9a71a64698fc3a98e3a8acbdd=s500x500"></p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
+      
+      <li id="post-2418">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
+                </span>
+                <span class="avatar"></span>
+                @<span>goldhirsh</span>
+              </a>
+            </h3>
+            <p class="source"></p>
+            <p>
+              <a href="#post">
+                <time datetime="2015-02-12T02:53:44+00:00">2 weeks ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body"><p>Also, I thought this video series was incredible. Wow. 
+http://magazine.good.is/features/homeless-couples</p></a>
+
+          <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="true">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+
+
+              <li class="options">
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span>5</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span>1</span> comments</li>
+              <!-- /ko -->
+
+
+            </ul>
+            <!-- /ko -->
+          </footer>
+
+        </article>
+      </li>
       <!-- /ko -->
 
       <!-- ko if: $root.showNextButton -->
       <li class="next">
         <a href="#next">
-          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use><foreignObject>Next Page</foreignObject></svg></a>
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use><foreignObject>Next Page</foreignObject></svg>
+        </a>
       </li>
       <!-- /ko -->
     </ol>

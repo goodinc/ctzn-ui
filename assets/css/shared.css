@@ -978,6 +978,7 @@
     background: white;
     padding: 1.25em 1.25em 1.5em 1.25em; /* 20px 20px 24px 20px */
     margin-bottom: 0.625em;
+    text-align: left;
   }
   .post-item header h3,
   .post-item header p {
@@ -1017,6 +1018,7 @@
 
   .post-item header p {
     color: rgb(193, 193, 193);
+    color: rgba(0, 0, 0, 0.25);
     font-size: 0.875em;
   }
   .post-item header p.source {
@@ -1063,6 +1065,7 @@
     margin-top    : 0.6666666667em; /* 1.33em / 2 */
     margin-bottom : 0.6666666667em;
     color: rgb(51, 51, 51); /* @iron */
+    color: rgba(0, 0, 0, 0.8);
   }
   .post-item .body p:last-child {
     margin-bottom: 0;
@@ -1852,15 +1855,6 @@
   .push-card.animated {
     transition: background-color 0.4s;
   }
-  .start.page.animated aside a {
-    transition: color 0.4s;
-  }
-  .start.page.animated h1 span {
-    transition: color 0.4s;
-  }
-  .login.page .animated   h2 span {
-    transition: color 0.4s;
-  }
 
   /* SHIM: The extra selectors are here to override the default “.page” and “.page > div” styles. */
   .push-card,
@@ -1987,7 +1981,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .push-card.page button,
+  .push-card.page .details button,
   .dialog.page .action a,
   .dialog.page .action button {
     display: block;
@@ -2009,9 +2003,9 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-  .dialog.page .action a,
-  .dialog.page    button,
-  .push-card      button {
+  .dialog.page .details .action a,
+  .dialog.page .details    button,
+  .push-card   .details    button {
     background: black;
     background: rgba(0, 0, 0, 0.75);
     color: white;
@@ -2025,12 +2019,12 @@
     box-sizing: border-box;
     text-align: center;
   }
-  .dialog.page .action a:active,
-  .dialog.page .action a:focus,
-  .dialog.page    button:active,
-  .dialog.page    button:focus,
-  .push-card      button:active,
-  .push-card      button:focus {
+  .dialog.page .details .action a:active,
+  .dialog.page .details .action a:focus,
+  .dialog.page .details    button:active,
+  .dialog.page .details    button:focus,
+  .push-card   .details    button:active,
+  .push-card   .details    button:focus {
     background: black;
   }
   .dialog.page .action a svg.icon,
@@ -2111,7 +2105,8 @@
       margin-top: 3em;
     }
     .push-card form {
-      margin-top: 4.5em;
+      margin-top: 3em;
+      margin-bottom: 3em;
     }
   }
 
@@ -2153,6 +2148,52 @@
     color: white;
     line-height: 2.25em;
   }
+
+
+/* EXPERIMENTAL */
+  .push-card .post-item {
+    margin-bottom: 0;
+    border-bottom: 0.625em solid rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .push-card .post-item header {
+    margin-bottom: 2em;
+  }
+  .push-card .post-item header h3 {
+    font-weight: normal;
+  }
+  .push-card .post-item header p.source {
+    color: white;
+  }
+  .push-card .post-item .body p {
+    font-weight: bold;
+    color: white;
+  }
+  .push-card .post-list .next     a,
+  .push-card .post-list .previous a {
+    color: inherit;
+  }
+  @media (min-width: 22em) {
+    .page.push-card .post-item .body p {
+      margin-left: 1.25em;
+      margin-right: 1.25em;
+    }
+  }
+  .page.push-card .post-item .body .image {
+    margin-top: 2em;
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+  }
+  .page.push-card .post-item .body .image + .image {
+    margin-top: -0.75em;
+  }
+  .page.push-card .post-item .body .image img {
+    border-radius: 0;
+  }
+  .page.push-card .post-item .body .image:last-child {
+    margin-bottom: -2.25em;
+  }
+
 
 
   /* =Post
