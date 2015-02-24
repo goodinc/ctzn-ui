@@ -3624,7 +3624,6 @@
 
   /* =Slide Left
   ----------------------------------------------- */
-  /*
   @-webkit-keyframes slide-left {
     0% {
       -webkit-transform: translateX(40em);
@@ -3645,7 +3644,6 @@
               transform: translateX(0);
     }
   }
-  */
 
 
   /* =Slide Right
