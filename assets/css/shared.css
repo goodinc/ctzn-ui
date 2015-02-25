@@ -1904,7 +1904,12 @@
   section.push > .option-list li:first-child a {
     border-top-width: 0;
   }
-
+  
+@media (min-width: 600px) {
+  section.push > .option-list li a {
+    text-align: center;
+  } 
+}
 
   /* =Push Card
   -----------------------------------------------
