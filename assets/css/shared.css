@@ -1484,10 +1484,13 @@
 
   /* =Mixable (“couch mode” for the push preview)
   ----------------------------------------------- */
+  .mixable footer.primary {
+    display: none;
+  }
   .mixable header.primary {
     top: auto;
     left: auto;
-    bottom: 0;
+    bottom: 0.375em;
     right: 0;
     background: transparent;
     color: white;
@@ -1497,6 +1500,9 @@
   }
   .mixable header.primary h1 {
     float: right;
+    font-size: 1.5em;
+    color: white;
+    color: rgba(255, 255, 255, 0.5);
   }
   .mixable header.primary h2,
   .mixable header.primary p {
@@ -1505,6 +1511,7 @@
   .mixable .push-card.page {
     padding-top: 0;
   }
+  /*
   .mixable .push-card.page .details {
     margin-top: 0;
     padding-top: 6em;
@@ -1520,6 +1527,10 @@
     font-size: 3vmax;
     font-weight: bold;
   }
+  */
+  .mixable .push-card.page .details {
+    display: none;
+  }
   .mixable .post-list li {
     max-width: none;
   }
@@ -1527,21 +1538,36 @@
     color: white;
     padding: 1.5em 1.5em 1.5em 3.5em;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     box-sizing: border-box;
-    z-index: 2;
+    background: black;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    margin-bottom: 0;
   }
   .mixable .post-list .post-item header time {
     color: rgb(204, 204, 204); /* @aluminum */
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.5);
   }
   .mixable .post-list .post-item header .source svg.icon {
     font-size: 2em;
   }
   .mixable .post-list .post-item {
     padding: 4.5em 0 0 0;
+    border-width: 0;
+  }
+  .mixable .push-card.page .post-item .body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 2;
   }
   .mixable .push-card.page .post-item .body p {
     margin: 0;
@@ -1549,9 +1575,7 @@
     z-index: 2;
     font-size: 2em;
     font-size: 4vmax;
-    background: black;
-    background: rgba(0, 0, 0, 0.25);
-    padding: 0.75em 0.75em;
+    padding: 0.75em 3em;
   }
   .mixable .push-card.page .post-item .body p.image {
     background: transparent;
