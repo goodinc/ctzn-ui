@@ -1883,20 +1883,26 @@
     background-color: rgb(222, 222, 222); /* @silver */
   }
   .option-list,
-  .option-list ul:first-child {
+  .option-list ul:first-child,
+  .option-list ul li:first-child {
     margin-top: 0;
   }
   .option-list ul + ul {
     margin-top: 3em;
   }
 
-  /* SHIM: Make options look nice on the push screen (doesn’t have the usual padding that other “.page” screens have) */
-  section.push > .option-list {
-    padding: 0 1.25em; /* @page-padding */
+  /* SHIM: Make options look nice on the push screen, which doesn’t have @page-padding */
+  section.push > .option-list li a {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    box-sizing: border-box;
+    background-image: none;
   }
-  section.push > .option-list ul {
-    margin: 0 auto;
-    max-width: 31.25em; /* image.width / @font-size (500px / 16px) */
+  section.push > .option-list li:first-child a {
+    border-top-width: 0;
   }
 
 
