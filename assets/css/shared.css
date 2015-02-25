@@ -1890,6 +1890,15 @@
     margin-top: 3em;
   }
 
+  /* SHIM: Make options look nice on the push screen (doesn’t have the usual padding that other “.page” screens have) */
+  section.push > .option-list {
+    padding: 0 1.25em; /* @page-padding */
+  }
+  section.push > .option-list ul {
+    margin: 0 auto;
+    max-width: 31.25em; /* image.width / @font-size (500px / 16px) */
+  }
+
 
   /* =Push Card
   -----------------------------------------------
