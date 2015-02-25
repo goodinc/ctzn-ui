@@ -1488,9 +1488,8 @@
     display: none;
   }
   .mixable header.primary {
-    top: auto;
+    top: 0.375em;
     left: auto;
-    bottom: 0.375em;
     right: 0;
     background: transparent;
     color: white;
