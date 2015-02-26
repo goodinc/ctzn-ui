@@ -1022,9 +1022,7 @@
     font-size: 0.875em;
   }
   .post-item header p.source {
-    position: absolute;
-    bottom: 1em;
-    right: 1em;
+    float: right;
   }
   .post-item header p a {
     color: inherit;
@@ -1494,10 +1492,6 @@
     background-color: rgb(51, 51, 51); /* @iron */
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5em;
-    display: block;
-  }
-  .toggle-mixable button svg.icon {
-    display: block;
   }
   .toggle-mixable button:active,
   .toggle-mixable button:focus {
@@ -1570,7 +1564,7 @@
     border-width: 0;
     font-size: 2vmax;
   }
-  .mixable .post-list .post-item header {
+  .mixable .post-item header {
     color: white;
     padding: 1.5em 1.5em 1.5em 3.5em;
     position: absolute;
@@ -1587,14 +1581,13 @@
     color: rgb(204, 204, 204); /* @aluminum */
     color: rgba(255, 255, 255, 0.5);
   }
-  .mixable .post-list .post-item header .source {
+  .mixable .post-item header .source {
     font-size: 2em;
     position: absolute;
-    margin-bottom: -3em;
-    margin-left: 3em;
+    margin-bottom: -4.125em;
     bottom: 6em;
     bottom: 100vh;
-    left: 0;
+    left: 3em;
   }
   .mixable .push-card.page .post-item .body:before {
     content: "";
@@ -2412,7 +2405,7 @@
   }
 
 
-/* EXPERIMENTAL */
+  /* For the push preview page */
   .push-card .post-item {
     margin-bottom: 0;
     border-bottom: 0.625em solid rgba(0, 0, 0, 0.75);
