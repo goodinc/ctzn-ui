@@ -1484,13 +1484,26 @@
   ----------------------------------------------- */
   .toggle-mixable {
     position: fixed;
-    top: 4.5em;
-    right: 1.5em;
+    top: 3.9375em; /* 4.5em x 7/8 */
+    right: 0.75em;
     z-index: 9999;
     margin: 0;
   }
+  .toggle-mixable button {
+    background-color: rgb(51, 51, 51); /* @iron */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5em;
+    display: block;
+  }
+  .toggle-mixable button svg.icon {
+    display: block;
+  }
+  .toggle-mixable button:active,
+  .toggle-mixable button:focus {
+    background-color: black;
+  }
   .mixable .toggle-mixable {
-    top: 1.5em;
+    top: 0.75em;
   }
   .mixable footer.primary {
     display: none;
@@ -1551,6 +1564,11 @@
   .mixable .post-list li {
     max-width: none;
   }
+  .mixable .post-list .post-item {
+    padding: 6em 0 0 0;
+    border-width: 0;
+    font-size: 2vmax;
+  }
   .mixable .post-list .post-item header {
     color: white;
     padding: 1.5em 1.5em 1.5em 3.5em;
@@ -1568,12 +1586,13 @@
     color: rgb(204, 204, 204); /* @aluminum */
     color: rgba(255, 255, 255, 0.5);
   }
-  .mixable .post-list .post-item header .source svg.icon {
+  .mixable .post-list .post-item header .source {
     font-size: 2em;
-  }
-  .mixable .post-list .post-item {
-    padding: 4.5em 0 0 0;
-    border-width: 0;
+    position: absolute;
+    margin-bottom: -3em;
+    margin-left: 3em;
+    bottom: 100vh;
+    left: 0;
   }
   .mixable .push-card.page .post-item .body:before {
     content: "";
@@ -1587,12 +1606,15 @@
     z-index: 2;
   }
   .mixable .push-card.page .post-item .body p {
-    margin: 0;
     position: relative;
     z-index: 2;
     font-size: 2em;
-    font-size: 4vmax;
-    padding: 0.75em 3em;
+    margin: 0.75em 3em;
+    /*
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    */
   }
   .mixable .push-card.page .post-item .body p.image {
     background: transparent;
@@ -1605,6 +1627,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    overflow: visible;
   }
   .mixable .push-card.page .post-item .body p.image img {
     margin: 0;
