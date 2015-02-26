@@ -1022,11 +1022,9 @@
     font-size: 0.875em;
   }
   .post-item header p.source {
-    float: right;
-  }
-  .post-item header p.source svg.icon {
-    width: 1.25em;
-    height: 1.25em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
   }
   .post-item header p a {
     color: inherit;
@@ -1484,11 +1482,22 @@
 
   /* =Mixable (“couch mode” for the push preview)
   ----------------------------------------------- */
+  .toggle-mixable {
+    position: fixed;
+    top: 4.5em;
+    right: 1.5em;
+    z-index: 9999;
+    margin: 0;
+  }
+  .mixable .toggle-mixable {
+    top: 1.5em;
+  }
   .mixable footer.primary {
     display: none;
   }
   .mixable header.primary {
-    top: 0.375em;
+    top: auto;
+    bottom: 0.375em;
     left: auto;
     right: 0;
     background: transparent;
@@ -1510,6 +1519,12 @@
   .mixable .push-card.page {
     padding-top: 0;
   }
+  .mixable li.inactive {
+    display: none;
+  }
+  .mixable .post-item header .avatar {
+    top: 1.25em;
+  }
   /*
   .mixable .push-card.page .details {
     margin-top: 0;
@@ -1529,6 +1544,9 @@
   */
   .mixable .push-card.page .details {
     display: none;
+  }
+  .mixable .post-list {
+    padding-bottom: 0;
   }
   .mixable .post-list li {
     max-width: none;
