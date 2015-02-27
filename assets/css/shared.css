@@ -1425,6 +1425,9 @@
     vertical-align: bottom;
     margin-right: 0.75em;
   }
+
+
+  /* For the push preview */
   header.primary h2 {
     font-weight: inherit;
     text-transform: lowercase;
@@ -1437,6 +1440,7 @@
   header.primary p:last-child {
     float: right;
   }
+
 
   footer.primary .about,
   footer.primary .legal {
@@ -1476,176 +1480,6 @@
     font-size: 0.75em;
     line-height: 2em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-
-
-  /* =Mixable (“couch mode” for the push preview)
-  ----------------------------------------------- */
-  .toggle-mixable {
-    position: fixed;
-    top: 3.9375em; /* 4.5em x 7/8 */
-    right: 0.75em;
-    z-index: 9999;
-    margin: 0;
-  }
-  .toggle-mixable button {
-    background-color: rgb(51, 51, 51); /* @iron */
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0.5em;
-  }
-  .toggle-mixable button:active,
-  .toggle-mixable button:focus {
-    background-color: black;
-  }
-  .mixable .toggle-mixable {
-    top: 0.75em;
-  }
-  .mixable footer.primary {
-    display: none;
-  }
-  .mixable header.primary {
-    top: auto;
-    bottom: 0.375em;
-    left: auto;
-    right: 0;
-    background: transparent;
-    color: white;
-    color: rgba(255, 255, 255, 0.5);
-    position: fixed;
-    border-width: 0;
-  }
-  .mixable header.primary h1 {
-    float: right;
-    font-size: 1.5em;
-    color: white;
-    color: rgba(255, 255, 255, 0.5);
-  }
-  .mixable header.primary h2,
-  .mixable header.primary p {
-    display: none;
-  }
-  .mixable .push-card.page {
-    padding-top: 0;
-  }
-  .mixable li.inactive {
-    display: none;
-  }
-  .mixable .post-item header .avatar {
-    top: 1.25em;
-  }
-  /*
-  .mixable .push-card.page .details {
-    margin-top: 0;
-    padding-top: 6em;
-    text-align: left;
-  }
-  .mixable .push-card.page .details .name {
-    font-size: 4em;
-    font-size: 4vmax;
-  }
-  .mixable .push-card.page .details .about,
-  .mixable .push-card.page .details p {
-    font-size: 3em;
-    font-size: 3vmax;
-    font-weight: bold;
-  }
-  */
-  .mixable .push-card.page .details {
-    display: none;
-  }
-  .mixable .post-list {
-    padding-bottom: 0;
-  }
-  .mixable .post-list li {
-    max-width: none;
-  }
-  .mixable .post-list .post-item {
-    padding: 6em 0 0 0;
-    border-width: 0;
-    font-size: 2vmax;
-  }
-  .mixable .post-item header {
-    color: white;
-    padding: 1.5em 1.5em 1.5em 3.5em;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    background: black;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 3;
-    margin-bottom: 0;
-  }
-  .mixable .post-list .post-item header time {
-    color: rgb(204, 204, 204); /* @aluminum */
-    color: rgba(255, 255, 255, 0.5);
-  }
-  .mixable .post-item header .source {
-    font-size: 2em;
-    position: absolute;
-    margin-bottom: -4.125em;
-    bottom: 6em;
-    bottom: 100vh;
-    left: 3em;
-  }
-  .mixable .push-card.page .post-item .body:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: -1;
-  }
-  .mixable .push-card.page .post-item .body p {
-    font-size: 2em;
-    margin: 0.75em 3em;
-    /*
-    max-height: 3em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    */
-  }
-  /*
-  .mixable .push-card.page .post-item .body p.image {
-    padding: 0;
-    max-width: none;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: visible;
-  }
-  */
-  .mixable .push-card.page .post-item .body p img {
-  }
-  .mixable .push-card.page .post-item {
-    position: relative;
-    z-index: 1;
-  }
-  .mixable .push-card.page .post-item .body img {
-    margin: 0;
-    width: auto;
-    height: auto;
-    max-width: none;
-    position: absolute;
-    z-index: -2;
-    top: 0;
-    left: 0;
-    width: 100vmax;
-    height: 100vmax;
-  }
-  .mixable .push-card.page .details,
-  .mixable .post-list .post-item {
-    height: 100vh;
-    box-sizing: border-box;
-    overflow: hidden;
   }
 
 
@@ -2155,6 +1989,10 @@
     color: inherit;
   }
 
+  .push-card a {
+    color: inherit;
+  }
+
   .push-card .name {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
@@ -2174,8 +2012,15 @@
     font-weight: inherit;
     font-size: inherit;
   }
-  .push-card a {
-    color: inherit;
+  .push-card .website a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .push-card .website a:active,
+  .push-card .website a:focus {
+    color: black;
   }
 
   /* Meta */
@@ -2307,6 +2152,29 @@
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
+  .push-card.blueberry   .website a,
+  .push-card.boysenberry .website a,
+  .push-card.plumb       .website a,
+  .push-card.strawberry  .website a,
+  .push-card.apple       .website a,
+  .push-card.orange      .website a {
+    color: rgb(204, 204, 204);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .push-card.blueberry   .website a:active,
+  .push-card.blueberry   .website a:focus,
+  .push-card.boysenberry .website a:active,
+  .push-card.boysenberry .website a:focus,
+  .push-card.plumb       .website a:active,
+  .push-card.plumb       .website a:focus,
+  .push-card.strawberry  .website a:active,
+  .push-card.strawberry  .website a:focus,
+  .push-card.apple       .website a:active,
+  .push-card.apple       .website a:focus,
+  .push-card.orange      .website a:active,
+  .push-card.orange      .website a:focus {
+    color: white;
+  }
   .push-card.blueberry   > a,
   .push-card.boysenberry > a,
   .push-card.plumb       > a,
@@ -2405,7 +2273,8 @@
   }
 
 
-  /* For the push preview page */
+  /* =Push Preview
+  ----------------------------------------------- */
   .push-card .post-item {
     margin-bottom: 0;
     border-bottom: 0.625em solid rgba(0, 0, 0, 0.75);
@@ -2429,24 +2298,193 @@
     color: inherit;
   }
   @media (min-width: 22em) {
-    .page.push-card .post-item .body p {
+    .push-card .post-item .body p {
       margin-left: 1.25em;
       margin-right: 1.25em;
     }
   }
-  .page.push-card .post-item .body .image {
+  .push-card .post-item .body .image {
     margin-top: 2em;
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
-  .page.push-card .post-item .body .image + .image {
+  .push-card .post-item .body .image + .image {
     margin-top: -0.75em;
   }
-  .page.push-card .post-item .body .image img {
+  push-card .post-item .body .image img {
     border-radius: 0;
   }
-  .page.push-card .post-item .body .image:last-child {
+  .push-card .post-item .body .image:last-child {
     margin-bottom: -2.25em;
+  }
+
+
+  /* =Mixable (“couch mode” for the push preview)
+  ----------------------------------------------- */
+  .toggle-mixable {
+    position: fixed;
+    top: 3.9375em; /* 4.5em x 7/8 */
+    right: 0.75em;
+    z-index: 9999;
+    margin: 0;
+  }
+  .toggle-mixable button {
+    background-color: rgb(51, 51, 51); /* @iron */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5em;
+  }
+  .toggle-mixable button:active,
+  .toggle-mixable button:focus {
+    background-color: black;
+  }
+  .mixable .toggle-mixable {
+    top: 0.75em;
+  }
+  .mixable footer.primary {
+    display: none;
+  }
+  .mixable header.primary {
+    top: auto;
+    bottom: 0.75em;
+    left: auto;
+    right: 0.75em;
+    background: transparent;
+    color: white;
+    color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    border-width: 0;
+    font-size: 1.5em;
+    font-size: 2vmax;
+  }
+  .mixable header.primary h1 {
+    float: right;
+    color: white;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+  .mixable header.primary h2,
+  .mixable header.primary p {
+    display: none;
+  }
+  .mixable .push-card.page {
+    padding-top: 0;
+  }
+  .mixable li.inactive {
+    display: none;
+  }
+  .mixable .post-item header .avatar {
+    top: 1.25em;
+  }
+  /*
+  .mixable .push-card.page .details {
+    margin-top: 0;
+    padding-top: 6em;
+    text-align: left;
+  }
+  .mixable .push-card.page .details .name {
+    font-size: 4em;
+    font-size: 4vmax;
+  }
+  .mixable .push-card.page .details .about,
+  .mixable .push-card.page .details p {
+    font-size: 3em;
+    font-size: 3vmax;
+    font-weight: bold;
+  }
+  */
+  .mixable .push-card.page .details {
+    display: none;
+  }
+  .mixable .post-list {
+    padding-bottom: 0;
+  }
+  .mixable .post-list li {
+    max-width: none;
+  }
+  .mixable .post-list .post-item {
+    padding: 6em 0 0 0;
+    border-width: 0;
+    font-size: 2vmax;
+  }
+  .mixable .post-item header {
+    color: white;
+    padding: 1.5em 1.5em 1.5em 3.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: black;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    margin-bottom: 0;
+  }
+  .mixable .post-list .post-item header time {
+    color: rgb(204, 204, 204); /* @aluminum */
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .mixable .post-item header .source {
+    font-size: 2em;
+    position: absolute;
+    margin-bottom: -3em;
+    bottom: 6em;
+    bottom: 100vh;
+    left: 3em;
+  }
+  .mixable .push-card.page .post-item .body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+  }
+  .mixable .push-card.page .post-item .body p {
+    font-size: 2em;
+    margin: 0.75em 3em;
+    max-height: calc(100vh - 6em);
+    overflow: hidden;
+  }
+  /*
+  .mixable .push-card.page .post-item .body p.image {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: visible;
+  }
+  */
+  .mixable .push-card.page .post-item .body p img {
+  }
+  .mixable .push-card.page .post-item {
+    position: relative;
+    z-index: 1;
+  }
+  .mixable .push-card.page .post-item .body img {
+    margin: 0;
+    width: auto;
+    height: auto;
+    max-width: none;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100vmax;
+    height: 100vmax;
+  }
+  .mixable .push-card.page .details,
+  .mixable .post-list .post-item {
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
 
