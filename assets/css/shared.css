@@ -2134,12 +2134,12 @@
   }
 
   .push-card h1 {
-    color: black;
-    color: rgba(0, 0, 0, 0.95);
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
   }
   .push-card.page > header a {
-    color: black;
-    color: rgba(0, 0, 0, 0.95);
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
   }
 
   /* OPTIONAL: Make the content lighter if the background is dark. */
@@ -2276,8 +2276,6 @@
   /* =Push Preview
   ----------------------------------------------- */
   .push-card .post-item {
-    margin-bottom: 0;
-    border-bottom: 0.625em solid rgba(0, 0, 0, 0.75);
     background: rgba(0, 0, 0, 0.2);
   }
   .push-card .post-item header {
