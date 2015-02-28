@@ -264,750 +264,289 @@
       </button>
     </p>
 
-<ol class="post-list">
-      <!-- ko if: showPrevButton --><!-- /ko -->
-
-      <!-- ko foreach: visiblePosts -->
-      <li id="post-2684">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
+<ol class="post-list " data-bind="foreach: posts">
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+              </span>
+              @<span data-bind="text: username">jgro</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-23T08:26:43+00:00">19 hours ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Another day, a few pages closer to getting this issue shipped.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/69f28936af93f53ec7dbaff07f1f79cc286b2a1b=s1000x1000"></p></div>
-
-
-
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-26T23:48:26.000+00:00">22 hours ago</time></p>
+          </header><!-- ko if: images.length > 0 --><!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><!-- /ko --><!-- ko if: source == 'facebook' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use><foreignObject>via facebook</foreignObject></svg><!-- /ko --></p>
+            
+            <p data-bind="text: text">Excited about helping build volunteer communities with #ctzn</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2683">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="e"></span>
-                </span>
-                <span>ekma</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">vogg</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-23T07:32:01+00:00">20 hours ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Supporting GSUSA! Who knew tagalongs were the crowd favorite? &lt; Thin mints</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/1e31d54aefbd0f68772d33caf4c6afce5c25a9c9=s1000x1000"></p></div>
-
-
-
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-08T23:51:31.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/f79f8bb3381406c768402d51327bcc82ddd33f89=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            
+            <p data-bind="text: text">Piñata time! #ctzn</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2666">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
-                </span>
-                <span>good_marshall</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">vogg</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-21T03:22:52+00:00">3 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>@group any one from NY...this place looks &amp; sounds divine on a cold night!</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/6c4bbd942af819bfa716dfa62ab1201904698686=s1000x1000"></p></div>
-
-
-
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-08T23:38:46.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/61f1f0edda6ccd9ae6597ebc189ece1d95b8f94f=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            
+            <p data-bind="text: text">Sweet thing. #goodhq #GOODBBQ #ctzn</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2648">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 grape" data-content="a"></span>
-                </span>
-                <span>aubrey</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">vogg</span>
             </h3>
-            <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
-            </p>
             <p>
-                <time datetime="2015-02-20T21:44:52+00:00">3 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/aa6adfb004bf9431059d90640237c82779aaba72=s1000x1000" alt="924832878434230703_3757855">
-Essential office supplies at @goodhq</p></div>
-
-
-
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-30T03:40:07.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/473060ff37c4cee6ff9fad1494e322fe1b119bbe=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            
+            <p data-bind="text: text">Hula, anyone? #artizenlab #ctzn</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2642">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="c"></span>
+              </span>
+              @<span data-bind="text: username">cogg</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-20T05:51:15+00:00">4 days ago</time>
-            </p>
-          </header>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-14T18:50:19.000+00:00">6 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source"></p>
+            
+            <p data-bind="text: text">Kiva will be using ctzn as part of the next class of fellows at the end of this month. Looking for a tool to help the Kiva Fellows feel connected and to better tell their aggregated stories. The stories will be used to inspire people to become Fellows.
 
-          <div class="body"><p>Locking down pages and the page plan with @tylerhoehne and @carolinewhodoesnthaveanaccountyet</p>
+They would like to make sure people can participate in places where there aren't smart phones or they are cost prohibitive data plan-wise. To address this we are going to accelerate the ability to participate via email.
 
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/81e55654b602dec0ed3d3f71801726a3d0660f7e=s1000x1000"></p></div>
+In brainstorming about how to get feedback, we are thinking of pairing every push with a feedback push that has fewer features.
 
-
-
+So exciting!</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2634">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
-                </span>
-                <span>goldhirsh</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="c"></span>
+              </span>
+              @<span data-bind="text: username">cogg</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-20T03:33:09+00:00">4 days ago</time>
-            </p>
-          </header>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-13T03:55:41.000+00:00">7 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/d94e7e5b8f05943a7302645f8d3f7fc080e406e1=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-          <div class="body"><p>It's fun to be on the hustle from the south repping GOOD right now. Congrats to the media team for a record traffic month already, to ctzn for allowing me to share this, and for Corps on the AT&amp;T and field and stream deals. Grinding.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/0d77401413aa7dccc462f097139c78e70cd526d4=s1000x1000"></p></div>
-
-
-
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/254cecb53682ff0a4c8f6e45c0f184be781e9147=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source"></p>
+            
+            <p data-bind="text: text">Brainstorming with Mike McGalliard, ED of Imagination Foundation, on how we can work together.</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2627">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="a"></span>
-                </span>
-                <span>anton</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+              </span>
+              @<span data-bind="text: username">jelena</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-19T23:27:28+00:00">4 days ago</time>
-            </p>
-          </header>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-25T08:39:38.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n3" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/3c1cf5a2d8847591cd9ca7accb2bcb65d891980e=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-          <div class="body"><p>Tiny cactus.</p>
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/d186195dc2283a33e43be61ee34da55a37a37c8d=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/044b59919111f065ff7ae613d107b7f9e2984e81=s1000x1000"></p></div>
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/47ef0e222f55c7f998a6dd562f4fa0fc6216eb3b=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-
-
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/a19afe0227edda359af3c4922a374f664eab2b3f=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source"></p>
+            
+            <p data-bind="text: text">Ran into a protest on Wilshire on my way home and joined up. Only got slightly run over by a car. All good. Thought I'd post these in case y'all saw me on the news or something, there were a lot of cameras. Home safely.</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2589">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 ocean" data-content="v"></span>
-                </span>
-                <span>vandenorth</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+              </span>
+              @<span data-bind="text: username">jelena</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-19T18:44:57+00:00">4 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Visiting the Louis Vuitton Series 2 exhibit with the GOODcorps crew. @ekma working the red carpet.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/877d0bfe4a62b0dd65e67aa8d617488b26c1e1d7=s1000x1000"></p></div>
-
-
-
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T18:22:39.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/9a339d74c1f5bf8dc9f70eb5a052acce52985473=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            
+            <p data-bind="text: text">Where I am this morning... #nbff #ctzn</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2566">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
-                </span>
-                <span>cogg</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+              </span>
+              @<span data-bind="text: username">jim</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-18T18:21:13+00:00">5 days ago</time>
-            </p>
-          </header>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T03:32:11.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n3" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-          <div class="body"><p>@group Looking for iPhone users that are willing to test out the installable app for us (big difference is that there are push notifications). Reply here if you are willing (you can reply via email)</p></div>
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-
-
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source"></p>
+            
+            <p data-bind="text: text">Paint and markers are being put to good use at CTZN mixer!</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2554">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
-                </span>
-                <span>goldhirsh</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="n"></span>
+              </span>
+              @<span data-bind="text: username">notcot</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-17T20:33:50+00:00">6 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>holy awesome! check out Isis' recent post on Melissa Hunter's project! </p>
-
-<p>http://magazine.good.is/articles/wednesday-addams-catcallers</p>
-
-<p>Melissa worked at GOOD way back in the day, maybe came in through Reason Pictures. Totally wonderful human and so cool to see what she's up to, and to learn about it on good.is.</p></div>
-
-
-
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T01:36:58.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/008cb6df070fda20e2ab4b4b2adf1cc187778601=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            
+            <p data-bind="text: text">:)</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2546">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 cranberry" data-content="m"></span>
-                </span>
-                <span>max</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="n"></span>
+              </span>
+              @<span data-bind="text: username">notcot</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-17T18:10:41+00:00">6 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>@caseycaplowe arrived in Seattle by train from Vancouver and noticed something</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/616f4276f39edd77b4227ec90407b5f1cfd5468a=s1000x1000"></p></div>
-
-
-
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T01:32:22.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
+              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=c2000x2000" alt="Photo function d(){if(0<
+  arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            
+            <p data-bind="text: text">What does this mean to you? I thought it was a spy dead drop @nounproject</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2544">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
-                </span>
-                <span>goldhirsh</span>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+              </span>
+              @<span data-bind="text: username">jelena</span>
             </h3>
-            <p class="source"></p>
             <p>
-                <time datetime="2015-02-17T18:07:25+00:00">6 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>kicking it with Will on a conference call with John Johnson - hearing about whether data can be mined across the web to witness what issues are most ripe for social mobilization.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/e2244568bf97e130051b160f87b9da0517ac6d48=s1000x1000"></p></div>
-
-
-
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-21T06:55:43.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><!-- /ko -->
+          <div class="body">
+            <p class="source" data-bind="if: source"></p>
+            
+            <p data-bind="text: text">No photo but Steve Vasquez of Cooking with Gabby is on board and had promised to on board collaborators for an event Saturday! I may have incented him with Buffalo wings...</p>
+          </div>
         </article>
-      </li>
-      
-      <li id="post-2535">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-17T03:34:23+00:00">7 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Magazine making over at the NJLA hq in venice. Just a few more days till we ship this issue!</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/c56ede2d3c7da7beb483bc9810cea3579f86d768=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2525">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 grape" data-content="l"></span>
-                </span>
-                <span>lou</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-15T17:30:01+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>HuffPo picks up @gabriel series on Valentine's Day</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/f4f913b54e0a94fba3ba22ff22eb4164d1d93226=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2519">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-15T05:17:54+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>While exploring an awesome park next to the Puget Sound earlier today, Max hopped on the line with @jennsu to work out some ideas/plans related to the upcoming events with sambazon</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/1b8b578d8bf95e8ae6e3dc630898a72392426d98=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2512">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 ocean" data-content="v"></span>
-                </span>
-                <span>vandenorth</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-14T21:50:05+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>GOOD was all over The Heart Series. Props to Maria for sharing her thoughts on movement building.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/32e90cda680d67f67a3a7c7795005203f61f5fb9=s1000x1000"></p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/a1b052cf97317e30971d4757384c205a08b02ebb=s1000x1000"></p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/971becedb9c9e822094031c0875619e197f4cf19=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2511">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 grape" data-content="l"></span>
-                </span>
-                <span>lou</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-14T21:24:57+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Bax and Trice Valentine's @group</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/5252785aceffdd41f08c40767435295516964969=s1000x1000"></p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/1f61334466b94b19df22a8fe284b3db467d019ad=s1000x1000"></p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/7f2d72c1b24a2bdadd1e46efd047058f7a0512b9=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2497">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-14T03:59:09+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>"Create Jobs for USA," our 2011 GOODcorps project with Starbucks is on the big company highlight timeline at the sbux hq!</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/108b8148d87b5a91bd3480474c1534ba74061426=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2491">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="g"></span>
-                </span>
-                <span>goose</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T23:25:38+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Goose and grant chowing down on a Pittsburgh staple - giant sandwiches with fries inside - before our workshop w DSG the next day.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/7789c93fd06be9202226d69fd280e2281cc085cd=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2485">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T21:23:53+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Rolling in to sbux hq with max and Jeff dossett. Hopefully Grace's flight gets in soon too.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/740fb1b6d7c4a7fb42a7502577eb1402680570f6=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2480">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
-                </span>
-                <span>good_marshall</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T21:12:55+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Post sonos, Pre tacos, all ctzn @group @gabriel</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/76602f3ca92182c4b4f439f86b1b1c516b5ca812=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2475">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
-                </span>
-                <span>good_marshall</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T19:29:27+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Smokey the sonos dog with @gabriel</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/b43c019a26fc51c912ffa8933d0812de3ecda38a=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2471">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 ocean" data-content="g"></span>
-                </span>
-                <span>gabriel</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T18:37:32+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>En route to Santa Barbara with @good_marshall to get Sonos excited @group</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/ee7cc15588a7575b1dd8cb82b06b3c9aa5132315=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2459">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="e"></span>
-                </span>
-                <span>ekma</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T04:42:32+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Team DSG owning the Sheraton exec lounge. Workshop ready!</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/7fa03e6b04a7586f27f122df694d023707625a2e=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2445">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="j"></span>
-                </span>
-                <span>jennsu</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T21:12:01+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Here's another possible spot-- who knows where?</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/9f52282454ddd47c32b9ccce55ecf0ee5c392fdc=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2444">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="j"></span>
-                </span>
-                <span>jennsu</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T21:10:41+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Visiting possible future GOOD party locale #1. Who knows where?</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/ec42574a856354f3868e0552051ab623f6a24897=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2442">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T20:15:24+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>The big mission at Lululemon up here in Vancouver, b.c.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/22fad683714c5ff9293b1462d2e4bdb573620d30=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2440">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
-                </span>
-                <span>good_marshall</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T19:01:26+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Casey being Casey</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/5f3747b00d34dbf06eb3630a8a3ae03643040bee=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2436">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 ocean" data-content="v"></span>
-                </span>
-                <span>vandenorth</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T16:15:16+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>GOOD letters are in full force this morning at The Heart Series. Maria is speaking on building movements tomorrow (because she's rad). @group</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/03e5f5ac0997abb9a71a64698fc3a98e3a8acbdd=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2418">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
-                </span>
-                <span>goldhirsh</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T02:53:44+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Also, I thought this video series was incredible. Wow. 
-http://magazine.good.is/features/homeless-couples</p></div>
-
-
-
-        </article>
-      </li>
-      <!-- /ko -->
-
-      <!-- ko if: $root.showNextButton -->
-      <li class="next">
-        <a href="#next">
-          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use><foreignObject>Next Page</foreignObject></svg>
-        </a>
-      </li>
-      <!-- /ko -->
+</li>
     </ol>
 
   </section>

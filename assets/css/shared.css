@@ -1115,125 +1115,6 @@
   }
 
 
-  /* =Images (for post items)
-  ----------------------------------------------- */
-
-  /* EXPERIMENTAL */
-  .images.n1 img,
-  .images.n2 img,
-  .images.n3 img {
-    margin: 0.75em auto;
-    display: block;
-    height: auto;
-    max-width: 100%;
-    max-height: calc(100vh - 7.5em); /* Make space for the sticky header and footer */
-
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    background-color: rgba(0, 0, 0, 0.25);
-    min-height: 9em;
-  }
-  .images.n1,
-  .images.n2,
-  .images.n3 {
-    margin: 0.75em 0;
-  }
-  .images.n1:after,
-  .images.n2:after,
-  .images.n3:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .images.n1 figure,
-  .images.n2 figure,
-  .images.n3 figure {
-    margin: 0;
-    display: block;
-  }
-  .images.n2 .image > span,
-  .images.n3 .image > span {
-    display: block;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    max-width: 100%;
-    height: 250px;
-
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    background-color: rgba(0, 0, 0, 0.25);
-  }
-
-  /* Two images */
-  .images.n2 figure {
-    width: 49%;
-
-    float: left;
-  }
-  .images.n2 figure + figure {
-    margin-left: 2%;
-  }
-  .images.n2 .image > span  {
-    height: 250px;
-  }
-
-  /* Three images */
-  .images.n3 figure {
-    width: 49%;
-    /*
-    width: calc(50vw - 25px);
-    */
-    overflow: hidden;
-
-    float: left;
-  }
-  .images.n3 figure + figure {
-    margin-left: 2%;
-    /*
-    margin-left: calc(10px - 0vw);
-    */
-  }
-  .images.n3 .image > span {
-    height: 250px;
-  }
-  .images.n3 figure:nth-child(2) .image > span,
-  .images.n3 figure:nth-child(3) .image > span {
-    height: 120px;
-  }
-  .images.n3 figure:nth-child(3) .image > span {
-    margin-top: 10px;
-  }
-
-  li:nth-child(2n) .images.n2 figure,
-  li:nth-child(2n) .images.n3 figure {
-    float: right;
-  }
-  li:nth-child(2n) .images.n2 figure + figure,
-  li:nth-child(2n) .images.n3 figure + figure {
-    margin-left: 0;
-    margin-right: 2%;
-    /*
-    margin-right: calc(10px - 0vw);
-    */
-  }
-
-  @media (min-width: 30em) {
-
-    /* Two images */
-    .images.n2 .image > span  {
-      height: 450px;
-    }
-
-    /* Three images */
-    .images.n3 .image > span {
-      height: 450px;
-    }
-    .images.n3 figure:nth-child(2) .image > span,
-    .images.n3 figure:nth-child(3) .image > span {
-      height: 220px;
-    }
-  }
-
-
   /* =Options
   ----------------------------------------------- */
   .post-options {
@@ -2136,6 +2017,10 @@
   }
 
   .push-card h1 {
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .push-card.page > header h1 {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
@@ -2279,6 +2164,10 @@
   ----------------------------------------------- */
   .push-card .post-item {
     background: rgba(0, 0, 0, 0.2);
+
+  }
+  .mixable .push-card .post-item {
+    background: transparent;
   }
   .push-card .post-item header {
     margin-bottom: 2em;
@@ -2286,36 +2175,45 @@
   .push-card .post-item header h3 {
     font-weight: normal;
   }
-  .push-card .post-item header p.source {
-    color: white;
+  .push-card .post-item .body {
+    padding: 1.5em 3em 0;
+    color: rgb(204, 204, 204);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
   }
   .push-card .post-item .body p {
-    font-weight: bold;
+    color: inherit;
+  }
+  .push-card .post-item > .source {
     color: white;
+    text-align: center;
+    padding-top: 1.5em;
+    margin-bottom: -0.75em;
+  }
+  .push-card .post-item .body .source {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    color: white;
+  }
+  .push-card .post-item .body .images {
+    margin-left: -1.25em;
+    margin-right: -1.25em;
   }
   .push-card .post-list .next     a,
   .push-card .post-list .previous a {
     color: inherit;
   }
+  /*
   @media (min-width: 22em) {
     .push-card .post-item .body p {
       margin-left: 1.25em;
       margin-right: 1.25em;
     }
   }
-  .push-card .post-item .body .image {
-    margin-top: 2em;
-    margin-left: -1.25em;
-    margin-right: -1.25em;
-  }
-  .push-card .post-item .body .image + .image {
-    margin-top: -0.75em;
-  }
-  push-card .post-item .body .image img {
+  */
+  push-card .post-item .body img {
     border-radius: 0;
-  }
-  .push-card .post-item .body .image:last-child {
-    margin-bottom: -2.25em;
   }
 
 
@@ -2345,9 +2243,9 @@
   }
   .mixable header.primary {
     top: auto;
-    bottom: 0.75em;
+    bottom: 0.1875em;
     left: auto;
-    right: 0.75em;
+    right: 0.1875em;
     background: transparent;
     color: white;
     color: rgba(255, 255, 255, 0.5);
@@ -2371,9 +2269,6 @@
   }
   .mixable li.inactive {
     display: none;
-  }
-  .mixable .post-item header .avatar {
-    top: 1.25em;
   }
   /*
   .mixable .push-card.page .details {
@@ -2401,37 +2296,60 @@
   .mixable .post-list li {
     max-width: none;
   }
-  .mixable .post-list .post-item {
-    padding: 6em 0 0 0;
+  .mixable .post-item {
+    padding: 0;
     border-width: 0;
     font-size: 2vmax;
+    margin: 0;
   }
-  .mixable .post-item header {
+
+  /* SHIM: Make space for the header */
+  .push-card .post-item {
+    padding: 0 0 4.5em 0;
+  }
+
+  .push-card .post-item header {
     color: white;
-    padding: 1.5em 1.5em 1.5em 3.5em;
+    padding: 1.5em;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     box-sizing: border-box;
-    background: black;
-    background: rgba(0, 0, 0, 0.25);
     z-index: 3;
     margin-bottom: 0;
+    font-size: 0.6875em;
   }
-  .mixable .post-list .post-item header time {
+  .push-card .post-item header .avatar {
+    position: static;
+    margin-right: 0.5em;
+  }
+  .push-card .post-item footer {
+    position: absolute;
+    bottom: 0.75em;
+    right: 0.75em;
+  }
+  .mixable .post-item header {
+    background: black;
+    background: rgba(0, 0, 0, 0.25);
+  }
+  .push-card .post-item header time {
     color: rgb(204, 204, 204); /* @aluminum */
     color: rgba(255, 255, 255, 0.5);
   }
-  .mixable .post-item header .source {
+  /*
+  .mixable .post-item .source {
     font-size: 2em;
+  }
+  */
+  .push-card .post-item header .source {
     position: absolute;
     margin-bottom: -3em;
     bottom: 6em;
     bottom: 100vh;
     left: 3em;
   }
-  .mixable .push-card.page .post-item .body:before {
+  .mixable .push-card.page .post-item .images:before {
     content: "";
     position: absolute;
     top: 0;
@@ -2440,16 +2358,10 @@
     height: 100%;
     background: black;
     background: rgba(0, 0, 0, 0.25);
-    z-index: -1;
-  }
-  .mixable .push-card.page .post-item .body p {
-    font-size: 2em;
-    margin: 0.75em 3em;
-    max-height: calc(100vh - 6em);
-    overflow: hidden;
+    z-index: 1;
   }
   /*
-  .mixable .push-card.page .post-item .body p.image {
+  .mixable .push-card.page .post-item .images img {
     padding: 0;
     max-width: none;
     margin: 0;
@@ -2462,23 +2374,61 @@
     overflow: visible;
   }
   */
-  .mixable .push-card.page .post-item .body p img {
-  }
   .mixable .push-card.page .post-item {
     position: relative;
-    z-index: 1;
   }
-  .mixable .push-card.page .post-item .body img {
+  .push-card .post-item .images figure {
     margin: 0;
-    width: auto;
+    padding: 0;
+  }
+  .push-card .post-item .images img {
+    max-width: 100%;
     height: auto;
+  }
+  .mixable .push-card.page .post-item .images img {
+
+    /* Reset */
+    margin: 0;
     max-width: none;
+    max-height: none;
+
+    /* Fill the available space */
     position: absolute;
-    z-index: -2;
     top: 0;
     left: 0;
+    width: 100%;
+    height: auto;
+
+    /* OPTIONAL: Center the image */
     width: 100vmax;
     height: 100vmax;
+    left: 50vw;
+    top: 50vh;
+    margin-left: -50vmax;
+    margin-top: -50vmax;
+  }
+  .mixable .push-card.page .post-item .body .source {
+    text-align: left;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 1.5em;
+  }
+  .mixable .push-card.page .post-item .body {
+    font-size: 2em;
+    margin: 1.5em 0 0;
+    max-height: 8.25em;
+    max-height: calc(100vh - 3.5em);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 1.5em;
+    box-sizing: border-box;
+  }
+  @media (min-aspect-ratio: 1/1) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 8.25em;
+    }
   }
   .mixable .push-card.page .details,
   .mixable .post-list .post-item {
