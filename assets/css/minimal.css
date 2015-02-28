@@ -178,7 +178,7 @@
   /* =Main
   ----------------------------------------------- */
   main {
-    background-color: rgb(203, 253, 128); /* @lime */
+    background-color: rgb(218, 243, 121); /* @lime */
     color: black;
     color: rgba(0, 0, 0, 0.75);
     text-align: center;
@@ -222,31 +222,31 @@
     transition: background-color 0.2s;
   }
   .lime {
-    background-color: rgb(203, 253, 128); /* @lime */
+    background-color: rgb(218, 243, 121); /* @lime */
   }
   .cucumber {
-    background-color: rgb(150, 254, 166); /* @cucumber */
+    background-color: rgb(153, 248, 115); /* @cucumber */
   }
   .blueberry {
-    background-color: rgb(99, 204, 203); /* @blueberry */
+    background-color: rgb(40, 221, 181); /* @blueberry */
   }
   .boysenberry {
-    background-color: rgb(101, 156, 247); /* @boysenberry */
+    background-color: rgb(101, 152, 254); /* @boysenberry */
   }
   .plumb {
-    background-color: rgb(193, 77, 166); /* @plumb */
+    background-color: rgb(193, 76, 172); /* @plumb */
   }
   .strawberry {
-    background-color: rgb(255, 49, 102); /* @strawberry */
+    background-color: rgb(250, 56, 136); /* @strawberry */
   }
   .apple {
     background-color: rgb(255, 49, 59); /* @apple */
   }
   .tangerine {
-    background-color: rgb(255, 202, 72); /* @tangerine */
+    background-color: rgb(255, 204, 0); /* @tangerine */
   }
   .orange {
-    background-color: rgb(242, 64, 41); /* @orange */
+    background-color: rgb(250, 134, 40); /* @orange */
   }
 
   main a {

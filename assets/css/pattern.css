@@ -106,7 +106,7 @@
   }
   .pattern-list li a[href],
   header.pattern nav a[href] {
-    color: rgb(255, 49, 102); /* @strawberry */
+    color: rgb(250, 56, 136); /* @strawberry */
   }
   header.pattern nav a[href]:visited,
   .pattern-list li a[href]:visited {
