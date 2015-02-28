@@ -327,11 +327,11 @@
   ----------------------------------------------- */
   .avatar .lime {
     background-color: rgb(218, 243, 121); /* @lime */
-    color: black;
+    color: white;
   }
   .avatar .cucumber {
     background-color: rgb(153, 248, 115); /* @cucumber */
-    color: black;
+    color: white;
   }
   .avatar .blueberry {
     background-color: rgb(40, 221, 181); /* @blueberry */
@@ -2029,81 +2029,36 @@
     color: rgba(255, 255, 255, 0.95);
   }
 
-  /* OPTIONAL: Make the content lighter if the background is dark. */
-  .push-card.blueberry   .name,
-  .push-card.boysenberry .name,
-  .push-card.plumb       .name,
-  .push-card.strawberry  .name,
-  .push-card.apple       .name,
-  .push-card.orange      .name {
+  /* OPTIONAL: Make the content lighter. */
+  .push-card .name {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
-  .push-card.blueberry   .website a,
-  .push-card.boysenberry .website a,
-  .push-card.plumb       .website a,
-  .push-card.strawberry  .website a,
-  .push-card.apple       .website a,
-  .push-card.orange      .website a {
+  .push-card .website a {
     color: rgb(204, 204, 204);
     color: rgba(255, 255, 255, 0.8);
   }
-  .push-card.blueberry   .website a:active,
-  .push-card.blueberry   .website a:focus,
-  .push-card.boysenberry .website a:active,
-  .push-card.boysenberry .website a:focus,
-  .push-card.plumb       .website a:active,
-  .push-card.plumb       .website a:focus,
-  .push-card.strawberry  .website a:active,
-  .push-card.strawberry  .website a:focus,
-  .push-card.apple       .website a:active,
-  .push-card.apple       .website a:focus,
-  .push-card.orange      .website a:active,
-  .push-card.orange      .website a:focus {
+  .push-card .website a:active,
+  .push-card .website a:focus {
     color: white;
   }
-  .push-card.blueberry   > a,
-  .push-card.boysenberry > a,
-  .push-card.plumb       > a,
-  .push-card.strawberry  > a,
-  .push-card.apple       > a,
-  .push-card.orange      > a {
+  .push-card > a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
-  .push-card.blueberry   .validation-message,
-  .push-card.boysenberry .validation-message,
-  .push-card.plumb       .validation-message,
-  .push-card.strawberry  .validation-message,
-  .push-card.apple       .validation-message,
-  .push-card.orange      .validation-message {
+  .push-card .validation-message {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
-  .start.page.blueberry   aside a,
-  .start.page.boysenberry aside a,
-  .start.page.plumb       aside a,
-  .start.page.strawberry  aside a,
-  .start.page.apple       aside a,
-  .start.page.orange      aside a {
+  .start.page aside a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
-  .start.page.blueberry   h1 span,
-  .start.page.boysenberry h1 span,
-  .start.page.plumb       h1 span,
-  .start.page.strawberry  h1 span,
-  .start.page.apple       h1 span,
-  .start.page.orange      h1 span {
+  .start.page h1 span {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
-  .login.page .blueberry   h2 span,
-  .login.page .boysenberry h2 span,
-  .login.page .plumb       h2 span,
-  .login.page .strawberry  h2 span,
-  .login.page .apple       h2 span,
-  .login.page .orange      h2 span {
+  .login.page h2 span {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
