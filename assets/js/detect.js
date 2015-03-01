@@ -1,4 +1,6 @@
 
+// For the promotional site (getctzn.com)
+
 (function() {
 
   // OPTIONAL: Hide redundant labels in browsers that support the placeholder attribute.

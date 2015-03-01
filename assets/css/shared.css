@@ -738,6 +738,8 @@
 
 
   /* =Upload Message
+  -----------------------------------------------
+  (for sending form data, and downloading a video file to the device)
   ----------------------------------------------- */
   section.upload-message {
     padding: 0.625em 1.5em;
@@ -804,6 +806,8 @@
 
 
   /* =Empty Message
+  -----------------------------------------------
+  (for the push screen, when there are no posts yet)
   ----------------------------------------------- */
   .empty-message {
     text-align: center;
@@ -834,6 +838,8 @@
 
 
   /* =Confirmation Message
+  -----------------------------------------------
+  (for the password reset screen)
   ----------------------------------------------- */
   section.confirmation-message {
     padding: 1.5em;
@@ -2029,7 +2035,7 @@
     color: rgba(255, 255, 255, 0.95);
   }
 
-  /* OPTIONAL: Make the content lighter. */
+  /* OPTIONAL: Make some of the content white instead of black. */
   .push-card .name {
     color: white;
     color: rgba(255, 255, 255, 0.95);

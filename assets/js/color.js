@@ -1,4 +1,6 @@
 
+// For the promotional site (getctzn.com)
+
 (function() {
 
   function startColorAnimation() {
