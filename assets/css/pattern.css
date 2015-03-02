@@ -11,8 +11,38 @@
     min-height: 100%;
     box-sizing: border-box;
 
+    background-color: rgb(31, 31, 31); /* @steel */
+    color: rgb(250, 250, 250); /* @casper */
+
     background-color: rgb(250, 250, 250); /* @casper */
     color: rgb(5, 5, 5); /* @tungsten */
+
+    background-color: rgb(0, 206,250); /* @bluebird */
+    background-image: url(https://m.ctznapp.com/s3/ctzn/58ab9a127c8618550bbb387aa017702749228da1=s1000x1000);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  /*
+  body.pattern figure {
+    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    padding: 1.5em;
+  }
+  */
+  body.pattern code {
+    background: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.95);
+    padding: 0.75em;
+  }
+  body.pattern pre code {
+    padding-left: 0;
   }
 
   body.pattern mark {
@@ -57,8 +87,26 @@
   header.pattern nav .active a,
   header.pattern nav .active a[href],
   header.pattern nav .active a[href]:visited {
+    background: rgb(255, 204, 0); /* @tangerine */
+    background: rgb(255, 49, 59); /* @apple */
+    background: rgb(0, 206,250); /* @bluebird */
+    background: rgb(159, 104, 246); /* @grape */
+    background: rgb(193, 76, 172); /* @plumb */
+    background: rgb(60, 109, 218); /* @elderberry */
+    background: rgb(101, 152, 254); /* @boysenberry */
+    background: rgb(143, 144, 146); /* @magnesium */
+    background: rgb(250, 134, 40); /* @orange */
+    background: rgb(218, 243, 121); /* @lime */
+    background: rgb(255, 102, 102); /* @peach */
+    background: rgb(102, 204, 0); /* @pear */
+    background: rgb(153, 248, 115); /* @cucumber */
     background: black;
     color: white;
+    background: rgba(255, 255, 255, 0.95);
+    color: black;
+    background: transparent;
+    color: inherit;
+    text-decoration: none;
   }
   .pattern.index h1,
   .pattern-list {
@@ -106,10 +154,27 @@
   }
   .pattern-list li a[href],
   header.pattern nav a[href] {
+    color: rgb(40, 221, 181); /* @blueberry */
+    color: rgb(0, 235, 98); /* @clover */
+    color: rgb(0, 206,250); /* @bluebird */
+    color: rgb(255, 204, 0); /* @tangerine */
+    color: rgb(255, 49, 102); /* @gojiberry */
+    color: rgb(255, 49, 59); /* @apple */
+    color: rgb(101, 152, 254); /* @boysenberry */
+    color: rgb(255, 102, 102); /* @peach */
+    color: rgb(250, 134, 40); /* @orange */
+    color: rgb(102, 204, 0); /* @pear */
     color: rgb(250, 56, 136); /* @strawberry */
   }
   header.pattern nav a[href]:visited,
   .pattern-list li a[href]:visited {
+    color: rgb(159, 104, 246); /* @grape */
+    color: rgb(193, 76, 172); /* @plumb */
+    color: rgb(60, 109, 218); /* @elderberry */
+    color: rgb(143, 144, 146); /* @magnesium */
+    color: rgb(153, 248, 115); /* @cucumber */
+    color: rgb(218, 243, 121); /* @lime */
+    color: rgb(153, 248, 115); /* @cucumber */
     color: inherit;
   }
 

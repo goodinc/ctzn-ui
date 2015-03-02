@@ -29,6 +29,7 @@
   }
 
   a {
+    color: rgb(255, 49, 102); /* @gojiberry */
     color: rgb(250, 56, 136); /* @strawberry */
     transition: opacity 0.2s, color 0.2s, background-color 0.2s;
   }
@@ -50,6 +51,10 @@
   p, ol, ul, dl {
     margin-top    : 0.75em; /* @line-height / 2 */
     margin-bottom : 0.75em;
+  }
+
+  figure {
+    margin: 0;
   }
 
   h1 {
@@ -386,6 +391,7 @@
     font-family: inherit;
     font-size: inherit;
     font-weight: bold;
+    background-color: rgb(255, 49, 102); /* @gojiberry */
     background-color: rgb(250, 56, 136); /* @strawberry */
     color: white;
     padding: 0.375em 1.125em;
@@ -1192,7 +1198,7 @@
     line-height: 1.3333333333; /* @line-height / 1.125 */
     background: white;
     color: rgb(101, 152, 254); /* @boysenberry */
-    color: rgb(60, 109, 218);
+    color: rgb(60, 109, 218); /* @elderberry */
     font-weight: bold;
   }
   .post-options li.warning button {
@@ -2337,10 +2343,6 @@
   */
   .mixable .push-card.page .post-item {
     position: relative;
-  }
-  .push-card .post-item .images figure {
-    margin: 0;
-    padding: 0;
   }
   .push-card .post-item .images img {
     max-width: 100%;
