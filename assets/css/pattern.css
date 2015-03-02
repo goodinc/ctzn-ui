@@ -41,8 +41,13 @@
     color: rgba(0, 0, 0, 0.95);
     padding: 0.75em;
   }
+  body.pattern pre {
+    background: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.95);
+    padding: 0.75em;
+  }
   body.pattern pre code {
-    padding-left: 0;
+    padding: 0;
   }
 
   body.pattern mark {
@@ -51,8 +56,10 @@
 
   header.pattern h2 {
     margin-top: 0;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 900;
+  }
+  header.pattern h2 svg.icon {
+    width: auto;
+    height: auto;
   }
   header.pattern h2,
   header.pattern nav {
@@ -79,6 +86,11 @@
   header.pattern h2 a,
   header.pattern nav a {
     color: inherit;
+  }
+  header.pattern h2 a:hover,
+  header.pattern h2 a:active,
+  header.pattern h2 a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
   }
   header.pattern nav a {
     padding: 0.125em; /* 2px / @font-size */
@@ -107,6 +119,11 @@
     background: transparent;
     color: inherit;
     text-decoration: none;
+  }
+  header.pattern nav .active a[href]:hover,
+  header.pattern nav .active a[href]:active,
+  header.pattern nav .active a[href]:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
   }
   .pattern.index h1,
   .pattern-list {
@@ -167,7 +184,7 @@
     color: rgb(250, 56, 136); /* @strawberry */
   }
   header.pattern nav a[href]:visited,
-  .pattern-list li a[href]:visited {
+  .pattern-list   li a[href]:visited {
     color: rgb(159, 104, 246); /* @grape */
     color: rgb(193, 76, 172); /* @plumb */
     color: rgb(60, 109, 218); /* @elderberry */
@@ -177,7 +194,14 @@
     color: rgb(153, 248, 115); /* @cucumber */
     color: inherit;
   }
-
+  header.pattern nav a[href]:hover,
+  header.pattern nav a[href]:active,
+  header.pattern nav a[href]:focus,
+  .pattern-list   li a[href]:hover,
+  .pattern-list   li a[href]:active,
+  .pattern-list   li a[href]:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
   body.pattern p + code {
     margin-top: -0.5em;
     display: block;
@@ -213,7 +237,7 @@
   body.pattern .page > form ~ aside:last-child,
   body.pattern .start.page >    div:last-child,
   body.pattern .post.page >     div:last-child {
-    padding-bottom: 0;
+    padding-bottom: 1.5em;
   }
 
   body.pattern .mix-editor .selected-images {

@@ -989,6 +989,7 @@
   .post-item {
     position: relative;
     background: white;
+    color: rgb(5, 5, 5); /* @tungsten */
     padding: 1.25em 1.25em 1.5em 1.25em; /* 20px 20px 24px 20px */
     margin-bottom: 0.625em;
     text-align: left;
@@ -3362,7 +3363,7 @@
     color: inherit;
   }
   .option-list a[role="checkbox"][aria-checked="true"] {
-    color: inherit;
+    color: rgb(5, 5, 5); /* @tungsten */
 
     /* @icon-checkmark */ /* @pear */
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg> */

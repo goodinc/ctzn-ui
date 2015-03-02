@@ -246,7 +246,7 @@
 
 
   <header class="pattern">
-    <h2><a href="../">CTZN</a></h2>
+    <h2><a href="../"><svg class="icon" width="80" height="30"><use xlink:href="#ctzn" /><foreignObject>CTZN</foreignObject></svg></a></h2>
     <nav>
       <ul>
         <li class="active"><a href="../patterns/">Patterns</a></li>
@@ -570,13 +570,6 @@
           Change Password
         </a>
       </li>
-      <li>
-        <form action="" method="post">
-          <button>
-            Log Out
-          </button>
-        </form>
-      </li>
     </ul>
   </div>
   <pre><code>&lt;div class=&quot;<mark>option-list</mark>&quot;&gt;
@@ -586,12 +579,34 @@
         Change Password
       &lt;/a&gt;
     &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+  <div class="option-list">
+    <ul>
+      <li>
+        <a href="" role="checkbox" aria-checked="false">
+          Option
+        </a>
+      </li>
+      <li>
+        <a href="" role="checkbox" aria-checked="true">
+          Selected Option
+        </a>
+      </li>
+    </ul>
+  </div>
+  <pre><code>&lt;div class=&quot;option-list&quot;&gt;
+  &lt;ul&gt;
     &lt;li&gt;
-      &lt;form action=&quot;…&quot; method=&quot;post&quot;&gt;
-        &lt;button&gt;
-          Log Out
-        &lt;/button&gt;
-      &lt;/form&gt;
+      &lt;a href=&quot;…&quot; role=&quot;checkbox&quot; aria-checked=&quot;false&quot;&gt;
+        Option
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;…&quot; role=&quot;checkbox&quot; aria-checked=&quot;true&quot;&gt;
+        Selected Option
+      &lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
