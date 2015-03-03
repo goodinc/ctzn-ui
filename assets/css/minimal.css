@@ -435,6 +435,9 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .confirmation svg.icon {
+    color: white;
+  }
   .confirmation h1 {
     font-size: inherit;
     line-height: inherit;
@@ -444,6 +447,10 @@
     .confirmation p {
       font-size: 1.5em;
       line-height: 1.25;
+    } 
+    .confirmation svg.icon {
+      width: 2.75em; /* 44px / 16px */
+      height: 2.75em;
     }
   }
   .confirmation h1 {
@@ -531,6 +538,17 @@
   }
   .video .message p a {
     color: white;
+  }
+
+
+  /* =Icons
+  ----------------------------------------------- */
+  svg.icon {
+    width : 1.5em; /* @line-height */
+    height: 1.5em;
+    vertical-align: middle;
+    fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
+    transition: fill 0.2s;
   }
 
 
@@ -631,11 +649,29 @@
     color: white;
     font-weight: normal;
   }
-  .about .icons svg {
-    margin: 0 0.75em;
-    width: 3em;
-    height: 3em;
+  .about svg.icon {
+    margin: 0 1.25em;
+    color: white;
   }
+  .about svg.icon:first-child {
+    font-size: 1.25em;
+  }
+  @media (min-width: 30em) {
+    .about svg.icon {
+      width: 2.75em; /* 44px / 16px */
+      height: 2.75em;
+    }
+  }
+  /*
+  .about section:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .about section img {
+    float: left;
+  }
+  */
 
 
   /* =Privacy
