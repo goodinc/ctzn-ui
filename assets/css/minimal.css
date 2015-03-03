@@ -234,6 +234,11 @@
     font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
     font-weight: normal;
   }
+  @media (min-width: 30em) {
+    main .logo + h2 strong {
+      display: block;
+    }
+  }
   main h2 strong {
     color: white;
     font-weight: normal;
@@ -645,19 +650,30 @@
     }
   }
 
+  .about section {
+
+  }
   .about section h3 strong {
     color: white;
     font-weight: normal;
   }
   .about svg.icon {
-    margin: 0 1.25em;
+    margin: 0 0.75em;
     color: white;
   }
   .about svg.icon:first-child {
     font-size: 1.25em;
   }
+  @media (min-width: 25em) {
+    .about svg.icon {
+      margin: 0 0.75em;
+      width: 2em;
+      height: 2em;
+    }
+  }
   @media (min-width: 30em) {
     .about svg.icon {
+      margin: 0.75em 1.25em;
       width: 2.75em; /* 44px / 16px */
       height: 2.75em;
     }
