@@ -690,7 +690,17 @@
     margin-bottom: 1.5em;
   }
 
-
+  /* OPTIONAL: Position the icons on the left */
+  .about section > .icon,
+  .about section > .icons,
+  .about section > h3 {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+  }
+  .about section > h3 {
+    margin-left: 0.75em;
+  }
 
 
 
