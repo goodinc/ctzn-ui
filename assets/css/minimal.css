@@ -625,13 +625,14 @@
     margin: -1.5em -1.5em -4.5em;
   }
   .about .header {
-    padding: 4em 1.5em 3em;
+    padding: 4em 1.5em 5.5em;
   }
   .about section {
     display: block;
     padding: 4em 1.5em 1.5em;
   }
   .about section:last-child {
+    padding-top: 7.5em;
     padding-bottom: 7.5em;
   }
   .about section h3 {
@@ -650,15 +651,20 @@
     }
   }
 
-  .about section {
-
+  .about section h3 {
+    margin-top: 0;
   }
   .about section h3 strong {
     color: white;
     font-weight: normal;
   }
+  @media (min-width: 30em) {
+    .about section h3 strong {
+      display: block;
+    }
+  }
   .about svg.icon {
-    margin: 0 0.75em;
+    margin: 0 0.75em 0.75em;
     color: white;
   }
   .about svg.icon:first-child {
@@ -666,24 +672,29 @@
   }
   @media (min-width: 25em) {
     .about svg.icon {
-      margin: 0 0.75em;
       width: 2em;
       height: 2em;
     }
   }
   @media (min-width: 30em) {
     .about svg.icon {
-      margin: 0.75em 1.25em;
+      margin-left: 1.25em;
+      margin-right: 1.25em;
       width: 2.75em; /* 44px / 16px */
       height: 2.75em;
     }
   }
-  /*
-  .about section:after {
-    content: "";
-    display: table;
-    clear: both;
+
+  /* OPTIONAL: Add space below groups of icons, for easier reading */
+  .about section .icons {
+    margin-bottom: 1.5em;
   }
+
+
+
+
+
+  /*
   .about section img {
     float: left;
   }
