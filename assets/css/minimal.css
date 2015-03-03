@@ -652,13 +652,6 @@
     }
   }
 
-  .about section > h3 {
-    margin-bottom: 0;
-  }
-  .about section > p {
-    margin-top: 0.375em;
-    margin-bottom: 0;
-  }
   .about section > h3 strong {
     color: white;
     font-weight: normal;
@@ -696,15 +689,24 @@
   }
 
   /* OPTIONAL: Position the icons on the left */
-  .about section > .icon,
-  .about section > .icons,
-  .about section > h3 {
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-  }
-  .about section > .icons {
-    margin-right: 1.5em;
+  @media (min-width: 30em) {
+    .about section > h3 {
+      margin-bottom: 0;
+    }
+    .about section > p {
+      margin-top: 0.375em;
+      margin-bottom: 0;
+    }
+    .about section > .icon,
+    .about section > .icons,
+    .about section > h3 {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+    }
+    .about section > .icons {
+      margin-right: 1.5em;
+    }
   }
 
 
