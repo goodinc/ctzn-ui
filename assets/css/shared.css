@@ -2055,7 +2055,7 @@
   .push-card .website a:focus {
     color: white;
   }
-  .push-card > a {
+  .push-card.page > a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
