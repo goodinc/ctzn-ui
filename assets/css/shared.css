@@ -1080,6 +1080,9 @@
   .post-item .body p:last-child {
     margin-bottom: 0;
   }
+  .post-item .body ul {
+    list-style-type: disc;
+  }
   .post-item footer {
     margin-top: 1.5em;
   }
@@ -1117,11 +1120,13 @@
     margin-right: 0;
   }
   .post-item footer .meta {
+    font-size: 0.6875em; /* 11px / @font-size */
+    line-height: 1.0909090909em; /* @line-height / 0.6875em x 0.5 */
+    margin-top : 1.6363636364em; /* @line-height / 0.6875em x 0.75 */
     margin-bottom: 0;
   }
   .post-item footer .meta li {
     margin-right: 1em;
-    font-size: 11px;
     text-transform: uppercase;
     color: rgb(83, 83, 83);
     color: rgba(0, 0, 0, 0.35);
@@ -2131,7 +2136,7 @@
   /* =Push Preview
   ----------------------------------------------- */
   .push-card .post-item {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
 
   }
   .mixable .push-card .post-item {
@@ -2149,6 +2154,32 @@
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
   }
+  .push-card .post-item .images + .body {
+    position: relative;
+  }
+  .push-card .post-item .images + .body:before,
+  .push-card .post-item .images + .body:after {    
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  .push-card.plumb .post-item .images + .body:before {
+    background-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .push-card.plumb .post-item .images + .body:after {
+    background: rgba(0, 0, 0, 0.1); /* .post-item background-color */
+  }
+
   .push-card .post-item .body p {
     color: inherit;
   }
@@ -2284,7 +2315,7 @@
     left: 0;
     width: 100%;
     box-sizing: border-box;
-    z-index: 3;
+    z-index: 1;
     margin-bottom: 0;
     font-size: 0.6875em;
   }
@@ -2292,11 +2323,19 @@
     position: static;
     margin-right: 0.5em;
   }
+
+  /* SHIM: Line the footer up with the header */
   .push-card .post-item footer {
     position: absolute;
-    bottom: 0.75em;
-    right: 0.75em;
+    bottom: 1.03125em; /* 1.5em * 11px/16px */
+    right: 1.03125em;
   }
+  .push-card .post-item footer li {
+    margin-right: 0;
+    margin-left: 1em;
+    line-height: 1.8181818182em; /* 20px (header line height) / 11px */
+  }
+
   .mixable .post-item header {
     background: black;
     background: rgba(0, 0, 0, 0.25);
@@ -2345,32 +2384,74 @@
   .mixable .push-card.page .post-item {
     position: relative;
   }
+  .push-card .post-item .images:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   .push-card .post-item .images img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
     height: auto;
+  }
+  .push-card .post-item .images.n4 img,
+  .push-card .post-item .images.n3 figure:nth-child(3) img {
+    border-top: 0.0625em solid black; /* 1px / @font-size */
+  }
+  .push-card .post-item .images.n2 img,
+  .push-card .post-item .images.n4 img,
+  .push-card .post-item .images.n3 figure:nth-child(1) img,
+  .push-card .post-item .images.n3 figure:nth-child(2) img {
+    width: 50%;
+    float: left;
+  }
+  .push-card .post-item .images.n3 figure:nth-child(2) img,
+  .push-card .post-item .images.n2 figure:nth-child(2n) img,
+  .push-card .post-item .images.n4 figure:nth-child(2n) img {
+    border-left: 0.0625em solid black; /* 1px / @font-size */
+    margin-right: -0.0625em;
   }
   .mixable .push-card.page .post-item .images img {
 
     /* Reset */
+    /*
     margin: 0;
     max-width: none;
     max-height: none;
+    */
 
     /* Fill the available space */
+    /*
+    width: 100%;
+    height: auto;
+    */
+  }
+  .mixable .push-card.page .post-item .images {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: auto;
-
-    /* OPTIONAL: Center the image */
-    width: 100vmax;
-    height: 100vmax;
-    left: 50vw;
-    top: 50vh;
-    margin-left: -50vmax;
-    margin-top: -50vmax;
   }
+
+  /* OPTIONAL: Center the image (this assumes the image is a square) */
+  .mixable .push-card.page .post-item .images {
+    left:         50vw;
+    top:          50vh;
+  }
+  /* For wide screens */
+  .mixable .push-card.page .post-item .images {
+    width:       100vw;
+    margin-left: -50vw;
+    margin-top:  -50vw;
+  }
+  /* For tall screens */
+  @media (max-aspect-ratio: 1/1) {
+    .mixable .push-card.page .post-item .images {
+      width:       100vh;
+      margin-left: -50vh;
+      margin-top:  -50vh;
+    }
+  }
+
   .mixable .push-card.page .post-item .body .source {
     text-align: left;
     margin-bottom: 0;
@@ -3279,16 +3360,6 @@
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
-
-  /* Onboarding button */
-  section.settings > form:last-child {
-    position: absolute;
-    top: 0.25em;
-    right: 0;
-    margin: 0;
-    padding: 0;
-  }
-
   .settings .introduction svg.icon {
     display: block;
     width: 4.5em;

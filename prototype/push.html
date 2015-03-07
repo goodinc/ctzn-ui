@@ -267,7 +267,7 @@
     </p>
     -->
     <header class="plumb header push-card">
-      <h1 class="name">Good</h1>
+      <h1 class="name">GOOD</h1>
       <h2 class="about">Pushing the world forward</h2>
 
       <div class="meta">
@@ -328,6 +328,1895 @@
 
 <ol class="post-list">
       <!-- ko if: showPrevButton --><!-- /ko -->
+
+      <!-- ko foreach: visiblePosts -->
+      <li data-bind="attr: { id: 'post-' + id }" id="post-3115">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="m"></span>
+                </span>
+                @<span data-bind="text: user.username">my_name_is_hj</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-05T17:12:15+00:00">8 hours ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Whiteboarding as we prep for our kick-off call with Field and Stream. Looking forward to helping them figure out how to authentically connect with their consumers of hunters, fishers, campers, and paddlers around conserving the outdoor spaces they love.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/8d92dac855423697d6ebdb87af8f027278a34b74=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">5</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">4</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-3111">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">goldhirsh</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-05T03:51:22+00:00">21 hours ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Pretty sweet.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/ac316c7528067f91603c5ebfe45baa2e6a5fa106=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">4</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-3070">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-04T11:10:13+00:00">2 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Parting shot, 3:05am. About 16 hours after we got started and we've got the book all approved! It's still printing away for another couple hours but we're finally out of here.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/482b2adc93d3a0cf3528316fc792928065f9849d=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">9</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">1</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2959">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-03T23:25:53+00:00">2 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>And here's what it looks like as we start to approve the text pages (the interior). The pages are shooting off the press--16 pages folded together at a time--at 25,000 an hour. Then you work with these guys to make sure the color is as spot on as you can get it. Meanwhile you've got to move fast because every piece printed before you sign off on the color goes to the recycling bin. That big palette of pages of our magazine here is all headed that way.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/2d272d5cedadb891dcea3e765362f92bbd3090bf=s500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/4e9f3aef792a6ffeff990811cc37c9f348967007=s500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/68aa0adeefe8919c77876e04e71cd0ed142a7cdb=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">8</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2952">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-03T22:58:10+00:00">2 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>And a few hours later, we've got the cover approved!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/6152f5f73e3a54a404f25b4ffc85c59bd988a87b=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">2</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2931">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-03T18:31:47+00:00">2 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Rolling into our new printer with @tylerhoehne and the design crew from NJLA.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/d25672991464f00e30a9d4d9c330d1d8e6ef754a=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">3</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2896">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">goldhirsh</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-02T22:05:46+00:00">3 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Finally got that co-working space. I think I was going to lose it working from a sweaty room with my kids around. This place is far more chill.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/af1a006892edfecc0b8244047b1b38e50a691d58=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">6</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">2</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2894">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 ocean" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="l"></span>
+                </span>
+                @<span data-bind="text: user.username">lizwaldorf</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-02T16:02:50+00:00">3 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Another animal prototyper (me) at the service design jam in NYC :)</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/a42b5a3bd220b3abee67226ae684a883e1ca4699=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">4</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">1</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2876">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 sky" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="g"></span>
+                </span>
+                @<span data-bind="text: user.username">goose</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-01T22:39:23+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Fleet foxes (Goose and Janise) at the service design jam at GA in DTLA</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/f0de38c9a904901b909c8c9f601782dc10b37010=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">9</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">2</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2866">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 ocean" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="g"></span>
+                </span>
+                @<span data-bind="text: user.username">gabe</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-01T06:26:03+00:00">5 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>@dougpatterson with the 5D on lockdown. Warpaint Sounds GOOD.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c7bf5cdafa050a1322a411b4bcb80276bff2e049=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">2</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2865">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 kiwi" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="d"></span>
+                </span>
+                @<span data-bind="text: user.username">dougpatterson</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-01T06:21:12+00:00">5 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>We makin a movie! #good #youthinrock #warpaint</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/cdb2885e9717c039913b6450e1b531b0f33f7c01=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">4</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2864">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="l"></span>
+                </span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-01T04:07:08+00:00">5 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>#yaas #youthinrock #good</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/93dcf0db898e6a74b7bf0f67469207e1f6898a33=s500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/7d0decc7298cdf4c24ad27c7b541cd70f628522b=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">6</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2863">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="l"></span>
+                </span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-01T03:58:08+00:00">5 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>This band comprises some alumni from the program WARPAINT and GOOD are saving tonight!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c575bc6245af7082c96f66b40f3988b14527905e=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">5</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2856">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 kiwi" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="d"></span>
+                </span>
+                @<span data-bind="text: user.username">dougpatterson</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-28T20:14:38+00:00">5 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Setting up our interview space for the Warpaint shoot tonight!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/5a7cfed30742f32bb7f2fadfc9512cb501e5fb0e=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2824">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">hugo</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-27T19:08:38+00:00">6 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>It's damn cold and I miss the 6380 peeps/buzz but there ain't nothing like this crazy island.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/bd67efa6bbd170314f6290c7a59b54e4ab04c19f=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">8</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">2</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2823">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">hugo</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-27T19:07:42+00:00">6 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Happy to have Gracey here in NYC and super sad that our wonderful and talented Liana has succumbed to the rigors of the "sixth borough" commute. </p>
+
+<p>Had a cool but very foundation-y (read low energy) presentation to the Rockefeller comms team which these two geniuses rocked. </p>
+
+<p>Greetings LA compadres!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/0f8047cb83fcde4d57d750ab669a7e51f18ecb79=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">10</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">1</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2817">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="l"></span>
+                </span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-27T17:47:41+00:00">6 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Shout out to the lovely @shari who brought donuts for the magazine team!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/9a9abd13c76a7a2a5e96608f4dd9fc2167209ef4=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">9</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2815">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-27T17:36:27+00:00">6 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>And @cogg, you can't forget about the "hip coffee shop" test. Shown here with the cover in the works.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/f73760274a9868c04dd696c863fcabd6551b223c=s500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/3fc3a6c33c0e76502aa308e7552ef88ad56997ca=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">9</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">2</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2802">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">caseycaplowe</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-27T01:55:08+00:00">7 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Taking new cover designs for a spin... Trying out the old "laid out on the table" approach as well as a more new-fangled "instagramability" test:</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/e79a3b534bdf3e9d90601cf43b7ec45f3281173d=s500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/582ad8ef04d1c66597806b6437b62d639ed99b75=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">8</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">5</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2784">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">goldhirsh</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-26T04:38:21+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Wow. Y'all seen this citizen four documentary. Whoa.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/5bef62409662b8a10de91d3614c149ee4e89a668=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 --><!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">1</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2765">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 ocean" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="g"></span>
+                </span>
+                @<span data-bind="text: user.username">gabe</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-25T05:32:37+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Brainstorming on that GOOD + Adobe opportunity</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/9dffa1f979a2686537a80e048c4417cd91ab7574=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">2</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2764">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">goldhirsh</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
+              <!-- ko if: source == 'facebook' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use><foreignObject>via facebook</foreignObject></svg>
+              <!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-25T05:19:12+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Test. #goodworldwide</p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">3</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2753">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">cogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-25T02:38:38+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Yo yo yo! Facebook integration is live! When you have a chance hookup your Facebook account and give it a spin. Click the gear above to get started. 🚀‼️</p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">5</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">11</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2746">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">goldhirsh</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-25T00:32:28+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Crossing the border back from Nicaragua. Made me inspired to get GOOD down south. That country is up against it in a raw way. This photo doesn't reflect it, but the depth of poverty witnessed matched  what I've only seen in Malawi. Interesting for my kids to experience that. The people were awesome and the land is beautiful so hopefully a steady period of governance will help them get on the track that seems afoot with their southern neighbors. On that ascension front, they did have a hell of a wind farm cranking on the banks of lake Nicaragua, and apparently work is also afoot to take advantage of the lakes width to cut a competing channel with the Panama Canal.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/8a8a381692f776611a2e075da47ade6c03d8cf84=s500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/0630387074f62c2ae1d75f44fdcb18f4289b67b7=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">8</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">3</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2737">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">cogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-24T21:51:43+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Explaining ctzn to @hugo in our beautiful LA weather.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/b530f6ac19040f604275735334cf3b747fbbbd09=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">6</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-3032">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f3661d43e0bb6c3e4f7b7a2fa8e3f3903367ace8=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">iamreal8</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
+              <!-- ko if: source == 'facebook' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use><foreignObject>via facebook</foreignObject></svg>
+              <!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-24T00:38:18+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>There is a #dream at the end of my rainbow. #good #blacklivesmatters #greedycity</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/ed5ab0a3d9abf19e99fc2e58f1f3046445d7948e=s500x500" alt="10153669015334778"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 --><!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2707">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f3661d43e0bb6c3e4f7b7a2fa8e3f3903367ace8=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">iamreal8</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-24T00:38:17+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p><img src="https://m.ctznapp.com/s3/ctzn/58ab9a127c8618550bbb387aa017702749228da1=s500x500" alt="927094490368634882_317992363">
+There is a #dream at the end of my rainbow. #good #blacklivesmatters #greedycity</p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">7</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">1</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2705">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="a"></span>
+                </span>
+                @<span data-bind="text: user.username">aubrey</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-24T00:29:10+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p><img src="https://m.ctznapp.com/s3/ctzn/30dd5f0717ed31f79e4b6cc17e1639cbbd18413a=s500x500" alt="927089905122452411_3757855">
+Our inspirational window quotes @goodhq are sprouting rainbows. Can't make this stuff up.</p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">6</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">1</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2704">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 amethyst" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="p"></span>
+                </span>
+                @<span data-bind="text: user.username">parisla</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-24T00:28:54+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>The view from GOOD HQ today</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">5</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2701">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="m"></span>
+                </span>
+                @<span data-bind="text: user.username">mindyvnguyen</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-23T20:14:55+00:00">1 week ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>Looks like we have our first #projectliteracy volunteers! 📚🎨 @bax @jim</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/69dcdc90a747bae764987ee5f9fec206cac16cfb=s500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/77f12287803b271a230a18a06c86ad8cb011bec1=s500x500"></p></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+<span data-bind="text: attaboys().length">8</span> love</li>
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">2</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
+      <!-- /ko -->
 
       <!-- ko foreach: visiblePosts -->
       <li id="post-2684">
@@ -506,7 +2395,65 @@
 
         </article>
       </li>
-      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-2446">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">cogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-03T17:25:00+00:00">2 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body, 's500x500'), click: function(){ $root.viewPost(id) }"><p>@jim I like the way bullet points look in post page better than the push page. Not sure why they are different.</p>
+
+<ul><li>on push they are circles</li><li>on post they are dots</li><li>dots beat circles IMO. @aldoatgood ?</li></ul></a>
+
+          <footer>
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 --><!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li>
+<span data-bind="text: comments().length">1</span> comments</li>
+              <!-- /ko -->
+
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+          </footer>
+        </article>
+      </li>
       <li id="post-2648">
         <article class="post-item">
           <header>

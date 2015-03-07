@@ -289,748 +289,388 @@
    
 
 <ol class="post-list">
-      <!-- ko if: showPrevButton --><!-- /ko -->
-
-      <!-- ko foreach: visiblePosts -->
-      <li id="post-2684">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+      <!-- ko foreach: push().public_posts -->
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2952">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image">
+                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
                 </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-23T08:26:43+00:00">19 hours ago</time>
-            </p>
-          </header>
+                <span class="avatar" data-bind="if: !profile_image"></span>
+                @<span data-bind="text: username">caseycaplowe</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-03T22:58:10.000+00:00">2 days ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>And a few hours later, we've got the cover approved!</p>
 
-          <div class="body"><p>Another day, a few pages closer to getting this issue shipped.</p>
+<p><img src="https://m.ctznapp.com/s3/ctzn/6152f5f73e3a54a404f25b4ffc85c59bd988a87b=s500x500"></p></div>
 
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/69f28936af93f53ec7dbaff07f1f79cc286b2a1b=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">6</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 -->
+                  <li>
+<span data-bind="text: comment_count">2</span> comments</li>
+                <!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
       
-      <li id="post-2683">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="e"></span>
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2896">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image">
+                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
                 </span>
-                <span>ekma</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-23T07:32:01+00:00">20 hours ago</time>
-            </p>
-          </header>
+                <span class="avatar" data-bind="if: !profile_image"></span>
+                @<span data-bind="text: username">goldhirsh</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-02T22:05:46.000+00:00">3 days ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>Finally got that co-working space. I think I was going to lose it working from a sweaty room with my kids around. This place is far more chill.</p>
 
-          <div class="body"><p>Supporting GSUSA! Who knew tagalongs were the crowd favorite? &lt; Thin mints</p>
+<p><img src="https://m.ctznapp.com/s3/ctzn/af1a006892edfecc0b8244047b1b38e50a691d58=s500x500"></p></div>
 
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/1e31d54aefbd0f68772d33caf4c6afce5c25a9c9=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">6</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 -->
+                  <li>
+<span data-bind="text: comment_count">2</span> comments</li>
+                <!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
       
-      <li id="post-2666">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2876">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image"></span>
+                <span class="avatar" data-bind="if: !profile_image">
+                  <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="g"></span>
                 </span>
-                <span>good_marshall</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-21T03:22:52+00:00">3 days ago</time>
-            </p>
-          </header>
+                @<span data-bind="text: username">goose</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-01T22:39:23.000+00:00">4 days ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>Fleet foxes (Goose and Janise) at the service design jam at GA in DTLA</p>
 
-          <div class="body"><p>@group any one from NY...this place looks &amp; sounds divine on a cold night!</p>
+<p><img src="https://m.ctznapp.com/s3/ctzn/f0de38c9a904901b909c8c9f601782dc10b37010=s500x500"></p></div>
 
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/6c4bbd942af819bfa716dfa62ab1201904698686=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">9</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 -->
+                  <li>
+<span data-bind="text: comment_count">2</span> comments</li>
+                <!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
       
-      <li id="post-2648">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 grape" data-content="a"></span>
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2823">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image">
+                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c100x100">
                 </span>
-                <span>aubrey</span>
-            </h3>
-            <p class="source">
+                <span class="avatar" data-bind="if: !profile_image"></span>
+                @<span data-bind="text: username">hugo</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-27T19:07:42.000+00:00">6 days ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>Happy to have Gracey here in NYC and super sad that our wonderful and talented Liana has succumbed to the rigors of the "sixth borough" commute. </p>
+
+<p>Had a cool but very foundation-y (read low energy) presentation to the Rockefeller comms team which these two geniuses rocked. </p>
+
+<p>Greetings LA compadres!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/0f8047cb83fcde4d57d750ab669a7e51f18ecb79=s500x500"></p></div>
+
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">10</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 -->
+                  <li>
+<span data-bind="text: comment_count">1</span> comments</li>
+                <!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
+      
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2802">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image">
+                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !profile_image"></span>
+                @<span data-bind="text: username">caseycaplowe</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-27T01:55:08.000+00:00">7 days ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>Taking new cover designs for a spin... Trying out the old "laid out on the table" approach as well as a more new-fangled "instagramability" test:</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/e79a3b534bdf3e9d90601cf43b7ec45f3281173d=s500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/582ad8ef04d1c66597806b6437b62d639ed99b75=s500x500"></p></div>
+
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">8</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 -->
+                  <li>
+<span data-bind="text: comment_count">5</span> comments</li>
+                <!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
+      
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2684">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image">
+                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !profile_image"></span>
+                @<span data-bind="text: username">caseycaplowe</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-23T08:26:43.000+00:00">2 weeks ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>Another day, a few pages closer to getting this issue shipped.</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/69f28936af93f53ec7dbaff07f1f79cc286b2a1b=s500x500"></p></div>
+
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">9</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 -->
+                  <li>
+<span data-bind="text: comment_count">1</span> comments</li>
+                <!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
+      
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2480">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image">
+                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !profile_image"></span>
+                @<span data-bind="text: username">good_marshall</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-13T21:12:55.000+00:00">3 weeks ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>Post sonos, Pre tacos, all ctzn @group @gabriel</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/76602f3ca92182c4b4f439f86b1b1c516b5ca812=s500x500"></p></div>
+
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">5</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 -->
+                  <li>
+<span data-bind="text: comment_count">4</span> comments</li>
+                <!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
+      
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2328">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image">
+                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                </span>
+                <span class="avatar" data-bind="if: !profile_image"></span>
+                @<span data-bind="text: username">cogg</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-09T00:31:05.000+00:00">4 weeks ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <p>
-                <time datetime="2015-02-20T21:44:52+00:00">3 days ago</time>
-            </p>
-          </header>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p><img src="https://m.ctznapp.com/s3/ctzn/4645816ce21c944b6e9542a8a6a7b0c64c043d40=s500x500" alt="916219235641632347_226114904">
+From the gallery at the #good bbq</p></div>
 
-          <div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/aa6adfb004bf9431059d90640237c82779aaba72=s1000x1000" alt="924832878434230703_3757855">
-Essential office supplies at @goodhq</p></div>
-
-
-
-        </article>
-      </li>
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">2</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 --><!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
       
-      <li id="post-2642">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2293">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image"></span>
+                <span class="avatar" data-bind="if: !profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
                 </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-20T05:51:15+00:00">4 days ago</time>
-            </p>
-          </header>
+                @<span data-bind="text: username">lou</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-07T14:02:59.000+00:00">4 weeks ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>building ctzn</p>
 
-          <div class="body"><p>Locking down pages and the page plan with @tylerhoehne and @carolinewhodoesnthaveanaccountyet</p>
+<p><img src="https://m.ctznapp.com/s3/ctzn/df56e9f5e715eb73124635fa8a49f363772b8f84=s500x500"></p></div>
 
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/81e55654b602dec0ed3d3f71801726a3d0660f7e=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">2</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 --><!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
       
-      <li id="post-2634">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
+        <li data-bind="attr: { id: 'post-' + id }" id="post-2273">
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar" data-bind="if: profile_image"></span>
+                <span class="avatar" data-bind="if: !profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
                 </span>
-                <span>goldhirsh</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-20T03:33:09+00:00">4 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>It's fun to be on the hustle from the south repping GOOD right now. Congrats to the media team for a record traffic month already, to ctzn for allowing me to share this, and for Corps on the AT&amp;T and field and stream deals. Grinding.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/0d77401413aa7dccc462f097139c78e70cd526d4=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2627">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="a"></span>
-                </span>
-                <span>anton</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-19T23:27:28+00:00">4 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Tiny cactus.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/044b59919111f065ff7ae613d107b7f9e2984e81=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2589">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 ocean" data-content="v"></span>
-                </span>
-                <span>vandenorth</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-19T18:44:57+00:00">4 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Visiting the Louis Vuitton Series 2 exhibit with the GOODcorps crew. @ekma working the red carpet.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/877d0bfe4a62b0dd65e67aa8d617488b26c1e1d7=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2566">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
-                </span>
-                <span>cogg</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-18T18:21:13+00:00">5 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>@group Looking for iPhone users that are willing to test out the installable app for us (big difference is that there are push notifications). Reply here if you are willing (you can reply via email)</p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2554">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
-                </span>
-                <span>goldhirsh</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-17T20:33:50+00:00">6 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>holy awesome! check out Isis' recent post on Melissa Hunter's project! </p>
-
-<p>http://magazine.good.is/articles/wednesday-addams-catcallers</p>
-
-<p>Melissa worked at GOOD way back in the day, maybe came in through Reason Pictures. Totally wonderful human and so cool to see what she's up to, and to learn about it on good.is.</p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2546">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 cranberry" data-content="m"></span>
-                </span>
-                <span>max</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-17T18:10:41+00:00">6 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>@caseycaplowe arrived in Seattle by train from Vancouver and noticed something</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/616f4276f39edd77b4227ec90407b5f1cfd5468a=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2544">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
-                </span>
-                <span>goldhirsh</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-17T18:07:25+00:00">6 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>kicking it with Will on a conference call with John Johnson - hearing about whether data can be mined across the web to witness what issues are most ripe for social mobilization.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/e2244568bf97e130051b160f87b9da0517ac6d48=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2535">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-17T03:34:23+00:00">7 days ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Magazine making over at the NJLA hq in venice. Just a few more days till we ship this issue!</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/c56ede2d3c7da7beb483bc9810cea3579f86d768=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2525">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 grape" data-content="l"></span>
-                </span>
-                <span>lou</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-15T17:30:01+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>HuffPo picks up @gabriel series on Valentine's Day</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/f4f913b54e0a94fba3ba22ff22eb4164d1d93226=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2519">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-15T05:17:54+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>While exploring an awesome park next to the Puget Sound earlier today, Max hopped on the line with @jennsu to work out some ideas/plans related to the upcoming events with sambazon</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/1b8b578d8bf95e8ae6e3dc630898a72392426d98=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2512">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 ocean" data-content="v"></span>
-                </span>
-                <span>vandenorth</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-14T21:50:05+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>GOOD was all over The Heart Series. Props to Maria for sharing her thoughts on movement building.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/32e90cda680d67f67a3a7c7795005203f61f5fb9=s1000x1000"></p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/a1b052cf97317e30971d4757384c205a08b02ebb=s1000x1000"></p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/971becedb9c9e822094031c0875619e197f4cf19=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2511">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 grape" data-content="l"></span>
-                </span>
-                <span>lou</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-14T21:24:57+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Bax and Trice Valentine's @group</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/5252785aceffdd41f08c40767435295516964969=s1000x1000"></p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/1f61334466b94b19df22a8fe284b3db467d019ad=s1000x1000"></p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/7f2d72c1b24a2bdadd1e46efd047058f7a0512b9=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2497">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-14T03:59:09+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>"Create Jobs for USA," our 2011 GOODcorps project with Starbucks is on the big company highlight timeline at the sbux hq!</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/108b8148d87b5a91bd3480474c1534ba74061426=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2491">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="g"></span>
-                </span>
-                <span>goose</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T23:25:38+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Goose and grant chowing down on a Pittsburgh staple - giant sandwiches with fries inside - before our workshop w DSG the next day.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/7789c93fd06be9202226d69fd280e2281cc085cd=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2485">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T21:23:53+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Rolling in to sbux hq with max and Jeff dossett. Hopefully Grace's flight gets in soon too.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/740fb1b6d7c4a7fb42a7502577eb1402680570f6=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2480">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
-                </span>
-                <span>good_marshall</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T21:12:55+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Post sonos, Pre tacos, all ctzn @group @gabriel</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/76602f3ca92182c4b4f439f86b1b1c516b5ca812=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2475">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
-                </span>
-                <span>good_marshall</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T19:29:27+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Smokey the sonos dog with @gabriel</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/b43c019a26fc51c912ffa8933d0812de3ecda38a=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2471">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 ocean" data-content="g"></span>
-                </span>
-                <span>gabriel</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T18:37:32+00:00">1 week ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>En route to Santa Barbara with @good_marshall to get Sonos excited @group</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/ee7cc15588a7575b1dd8cb82b06b3c9aa5132315=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2459">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="e"></span>
-                </span>
-                <span>ekma</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-13T04:42:32+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Team DSG owning the Sheraton exec lounge. Workshop ready!</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/7fa03e6b04a7586f27f122df694d023707625a2e=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2445">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="j"></span>
-                </span>
-                <span>jennsu</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T21:12:01+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Here's another possible spot-- who knows where?</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/9f52282454ddd47c32b9ccce55ecf0ee5c392fdc=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2444">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 sky" data-content="j"></span>
-                </span>
-                <span>jennsu</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T21:10:41+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Visiting possible future GOOD party locale #1. Who knows where?</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/ec42574a856354f3868e0552051ab623f6a24897=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2442">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
-                </span>
-                <span>caseycaplowe</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T20:15:24+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>The big mission at Lululemon up here in Vancouver, b.c.</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/22fad683714c5ff9293b1462d2e4bdb573620d30=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2440">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c100x100">
-                </span>
-                <span>good_marshall</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T19:01:26+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Casey being Casey</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/5f3747b00d34dbf06eb3630a8a3ae03643040bee=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2436">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <span class="size30 ocean" data-content="v"></span>
-                </span>
-                <span>vandenorth</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T16:15:16+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>GOOD letters are in full force this morning at The Heart Series. Maria is speaking on building movements tomorrow (because she's rad). @group</p>
-
-<p class="image"><img src="https://m.ctznapp.com/s3/ctzn/03e5f5ac0997abb9a71a64698fc3a98e3a8acbdd=s1000x1000"></p></div>
-
-
-
-        </article>
-      </li>
-      
-      <li id="post-2418">
-        <article class="post-item">
-          <header>
-            <h3>
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
-                </span>
-                <span>goldhirsh</span>
-            </h3>
-            <p class="source"></p>
-            <p>
-                <time datetime="2015-02-12T02:53:44+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body"><p>Also, I thought this video series was incredible. Wow. 
-http://magazine.good.is/features/homeless-couples</p></div>
-
-
-
-        </article>
-      </li>
-      <!-- /ko -->
-
-      <!-- ko if: $root.showNextButton -->
-      <li class="next">
-        <a href="#next">
-          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use><foreignObject>Next Page</foreignObject></svg>
-        </a>
-      </li>
+                @<span data-bind="text: username">lou</span>
+              </h3>
+              <p>
+                <a href="#post">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-06T18:46:05.000+00:00">4 weeks ago</time>
+                </a>
+              </p>
+            </header>
+            <p class="source" data-bind="if: source"></p>
+            <div class="body" data-bind="html: good.postBodyToHtml(body, 's500x500')"><p>Onboarding GOOD! #longliveGOOD</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/06fdd8e75ae3efec249c99d2733a135ab996dc9f=s500x500"></p></div>
+
+            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            <footer>
+              <ul class="meta">
+                <!-- ko if: attaboy_count > 0 -->
+                  <li>
+<span data-bind="text: attaboy_count">6</span> love</li>
+                <!-- /ko -->
+                <!-- ko if: comment_count > 0 --><!-- /ko -->
+              </ul>
+            </footer>
+            <!-- /ko -->
+          </article>
+        </li>
       <!-- /ko -->
     </ol>
 
