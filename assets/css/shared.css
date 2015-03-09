@@ -2236,7 +2236,11 @@
   }
   .push-card .post-item .images.n-odd figure:last-child img {
     width: 100%;
+    /*
+    TRICKY: This causes the image to appear in the wrong place in Firefox, strangly.
+
     float: none;
+    */
   }
   .push-card .post-item .images.n2     figure:nth-child(2n) img,
   .push-card .post-item .images.n-even figure:nth-child(2n) img,
