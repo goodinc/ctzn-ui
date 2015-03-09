@@ -2224,34 +2224,27 @@
     display: table;
     clear: both;
   }
-  .push-card .post-item .images.n4 img,
-  .push-card .post-item .images.n3 figure:nth-child(3) img {
-    border-top: 0.0625em solid black; /* 1px / @font-size */
-  }
-  .push-card .post-item .images.n2 img,
-  .push-card .post-item .images.n4 img,
-  .push-card .post-item .images.n3 figure:nth-child(1) img,
-  .push-card .post-item .images.n3 figure:nth-child(2) img {
+  .push-card .post-item .images.n2     img,
+  .push-card .post-item .images.n-even img,
+  .push-card .post-item .images.n-odd  img {
     width: 50%;
     float: left;
   }
-
-
-  .mixable .push-card .post-item .images.n2 img {
+  .push-card .post-item .images.n-even figure:nth-child(n+3) img,
+  .push-card .post-item .images.n-odd  figure:nth-child(n+3) img {
+    border-top: 0.0625em solid black; /* 1px / @font-size */
+  }
+  .push-card .post-item .images.n-odd figure:last-child img {
     width: 100%;
-    margin-left: 50vw;
+    float: none;
   }
-  .mixable .push-card .post-item .images.n2 figure:first-child img {
-    position: absolute;
-    margin-left: -50vw;
-  }
-
-  .push-card .post-item .images.n3 figure:nth-child(2) img,
-  .push-card .post-item .images.n2 figure:nth-child(2n) img,
-  .push-card .post-item .images.n4 figure:nth-child(2n) img {
+  .push-card .post-item .images.n2     figure:nth-child(2n) img,
+  .push-card .post-item .images.n-even figure:nth-child(2n) img,
+  .push-card .post-item .images.n-odd  figure:nth-child(2n) img {
     border-left: 0.0625em solid black; /* 1px / @font-size */
     margin-right: -0.0625em;
   }
+
 
   /* OPTIONAL: Add a pointer below the images */
   .push-card .post-item .images + .body {
@@ -2270,11 +2263,40 @@
     -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
   }
+  .push-card .post-item .images + .body:after {
+    background: rgba(0, 0, 0, 0.1); /* .post-item background-color */
+  }
+  .mixable .push-card .post-item .images + .body:before,
+  .mixable .push-card .post-item .images + .body:after {
+    display: none;
+  }
+
+  .push-card.lime .post-item .images + .body:before {
+    background-color: rgb(218, 243, 121); /* @lime */
+  }
+  .push-card.cucumber .post-item .images + .body:before {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .push-card.blueberry .post-item .images + .body:before {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .push-card.boysenberry .post-item .images + .body:before {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
   .push-card.plumb .post-item .images + .body:before {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
-  .push-card.plumb .post-item .images + .body:after {
-    background: rgba(0, 0, 0, 0.1); /* .post-item background-color */
+  .push-card.strawberry .post-item .images + .body:before {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .push-card.apple .post-item .images + .body:before {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .push-card.tangerine .post-item .images + .body:before {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .push-card.orange .post-item .images + .body:before {
+    background-color: rgb(250, 134, 40); /* @orange */
   }
 
 
