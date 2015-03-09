@@ -250,26 +250,26 @@
       </a>
     </header>
     <div class="details">
-<article class="post-item" data-bind="with: postViewModel">
+<article class="post-item">
         <header>
           <h3>
-            <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
+            <a href="#profile">
               <span class="avatar">
                 <!-- ko if: user.profile_image -->
-                <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
                 <!-- /ko -->
                 <!-- ko if: !user.profile_image --><!-- /ko -->
               </span>
-              <span>@<span data-bind="text: user.username">caseycaplowe</span></span>
+              <span>@<span>caseycaplowe</span></span>
             </a>
           </h3>
-          <p class="source" data-bind="if: source"></p>
+          <p class="source"></p>
           <p>
-            <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-27T17:36:27+00:00">1 week ago</time>
+            <time datetime="2015-02-27T17:36:27+00:00">1 week ago</time>
           </p>
         </header>
 
-        <div class="body" data-bind="html: good.postBodyToHtml(body, 's1000x1000')"><p>And @cogg, you can't forget about the "hip coffee shop" test. Shown here with the cover in the works.</p>
+        <div class="body"><p>And @cogg, you can't forget about the "hip coffee shop" test. Shown here with the cover in the works.</p>
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/f73760274a9868c04dd696c863fcabd6551b223c=s1000x1000"></p>
 
@@ -278,19 +278,19 @@
         <footer>
         <ul class="action">
           <li>
-            <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+            <button role="checkbox" aria-checked="true">
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
             </button>
           </li>
           <li>
-            <a href="#add-comment" data-bind="click: $root.onAddComment">
+            <a href="#add-comment">
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
             </a>
           </li>
           <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
           <li>
             <!-- ko if: $root.shouldHaveOptions() -->
-              <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+              <a href="#post-options" class="options">
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
               </a>
             <!-- /ko -->
@@ -300,11 +300,11 @@
           <ul class="meta">
             <!-- ko if: attaboys().length > 0 -->
             <li>
-<span data-bind="text: attaboys().length">9</span> love</li>
+<span>9</span> love</li>
             <!-- /ko -->
             <!-- ko if: comments().length > 0 -->
             <li>
-<span data-bind="text: comments().length">2</span> comments</li>
+<span>2</span> comments</li>
             <!-- /ko -->
 
             <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->

@@ -149,8 +149,7 @@
     border-radius: 50%;
     -webkit-animation : spin 1.3s infinite linear;
             animation : spin 1.3s infinite linear;
-    -moz-box-sizing : border-box;
-         box-sizing : border-box;
+    box-sizing: border-box;
   }
   .loading-icon:after {
     content: "";
@@ -166,8 +165,7 @@
     border-radius: 50%;
     -webkit-animation : spin 2s infinite linear;
             animation : spin 2s infinite linear;
-    -moz-box-sizing : border-box;
-         box-sizing : border-box;
+    box-sizing: border-box;
   }
 
 
@@ -637,41 +635,26 @@
 
   .img-preview-rotate-90 {
     -webkit-transform: rotate(90deg);
-       -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-         -o-transform: rotate(90deg);
             transform: rotate(90deg);
   }
 
   .img-preview-rotate-180 {
     -webkit-transform: rotate(180deg);
-       -moz-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-         -o-transform: rotate(180deg);
             transform: rotate(180deg);
   }
 
   .img-preview-rotate-270 {
     -webkit-transform: rotate(270deg);
-       -moz-transform: rotate(270deg);
-        -ms-transform: rotate(270deg);
-         -o-transform: rotate(270deg);
             transform: rotate(270deg);
   }
 
   .img-preview-flip-horizontal {
     -webkit-transform: scale(-1, 1);
-       -moz-transform: scale(-1, 1);
-        -ms-transform: scale(-1, 1);
-         -o-transform: scale(-1, 1);
             transform: scale(-1, 1);
   }
 
   .img-preview-flip-vertical {
     -webkit-transform: scale(1, -1);
-       -moz-transform: scale(1, -1);
-        -ms-transform: scale(1, -1);
-         -o-transform: scale(1, -1);
             transform: scale(1, -1);
   }
 
@@ -2135,25 +2118,142 @@
 
   /* =Push Preview
   ----------------------------------------------- */
+  .push-card .post-list .next     a,
+  .push-card .post-list .previous a {
+    color: inherit;
+  }
   .push-card .post-item {
     background: rgba(0, 0, 0, 0.1);
-
   }
-  .mixable .push-card .post-item {
-    background: transparent;
+
+  /* Position post headers at the bottom */
+  .push-card .post-item {
+    padding: 0 0 3em 0;
   }
   .push-card .post-item header {
-    margin-bottom: 2em;
+    color: white;
+    padding: 1.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+    margin-bottom: 0;
+    font-size: 0.6875em;
   }
+  .push-card .post-item footer {
+    margin: 0 0 1.5em 0;
+    text-align: center;
+  }
+
+  /* If there’s room, line the footer up with the header */
+  @media (min-width: 360px) {
+    .push-card .post-item {
+      padding-bottom: 4.5em;
+    }
+    .push-card .post-item footer {
+      position: absolute;
+      bottom: 1.03125em; /* 1.5em * 11px/16px */
+      right: 1.03125em; /* 1.5em * 11px/16px */
+      margin: 0;
+    }
+    .push-card .post-item footer li {
+      margin-right: 0;
+      margin-left: 1em;
+      line-height: 1.8181818182em; /* 20px (header line height) / 11px */
+    }
+  }
+
   .push-card .post-item header h3 {
     font-weight: normal;
   }
+  .push-card .post-item header .avatar {
+    position: static;
+    margin-right: 0.5em;
+  }
+  .push-card .post-item header time {
+    color: rgb(204, 204, 204); /* @aluminum */
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .push-card .post-item header .source {
+    position: absolute;
+    margin-bottom: -3em;
+    bottom: 6em;
+    bottom: 100vh;
+    left: 3em;
+  }
+
   .push-card .post-item .body {
     padding: 1.5em 3em 0;
     color: rgb(204, 204, 204);
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
   }
+  .push-card .post-item .body .source {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    color: white;
+  }
+  .push-card .post-item .body p {
+    color: inherit;
+  }
+
+  /* SHIM: The source appears before the body on the preview page, in the app.
+           (If we make it consistent with the normal preview page (the one outside the app),
+           this rule can be removed) */
+  .push-card .post-item > .source {
+    color: white;
+    text-align: center;
+    padding-top: 1.5em;
+    margin-bottom: -0.75em;
+  }
+
+  /* OPTIONAL: Make images stick to the left and right edge of the post */
+  .push-card .post-item .images img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  /* OPTIONAL: Position multiple images in a grid */
+  .push-card .post-item .images:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .push-card .post-item .images.n4 img,
+  .push-card .post-item .images.n3 figure:nth-child(3) img {
+    border-top: 0.0625em solid black; /* 1px / @font-size */
+  }
+  .push-card .post-item .images.n2 img,
+  .push-card .post-item .images.n4 img,
+  .push-card .post-item .images.n3 figure:nth-child(1) img,
+  .push-card .post-item .images.n3 figure:nth-child(2) img {
+    width: 50%;
+    float: left;
+  }
+
+
+  .mixable .push-card .post-item .images.n2 img {
+    width: 100%;
+    margin-left: 50vw;
+  }
+  .mixable .push-card .post-item .images.n2 figure:first-child img {
+    position: absolute;
+    margin-left: -50vw;
+  }
+
+  .push-card .post-item .images.n3 figure:nth-child(2) img,
+  .push-card .post-item .images.n2 figure:nth-child(2n) img,
+  .push-card .post-item .images.n4 figure:nth-child(2n) img {
+    border-left: 0.0625em solid black; /* 1px / @font-size */
+    margin-right: -0.0625em;
+  }
+
+  /* OPTIONAL: Add a pointer below the images */
   .push-card .post-item .images + .body {
     position: relative;
   }
@@ -2168,51 +2268,13 @@
     margin-top: -0.5em;
     margin-left: -0.5em;
     -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -o-transform: rotate(135deg);
-    transform: rotate(135deg);
+            transform: rotate(135deg);
   }
-
   .push-card.plumb .post-item .images + .body:before {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
   .push-card.plumb .post-item .images + .body:after {
     background: rgba(0, 0, 0, 0.1); /* .post-item background-color */
-  }
-
-  .push-card .post-item .body p {
-    color: inherit;
-  }
-  .push-card .post-item > .source {
-    color: white;
-    text-align: center;
-    padding-top: 1.5em;
-    margin-bottom: -0.75em;
-  }
-  .push-card .post-item .body .source {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 1.5em;
-    color: white;
-  }
-  .push-card .post-item .body .images {
-    margin-left: -1.25em;
-    margin-right: -1.25em;
-  }
-  .push-card .post-list .next     a,
-  .push-card .post-list .previous a {
-    color: inherit;
-  }
-  /*
-  @media (min-width: 22em) {
-    .push-card .post-item .body p {
-      margin-left: 1.25em;
-      margin-right: 1.25em;
-    }
-  }
-  */
-  push-card .post-item .body img {
-    border-radius: 0;
   }
 
 
@@ -2234,12 +2296,24 @@
   .toggle-mixable button:focus {
     background-color: black;
   }
+
+  /* Move the toggle up button up a little, when we’re in mixable mode */
   .mixable .toggle-mixable {
     top: 0.75em;
   }
-  .mixable footer.primary {
-    display: none;
+
+  /* Make the content into a series of slides */
+  .mixable .push-card.page .details,
+  .mixable .post-list .post-item {
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
   }
+  .mixable .post-list {
+    padding-bottom: 0;
+  }
+
+  /* Position the logo in the lower right */
   .mixable header.primary {
     top: auto;
     bottom: 0.1875em;
@@ -2259,103 +2333,42 @@
     color: rgba(255, 255, 255, 0.5);
     margin: 0;
   }
+
+  /* Hide the rest of the header, the footer, and the push details */
   .mixable header.primary h2,
-  .mixable header.primary p {
+  .mixable header.primary p,
+  .mixable footer.primary,
+  .mixable .push-card.page .details {
     display: none;
   }
+
+  /* Remove the space reserved for the fixed header */
   .mixable .push-card.page {
     padding-top: 0;
   }
+
+  /* The “inactive” classname is added by JavaScript to all but one slide. */
   .mixable li.inactive {
     display: none;
   }
-  /*
-  .mixable .push-card.page .details {
-    margin-top: 0;
-    padding-top: 6em;
-    text-align: left;
-  }
-  .mixable .push-card.page .details .name {
-    font-size: 4em;
-    font-size: 4vmax;
-  }
-  .mixable .push-card.page .details .about,
-  .mixable .push-card.page .details p {
-    font-size: 3em;
-    font-size: 3vmax;
-    font-weight: bold;
-  }
-  */
-  .mixable .push-card.page .details {
-    display: none;
-  }
-  .mixable .post-list {
-    padding-bottom: 0;
+
+  /* Reset styles intended for normal mode */
+  .mixable .push-card .post-item {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
   }
   .mixable .post-list li {
     max-width: none;
-  }
-  .mixable .post-item {
-    padding: 0;
-    border-width: 0;
-    font-size: 2vmax;
-    margin: 0;
-  }
-
-  /* SHIM: Make space for the header */
-  .push-card .post-item {
-    padding: 0 0 4.5em 0;
-  }
-
-  .push-card .post-item header {
-    color: white;
-    padding: 1.5em;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 1;
-    margin-bottom: 0;
-    font-size: 0.6875em;
-  }
-  .push-card .post-item header .avatar {
-    position: static;
-    margin-right: 0.5em;
-  }
-
-  /* SHIM: Line the footer up with the header */
-  .push-card .post-item footer {
-    position: absolute;
-    bottom: 1.03125em; /* 1.5em * 11px/16px */
-    right: 1.03125em;
-  }
-  .push-card .post-item footer li {
-    margin-right: 0;
-    margin-left: 1em;
-    line-height: 1.8181818182em; /* 20px (header line height) / 11px */
   }
 
   .mixable .post-item header {
     background: black;
     background: rgba(0, 0, 0, 0.25);
   }
-  .push-card .post-item header time {
-    color: rgb(204, 204, 204); /* @aluminum */
-    color: rgba(255, 255, 255, 0.5);
-  }
-  /*
-  .mixable .post-item .source {
-    font-size: 2em;
-  }
-  */
-  .push-card .post-item header .source {
-    position: absolute;
-    margin-bottom: -3em;
-    bottom: 6em;
-    bottom: 100vh;
-    left: 3em;
-  }
+
+  /* Darken images to improve legibility of the text on top of them */
   .mixable .push-card.page .post-item .images:before {
     content: "";
     position: absolute;
@@ -2367,64 +2380,9 @@
     background: rgba(0, 0, 0, 0.25);
     z-index: 1;
   }
-  /*
-  .mixable .push-card.page .post-item .images img {
-    padding: 0;
-    max-width: none;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: visible;
-  }
-  */
+
   .mixable .push-card.page .post-item {
     position: relative;
-  }
-  .push-card .post-item .images:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .push-card .post-item .images img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  .push-card .post-item .images.n4 img,
-  .push-card .post-item .images.n3 figure:nth-child(3) img {
-    border-top: 0.0625em solid black; /* 1px / @font-size */
-  }
-  .push-card .post-item .images.n2 img,
-  .push-card .post-item .images.n4 img,
-  .push-card .post-item .images.n3 figure:nth-child(1) img,
-  .push-card .post-item .images.n3 figure:nth-child(2) img {
-    width: 50%;
-    float: left;
-  }
-  .push-card .post-item .images.n3 figure:nth-child(2) img,
-  .push-card .post-item .images.n2 figure:nth-child(2n) img,
-  .push-card .post-item .images.n4 figure:nth-child(2n) img {
-    border-left: 0.0625em solid black; /* 1px / @font-size */
-    margin-right: -0.0625em;
-  }
-  .mixable .push-card.page .post-item .images img {
-
-    /* Reset */
-    /*
-    margin: 0;
-    max-width: none;
-    max-height: none;
-    */
-
-    /* Fill the available space */
-    /*
-    width: 100%;
-    height: auto;
-    */
   }
   .mixable .push-card.page .post-item .images {
     position: absolute;
@@ -2432,18 +2390,18 @@
     left: 0;
   }
 
-  /* OPTIONAL: Center the image (this assumes the image is a square) */
+  /* Center the image (this assumes the image is a square) */
   .mixable .push-card.page .post-item .images {
     left:         50vw;
     top:          50vh;
   }
-  /* For wide screens */
+  /* For wide screens (landscape aspect ratio) */
   .mixable .push-card.page .post-item .images {
     width:       100vw;
     margin-left: -50vw;
     margin-top:  -50vw;
   }
-  /* For tall screens */
+  /* For tall screens (portrait aspect ratio) */
   @media (max-aspect-ratio: 1/1) {
     .mixable .push-card.page .post-item .images {
       width:       100vh;
@@ -2452,6 +2410,7 @@
     }
   }
 
+  /* Position the source above the text (so it won’t take up space in the flow). */
   .mixable .push-card.page .post-item .body .source {
     text-align: left;
     margin-bottom: 0;
@@ -2459,8 +2418,8 @@
     top: 0;
     left: 1.5em;
   }
+
   .mixable .push-card.page .post-item .body {
-    font-size: 2em;
     margin: 1.5em 0 0;
     max-height: 8.25em;
     max-height: calc(100vh - 3.5em);
@@ -2475,11 +2434,22 @@
       max-height: 8.25em;
     }
   }
-  .mixable .push-card.page .details,
-  .mixable .post-list .post-item {
-    height: 100vh;
-    box-sizing: border-box;
-    overflow: hidden;
+
+  /* OPTIONAL: Make the text larger on big screens  */
+  @media (min-width: 400px) and (min-height: 400px) {
+    .mixable .push-card.page .post-item .body {
+      font-size: 1.5em;
+    }
+  }
+  @media (min-width: 600px) and (min-height: 600px) {
+    .mixable .push-card.page .post-item .body {
+      font-size: 2em;
+    }
+  }
+  @media (min-width: 1000px), (min-height: 1000px) {
+    .mixable .push-card .post-item {
+      font-size: 2vmax;
+    }
   }
 
 
@@ -3842,20 +3812,16 @@
   @-webkit-keyframes slide-left {
     0% {
       -webkit-transform: translateX(40em);
-              transform: translateX(40em);
     }
     100% {
       -webkit-transform: translateX(0);
-              transform: translateX(0);
     }
   }
   @keyframes slide-left {
     0% {
-      -webkit-transform: translateX(40em);
               transform: translateX(40em);
     }
     100% {
-      -webkit-transform: translateX(0);
               transform: translateX(0);
     }
   }
@@ -3866,20 +3832,16 @@
   @-webkit-keyframes slide-right {
     0% {
       -webkit-transform: translateX(-40em);
-              transform: translateX(-40em);
     }
     100% {
       -webkit-transform: translateX(0);
-              transform: translateX(0);
     }
   }
   @keyframes slide-right {
     0% {
-      -webkit-transform: translateX(-40em);
               transform: translateX(-40em);
     }
     100% {
-      -webkit-transform: translateX(0);
               transform: translateX(0);
     }
   }
@@ -3890,20 +3852,16 @@
   @-webkit-keyframes slide-up {
     0% {
       -webkit-transform: translateY(40em);
-              transform: translateY(40em);
     }
     100% {
       -webkit-transform: translateY(0);
-              transform: translateY(0);
     }
   }
   @keyframes slide-up {
     0% {
-      -webkit-transform: translateY(40em);
               transform: translateY(40em);
     }
     100% {
-      -webkit-transform: translateY(0);
               transform: translateY(0);
     }
   }
@@ -3914,20 +3872,16 @@
   @-webkit-keyframes slide-down {
     0% {
       -webkit-transform: translateY(0);
-              transform: translateY(0);
     }
     100% {
       -webkit-transform: translateY(40em);
-              transform: translateY(40em);
     }
   }
   @keyframes slide-down {
     0% {
-      -webkit-transform: translateY(0);
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(40em);
               transform: translateY(40em);
     }
   }

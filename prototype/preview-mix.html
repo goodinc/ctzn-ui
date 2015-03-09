@@ -268,109 +268,109 @@
       </button>
     </p>
 
-<ol class="post-list " data-bind="foreach: posts">
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<ol class="post-list ">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="size30 cantaloupe" data-content="j"></span>
               </span>
-              @<span data-bind="text: username">jgro</span>
+              @<span>jgro</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-26T23:48:26.000+00:00">22 hours ago</time></p>
+              <time datetime="2015-02-26T23:48:26.000+00:00">22 hours ago</time></p>
           </header><!-- ko if: images.length > 0 --><!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><!-- /ko --><!-- ko if: source == 'facebook' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use><foreignObject>via facebook</foreignObject></svg><!-- /ko --></p>
             
-            <p data-bind="text: text">Excited about helping build volunteer communities with #ctzn</p>
+            <p>Excited about helping build volunteer communities with #ctzn</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+                <span class="size30 cranberry" data-content="v"></span>
               </span>
-              @<span data-bind="text: username">vogg</span>
+              @<span>vogg</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-08T23:51:31.000+00:00">3 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/f79f8bb3381406c768402d51327bcc82ddd33f89=c2000x2000" alt="Photo function d(){if(0<
+              <time datetime="2015-02-08T23:51:31.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/f79f8bb3381406c768402d51327bcc82ddd33f89=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
             
-            <p data-bind="text: text">Piñata time! #ctzn</p>
+            <p>Piñata time! #ctzn</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+                <span class="size30 cranberry" data-content="v"></span>
               </span>
-              @<span data-bind="text: username">vogg</span>
+              @<span>vogg</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-08T23:38:46.000+00:00">3 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/61f1f0edda6ccd9ae6597ebc189ece1d95b8f94f=c2000x2000" alt="Photo function d(){if(0<
+              <time datetime="2015-02-08T23:38:46.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/61f1f0edda6ccd9ae6597ebc189ece1d95b8f94f=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
             
-            <p data-bind="text: text">Sweet thing. #goodhq #GOODBBQ #ctzn</p>
+            <p>Sweet thing. #goodhq #GOODBBQ #ctzn</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+                <span class="size30 cranberry" data-content="v"></span>
               </span>
-              @<span data-bind="text: username">vogg</span>
+              @<span>vogg</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-30T03:40:07.000+00:00">4 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/473060ff37c4cee6ff9fad1494e322fe1b119bbe=c2000x2000" alt="Photo function d(){if(0<
+              <time datetime="2015-01-30T03:40:07.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/473060ff37c4cee6ff9fad1494e322fe1b119bbe=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
             
-            <p data-bind="text: text">Hula, anyone? #artizenlab #ctzn</p>
+            <p>Hula, anyone? #artizenlab #ctzn</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="c"></span>
+                <span class="size30 clover" data-content="c"></span>
               </span>
-              @<span data-bind="text: username">cogg</span>
+              @<span>cogg</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-14T18:50:19.000+00:00">6 weeks ago</time></p>
+              <time datetime="2015-01-14T18:50:19.000+00:00">6 weeks ago</time></p>
           </header><!-- ko if: images.length > 0 --><!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source"></p>
+            <p class="source"></p>
             
-            <p data-bind="text: text">Kiva will be using ctzn as part of the next class of fellows at the end of this month. Looking for a tool to help the Kiva Fellows feel connected and to better tell their aggregated stories. The stories will be used to inspire people to become Fellows.
+            <p>Kiva will be using ctzn as part of the next class of fellows at the end of this month. Looking for a tool to help the Kiva Fellows feel connected and to better tell their aggregated stories. The stories will be used to inspire people to become Fellows.
 
 They would like to make sure people can participate in places where there aren't smart phones or they are cost prohibitive data plan-wise. To address this we are going to accelerate the ability to participate via email.
 
@@ -381,173 +381,173 @@ So exciting!</p>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="c"></span>
+                <span class="size30 clover" data-content="c"></span>
               </span>
-              @<span data-bind="text: username">cogg</span>
+              @<span>cogg</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-13T03:55:41.000+00:00">7 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/d94e7e5b8f05943a7302645f8d3f7fc080e406e1=c1000x2000" alt="Photo function d(){if(0<
+              <time datetime="2015-01-13T03:55:41.000+00:00">7 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/d94e7e5b8f05943a7302645f8d3f7fc080e406e1=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/254cecb53682ff0a4c8f6e45c0f184be781e9147=c1000x2000" alt="Photo function d(){if(0<
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/254cecb53682ff0a4c8f6e45c0f184be781e9147=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source"></p>
+            <p class="source"></p>
             
-            <p data-bind="text: text">Brainstorming with Mike McGalliard, ED of Imagination Foundation, on how we can work together.</p>
+            <p>Brainstorming with Mike McGalliard, ED of Imagination Foundation, on how we can work together.</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="size30 grape" data-content="j"></span>
               </span>
-              @<span data-bind="text: username">jelena</span>
+              @<span>jelena</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-25T08:39:38.000+00:00">14 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n4" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/3c1cf5a2d8847591cd9ca7accb2bcb65d891980e=c2000x2000" alt="Photo function d(){if(0<
+              <time datetime="2014-11-25T08:39:38.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n4">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/3c1cf5a2d8847591cd9ca7accb2bcb65d891980e=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/d186195dc2283a33e43be61ee34da55a37a37c8d=c2000x2000" alt="Photo function d(){if(0<
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/d186195dc2283a33e43be61ee34da55a37a37c8d=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/47ef0e222f55c7f998a6dd562f4fa0fc6216eb3b=c2000x2000" alt="Photo function d(){if(0<
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/47ef0e222f55c7f998a6dd562f4fa0fc6216eb3b=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/a19afe0227edda359af3c4922a374f664eab2b3f=c2000x2000" alt="Photo function d(){if(0<
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/a19afe0227edda359af3c4922a374f664eab2b3f=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source"></p>
+            <p class="source"></p>
             
-            <p data-bind="text: text">Ran into a protest on Wilshire on my way home and joined up. Only got slightly run over by a car. All good. Thought I'd post these in case y'all saw me on the news or something, there were a lot of cameras. Home safely.</p>
+            <p>Ran into a protest on Wilshire on my way home and joined up. Only got slightly run over by a car. All good. Thought I'd post these in case y'all saw me on the news or something, there were a lot of cameras. Home safely.</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="size30 grape" data-content="j"></span>
               </span>
-              @<span data-bind="text: username">jelena</span>
+              @<span>jelena</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T18:22:39.000+00:00">14 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/9a339d74c1f5bf8dc9f70eb5a052acce52985473=c2000x2000" alt="Photo function d(){if(0<
+              <time datetime="2014-11-23T18:22:39.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/9a339d74c1f5bf8dc9f70eb5a052acce52985473=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
             
-            <p data-bind="text: text">Where I am this morning... #nbff #ctzn</p>
+            <p>Where I am this morning... #nbff #ctzn</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="size30 cantaloupe" data-content="j"></span>
               </span>
-              @<span data-bind="text: username">jim</span>
+              @<span>jim</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T03:32:11.000+00:00">14 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n3" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=c2000x2000" alt="Photo function d(){if(0<
+              <time datetime="2014-11-23T03:32:11.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n3">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c2000x2000" alt="Photo function d(){if(0<
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c2000x1000" alt="Photo function d(){if(0<
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source"></p>
+            <p class="source"></p>
             
-            <p data-bind="text: text">Paint and markers are being put to good use at CTZN mixer!</p>
+            <p>Paint and markers are being put to good use at CTZN mixer!</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="n"></span>
+                <span class="size30 bluebird" data-content="n"></span>
               </span>
-              @<span data-bind="text: username">notcot</span>
+              @<span>notcot</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T01:36:58.000+00:00">14 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/008cb6df070fda20e2ab4b4b2adf1cc187778601=c2000x2000" alt="Photo function d(){if(0<
+              <time datetime="2014-11-23T01:36:58.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/008cb6df070fda20e2ab4b4b2adf1cc187778601=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
             
-            <p data-bind="text: text">:)</p>
+            <p>:)</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="n"></span>
+                <span class="size30 bluebird" data-content="n"></span>
               </span>
-              @<span data-bind="text: username">notcot</span>
+              @<span>notcot</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T01:32:22.000+00:00">14 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: images.length > 2 ? 'n3' : images.length > 1 ? 'n2' : 'n1' ">
-              <figure><img data-bind="attr: { src: $data, alt: 'Photo ' + $index }" src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=c2000x2000" alt="Photo function d(){if(0<
+              <time datetime="2014-11-23T01:32:22.000+00:00">14 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1">
+              <figure><img src="https://m.ctznapp.com/s3/ctzn/18cfd13c55571427f70da9524eed369ebd452d58=c2000x2000" alt="Photo function d(){if(0<
   arguments.length)return d.Pa(c,arguments[0])&amp;&amp;(d.X(),c=arguments[0],d.W()),this;a.k.Jb(d);return c}"></figure>
 </div>
           <!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
             
-            <p data-bind="text: text">What does this mean to you? I thought it was a spy dead drop @nounproject</p>
+            <p>What does this mean to you? I thought it was a spy dead drop @nounproject</p>
           </div>
         </article>
 </li>
     
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="size30 grape" data-content="j"></span>
               </span>
-              @<span data-bind="text: username">jelena</span>
+              @<span>jelena</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-21T06:55:43.000+00:00">14 weeks ago</time></p>
+              <time datetime="2014-11-21T06:55:43.000+00:00">14 weeks ago</time></p>
           </header><!-- ko if: images.length > 0 --><!-- /ko -->
           <div class="body">
-            <p class="source" data-bind="if: source"></p>
+            <p class="source"></p>
             
-            <p data-bind="text: text">No photo but Steve Vasquez of Cooking with Gabby is on board and had promised to on board collaborators for an event Saturday! I may have incented him with Buffalo wings...</p>
+            <p>No photo but Steve Vasquez of Cooking with Gabby is on board and had promised to on board collaborators for an event Saturday! I may have incented him with Buffalo wings...</p>
           </div>
         </article>
 </li>
