@@ -278,8 +278,8 @@
         </p>
       </div>
 
+      <!--
       <form data-bind="if: showJoinPush">
-        <!-- ko if: errorMessage --><!-- /ko -->
         <p class="text" data-bind="if: showInviteCodeInput">
           <label>
             <span>Enter invite code…</span><br>
@@ -290,6 +290,7 @@
           <button type="submit">Join Push</button>
         </p>
       </form>
+      -->
 
      </div>
 
@@ -679,7 +680,7 @@ From the gallery at the #good bbq</p></div>
       <!-- /ko -->
     </ol>
 
-    <div>
+    <div class="push-message">
       <article class="post-item">
         <header>
           <h3>
@@ -694,6 +695,7 @@ From the gallery at the #good bbq</p></div>
           <p>Hello! We are using CTZN to collect #good stories from Instagram, Twitter, Facebook, and even email! <a href="#join">Join the GOOD push</a> to get started. Thanks!</p>
         </div>
       </article>
+        <p class="hide"><a href=""><svg class="icon"><use xlink:href="#close" /><foreignobject>Hide this message</foreignobject></svg></a></p>
     </div>
 
   </section>
@@ -702,6 +704,19 @@ From the gallery at the #good bbq</p></div>
     <h2>powered by <a href="http://getctzn.com"><svg class="icon"><use xlink:href="#ctzn" /><foreignObject>CTZN</foreignObject></svg></a></h2>
     <p><a href="http://getctzn.com">Learn more <svg class="icon"><use xlink:href="#launch" /></svg></a></p>
   </footer>
+
+<script>
+(function() {
+  var message = document.querySelector('.push-message');
+  var button  = document.querySelector('.push-message .hide a')
+  if (message && button) {
+    button.addEventListener('click', function(e) {
+      message.style.display = 'none';
+      e.preventDefault();
+    }, false);
+  }
+})();
+</script>
 
 </body>
 </html>

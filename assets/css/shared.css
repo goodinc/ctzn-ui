@@ -1365,6 +1365,7 @@
   }
 
 
+  /* For the push preview */
   /* TODO: Consider combining this with footer.primary */
   footer.about {
     padding: 0.75em;
@@ -1431,6 +1432,44 @@
       position: fixed;
       z-index: 1;
       width: 100%;
+    }
+  }
+
+  /* For the push preview */
+  .push-message .hide {
+    margin: 0;
+    position: absolute;
+    top: 0.75em; /* @line-height / 2 */
+    right: 0.75em;
+  }
+  .push-message .post-item .body {
+    font-size: 0.875em;
+  }
+
+  /* OPTIONAL: Make the push message sticky */
+  @media (min-width: 20em) and (min-height: 20em) {
+
+    .push-card.page {
+      padding-bottom: 12em;
+    }
+    .mixable .push-card.page {
+      padding-bottom: 0;
+    }
+
+    .push-message {
+      position: fixed;
+      bottom: 3.1em;
+      width: 100%;
+      max-width: none !important;
+      left: 0;
+      z-index: 9999;
+      padding: 0 !important;
+      background: white;
+    }
+    .push-message .post-item {
+      max-width: 31.25em;
+      box-sizing: border-box;
+      margin: 0 auto;
     }
   }
 
@@ -3031,11 +3070,15 @@
     font-size: inherit;
     max-width: 31.5em;
   }
+  .post-item video,
   .mix .preview div video,
   .mix .preview div img {
     display: block;
     max-width: 100%;
     height: auto;
+  }
+  .post-item video {
+    margin-top: 0.75em; /* @line-height / 2 */
   }
   .mix footer {
     margin-top: 0.75em;
