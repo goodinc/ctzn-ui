@@ -1324,7 +1324,6 @@
     float: right;
   }
 
-
   footer.primary .about,
   footer.primary .legal {
     padding: 0.75em;
@@ -1363,6 +1362,76 @@
     font-size: 0.75em;
     line-height: 2em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+
+  /* TODO: Consider combining this with footer.primary */
+  footer.about {
+    padding: 0.75em;
+    background: rgb(51, 51, 51);
+    color: rgb(153, 153, 153); /* @nickel */
+    text-align: center;
+    text-transform: uppercase;
+  }
+  footer.about h2,
+  footer.about p {
+    display: inline-block;
+    margin: 0;
+    font-size: 0.6875em;
+    line-height: 2.1818181818em;
+    font-weight: normal;
+  }
+  footer.about h2 {
+    position: relative;
+    padding-right: 1em;
+    margin-right: 0.5em;
+  }
+  footer.about h2:after {
+    content: "";
+    display: block;
+    border-right: 0.1em solid;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -0.5em;
+    height: 1em;
+  }
+  footer.about h2 .icon {
+    color: white;
+    width: 3em;
+    height: 1em;
+    vertical-align: baseline;
+    /*
+    font-size: 1.75em;
+    vertical-align: -0.4em;
+    margin-left: 0.15em;
+    margin-right: 0.5em;
+    */
+  }
+  footer.about a {
+    color: rgb(204, 204, 204); /* @aluminum */
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* OPTIONAL: Make the footer sticky */
+  @media (min-width: 20em) and (min-height: 20em) {
+
+    /* SHIM: Make space for the sticky footer */
+    .push-card.page {
+      padding-bottom: 4.5em;
+    }
+    .mixable .push-card.page {
+      padding-bottom: 0;
+    }
+
+    footer.about {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      z-index: 1;
+      width: 100%;
+    }
   }
 
 
@@ -1576,6 +1645,7 @@
   .page > header a:focus {
     color: white;
   }
+  .page > header .action,
   .page > header .next,
   .page > header .back {
     position: absolute;
@@ -1591,6 +1661,7 @@
     margin-right: -0.25em;
   }
 
+  .page > header .action,
   .page > header .next {
     right: 0;
     border-left-width: 0.0625em;
@@ -1603,6 +1674,11 @@
     text-decoration: none;
     text-transform: lowercase;
     color: rgb(204, 204, 204); /* @aluminum */
+  }
+
+  .page > header .action {
+    margin-top: 0;
+    padding: 0.375em;
   }
 
   /* OPTIONAL: Give edit and detail pages a white header. */
@@ -1873,10 +1949,6 @@
     color: inherit;
   }
 
-  .push-card a {
-    color: inherit;
-  }
-
   .push-card .name {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
@@ -2077,7 +2149,7 @@
   }
 
   /* OPTIONAL: Make the headline larger on the preview page. */
-  .push-card.page .name {
+  .push-card.page .details .name {
     /* @h1 */
     font-size     : 3em;       /* 48px / @font-size */
     line-height   : 1.25em;    /* 60px / 48px */
@@ -2122,15 +2194,15 @@
   .push-card .post-list .previous a {
     color: inherit;
   }
-  .push-card .post-item {
+  .push-card .post-list .post-item {
     background: rgba(0, 0, 0, 0.1);
   }
 
   /* Position post headers at the bottom */
-  .push-card .post-item {
+  .push-card .post-list .post-item {
     padding: 0 0 3em 0;
   }
-  .push-card .post-item header {
+  .push-card .post-list .post-item header {
     color: white;
     padding: 1.5em;
     position: absolute;
@@ -2142,41 +2214,41 @@
     margin-bottom: 0;
     font-size: 0.6875em;
   }
-  .push-card .post-item footer {
+  .push-card .post-list .post-item footer {
     margin: 0 0 1.5em 0;
     text-align: center;
   }
 
   /* If there’s room, line the footer up with the header */
   @media (min-width: 360px) {
-    .push-card .post-item {
+    .push-card .post-list .post-item {
       padding-bottom: 4.5em;
     }
-    .push-card .post-item footer {
+    .push-card .post-list .post-item footer {
       position: absolute;
       bottom: 1.03125em; /* 1.5em * 11px/16px */
       right: 1.03125em; /* 1.5em * 11px/16px */
       margin: 0;
     }
-    .push-card .post-item footer li {
+    .push-card .post-list .post-item footer li {
       margin-right: 0;
       margin-left: 1em;
       line-height: 1.8181818182em; /* 20px (header line height) / 11px */
     }
   }
 
-  .push-card .post-item header h3 {
+  .push-card .post-list .post-item header h3 {
     font-weight: normal;
   }
-  .push-card .post-item header .avatar {
+  .push-card .post-list .post-item header .avatar {
     position: static;
     margin-right: 0.5em;
   }
-  .push-card .post-item header time {
+  .push-card .post-list .post-item header time {
     color: rgb(204, 204, 204); /* @aluminum */
     color: rgba(255, 255, 255, 0.5);
   }
-  .push-card .post-item header .source {
+  .push-card .post-list .post-item header .source {
     position: absolute;
     margin-bottom: -3em;
     bottom: 6em;
@@ -2184,26 +2256,26 @@
     left: 3em;
   }
 
-  .push-card .post-item .body {
+  .push-card .post-list .post-item .body {
     padding: 1.5em 3em 0;
     color: rgb(204, 204, 204);
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
   }
-  .push-card .post-item .body .source {
+  .push-card .post-list .post-item .body .source {
     text-align: center;
     margin-top: 0;
     margin-bottom: 1.5em;
     color: white;
   }
-  .push-card .post-item .body p {
+  .push-card .post-list .post-item .body p {
     color: inherit;
   }
 
   /* SHIM: The source appears before the body on the preview page, in the app.
            (If we make it consistent with the normal preview page (the one outside the app),
            this rule can be removed) */
-  .push-card .post-item > .source {
+  .push-card .post-list .post-item > .source {
     color: white;
     text-align: center;
     padding-top: 1.5em;
@@ -2211,7 +2283,7 @@
   }
 
   /* OPTIONAL: Make images stick to the left and right edge of the post */
-  .push-card .post-item .images img {
+  .push-card .post-list .post-item .images img {
     display: block;
     width: 100%;
     height: auto;
@@ -2219,22 +2291,22 @@
   }
 
   /* OPTIONAL: Position multiple images in a grid */
-  .push-card .post-item .images:after {
+  .push-card .post-list .post-item .images:after {
     content: "";
     display: table;
     clear: both;
   }
-  .push-card .post-item .images.n2     img,
-  .push-card .post-item .images.n-even img,
-  .push-card .post-item .images.n-odd  img {
+  .push-card .post-list .post-item .images.n2     img,
+  .push-card .post-list .post-item .images.n-even img,
+  .push-card .post-list .post-item .images.n-odd  img {
     width: 50%;
     float: left;
   }
-  .push-card .post-item .images.n-even figure:nth-child(n+3) img,
-  .push-card .post-item .images.n-odd  figure:nth-child(n+3) img {
+  .push-card .post-list .post-item .images.n-even figure:nth-child(n+3) img,
+  .push-card .post-list .post-item .images.n-odd  figure:nth-child(n+3) img {
     border-top: 0.0625em solid black; /* 1px / @font-size */
   }
-  .push-card .post-item .images.n-odd figure:last-child img {
+  .push-card .post-list .post-item .images.n-odd figure:last-child img {
     width: 100%;
     /*
     TRICKY: This causes the image to appear in the wrong place in Firefox, strangly.
@@ -2242,20 +2314,20 @@
     float: none;
     */
   }
-  .push-card .post-item .images.n2     figure:nth-child(2n) img,
-  .push-card .post-item .images.n-even figure:nth-child(2n) img,
-  .push-card .post-item .images.n-odd  figure:nth-child(2n) img {
+  .push-card .post-list .post-item .images.n2     figure:nth-child(2n) img,
+  .push-card .post-list .post-item .images.n-even figure:nth-child(2n) img,
+  .push-card .post-list .post-item .images.n-odd  figure:nth-child(2n) img {
     border-left: 0.0625em solid black; /* 1px / @font-size */
     margin-right: -0.0625em;
   }
 
 
   /* OPTIONAL: Add a pointer below the images */
-  .push-card .post-item .images + .body {
+  .push-card .post-list .post-item .images + .body {
     position: relative;
   }
-  .push-card .post-item .images + .body:before,
-  .push-card .post-item .images + .body:after {    
+  .push-card .post-list .post-item .images + .body:before,
+  .push-card .post-list .post-item .images + .body:after {    
     content: "";
     position: absolute;
     top: 0;
@@ -2267,11 +2339,11 @@
     -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
   }
-  .push-card .post-item .images + .body:after {
+  .push-card .post-list .post-item .images + .body:after {
     background: rgba(0, 0, 0, 0.1); /* .post-item background-color */
   }
-  .mixable .push-card .post-item .images + .body:before,
-  .mixable .push-card .post-item .images + .body:after {
+  .mixable .push-card .post-list .post-item .images + .body:before,
+  .mixable .push-card .post-list .post-item .images + .body:after {
     display: none;
   }
 
@@ -2379,7 +2451,7 @@
   }
 
   /* Reset styles intended for normal mode */
-  .mixable .push-card .post-item {
+  .mixable .push-card .post-list .post-item {
     background: transparent;
     margin: 0;
     padding: 0;
@@ -2473,7 +2545,7 @@
     }
   }
   @media (min-width: 1000px), (min-height: 1000px) {
-    .mixable .push-card .post-item {
+    .mixable .push-card .post-list .post-item {
       font-size: 2vmax;
     }
   }
