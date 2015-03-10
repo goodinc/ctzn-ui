@@ -2181,6 +2181,9 @@
     .push-card .details {
       margin-top: 3em;
     }
+    .push-card .details {
+      margin-bottom: 3em;
+    }
     .push-card form {
       margin-top: 3em;
       margin-bottom: 3em;
