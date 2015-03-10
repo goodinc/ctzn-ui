@@ -19,11 +19,7 @@
     font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(83, 83, 83);
-  }
-  @media (min-width: 600px) {
-    .body {
-      padding: 18px 0;
-    }
+    padding: 20px 0;
   }
 
   a {
@@ -43,34 +39,39 @@
   .summary h1 {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 20px;
+    line-height: 20px;
   }
   .details h2 {
     font-size: 30px;
-    line-height: 36px;
+    line-height: 40px;
     font-weight: bold;
     margin-top: 0;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   .details h3 {
     font-size: inherit;
     color: inherit;
     margin-top: 0;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   .details h3 strong {
     font-weight: inherit;
     color: rgb(31, 31, 31); /* @steel */
   }
   .details p {
-    margin-top: 9px;
-    margin-bottom: 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  .header,
-  .footer {
+  .header {
     text-align: center;
+  }
+  .footer {
+    text-align: right;
+    max-width: 570px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .header h2 {
@@ -85,17 +86,17 @@
   .summary,
   .details {
     background-color: white;
-    max-width: 546px; /* 600px - (27px x 2) */
+    max-width: 540px; /* 600px - (30px x 2) */
     margin-left: auto;
     margin-right: auto;
-    padding: 27px;
+    padding: 25px 30px;
   }
   .summary {
-    margin-top: 18px;
+    margin-top: 20px;
   }
   .details {
     margin-top: 1px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   .push {
@@ -110,8 +111,8 @@
     }
     .push {
       position: absolute;
-      top: 1.5em;
-      right: 1.5em;
+      top: 20px;
+      right: 20px;
     }
   }
 
@@ -122,6 +123,7 @@
     margin: 20px 0;
     padding-bottom: 20px;
     text-align: center;
+    background: rgb(204, 204, 204);
   }
   .profile h3 {
     padding: 14px;
@@ -143,7 +145,7 @@
   }
   .profile h4 {
     color: white;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 40px;
     margin-top: 20px;
     margin-bottom: 0;
@@ -154,12 +156,13 @@
   .profile .action a {
     font-weight: bold;
     background: rgb(255, 255, 255);
+    color: rgb(83, 83, 83);
     padding: 10px 20px;
-    border-radius: 2px;
+    border-radius: 3px;
     text-transform: lowercase;
     display: inline-block;
     text-decoration: none;
-    border: 0.0625em solid rgb(222, 222, 222);
+    border: 1px solid rgb(222, 222, 222);
   }
   .profile .joined {
     font-size: 11px;
@@ -169,31 +172,31 @@
     margin: 0;
   }
 
-  .profile.lime {
+  .lime {
     background-color: rgb(218, 243, 121); /* @lime */
   }
-  .profile.cucumber {
+  .cucumber {
     background-color: rgb(153, 248, 115); /* @cucumber */
   }
-  .profile.blueberry {
+  .blueberry {
     background-color: rgb(40, 221, 181); /* @blueberry */
   }
-  .profile.boysenberry {
+  .boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .profile.plumb {
+  .plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
-  .profile.strawberry {
+  .strawberry {
     background-color: rgb(250, 56, 136); /* @strawberry */
   }
-  .profile.apple {
+  .apple {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  .profile.tangerine {
+  .tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
-  .profile.orange {
+  .orange {
     background-color: rgb(250, 134, 40); /* @orange */
   }
 
