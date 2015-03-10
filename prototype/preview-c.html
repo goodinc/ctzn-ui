@@ -247,19 +247,23 @@
     </defs>
   </svg>
 
-  <section class="plumb push-card page" style="padding-bottom: 3.1em;">
+  <section class="plumb push-card page" style="padding-bottom: 0">
 
-    <header>
-      <h1>GOOD</h1>
+    <a class="back" href="">
+      <svg class="icon">
+        <use xlink:href="#back" />
+        <foreignobject>Back</foreignobject>
+      </svg>
+    </a>
 
-      <a href="" class="back">
-        <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use></svg>
-      </a>
+    <a href="">
+      <svg class="icon">
+        <use xlink:href="#close" />
+        <foreignobject>Close</foreignobject>
+      </svg>
+    </a>
 
-      <p class="action"><a href="#join">Join</a></p>
-    </header>
-
-    <div class="details" id="join" style="margin-bottom: 0;">
+    <div class="details" id="join">
       <h1 class="name">GOOD</h1>
       <h2 class="about">Pushing the world forward</h2>
 
@@ -697,10 +701,23 @@ From the gallery at the #good bbq</p></div>
 
   </section>
 
-  <footer class="about">
+  <footer class="about" style="position: static;">
     <h2>powered by <a href="http://getctzn.com"><svg class="icon"><use xlink:href="#ctzn" /><foreignObject>CTZN</foreignObject></svg></a></h2>
     <p><a href="http://getctzn.com">Learn more <svg class="icon"><use xlink:href="#launch" /></svg></a></p>
   </footer>
+
+<script>
+(function() {
+  var message = document.querySelector('.push-message');
+  var button  = document.querySelector('.push-message .hide a')
+  if (message && button) {
+    button.addEventListener('click', function(e) {
+      message.style.display = 'none';
+      e.preventDefault();
+    }, false);
+  }
+})();
+</script>
 
 </body>
 </html>
