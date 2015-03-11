@@ -1678,6 +1678,12 @@
     font-weight: inherit;
     text-transform: lowercase;
   }
+
+  /* TRICKY: Allow uppercase for the name of the push on the preview page */
+  .page > header h1.name {
+    text-transform: inherit;
+  }
+
   .page > header a {
     color: rgb(204, 204, 204); /* @aluminum */
   }
@@ -1989,7 +1995,7 @@
     color: inherit;
   }
 
-  .push-card .name {
+  .push-card .details .name {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
     font-size: 1.875em;
@@ -2002,20 +2008,20 @@
     overflow-wrap : break-word;
   }
 
-  .push-card .about {
+  .push-card .details .about {
     margin-top: 0.375em;
     margin-bottom: 0.375em;
     font-weight: inherit;
     font-size: inherit;
   }
-  .push-card .website a {
+  .push-card .details .website a {
     text-decoration: none;
     font-weight: bold;
     color: rgb(51, 51, 51);
     color: rgba(0, 0, 0, 0.8);
   }
-  .push-card .website a:active,
-  .push-card .website a:focus {
+  .push-card .details .website a:active,
+  .push-card .details .website a:focus {
     color: black;
   }
 
