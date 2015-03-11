@@ -498,10 +498,7 @@
   form .validation-message {
     color: rgb(255, 49, 59); /* @apple */
   }
-  form .submit + .validation-message {
-    margin-top: 1.5em;
-    color: inherit;
-  }
+
   .push-card .validation-message {
     color: inherit;
   }
@@ -2341,6 +2338,12 @@
     border-radius: 0;
   }
 
+  /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+  .push-card .post-list .post-item .images img {
+    background-color: rgba(0, 0, 0, 0.25);
+    min-height: 9em;
+  }
+
   /* OPTIONAL: Position multiple images in a grid */
   .push-card .post-list .post-item .images:after {
     content: "";
@@ -2630,18 +2633,23 @@
     height: 8.25em;
     box-sizing: border-box;
   }
-  .file label {
+
+  .file label,
+  .file button {
+    padding: 0 0.375em; /* @line-height / 4 */
+    background: transparent;
     color: rgb(102, 102, 102); /* @tin */
-    padding-left: 0.375em; /* @line-height / 4 */
-    padding-right: 0.375em;
   }
   .file input[type="file"] {
     position: absolute;
     left: -9999px;
   }
+  .file button:focus,
+  .file button:active,
   .file input[type="file"]:focus ~ .icon {
     color: black;
   }
+
   form ol.images,
   form .images li {
     list-style: none;
