@@ -327,52 +327,54 @@
     </ul>
 
 <ol class="post-list">
-      <!-- ko if: showPrevButton --><!-- /ko -->
 
-
-      <!-- ko foreach: visiblePosts -->
-      <li id="post-3115">
+<li data-bind="attr: { id: 'post-' + id }" id="post-1341">
         <article class="post-item">
           <header>
             <h3>
-              <a href="">
-                <span class="avatar"></span>
-                <span class="avatar">
-                  <span class="size30 cantaloupe" data-content="m"></span>
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
                 </span>
-                @<span>my_name_is_hj</span>
-              </a>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">jim</span>
             </h3>
-            <p class="source"></p>
+            <p class="source" data-bind="if: source"></p>
             <p>
-              <a href="#post">
-                <time datetime="2015-03-05T17:12:15+00:00">8 hours ago</time>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-12-19T01:49:01+00:00">12 weeks ago</time>
               </a>
             </p>
           </header>
 
-          <a href="#post" class="body"><p>Whiteboarding as we prep for our kick-off call with Field and Stream. Looking forward to helping them figure out how to authentically connect with their consumers of hunters, fishers, campers, and paddlers around conserving the outdoor spaces they love.</p></a>
+          <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body(), 's500x500'), click: function(){ $root.viewPost(id) }"><p>I created a mix with sixty images, using the app on a 3G connection. The rendering went quickly, and download time was decent too (less than a minute for a 2.1 megabyte video file).</p></a>
 
-          <video type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640"><!-- ko foreach: movieFiles --><source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v" type="video/mp4"><source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.webm" type="video/webm"><!-- /ko --><h1>Oops!</h1>
+          <video data-bind="attr: { poster: sizedS3Image(mix().preview_image_url, good.S3_MIXPOSTER_SIZE) }" type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640">
+            <!-- ko foreach: movieFiles -->
+            <source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.m4v" type="video/mp4">
+            
+            <source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.webm" type="video/webm">
+            <!-- /ko -->
+
+            <h1>Oops!</h1>
             <p>It looks like our video player isn’t working in your web browser. We recommend using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.apple.com/safari/" target="_blank">Safari</a> to watch this mix.</p>
           </video>
 
           <footer>
           <ul class="action">
             <li>
-              <button role="checkbox" aria-checked="true">
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
               </button>
             </li>
             <li>
-              <a href="#post">
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
             <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
               <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
-                <a href="#post-options" class="options">
+                <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
               <!-- /ko -->
@@ -382,11 +384,11 @@
             <ul class="meta">
               <!-- ko if: attaboys().length > 0 -->
               <li>
-<span>5</span> love</li>
+<span data-bind="text: attaboys().length">4</span> love</li>
               <!-- /ko -->
               <!-- ko if: comments().length > 0 -->
               <li>
-<span>4</span> comments</li>
+<span data-bind="text: comments().length">3</span> comments</li>
               <!-- /ko -->
 
               <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
@@ -394,66 +396,7 @@
           <!-- /ko -->
           </footer>
         </article>
-      </li>
-      
-      <li id="post-3111">
-        <article class="post-item">
-          <header>
-            <h3>
-              <a href="">
-                <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c100x100">
-                </span>
-                <span class="avatar"></span>
-                @<span>goldhirsh</span>
-              </a>
-            </h3>
-            <p class="source"></p>
-            <p>
-              <a href="#post">
-                <time datetime="2015-03-05T03:51:22+00:00">21 hours ago</time>
-              </a>
-            </p>
-          </header>
 
-          <a href="#post" class="body"><p>Pretty sweet.</p>
-
-<p><img src="https://m.ctznapp.com/s3/ctzn/ac316c7528067f91603c5ebfe45baa2e6a5fa106=s500x500"></p></a>
-
-          <footer>
-          <ul class="action">
-            <li>
-              <button role="checkbox" aria-checked="false">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
-              </button>
-            </li>
-            <li>
-              <a href="#post">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
-              </a>
-            </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
-            <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
-                <a href="#post-options" class="options">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              <!-- /ko -->
-            </li>
-          </ul>
-          <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
-            <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
-              <li>
-<span>4</span> love</li>
-              <!-- /ko -->
-              <!-- ko if: comments().length > 0 --><!-- /ko -->
-
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
-            </ul>
-          <!-- /ko -->
-          </footer>
-        </article>
       </li>
       
       <li id="post-3070">

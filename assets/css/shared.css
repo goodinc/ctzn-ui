@@ -1995,6 +1995,7 @@
     color: inherit;
   }
 
+  .push-card.header   .name,
   .push-card .details .name {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
@@ -2008,20 +2009,21 @@
     overflow-wrap : break-word;
   }
 
+  .push-card.header   .about,
   .push-card .details .about {
     margin-top: 0.375em;
     margin-bottom: 0.375em;
     font-weight: inherit;
     font-size: inherit;
   }
-  .push-card .details .website a {
+  .push-card .website a {
     text-decoration: none;
     font-weight: bold;
     color: rgb(51, 51, 51);
     color: rgba(0, 0, 0, 0.8);
   }
-  .push-card .details .website a:active,
-  .push-card .details .website a:focus {
+  .push-card .website a:active,
+  .push-card .website a:focus {
     color: black;
   }
 
