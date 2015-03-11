@@ -1992,7 +1992,7 @@
     color: inherit;
   }
 
-  .push-card.header   .name,
+  .push-card        > .name,
   .push-card .details .name {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
@@ -2006,7 +2006,7 @@
     overflow-wrap : break-word;
   }
 
-  .push-card.header   .about,
+  .push-card        > .about,
   .push-card .details .about {
     margin-top: 0.375em;
     margin-bottom: 0.375em;
@@ -4035,7 +4035,7 @@
 
   /* =Edit Post (intro & outro)
   ----------------------------------------------- */
-  section.editor.page {
+  section.edit.page.has-intro {
     position: absolute;
     z-index: 9999; /* @infinity */
     top: 0;
@@ -4043,12 +4043,12 @@
     width: 100%;
     min-height: 100%;
   }
-  section.editor.page.intro {
+  section.edit.page.intro {
     position: fixed;
     -webkit-animation: slide-up 0.3s both;
             animation: slide-up 0.3s both;
   }
-  section.editor.page.outro {
+  section.edit.page.outro {
     -webkit-animation: slide-down 0.3s both;
             animation: slide-down 0.3s both;
   }
