@@ -2615,30 +2615,35 @@
 
   /* =Post Editor
   ----------------------------------------------- */
-  .editor.page {
-    padding-top: 0;
+  .post label {
+    padding: 0;
   }
-  .editor.page form {
-    padding-top: 0.75em;
+  .post textarea {
+    height: 8.25em;
+    box-sizing: border-box;
   }
-
-  .editor h1 .avatar {
-    margin-right: 0.375em;
-    display: inline-block;
-    margin-top   : -0.1875em; /* 3px / 16px */
-    margin-bottom: -0.1875em;
-    vertical-align: top;
+  .file label {
+    color: rgb(102, 102, 102); /* @tin */
+    padding-left: 0.375em; /* @line-height / 4 */
+    padding-right: 0.375em;
   }
-  .editor ol,
-  .editor li {
+  .file input[type="file"] {
+    position: absolute;
+    left: -9999px;
+  }
+  .file input[type="file"]:focus ~ .icon {
+    color: black;
+  }
+  form ol.images,
+  form .images li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .editor .images {
+  form .images {
     margin: 1em 0 1.5em;
   }
-  .editor .images li {
+  form .images li {
     margin: 0 0 1em;
     padding: 0.375em 2.25em 0.375em 0.375em; /* @line-height / 4 */
     background-color: rgb(250, 250, 250); /* @casper */
@@ -2651,13 +2656,13 @@
     word-wrap     : break-word;
     overflow-wrap : break-word;
   }
-  .editor .images li img {
+  form .images li img {
     height: 1.5em;
     width: auto;
     vertical-align: middle;
     margin-right: 0.375em;
   }
-  .editor .images li button {
+  form .images li button {
     padding: 0;
     position: absolute;
     top  : 0.375em; /* @line-height / 4 */
@@ -2665,42 +2670,8 @@
     background: white;
     color: rgb(204, 204, 204); /* aluminum */
   }
-  .editor .images li button:focus,
-  .editor .images li button:active {
-    color: black;
-  }
-  .editor form {
-    margin-top: 2.25em;
-  }
-  .editor p.text label {
-    padding: 0;
-  }
-  .editor textarea {
-    font-size: 1.25em;
-    padding: 0.6em; /* 0.75em / 1.25em */
-    line-height: 1.2;
-    height: 9.6em; /* 1.2 x 8 */
-  }
-  .editor input[type="file"] {
-    position: absolute;
-    left: -9999px;
-  }
-  .editor input[type="file"] ~ .icon {
-    margin-right: 0.125em;
-  }
-  .editor .submit label {
-    color: rgb(102, 102, 102); /* @tin */
-    padding-left: 0.375em;
-  }
-  .editor .submit button {
-    float: right;
-    margin: 0;
-  }
-
-  .editor input[type="file"]:focus ~ span {
-    color: rgb(51, 51, 51); /* @iron */
-  }
-  .editor input[type="file"]:focus ~ .icon {
+  form .images li button:focus,
+  form .images li button:active {
     color: black;
   }
 
