@@ -247,39 +247,43 @@
     <header>
       <h1>Log In</h1>
 
-      <a href="start.html" class="back">
-        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
+      <a href="#start" class="back" data-bind="click: function(){ good.currentScreen({ name: &quot;start&quot; }) }">
+        Cancel
       </a>
     </header>
 
-    <div class="boysenberry push-card">
-      <h2>
-        <span>Welcome to</span>
-        <svg class="icon">
-          <use xlink:href="#ctzn" />
-          <foreignobject>ctzn</foreignobject>
-        </svg>
-      </h2>
-    </div>
+    <!-- ko if: inProgress() --><!-- /ko -->
 
-    <form action="push.html" method="post" class="has-icon">
+    <!-- ko if: errorMessage() --><!-- /ko -->
+
+    <form class="has-icon" data-bind="submit: onSubmit">
       <p class="text">
         <label>
-          <svg class="icon"><use xlink:href="#user-circle" /><foreignobject>Username</foreignobject></svg><br />
-          <input type="text" placeholder="Username" autocapitalize="none" autocorrect="off" />
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-circle"></use><foreignObject>Username</foreignObject></svg><br>
+          <input type="text" placeholder="Username" data-bind="textInput: username, disable: inProgress" autocapitalize="none" autocorrect="off">
         </label>
       </p>
       <p class="text">
         <label>
-          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>Password</foreignobject></svg><br />
-          <input type="password" placeholder="Password" />
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#padlock"></use><foreignObject>Password</foreignObject></svg><br>
+          <input type="password" placeholder="Password" data-bind="textInput: password, disable: inProgress">
         </label>
-        <em class="note"><a href="forgot.html">Forgot?</a></em>
+        <em class="note"><a href="" data-bind="click: function(){ good.currentScreen({ name: &quot;forgot password&quot; }) }">Forgot?</a></em>
       </p>
       <p class="submit">
-        <button disabled>Next</button>
+        <button data-bind="enable: canSubmit" disabled="">Next</button>
       </p>
     </form>
+
+    <div>
+      <h2>Or</h2>
+      <p class="action facebook">
+        <a href="#facebook" data-bind="click: onFacebookLoginClicked">
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg>
+          <span data-bind="text: facebookButtonText">Log in with Facebook</span>
+        </a>
+      </p>
+    </div>
   </section>
 
 </body>

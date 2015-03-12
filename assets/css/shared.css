@@ -486,6 +486,7 @@
     opacity: 1;
   }
 
+  .signup.page .note,
   form .note {
     display: block;
     text-align: right;
@@ -2101,6 +2102,8 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+  .login  .action a,
+  .signup .action a,
   .dialog.page .action a,
   .dialog.page .action button,
   .dialog.page .details    button,
@@ -2118,6 +2121,15 @@
     box-sizing: border-box;
     text-align: center;
   }
+  .login  .action.facebook a,
+  .signup .action.facebook a {
+    background-color: rgb(59, 89, 153); /* @facebook */
+    color: white;
+  }
+  .login  .action a:active,
+  .login  .action a:focus,
+  .signup .action a:active,
+  .signup .action a:focus,
   .dialog.page .action a:active,
   .dialog.page .action a:focus,
   .dialog.page .action button:active,
@@ -2183,6 +2195,7 @@
 
   /* OPTIONAL: Space things out a little more on tall screens */
   @media (min-height: 500px) {
+    .signup.page > div,
     .start.page > div,
     .push-card .details {
       margin-top: 3em;
@@ -3417,30 +3430,64 @@
   }
 
 
-  /* =Log In
+  /* =Log In & Sign Up
   ----------------------------------------------- */
+  .signup.page h2 {
+    /* @divider */
+    margin-top: 4em;
+    border-top: 0.08333333333em solid rgba(0, 0, 0, 0.1);
+    padding-top: 2em;
+  }
+  .login.page > div {
+    /* @divider */
+    border-top: 0.0625em solid rgba(0, 0, 0, 0.1);
+    padding-top: 1.5em;
+  }
   .login.page h2 {
-    margin: 0;
-    font-size: 1.5em;
-    line-height: 1; /* @line-height / 1.5 */
-    font-weight: normal;
-    text-transform: lowercase;
+    margin-top: 0;
+  }
+  .login.page  > div,
+  .signup.page > div {
     text-align: center;
   }
-  .login.page h2 svg {
-    display: block;
-    margin: 0.375em auto;
-    height: 3em;
-    width: auto;
-  }
-  .login.page .note {
-    font-size: 0.875em
-  }
-  .login.page .note a {
+  .signup.page .note a,
+  .login.page  .note a {
     text-transform: lowercase;
     text-decoration: none;
   }
+  .login.page  > div .action,
+  .signup.page > div .action {
+    max-width: 22.5em;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  .login  .action a,
+  .signup .action a {
+    position: relative;
+  }
+  .login  .action a span,
+  .signup .action a span {
+    display: block;
+    font-size: 0.8333333333em;
+    line-height: 1.5;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  .login  .action.facebook a,
+  .signup .action.facebook a {
+    padding-left: 2.1666666667em;
+    padding-right: 2.1666666667em;
+  }
+  .login  .action.facebook a .icon,
+  .signup .action.facebook a .icon {
+    position: absolute;
+    top: 0.3333333333em; /* 8px / 24px    (button.height - icon.height / 2 / font size) */
+    left: 0.3333333333em;
+  }
+  .signup.page .note {
+    text-align: inherit;
+  }
 
 
   /* =Account
@@ -3526,7 +3573,7 @@
     color: rgb(94, 171, 244);
   }
   .option-list .facebook .icon {
-    color: rgb(46, 69, 134);
+    color: rgb(59, 89, 153); /* @facebook */
   }
   .option-list a[role="checkbox"][aria-checked="false"] {
     color: rgb(153, 153, 153); /* @nickel */
@@ -3579,6 +3626,9 @@
     border-bottom: 0.07142857143em solid rgb(232, 232, 232);
     */
   }
+
+  .login         h2,
+  .signup        h2,
   .list          h2,
   .notifications h2 {
     margin-top: 2em; /* @line-height / 0.75em */
@@ -3856,6 +3906,7 @@
   .dialog.page dl,
   .dialog.page .logs,
   .dialog.page form {
+    /* @divider */
     margin-top: 3em;
     border-top: 0.0625em solid rgba(0, 0, 0, 0.1);
     padding-top: 1.5em;

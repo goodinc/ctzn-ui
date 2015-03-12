@@ -243,42 +243,45 @@
     </defs>
   </svg>
 
-  <section class="signup edit page">
-
+  <section class="page">
     <header>
       <h1>Sign Up</h1>
-      <a href="#start" class="back" data-bind="click: function(){ good.currentScreen({ name: &quot;start&quot; }) }">
-        Cancel
+
+      <a href="#start" class="back">
+        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
       </a>
     </header>
 
-    <div>
-      <p class="action">
-        <a href="#signup" data-bind="click: onSignUpWithEmailClicked"><span>Sign up with email</span></a>
+    <form class="has-icon">
+      <p class="text">
+        <label>
+          <svg class="icon"><use xlink:href="#user-circle" /><foreignobject>Username</foreignobject></svg><br />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" autocorrect="off" />
+        </label>
       </p>
-
-      <h2>Or</h2>
-      <p class="action facebook">
-        <a href="#facebook" data-bind="click: onSignUpWithFacebookClicked">
-          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg>
-          <span data-bind="text: facebookButtonText">Sign up with Facebook</span>
-        </a>
+      <p class="text">
+        <label>
+          <svg class="icon"><use xlink:href="#envelope" /><foreignobject>Email</foreignobject></svg><br />
+          <input type="email" placeholder="Email" name="email" />
+        </label>
       </p>
-
-      <p class="note">
-        We use Facebook to make the sign up process easier. We will
-        never share anything to your friends without permission.
+      <p class="text">
+        <label>
+          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>Password</foreignobject></svg><br />
+          <input type="password" placeholder="Password" name="password" />
+        </label>
       </p>
-      <p class="note">
-        <a href="http://getctzn.com/privacy/" target="_blank">Privacy Policy</a>
+      <p class="text">
+        <label>
+          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>Repeat Password</foreignobject></svg><br />
+          <input type="password" placeholder="Repeat Password" name="password_confirm" />
+        </label>
       </p>
-    </div>
-
-    <aside>
-      <p class="option-list">
-        <a href="#login" data-bind="click: handleLoginClicked">Log In</a>
+      <p class="note">Password must be at least 4 characters.</p>
+      <p class="submit">
+        <button>Next</button>
       </p>
-    </aside>
+    </form>
   </section>
 
 </body>
