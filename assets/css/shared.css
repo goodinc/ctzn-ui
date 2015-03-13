@@ -780,8 +780,8 @@
   }
   section.upload-message ul {
     position: absolute;
-    top: 0.375em;
-    right: 0.875em;
+    top: 0.125em;
+    right: 0.5em;
     margin: 0;
   }
   section.upload-message li {
@@ -789,6 +789,7 @@
   }
   section.upload-message button {
     padding: 0.375em;
+    background-color: transparent;
   }
 
 
