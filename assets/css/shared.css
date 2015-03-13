@@ -729,7 +729,7 @@
   (for sending form data, and downloading a video file to the device)
   ----------------------------------------------- */
   section.upload-message {
-    padding: 0.625em 1.5em;
+    padding: 0.75em 1.5em;
     box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver */
     line-height: 1.3333333333; /* @line-height / 1.125em */
@@ -753,9 +753,18 @@
     background-color: rgb(255, 49, 59); /* @apple */
     color: white;
   }
-  .upload-message.error a,
-  .upload-message.error button {
+  .upload-message a,
+  .upload-message button {
+    background-color: transparent;
+    color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .upload-message a,
+  .upload-message button {
+    background-color: transparent;
     color: inherit;
+  }
+  .upload-message.error button {
+    padding: 0.375em;
   }
   section.upload-message:last-child {
     border-bottom-width: 0;
@@ -780,16 +789,14 @@
   }
   section.upload-message ul {
     position: absolute;
-    top: 0.125em;
-    right: 0.5em;
+    padding: 0.75em 1.5em;
+    top: 0;
+    right: 0;
     margin: 0;
   }
   section.upload-message li {
-    display: inline;
-  }
-  section.upload-message button {
-    padding: 0.375em;
-    background-color: transparent;
+    margin-top: -0.375em; /* button padding */
+    display: inline-block;
   }
 
 

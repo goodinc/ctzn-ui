@@ -257,28 +257,164 @@
   </header>
 
   <h1>Sending Error</h1>
+  <p>If a post fails to upload, a message appears with options to try again or cancel.</p>
 
-  <section class="upload-message error" role="status">
-    <h1>
-      
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="">
-      <span data-bind="text: error">Unable to connect to the server, please retry later.</span>
-    </h1>
-    <ul>
-      <!-- ko ifnot: error.permanentFailure -->
-      <li>
-        <button data-bind="click: function(){ good.uploadQueue().attemptProcessing() }">
-          <svg class="icon"><use xlink:href="#refresh" /><foreignObject>Try again</foreignObject></svg>
-        </button>
-      </li>
-      <!-- /ko -->
-      <li>
-        <button data-bind="click: function(){ $root.removeUploadQueueError($data) }">
-          <svg class="icon"><use xlink:href="#close" /><foreignObject>Cancel</foreignObject></svg>
-        </button>
-      </li>
-    </ul>
-  </section>
+  <section class="pattern">
+
+    <section class="upload-message error" role="status">
+      <h1>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+        <span>Unable to connect to the server, please retry later.</span>
+      </h1>
+      <ul>
+        <li>
+          <button>
+            <svg class="icon"><use xlink:href="#refresh" /><foreignobject>Try again</foreignobject></svg>
+          </button>
+        </li>
+        <li>
+          <button>
+            <svg class="icon"><use xlink:href="#close" /><foreignobject>Cancel</foreignobject></svg>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+<pre><code>&lt;section class=&quot;upload-message <mark>error</mark>&quot; role=&quot;status&quot;&gt;
+  &lt;h1&gt;
+    &lt;img src=&quot;…&quot; width=&quot;30&quot; height=&quot;30&quot; alt=&quot;&quot; /&gt;
+    &lt;span&gt;Unable to connect to the server, please retry later.&lt;/span&gt;
+  &lt;/h1&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;button&gt;
+        &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#refresh&quot; /&gt;&lt;foreignobject&gt;Try again&lt;/foreignobject&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;button&gt;
+        &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#close&quot; /&gt;&lt;foreignobject&gt;Cancel&lt;/foreignobject&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;</code></pre>
+
+  </section><!-- /.pattern -->
+  <section class="pattern">
+
+    <section class="page">
+      <header>
+        <h1>Page Title</h1>
+
+        <a href="" class="back">
+          Cancel
+        </a>
+      </header>
+
+      <div class="plumb header push-card">
+
+        <div class="image">
+          <span class="avatar">
+            <span class="size100 grape" data-content="a"></span>
+          </span>
+        </div>
+
+        <div class="details">
+          <h2 class="name">aubrey</h2>
+          <p class="joined">Joined <time datetime="2015-02-06T18:41:32.000+00:00">5 weeks ago</time></p>
+        </div>
+
+        <div class="meta">
+          <p>
+            <span class="count">4</span>
+            <span class="label">Posts</span>
+          </p>
+          <p>
+            <a href="#profile-pushes" data-bind="click: $root.onPushesClick">
+              <span class="count">1</span>
+              <span class="label">Push</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <section class="upload-message error" role="status">
+        <h1>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+          <span>Unable to connect to the server, please retry later.</span>
+        </h1>
+        <ul>
+          <li>
+            <button>
+              <svg class="icon"><use xlink:href="#refresh" /><foreignobject>Try again</foreignobject></svg>
+            </button>
+          </li>
+          <li>
+            <button>
+              <svg class="icon"><use xlink:href="#close" /><foreignobject>Cancel</foreignobject></svg>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <ol class="post-list" data-bind="foreach: $root.usersPosts">
+        <li data-bind="attr: { id: 'post-' + id }" id="post-3386">
+          <article class="post-item">
+            <header>
+              <h3>
+                  <span class="avatar" data-bind="if: user.profile_image"></span>
+                  <span class="avatar" data-bind="if: !user.profile_image">
+                    <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="a"></span>
+                  </span>
+                  @<span data-bind="text: user.username">aubrey</span>
+              </h3>
+              <p class="source" data-bind="if: source">
+                <!-- ko if: source == 'twitter' --><!-- /ko -->
+                <!-- ko if: source == 'instagram' -->
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+                <!-- /ko -->
+              </p>
+              <p>
+                <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-13T17:38:25+00:00">2 hours ago</time>
+                </a>
+              </p>
+            </header>
+
+            <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body(), 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE), click: function(){ $root.viewPost(id) }"><p><img src="https://m.ctznapp.qa2.goodalpaca.com/s3/qa.ctzn/f8bbf48f8633d57cd5ee37144ddf285998227aa7=s500x500" alt="939929128917574474_3757855">
+  You guys. We have office chickens @goodhq 🐤🐥🐣</p></a>
+
+            <footer>
+            <ul class="action">
+              <li>
+                <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
+                </a>
+              </li>
+              <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+              <li>
+                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                  <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                <!-- /ko -->
+              </li>
+            </ul>
+            <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
+            </footer>
+          </article>
+
+        </li>
+      </ol>
+
+    </section>
+
+  </section><!-- /.pattern -->
 
 </body>
 </html>
