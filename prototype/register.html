@@ -247,36 +247,35 @@
 
     <header>
       <h1>Sign Up</h1>
-      <a href="#start" class="back" data-bind="click: function(){ good.currentScreen({ name: &quot;start&quot; }) }">
+      <a href="#back" class="back" data-bind="click: function(){ window.history.back(); }">
         Cancel
+      </a>
+      <a href="#login" class="next" data-bind="click: handleLoginClicked">
+        Log In
       </a>
     </header>
 
     <div>
       <p class="action">
-        <a href="#signup" data-bind="click: onSignUpWithEmailClicked"><span>Sign up with email</span></a>
+        <a href="#register" data-bind="click: onSignUpWithEmailClicked"><span>Sign up with email</span></a>
       </p>
 
-      <h2>Or</h2>
+      <h2 class="or"><span>Or</span></h2>
       <p class="action facebook">
-        <a href="#facebook" data-bind="click: onSignUpWithFacebookClicked">
+        <a href="" data-bind="click: onSignUpWithFacebookClicked">
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg>
           <span data-bind="text: facebookButtonText">Sign up with Facebook</span>
         </a>
       </p>
 
       <p class="note">
-        We use Facebook to make the sign up process easier. We will
-        never share anything to your friends without permission.
-      </p>
-      <p class="note">
-        <a href="http://getctzn.com/privacy/" target="_blank">Privacy Policy</a>
+        We will never share anything to your friends without&nbsp;permission.
       </p>
     </div>
 
     <aside>
-      <p class="option-list">
-        <a href="#login" data-bind="click: handleLoginClicked">Log In</a>
+      <p class="note">
+        <a href="http://getctzn.com/privacy/" target="_blank">Privacy Policy</a>
       </p>
     </aside>
   </section>

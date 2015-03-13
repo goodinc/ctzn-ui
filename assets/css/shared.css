@@ -2188,10 +2188,6 @@
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
-  .login.page h2 span {
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
-  }
 
   /* OPTIONAL: Space things out a little more on tall screens */
   @media (min-height: 500px) {
@@ -3432,22 +3428,50 @@
 
   /* =Log In & Sign Up
   ----------------------------------------------- */
-  .signup.page h2 {
+  .signup.page > header {
+    border-color: transparent;
+  }
+  .signup.page > header h1 {
+    color: transparent;
+  }
+  .signup.page > header .next {
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  .signup.page > header .next {
+    color: rgb(255, 49, 102); /* @gojiberry */
+  }
+  .signup.page > header .next:active,
+  .signup.page > header .next:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+  .login.page  h2.or,
+  .signup.page h2.or {
+
     /* @divider */
-    margin-top: 4em;
+    margin-top: 2em;
     border-top: 0.08333333333em solid rgba(0, 0, 0, 0.1);
-    padding-top: 2em;
+    margin-bottom: 2em;
   }
-  .login.page > div {
-    /* @divider */
-    border-top: 0.0625em solid rgba(0, 0, 0, 0.1);
-    padding-top: 1.5em;
+  .login.page  h2.or span,
+  .signup.page h2.or span {
+    position: absolute;
+    background-color: rgb(250, 250, 250); /* @casper */
+    margin-top: -0.5em;
+    margin-left: -1em;
+    width: 2em;
+    line-height: 1;
   }
-  .login.page h2 {
-    margin-top: 0;
+
+  .login.page > form + div {
+    margin-top: -2.25em;
+    padding-top: 0;
   }
+
   .login.page  > div,
-  .signup.page > div {
+  .signup.page > div,
+  .signup.page > aside {
     text-align: center;
   }
   .signup.page .note a,
@@ -3465,6 +3489,8 @@
   .login  .action a,
   .signup .action a {
     position: relative;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
   }
   .login  .action a span,
   .signup .action a span {
@@ -3484,9 +3510,15 @@
     position: absolute;
     top: 0.3333333333em; /* 8px / 24px    (button.height - icon.height / 2 / font size) */
     left: 0.3333333333em;
+    height: 2em;
+    width: 2em;
   }
   .signup.page .note {
     text-align: inherit;
+    font-style: normal;
+  }
+  .signup.page aside .note {
+    font-size: inherit;
   }
 
 
