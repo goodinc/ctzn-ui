@@ -2666,38 +2666,58 @@
     padding-left: 0;
   }
   form .images {
-    margin: 1em 0 1.5em;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    line-height: 1;
+  }
+  form .images:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   form .images li {
-    margin: 0 0 1em;
-    padding: 0.375em 2.25em 0.375em 0.375em; /* @line-height / 4 */
-    background-color: rgb(250, 250, 250); /* @casper */
-    background: white;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
-    position: relative;
-    border-radius: 0.25em;
-
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-  }
-  form .images li img {
-    height: 1.5em;
-    width: auto;
-    vertical-align: middle;
-    margin-right: 0.375em;
+    vertical-align: top;
+    display: inline-block;
   }
   form .images li button {
+    border: 1px solid rgb(222, 222, 222); /* @silver */
+    background: white;
     padding: 0;
+    width:  6.25em; /* 100px / @font-size */
+    height: 6.25em;
+    position: relative;
+    border-radius: 0;
+  }
+  form .images li img {
+    width: 100%;
+    height: 100%;
+  }
+  form .images li span {
     position: absolute;
     top  : 0.375em; /* @line-height / 4 */
     right: 0.375em;
-    background: white;
-    color: rgb(204, 204, 204); /* aluminum */
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    font-size: 0.75em;
   }
-  form .images li button:focus,
-  form .images li button:active {
-    color: black;
+  form .images li .icon {
+    position: absolute;
+    top: 0.25em;
+    left: 0.25em;
+    width: 1em;
+    height: 1em;
+  }
+  form .images li button:focus  span,
+  form .images li button:active span {
+    opacity: 1;
   }
 
 
