@@ -2881,9 +2881,31 @@
     text-align: center;
     color: rgb(102, 102, 102); /* @tin */
   }
+  .edit-profile .file .loading-image,
   .edit-profile .file .avatar {
     display: block;
     margin: 0 auto 0.75em;
+  }
+  .edit-profile .file .loading-image {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    position: relative;
+  }
+  .edit-profile .file .loading-image .sending.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.25em;
+    margin-top: -0.25em;
+  }
+  .edit-profile .file .sending-icon {
+    display: block;
+  }
+  .edit-profile .file label,
+  .edit-profile .file label > span {
+    display: block;
   }
   .edit-profile .file img {
     display: block;
