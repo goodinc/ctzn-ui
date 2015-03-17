@@ -247,7 +247,7 @@
     </defs>
   </svg>
 
-  <section class="plumb push-card page">
+  <section class="orange push-card page">
 
     <header>
       <h1 class="name">GOOD</h1>
@@ -259,36 +259,23 @@
       <p class="action"><a href="">Join</a></p>
     </header>
 
-    <div class="details" id="join" style="margin-bottom: 0; margin-top: 0">
-      <h1 class="name">GOOD</h1>
-      <h2 class="about">Pushing the world forward</h2>
+    <div class="details">
+      <h2 class="name" data-bind="text: push().push.name">Project Citizen</h2>
+      <p class="about" data-bind="text: push().push.body">Helping movers and shakers champion the work they do</p>
 
       <div class="meta">
         <p>
-          <span class="count">124</span>
+          <span class="count" data-bind="text: push().posts_count">384</span>
           <span class="label">Posts</span>
         </p>
         <p>
-          <span class="count">15</span>
+          <span class="count" data-bind="text: push().people_count">36</span>
           <span class="label">People</span>
         </p>
+        
       </div>
 
-      <!--
-      <form data-bind="if: showJoinPush">
-        <p class="text" data-bind="if: showInviteCodeInput">
-          <label>
-            <span>Enter invite code…</span><br>
-            <input type="text" data-bind="textInput: inviteCode" placeholder="Enter invite code…" spellcheck="false" autocapitalize="off">
-          </label>
-        </p>
-        <p class="submit" data-bind="click: onJoinPush">
-          <button type="submit">Join Push</button>
-        </p>
-      </form>
-      -->
-
-     </div>
+    </div>
 
 <ol class="post-list">
 
