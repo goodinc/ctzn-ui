@@ -247,24 +247,24 @@
 
     <header>
       <h1>Sign Up</h1>
-      <a href="#back" class="back" data-bind="click: function(){ window.history.back(); }">
+      <a href="#back" class="back">
         Cancel
       </a>
-      <a href="#login" class="next" data-bind="click: handleLoginClicked">
+      <a href="#login" class="next">
         Log In
       </a>
     </header>
 
     <div>
       <p class="action">
-        <a href="#register" data-bind="click: onSignUpWithEmailClicked"><span>Sign up with email</span></a>
+        <a href="#register"><span>Sign up with email</span></a>
       </p>
 
       <h2 class="or"><span>Or</span></h2>
       <p class="action facebook">
-        <a href="" data-bind="click: onSignUpWithFacebookClicked">
+        <a href="">
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg>
-          <span data-bind="text: facebookButtonText">Sign up with Facebook</span>
+          <span>Sign up with Facebook</span>
         </a>
       </p>
 

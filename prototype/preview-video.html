@@ -260,16 +260,16 @@
     </header>
 
     <div class="details">
-      <h2 class="name" data-bind="text: push().push.name">Project Citizen</h2>
-      <p class="about" data-bind="text: push().push.body">Helping movers and shakers champion the work they do</p>
+      <h2 class="name">Project Citizen</h2>
+      <p class="about">Helping movers and shakers champion the work they do</p>
 
       <div class="meta">
         <p>
-          <span class="count" data-bind="text: push().posts_count">384</span>
+          <span class="count">384</span>
           <span class="label">Posts</span>
         </p>
         <p>
-          <span class="count" data-bind="text: push().people_count">36</span>
+          <span class="count">36</span>
           <span class="label">People</span>
         </p>
         
@@ -279,31 +279,31 @@
 
 <ol class="post-list">
 
-<li data-bind="attr: { id: 'post-' + id }" id="post-1341">
+<li id="post-1341">
         <article class="post-item">
           <header>
             <h3>
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">jim</span>
+                <span class="avatar"></span>
+                @<span>jim</span>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source"></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-12-19T01:49:01+00:00">12 weeks ago</time>
+              <a href="#post">
+                <time datetime="2014-12-19T01:49:01+00:00">12 weeks ago</time>
               </a>
             </p>
           </header>
 
-          <div class="body" data-bind="html: good.postBodyToHtml(body(), 's500x500'), click: function(){ $root.viewPost(id) }"><p>I created a mix with sixty images, using the app on a 3G connection. The rendering went quickly, and download time was decent too (less than a minute for a 2.1 megabyte video file).</p></div>
+          <div class="body"><p>I created a mix with sixty images, using the app on a 3G connection. The rendering went quickly, and download time was decent too (less than a minute for a 2.1 megabyte video file).</p></div>
 
-          <video data-bind="attr: { poster: sizedS3Image(mix().preview_image_url, good.S3_MIXPOSTER_SIZE) }" type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640">
+          <video type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640">
             <!-- ko foreach: movieFiles -->
-            <source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.m4v" type="video/mp4">
+            <source src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.m4v" type="video/mp4">
             
-            <source data-bind="attr: { src: url, type: type }" src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.webm" type="video/webm">
+            <source src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.webm" type="video/webm">
             <!-- /ko -->
 
             <h1>Oops!</h1>
@@ -315,11 +315,11 @@
             <ul class="meta">
               <!-- ko if: attaboys().length > 0 -->
               <li>
-<span data-bind="text: attaboys().length">4</span> love</li>
+<span>4</span> love</li>
               <!-- /ko -->
               <!-- ko if: comments().length > 0 -->
               <li>
-<span data-bind="text: comments().length">3</span> comments</li>
+<span>3</span> comments</li>
               <!-- /ko -->
 
               <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
@@ -330,29 +330,29 @@
 
       </li>
 
-        <li data-bind="attr: { id: 'post-' + id }" id="post-3092">
+        <li id="post-3092">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f3661d43e0bb6c3e4f7b7a2fa8e3f3903367ace8=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f3661d43e0bb6c3e4f7b7a2fa8e3f3903367ace8=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">iamreal8</span>
+                <span class="avatar"></span>
+                @<span>iamreal8</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-04T21:50:34.000+00:00">2 weeks ago</time>
+                <time datetime="2015-03-04T21:50:34.000+00:00">2 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Thank you @group for all of your hard work on bring this app to life! It is really a beautiful process to see and be apart of! #ctzn #good #greedycity</p></div>
+            <p class="source"></p>
+            <div class="body"><p>Thank you @group for all of your hard work on bring this app to life! It is really a beautiful process to see and be apart of! #ctzn #good #greedycity</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
             <footer>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">4</span> love</li>
+<span>4</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -361,22 +361,22 @@
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2766">
+        <li id="post-2766">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">jim</span>
+                <span class="avatar"></span>
+                @<span>jim</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-25T07:12:54.000+00:00">3 weeks ago</time>
+                <time datetime="2015-02-25T07:12:54.000+00:00">3 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Another day, a few pages closer…</p>
+            <p class="source"></p>
+            <div class="body"><p>Another day, a few pages closer…</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ae79da83f10467533d3369c274fef6189f866e8b=s500x500"></p></div>
 
@@ -385,11 +385,11 @@
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">3</span> comments</li>
+<span>3</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -397,22 +397,22 @@
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2657">
+        <li id="post-2657">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">jim</span>
+                <span class="avatar"></span>
+                @<span>jim</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-21T00:44:18.000+00:00">3 weeks ago</time>
+                <time datetime="2015-02-21T00:44:18.000+00:00">3 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>@aldoatgood, @cogg, @dan and I wrote down some ideas today about how featured posts might look…</p>
+            <p class="source"></p>
+            <div class="body"><p>@aldoatgood, @cogg, @dan and I wrote down some ideas today about how featured posts might look…</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e0db6b4a01b82e867db4218b93a46431a6cb2e97=s500x500"></p></div>
 
@@ -421,11 +421,11 @@
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">5</span> love</li>
+<span>5</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">1</span> comments</li>
+<span>1</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -433,33 +433,33 @@
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2469">
+        <li id="post-2469">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">cogg</span>
+                <span class="avatar"></span>
+                @<span>cogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-13T18:07:46.000+00:00">4 weeks ago</time>
+                <time datetime="2015-02-13T18:07:46.000+00:00">4 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Had a great call with Rockefeller Foundation about promoting CTZN on Hatch. They may also be up for promoting Neighbor Day or another theme for pushing forward.</p></div>
+            <p class="source"></p>
+            <div class="body"><p>Had a great call with Rockefeller Foundation about promoting CTZN on Hatch. They may also be up for promoting Neighbor Day or another theme for pushing forward.</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
             <footer>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">5</span> love</li>
+<span>5</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">13</span> comments</li>
+<span>13</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -467,28 +467,28 @@
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2318">
+        <li id="post-2318">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 cranberry" data-content="v"></span>
                 </span>
-                @<span data-bind="text: username">vogg</span>
+                @<span>vogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-08T23:38:46.000+00:00">5 weeks ago</time>
+                <time datetime="2015-02-08T23:38:46.000+00:00">5 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/61f1f0edda6ccd9ae6597ebc189ece1d95b8f94f=s500x500" alt="916192900315014132_215183">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/61f1f0edda6ccd9ae6597ebc189ece1d95b8f94f=s500x500" alt="916192900315014132_215183">
 Sweet thing. #goodhq #GOODBBQ #ctzn</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -496,7 +496,7 @@ Sweet thing. #goodhq #GOODBBQ #ctzn</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -505,22 +505,22 @@ Sweet thing. #goodhq #GOODBBQ #ctzn</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2271">
+        <li id="post-2271">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="a"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 sky" data-content="a"></span>
                 </span>
-                @<span data-bind="text: username">anton</span>
+                @<span>anton</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-06T18:46:04.000+00:00">5 weeks ago</time>
+                <time datetime="2015-02-06T18:46:04.000+00:00">5 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>@cogg onboards good inc!</p>
+            <p class="source"></p>
+            <div class="body"><p>@cogg onboards good inc!</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ba89223608f33a3eee87e530e1401584a1cd4a38=s500x500"></p></div>
 
@@ -529,7 +529,7 @@ Sweet thing. #goodhq #GOODBBQ #ctzn</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -538,33 +538,33 @@ Sweet thing. #goodhq #GOODBBQ #ctzn</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2196">
+        <li id="post-2196">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">cogg</span>
+                <span class="avatar"></span>
+                @<span>cogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-05T01:51:42.000+00:00">6 weeks ago</time>
+                <time datetime="2015-02-05T01:51:42.000+00:00">6 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Great meeting with Proyecto Jardin, they will be using ctzn to help capture the collective voice of their supporters.</p></div>
+            <p class="source"></p>
+            <div class="body"><p>Great meeting with Proyecto Jardin, they will be using ctzn to help capture the collective voice of their supporters.</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
             <footer>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">3</span> comments</li>
+<span>3</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -572,28 +572,28 @@ Sweet thing. #goodhq #GOODBBQ #ctzn</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-1994">
+        <li id="post-1994">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 cranberry" data-content="v"></span>
                 </span>
-                @<span data-bind="text: username">vogg</span>
+                @<span>vogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-30T02:10:40.000+00:00">7 weeks ago</time>
+                <time datetime="2015-01-30T02:10:40.000+00:00">7 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/401275824d1d910b6658b57870d23dd45c41a1a1=s500x500" alt="909021600274374975_215183">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/401275824d1d910b6658b57870d23dd45c41a1a1=s500x500" alt="909021600274374975_215183">
 Booth babes at #artizenlab. #ctzn</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -601,7 +601,7 @@ Booth babes at #artizenlab. #ctzn</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -610,28 +610,28 @@ Booth babes at #artizenlab. #ctzn</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-1974">
+        <li id="post-1974">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 cranberry" data-content="v"></span>
                 </span>
-                @<span data-bind="text: username">vogg</span>
+                @<span>vogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-30T01:59:45.000+00:00">7 weeks ago</time>
+                <time datetime="2015-01-30T01:59:45.000+00:00">7 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b00ab023ec7f745d7a9c70a0b8cb37ba04ce1b37=s500x500" alt="909016099612450994_215183">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b00ab023ec7f745d7a9c70a0b8cb37ba04ce1b37=s500x500" alt="909016099612450994_215183">
 Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -639,7 +639,7 @@ Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">1</span> love</li>
+<span>1</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -648,22 +648,22 @@ Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-1824">
+        <li id="post-1824">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">cogg</span>
+                <span class="avatar"></span>
+                @<span>cogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-01-14T18:50:19.000+00:00">9 weeks ago</time>
+                <time datetime="2015-01-14T18:50:19.000+00:00">9 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Kiva will be using ctzn as part of the next class of fellows at the end of this month. Looking for a tool to help the Kiva Fellows feel connected and to better tell their aggregated stories. The stories will be used to inspire people to become Fellows.</p>
+            <p class="source"></p>
+            <div class="body"><p>Kiva will be using ctzn as part of the next class of fellows at the end of this month. Looking for a tool to help the Kiva Fellows feel connected and to better tell their aggregated stories. The stories will be used to inspire people to become Fellows.</p>
 
 <p>They would like to make sure people can participate in places where there aren't smart phones or they are cost prohibitive data plan-wise. To address this we are going to accelerate the ability to participate via email.</p>
 
@@ -676,11 +676,11 @@ Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">1</span> love</li>
+<span>1</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">4</span> comments</li>
+<span>4</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -688,22 +688,22 @@ Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-1341">
+        <li id="post-1341">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">jim</span>
+                <span class="avatar"></span>
+                @<span>jim</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-12-19T01:49:01.000+00:00">13 weeks ago</time>
+                <time datetime="2014-12-19T01:49:01.000+00:00">13 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>I created a mix with sixty images, using the app on a 3G connection. The rendering went quickly, and download time was decent too (less than a minute for a 2.1 megabyte video file).</p>
+            <p class="source"></p>
+            <div class="body"><p>I created a mix with sixty images, using the app on a 3G connection. The rendering went quickly, and download time was decent too (less than a minute for a 2.1 megabyte video file).</p>
 
 <p>http://www.ctznapp.com/mix/84C0E923</p></div>
 
@@ -712,11 +712,11 @@ Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">4</span> love</li>
+<span>4</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">3</span> comments</li>
+<span>3</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -724,29 +724,29 @@ Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-1297">
+        <li id="post-1297">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">jim</span>
+                <span class="avatar"></span>
+                @<span>jim</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-12-18T03:10:28.000+00:00">13 weeks ago</time>
+                <time datetime="2014-12-18T03:10:28.000+00:00">13 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>A shiny new version of our app just went up. Hooray!</p></div>
+            <p class="source"></p>
+            <div class="body"><p>A shiny new version of our app just went up. Hooray!</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
             <footer>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">6</span> love</li>
+<span>6</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -755,33 +755,33 @@ Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-1296">
+        <li id="post-1296">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">eshah</span>
+                <span class="avatar"></span>
+                @<span>eshah</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-12-18T03:08:48.000+00:00">13 weeks ago</time>
+                <time datetime="2014-12-18T03:08:48.000+00:00">13 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>We are launched!!! Celebrating with some Beers and Happy Dance!!</p></div>
+            <p class="source"></p>
+            <div class="body"><p>We are launched!!! Celebrating with some Beers and Happy Dance!!</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
             <footer>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">7</span> love</li>
+<span>7</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">2</span> comments</li>
+<span>2</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -789,28 +789,28 @@ Helping the Mister set up for #artizen. #ctzn #musiccenter</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-780">
+        <li id="post-780">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="m"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 sky" data-content="m"></span>
                 </span>
-                @<span data-bind="text: username">mixwell</span>
+                @<span>mixwell</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T20:32:04.000+00:00">16 weeks ago</time>
+                <time datetime="2014-11-23T20:32:04.000+00:00">16 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5e545b953cfb171d5d7af1d96d08e18bbd39c476=s500x500" alt="860291197094079931_281893082">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5e545b953cfb171d5d7af1d96d08e18bbd39c476=s500x500" alt="860291197094079931_281893082">
 Overhead crowd shot at the @goodhq #ctzn app launch party at @generalassembly LA space #ctznmixer</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -818,7 +818,7 @@ Overhead crowd shot at the @goodhq #ctzn app launch party at @generalassembly LA
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">4</span> love</li>
+<span>4</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -827,28 +827,28 @@ Overhead crowd shot at the @goodhq #ctzn app launch party at @generalassembly LA
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-773">
+        <li id="post-773">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T18:28:09.000+00:00">16 weeks ago</time>
+                <time datetime="2014-11-23T18:28:09.000+00:00">16 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=s500x500" alt="860228831921945540_1451549205"></p>
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=s500x500" alt="860228831921945540_1451549205"></p>
 
 <p>#CTZN everyone creative in this city is gonna be rocking one of these moleskine notebooks before we're done @nobudgetfilmfestival</p></div>
 
@@ -857,7 +857,7 @@ Overhead crowd shot at the @goodhq #ctzn app launch party at @generalassembly LA
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">2</span> love</li>
+<span>2</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -866,28 +866,28 @@ Overhead crowd shot at the @goodhq #ctzn app launch party at @generalassembly LA
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-761">
+        <li id="post-761">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 cranberry" data-content="v"></span>
                 </span>
-                @<span data-bind="text: username">vogg</span>
+                @<span>vogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T02:13:43.000+00:00">16 weeks ago</time>
+                <time datetime="2014-11-23T02:13:43.000+00:00">16 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/260cfa866273f3207ff8689419bec20d069124fd=s500x500" alt="859738380467101734_215183"></p>
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/260cfa866273f3207ff8689419bec20d069124fd=s500x500" alt="859738380467101734_215183"></p>
 
 <p>#ctzn #ctznmixer</p></div>
 
@@ -896,7 +896,7 @@ Overhead crowd shot at the @goodhq #ctzn app launch party at @generalassembly LA
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -905,28 +905,28 @@ Overhead crowd shot at the @goodhq #ctzn app launch party at @generalassembly LA
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-749">
+        <li id="post-749">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T01:02:43.000+00:00">16 weeks ago</time>
+                <time datetime="2014-11-23T01:02:43.000+00:00">16 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3adac066bd531a1665818d6e1f057c03ffc4681f=s500x500" alt="859702644388772277_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3adac066bd531a1665818d6e1f057c03ffc4681f=s500x500" alt="859702644388772277_1451549205">
 Come on in! #CTZN #CTZNmixer</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -934,7 +934,7 @@ Come on in! #CTZN #CTZNmixer</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">1</span> love</li>
+<span>1</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -943,28 +943,28 @@ Come on in! #CTZN #CTZNmixer</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-745">
+        <li id="post-745">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 cranberry" data-content="v"></span>
                 </span>
-                @<span data-bind="text: username">vogg</span>
+                @<span>vogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-23T00:40:13.000+00:00">16 weeks ago</time>
+                <time datetime="2014-11-23T00:40:13.000+00:00">16 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=s500x500" alt="859691325795263273_215183"></p>
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=s500x500" alt="859691325795263273_215183"></p>
 
 <p>#ctzn #ctznmixer</p></div>
 
@@ -973,7 +973,7 @@ Come on in! #CTZN #CTZNmixer</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -982,28 +982,28 @@ Come on in! #CTZN #CTZNmixer</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-733">
+        <li id="post-733">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-21T22:08:50.000+00:00">16 weeks ago</time>
+                <time datetime="2014-11-21T22:08:50.000+00:00">16 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7e3921ec622aad539e8e0be19c98c96efa9dc0a2=s500x500" alt="858890351786703424_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7e3921ec622aad539e8e0be19c98c96efa9dc0a2=s500x500" alt="858890351786703424_1451549205">
 Sneak peek... #CTZN #CTZNmixer</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -1011,7 +1011,7 @@ Sneak peek... #CTZN #CTZNmixer</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">1</span> love</li>
+<span>1</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1020,28 +1020,28 @@ Sneak peek... #CTZN #CTZNmixer</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-731">
+        <li id="post-731">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-21T19:49:38.000+00:00">16 weeks ago</time>
+                <time datetime="2014-11-21T19:49:38.000+00:00">16 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4543b955ebd73c1a1817d8cb6f70a3d9065f2f69=s500x500" alt="858820294545095588_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4543b955ebd73c1a1817d8cb6f70a3d9065f2f69=s500x500" alt="858820294545095588_1451549205">
 Important. #CTZN</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -1049,7 +1049,7 @@ Important. #CTZN</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">2</span> love</li>
+<span>2</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1058,28 +1058,28 @@ Important. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-730">
+        <li id="post-730">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-21T18:57:13.000+00:00">16 weeks ago</time>
+                <time datetime="2014-11-21T18:57:13.000+00:00">16 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7c97cf0ab49cb14aa27a7b3672c4b14611e4fdbe=s500x500" alt="858793908933606011_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7c97cf0ab49cb14aa27a7b3672c4b14611e4fdbe=s500x500" alt="858793908933606011_1451549205">
 @goodhq head of media Will Tacy listening intently as #CTZN head @cogggram speaks about Project Citizen.</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -1087,7 +1087,7 @@ Important. #CTZN</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">1</span> love</li>
+<span>1</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1096,29 +1096,29 @@ Important. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-725">
+        <li id="post-725">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldoatgood</span>
+                <span class="avatar"></span>
+                @<span>aldoatgood</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-21T01:17:59.000+00:00">17 weeks ago</time>
+                <time datetime="2014-11-21T01:17:59.000+00:00">17 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/143d748817336a185ab4e0f697bf9eab1eb95d6d=s500x500"></p></div>
+            <p class="source"></p>
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/143d748817336a185ab4e0f697bf9eab1eb95d6d=s500x500"></p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
             <footer>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1127,22 +1127,22 @@ Important. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-305">
+        <li id="post-305">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="a"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 sky" data-content="a"></span>
                 </span>
-                @<span data-bind="text: username">anton</span>
+                @<span>anton</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-14T18:06:24.000+00:00">17 weeks ago</time>
+                <time datetime="2014-11-14T18:06:24.000+00:00">17 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>First all hands since launch.</p>
+            <p class="source"></p>
+            <div class="body"><p>First all hands since launch.</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47cac9578d3b400ff26af8f47ab09b70386241f5=s500x500"></p></div>
 
@@ -1151,7 +1151,7 @@ Important. #CTZN</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">4</span> love</li>
+<span>4</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1160,33 +1160,33 @@ Important. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-279">
+        <li id="post-279">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldoatgood</span>
+                <span class="avatar"></span>
+                @<span>aldoatgood</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-14T00:31:39.000+00:00">18 weeks ago</time>
+                <time datetime="2014-11-14T00:31:39.000+00:00">18 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>And we're up!!</p></div>
+            <p class="source"></p>
+            <div class="body"><p>And we're up!!</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
             <footer>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">4</span> love</li>
+<span>4</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">1</span> comments</li>
+<span>1</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -1194,28 +1194,28 @@ Important. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-1927">
+        <li id="post-1927">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">eshah</span>
+                <span class="avatar"></span>
+                @<span>eshah</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-06T19:36:09.000+00:00">19 weeks ago</time>
+                <time datetime="2014-11-06T19:36:09.000+00:00">19 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s500x500" alt="847941871639018304_1550263661"></p>
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s500x500" alt="847941871639018304_1550263661"></p>
 
 <p>#ctzn</p></div>
 
@@ -1223,28 +1223,28 @@ Important. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-268">
+        <li id="post-268">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-06T03:14:25.000+00:00">19 weeks ago</time>
+                <time datetime="2014-11-06T03:14:25.000+00:00">19 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2e3bc08ed2a4182a79251a9200a3ebe22edf4a9f=s500x500" alt="847447749937969582_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2e3bc08ed2a4182a79251a9200a3ebe22edf4a9f=s500x500" alt="847447749937969582_1451549205">
 Hmmmm #CTZN</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -1252,11 +1252,11 @@ Hmmmm #CTZN</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">4</span> love</li>
+<span>4</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 -->
                   <li>
-<span data-bind="text: comment_count">1</span> comments</li>
+<span>1</span> comments</li>
                 <!-- /ko -->
               </ul>
             </footer>
@@ -1264,28 +1264,28 @@ Hmmmm #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-264">
+        <li id="post-264">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-05T01:39:43.000+00:00">19 weeks ago</time>
+                <time datetime="2014-11-05T01:39:43.000+00:00">19 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=s500x500" alt="846675304826124523_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=s500x500" alt="846675304826124523_1451549205">
 Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -1293,7 +1293,7 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1302,22 +1302,22 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-260">
+        <li id="post-260">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-04T04:06:42.000+00:00">19 weeks ago</time>
+                <time datetime="2014-11-04T04:06:42.000+00:00">19 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>I saw Aldo's ctznlovebot sign off in the automated emails and drew a few silly lovebots. </p>
+            <p class="source"></p>
+            <div class="body"><p>I saw Aldo's ctznlovebot sign off in the automated emails and drew a few silly lovebots. </p>
 
 <p>PS. When the pink bar looks complete I feel like I can post, but if I hit post it publishes without my image. </p>
 
@@ -1328,7 +1328,7 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">3</span> love</li>
+<span>3</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1337,22 +1337,22 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-245">
+        <li id="post-245">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldoatgood</span>
+                <span class="avatar"></span>
+                @<span>aldoatgood</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-11-02T02:03:10.000+00:00">19 weeks ago</time>
+                <time datetime="2014-11-02T02:03:10.000+00:00">19 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>It's gettin realsies up in here!! Niiiiiiiiiiiice </p>
+            <p class="source"></p>
+            <div class="body"><p>It's gettin realsies up in here!! Niiiiiiiiiiiice </p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/de351704cdc7ae3e8009157e26b55ca217e7fb23=s500x500" alt="image.jpg"></p></div>
 
@@ -1361,7 +1361,7 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">5</span> love</li>
+<span>5</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1370,28 +1370,28 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-219">
+        <li id="post-219">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-24T00:30:09.000+00:00">21 weeks ago</time>
+                <time datetime="2014-10-24T00:30:09.000+00:00">21 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d6f500e75957708c103954f8d7c915e05f56b2d2=s500x500" alt="837942986531780753_1451549205"></p>
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d6f500e75957708c103954f8d7c915e05f56b2d2=s500x500" alt="837942986531780753_1451549205"></p>
 
 <p>#CTZNkickback was packed! #latergram #CTZN #NuevoSouth #greedycity</p></div>
 
@@ -1399,22 +1399,22 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-206">
+        <li id="post-206">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">jim</span>
+                <span class="avatar"></span>
+                @<span>jim</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-23T23:59:02.000+00:00">21 weeks ago</time>
+                <time datetime="2014-10-23T23:59:02.000+00:00">21 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Here are some photos from yesterday’s event at the big house!</p>
+            <p class="source"></p>
+            <div class="body"><p>Here are some photos from yesterday’s event at the big house!</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/db496e6df03423d6e7baeb605b6658140cbc27d7=s500x500" alt="house-1.jpg"></p>
 
@@ -1427,7 +1427,7 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">1</span> love</li>
+<span>1</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1436,22 +1436,22 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-201">
+        <li id="post-201">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">jim</span>
+                <span class="avatar"></span>
+                @<span>jim</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-22T05:49:34.000+00:00">21 weeks ago</time>
+                <time datetime="2014-10-22T05:49:34.000+00:00">21 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>We have official-looking notebooks for tomorrow’s event! (Courtesy of @jelena and @aldo)</p>
+            <p class="source"></p>
+            <div class="body"><p>We have official-looking notebooks for tomorrow’s event! (Courtesy of @jelena and @aldo)</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0afeedd941932e001f0bf0803c43ba11975f82ec=s500x500" alt="image.jpg"></p></div>
 
@@ -1459,50 +1459,50 @@ Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p><
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-199">
+        <li id="post-199">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-21T19:08:12.000+00:00">21 weeks ago</time>
+                <time datetime="2014-10-21T19:08:12.000+00:00">21 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e59c13bf0a20758767592f73368237daa4ed5818=s500x500" alt="836331389526849899_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e59c13bf0a20758767592f73368237daa4ed5818=s500x500" alt="836331389526849899_1451549205">
 Sneak peek. Are you joining us Wednesday for #CTZNkickback? #CTZN #greedycity #nuevosouth</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 --><!-- /ko -->
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-183">
+        <li id="post-183">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-20T18:00:33.000+00:00">21 weeks ago</time>
+                <time datetime="2014-10-20T18:00:33.000+00:00">21 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Stamp!</p>
+            <p class="source"></p>
+            <div class="body"><p>Stamp!</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6d92038f0ecbe984181e4fc83553e2e3f55f22da=s500x500" alt="IMG_20141020_105827.jpg"></p></div>
 
@@ -1511,7 +1511,7 @@ Sneak peek. Are you joining us Wednesday for #CTZNkickback? #CTZN #greedycity #n
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">1</span> love</li>
+<span>1</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1520,28 +1520,28 @@ Sneak peek. Are you joining us Wednesday for #CTZNkickback? #CTZN #greedycity #n
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-169">
+        <li id="post-169">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-17T18:54:27.000+00:00">21 weeks ago</time>
+                <time datetime="2014-10-17T18:54:27.000+00:00">21 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/881eabdbb1d9a9dbbb1c1a78f95ad985fb4ee0b7=s500x500" alt="833425367879498512_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/881eabdbb1d9a9dbbb1c1a78f95ad985fb4ee0b7=s500x500" alt="833425367879498512_1451549205">
 We just got our very first cards! #CTZN #startuplife #building</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
@@ -1549,7 +1549,7 @@ We just got our very first cards! #CTZN #startuplife #building</p></div>
               <ul class="meta">
                 <!-- ko if: attaboy_count > 0 -->
                   <li>
-<span data-bind="text: attaboy_count">1</span> love</li>
+<span>1</span> love</li>
                 <!-- /ko -->
                 <!-- ko if: comment_count > 0 --><!-- /ko -->
               </ul>
@@ -1558,50 +1558,50 @@ We just got our very first cards! #CTZN #startuplife #building</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-165">
+        <li id="post-165">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-17T05:13:09.000+00:00">22 weeks ago</time>
+                <time datetime="2014-10-17T05:13:09.000+00:00">22 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0604e48124f5307806d521d7512cf1905189dbb4=s500x500" alt="833011995866413493_1451549205">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0604e48124f5307806d521d7512cf1905189dbb4=s500x500" alt="833011995866413493_1451549205">
 Important things. #CTZN</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 --><!-- /ko -->
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-136">
+        <li id="post-136">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldoatgood</span>
+                <span class="avatar"></span>
+                @<span>aldoatgood</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-11T00:52:39.000+00:00">22 weeks ago</time>
+                <time datetime="2014-10-11T00:52:39.000+00:00">22 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Here's a sketch for the start screen.</p>
+            <p class="source"></p>
+            <div class="body"><p>Here's a sketch for the start screen.</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b55640bd0c14fe63efc3718d63ded3ec13bcfe38=s500x500" alt="start-page-v2.png"></p></div>
 
@@ -1609,43 +1609,43 @@ Important things. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-67">
+        <li id="post-67">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="d"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="d"></span>
                 </span>
-                @<span data-bind="text: username">dan</span>
+                @<span>dan</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-08T18:08:04.000+00:00">23 weeks ago</time>
+                <time datetime="2014-10-08T18:08:04.000+00:00">23 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e2a21d01453b83844678159aabcf5eff2e8fdea7=s500x500" alt="image.jpg"></p></div>
+            <p class="source"></p>
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e2a21d01453b83844678159aabcf5eff2e8fdea7=s500x500" alt="image.jpg"></p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 --><!-- /ko -->
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-47">
+        <li id="post-47">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">caseycaplowe</span>
+                <span class="avatar"></span>
+                @<span>caseycaplowe</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-04T04:08:30.000+00:00">23 weeks ago</time>
+                <time datetime="2014-10-04T04:08:30.000+00:00">23 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Hmmmmm, i'm here, and this seems to be working. </p>
+            <p class="source"></p>
+            <div class="body"><p>Hmmmmm, i'm here, and this seems to be working. </p>
 
 <p>:)</p>
 
@@ -1655,22 +1655,22 @@ Important things. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-34">
+        <li id="post-34">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 grape" data-content="j"></span>
                 </span>
-                @<span data-bind="text: username">jelena</span>
+                @<span>jelena</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-02T23:21:02.000+00:00">24 weeks ago</time>
+                <time datetime="2014-10-02T23:21:02.000+00:00">24 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Two photos by Damon Turner (@Iamreal8 on Instagram) from our meeting of the minds this morning. Thought it was cool to see that he chose to photograph my personal favorite piece of paper from the prod room :)</p>
+            <p class="source"></p>
+            <div class="body"><p>Two photos by Damon Turner (@Iamreal8 on Instagram) from our meeting of the minds this morning. Thought it was cool to see that he chose to photograph my personal favorite piece of paper from the prod room :)</p>
 
 <p>Exciting collaboration afoot with Damon and the Mercado La Paloma as well as Jorgé Nuño -- we locked in a space for an October 22 Citizen happy hour at The Big House, a location Jorgé makes available for selected events within his network. </p>
 
@@ -1682,22 +1682,22 @@ Important things. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-25">
+        <li id="post-25">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">cogg</span>
+                <span class="avatar"></span>
+                @<span>cogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-02T04:19:52.000+00:00">24 weeks ago</time>
+                <time datetime="2014-10-02T04:19:52.000+00:00">24 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>For the future record, here is what an early version of the prototype looks like.</p>
+            <p class="source"></p>
+            <div class="body"><p>For the future record, here is what an early version of the prototype looks like.</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/db6b82559d73cdbf183b183c44773d60b502b8a3=s500x500" alt="Screen Shot 2014-10-01 at 9.19.35 PM.png"></p></div>
 
@@ -1705,22 +1705,22 @@ Important things. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-24">
+        <li id="post-24">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/development.ctzn/137828fea27c6fd77816c5e908e47f24fa726587=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">jim</span>
+                <span class="avatar"></span>
+                @<span>jim</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-10-02T03:27:14.000+00:00">24 weeks ago</time>
+                <time datetime="2014-10-02T03:27:14.000+00:00">24 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>Aldo and I made a new UI, with Polymer!</p>
+            <p class="source"></p>
+            <div class="body"><p>Aldo and I made a new UI, with Polymer!</p>
 
 <p>[http://jimthoburn.github.io/polymer/examples/alpha/](http://jimthoburn.github.io/polymer/examples/alpha/)</p>
 
@@ -1730,22 +1730,22 @@ Important things. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-7">
+        <li id="post-7">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldoatgood</span>
+                <span class="avatar"></span>
+                @<span>aldoatgood</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-09-30T22:24:54.000+00:00">24 weeks ago</time>
+                <time datetime="2014-09-30T22:24:54.000+00:00">24 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source"></p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p>This is real! It's happening!!</p>
+            <p class="source"></p>
+            <div class="body"><p>This is real! It's happening!!</p>
 
 <p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/1c1b990088586dbab026ae9f790754272041a6ab=s500x500" alt="citizen-design-v2-copy.png"></p></div>
 
@@ -1753,28 +1753,28 @@ Important things. #CTZN</p></div>
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-247">
+        <li id="post-247">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">cogg</span>
+                <span class="avatar"></span>
+                @<span>cogg</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2014-08-29T18:50:47.000+00:00">28 weeks ago</time>
+                <time datetime="2014-08-29T18:50:47.000+00:00">28 weeks ago</time>
               </p>
             </header>
-            <p class="source" data-bind="if: source">
+            <p class="source">
               <!-- ko if: source == 'twitter' --><!-- /ko -->
               <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               <!-- /ko -->
               <!-- ko if: source == 'facebook' --><!-- /ko -->
             </p>
-            <div class="body" data-bind="html: good.postBodyToHtml(body, 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6521c01a76bebc9dbfdf0fd2b55a87fd26a65e8d=s500x500" alt="797909507094914219_226114904">
+            <div class="body"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6521c01a76bebc9dbfdf0fd2b55a87fd26a65e8d=s500x500" alt="797909507094914219_226114904">
 Tools for a day hanging out with GOOD peeps at #IndieDesk. #oldschooltools #ctzn</p></div>
 
             <!-- ko if: attaboy_count > 0 || comment_count > 0 --><!-- /ko -->

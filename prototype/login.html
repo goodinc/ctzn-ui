@@ -247,7 +247,7 @@
     <header>
       <h1>Log In</h1>
 
-      <a href="#start" class="back" data-bind="click: function(){ good.currentScreen({ name: &quot;start&quot; }) }">
+      <a href="#start" class="back">
         Cancel
       </a>
     </header>
@@ -256,31 +256,31 @@
 
     <!-- ko if: errorMessage() --><!-- /ko -->
 
-    <form class="has-icon" data-bind="submit: onSubmit">
+    <form class="has-icon">
       <p class="text">
         <label>
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-circle"></use><foreignObject>Username</foreignObject></svg><br>
-          <input type="text" placeholder="Username" data-bind="textInput: username, disable: inProgress" autocapitalize="none" autocorrect="off">
+          <input type="text" placeholder="Username" autocapitalize="none" autocorrect="off">
         </label>
       </p>
       <p class="text">
         <label>
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#padlock"></use><foreignObject>Password</foreignObject></svg><br>
-          <input type="password" placeholder="Password" data-bind="textInput: password, disable: inProgress">
+          <input type="password" placeholder="Password">
         </label>
-        <em class="note"><a href="" data-bind="click: function(){ good.currentScreen({ name: &quot;forgot password&quot; }) }">Forgot?</a></em>
+        <em class="note"><a href="">Forgot?</a></em>
       </p>
       <p class="submit">
-        <button data-bind="enable: canSubmit" disabled="">Next</button>
+        <button disabled="">Next</button>
       </p>
     </form>
 
     <div>
       <h2 class="or"><span>Or</span></h2>
       <p class="action facebook">
-        <a href="#facebook" data-bind="click: onFacebookLoginClicked">
+        <a href="#facebook">
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg>
-          <span data-bind="text: facebookButtonText">Log in with Facebook</span>
+          <span>Log in with Facebook</span>
         </a>
       </p>
     </div>
