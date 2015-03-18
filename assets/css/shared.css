@@ -1242,16 +1242,30 @@
     height: 1.5em;
     vertical-align: top;
   }
-  header.primary .icon.sending {
-    margin-top: 0.5em;
-    margin-left: 1.5em;
+
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  header.primary .network-indicator {
     float: left;
-    transition: opacity 0.2s;
-    opacity: 0;
+    margin-left: 0.75em;
+    -webkit-animation: fade-in 0.2s 0.4s both;
+            animation: fade-in 0.2s 0.4s both;
   }
-  header.primary .icon.sending.active {
-    opacity: 1;
-  }
+
   header.primary nav h2 {
     background-color: rgb(51, 51, 51); /* @iron */
     font-size: inherit;
@@ -2184,10 +2198,6 @@
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
-  .push-card .validation-message {
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
-  }
   .start.page aside a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
@@ -2661,20 +2671,32 @@
 
   .file label,
   .file button {
-    padding: 0 0.375em; /* @line-height / 4 */
+    display: inline-block;
+    padding: 0.375em; /* @line-height / 4 */
     background: transparent;
     color: rgb(102, 102, 102); /* @tin */
+    cursor: pointer;
   }
   .file input[type="file"] {
     position: absolute;
     left: -9999px;
   }
+  .file input[type="file"] ~ span {
+    margin-left: 0.125em;
+  }
   .file button:focus,
   .file button:active,
-  .file input[type="file"]:focus ~ .icon {
+  .file input[type="file"]:focus  ~ .icon,
+  .file input[type="file"]:active ~ .icon,
+  .file input[type="file"]:focus   ~ span,
+  .file input[type="file"]:active  ~ span {
     color: black;
   }
 
+  form .images {
+    padding-bottom: 0.75em;
+    margin-bottom: 0;
+  }
   form ol.images,
   form .images li {
     list-style: none;
@@ -2686,23 +2708,26 @@
     display: inline-block;
   }
   form .images li button {
-    border: 1px solid rgb(222, 222, 222); /* @silver */
     background: white;
     padding: 0;
     min-width: 3em;
     height: 6.25em;
     position: relative;
-    border-radius: 0;
+    border-radius: 0.125em
   }
-  @media (max-height: 40em), (max-width: 33.75em) {  
+  @media (max-width: 33.75em) {  
     form ol.images {
       margin-left: -1.25em; /* @page-padding */
       margin-right: -1.25em;
+      padding-left: 1.25em;
+      padding-right: 1.25em;
       white-space: nowrap;
       overflow-y: hidden;
       overflow-x: scroll;
       line-height: 1;
-      padding: 0 1.25em;
+
+      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+      -webkit-overflow-scrolling: touch;
     }
   }
   form .images li img {
@@ -2734,6 +2759,13 @@
   form .images li button:focus  span,
   form .images li button:active span {
     opacity: 1;
+  }
+  form .images + p {
+    margin-top: 0;
+    border-width: 0.0625em 0 0;
+    border-style: solid;
+    border-color: rgb(222, 222, 222); /* @silver */
+    padding-top: 0.375em;
   }
 
 
@@ -2914,6 +2946,9 @@
   .edit-profile .file label,
   .edit-profile .file label > span {
     display: block;
+  }
+  .edit-profile .file label {
+    padding-top: 0;
   }
   .edit-profile .file img {
     display: block;
@@ -3235,6 +3270,9 @@
       overflow-y: hidden;
       overflow-x: scroll;
       line-height: 1;
+
+      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+      -webkit-overflow-scrolling: touch;
     }
     .mix-editor .selected-images ol li {
       float: none;
