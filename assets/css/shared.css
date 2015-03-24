@@ -959,7 +959,7 @@
   }
   .post-list > li {
     margin: 0 auto;
-    max-width: 31.25em; /* image.width / @font-size (500px / 16px) */
+    max-width: 32em; /* image width / @font-size (512px / 16px) */
   }
   .post-list > li:last-child {
     border-bottom-width: 0;
@@ -1237,7 +1237,7 @@
     border-radius: 0.25em;
     margin: -0.75em -1em;
   }
-  header.primary h1 a svg.icon {
+  header.primary h1 svg.icon {
     width: 2.6315789474em;
     height: 1.5em;
     vertical-align: top;
@@ -1318,6 +1318,7 @@
   header.primary a:focus {
     color: white;
   }
+  header.primary > a, /* For the push preview */
   header.primary h1,
   header.primary h2,
   header.primary p {
@@ -1340,8 +1341,16 @@
     font-size: 0.875em;
     line-height: 1.7142857143em; /* 1.5em / 0.875em */
   }
-  header.primary p:last-child {
-    float: right;
+
+  /* OPTIONAL: Only show the about text on large screens (since it’s somewhat redundant information). */
+  header.primary p.about {
+    display: none;
+  }
+  @media (min-width: 40em) { /* This number is arbitrary. (It happens to be about the width of the header with all of the text showing.) */
+    header.primary p.about {
+      display: inline-block;
+      float: right;
+    }
   }
 
   footer.primary .about,
@@ -1625,7 +1634,7 @@
   .page > form,
   .page > aside {
     padding: 1.25em; /* @page-padding */
-    max-width: 31.25em; /* image.width / font-size (500px / 16px) */
+    max-width: 32em; /* image width / font-size (512px / 16px) */
     margin: 0 auto;
   }
   .page > div:last-child,
@@ -2355,6 +2364,16 @@
     text-align: center;
     padding-top: 1.5em;
     margin-bottom: -0.75em;
+  }
+
+  /* SHIM: Prevent a scrollbar on small screens (the images element overlaps the edge by 1 pixel). */
+  .push-card .post-list .post-item .images {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .mixable .push-card .post-list .post-item .images {
+    max-width: none;
+    overflow: visible;
   }
 
   /* OPTIONAL: Make images stick to the left and right edge of the post */
