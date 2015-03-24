@@ -2219,16 +2219,16 @@
   /* OPTIONAL: Space things out a little more on tall screens */
   @media (min-height: 500px) {
     .signup.page > div,
-    .start.page > div,
+    .start.page  > div,
     .push-card .details {
       margin-top: 3em;
-    }
-    .push-card .details {
-      margin-bottom: 3em;
     }
     .push-card form {
       margin-top: 3em;
       margin-bottom: 3em;
+    }
+    .push-card .post-list {
+      margin-top: 3em;
     }
   }
 

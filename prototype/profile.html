@@ -287,13 +287,13 @@
 
     </div>
 
-    <ol class="post-list">
+<ol class="post-list">
       <li id="post-1296">
         <article class="post-item">
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
@@ -301,7 +301,7 @@
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-12-18T03:08:48+00:00">12 weeks ago</time>
+                <time datetime="2014-12-18T03:08:48+00:00">14 weeks ago</time>
               </a>
             </p>
           </header>
@@ -320,29 +320,28 @@
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
             <ul class="meta">
-              
+              <!-- ko if: attaboys().length > 0 -->
               <li>
 <span>7</span> love</li>
-              
-              
-              <li>
-<span>2</span> comments</li>
-              
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 -->
+              <li><span>2 comments</span></li>
+              <!-- /ko -->
 
-              
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
             </ul>
-          
+          <!-- /ko -->
           </footer>
         </article>
 
@@ -353,25 +352,25 @@
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
-              
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              
+              <!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-18T22:07:26+00:00">16 weeks ago</time>
+                <time datetime="2014-11-18T22:07:26+00:00">18 weeks ago</time>
               </a>
             </p>
           </header>
 
-          <a href="#post" class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s500x500" alt="856715319152556298_1550263661"></p>
+          <a href="#post" class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s512x512" alt="Image 1" srcset="https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s256x256 256w, https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s384x384 384w, https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s512x512 512w, https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s768x768 768w, https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/01de15f7018364b273bcaa162238a818dcfd9fc0=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
 
 <p>#ctzn</p></a>
 
@@ -387,26 +386,26 @@
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
             <ul class="meta">
-              
+              <!-- ko if: attaboys().length > 0 -->
               <li>
 <span>2</span> love</li>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
 
-              
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
             </ul>
-          
+          <!-- /ko -->
           </footer>
         </article>
 
@@ -417,20 +416,20 @@
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
+              <!-- ko if: source == 'twitter' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-12T22:15:57+00:00">17 weeks ago</time>
+                <time datetime="2014-11-12T22:15:57+00:00">19 weeks ago</time>
               </a>
             </p>
           </header>
@@ -449,16 +448,16 @@
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -469,20 +468,20 @@
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
+              <!-- ko if: source == 'twitter' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-06T23:10:48+00:00">18 weeks ago</time>
+                <time datetime="2014-11-06T23:10:48+00:00">20 weeks ago</time>
               </a>
             </p>
           </header>
@@ -501,16 +500,16 @@
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -521,25 +520,25 @@
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
-              
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              
+              <!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-06T19:37:08+00:00">18 weeks ago</time>
+                <time datetime="2014-11-06T19:37:08+00:00">20 weeks ago</time>
               </a>
             </p>
           </header>
 
-          <a href="#post" class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s500x500" alt="847942367204424522_1550263661">
+          <a href="#post" class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s512x512" alt="Image 1" srcset="https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s256x256 256w, https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s384x384 384w, https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s512x512 512w, https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s768x768 768w, https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/70b6a59da9fd7d3512e5a6574072c924c9936f83=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
 @ctzn testing. #push #ctzn</p></a>
 
           <footer>
@@ -554,16 +553,16 @@
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -574,25 +573,25 @@
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
-              
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              
+              <!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-06T19:36:09+00:00">18 weeks ago</time>
+                <time datetime="2014-11-06T19:36:09+00:00">20 weeks ago</time>
               </a>
             </p>
           </header>
 
-          <a href="#post" class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s500x500" alt="847941871639018304_1550263661"></p>
+          <a href="#post" class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s512x512" alt="Image 1" srcset="https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s256x256 256w, https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s384x384 384w, https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s512x512 512w, https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s768x768 768w, https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
 
 <p>#ctzn</p></a>
 
@@ -608,16 +607,16 @@
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -628,25 +627,25 @@
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
-              
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              
+              <!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-11-03T21:36:58+00:00">19 weeks ago</time>
+                <time datetime="2014-11-03T21:36:58+00:00">20 weeks ago</time>
               </a>
             </p>
           </header>
 
-          <a href="#post" class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s500x500" alt="845828347601173475_1550263661">
+          <a href="#post" class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s512x512" alt="Image 1" srcset="https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s256x256 256w, https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s384x384 384w, https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s512x512 512w, https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s768x768 768w, https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/a2d1d53177ab8fa16afcdad1329c4341296f33b1=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
 Jar of water #ctzn</p></a>
 
           <footer>
@@ -661,16 +660,16 @@ Jar of water #ctzn</p></a>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -681,20 +680,20 @@ Jar of water #ctzn</p></a>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
+              <!-- ko if: source == 'twitter' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-10-21T21:09:58+00:00">20 weeks ago</time>
+                <time datetime="2014-10-21T21:09:58+00:00">22 weeks ago</time>
               </a>
             </p>
           </header>
@@ -713,26 +712,26 @@ Jar of water #ctzn</p></a>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
             <ul class="meta">
-              
+              <!-- ko if: attaboys().length > 0 -->
               <li>
 <span>1</span> love</li>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
 
-              
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
             </ul>
-          
+          <!-- /ko -->
           </footer>
         </article>
 
@@ -743,20 +742,20 @@ Jar of water #ctzn</p></a>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
+              <!-- ko if: source == 'twitter' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-10-21T21:06:24+00:00">20 weeks ago</time>
+                <time datetime="2014-10-21T21:06:24+00:00">22 weeks ago</time>
               </a>
             </p>
           </header>
@@ -775,26 +774,26 @@ Jar of water #ctzn</p></a>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
             <ul class="meta">
-              
+              <!-- ko if: attaboys().length > 0 -->
               <li>
 <span>1</span> love</li>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
 
-              
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
             </ul>
-          
+          <!-- /ko -->
           </footer>
         </article>
 
@@ -805,7 +804,7 @@ Jar of water #ctzn</p></a>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
@@ -813,7 +812,7 @@ Jar of water #ctzn</p></a>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-10-18T00:18:10+00:00">21 weeks ago</time>
+                <time datetime="2014-10-18T00:18:10+00:00">23 weeks ago</time>
               </a>
             </p>
           </header>
@@ -832,16 +831,16 @@ Jar of water #ctzn</p></a>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -852,7 +851,7 @@ Jar of water #ctzn</p></a>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
@@ -860,7 +859,7 @@ Jar of water #ctzn</p></a>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-10-17T20:18:18+00:00">21 weeks ago</time>
+                <time datetime="2014-10-17T20:18:18+00:00">23 weeks ago</time>
               </a>
             </p>
           </header>
@@ -881,16 +880,16 @@ Jar of water #ctzn</p></a>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -901,7 +900,7 @@ Jar of water #ctzn</p></a>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
@@ -909,7 +908,7 @@ Jar of water #ctzn</p></a>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-10-10T22:52:12+00:00">22 weeks ago</time>
+                <time datetime="2014-10-10T22:52:12+00:00">24 weeks ago</time>
               </a>
             </p>
           </header>
@@ -933,16 +932,16 @@ Jar of water #ctzn</p></a>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -953,7 +952,7 @@ Jar of water #ctzn</p></a>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
@@ -961,7 +960,7 @@ Jar of water #ctzn</p></a>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-10-04T00:06:42+00:00">23 weeks ago</time>
+                <time datetime="2014-10-04T00:06:42+00:00">25 weeks ago</time>
               </a>
             </p>
           </header>
@@ -969,7 +968,7 @@ Jar of water #ctzn</p></a>
           <a href="#post" class="body"><p>New Designs looks great!!. Playing with it. 
 Added validation on Edit Post and it works. </p>
 
-<p><img src="https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s500x500" alt="Screen Shot 2014-10-03 at 5.06.21 PM.png"></p></a>
+<p><img src="https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s512x512" alt="Image 1" srcset="https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s256x256 256w, https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s384x384 384w, https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s512x512 512w, https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s768x768 768w, https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/de096b43d5d33dbd47966b22a6fcb274437628f5=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></a>
 
           <footer>
           <ul class="action">
@@ -983,16 +982,16 @@ Added validation on Edit Post and it works. </p>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -1003,7 +1002,7 @@ Added validation on Edit Post and it works. </p>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
@@ -1011,7 +1010,7 @@ Added validation on Edit Post and it works. </p>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-10-01T08:01:04+00:00">23 weeks ago</time>
+                <time datetime="2014-10-01T08:01:04+00:00">25 weeks ago</time>
               </a>
             </p>
           </header>
@@ -1030,16 +1029,16 @@ Added validation on Edit Post and it works. </p>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -1050,20 +1049,20 @@ Added validation on Edit Post and it works. </p>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
+              <!-- ko if: source == 'twitter' -->
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-09-30T22:08:14+00:00">23 weeks ago</time>
+                <time datetime="2014-09-30T22:08:14+00:00">25 weeks ago</time>
               </a>
             </p>
           </header>
@@ -1082,16 +1081,16 @@ Added validation on Edit Post and it works. </p>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -1102,7 +1101,7 @@ Added validation on Edit Post and it works. </p>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
@@ -1110,14 +1109,14 @@ Added validation on Edit Post and it works. </p>
             <p class="source"></p>
             <p>
               <a href="#post">
-                <time datetime="2014-09-30T19:24:42+00:00">23 weeks ago</time>
+                <time datetime="2014-09-30T19:24:42+00:00">25 weeks ago</time>
               </a>
             </p>
           </header>
 
           <a href="#post" class="body"><p>First Production Post!!</p>
 
-<p><img src="https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s500x500" alt="ItsWorking.gif"></p></a>
+<p><img src="https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s512x512" alt="Image 1" srcset="https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s256x256 256w, https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s384x384 384w, https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s512x512 512w, https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s768x768 768w, https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/cadfd49838fd12c00e0a14c75dea98c3238a1068=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></a>
 
           <footer>
           <ul class="action">
@@ -1131,26 +1130,26 @@ Added validation on Edit Post and it works. </p>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
             <ul class="meta">
-              
+              <!-- ko if: attaboys().length > 0 -->
               <li>
 <span>1</span> love</li>
-              
-              
+              <!-- /ko -->
+              <!-- ko if: comments().length > 0 --><!-- /ko -->
 
-              
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
             </ul>
-          
+          <!-- /ko -->
           </footer>
         </article>
 
@@ -1161,18 +1160,18 @@ Added validation on Edit Post and it works. </p>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
-              
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-09-30T04:12:58+00:00">24 weeks ago</time>
+                <time datetime="2014-09-30T04:12:58+00:00">25 weeks ago</time>
               </a>
             </p>
           </header>
@@ -1195,16 +1194,16 @@ Added validation on Edit Post and it works. </p>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -1215,18 +1214,18 @@ Added validation on Edit Post and it works. </p>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
-              
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-09-26T00:24:29+00:00">24 weeks ago</time>
+                <time datetime="2014-09-26T00:24:29+00:00">26 weeks ago</time>
               </a>
             </p>
           </header>
@@ -1250,16 +1249,16 @@ Aaron and Dan help me to finish installation.</p>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
@@ -1270,18 +1269,18 @@ Aaron and Dan help me to finish installation.</p>
           <header>
             <h3>
                 <span class="avatar">
-                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30 30w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 60w, https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c30x30">
                 </span>
                 <span class="avatar"></span>
                 @<span>eshah</span>
             </h3>
             <p class="source">
-              
-              
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
             </p>
             <p>
               <a href="#post">
-                <time datetime="2014-09-25T00:33:54+00:00">24 weeks ago</time>
+                <time datetime="2014-09-25T00:33:54+00:00">26 weeks ago</time>
               </a>
             </p>
           </header>
@@ -1306,25 +1305,21 @@ Aaron and Dan help me to finish installation.</p>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use><foreignObject>Add Comment</foreignObject></svg>
               </a>
             </li>
-            
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
             <li>
-              
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
                 <a href="#post-options" class="options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              
+              <!-- /ko -->
             </li>
           </ul>
-          
+          <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
           </footer>
         </article>
 
       </li>
     </ol>
-
-    
-
-    
 
     
   </section>

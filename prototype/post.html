@@ -243,55 +243,60 @@
     </defs>
   </svg>
 
-  <section class="post page">
-    <header><h1>Post</h1>
+<section class="post page">
+    <header>
+      <h1>Post</h1>
+
       <a href="#push" class="back">
-        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
+        <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use><foreignObject>Go Back</foreignObject></svg>
       </a>
     </header>
+
     <div class="details">
-<article class="post-item">
+      <article class="post-item">
         <header>
           <h3>
             <a href="#profile">
               <span class="avatar">
                 <!-- ko if: user.profile_image -->
-                <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+                <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/f3661d43e0bb6c3e4f7b7a2fa8e3f3903367ace8=c30x30 30w, https://m.ctznapp.com/s3/ctzn/f3661d43e0bb6c3e4f7b7a2fa8e3f3903367ace8=c60x60 60w, https://m.ctznapp.com/s3/ctzn/f3661d43e0bb6c3e4f7b7a2fa8e3f3903367ace8=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/f3661d43e0bb6c3e4f7b7a2fa8e3f3903367ace8=c30x30">
                 <!-- /ko -->
                 <!-- ko if: !user.profile_image --><!-- /ko -->
               </span>
-              <span>@<span>caseycaplowe</span></span>
+              <span>@<span>iamreal8</span></span>
             </a>
           </h3>
-          <p class="source"></p>
+          <p class="source">
+            <!-- ko if: source == 'twitter' --><!-- /ko -->
+            <!-- ko if: source == 'instagram' -->
+            <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+            <!-- /ko -->
+          </p>
           <p>
-            <time datetime="2015-02-27T17:36:27+00:00">1 week ago</time>
+            <time datetime="2015-03-18T20:27:48+00:00">6 days ago</time>
           </p>
         </header>
 
-        <div class="body"><p>And @cogg, you can't forget about the "hip coffee shop" test. Shown here with the cover in the works.</p>
+        
+        <div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=s1024x1024" alt="Image 1" srcset="https://m.ctznapp.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=s512x512 512w, https://m.ctznapp.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=s768x768 768w, https://m.ctznapp.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=s2048x2048 2048w, https://m.ctznapp.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=s2048x2048 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
+A healthy org has healthy practice. Company bike helmets to accompany company bikes. Going to lunch? Grab a bike and a helmet. . .dope. #ctzn #good #greedycity</p>
 
-<p><img src="https://m.ctznapp.com/s3/ctzn/f73760274a9868c04dd696c863fcabd6551b223c=s1000x1000"></p>
+          <video type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640">
+            <!-- ko foreach: movieFiles -->
+            <source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v" type="video/mp4">
+            
+            <source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.webm" type="video/webm">
+            <!-- /ko -->
 
-<!--
-<p><img src="https://m.ctznapp.com/s3/ctzn/3fc3a6c33c0e76502aa308e7552ef88ad56997ca=s1000x1000"></p></div>
--->
-
-        <video type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640">
-          <!-- ko foreach: movieFiles -->
-          <source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v" type="video/mp4">
-          
-          <source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.webm" type="video/webm">
-          <!-- /ko -->
-
-          <h1>Oops!</h1>
-          <p>It looks like our video player isn’t working in your web browser. We recommend using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.apple.com/safari/" target="_blank">Safari</a> to watch this mix.</p>
-        </video>
+            <h1>Oops!</h1>
+            <p>It looks like our video player isn’t working in your web browser. We recommend using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.apple.com/safari/" target="_blank">Safari</a> to watch this mix.</p>
+          </video>
+        </div>
 
         <footer>
         <ul class="action">
           <li>
-            <button role="checkbox" aria-checked="true">
+            <button role="checkbox" aria-checked="false">
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
             </button>
           </li>
@@ -309,16 +314,13 @@
             <!-- /ko -->
           </li>
         </ul>
-        <!-- ko if: attaboys().length > 0 || comments().length > 0 -->
+        <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
           <ul class="meta">
             <!-- ko if: attaboys().length > 0 -->
             <li>
-<span>9</span> love</li>
+<span>1</span> love</li>
             <!-- /ko -->
-            <!-- ko if: comments().length > 0 -->
-            <li>
-<span>2</span> comments</li>
-            <!-- /ko -->
+            <!-- ko if: comments().length > 0 --><!-- /ko -->
 
             <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
           </ul>
