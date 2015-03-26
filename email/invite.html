@@ -23,7 +23,7 @@
     .body {
       font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: rgb(238, 238, 238); /* @seashell */
-      padding: 10px 10px 60px;
+      padding: 10px 0 120px;
     }
 
     a {
@@ -65,11 +65,27 @@
     .steps {
       margin-top: 10px;
     }
+    .footer {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 
+    .header h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .header {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: center;
+    }
     .header .ctzn {
       margin-left: 10px;
       margin-right: 10px;
       font-size: 10px;
+      margin-top: 20px;
+      margin-bottom: 0;
     }
     .header .ctzn a {
       text-decoration: none;
@@ -77,25 +93,13 @@
 
     @media (min-width: 600px) {
       .header {
-        position: relative;
+        text-align: left;
+      }
+      .header h2 {
+        float: left;
       }
       .header .ctzn {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        margin: 0;
-      }
-    }
-
-    @media (min-width: 200px) {
-      .footer {
-        position: relative;
-      }
-      .footer .unsubscribe {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        margin: 0;
+        float: right;
       }
     }
 
@@ -121,10 +125,15 @@
       margin-top: 1px;
     }
 
+    .footer h2 {
+      float: left;
+    }
+    .footer .unsubscribe {
+      float: right;
+    }
     .footer .unsubscribe a {
       font-size: 12px;
     }
-
 
     .summary h1,
     .summary h2 {
@@ -146,11 +155,6 @@
       padding: 10px 0 10px 10px;
       font-weight: bold;
     }
-    /*
-    .steps ol div {
-      font-size: 0.25em;
-    }
-    */
     .steps .after-li {
       border-top: 1px solid rgb(238, 238, 238); /* @seashell */
       margin-top: 30px;
@@ -271,7 +275,7 @@
   <div class="plumb body">
 
     <div class="header">
-      <h2><img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/01b43dae-8a20-4e99-bfc9-472f04a08842.png" alt="Dreamers + Doers" width="232" height="57" /></h2>
+      <h2><img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/d8f5c22e-4222-4be8-af76-fa695a41a5ce.png" alt="Dreamers + Doers" width="232" height="57" /></h2>
       <p class="ctzn">
         <a href="http://ctznapp.com">
           POWERED BY
@@ -283,6 +287,7 @@
           </b>
         </a>
       </p>
+      <div style="clear: both"></div>
     </div><!-- /.header -->
 
     <div class="summary first">
@@ -290,8 +295,8 @@
     </div><!-- /.summary -->
 
     <div class="message">
-      <p>Message from the organizer here… Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut interdum enim. Integer malesuada nisl quis nunc convallis, id accumsan enim pellentesque. </p>
-      <p>Nullam interdum tincidunt volutpat. Nulla consequat, leo tincidunt imperdiet euismod, lorem ligula facilisis leo, sed bibendum ligula est eget enim. Mauris at ante faucibus, consequat lacus sit amet, tincidunt massa. Cras suscipit ultricies tincidunt. Mauris vehicula, nulla eu bibendum vestibulum, magna enim tristique erat, nec hendrerit erat urna semper ligula. Fusce scelerisque metus vulputate diam lacinia, non condimentum metus vestibulum. </p>
+      <p>Thank you for coming to the first ever Dreamers + Doers night. We hope you left inspired to make an impact in our city. But we don’t want you to do it alone! We’re building a community bigger than each event and connects changemakers across Vancouver to collaborate, inspire, and support each other. Join us on CTZN and keep these conversations going.</p>
+      <p>Let’s create amazing things together.</p>
     </div><!-- /.message -->
 
     <p class="join"><a href="http://ctznapp.com"><span>join the group</span></a></p>
