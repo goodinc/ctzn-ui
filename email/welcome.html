@@ -43,11 +43,14 @@
     .intro .heart,
     .intro h2,
     .intro p {
-      margin-right: 10px;
+      margin-right: 20px;
     }
     .intro h2,
     .intro p {
       display: inline;
+    }
+    .intro p.secondary {
+      opacity: 0.5;
     }
     .first.intro:after {
       content: "+";
@@ -539,7 +542,6 @@
     }
 
 
-
     /*
     colors = [
       'plumb',
@@ -570,36 +572,43 @@
     background_color = complimentary_colors[push_color].sample;
     */
 
-
   </style>
 
 </head>
 <body>
 
-  <div class="plumb body">
+  <div class="orange body">
 
     <div class="headline first">
       <h1>Welcome to CTZN!</h1>
     </div><!-- /.headline -->
 
-    <div class="kiwi first intro">
+    <!-- If they signed up through Facebook -->
+    <div class="message">
+      <p>Thank you for connecting your Facebook account to your CTZN account. Here is a preview of your CTZN profile:</p>
+    </div><!-- /.message -->
+
+    <div class="bluebird first intro">
       <span class="avatar">
-        <span class="size60 cantaloupe"><span class="letter">A</span></span>
+        <span class="size60 kiwi"><span class="letter">B</span></span>
+        <!-- If they signed up through Facebook
+        <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c120x120" width="60" height="60" alt="" />
+         -->
       </span>
-      <h2>@aldopuicon</h2>
-      <p>Aldo Puicon</p>
-      <p><a href="">Edit Profile</a></p>
+      <h2>@brian</h2>
+      <p class="secondary">Brian Nilsen</p>
+      <p><a href="http://ctznapp.com">Edit Profile</a></p>
     </div>
 
-    <div class="boysenberry second intro">
+    <div class="lime second intro">
       <span class="avatar">
-        <span class="size60 plumb"><span class="letter">N</span></span>
+        <span class="size60 orange"><span class="letter">C</span></span>
       </span>
-      <h2>Neighborday</h2>
-      <p>1,237 people</p>
+      <h2>CicLAvia</h2>
+      <p class="secondary">1,237 people</p>
     </div>
 
-    <div class="tangerine intro">
+    <div class="plumb intro">
       <span class="heart">
         <!-- Heart -->
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
@@ -627,7 +636,7 @@
               <foreignobject><img src="../assets/images/email/70x70/camera.png" width="35" height="35" alt="" /></foreignobject>
             </svg>
           </b>
-          <div>Snap or shoot your favorite <b>Neighborday</b> moments, whenever and wherever they happen</div>
+          <div>Snap or shoot your favorite <b>CicLAvia</b> moments, whenever and wherever they happen</div>
         </li>
         <li class="not-first">
           <b class="icon">
@@ -638,7 +647,7 @@
               <foreignobject><img src="../assets/images/email/70x70/upload.png" width="35" height="35" alt="" /></foreignobject>
             </svg>
           </b>
-          <div>Post your <b>Neighborday</b> photos, videos, and notes directly to CTZN</div>
+          <div>Post your <b>CicLAvia</b> photos, videos, and notes directly to CTZN</div>
 
           <div class="icons">
 
@@ -678,7 +687,7 @@
               <foreignobject><img src="../assets/images/email/70x70/settings.png" width="35" height="35" alt="" /></foreignobject>
             </svg>
           </b>
-          <div>Connect to add your <b>#neighborday</b> social media directly from Instagram, Twitter, and Facebook</div>
+          <div>Connect to add your <b>#ciclavia</b> social media directly from Instagram, Twitter, and Facebook</div>
 
           <div class="icons">
 
