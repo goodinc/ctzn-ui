@@ -1287,6 +1287,12 @@
   header.primary > a {
     border-left: 0.0625em solid rgb(44, 44, 44); /* @thorium */
   }
+
+  /* SHIM: Remove the left border on the push preview page. */
+  header.primary > a:first-child {
+    border-left-width: 0;
+  }
+
   header.primary .notifications {
     position: absolute;
     top: 0;
@@ -1335,6 +1341,12 @@
     display: inline-block;
     margin: 0;
   }
+
+  /* SHIM: Allow the logo to be positioned on the push preview (“couch” mode) */
+  .mixable header.primary > a {
+    display: inline;
+  }
+
   header.primary h1 {
     vertical-align: bottom;
     margin-right: 0.75em;
@@ -2253,6 +2265,9 @@
     }
     .push-card .post-list {
       margin-top: 3em;
+    }
+    .mixable .push-card .post-list {
+      margin-top: 0;
     }
   }
 
