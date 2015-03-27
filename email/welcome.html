@@ -39,15 +39,23 @@
       background: white;
       padding: 45px;
     }
+    .intro .avatar {
+      display: block;
+      margin-bottom: 20px;
+    }
     .intro .avatar,
-    .intro .heart,
     .intro h2,
     .intro p {
       margin-right: 20px;
     }
     .intro h2,
     .intro p {
-      display: inline;
+      display: inline-block;
+    }
+    @media (min-width: 600px) {
+      .intro .avatar {
+        display: inline;
+      }
     }
     .intro p.secondary {
       opacity: 0.5;
@@ -65,10 +73,9 @@
       position: absolute;
       z-index: 1;
       bottom: 0;
-      left: 50%;
+      left: 60px;
       width: 30px;
       height: 30px;
-      margin-left: -15px;
       text-align: center;
     }
     .first.intro:before,
@@ -609,11 +616,13 @@
     </div>
 
     <div class="plumb intro">
-      <span class="heart">
-        <!-- Heart -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-          <path d="M17.631 5.93c-0.394-0.913-1.185-1.682-2.281-2.158-0.968-0.422-2.012-0.471-2.96-0.214s-1.801 0.956-2.388 1.767c-0.588-0.811-1.44-1.511-2.389-1.767-0.949-0.258-1.991-0.207-2.96 0.214-1.096 0.476-1.885 1.243-2.281 2.158-0.394 0.912-0.397 1.974 0.103 3.027 1.062 2.257 7.494 7.55 7.529 7.64 0.033-0.090 6.466-5.383 7.53-7.64 0.498-1.053 0.496-2.115 0.101-3.027z" fill="#f65488"></path>
-        </svg>
+      <span class="avatar">
+        <i class="heart">
+          <!-- Heart -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+            <path d="M17.631 5.93c-0.394-0.913-1.185-1.682-2.281-2.158-0.968-0.422-2.012-0.471-2.96-0.214s-1.801 0.956-2.388 1.767c-0.588-0.811-1.44-1.511-2.389-1.767-0.949-0.258-1.991-0.207-2.96 0.214-1.096 0.476-1.885 1.243-2.281 2.158-0.394 0.912-0.397 1.974 0.103 3.027 1.062 2.257 7.494 7.55 7.529 7.64 0.033-0.090 6.466-5.383 7.53-7.64 0.498-1.053 0.496-2.115 0.101-3.027z" fill="#f65488"></path>
+          </svg>
+        </i>
       </span>
       <h2>Championing the movement, together!</h2>
     </div>
