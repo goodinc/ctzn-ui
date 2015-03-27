@@ -8,36 +8,48 @@
 
   <style>
 
+    /* Elements */
     html, body {
       height: 100%;
     }
     .body {
       min-height: 100%;
     }
-
     body {
       margin: 0;
       padding: 0;
     }
-
     .body {
       font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: rgb(238, 238, 238); /* @seashell */
       padding: 10px 0 120px;
     }
-
     a {
       color: rgb(31, 31, 31); /* @steel */
     }
-
     a img {
       border-width: 0;
     }
 
+    /* Join */
     .join {
       text-align: center;
       max-width: 600px;
       margin: 0 auto;
+      position: relative;
+    }
+    .join:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
+      background-color: white;
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
     }
     .join a {
       display: block;
@@ -54,38 +66,66 @@
       font-weight: bold;
     }
 
-    .summary,
+    /* Containers */
     .header,
+    .summary,
+    .message,
+    .steps,
     .footer {
-      max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
+    .header,
     .footer,
     .steps {
+      max-width: 600px;
+    }
+    .summary,
+    .message {
+      max-width: 540px; /* 600px - (30px x 2) */
+    }
+    .summary,
+    .message,
+    .steps {
+      background-color: white;
+    }
+    .summary,
+    .message {
+      padding: 25px 30px;
+    }
+    .summary,
+    .footer {
       margin-top: 10px;
+    }
+    .summary.first {
+      border-top: 10px solid black;
+    }
+    .message,
+    .steps {
+      margin-top: 1px;
     }
     .footer {
       padding-left: 10px;
       padding-right: 10px;
     }
 
-    .header h2 {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
+    /* Header */
     .header {
       padding-top: 15px;
       padding-bottom: 15px;
       text-align: center;
     }
-    .header .ctzn {
-      margin-left: 10px;
-      margin-right: 10px;
-      font-size: 10px;
-      margin-top: 20px;
+    .header h2 {
+      margin-top: 0;
       margin-bottom: 0;
+    }
+    .header .ctzn {
+      margin: 20px 10px 0;
+      font-size: 10px;
+    }
+    .header .ctzn img,
+    .header .ctzn svg {
+      margin-left: 2px;
     }
     .header .ctzn a {
       text-decoration: none;
@@ -103,28 +143,7 @@
       }
     }
 
-    .summary,
-    .message,
-    .steps {
-      background-color: white;
-      max-width: 540px; /* 600px - (30px x 2) */
-      margin-left: auto;
-      margin-right: auto;
-      padding: 25px 30px;
-    }
-
-    .summary {
-      margin-top: 10px;
-    }
-    .summary.first {
-      border-top: 10px solid black;
-    }
-
-    .message,
-    .steps {
-      margin-top: 1px;
-    }
-
+    /* Footer */
     .footer h2 {
       float: left;
     }
@@ -135,6 +154,7 @@
       font-size: 12px;
     }
 
+    /* Headlines */
     .summary h1,
     .summary h2 {
       font-weight: bold;
@@ -145,29 +165,33 @@
       line-height: 20px;
     }
 
-    .steps ol,
-    .steps li {
-      margin-left: 0;
-      padding-left: 0;
-    }
+    /* Steps */
     .steps ol {
-      margin-top: 0;
-      padding: 10px 0 10px 10px;
+      margin: 0;
+      padding: 30px 0 30px 60px;
       font-weight: bold;
+      font-size: 28px;
     }
-    .steps .after-li {
+    .steps li {
+      padding-right: 20px;
+    }
+    .steps div {
+      font-size: 14px;
+    }
+    .steps .not-first {
       border-top: 1px solid rgb(238, 238, 238); /* @seashell */
       margin-top: 30px;
       padding-top: 30px;
+      position: relative;
     }
-    @media  (min-width: 600px) {
-      .steps ol {
-        padding: 20px 0 20px 20px;
-      }
-      .steps li + li {
-        margin-top: 40px;
-        padding-top: 40px;
-      }
+    .steps .not-first:before {
+      content: "";
+      border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+      position: absolute;
+      top: -1px;
+      left: -60px;
+      width: calc(100% + 60px);
+      height: 1px;
     }
     .steps .icon {
       display: inline-block;
@@ -191,9 +215,8 @@
       margin-right: 25px;
     }
 
-
-    /* SVG icon */
-    .icon svg,
+    /* Icons */
+    .icon  svg,
     .icons svg {
       width : 35px;
       height: 35px;
@@ -204,7 +227,6 @@
       width : 25px;
       height: 25px;
     }
-
 
     /* Colors */
     .lime .join {
@@ -235,10 +257,6 @@
       background-color: rgb(250, 134, 40); /* @orange */
     }
 
-    /* Colors (Emphasized Words) */
-    .steps b {
-      font-weight: inherit;
-    }
     .lime .steps b {
       color: rgb(218, 243, 121); /* @lime */
     }
@@ -275,14 +293,14 @@
   <div class="plumb body">
 
     <div class="header">
-      <h2><img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/d8f5c22e-4222-4be8-af76-fa695a41a5ce.png" alt="Dreamers + Doers" width="232" height="57" /></h2>
+      <h2><img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/704a8fea-f482-4b09-ba2b-b5138676fde4.png" alt="Dreamers + Doers" width="232" height="57" /></h2>
       <p class="ctzn">
         <a href="http://ctznapp.com">
           POWERED BY
           <b>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 45.382" width="24" height="9">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 45.382" width="27" height="10">
               <path d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"/><path d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"/><path d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/><path d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"/>
-              <foreignobject>CTZN</foreignobject>
+              <foreignobject><img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/da0d53ce-555e-407e-91a7-4b8bb31700e5.png" alt="CTZN" height="10" /></foreignobject>
             </svg>
           </b>
         </a>
@@ -320,7 +338,7 @@
           </b>
           <div>Snap or shoot your favorite <b>Deamers + Doers</b> moments, whenever and wherever they happen</div>
         </li>
-        <li class="after-li">
+        <li class="not-first">
           <b class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
               <path d="M17,9.6l-6.2-6.2c-0.2-0.2-0.5-0.3-0.8-0.3S9.4,3.2,9.2,3.4L3,9.6c-0.4,0.5-0.5,1.1,0,1.6s1.2,0.5,1.6,0L8.8,7v8.6
@@ -360,7 +378,7 @@
           </div><!-- /.icons -->
 
         </li>
-        <li class="after-li">
+        <li class="not-first">
           <b class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
               <path d="M14.386 4.912c-1.228 0-2.457 0.438-3.421 1.228 0 0-0.088 0.088-0.088 0.175s0 0.088 0.088 0.175l0.878 1.053c0 0 0.088 0.088 0.175 0.088s0.088 0 0.175-0.088c0.526-0.526 1.316-0.878 2.193-0.878 1.93 0 3.421 1.491 3.421 3.333s-1.579 3.333-3.421 3.333c-0.701 0-1.404-0.175-1.93-0.614-0.614-0.351-1.053-0.964-1.316-1.667-0.088-0.175-0.088-0.351-0.175-0.614 0-0.175 0-0.263 0-0.438v-0.175c0 0 0 0 0-0.088 0-0.263 0-0.526-0.088-0.789-0.263-1.404-1.053-2.543-2.28-3.333-0.878-0.526-1.842-0.878-2.895-0.878-2.895 0-5.263 2.28-5.263 5.175 0 2.807 2.368 5.088 5.263 5.088 1.316 0 2.543-0.438 3.509-1.316 0.088-0.088 0.088-0.175 0-0.263l-0.964-0.964c-0.088-0.088-0.175-0.088-0.263 0-0.614 0.526-1.404 0.878-2.28 0.878-1.93 0-3.421-1.491-3.421-3.333s1.579-3.333 3.421-3.333c0.701 0 1.404 0.175 1.93 0.614 0.789 0.526 1.316 1.228 1.491 2.105 0 0.263 0.088 0.438 0.088 0.614 0 0.351 0 0.614 0.088 0.789 0.088 0.351 0.088 0.614 0.263 0.878 0.351 1.053 1.141 1.93 2.017 2.543s1.842 0.878 2.895 0.878c2.895 0 5.263-2.28 5.263-5.088-0.088-2.807-2.457-5.088-5.351-5.088z"></path>
@@ -405,3 +423,4 @@
 
 </body>
 </html>
+
