@@ -36,13 +36,15 @@
       max-width: 510px;
       margin: 0 auto;
       position: relative;
-      background: white;
       padding: 45px;
+      background: white;
     }
+    .intro .heart,
     .intro .avatar {
       display: block;
       margin-bottom: 20px;
     }
+    .intro .heart,
     .intro .avatar,
     .intro h2,
     .intro p {
@@ -51,14 +53,23 @@
     .intro h2,
     .intro p {
       display: inline-block;
+      margin-top: 0;
+      margin-bottom: 20px;
     }
     @media (min-width: 600px) {
+      .intro .heart,
       .intro .avatar {
-        display: inline;
+        display: inline-block !important;
+        vertical-align: middle;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
       }
     }
     .intro p.secondary {
       opacity: 0.5;
+    }
+    .intro .heart img {
+      display: block;
     }
     .first.intro:after {
       content: "+";
@@ -172,6 +183,7 @@
     /* Footer */
     .footer {
       text-align: center;
+      color: rgb(102, 102, 102); /* @tin */
     }
     .footer h2 {
       margin-top: 20px;
@@ -249,14 +261,14 @@
       width: calc(100% + 60px);
       height: 1px;
     }
-    .intro .heart,
+    .intro .icon,
     .steps .icon {
       display: inline-block;
       border: 3px solid rgb(238, 238, 238); /* @seashell */
       padding: 9px;
       border-radius: 10px;
     }
-    .intro .heart {
+    .intro .icon {
       background: white;
       border-color: white;
     }
@@ -548,37 +560,6 @@
       color: rgb(250, 134, 40); /* @orange */
     }
 
-
-    /*
-    colors = [
-      'plumb',
-      'orange',
-      'boysenberry',
-      'strawberry',
-      'lime',
-      'cucumber',
-      'tangerine',
-      'apple',
-      'blueberry'
-    ];
-    push_color = colors[(@push.id || 1) % colors.length];
-
-    complimentary_colors = {
-      'plumb'      => ['orange', 'boysenberry', 'strawberry', 'lime', 'cucumber', 'tangerine', 'apple', 'blueberry'],
-      'orange'     => ['plumb', 'boysenberry', 'lime', 'cucumber', 'tangerine', 'blueberry'],
-      'boysenberry'=> ['plumb', 'orange', 'strawberry', 'lime', 'cucumber', 'tangerine', 'apple'],
-      'strawberry' => ['plumb', 'boysenberry', 'lime', 'cucumber', 'tangerine', 'blueberry'],
-      'lime'       => ['plumb', 'orange', 'boysenberry', 'strawberry', 'apple', 'blueberry'],
-      'cucumber'   => ['plumb', 'orange', 'boysenberry', 'strawberry', 'apple', 'blueberry'],
-      'tangerine'  => ['plumb', 'orange', 'boysenberry', 'strawberry', 'apple', 'blueberry'],
-      'apple'      => ['plumb', 'boysenberry', 'lime', 'cucumber', 'tangerine', 'blueberry'],
-      'blueberry'  => ['plumb', 'orange', 'strawberry', 'lime', 'cucumber', 'tangerine', 'apple']
-    }
-
-    # Pick a random complimentary color
-    background_color = complimentary_colors[push_color].sample;
-    */
-
   </style>
 
 </head>
@@ -592,13 +573,13 @@
 
     <!-- If they signed up through Facebook -->
     <div class="message">
-      <p>Thank you for connecting your Facebook account to your CTZN account. Here is a preview of your CTZN profile:</p>
+      <p>Thanks for signing up with Facebook.</p>
     </div><!-- /.message -->
 
     <div class="bluebird first intro">
       <span class="avatar">
         <span class="size60 kiwi"><span class="letter">B</span></span>
-        <!-- If they signed up through Facebook
+        <!-- If an image is available (via Facebook)
         <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c120x120" width="60" height="60" alt="" />
          -->
       </span>
@@ -616,14 +597,14 @@
     </div>
 
     <div class="plumb intro">
-      <span class="avatar">
-        <i class="heart">
+      <span class="heart">
+        <span class="icon">
           <!-- Heart -->
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
             <path d="M17.631 5.93c-0.394-0.913-1.185-1.682-2.281-2.158-0.968-0.422-2.012-0.471-2.96-0.214s-1.801 0.956-2.388 1.767c-0.588-0.811-1.44-1.511-2.389-1.767-0.949-0.258-1.991-0.207-2.96 0.214-1.096 0.476-1.885 1.243-2.281 2.158-0.394 0.912-0.397 1.974 0.103 3.027 1.062 2.257 7.494 7.55 7.529 7.64 0.033-0.090 6.466-5.383 7.53-7.64 0.498-1.053 0.496-2.115 0.101-3.027z" fill="#f65488"></path>
             <foreignobject><img src="../assets/images/email/70x70/heart.png" width="35" height="35" alt="" /></foreignobject>
           </svg>
-        </i>
+        </span>
       </span>
       <h2>Championing the movement, together!</h2>
     </div>
@@ -735,7 +716,13 @@
     <div class="footer">
       <h2>
         <a href="http://ctznapp.com">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 45.382" width="75" height="29"><path fill="black" d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"/><path fill="black" d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"/><path fill="black" d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/><path fill="black" d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"/><foreignobject><img src="../assets/images/email/ctzn.png" alt="CTZN" width="75" height="28" /></foreignobject></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 45.382" width="75" height="29">
+            <path d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"/>
+            <path d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"/>
+            <path d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/>
+            <path d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"/>
+            <foreignobject><img src="../assets/images/email/ctzn.png" alt="CTZN" width="75" height="28" /></foreignobject>
+          </svg>
         </a>
       </h2>
       <p class="unsubscribe">Not a fan of emails? <a href="http://ctznapp.com">Manage your email preferences</a></p>
