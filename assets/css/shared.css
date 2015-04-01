@@ -2834,51 +2834,84 @@
     background-color: rgb(5, 5, 5); /* @tungsten */
     height: 100%;
     width: 100%;
-    display: table;
-  }
-  .image-viewer > div {
-    display: table-row;
-  }
-  .image-viewer > div > div {
-    display: table-cell;
-    vertical-align: middle;
+    text-align: center;
   }
   .image-viewer .image {
-    margin: 0 auto;
-    display: table;
-  }
-  .image-viewer img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100vh;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
 
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    background-color: rgba(255, 255, 255, 0.25);
-    min-width: 9em;
-    min-height: 9em;
-  }
+    -webkit-flex-direction: column;
+            flex-direction: column;
 
-  .image-viewer.has-zoom .image {
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+  .image-viewer .image p {
     margin: 0;
     display: block;
 
-    width: 100vw;
-    height: 100vh;
-    overflow: scroll;
+    width: 100%;
+    overflow-x: scroll;
 
     /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
     -webkit-overflow-scrolling: touch;
   }
-  .image-viewer.has-zoom img {
+
+  .image-viewer .empty-images {
+    width: 100%;
+    min-height: 100vh;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
   }
-  /*
-  .image-viewer.has-zoom img {
-    max-width: none;
-    max-height: none;
+
+  .image-viewer img {
+
+    /* http://stackoverflow.com/questions/7774814/remove-white-space-below-image#answer-13876119 */
+    vertical-align: top;
+
+    width: auto;
+    height: auto;
   }
-  */
+  .image-viewer button,
+  .image-viewer .action a {
+    background-color: black;
+    background: rgba(0, 0, 0, 0.5);
+    border: 0.125em solid white;
+  }
+  .image-viewer button:active,
+  .image-viewer button:focus,
+  .image-viewer .action a:active,
+  .image-viewer .action a:focus {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .image-viewer button {
+    border-radius: 50%;
+    padding: 0.375em 0.5em;
+  }
 
   .image-viewer .action {
     position: fixed;
@@ -2887,7 +2920,6 @@
     right: 0.375em;
     margin: 0;
   }
-  .image-viewer .range,
   .image-viewer .image-options {
     position: fixed;
     z-index: 1;
@@ -2895,6 +2927,7 @@
     left: 0.75em;
     width: 100%;
     margin: 0;
+    text-align: left;
   }
   .image-viewer .image-options ul,
   .image-viewer .image-options li {
@@ -2908,33 +2941,6 @@
   .image-viewer .image-options li {
     display: inline;
     margin-right: 0.375em;
-  }
-  .image-viewer .range label span:first-child {
-    /* @hidden-accessible */
-    position: absolute;
-    left: -9999px;
-  }
-  /*
-  .image-viewer .action {
-    margin: 1.5em 0;
-    text-align: center;
-  }
-  */
-  .image-viewer button,
-  .image-viewer .action a {
-    background-color: transparent;
-    border: 0.125em solid white;
-  }
-  .image-viewer button:active,
-  .image-viewer button:focus,
-  .image-viewer .action a:active,
-  .image-viewer .action a:focus {
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.25);
-  }
-  .image-viewer .image-options button {
-    border-radius: 50%;
-    padding: 0.375em 0.5em;
   }
 
 
