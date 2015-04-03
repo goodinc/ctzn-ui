@@ -475,6 +475,9 @@
     color: white;
     display: table;
   }
+  .confirmation p.finish a {
+    color: inherit;
+  }
   .confirmation p.finish:before {
     content: "";
     display: block;
