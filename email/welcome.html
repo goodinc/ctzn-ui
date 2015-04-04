@@ -22,7 +22,12 @@
     .body {
       font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: rgb(238, 238, 238); /* @seashell */
-      padding: 10px 0 120px;
+      padding-bottom: 30px;
+    }
+    @media (min-width: 600px) {
+      .body {
+        padding: 10px 0 60px;
+      }
     }
     a {
       color: rgb(31, 31, 31); /* @steel */
@@ -54,7 +59,7 @@
     .intro p {
       display: inline-block;
       margin-top: 0;
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
     @media (min-width: 600px) {
       .intro .heart,
@@ -127,15 +132,17 @@
     .steps {
       background-color: white;
     }
-    .headline,
-    .message {
-      padding: 25px 30px;
-    }
     .headline {
       margin-top: 10px;
+      padding: 25px 30px;
     }
     .headline.first {
+      margin-top: 0;
       border-top: 10px solid black;
+    }
+    .message {
+      max-width: 540px;
+      padding: 15px 30px;
     }
     .message,
     .steps {
@@ -567,7 +574,7 @@
 
   <div class="orange body">
 
-    <div class="headline first">
+    <div class="first headline">
       <h1>Welcome to CTZN!</h1>
     </div><!-- /.headline -->
 
@@ -576,7 +583,7 @@
       <p>Thanks for signing up with Facebook.</p>
     </div><!-- /.message -->
 
-    <div class="bluebird first intro">
+    <div class="first bluebird intro">
       <span class="avatar">
         <span class="size60 kiwi"><span class="letter">B</span></span>
         <!-- If an image is available (via Facebook)
@@ -588,7 +595,7 @@
       <p><a href="http://ctznapp.com">Edit Profile</a></p>
     </div>
 
-    <div class="lime second intro">
+    <div class="second lime intro">
       <span class="avatar">
         <span class="size60 orange"><span class="letter">C</span></span>
       </span>
