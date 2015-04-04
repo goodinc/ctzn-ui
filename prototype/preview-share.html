@@ -1211,5 +1211,44 @@ Exciting collaboration afoot with Damon and the Mercado La Paloma as well as Jor
     <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
   </footer>
 
+<script>
+(function() {
+
+  function toggleFullScreen() {
+    if (!document.fullscreenElement &&    // alternative standard method
+        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+  }
+
+  var toggle = document.querySelector('.toggle-mixable button');
+  if (toggle) {
+    toggle.addEventListener('click', function(e) {
+      toggleFullScreen();
+      e.preventDefault();
+    });
+  }
+
+})();
+</script>
+
 </body>
 </html>
