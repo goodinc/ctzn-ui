@@ -4067,6 +4067,26 @@
     text-align: left;
   }
 
+  .dialog.page.instructions h1 {
+    max-width: none;
+  }
+  .dialog.page.instructions ul + p,
+  .dialog.page.instructions p + p {
+    margin-top: 3em;
+  }
+  .dialog.page ul.logos,
+  .dialog.page ul.logos li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .dialog.page ul.logos li {
+    display: inline;
+  }
+  .dialog.page ul.logos li + li {
+    margin-left: 1.5em;
+  }
+
 
   /* =Launch Button
   ----------------------------------------------- */
