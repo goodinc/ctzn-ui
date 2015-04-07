@@ -144,6 +144,10 @@
       max-width: 540px;
       padding: 15px 30px;
     }
+    .message.first {
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
     .message,
     .steps {
       margin-top: 1px;
@@ -246,12 +250,16 @@
       padding: 30px 0 30px 60px;
       font-weight: bold;
       font-size: 28px;
+      color: rgb(102, 102, 102); /* @tin */
     }
     .steps li {
       padding-right: 20px;
     }
     .steps div {
       font-size: 14px;
+    }
+    .steps b {
+      color: black;
     }
     .steps .not-first {
       border-top: 1px solid rgb(238, 238, 238); /* @seashell */
@@ -289,7 +297,6 @@
       display: block;
     }
     .steps .icons {
-      color: rgb(102, 102, 102); /* @tin */
       margin-top: 20px;
     }
     .steps .icons img,
@@ -509,35 +516,6 @@
       background-color: rgb(250, 134, 40); /* @orange */
     }
 
-    /* Steps */
-    .lime .steps b {
-      color: rgb(218, 243, 121); /* @lime */
-    }
-    .cucumber .steps b {
-      color: rgb(153, 248, 115); /* @cucumber */
-    }
-    .blueberry .steps b {
-      color: rgb(40, 221, 181); /* @blueberry */
-    }
-    .boysenberry .steps b {
-      color: rgb(101, 152, 254); /* @boysenberry */
-    }
-    .plumb .steps b {
-      color: rgb(193, 76, 172); /* @plumb */
-    }
-    .strawberry .steps b {
-      color: rgb(250, 56, 136); /* @strawberry */
-    }
-    .apple .steps b {
-      color: rgb(255, 49, 59); /* @apple */
-    }
-    .tangerine .steps b {
-      color: rgb(255, 204, 0); /* @tangerine */
-    }
-    .orange .steps b {
-      color: rgb(250, 134, 40); /* @orange */
-    }
-
     /* Message */
     .lime .message a {
       color: rgb(218, 243, 121); /* @lime */
@@ -579,11 +557,11 @@
     </div><!-- /.headline -->
 
     <!-- If they signed up through Facebook -->
-    <div class="message">
+    <div class="message first">
       <p>Thanks for signing up with Facebook.</p>
     </div><!-- /.message -->
 
-    <div class="first bluebird intro">
+    <div class="first orange intro">
       <span class="avatar">
         <span class="size60 kiwi"><span class="letter">B</span></span>
         <!-- If an image is available (via Facebook)
@@ -603,7 +581,7 @@
       <p class="secondary">1,237 people</p>
     </div>
 
-    <div class="plumb intro">
+    <div class="blueberry intro">
       <span class="heart">
         <span class="icon">
           <!-- Heart -->
