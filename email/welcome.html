@@ -22,6 +22,7 @@
     .body {
       font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: rgb(238, 238, 238); /* @seashell */
+      color: black;
       padding-bottom: 30px;
     }
     @media (min-width: 600px) {
@@ -110,7 +111,6 @@
 
 
     /* Containers */
-    .header,
     .headline,
     .message,
     .steps,
@@ -118,7 +118,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .header,
     .footer,
     .steps {
       max-width: 600px;
@@ -140,6 +139,10 @@
       margin-top: 0;
       border-top: 10px solid black;
     }
+    .headline.first h1 {
+      font-size: 24px;
+      line-height: 30px;
+    }
     .message {
       max-width: 540px;
       padding: 15px 30px;
@@ -155,40 +158,6 @@
     .footer {
       padding-left: 10px;
       padding-right: 10px;
-    }
-
-    /* Header */
-    .header {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      text-align: center;
-    }
-    .header h2 {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    .header .ctzn {
-      margin: 20px 10px 0;
-      font-size: 10px;
-    }
-    .header .ctzn img,
-    .header .ctzn svg {
-      margin-left: 2px;
-    }
-    .header .ctzn a {
-      text-decoration: none;
-    }
-
-    @media (min-width: 600px) {
-      .header {
-        text-align: left;
-      }
-      .header h2 {
-        float: left;
-      }
-      .header .ctzn {
-        float: right;
-      }
     }
 
     /* Footer */
@@ -550,7 +519,7 @@
 </head>
 <body>
 
-  <div class="orange body">
+  <div class="tangerine body">
 
     <div class="first headline">
       <h1>Welcome to CTZN!</h1>
@@ -561,7 +530,7 @@
       <p>Thanks for signing up with Facebook.</p>
     </div><!-- /.message -->
 
-    <div class="first orange intro">
+    <div class="first tangerine intro">
       <span class="avatar">
         <span class="size60 kiwi"><span class="letter">B</span></span>
         <!-- If an image is available (via Facebook)
@@ -575,13 +544,13 @@
 
     <div class="second lime intro">
       <span class="avatar">
-        <span class="size60 orange"><span class="letter">C</span></span>
+        <span class="size60 tangerine"><span class="letter">C</span></span>
       </span>
       <h2>CicLAvia</h2>
       <p class="secondary">1,237 people</p>
     </div>
 
-    <div class="blueberry intro">
+    <div class="cucumber intro">
       <span class="heart">
         <span class="icon">
           <!-- Heart -->
@@ -711,6 +680,7 @@
         </a>
       </h2>
       <p class="unsubscribe">Not a fan of emails? <a href="http://ctznapp.com">Manage your email preferences</a></p>
+
       <div style="clear: both"></div>
     </div><!-- /.footer -->
 

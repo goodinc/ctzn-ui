@@ -6,7 +6,7 @@
   html, body {
     height: 100%;
   }
-  .body {
+  .container {
     min-height: 100%;
   }
 
@@ -15,28 +15,38 @@
     padding: 0;
   }
 
-  .body {
+  .container {
     font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(83, 83, 83);
-    padding: 20px 0;
+    padding-bottom: 30px;
+  }
+  @media (min-width: 600px) {
+    .container {
+      padding: 10px 0 60px;
+    }
   }
 
   a {
     color: rgb(31, 31, 31); /* @steel */
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    color: rgb(250, 56, 136); /* @strawberry */
   }
 
   a img {
     border-width: 0;
   }
 
-  .summary h1,
+  .headline h1,
   .details h2,
   .details h3 {
     font-weight: inherit;
     color: rgb(31, 31, 31); /* @steel */
   }
-  .summary h1 {
+  .headline h1 {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 20px;
@@ -65,57 +75,45 @@
   }
 
   .header {
+    padding-top: 20px;
     text-align: center;
+    margin-bottom: 20px;
   }
-  .footer {
-    text-align: right;
-    max-width: 570px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .header h2 {
     margin: 0;
     font-size: inherit;
   }
-  .footer p {
-    margin-top: 0;
-    font-size: 12px;
-  }
 
-  .summary,
-  .details {
-    background-color: white;
-    max-width: 540px; /* 600px - (30px x 2) */
+
+  /* Containers */
+  .headline,
+  .details,
+  .article,
+  .footer {
     margin-left: auto;
     margin-right: auto;
-    padding: 25px 30px;
   }
-  .summary {
-    margin-top: 20px;
-  }
+  .headline,
+  .article,
   .details {
+    background-color: white;
+  }
+  .headline,
+  .details {
+    padding: 25px 30px;
+    max-width: 540px; /* 600px - (30px x 2) */
+  }
+  .article {
+    max-width: 600px;
+    padding: 15px;
+    max-width: 570px; /* 600px - (15px x 2) */
+  }
+  .footer {
+    max-width: 600px;
+  }
+  .details,
+  .article {
     margin-top: 1px;
-    margin-bottom: 20px;
-  }
-
-  .push {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: black;
-  }
-
-  @media (min-width: 600px) {
-    .summary {
-      position: relative;
-    }
-    .push {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-    }
   }
 
 
@@ -174,31 +172,267 @@
     margin: 0;
   }
 
-  .lime {
+
+  /* =Avatars
+  ----------------------------------------------- */
+  .avatar img {
+    border-radius: 100%;
+    vertical-align: middle;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .avatar > span {
+    display: inline-block;
+    color: black;
+    width       : 1.25em; /* 20px / 16px */
+    line-height : 1.25em;
+    vertical-align: middle;
+  }
+  .avatar .letter {
+    display: block;
+    speak: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8em; /* 16px / 20px */
+    font-style: normal;
+    font-weight: bold;
+  }
+
+
+  /* =Member Avatars
+  ----------------------------------------------- */
+  .avatar .size30 {
+    font-size: 1.5em; /* 30px / 20px */
+    border-radius: 100%;
+  }
+
+  .avatar .clover {
+    background-color: rgb(0, 235, 98); /* @clover */
+  }
+  .avatar .kiwi {
+    background-color: rgb(0, 255, 208); /* @kiwi */
+  }
+  .avatar .grape {
+    background-color: rgb(159, 104, 246); /* @grape */
+  }
+  .avatar .bluebird {
+    background-color: rgb(0, 206, 250); /* @bluebird */
+  }
+  .avatar .cantaloupe {
+    background-color: rgb(255, 203, 117); /* @cantaloupe */
+  }
+  .avatar .cranberry {
+    background-color: rgb(251, 59, 147); /* @cranberry */
+  }
+  .avatar .amethyst {
+    background-color: rgb(255, 152, 248); /* @amethyst */
+  }
+  .avatar .sky {
+    background-color: rgb(0, 255, 254); /* @sky */
+  }
+  .avatar .ocean {
+    background-color: rgb(24, 57, 245); /* @ocean */
+    color: white;
+  }
+
+
+  /* =Push Colors
+  ----------------------------------------------- */
+  .profile.lime {
     background-color: rgb(218, 243, 121); /* @lime */
   }
-  .cucumber {
+  .profile.cucumber {
     background-color: rgb(153, 248, 115); /* @cucumber */
   }
-  .blueberry {
+  .profile.blueberry {
     background-color: rgb(40, 221, 181); /* @blueberry */
   }
-  .boysenberry {
+  .profile.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .plumb {
+  .profile.plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
-  .strawberry {
+  .profile.strawberry {
     background-color: rgb(250, 56, 136); /* @strawberry */
   }
-  .apple {
+  .profile.apple {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  .tangerine {
+  .profile.tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
-  .orange {
+  .profile.orange {
     background-color: rgb(250, 134, 40); /* @orange */
+  }
+
+  .headline.lime,
+  .article > .summary.lime {
+    border-color: rgb(218, 243, 121); /* @lime */
+  }
+  .headline.cucumber,
+  .article > .summary.cucumber {
+    border-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .headline.blueberry,
+  .article > .summary.blueberry {
+    border-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .headline.boysenberry,
+  .article > .summary.boysenberry {
+    border-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .headline.plumb,
+  .article > .summary.plumb {
+    border-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .headline.strawberry,
+  .article > .summary.strawberry {
+    border-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .headline.apple,
+  .article > .summary.apple {
+    border-color: rgb(255, 49, 59); /* @apple */
+  }
+  .headline.tangerine,
+  .article > .summary.tangerine {
+    border-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .headline.orange,
+  .article > .summary.orange {
+    border-color: rgb(250, 134, 40); /* @orange */
+  }
+  .headline {
+    border-top-width: 10px;
+    border-top-style: solid;
+  }
+  .article > .summary {
+    border-left-width: 5px;
+    border-left-style: solid;
+  }
+
+
+  /* =Article
+  ----------------------------------------------- */
+  .article h4 {
+    margin-top: 0;
+  }
+  .article h4 .avatar {
+    margin-right: 7px;
+  }
+  .article p img {
+    display: block;
+    min-width: 200px;
+    min-height: 200px;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .article .body img {
+    margin: 15px auto;
+    max-width: 100%;
+    height: auto;
+  }
+  .article .summary img {
+    min-width: 100px;
+    height: 100px;
+    min-height: 0;
+  }
+  .article .comment,
+  .article .action {
+    padding-top: 10px;
+    border-top: 1px solid rgb(244, 244, 244);
+    margin-top: 10px;
+  }
+  .article .comment h4 {
+    margin: 0;
+  }
+  .article h4 a {
+    text-decoration: none;
+  }
+  .article .comment p {
+    margin-top: 0;
+    padding-left: 42px;
+  }
+  .article .action {
+    margin-top: 20px;
+    padding-top: 25px;
+    padding-left: 15px;
+  }
+  .article .action a {
+    text-decoration: none;
+  }
+  .article > .summary {
+    margin-top: 0;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    color: rgb(135, 135, 135);
+  }
+
+
+  /* =Action
+  ----------------------------------------------- */
+  .details .action {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .action a {
+    border: 1px solid rgb(193, 193, 193);
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .action a svg {
+    vertical-align: top;
+  }
+
+
+  /* =Footer
+  ----------------------------------------------- */
+  .footer {
+    text-align: center;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .footer h2 {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .footer .unsubscribe {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  .mute {
+    margin-top: 20px;
+    border-top: 1px solid rgb(226, 226, 226);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+  }
+
+  @media (min-width: 600px) {
+    .footer {
+      text-align: left;
+    }
+    .footer h2 {
+      float: left;
+    }
+    .footer .unsubscribe {
+      margin-bottom: 0;
+      line-height: 30px;
+      float: right;
+    }
   }
 
