@@ -77,13 +77,15 @@
   }
 
   .header {
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .header h2 {
     margin: 0;
-    font-size: 14px;
+    font-size: 11px;
+    font-weight: normal;
+    color: rgb(135, 135, 135);
   }
 
 
@@ -271,46 +273,46 @@
   }
 
   .headline.lime,
-  .article > .summary.lime {
+  .article .summary.lime {
     border-color: rgb(218, 243, 121); /* @lime */
   }
   .headline.cucumber,
-  .article > .summary.cucumber {
+  .article .summary.cucumber {
     border-color: rgb(153, 248, 115); /* @cucumber */
   }
   .headline.blueberry,
-  .article > .summary.blueberry {
+  .article .summary.blueberry {
     border-color: rgb(40, 221, 181); /* @blueberry */
   }
   .headline.boysenberry,
-  .article > .summary.boysenberry {
+  .article .summary.boysenberry {
     border-color: rgb(101, 152, 254); /* @boysenberry */
   }
   .headline.plumb,
-  .article > .summary.plumb {
+  .article .summary.plumb {
     border-color: rgb(193, 76, 172); /* @plumb */
   }
   .headline.strawberry,
-  .article > .summary.strawberry {
+  .article .summary.strawberry {
     border-color: rgb(250, 56, 136); /* @strawberry */
   }
   .headline.apple,
-  .article > .summary.apple {
+  .article .summary.apple {
     border-color: rgb(255, 49, 59); /* @apple */
   }
   .headline.tangerine,
-  .article > .summary.tangerine {
+  .article .summary.tangerine {
     border-color: rgb(255, 204, 0); /* @tangerine */
   }
   .headline.orange,
-  .article > .summary.orange {
+  .article .summary.orange {
     border-color: rgb(250, 134, 40); /* @orange */
   }
   .headline {
     border-top-width: 10px;
     border-top-style: solid;
   }
-  .article > .summary {
+  .article .summary {
     border-left-width: 5px;
     border-left-style: solid;
   }
@@ -324,12 +326,12 @@
   .article h4 .avatar {
     margin-right: 7px;
   }
-  .article p img {
+  .article .body img {
     display: block;
-    min-width: 200px;
-    min-height: 200px;
 
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    min-width: 200px;
+    min-height: 200px;
     background-color: rgba(0, 0, 0, 0.25);
   }
   .article .body {
@@ -343,9 +345,13 @@
     height: auto;
   }
   .article .summary img {
-    min-width: 100px;
+    display: block;
     height: 100px;
-    min-height: 0;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    min-height: 30px;
+    min-width: 30px;
+    background-color: rgba(0, 0, 0, 0.25);
   }
   .article .comment,
   .article .action {
@@ -371,7 +377,7 @@
   .article .action a {
     text-decoration: none;
   }
-  .article > .summary {
+  .article .summary {
     margin-top: 0;
     padding-left: 15px;
     padding-top: 5px;
@@ -379,6 +385,7 @@
     font-size: 14px;
     line-height: 20px;
     color: rgb(135, 135, 135);
+    font-style: italic;
   }
 
 
