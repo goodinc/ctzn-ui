@@ -353,7 +353,6 @@
     min-width: 30px;
     background-color: rgba(0, 0, 0, 0.25);
   }
-  .article .comment,
   .article .action {
     padding-top: 10px;
     border-top: 1px solid rgb(244, 244, 244);
