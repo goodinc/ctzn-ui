@@ -16,24 +16,26 @@
   }
 
   .container {
-    font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 16px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
+    background: rgb(250, 250, 250); /* @casper */
     color: rgb(83, 83, 83);
     padding-bottom: 30px;
   }
   @media (min-width: 600px) {
     .container {
-      padding: 10px 0 60px;
+      padding: 20px 0 60px;
     }
   }
 
   a {
     color: rgb(31, 31, 31); /* @steel */
+    transition: opacity 0.2s, color 0.2s, background-color 0.2s;
   }
   a:hover,
   a:active,
   a:focus {
-    color: rgb(250, 56, 136); /* @strawberry */
+    color: rgb(193, 16, 65); /* @raspberry */
   }
 
   a img {
@@ -50,7 +52,7 @@
     margin-top: 0;
     margin-bottom: 0;
     font-size: 20px;
-    line-height: 20px;
+    line-height: 30px;
   }
   .details h2 {
     font-size: 30px;
@@ -81,7 +83,7 @@
   }
   .header h2 {
     margin: 0;
-    font-size: inherit;
+    font-size: 14px;
   }
 
 
@@ -101,15 +103,15 @@
   .headline,
   .details {
     padding: 25px 30px;
-    max-width: 540px; /* 600px - (30px x 2) */
+    max-width: 520px; /* 580px - (30px x 2) */
   }
   .article {
     max-width: 600px;
     padding: 15px;
-    max-width: 570px; /* 600px - (15px x 2) */
+    max-width: 550px; /* 580px - (15px x 2) */
   }
   .footer {
-    max-width: 600px;
+    max-width: 580px;
   }
   .details,
   .article {
@@ -123,7 +125,7 @@
     margin: 20px 0;
     padding-bottom: 20px;
     text-align: center;
-    background: rgb(204, 204, 204);
+    background: rgb(204, 204, 204); /* @aluminum */
   }
   .profile h3 {
     padding: 14px;
@@ -330,6 +332,11 @@
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
     background-color: rgba(0, 0, 0, 0.25);
   }
+  .article .body {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgb(51, 51, 51); /* @iron */
+  }
   .article .body img {
     margin: 15px auto;
     max-width: 100%;
@@ -370,6 +377,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 14px;
+    line-height: 20px;
     color: rgb(135, 135, 135);
   }
 
@@ -381,16 +389,28 @@
     margin-bottom: 0;
   }
   .action a {
-    border: 1px solid rgb(193, 193, 193);
+    border: 1px solid rgb(204, 204, 204); /* @aluminum */
     display: inline-block;
     padding: 7px 15px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
+    color: rgb(135, 135, 135);
   }
-  .action a svg {
-    vertical-align: top;
+  .action a:hover,
+  .action a:active,
+  .action a:focus {
+    background: rgb(238, 238, 238); /* @seashell */
+    color: rgb(102, 102, 102); /* @tin */
+  }
+
+
+  /* =Icon
+  ----------------------------------------------- */
+  svg.icon {
+    vertical-align: middle;
+    margin-right: 5px;
   }
 
 
@@ -411,12 +431,12 @@
   }
   .mute {
     margin-top: 20px;
-    border-top: 1px solid rgb(226, 226, 226);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgb(226, 226, 226);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    max-width: 600px;
+    max-width: 580px;
     margin-left: auto;
     margin-right: auto;
     font-size: 12px;

@@ -13,6 +13,9 @@
     html, body {
       height: 100%;
     }
+    .container {
+      min-height: 100%;
+    }
     body {
       margin: 0;
       padding: 0;
@@ -20,24 +23,26 @@
 
     .container {
       min-height: 100%;
-      font: 16px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font: 16px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: rgb(238, 238, 238); /* @seashell */
+      background: rgb(250, 250, 250); /* @casper */
       color: black;
       box-sizing: border-box;
     }
     @media (min-width: 600px) {
       .container {
-        padding: 10px 0;
+        padding: 20px 0;
       }
     }
 
     a {
       color: rgb(31, 31, 31); /* @steel */
+      transition: opacity 0.2s, color 0.2s, background-color 0.2s;
     }
     a:hover,
     a:active,
     a:focus {
-      color: rgb(250, 56, 136); /* @strawberry */
+      color: rgb(193, 16, 65); /* @raspberry */
     }
 
     a img {
@@ -72,9 +77,9 @@
     }
 
     .section p {
-      color: rgb(102, 102, 102); /* @tin */
-      margin-top: 9px;
-      margin-bottom: 9px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: rgb(51, 51, 51); /* @iron */
     }
     .section ul {
       margin-top: 20px;
@@ -94,32 +99,35 @@
     .members li,
     .article {
       background-color: white;
-      max-width: 580px; /* 600px - (10px x 2) */
       margin-left: auto;
       margin-right: auto;
     }
+    .header,
+    .members li {
+      max-width: 520px; /* 580px - (30px x 2) */
+    }
     .container > .header {
-      padding: 20px 15px;
+      padding: 20px 30px;
     }
     .article {
+      max-width: 550px; /* 580px - (15px x 2) */
       padding: 15px 15px 40px;
     }
     .section > .header {
-      padding: 15px 15px;
+      padding: 15px 30px;
     }
     .members li {
-      padding: 10px 15px;
+      padding: 10px 30px;
     }
     .members li,
     .article {
       margin-top: 1px;
     }
-    .section .header,
-    .footer {
+    .section .header {
       margin-top: 10px;
     }
     .footer {
-      max-width: 600px;
+      max-width: 580px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -182,10 +190,12 @@
       margin-right: 5px;
     }
     .members li p {
-      margin: 5px 0;
+      padding-left: 42px;
+    }
+    .members li p.about {
+      margin-top: 5px;
       font-size: 14px;
       font-style: italic;
-      padding-left: 42px;
     }
 
 
@@ -204,6 +214,11 @@
 
       /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
       background-color: rgba(0, 0, 0, 0.25);
+    }
+    .article .body {
+      padding-left: 5px;
+      padding-right: 5px;
+      color: rgb(51, 51, 51); /* @iron */
     }
     .article .body img {
       margin: 15px auto;
@@ -233,7 +248,8 @@
     }
     .article .action {
       margin-top: 20px;
-      padding-top: 20px;
+      padding-top: 25px;
+      padding-left: 15px;
       margin-bottom: 0;
     }
     .article .action a {
@@ -245,6 +261,7 @@
       padding-top: 5px;
       padding-bottom: 5px;
       font-size: 14px;
+      line-height: 20px;
       color: rgb(135, 135, 135);
     }
 
@@ -266,12 +283,12 @@
     }
     .mute {
       margin-top: 20px;
-      border-top: 1px solid rgb(226, 226, 226);
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
       padding-top: 10px;
       padding-bottom: 10px;
-      border-bottom: 1px solid rgb(226, 226, 226);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       text-align: center;
-      max-width: 600px;
+      max-width: 580px;
       margin-left: auto;
       margin-right: auto;
       font-size: 12px;
@@ -402,16 +419,20 @@
     /* =Action
     ----------------------------------------------- */
     .action a {
-      border: 1px solid rgb(193, 193, 193);
+      border: 1px solid rgb(204, 204, 204); /* @aluminum */
       display: inline-block;
       padding: 7px 15px;
       border-radius: 0.25em;
       font-size: 14px;
       font-weight: bold;
       font-style: normal;
+      color: rgb(135, 135, 135);
     }
-    .action a svg {
-      vertical-align: top;
+    .action a:hover,
+    .action a:active,
+    .action a:focus {
+      background: rgb(238, 238, 238); /* @seashell */
+      color: rgb(102, 102, 102); /* @tin */
     }
 
 
@@ -499,8 +520,8 @@
               <b>@stevenger</b>
               <span class="name">Steve Vasquez</span>
             </a>
-            <p>Cooking with Gabby director of communications, filmmaker, traveler, eater…</p>
-            <p class="action"><a href="">View Profile</a></p>
+            <p class="about">Cooking with Gabby director of communications, filmmaker, traveler, eater…</p>
+            <p class="action"><a href="http://ctznapp.com">View Profile</a></p>
           </li>
           <li>
             <a href="http://ctznapp.com">
@@ -509,6 +530,7 @@
               </span>
               <b>@vogg</b>
             </a>
+            <p class="action"><a href="http://ctznapp.com">View Profile</a></p>
           </li>
         </ul>
       </div><!-- /.members -->
@@ -534,16 +556,16 @@
 
         <div class="body">
           <p>
-            <img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/cafc6c55d5d6eda96513af518dcec5530148fd5c=s600x600">
+            <img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/cafc6c55d5d6eda96513af518dcec5530148fd5c=s512x512">
             A dedicated pan for Swedish pancakes, untested as of yet.
           </p>
         </div>
 
         <p class="action">
           <a href="mailto:reply@ctznapp.com">
-            <!-- @icon-reply --> <!-- @magnesium -->
+            <!-- @icon-reply -->
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
-              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(143, 144, 146)"></path>
+              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(135, 135, 135)"></path>
             </svg>
             reply via email
           </a>
@@ -566,17 +588,18 @@
         <div class="body">
           <p>Banking</p>
 
-          <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ad1ba1e3809b5a64a31c50faf93d84621904cf49=s600x600"></p>
+          <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ad1ba1e3809b5a64a31c50faf93d84621904cf49=s512x512"></p>
         </div>
 
         <p class="action">
           <a href="http://ctznapp.com">
-            <!-- @icon-reply --> <!-- @magnesium -->
+            <!-- @icon-reply -->
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
-              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(143, 144, 146)"></path>
+              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(135, 135, 135)"></path>
             </svg>
             reply via email
           </a>
+          <a href="">View Post</a>
         </p>
 
       </div><!-- /.article -->
@@ -592,7 +615,7 @@
       <div class="article">
 
         <div class="summary blueberry">
-          <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0acb4801767ba5838f45c4dbfcc7b38f869154ea=c100x100"></p>
+          <p><img src="https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0acb4801767ba5838f45c4dbfcc7b38f869154ea=s900x200"></p>
         </div>
 
         <div class="comment">
@@ -638,9 +661,9 @@
 
         <p class="action">
           <a href="http://ctznapp.com">
-            <!-- @icon-reply --> <!-- @magnesium -->
+            <!-- @icon-reply -->
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
-              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(143, 144, 146)"></path>
+              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(135, 135, 135)"></path>
             </svg>
             reply via email
           </a>
@@ -701,9 +724,9 @@
 
         <p class="action">
           <a href="http://ctznapp.com">
-            <!-- @icon-reply --> <!-- @magnesium -->
+            <!-- @icon-reply -->
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
-              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(143, 144, 146)"></path>
+              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(135, 135, 135)"></path>
             </svg>
             reply via email
           </a>
@@ -731,9 +754,9 @@
 
         <p class="action">
           <a href="http://ctznapp.com">
-            <!-- @icon-reply --> <!-- @magnesium -->
+            <!-- @icon-reply -->
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
-              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(143, 144, 146)"></path>
+              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(135, 135, 135)"></path>
             </svg>
             reply via email
           </a>
@@ -773,9 +796,9 @@
 
         <p class="action">
           <a href="http://ctznapp.com">
-            <!-- @icon-reply --> <!-- @magnesium -->
+            <!-- @icon-reply -->
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
-              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(143, 144, 146)"></path>
+              <path d="M11.863 8.602h-5.010l2.272-2.272c0.545-0.545 0.545-1.431 0-1.975s-1.43-0.545-1.975 0l-4.655 4.655c-0.131 0.129-0.234 0.286-0.305 0.458-0.004 0.007-0.004 0.014-0.006 0.020-0.063 0.159-0.1 0.33-0.1 0.511s0.037 0.352 0.099 0.509c0.002 0.007 0.004 0.014 0.006 0.020 0.071 0.172 0.175 0.329 0.305 0.458l4.655 4.655c0.273 0.273 0.631 0.41 0.988 0.41s0.715-0.137 0.988-0.41c0.545-0.545 0.545-1.43 0-1.975l-2.272-2.272h5.010c3.060 0 3.253 2.723 3.26 3.26 0 0.771 0.626 1.398 1.398 1.398s1.397-0.626 1.397-1.398c0-2.433-1.613-6.054-6.054-6.054z" fill="rgb(135, 135, 135)"></path>
             </svg>
             reply via email
           </a>
