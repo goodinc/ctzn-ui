@@ -104,8 +104,14 @@
   }
   .headline,
   .details {
-    padding: 25px 30px;
     max-width: 520px; /* 580px - (30px x 2) */
+  }
+  .headline {
+    padding: 25px 30px;
+  }
+  /* SHIM: Give details a little more padding at the bottom, for the mix notification */
+  .details {
+    padding: 25px 30px 30px;
   }
   .article {
     max-width: 600px;
