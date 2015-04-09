@@ -2068,6 +2068,9 @@
     line-height: 1.2; /* @line-height x 1.5 / 1.875em */
     margin-top: 0;
     margin-bottom: 0;
+    max-width: 15.730816403em; /* (32em - 2.5em) / 1.875em */
+    margin-left: auto;
+    margin-right: auto;
 
     /* @wrap-long-words */
     word-wrap     : break-word;
@@ -2080,6 +2083,10 @@
     margin-bottom: 0.375em;
     font-weight: inherit;
     font-size: inherit;
+    line-height: inherit;
+    max-width: 29.5em; /* 32em - 2.5em */
+    margin-left: auto;
+    margin-right: auto;
   }
   .push-card .website a {
     text-decoration: none;
