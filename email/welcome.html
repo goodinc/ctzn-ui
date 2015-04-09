@@ -233,12 +233,14 @@
       margin: 0;
       padding: 30px 0 30px 60px;
       font-size: 28px;
+      font-weight: bold;
     }
     .steps li {
       padding-right: 20px;
     }
     .steps div {
       font-size: 16px;
+      font-weight: normal;
     }
     .steps   b,
     .message b {
@@ -499,6 +501,39 @@
       background-color: rgb(250, 134, 40); /* @orange */
     }
 
+
+    .headline.first.lime {
+      border-color: rgb(218, 243, 121); /* @lime */
+    }
+    .headline.first.cucumber {
+      border-color: rgb(153, 248, 115); /* @cucumber */
+    }
+    .headline.first.blueberry {
+      border-color: rgb(40, 221, 181); /* @blueberry */
+    }
+    .headline.first.boysenberry {
+      border-color: rgb(101, 152, 254); /* @boysenberry */
+    }
+    .headline.first.plumb {
+      border-color: rgb(193, 76, 172); /* @plumb */
+    }
+    .headline.first.strawberry {
+      border-color: rgb(250, 56, 136); /* @strawberry */
+    }
+    .headline.first.apple {
+      border-color: rgb(255, 49, 59); /* @apple */
+    }
+    .headline.first.tangerine {
+      border-color: rgb(255, 204, 0); /* @tangerine */
+    }
+    .headline.first.orange {
+      border-color: rgb(250, 134, 40); /* @orange */
+    }
+    .headline.first {
+      border-top-width: 10px;
+      border-top-style: solid;
+    }
+
   </style>
 
 </head>
@@ -506,7 +541,7 @@
 
   <div class="container">
 
-    <div class="first headline" style="border-color: rgb(40, 221, 181);">
+    <div class="first blueberry headline">
       <h1>Welcome to CTZN!</h1>
     </div><!-- /.headline -->
 
@@ -646,7 +681,7 @@
               <foreignobject><img src="../assets/images/email/70x70/envelope.png" width="35" height="35" alt="" /></foreignobject>
             </svg>
           </b>
-          <div>Email <b>#ciclavia@ctznapp.com</b> to add your photos and thoughts straight from your inbox</div>
+          <div>Email <b><a href="mailto:#ciclavia@ctznapp.com">#ciclavia@ctznapp.com</a></b> to add your photos and thoughts straight from your inbox</div>
         </li>
       </ol>
     </div><!-- /.steps -->
