@@ -54,9 +54,14 @@
       max-width: 490px; /* 580px - (45px x 2) */
       margin: 0 auto;
       position: relative;
-      padding: 45px;
+      padding-top: 45px;
+      padding-left: 45px;
+      padding-right: 45px;
       background: white;
       color: rgb(31, 31, 31); /* @steel */
+    }
+    .last.intro {
+      padding-bottom: 45px;
     }
     .intro .heart,
     .intro .avatar {
@@ -66,7 +71,8 @@
     .intro .heart,
     .intro .avatar,
     .intro h2,
-    .intro p {
+    .intro .edit,
+    .intro .secondary {
       margin-right: 20px;
     }
     .intro a:hover,
@@ -75,7 +81,8 @@
       color: black;
     }
     .intro h2,
-    .intro p {
+    .intro .edit,
+    .intro .secondary {
       display: inline-block;
       margin-top: 0;
       margin-bottom: 0;
@@ -95,36 +102,27 @@
     .intro .heart img {
       display: block;
     }
-    .first.intro:after {
-      content: "+";
-    }
-    .second.intro:after {
-      content: "=";
-    }
-    .first.intro:before,
-    .first.intro:after,
-    .second.intro:before,
-    .second.intro:after {
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-      left: 60px;
-      width: 30px;
-      height: 30px;
+    .math-sign {
+      margin-top: 15px;
+      margin-bottom: 0;
+      margin-left: 10px;
+      line-height: 30px;
+      width: 40px;
       text-align: center;
-    }
-    .first.intro:before,
-    .second.intro:before {
-      content: "";
-      -webkit-transform: rotate(135deg);
-      transform: rotate(135deg);
-      background-color: white;
-      margin-bottom: -15px;
-    }
-    .first.intro:after,
-    .second.intro:after {
       font-size: 28px;
       font-weight: bold;
+    }
+    .pointer div {
+      margin: 0 0 10px 55px;
+      color: rgb(31, 31, 31); /* @steel */
+      width: 0;
+      height: 0;
+      border-width: 20px 20px 0 20px;
+      border-style: solid;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      position: absolute;
+      z-index: 1;
     }
 
 
@@ -132,12 +130,14 @@
     .headline,
     .message,
     .steps,
-    .footer {
+    .footer,
+    .pointer {
       margin-left: auto;
       margin-right: auto;
     }
     .footer,
-    .steps {
+    .steps,
+    .pointer {
       max-width: 580px;
     }
     .headline,
@@ -426,79 +426,89 @@
     ----------------------------------------------- */
 
     /* Intro (Avatar Colors) */
-    .intro.clover,
-    .intro.clover:before {
+    .intro.clover {
       background-color: rgb(0, 235, 98); /* @clover */
     }
-    .intro.kiwi,
-    .intro.kiwi:before {
+    .intro.kiwi {
       background-color: rgb(0, 255, 208); /* @kiwi */
     }
-    .intro.grape,
-    .intro.grape:before {
+    .intro.grape {
       background-color: rgb(159, 104, 246); /* @grape */
     }
-    .intro.bluebird,
-    .intro.bluebird:before {
+    .intro.bluebird {
       background-color: rgb(0, 206, 250); /* @bluebird */
     }
-    .intro.cantaloupe,
-    .intro.cantaloupe:before {
+    .intro.cantaloupe {
       background-color: rgb(255, 203, 117); /* @cantaloupe */
     }
-    .intro.cranberry,
-    .intro.cranberry:before {
+    .intro.cranberry {
       background-color: rgb(251, 59, 147); /* @cranberry */
     }
-    .intro.amethyst,
-    .intro.amethyst:before {
+    .intro.amethyst {
       background-color: rgb(255, 152, 248); /* @amethyst */
     }
-    .intro.sky,
-    .intro.sky:before {
+    .intro.sky {
       background-color: rgb(0, 255, 254); /* @sky */
     }
-    .intro.ocean,
-    .intro.ocean:before {
+    .intro.ocean {
       background-color: rgb(24, 57, 245); /* @ocean */
     }
 
     /* Intro (Push Colors) */
-    .intro.lime,
-    .intro.lime:before {
+    .intro.lime {
       background-color: rgb(218, 243, 121); /* @lime */
     }
-    .intro.cucumber,
-    .intro.cucumber:before {
+    .intro.cucumber {
       background-color: rgb(153, 248, 115); /* @cucumber */
     }
-    .intro.blueberry,
-    .intro.blueberry:before {
+    .intro.blueberry {
       background-color: rgb(40, 221, 181); /* @blueberry */
     }
-    .intro.boysenberry,
-    .intro.boysenberry:before {
+    .intro.boysenberry {
       background-color: rgb(101, 152, 254); /* @boysenberry */
     }
-    .intro.plumb,
-    .intro.plumb:before {
+    .intro.plumb {
       background-color: rgb(193, 76, 172); /* @plumb */
     }
-    .intro.strawberry,
-    .intro.strawberry:before {
+    .intro.strawberry {
       background-color: rgb(250, 56, 136); /* @strawberry */
     }
-    .intro.apple,
-    .intro.apple:before {
+    .intro.apple {
       background-color: rgb(255, 49, 59); /* @apple */
     }
-    .intro.tangerine,
-    .intro.tangerine:before {
+    .intro.tangerine {
       background-color: rgb(255, 204, 0); /* @tangerine */
     }
-    .intro.orange,
-    .intro.orange:before {
+    .intro.orange {
       background-color: rgb(250, 134, 40); /* @orange */
+    }
+
+    .pointer.lime div {
+      border-top-color: rgb(218, 243, 121); /* @lime */
+    }
+    .pointer.cucumber div {
+      border-top-color: rgb(153, 248, 115); /* @cucumber */
+    }
+    .pointer.blueberry div {
+      border-top-color: rgb(40, 221, 181); /* @blueberry */
+    }
+    .pointer.boysenberry div {
+      border-top-color: rgb(101, 152, 254); /* @boysenberry */
+    }
+    .pointer.plumb div {
+      border-top-color: rgb(193, 76, 172); /* @plumb */
+    }
+    .pointer.strawberry div {
+      border-top-color: rgb(250, 56, 136); /* @strawberry */
+    }
+    .pointer.apple div {
+      border-top-color: rgb(255, 49, 59); /* @apple */
+    }
+    .pointer.tangerine div {
+      border-top-color: rgb(255, 204, 0); /* @tangerine */
+    }
+    .pointer.orange div {
+      border-top-color: rgb(250, 134, 40); /* @orange */
     }
 
 
@@ -550,7 +560,7 @@
       <p>Thanks for signing up with Facebook.</p>
     </div><!-- /.message -->
 
-    <div class="first blueberry intro">
+    <div class="blueberry intro">
       <span class="avatar">
         <span class="size60 kiwi"><span class="letter">B</span></span>
         <!-- If an image is available (via Facebook)
@@ -559,18 +569,28 @@
       </span>
       <h2>@brian</h2>
       <p class="secondary">Brian Nilsen</p>
-      <p><a href="http://ctznapp.com">Edit Profile</a></p>
+      <p class="edit"><a href="http://ctznapp.com">Edit Profile</a></p>
+      <p class="math-sign">+</p>
     </div>
 
-    <div class="second strawberry intro">
+    <div class="blueberry pointer">
+      <div></div>
+    </div>
+
+    <div class="strawberry intro">
       <span class="avatar">
         <span class="size60 blueberry"><span class="letter">C</span></span>
       </span>
       <h2>CicLAvia</h2>
       <p class="secondary">1,237 people</p>
+      <p class="math-sign">=</p>
     </div>
 
-    <div class="boysenberry intro">
+    <div class="strawberry pointer">
+      <div></div>
+    </div>
+
+    <div class="boysenberry last intro">
       <span class="heart">
         <span class="icon">
           <!-- Heart -->
