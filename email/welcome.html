@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Join us on CTZN</title>
+  <title>Welcome to CTZN</title>
 
   <style>
 
@@ -54,11 +54,13 @@
       max-width: 490px; /* 580px - (45px x 2) */
       margin: 0 auto;
       position: relative;
-      padding-top: 45px;
       padding-left: 45px;
       padding-right: 45px;
       background: white;
       color: rgb(31, 31, 31); /* @steel */
+    }
+    .first.intro {
+      padding-top: 45px;
     }
     .last.intro {
       padding-bottom: 45px;
@@ -113,7 +115,7 @@
       font-weight: bold;
     }
     .pointer div {
-      margin: 0 0 10px 55px;
+      margin: 0 0 25px 10px;
       color: rgb(31, 31, 31); /* @steel */
       width: 0;
       height: 0;
@@ -121,8 +123,6 @@
       border-style: solid;
       border-left-color: transparent;
       border-right-color: transparent;
-      position: absolute;
-      z-index: 1;
     }
 
 
@@ -560,7 +560,7 @@
       <p>Thanks for signing up with Facebook.</p>
     </div><!-- /.message -->
 
-    <div class="blueberry intro">
+    <div class="blueberry first intro">
       <span class="avatar">
         <span class="size60 kiwi"><span class="letter">B</span></span>
         <!-- If an image is available (via Facebook)
@@ -573,11 +573,11 @@
       <p class="math-sign">+</p>
     </div>
 
-    <div class="blueberry pointer">
-      <div></div>
-    </div>
-
     <div class="strawberry intro">
+      <div class="blueberry pointer">
+        <div></div>
+      </div>
+
       <span class="avatar">
         <span class="size60 blueberry"><span class="letter">C</span></span>
       </span>
@@ -586,11 +586,11 @@
       <p class="math-sign">=</p>
     </div>
 
-    <div class="strawberry pointer">
-      <div></div>
-    </div>
-
     <div class="boysenberry last intro">
+      <div class="strawberry pointer">
+        <div></div>
+      </div>
+
       <span class="heart">
         <span class="icon">
           <!-- Heart -->
