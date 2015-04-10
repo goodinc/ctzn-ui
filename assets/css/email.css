@@ -159,19 +159,9 @@
     margin-top: 20px;
     margin-bottom: 0;
   }
-  .profile .action {
-    margin-top: 20px;
-  }
   .profile .action a {
-    font-weight: bold;
-    background: rgb(255, 255, 255);
-    color: rgb(83, 83, 83);
-    padding: 10px 20px;
-    border-radius: 3px;
-    text-transform: lowercase;
-    display: inline-block;
-    text-decoration: none;
-    border: 1px solid rgb(222, 222, 222);
+    background: white;
+    border-color: white;
   }
   .profile .joined {
     font-size: 11px;
@@ -431,7 +421,7 @@
   .action a:active,
   .action a:focus {
     background: rgb(238, 238, 238); /* @seashell */
-    color: rgb(102, 102, 102); /* @tin */
+    color: black;
   }
 
 
