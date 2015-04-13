@@ -1845,14 +1845,18 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 0.75em 3.75em;
       box-sizing: border-box;
+      padding: 0.75em 5em; /* The right/left padding numbers here are arbitrary, but ideally large
+                              enough to prevent the title from overlapping with the back/next buttons. */
     }
+
+    /* OPTIONAL: Limit the headline to a single line. */
     .page > header h1 {
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
 
+      white-space: nowrap;
       word-wrap     : inherit;
       overflow-wrap : inherit;
     }
@@ -2279,10 +2283,12 @@
   }
 
   /* OPTIONAL: Make the headline larger on the preview page. */
-  .push-card.page .details .name {
-    /* @h1 */
-    font-size     : 3em;       /* 48px / @font-size */
-    line-height   : 1.25em;    /* 60px / 48px */
+  @media (min-width: 25em) {
+    .push-card.page .details .name {
+      /* @h1 */
+      font-size     : 3em;       /* 48px / @font-size */
+      line-height   : 1.25em;    /* 60px / 48px */
+    }
   }
 
   /* OPTIONAL: Make the meta data stick to the bottom of
