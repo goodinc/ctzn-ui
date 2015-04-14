@@ -1,0 +1,385 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Join us on CTZN</title>
+
+  <style>
+
+    /* Elements */
+    html, body {
+      height: 100%;
+    }
+    .body {
+      min-height: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .body {
+      font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: rgb(238, 238, 238); /* @seashell */
+      padding: 10px 0 120px;
+    }
+    a {
+      color: rgb(31, 31, 31); /* @steel */
+    }
+    a img {
+      border-width: 0;
+    }
+
+    /* Join */
+    .join {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .join:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
+      background-color: white;
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+    .join a {
+      display: block;
+      padding: 40px;
+      text-decoration: none;
+    }
+    .join a span {
+      background: white;
+      border: 1px solid white;
+      display: inline-block;
+      padding: 7px 15px;
+      border-radius: 0.25em;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Containers */
+    .header,
+    .headline,
+    .message,
+    .steps,
+    .footer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .header,
+    .footer,
+    .steps {
+      max-width: 600px;
+    }
+    .headline,
+    .message {
+      max-width: 540px; /* 600px - (30px x 2) */
+    }
+    .headline,
+    .message,
+    .steps {
+      background-color: white;
+    }
+    .headline,
+    .message {
+      padding: 25px 30px;
+    }
+    .headline,
+    .footer {
+      margin-top: 10px;
+    }
+    .headline.first {
+      border-top: 10px solid black;
+    }
+    .message,
+    .steps {
+      margin-top: 1px;
+    }
+    .footer {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    /* Header */
+    .header {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+    .header h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .header .ctzn {
+      margin: 20px 10px 0;
+      font-size: 10px;
+    }
+    .header .ctzn img,
+    .header .ctzn svg {
+      margin-left: 2px;
+    }
+    .header .ctzn a {
+      text-decoration: none;
+    }
+
+    @media (min-width: 600px) {
+      .header {
+        text-align: left;
+      }
+      .header h2 {
+        float: left;
+      }
+      .header .ctzn {
+        float: right;
+      }
+    }
+
+    /* Footer */
+    .footer h2 {
+      float: left;
+    }
+    .footer .unsubscribe {
+      float: right;
+    }
+    .footer .unsubscribe a {
+      font-size: 12px;
+    }
+
+    /* Headlines */
+    .headline h1,
+    .headline h2 {
+      font-weight: bold;
+      color: rgb(31, 31, 31); /* @steel */
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    /* Steps */
+    .steps ol {
+      margin: 0;
+      padding: 30px 0 30px 60px;
+      font-weight: bold;
+      font-size: 28px;
+    }
+    .steps li {
+      padding-right: 20px;
+    }
+    .steps div {
+      font-size: 14px;
+    }
+    .steps .not-first {
+      border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+      margin-top: 30px;
+      padding-top: 30px;
+      position: relative;
+    }
+    .steps .not-first:before {
+      content: "";
+      border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+      position: absolute;
+      top: -1px;
+      left: -60px;
+      width: calc(100% + 60px);
+      height: 1px;
+    }
+    .steps .icon {
+      display: inline-block;
+      border: 3px solid rgb(238, 238, 238); /* @seashell */
+      padding: 8px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      float: right;
+      margin-top: -10px;
+      margin-left: 20px;
+    }
+    .steps .icon img {
+      display: block;
+    }
+    .steps .icons {
+      color: rgb(102, 102, 102); /* @tin */
+      margin-top: 20px;
+    }
+    .steps .icons img,
+    .steps .icons svg {
+      margin-right: 25px;
+    }
+
+    /* Icons */
+    .icon  svg,
+    .icons svg {
+      width : 35px;
+      height: 35px;
+      vertical-align: middle;
+      fill: currentColor;
+    }
+    .icons svg {
+      width : 25px;
+      height: 25px;
+    }
+
+    /* Colors */
+    .lime .join {
+      background-color: rgb(218, 243, 121); /* @lime */
+    }
+    .cucumber .join {
+      background-color: rgb(153, 248, 115); /* @cucumber */
+    }
+    .blueberry .join {
+      background-color: rgb(40, 221, 181); /* @blueberry */
+    }
+    .boysenberry .join {
+      background-color: rgb(101, 152, 254); /* @boysenberry */
+    }
+    .plumb .join {
+      background-color: rgb(193, 76, 172); /* @plumb */
+    }
+    .strawberry .join {
+      background-color: rgb(250, 56, 136); /* @strawberry */
+    }
+    .apple .join {
+      background-color: rgb(255, 49, 59); /* @apple */
+    }
+    .tangerine .join {
+      background-color: rgb(255, 204, 0); /* @tangerine */
+    }
+    .orange .join {
+      background-color: rgb(250, 134, 40); /* @orange */
+    }
+
+    .lime .steps b {
+      color: rgb(218, 243, 121); /* @lime */
+    }
+    .cucumber .steps b {
+      color: rgb(153, 248, 115); /* @cucumber */
+    }
+    .blueberry .steps b {
+      color: rgb(40, 221, 181); /* @blueberry */
+    }
+    .boysenberry .steps b {
+      color: rgb(101, 152, 254); /* @boysenberry */
+    }
+    .plumb .steps b {
+      color: rgb(193, 76, 172); /* @plumb */
+    }
+    .strawberry .steps b {
+      color: rgb(250, 56, 136); /* @strawberry */
+    }
+    .apple .steps b {
+      color: rgb(255, 49, 59); /* @apple */
+    }
+    .tangerine .steps b {
+      color: rgb(255, 204, 0); /* @tangerine */
+    }
+    .orange .steps b {
+      color: rgb(250, 134, 40); /* @orange */
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="tangerine body">
+
+    <div class="header">
+      <h2><img src="../assets/images/email/norcal.png" alt="Dreamers + Doers" width="232" /></h2>
+      <p class="ctzn">
+        <a href="http://ctznapp.com">
+          POWERED BY
+          <b>
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/da0d53ce-555e-407e-91a7-4b8bb31700e5.png" alt="CTZN" height="10" />
+          </b>
+        </a>
+      </p>
+      <div style="clear: both"></div>
+    </div><!-- /.header -->
+
+    <div class="headline first">
+      <h1>Join us on CTZN</h1>
+    </div><!-- /.headline -->
+
+    <div class="message">
+      <p>Hello CAF Cyclers!</p>
+      <p>As you already know, discipline and drive are required to achieve your training goals. But there's no reason to endure it alone! Challenged Athletes Foundation is bringing together CAF Cyclers into a community that extends past the race. Join your fellow cyclists on CTZN in a dedicated, private space where you can share training tips and progress, and inspire one another before the big day and beyond.</p>
+      <p>Lets come together and ride on!</p>
+    </div><!-- /.message -->
+
+    <p class="join"><a href="http://ctznapp.com"><span>join the group</span></a></p>
+
+    <div class="headline">
+      <h2>Next Steps</h2>
+    </div><!-- /.headline -->
+
+    <div class="steps">
+      <ol>
+        <li>
+          <b class="icon">
+            <!-- Camera -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/8ec3200c-4335-4a2c-9338-17be3b32c047.png" width="35" height="35" alt="" />
+          </b>
+          <div>Snap or shoot your favorite <b>Team CAF Cycling</b> moments, whenever and wherever they happen</div>
+        </li>
+        <li class="not-first">
+          <b class="icon">
+            <!-- Upload -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/0f17c50e-7fa4-4de4-b492-a9cfcb2592ba.png" width="35" height="35" alt="" />
+          </b>
+          <div>Post your <b>Team CAF Cycling</b> photos, videos, and notes directly to CTZN</div>
+
+          <div class="icons">
+
+            <!-- Picture Stack -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/2a4568af-8e0c-4fcb-82bf-b281fdccf989.png" width="26" height="26" alt="" />
+
+            <!-- Play -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/6edebd74-3ede-4568-9e98-558273d82483.png" width="26" height="26" alt="" />
+
+            <!-- Note -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/6016fd23-ca10-443e-bf4d-231ad434bbc1.png" width="26" height="26" alt="" />
+
+          </div><!-- /.icons -->
+
+        </li>
+        <li class="not-first">
+          <b class="icon">
+            <!-- Settings -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/11eb5115-2b9b-4c73-9c9a-eec62c4a6382.png" width="35" height="35" alt="" />
+          </b>
+          <div>Connect to add your <b>#TeamCAFCycling</b> social media directly from Instagram, Twitter, and Facebook</div>
+
+          <div class="icons">
+
+            <!-- Instagram -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/419e998e-01a2-4916-8d12-2e63b32d0494.png" width="26" height="26" alt="" />
+
+            <!-- Twitter -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/d8f5c22e-4222-4be8-af76-fa695a41a5ce.png" width="26" height="26" alt="" />
+
+            <!-- Facebook -->
+            <img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/6858e8d5-6429-4e03-858f-586a09124e6e.png" width="26" height="26" alt="" />
+          </div><!-- /.icons -->
+
+        </li>
+      </ol>
+    </div><!-- /.steps -->
+
+    <div class="footer">
+      <h2><a href="http://ctznapp.com"><img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/da0d53ce-555e-407e-91a7-4b8bb31700e5.png" alt="CTZN" width="75" height="28" /></a></h2>
+      <p class="unsubscribe"><a href="http://ctznapp.com">Unsubscribe</a></p>
+    </div><!-- /.footer -->
+
+  </div><!-- ./body -->
+
+</body>
+</html>
