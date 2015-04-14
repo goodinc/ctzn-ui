@@ -1102,6 +1102,10 @@
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(102, 102, 102); /* @tin */
   }
+  .post-item footer .action a      svg,
+  .post-item footer .action button svg {
+    vertical-align: top;
+  }
   .post-item footer .action [aria-checked="true"] {
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(245, 83, 135) !important; /* @strawberry */
