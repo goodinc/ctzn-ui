@@ -2,3 +2,8 @@
 For replacing the icons in each HTML file…
 
 <!-- images/icons.svg -->[\s<a-z0-9A-Z="\.:/>,-/#]+?(?=</svg>)</svg>
+
+
+For updating styles in HTML emails…
+
+<!-- https://github.com/goodinc/ctzn-ui/blob/gh-pages/assets/css/email.css -->(.|\s)+?(?=</style>)</style>
