@@ -29,7 +29,6 @@
   }
 
   a {
-    color: rgb(255, 49, 102); /* @gojiberry */
     color: rgb(250, 56, 136); /* @strawberry */
     transition: opacity 0.2s, color 0.2s, background-color 0.2s;
   }
@@ -389,7 +388,6 @@
     font-family: inherit;
     font-size: inherit;
     font-weight: bold;
-    background-color: rgb(255, 49, 102); /* @gojiberry */
     background-color: rgb(250, 56, 136); /* @strawberry */
     color: white;
     padding: 0.375em 1.125em;
@@ -1045,12 +1043,15 @@
   .post-item a.body:focus {
     background-color: rgba(0, 0, 0, 0.25);
   }
-  .post-item .body img {
-    border-radius: 0.125em;
-    display: block;
+  .post-item .body img,
+  .post-item .body video {
     margin: 0.75em auto;
     max-width: 100%;
     height: auto;
+  }
+  .post-item .body img {
+    border-radius: 0.125em;
+    display: block;
 
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
     background-color: rgba(0, 0, 0, 0.25);
@@ -3249,15 +3250,11 @@
     font-size: inherit;
     max-width: 31.5em;
   }
-  .post-item video,
   .mix .preview div video,
   .mix .preview div img {
     display: block;
     max-width: 100%;
     height: auto;
-  }
-  .post-item video {
-    margin-top: 0.75em; /* @line-height / 2 */
   }
   .mix footer {
     margin-top: 0.75em;
@@ -3621,7 +3618,7 @@
     text-transform: lowercase;
   }
   .signup.page > header .next {
-    color: rgb(255, 49, 102); /* @gojiberry */
+    color: rgb(250, 56, 136); /* @strawberry */
   }
   .signup.page > header .next:active,
   .signup.page > header .next:focus {
