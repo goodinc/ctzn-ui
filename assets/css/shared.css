@@ -734,11 +734,6 @@
     position: relative;
   }
 
-  /* SHIM: Give the fixed header more space so it’s less likely to overlap the message. */
-  .page > header + section.upload-message {
-    margin-top: 1.5em;
-  }
-
   /* On the post page, the upload message appears after the related content. */
   .comments section.upload-message {
     border-bottom-width: 0;

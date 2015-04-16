@@ -365,7 +365,7 @@
     position: relative;
     font-size: 1.25em;
   }
-  @media (min-width: 40em) {
+  @media (min-width: 50em) {
     .supports-placeholder form p {
       display: inline;
       margin: 0 0.125em;
@@ -665,26 +665,24 @@
     }
   }
 
-  .about section > h3 strong {
+  .about .feature h3 strong {
     color: white;
     font-weight: normal;
   }
   @media (min-width: 20em) {
-    .about section > h3 strong {
+    .about .feature h3 strong {
       display: block;
     }
   }
   .about svg.icon {
     margin: 0 0.75em 0.75em;
     color: white;
+    width: 2em;
+    height: 2em;
   }
   .about svg.icon:first-child {
     font-size: 1.25em;
   }
-    .about svg.icon {
-      width: 2em;
-      height: 2em;
-    }
   @media (min-width: 30em) {
     .about svg.icon {
       margin-left: 1.25em;
@@ -701,32 +699,42 @@
 
   /* OPTIONAL: Position the icons on the left */
   @media (min-width: 30em) {
-    .about section > h3 {
+    .about .feature h3 {
       margin-bottom: 0;
     }
-    .about section > p {
+    .about .feature p {
       margin-top: 0.375em;
       margin-bottom: 0;
     }
-    .about section > .icon,
-    .about section > .icons,
-    .about section > h3 {
+    .about .feature .icon,
+    .about .feature .icons,
+    .about .feature h3 {
       display: inline-block;
       vertical-align: top;
       text-align: left;
     }
-    .about section > .icons {
+    .about .feature .icons {
       margin-right: 1.5em;
     }
   }
 
-
-
-  /*
-  .about section img {
-    float: left;
+  .about .feature .text,
+  .about .feature .text + p {
+    display: inline-block;
+    vertical-align: middle;
   }
-  */
+  .about .feature .text + p {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+  .about .feature .email-image img {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  @media (min-width: 30em) {
+    .about .feature p.email-image {
+      margin: 3em;
+    }
+  }
 
 
   /* =Privacy
