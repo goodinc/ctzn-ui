@@ -4078,6 +4078,14 @@
     text-align: left;
   }
 
+  /* SHIM: Don’t position the instructions dialog (since it may interfere with scrolling). */
+  #loading-screen .dialog.page.instructions {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
   .dialog.page.instructions h1 {
     max-width: none;
   }
