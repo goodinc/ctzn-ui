@@ -286,6 +286,9 @@
     color: white;
   }
 
+  .avatar .size15 {
+    font-size: 0.625em; /* 2/3 x 15px / @font-size */
+  }
   .avatar .size30 {
     font-size: 1.25em; /* 2/3 x 30px / @font-size */
   }
@@ -311,6 +314,10 @@
   }
 
   /* OPTIONAL: Make image avatars scale with the font size */
+  .avatar img[width="15"] {
+    width : 0.9375em; /* 15px / @font-size */
+    height: 0.9375em;
+  }
   .avatar img[width="30"] {
     width : 1.875em; /* 30px / @font-size */
     height: 1.875em;
@@ -1082,6 +1089,7 @@
   .post-item footer li {
     display: inline;
   }
+
   .post-item footer .action a,
   .post-item footer .action button {
     background: white;
@@ -3872,6 +3880,68 @@
     top: 0.625em; /* 10px / 16px */
     left: 0.625em; /* 10px / 16px */
   }
+
+  /* OPTIONAL: Make the avatars smaller in the comments summary. */
+  .activity {
+    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+    padding-top: 1.25em;
+  }
+  .activity h2 {
+    font-size: 0.8571428571em;
+    margin: 0;
+  }
+  .activity h2 svg {
+    font-size: 0.8333333333em; /* 10px / 12px */
+  }
+  .activity .post-item {
+    padding-top    : 0.2857142857em; /* 4px / 14px */
+    padding-bottom : 0.2857142857em;
+    padding-left   : 3.2142857143em; /* 50px / 14px */
+  }
+  .activity .post-item header .avatar {
+    top: 0.1428571429em; /* 2px / 14px */
+    left: 1.25em;
+  }
+  .activity .post-item .body p {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .activity .action {
+    margin-top: 1.25em;
+  }
+
+  /* OPTIONAL: Make reply button fill the available space. */
+  .activity .action {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: stretch;
+            justify-content: stretch;
+
+    margin-left: -0.125em;
+    margin-right: -0.125em;
+  }
+  .activity .action li {
+    margin-left: 0.125em;
+    margin-right: 0.125em;
+  }
+  .activity .action li.reply {
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+  }
+  .activity .action li.reply a {
+    width: 100%;
+    box-sizing: border-box;
+    border-color: rgb(222, 222, 222); /* @silver */
+    color: rgb(153, 153, 153); /* @nickel */
+    font-weight: normal;
+  }
+  .activity .action a,
+  .activity .action button {
+    padding: 0.5625em 0.75em;
+    line-height: 1.5;
+    font-size: 16px !important;
+  }
+
 
   .notifications .post-item .body img {
     margin: 0;
