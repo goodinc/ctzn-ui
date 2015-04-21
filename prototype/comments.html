@@ -247,364 +247,106 @@
     </defs>
   </svg>
 
-  <header id="header" class="primary">
-    <h1>
-      <a href="#sync"><svg class="icon"><use xlink:href="#ctzn" /><foreignObject>ctzn</foreignObject></svg></a>
-      <!--
-      <span class="network-indicator"><span class="sending icon"></span></span>
-      -->
-    </h1>
+  <section class="post page">
+    <header>
+      <h1>Comments</h1>
 
-    <a href="#notifications" class="notifications active"><svg class="icon"><use xlink:href="#bell" /><foreignObject>Notifications</foreignObject></svg></a>
-
-    <a href="#profile" class="profile">
-      <span class="avatar"><img height="30" width="30" alt="Brian Nilsen" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" /></span>
-    </a>
-  </header>
-
-  <section class="push">
-
-    <!--
-    <p class="new-posts">
-      <button>
-        <svg class="icon"><use xlink:href="#sync" /><foreignobject></foreignobject></svg>
-        Update
-      </button>
-    </p>
-    -->
-<header class="header push-card plumb" data-bind="css: good.pushColor(push.id)">
-
-      <h2 class="name" data-bind="text: push.name">GOOD</h2>
-      <h3 class="about" data-bind="text: push.body">Pushing the world forward</h3>
-      <!-- ko if: push.site && push.display_site --><!-- /ko -->
-
-      <div class="meta">
-
-        <!-- ko if: posts.length > 0 -->
-        <p>
-          <span class="count" data-bind="text: posts.length">237</span>
-          <span class="label">Posts</span>
-        </p>
-        <!-- /ko -->
-
-        <p>
-          <a href="#members" data-bind="click: $root.onShowUserList">
-            <span class="count" data-bind="text: participants.length">62</span>
-            <span class="label">People</span>
-          </a>
-        </p>
-
-        <p class="settings">
-          <a href="#settings" data-bind="click: good.onNavClick">
-            <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#settings"></use><foreignObject>My Settings</foreignObject></svg>
-          </a>
-        </p>
-      </div>
+      <a href="#push" class="back">
+        <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use><foreignObject>Go Back</foreignObject></svg>
+      </a>
     </header>
-    <ul class="create">
-      <li>
-        <a href="#switch">
-          <svg class="icon"><use xlink:href="#switch" /><foreignobject></foreignobject></svg>
-          Switch Push
-        </a>
-      </li>
-      <li>
-        <a href="#edit-post">
-          <svg class="icon"><use xlink:href="#note" /><foreignobject></foreignobject></svg>
-          New Post
-        </a>
-      </li>
-      <li>
-        <a href="#new-mix">
-          <svg class="icon"><use xlink:href="#mix" /><foreignobject></foreignobject></svg>
-          New Mix
-        </a>
-      </li>
-      <li>
-        <a href="#mixes">
-          <svg class="icon"><use xlink:href="#mixes" /><foreignobject></foreignobject></svg>
-          My Mixes
-        </a>
-      </li>
-    </ul>
 
-    <ol class="post-list">
+    <div class="comments" style="padding-bottom: 1.5em">
+      <h2>Comments</h2>
 
+      <ol class="post-list">
+        <li>
+          <article class="post-item"><header><h3><span class="avatar">
+              
+                <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100">
+            </span>@brian:</h3>
+            </header><div class="body"><p>Didn't end up even playing the bass, just spent a lot of time talking with a friend I don't see enough of.   Did play a few songs, rocked some Dio, barbecued, and just had a nice day off.</p></div>
+              <p class="time">
+                <time>2 days ago</abbr>
+                </time></p>
+          </article>
+        </li>
+              
+        <li>
+          <article class="post-item"><header><h3><span class="avatar">
+              
+                <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+            </span>@cogg:</h3>
+            </header><div class="body"><p>Sounds great. We have a have a cheap bass that we got when my son wanted to learn it. If you are just looking for something to play with, happy to gift it just to see it get used.</p></div>
+              <p class="time">
+                <time>2 days ago
+                </time></p>
+          </article>
+        </li>
 
-      <li data-bind="attr: { id: 'post-' + id }" id="post-5427">
-        <article class="post-item">
-          <header>
-            <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c30x30 30w, https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c60x60 60w, https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c30x30">
+        <li>
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" />
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">grant</span>
-              </a>
-            </h3>
-            <p class="source" data-bind="if: source"></p>
-            <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T17:34:49+00:00">1 day ago</time>
-              </a>
-            </p>
-          </header>
-
-          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Looking sweet at Barnes and Noble 82nd and Broadway. (And switched spots with foreign affairs which is all bad news anyway)</p>
-
-          <p><img src="https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s256x256 256w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s384x384 384w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s512x512 512w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s768x768 768w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
-
-          <footer class="activity">
-            <!--
-            <h2>
-              <svg class="icon"><use xlink:href="#heart" /></svg>
-              0 love
-            </h2>
-            -->
-            <ul class="action has-reply">
-              <li>
-                <button  role="checkbox" aria-checked="false">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
-                </button>
-              </li>
-              <li class="reply">
-                <a href="comments.html#add-comment">
-                  Add your reply…
-                </a>
-              </li>
-              <li>
-                <a href="#post-options" class="options" >
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-      </li>
-
-      <li>
-        <article class="post-item" >
-          <header>
-            <h3>
-              <a href="#profile" >
+              </h3>
+            </header>
+            <div class="body"><p>That'd be awesome, I've been meaning to get a bass for a while now.</p></div>
+          </article>
+        </li>
+      
+        <li>
+          <article class="post-item"><header><h3><span class="avatar">
+              
+                <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+            </span>@cogg:</h3>
+            </header><div class="body"><p>Apparently my nephew called dibs and has already taken possession. Sorry for getting your hopes up.</p></div>
+              <p class="time">
+                <time>1 day ago</abbr>
+                </time></p>
+          </article>
+        </li>
+      
+        <li>
+          <article class="post-item">
+            <header>
+              <h3>
                 <span class="avatar">
                   
-                  
-                  <span class="size30 cranberry"  data-content="m"></span>
-                  
-                </span>
-                <span>@<span >max</span></span>
-              </a>
-            </h3>
-            <p class="source" ></p>
-            <p>
-              <time  datetime="2015-04-02T19:02:28+00:00">2 weeks ago</time>
-            </p>
-          </header>
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100">
+                </span>@brian:
+              </h3>
+            </header>
+            <div class="body"><p>My soul.   It is crushed.</p></div>
+            <p class="time"><time>23 hours ago</time></p>
+          </article>
+        </li>
+      </ol>
 
-          <div class="body">
-            <p>So nice to see this old notice that still feels fresh ten years later @caseycaplowe</p>
+      <form id="add-comment">
+        <p class="text">
+          <label>
+            <span>Add your reply…</span><br />
+            <textarea placeholder="Add your reply…" name="comment"></textarea>
+          </label>
+        </p>
+        <p class="submit">
+          <button type="submit">Send</button>
+        </p>
+        <!--
+        <ul class="submit">
+          <li><button type="submit">Update</button></li>
+          <li><a href="…">Cancel</a></li>
+        </ul>
+        -->
+      </form>
 
-            <p><img src="https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s256x256 256w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s384x384 384w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s512x512 512w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s768x768 768w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
-          </div>
+    </div>
 
-          <footer class="activity">
-            <h2>
-              <svg class="icon"><use xlink:href="#heart" /></svg>
-              13 love
-            </h2>
-
-            <div class="comments">
-              <ol class="post-list">
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" >
-                          <span class="avatar">
-                            <img height="15" width="15" alt="" src="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c30x30">
-                          </span>
-                          @<span >grant</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" ><p>Wow. Still super relevant. Glad we are back to it!</p></div>
-                    <p class="time">
-                      <time  datetime="2015-04-02T20:38:03+00:00">2 weeks ago</time>
-                    </p>
-                  </article>
-                </li>
-              
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" >
-                          <span class="avatar">
-                            <span class="size15 cranberry"  data-content="m"></span>
-                          </span>
-                          @<span >max</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" ><p>Me too, Hugo!</p></div>
-                    <p class="time">
-                      <time  datetime="2015-04-02T22:34:07+00:00">2 weeks ago</time>
-                    </p>
-                  </article>
-                </li>
-              
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" >
-                          <span class="avatar">
-                            <span class="size15 amethyst"  data-content="t"></span>
-                          </span>
-                          @<span >tommaybrier</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" ><p>I love this.</p></div>
-                    <p class="time">
-                      <time  datetime="2015-04-07T09:45:26+00:00">1 week ago</time>
-                    </p>
-                  </article>
-                </li>
-              </ol>
-            </div>
-
-            <ul class="action has-reply">
-              <li>
-                <button  role="checkbox" aria-checked="false">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
-                </button>
-              </li>
-              <li class="reply">
-                <a href="comments.html#add-comment">
-                  Add your reply…
-                </a>
-              </li>
-              <li>
-                <a href="#post-options" class="options" >
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              </li>
-            </ul>
-          </footer>
-
-        </article>
-      </li>
-
-      <li data-bind="attr: { id: 'post-' + id }" id="post-4859">
-        <article class="post-item">
-          <header>
-            <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image"></span>
-                <span class="avatar" data-bind="if: !user.profile_image">
-                  <span class="size30 kiwi" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="s"></span>
-                </span>
-                @<span data-bind="text: user.username">shari</span>
-              </a>
-            </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
-              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
-            </p>
-            <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-09T19:31:36+00:00">2 weeks ago</time>
-              </a>
-            </p>
-          </header>
-
-          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s256x256 256w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s384x384 384w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s512x512 512w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s768x768 768w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
-Art @ work. What do you love about your 'hood? #100startswith1 #goodworldwide</p></div>
-
-          <footer class="activity">
-            <h2>
-              <svg class="icon"><use xlink:href="#heart" /></svg>
-              7 love
-            </h2>
-
-            <div class="comments">
-              <ol class="post-list" data-bind="foreach: postViewModel().comments">
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                          <span class="avatar">
-                            <!-- ko if: user.profile_image -->
-                            <img height="15" width="15" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
-                            <!-- /ko -->
-                            <!-- ko if: !user.profile_image --><!-- /ko -->
-                          </span>
-                          @<span data-bind="text: user.username">aldo</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Um that's a gorgeous sketch!</p></div>
-                    <p class="time">
-                      <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-09T19:52:18+00:00">2 weeks ago</time>
-                    </p>
-                  </article>
-                </li>
-              
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                          <span class="avatar">
-                            <!-- ko if: user.profile_image --><!-- /ko -->
-                            <!-- ko if: !user.profile_image -->
-                            <span class="size15 cantaloupe" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="m"></span>
-                            <!-- /ko -->
-                          </span>
-                          @<span data-bind="text: user.username">mindyvnguyen</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>@aldo👆I second that!</p></div>
-                    <p class="time">
-                      <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-09T20:15:34+00:00">2 weeks ago</time>
-                    </p>
-                  </article>
-                </li>
-              </ol>
-            </div>
-
-            <ul class="action has-reply">
-              <li>
-                <button  role="checkbox" aria-checked="true">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
-                </button>
-              </li>
-              <li class="reply">
-                <a href="comments.html#add-comment">
-                  Add your reply…
-                </a>
-              </li>
-              <li>
-                <a href="#post-options" class="options" >
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              </li>
-            </ul>
-
-          </footer>
-        </article>
-      </li>
-
-    </ol>
   </section>
 
 </body>
 </html>
+

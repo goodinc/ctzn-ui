@@ -3906,6 +3906,9 @@
     color: rgb(102, 102, 102); /* @tin */
   }
   .activity .action {
+    margin-top: 0;
+  }
+  .activity h2 ~ .action {
     margin-top: 1.25em;
   }
 
