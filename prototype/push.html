@@ -272,24 +272,24 @@
       </button>
     </p>
     -->
-<header class="header push-card plumb" data-bind="css: good.pushColor(push.id)">
+<header class="header push-card boysenberry" data-bind="css: good.pushColor(push.id)">
 
-      <h2 class="name" data-bind="text: push.name">GOOD</h2>
-      <h3 class="about" data-bind="text: push.body">Pushing the world forward</h3>
+      <h2 class="name" data-bind="text: push.name">Neighborday</h2>
+      <h3 class="about" data-bind="text: push.body">The first ever global, local holiday—celebrating our blocks and the people we live next door to. Join in the last Saturday in April.</h3>
       <!-- ko if: push.site && push.display_site --><!-- /ko -->
 
       <div class="meta">
 
         <!-- ko if: posts.length > 0 -->
         <p>
-          <span class="count" data-bind="text: posts.length">237</span>
+          <span class="count" data-bind="text: posts.length">48</span>
           <span class="label">Posts</span>
         </p>
         <!-- /ko -->
 
         <p>
           <a href="#members" data-bind="click: $root.onShowUserList">
-            <span class="count" data-bind="text: participants.length">62</span>
+            <span class="count" data-bind="text: participants.length">49</span>
             <span class="label">People</span>
           </a>
         </p>
@@ -328,186 +328,178 @@
       </li>
     </ul>
 
-    <ol class="post-list">
+<ol class="post-list">
+      <!-- ko if: showPrevButton --><!-- /ko -->
 
-
-      <li data-bind="attr: { id: 'post-' + id }" id="post-5427">
-        <article class="post-item">
-          <header>
-            <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c30x30 30w, https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c60x60 60w, https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c30x30">
-                </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">grant</span>
-              </a>
-            </h3>
-            <p class="source" data-bind="if: source"></p>
-            <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T17:34:49+00:00">1 day ago</time>
-              </a>
-            </p>
-          </header>
-
-          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Looking sweet at Barnes and Noble 82nd and Broadway. (And switched spots with foreign affairs which is all bad news anyway)</p>
-
-          <p><img src="https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s256x256 256w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s384x384 384w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s512x512 512w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s768x768 768w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/9ae6fcc3a72c08cb83ec978108981b8e78298d7f=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
-
-          <footer class="activity">
-            <!--
-            <h2>
-              <svg class="icon"><use xlink:href="#heart" /></svg>
-              0 love
-            </h2>
-            -->
-            <ul class="action has-reply">
-              <li>
-                <button  role="checkbox" aria-checked="false">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
-                </button>
-              </li>
-              <li class="reply">
-                <a href="comments.html#add-comment">
-                  Add your reply…
-                </a>
-              </li>
-              <li>
-                <a href="#post-options" class="options" >
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-      </li>
-
-      <li>
-        <article class="post-item" >
-          <header>
-            <h3>
-              <a href="#profile" >
-                <span class="avatar">
-                  
-                  
-                  <span class="size30 cranberry"  data-content="m"></span>
-                  
-                </span>
-                <span>@<span >max</span></span>
-              </a>
-            </h3>
-            <p class="source" ></p>
-            <p>
-              <time  datetime="2015-04-02T19:02:28+00:00">2 weeks ago</time>
-            </p>
-          </header>
-
-          <div class="body">
-            <p>So nice to see this old notice that still feels fresh ten years later @caseycaplowe</p>
-
-            <p><img src="https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s256x256 256w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s384x384 384w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s512x512 512w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s768x768 768w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/e6690ed3f358de5c763e28b5a9eabb4bf094f4df=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
-          </div>
-
-          <footer class="activity">
-            <h2>
-              <svg class="icon"><use xlink:href="#heart" /></svg>
-              13 love
-            </h2>
-
-            <div class="comments">
-              <ol class="post-list">
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" >
-                          <span class="avatar">
-                            <img height="15" width="15" alt="" src="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c30x30">
-                          </span>
-                          @<span >grant</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" ><p>Wow. Still super relevant. Glad we are back to it!</p></div>
-                    <p class="time">
-                      <time  datetime="2015-04-02T20:38:03+00:00">2 weeks ago</time>
-                    </p>
-                  </article>
-                </li>
-              
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" >
-                          <span class="avatar">
-                            <span class="size15 cranberry"  data-content="m"></span>
-                          </span>
-                          @<span >max</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" ><p>Me too, Hugo!</p></div>
-                    <p class="time">
-                      <time  datetime="2015-04-02T22:34:07+00:00">2 weeks ago</time>
-                    </p>
-                  </article>
-                </li>
-              
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" >
-                          <span class="avatar">
-                            <span class="size15 amethyst"  data-content="t"></span>
-                          </span>
-                          @<span >tommaybrier</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" ><p>I love this.</p></div>
-                    <p class="time">
-                      <time  datetime="2015-04-07T09:45:26+00:00">1 week ago</time>
-                    </p>
-                  </article>
-                </li>
-              </ol>
-            </div>
-
-            <ul class="action has-reply">
-              <li>
-                <button  role="checkbox" aria-checked="false">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
-                </button>
-              </li>
-              <li class="reply">
-                <a href="comments.html#add-comment">
-                  Add your reply…
-                </a>
-              </li>
-              <li>
-                <a href="#post-options" class="options" >
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              </li>
-            </ul>
-          </footer>
-
-        </article>
-      </li>
-
-      <li data-bind="attr: { id: 'post-' + id }" id="post-4859">
+      <!-- ko foreach: visiblePosts -->
+<li data-bind="attr: { id: 'post-' + id }" id="post-5311">
         <article class="post-item">
           <header>
             <h3>
               <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
                 <span class="avatar" data-bind="if: user.profile_image"></span>
                 <span class="avatar" data-bind="if: !user.profile_image">
-                  <span class="size30 kiwi" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="s"></span>
+                  <span class="size30 sky" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
                 </span>
-                @<span data-bind="text: user.username">shari</span>
+                @<span data-bind="text: user.username">jennsu</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-17T23:26:48+00:00">6 hours ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>@aldo getting ready for Neighborday!</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/aad9725178844be13fca1823495f7ab3e923e10a=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">5</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 -->
+          <div class="comments">
+            <ol class="post-list" data-bind="foreach: comments">
+              
+              <li data-bind="visible: $index() === 0 || $index() >= $parent.comments().length - 3 || $parent.comments().length <= 5">
+                <article class="post-item">
+                  <div>
+                  <header>
+                    <h3>
+                      <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                        <span class="avatar">
+                          <!-- ko if: user.profile_image -->
+                          <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="15" width="15" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
+                          <!-- /ko -->
+                          <!-- ko if: !user.profile_image --><!-- /ko -->
+                        </span>
+                        @<span data-bind="text: user.username">aldo</span>:
+                      </a>
+                    </h3>
+                  </header>
+                  <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Who knew flags can be so fun! ?</p></div>
+                  <p class="time">
+                    <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-17T23:36:24+00:00">6 days ago</time>
+                  </p>
+                  </div>
+                </article>
+              </li>
+              <li class="more" data-bind="visible: $index() === 0 &amp;&amp; $parent.comments().length > 4 &amp;&amp; $parent.comments().length > 5" style="display: none;">
+                <a href="#post" data-bind="click: function(){ $root.viewPost($parent.id, event, { viewComments: true }) }">
+                  View all <span data-bind="text: $parent.comments().length">3</span> comments
+                </a>
+              </li>
+            
+              
+              <li data-bind="visible: $index() === 0 || $index() >= $parent.comments().length - 3 || $parent.comments().length <= 5">
+                <article class="post-item">
+                  <div>
+                  <header>
+                    <h3>
+                      <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                        <span class="avatar">
+                          <!-- ko if: user.profile_image -->
+                          <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="15" width="15" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
+                          <!-- /ko -->
+                          <!-- ko if: !user.profile_image --><!-- /ko -->
+                        </span>
+                        @<span data-bind="text: user.username">lou</span>:
+                      </a>
+                    </h3>
+                  </header>
+                  <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Aldo looks like a Neighborday superhero. Captain Neighborday?</p></div>
+                  <p class="time">
+                    <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-18T15:16:53+00:00">5 days ago</time>
+                  </p>
+                  </div>
+                </article>
+              </li>
+              <li class="more" data-bind="visible: $index() === 0 &amp;&amp; $parent.comments().length > 4 &amp;&amp; $parent.comments().length > 5" style="display: none;">
+                <a href="#post" data-bind="click: function(){ $root.viewPost($parent.id, event, { viewComments: true }) }">
+                  View all <span data-bind="text: $parent.comments().length">3</span> comments
+                </a>
+              </li>
+            
+              
+              <li data-bind="visible: $index() === 0 || $index() >= $parent.comments().length - 3 || $parent.comments().length <= 5">
+                <article class="post-item">
+                  <div>
+                  <header>
+                    <h3>
+                      <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                        <span class="avatar">
+                          <!-- ko if: user.profile_image -->
+                          <img data-bind="attr: { src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="15" width="15" alt="" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c30x30">
+                          <!-- /ko -->
+                          <!-- ko if: !user.profile_image --><!-- /ko -->
+                        </span>
+                        @<span data-bind="text: user.username">good_hq</span>:
+                      </a>
+                    </h3>
+                  </header>
+                  <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Also bringing the Neighbordday psyche!</p></div>
+                  <p class="time">
+                    <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-18T17:20:15+00:00">5 days ago</time>
+                  </p>
+                  </div>
+                </article>
+              </li>
+              <li class="more" data-bind="visible: $index() === 0 &amp;&amp; $parent.comments().length > 4 &amp;&amp; $parent.comments().length > 5" style="display: none;">
+                <a href="#post" data-bind="click: function(){ $root.viewPost($parent.id, event, { viewComments: true }) }">
+                  View all <span data-bind="text: $parent.comments().length">3</span> comments
+                </a>
+              </li>
+            </ol>
+          </div>
+          <!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5689">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 bluebird" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="j"></span>
+                </span>
+                @<span data-bind="text: user.username">jeremynturner</span>
               </a>
             </h3>
             <p class="source" data-bind="if: source">
@@ -519,90 +511,2040 @@
             </p>
             <p>
               <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-09T19:31:36+00:00">2 weeks ago</time>
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-23T13:12:12+00:00">7 hours ago</time>
               </a>
             </p>
           </header>
 
-          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s256x256 256w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s384x384 384w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s512x512 512w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s768x768 768w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/d68e0e252aaea70b897b74df46b27e64324210ba=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
-Art @ work. What do you love about your 'hood? #100startswith1 #goodworldwide</p></div>
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7a9ede51ba397f63fe023414a7c55c146bdc3b53=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#neighborday is this Saturday! #letsneighbor #loveeastdallas</p></div>
 
           <footer class="activity">
-            <h2>
-              <svg class="icon"><use xlink:href="#heart" /></svg>
-              7 love
-            </h2>
 
-            <div class="comments">
-              <ol class="post-list" data-bind="foreach: postViewModel().comments">
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                          <span class="avatar">
-                            <!-- ko if: user.profile_image -->
-                            <img height="15" width="15" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
-                            <!-- /ko -->
-                            <!-- ko if: !user.profile_image --><!-- /ko -->
-                          </span>
-                          @<span data-bind="text: user.username">aldo</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Um that's a gorgeous sketch!</p></div>
-                    <p class="time">
-                      <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-09T19:52:18+00:00">2 weeks ago</time>
-                    </p>
-                  </article>
-                </li>
-              
-                <li>
-                  <article class="post-item">
-                    <header>
-                      <h3>
-                        <a href="#profile" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                          <span class="avatar">
-                            <!-- ko if: user.profile_image --><!-- /ko -->
-                            <!-- ko if: !user.profile_image -->
-                            <span class="size15 cantaloupe" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="m"></span>
-                            <!-- /ko -->
-                          </span>
-                          @<span data-bind="text: user.username">mindyvnguyen</span>:
-                        </a>
-                      </h3>
-                    </header>
-                    <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>@aldo👆I second that!</p></div>
-                    <p class="time">
-                      <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-09T20:15:34+00:00">2 weeks ago</time>
-                    </p>
-                  </article>
-                </li>
-              </ol>
-            </div>
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">1</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
 
-            <ul class="action has-reply">
-              <li>
-                <button  role="checkbox" aria-checked="true">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
-                </button>
-              </li>
-              <li class="reply">
-                <a href="comments.html#add-comment">
-                  Add your reply…
-                </a>
-              </li>
-              <li>
-                <a href="#post-options" class="options" >
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              </li>
-            </ul>
-
+              <!-- /ko -->
+            </li>
+          </ul>
           </footer>
         </article>
       </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5645">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/71403c4c3cb8db11bce764f03171abfefa367d87=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/71403c4c3cb8db11bce764f03171abfefa367d87=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/71403c4c3cb8db11bce764f03171abfefa367d87=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/71403c4c3cb8db11bce764f03171abfefa367d87=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">kaitlinmeek</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-22T17:51:29+00:00">1 day ago</time>
+              </a>
+            </p>
+          </header>
 
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Kick back and get ready to make change. #LetsNeighbor http://t.co/tWEiBzMqgf via @good</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5575">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">jim</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-21T04:39:22+00:00">3 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Here’s what the inside of the “Big House” looks like… And two of our hosts for yesterday’s event, from Root Down LA. Peace guys!</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f2fdd395456ca65e931fdda3f02732094cd1ba84=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s512x512" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6ce1b02f69c4d8a296dd457a191a9a11f85efa8a=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">6</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5548">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">good_hq</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T20:01:25+00:00">3 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Our man with a mission Damon Turner @iamreal8 giving some sidewalk chalk love to Free Lots Angeles at our pre-Neighborday BBQ at The Big House. Check this out to get inspired by what FLA does: https://www.youtube.com/watch?v=bVwI2IgrvE8</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b667303e0583e9d065bdce09b4e0a3192ec15905=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5542">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">good_hq</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T19:56:37+00:00">3 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>The awesome community garden created and nurtured by RootDown LA at The Big House, site of our pre-Neighborday BBQ. #neighborday #goodhq</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/accb7e11f48fc83f19186af34b1d4937aa3667fd=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s512x512" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/df456aab4a78e82ba7e48de43ca6d1f6e4fc3106=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5541">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/805d1f59e35366998541e47aa377a65d0f17b61d=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/805d1f59e35366998541e47aa377a65d0f17b61d=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/805d1f59e35366998541e47aa377a65d0f17b61d=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/805d1f59e35366998541e47aa377a65d0f17b61d=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">katiewudel</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T19:29:04+00:00">3 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>The Big House community garden rules.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/dfd07bc3077d2a4d5270e9383a46ea9d9760a081=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">2</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5519">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0d0432c2a08197158ef84c58859a43c689202815=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0d0432c2a08197158ef84c58859a43c689202815=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0d0432c2a08197158ef84c58859a43c689202815=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0d0432c2a08197158ef84c58859a43c689202815=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">tacyw</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T06:18:28+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>You are never too young to neighbor! #goodhq #neighborday</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/222fed37c60619ba1bb45e76b8ef6c4f9158735e=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5515">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T02:18:34+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><video alt="video" poster="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/51b0a1067d7687502af1eed4a970f79925e0f058=s512x512" type="video/mp4" controls="yes"><source src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/51b0a1067d7687502af1eed4a970f79925e0f058.m4v" type="video/mp4"><source src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/51b0a1067d7687502af1eed4a970f79925e0f058.webm" type="video/webm"></video>
+When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5514">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T01:19:46+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/0370e2b5e4c4a5c662905065029e7f3365afc798=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#good #neighborday #ctzn</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">2</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5511">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' --><!-- /ko -->
+              <!-- ko if: source == 'facebook' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use><foreignObject>via facebook</foreignObject></svg>
+              <!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T00:57:13+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Backstage MicheMobile #good #neighborday #ctzn #ilovemicheladas</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/d92c10111dfac03840e62f3267de7243555a702e=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">2</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5501">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T00:31:36+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/47b4d3fa6873c9a1850620a2479511d2d207cb87=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#good #neighborday #ctzn</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5497">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c66906e7654998742c871b7b8e98a962124308e2=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c66906e7654998742c871b7b8e98a962124308e2=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c66906e7654998742c871b7b8e98a962124308e2=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c66906e7654998742c871b7b8e98a962124308e2=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vandenorth</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T00:25:14+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Awesome to hear from Root Down. So many great groups here.</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/85d0ebe6dc9440069e0ae6caade8331ee3c493eb=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">4</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5498">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T00:24:37+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/867e3fe61f8079e0d025e5df622926bf7fa3e123=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
+Leon and Lula. ❤️ #letsneighbor</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">5</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5495">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/805d1f59e35366998541e47aa377a65d0f17b61d=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/805d1f59e35366998541e47aa377a65d0f17b61d=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/805d1f59e35366998541e47aa377a65d0f17b61d=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/805d1f59e35366998541e47aa377a65d0f17b61d=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">katiewudel</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T00:23:34+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>This is what it's all about! #letsneighbor</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b722d0fa1591f95d353d4e6323b8687fe78f335f=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">4</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5494">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3e4227478d008596d5e34b9440e4432717b1442f=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3e4227478d008596d5e34b9440e4432717b1442f=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3e4227478d008596d5e34b9440e4432717b1442f=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3e4227478d008596d5e34b9440e4432717b1442f=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">karenramirez</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T00:20:02+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Let's neighbor</p>
+
+<p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/bc77e6ab4209c34e84580e95a88dba2a3a4036ff=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5493">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="d"></span>
+                </span>
+                @<span data-bind="text: user.username">dan</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source"></p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T00:13:36+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/e3852034d3c6a9e5177af1ff657babaf6bb2ef52=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">5</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5492">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-20T00:11:19+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f16e3bfa4b900397ca0ecdc1cf2f1eedb09fc3a2=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
+Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">5</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5488">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T23:49:14+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7b9ab77411c51136aa9d5fa9b6c29a0c99665766=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#good #neighborday #ctzn</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">4</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5485">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T23:34:26+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/4e260580cacb0741d4d8b7e592be6a3fc5bce166=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#good #neighborday #ctzn</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">5</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5481">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="a"></span>
+                </span>
+                @<span data-bind="text: user.username">aubrey</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T23:11:34+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/2f904b30e5a6e0f2afb312cf92d5d3aaf823a36d=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
+The @ilovemicheladas van arrives #neighborday</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">5</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5479">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T23:08:48+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/3afa21213a29b89e26b215be9e68422e13077260=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#letsneighbor</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">4</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5478">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">cogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T23:06:57+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><video alt="video" poster="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5cd19da4be33579632ae3dd7e231a0c31b2d88a7=s512x512" type="video/mp4" controls="yes"><source src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5cd19da4be33579632ae3dd7e231a0c31b2d88a7.m4v" type="video/mp4"><source src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5cd19da4be33579632ae3dd7e231a0c31b2d88a7.webm" type="video/webm"></video>
+Partying and planning for #neighborday</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">4</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5477">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T23:01:07+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><video alt="video" poster="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/9ba931730ca2c5de6aad7035c5ff2619046f4488=s512x512" type="video/mp4" controls="yes"><source src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/9ba931730ca2c5de6aad7035c5ff2619046f4488.m4v" type="video/mp4"><source src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/9ba931730ca2c5de6aad7035c5ff2619046f4488.webm" type="video/webm"></video></p>
+
+<p>#michemobil #michelada #letsneighbor</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5476">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T22:52:33+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/ddfc1a7367a133659154afa1d984dd3a7706972e=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#good #neighborday #ctzn</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5473">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T22:49:48+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/5f633113d3df096b71c342c1e1b3311b2c5bede8=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#letsneighbor</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">3</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5472">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T22:43:06+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/81da441dba4a96c8501c49d64378d8f2d06508ff=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
+The #michemobil is here! #letsneighbor #michelada</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">4</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5471">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image"></span>
+                <span class="avatar" data-bind="if: !user.profile_image">
+                  <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="m"></span>
+                </span>
+                @<span data-bind="text: user.username">mindyvnguyen</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T22:38:41+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/6a1b6be40dcaca97b65466e96a4df606bd07f5a9=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
+Let's neighbor, ya'll! ? #neighborday</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">2</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5470">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">lou</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T22:37:21+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/fa248ea2cc8e42929d936c11897821e67e537c0d=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+
+<p>#good #neighborday #ctzn</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5466">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T22:20:52+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/f6e2c567214d2f3f7b7c925756ec039b973b32af=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
+Veggies grown a few feet from where I stand. #goodhq #neighborday #letsneighbor</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">5</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      
+      <li data-bind="attr: { id: 'post-' + id }" id="post-5467">
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
+                <span class="avatar" data-bind="if: user.profile_image">
+                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30 30w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 60w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c60x60 2x" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c30x30">
+                </span>
+                <span class="avatar" data-bind="if: !user.profile_image"></span>
+                @<span data-bind="text: user.username">vogg</span>
+              </a>
+            </h3>
+            <p class="source" data-bind="if: source">
+              <!-- ko if: source == 'twitter' --><!-- /ko -->
+              <!-- ko if: source == 'instagram' -->
+              <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              <!-- /ko -->
+              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            </p>
+            <p>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
+                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-19T22:15:59+00:00">4 days ago</time>
+              </a>
+            </p>
+          </header>
+
+          <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s2048x2048' })" srcset="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s256x256 256w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s384x384 384w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s512x512 512w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s768x768 768w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s1024x1024 1024w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s1536x1536 1536w, https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/7cc067994dfb12206edc8196cb4efef0c8cf467a=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw">
+A great day for a barbecue on #neighborday #goodhq</p></div>
+
+          <footer class="activity">
+
+          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+            <ul class="meta">
+              <!-- ko if: attaboys().length > 0 -->
+              <li>
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+                <span data-bind="text: attaboys().length">1</span>
+              </li>
+              <!-- /ko -->
+              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+            </ul>
+          <!-- /ko -->
+
+          <!-- ko if: comments().length > 0 --><!-- /ko -->
+
+          <ul class="action">
+            <li>
+              <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignelement>Heart</foreignelement></svg>
+              </button>
+            </li>
+            <li>
+              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event, { addComment: true }) }">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg>
+                Comment
+              </a>
+            </li>
+            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            <li>
+              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                <a href="#post-options" data-bind="click: $root.onShowOptions">
+                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              <!-- /ko -->
+            </li>
+          </ul>
+          </footer>
+        </article>
+      </li>
+      <!-- /ko -->
+
+      <!-- ko if: $root.showNextButton -->
+      <li class="next">
+        <a href="#next" data-bind="click: onNextPage">
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use><foreignObject>Next Page</foreignObject></svg>
+        </a>
+      </li>
+      <!-- /ko -->
     </ol>
   </section>
 

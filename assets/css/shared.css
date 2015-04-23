@@ -1086,7 +1086,8 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .post-item footer li {
+  .post-item footer .meta   li,
+  .post-item footer .action li {
     display: inline;
   }
 
@@ -2729,9 +2730,11 @@
     font-size: inherit;
   }
   .post.page .details {
-    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver */
     background: white;
     padding: 0;
+  }
+  .post.page .details .post-item {
+    margin-bottom: 0;
   }
 
 
@@ -3881,18 +3884,14 @@
     left: 0.625em; /* 10px / 16px */
   }
 
-  /* OPTIONAL: Make the avatars smaller in the comments summary. */
-  .activity {
-    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
-    padding-top: 1.25em;
-  }
-  .activity h2 {
-    font-size: 0.8571428571em;
+
+  .post-item footer.activity .meta {
     margin: 0;
   }
-  .activity h2 svg {
+  .post-item footer.activity .meta li svg {
     font-size: 0.8333333333em; /* 10px / 12px */
   }
+  .activity .more a,
   .activity .post-item {
     padding-top    : 0.2857142857em; /* 4px / 14px */
     padding-bottom : 0.2857142857em;
@@ -3906,43 +3905,34 @@
     color: rgb(102, 102, 102); /* @tin */
   }
   .activity .action {
+    margin-top: 1.25em;
+    margin-bottom: 0;
+  }
+  .activity .action:first-child {
     margin-top: 0;
   }
-  .activity h2 ~ .action {
-    margin-top: 1.25em;
+  .activity .comments:first-child .post-list {
+    margin-top: 0;
   }
-
-  /* OPTIONAL: Make reply button fill the available space. */
-  .activity .action {
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-justify-content: stretch;
-            justify-content: stretch;
-
-    margin-left: -0.125em;
-    margin-right: -0.125em;
+  .activity .action ~ .meta {
+    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+    margin-top: 1.25em !important;
+    padding-top: 1.25em;
   }
-  .activity .action li {
-    margin-left: 0.125em;
-    margin-right: 0.125em;
+  .activity .action ~ .comments {
+    margin-top: 0.75em;
   }
-  .activity .action li.reply {
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
+  .activity .action ~ .comments .post-list {
+    margin-top: 0;
   }
-  .activity .action li.reply a {
-    width: 100%;
-    box-sizing: border-box;
-    border-color: rgb(222, 222, 222); /* @silver */
+  .activity .more {
+    margin-bottom: 0.25em;
+  }
+  .activity .more a {
     color: rgb(153, 153, 153); /* @nickel */
-    font-weight: normal;
-  }
-  .activity .action a,
-  .activity .action button {
-    padding: 0.5625em 0.75em;
-    line-height: 1.5;
-    font-size: 16px !important;
+    text-decoration: none;
+    font-size: 0.875em; /* 14px / @font-size */
+    font-weight: bold;
   }
 
 
