@@ -264,19 +264,19 @@
 
     <div class="image">
       <p>
-        <a href="#back" data-bind="click: function(){ window.history.back() }"><img data-bind="attr { src: good.currentScreen().imageURL, style: imageSize() }, event: { load: function() { imageLoaded(true); } }" alt="Uploaded image at largest size" src="https://m.ctznapp.com/s3/ctzn/71100f42c4c6229e80aa841440c856e3d5b28ae7=s2048x2048" style="height: 866px"></a>
+        <a href="#back"><img alt="Uploaded image at largest size" src="https://m.ctznapp.com/s3/ctzn/71100f42c4c6229e80aa841440c856e3d5b28ae7=s2048x2048" style="height: 866px"></a>
       </p>
     </div>
 
     <div class="image-options">
       <ul>
         <li>
-          <button data-bind="click: zoomIn" id="zoom-in">
+          <button id="zoom-in">
             <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#add"></use><foreignObject>Zoom In</foreignObject></svg>
           </button>
         </li>
         <li>
-          <button data-bind="click: zoomOut" id="zoom-out">
+          <button id="zoom-out">
             <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subtract"></use><foreignObject>Zoom Out</foreignObject></svg>
           </button>
         </li>
@@ -284,7 +284,7 @@
     </div>
 
     <p class="action">
-      <a href="#back" data-bind="click: function(){ window.history.back() }">Done</a>
+      <a href="#back">Done</a>
     </p>
 
     <div class="empty-images">

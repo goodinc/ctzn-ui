@@ -334,7 +334,7 @@
             <span class="label">Posts</span>
           </p>
           <p>
-            <a href="#profile-pushes" data-bind="click: $root.onPushesClick">
+            <a href="#profile-pushes">
               <span class="count">1</span>
               <span class="label">Push</span>
             </a>
@@ -361,49 +361,49 @@
         </ul>
       </section>
 
-      <ol class="post-list" data-bind="foreach: $root.usersPosts">
-        <li data-bind="attr: { id: 'post-' + id }" id="post-3386">
+      <ol class="post-list">
+        <li id="post-3386">
           <article class="post-item">
             <header>
               <h3>
-                  <span class="avatar" data-bind="if: user.profile_image"></span>
-                  <span class="avatar" data-bind="if: !user.profile_image">
-                    <span class="size30 grape" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="a"></span>
+                  <span class="avatar"></span>
+                  <span class="avatar">
+                    <span class="size30 grape" data-content="a"></span>
                   </span>
-                  @<span data-bind="text: user.username">aubrey</span>
+                  @<span>aubrey</span>
               </h3>
-              <p class="source" data-bind="if: source">
+              <p class="source">
                 <!-- ko if: source == 'twitter' --><!-- /ko -->
                 <!-- ko if: source == 'instagram' -->
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
                 <!-- /ko -->
               </p>
               <p>
-                <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
-                  <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-13T17:38:25+00:00">2 hours ago</time>
+                <a href="#post">
+                  <time datetime="2015-03-13T17:38:25+00:00">2 hours ago</time>
                 </a>
               </p>
             </header>
 
-            <a href="#post" class="body" data-bind="html: good.postBodyToHtml(body(), 's' + good.S3_POST_SIZE + 'x' + good.S3_POST_SIZE), click: function(){ $root.viewPost(id) }"><p><img src="https://m.ctznapp.qa2.goodalpaca.com/s3/qa.ctzn/f8bbf48f8633d57cd5ee37144ddf285998227aa7=s500x500" alt="939929128917574474_3757855">
+            <a href="#post" class="body"><p><img src="https://m.ctznapp.qa2.goodalpaca.com/s3/qa.ctzn/f8bbf48f8633d57cd5ee37144ddf285998227aa7=s500x500" alt="939929128917574474_3757855">
   You guys. We have office chickens @goodhq 🐤🐥🐣</p></a>
 
             <footer>
             <ul class="action">
               <li>
-                <button data-bind="click: $root.handleAttaboyClicked, attr: { 'aria-checked': currentUserAttaboyed() ? 'true' : 'false' }" role="checkbox" aria-checked="false">
+                <button role="checkbox" aria-checked="false">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
                 </button>
               </li>
               <li>
-                <a href="#post" data-bind="click: function(){ $root.viewPost(id) }">
+                <a href="#post">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg> Comment
                 </a>
               </li>
               <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
               <li>
                 <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
-                  <a href="#post-options" class="options" data-bind="click: $root.onShowOptions">
+                  <a href="#post-options" class="options">
                     <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                   </a>
                 <!-- /ko -->
