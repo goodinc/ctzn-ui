@@ -435,7 +435,7 @@
 
   /* OPTIONAL: Make buttons lighter if they appear on a dark background. */
   .error-message          button,
-  section.push .new-posts button {
+  .update-indicator button {
     background: white;
     color: rgb(250, 56, 136); /* @strawberry */
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
@@ -443,8 +443,8 @@
   }
   .error-message          button:active,
   .error-message          button:focus,
-  section.push .new-posts button:active,
-  section.push .new-posts button:focus {
+  .update-indicator button:active,
+  .update-indicator button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
     border-color: rgb(222, 222, 222); /* @silver */
     color: rgb(193, 16, 65); /* @raspberry */
@@ -1078,7 +1078,7 @@
     list-style-type: disc;
   }
   .post-item footer {
-    margin-top: 1.5em;
+    margin-top: 1.25em;
   }
   .post-item footer ul,
   .post-item footer li {
@@ -1549,7 +1549,7 @@
   }
 
   /* Update Indicator */
-  section.push .new-posts {
+  .update-indicator {
     position: fixed;
     top: 4em;
     left: 50%;
