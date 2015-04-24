@@ -435,7 +435,7 @@
 
   /* OPTIONAL: Make buttons lighter if they appear on a dark background. */
   .error-message          button,
-  .update-indicator button {
+  .update-indicator a {
     background: white;
     color: rgb(250, 56, 136); /* @strawberry */
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
@@ -443,8 +443,8 @@
   }
   .error-message          button:active,
   .error-message          button:focus,
-  .update-indicator button:active,
-  .update-indicator button:focus {
+  .update-indicator a:active,
+  .update-indicator a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
     border-color: rgb(222, 222, 222); /* @silver */
     color: rgb(193, 16, 65); /* @raspberry */
@@ -733,6 +733,7 @@
   -----------------------------------------------
   (for sending form data, and downloading a video file to the device)
   ----------------------------------------------- */
+  section.update-countdown,
   section.upload-message {
     padding: 0.75em 1.5em;
     box-sizing: border-box;
@@ -749,6 +750,7 @@
     margin-right: -1.25em; /* @page-padding */
   }
 
+  .update-countdown,
   .upload-message.error {
     background-color: rgb(255, 49, 59); /* @apple */
     color: white;
@@ -762,8 +764,6 @@
   .upload-message button {
     background-color: transparent;
     color: inherit;
-  }
-  .upload-message.error button {
     padding: 0.375em;
   }
   section.upload-message:last-child {
@@ -773,7 +773,8 @@
     vertical-align: middle;
     margin-right: 0.25em;
   }
-  section.upload-message h1 {
+  section.update-countdown h1,
+  section.upload-message   h1 {
     margin: 0 3.5em 0 0;
     font-size: 1.125em;
     font-weight: inherit;
@@ -797,6 +798,14 @@
   section.upload-message li {
     margin-top: -0.375em; /* button padding */
     display: inline-block;
+  }
+  section.update-countdown {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 9999; /* @infinity */
   }
 
 
@@ -1050,10 +1059,10 @@
     margin: 0.75em auto;
     max-width: 100%;
     height: auto;
+    display: block;
   }
   .post-item .body img {
     border-radius: 0.125em;
-    display: block;
 
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
     background-color: rgba(0, 0, 0, 0.25);
@@ -1556,7 +1565,7 @@
     min-width: 10em;
     margin: 0 0 0 -5em;
     text-align: center;
-    z-index: 9;
+    z-index: 9999; /* @infinity */
   }
 
 
