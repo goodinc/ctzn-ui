@@ -2874,32 +2874,18 @@
     width: 100%;
     text-align: center;
   }
-  .image-viewer .image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    min-width: 100%;
-    min-height: 100vh;
-
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-flex-direction: column;
-            flex-direction: column;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-align-content: center;
-            align-content: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
   .image-viewer .image p {
     margin: 0;
     display: block;
+
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+
+    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+    -webkit-overflow-scrolling: touch;
   }
 
   .image-viewer .empty-images {
