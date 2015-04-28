@@ -1440,6 +1440,21 @@
     width: 2em;
     vertical-align: top;
   }
+  .preview.page .welcome h2 {
+    text-align: center;
+
+    /* @tiny-headline */
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+  .preview.page .first {
+    background: rgba(255, 255, 255, 0.125);
+    color: white;
+    display: table;
+    margin: 0.75em auto 0;
+    padding: 0.375em 0.75em;
+  }
   footer.about,
   footer.preview {
     padding: 0.75em;
