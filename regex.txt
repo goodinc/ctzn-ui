@@ -1,0 +1,28 @@
+
+# Handy regular expressions. (Jim uses these in Sublime Text, to update the files in this repository.)
+
+
+## Replace the icons in each HTML file (to add new icons)…
+
+<!-- images/icons.svg -->[\s<a-z0-9A-Z="\.:/>,-/#]+?(?=</svg>)</svg>
+
+
+## Replace the styles in HTML emails with the latest CSS…
+
+<!-- https://github.com/goodinc/ctzn-ui/blob/gh-pages/assets/css/email.css -->(.|\s)+?(?=</style>)</style>
+
+
+## Remove knockout attributes (to reduce the HTML to a bare minimum)…
+
+ data-bind="[^"]*"
+
+
+## Remove knockout elements…
+
+<!-- ko [^-]* -->
+<!-- /ko -->
+
+
+## Find the icon elements…
+
+<svg class="icon"><use xlink:href="#$1" /><foreignobject>$2</foreignobject></svg>
