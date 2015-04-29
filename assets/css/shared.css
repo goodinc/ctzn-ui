@@ -1562,44 +1562,6 @@
     }
   }
 
-  /* For the push preview */
-  .push-message .hide {
-    margin: 0;
-    position: absolute;
-    top: 0.75em; /* @line-height / 2 */
-    right: 0.75em;
-  }
-  .push-message .post-item .body {
-    font-size: 0.875em;
-  }
-
-  /* OPTIONAL: Make the push message sticky */
-  @media (min-width: 20em) and (min-height: 20em) {
-
-    .push-card.page {
-      padding-bottom: 12em;
-    }
-    .mixable .push-card.page {
-      padding-bottom: 0;
-    }
-
-    .push-message {
-      position: fixed;
-      bottom: 3.1em;
-      width: 100%;
-      max-width: none !important;
-      left: 0;
-      z-index: 9999;
-      padding: 0 !important;
-      background: white;
-    }
-    .push-message .post-item {
-      max-width: 31.25em;
-      box-sizing: border-box;
-      margin: 0 auto;
-    }
-  }
-
 
   /* =Push
   ----------------------------------------------- */
@@ -1777,13 +1739,7 @@
     display: block;
   }
 
-  /* For the preview page */
-  .page > a.back {
-    right: auto;
-    left: 0;
-  }
-
-  /* For the editor */
+  /* For the dialog page */
   .page h1 {
     margin-top: 0;
     margin-bottom: 0.75em;
@@ -2140,10 +2096,6 @@
     text-decoration: none;
   }
 
-  .push-card.page > a {
-    color: inherit;
-  }
-
   .push-card        > .name,
   .push-card .details .name {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2329,10 +2281,6 @@
   .push-card .website a:active,
   .push-card .website a:focus {
     color: white;
-  }
-  .push-card.page > a {
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
   }
   .start.page aside a {
     color: white;

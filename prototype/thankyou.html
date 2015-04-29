@@ -14,47 +14,25 @@
 </head>
 <body>
 
-  <section class="message" role="status" id="confirmation-message">
+  <header>
     <div class="container">
-      <h1>Thanks for signing up!</h1>
-      <p>Please check your email to confirm.</p>
+      <h2>ctzn</h2>
     </div>
-  </section>
+  </header>
 
   <main id="color">
     <div class="container">
-      <h1 class="logo">CTZN</h1>
-      <h2>Helping changemakers easily <strong>connect, organize, and raise awareness</strong></h2>
-
-      <div class="subscribe">
-
-        <!-- Begin MailChimp Signup Form -->
-        <form action="//good.us2.list-manage.com/subscribe/post?u=5b63a0823e3b9c105434c46d7&amp;id=f9c7839dae" method="post" name="mc-embedded-subscribe-form">
-          <h3>Stay tuned…</h3>
-          <p>
-            <label>
-              <span>Full name</span><br />
-              <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Full name" />
-            </label>
-          </p>
-          <p>
-            <label>
-              <span>Email address</span><br />
-              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address" />
-            </label>
-          </p>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_5b63a0823e3b9c105434c46d7_f9c7839dae" tabindex="-1" value="">
-          </div>
-          <p>
-            <button type="submit" value="Subscribe" name="subscribe">Send updates</button>
-          </p>
-        </form>
-        <!--End mc_embed_signup-->
-
-      </div><!-- /.subscribe -->
-
+      <div class="confirmation">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path fill="white" d="M8.5,13.9l-3.3-3.5c-0.3-0.4-0.3-0.9,0-1.2c0.4-0.3,0.9-0.3,1.2,0l2,2.1l5-5c0.3-0.3,0.9-0.3,1.2,0
+            c0.3,0.3,0.3,0.9,0,1.2L8.5,13.9L8.5,13.9z"/>
+          <path fill="white" d="M10,0.8c-5.1,0-9.2,4.1-9.2,9.2s4.1,9.2,9.2,9.2s9.2-4.1,9.2-9.2S15.1,0.8,10,0.8z M10,17.7
+            c-4.2,0-7.7-3.5-7.7-7.7S5.8,2.3,10,2.3c4.2,0,7.7,3.5,7.7,7.7S14.2,17.7,10,17.7z"/>
+        </svg>
+        <h1>Thanks for signing up!</h1>
+        <p>Please check your email to confirm.</p>
+        <p class="finish"><a href="http://getctzn.com">Return to the home page</a></p>
+      </div>
     </div>
   </main>
 
@@ -64,22 +42,6 @@
       <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
     </div>
   </footer>
-
-  <script>
-  (function() {
-
-    // Hide the confirmation message, after ten seconds.
-    setTimeout(function() {
-      var message = document.getElementById('confirmation-message');
-      if (message) {
-        message.getElementsByTagName('div')[0].style.color = 'transparent';
-        message.getElementsByTagName('div')[0].style.height = '1px';
-        message.getElementsByTagName('div')[0].style.padding = '0';
-      }
-    }, 10000);
-
-  })();
-  </script>
 
   <script src="../assets/js/color.js"></script>
 
