@@ -7,6 +7,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <meta name="apple-itunes-app" content="app-id=284910350" />
+
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
 
@@ -19,6 +21,63 @@
       var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
+
+  <style>
+    .dialog.page .action a {
+      max-width: 18em;
+    }
+
+
+    /* OPTIONAL: Present the particpant names as tooltips */
+    .dialog.page .action a {
+      position: relative;
+    }
+    .dialog.page .action a .tip {
+
+      /* @tooltip */
+      font-size: 0.75em;
+      position: absolute;
+      background: rgb(250, 134, 40); /* @orange */
+      color: white;
+      left: -9999px;
+      bottom: 0;
+      margin-bottom: 4em;
+      margin-left: -4.4375em;
+      width: 8em;
+      text-align: center;
+      padding: 0 0.4375em;
+      border-radius: 0.25em;
+
+      opacity: 0;
+      transition: opacity 0.2s;
+      font-weight: bold;
+    }
+    .dialog.page .action a .tip:before {
+
+      /* @pointer */
+      content: "";
+      display: block;
+      background: rgb(250, 134, 40); /* @orange */
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-bottom: -0.5em;
+      margin-left: -0.5em;
+      width: 1em;
+      height: 1em;
+      -webkit-transform : rotate(45deg);
+      -moz-transform    : rotate(45deg);
+      -o-transform      : rotate(45deg);
+      transform         : rotate(45deg);
+    }
+
+    /* Active state */
+    .dialog.page .action a.active .tip {
+      left: 50%;
+      opacity: 1;
+    }
+
+  </style>
 
 </head>
 <body>
@@ -265,17 +324,67 @@
       <svg class="icon"><use xlink:href="#ctzn" /></svg>
 
       <h1>Oops! This page only works in&nbsp;Safari.</h1>
-
+      
       <ul class="logos">
-        <li><a href=""><img src="../assets/images/logos/safari.png" width="100" height="100" alt="Android"></a></li>
+        <li><img src="../assets/images/logos/safari.png" width="100" height="100" alt=""></li>
       </ul>
 
       <p class="action">
-        <a href="">Open in Safari</a>
+        <a href="http://goodinc.github.io/ctzn-ui/messages/safari.html">
+          Press and hold to copy URL
+          <span class="tip">Keep holding</span>
+        </a>
       </p>
+
     </div>
 
+    <!--
+    <div>
+
+      <p class="action">
+        <a href="https://itunes.apple.com/us/app/yelp/id284910350?mt=8">Yelp in the iTunes Store</a>
+        (“http” protocol)
+      </p>
+
+      <p class="action">
+        <a href="itms://itunes.apple.com/us/app/yelp/id284910350">Yelp in the iTunes Store</a>
+        (“itms” protocol)
+      </p>
+    </div>
+    <div>
+
+      <p>Sadly, this <a href="http://stackoverflow.com/questions/10390479/open-mobile-safari-from-a-link-in-a-webview">doesn’t appear to be supported</a>…</p>
+      <p class="action">
+        <a href="safari://goodinc.github.io/ctzn-ui/messages/safari.html">Open this page in Safari</a>
+      </p>
+
+
+    </div>
+    -->
+
   </section>
+
+  <script>
+  (function() {
+    var link = document.querySelector('.dialog.page .action a');
+
+    if (link) {      
+
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+      }, false);
+
+      link.addEventListener('mousedown', function() {
+        link.className += ' active';
+      }, false);
+
+      link.addEventListener('mouseup', function() {
+        link.className = link.className.replace(/active/, '');
+      }, false);
+
+    }
+  })();
+  </script>
 
 </body>
 </html>

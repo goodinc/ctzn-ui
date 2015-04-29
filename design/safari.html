@@ -1,14 +1,16 @@
+
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Push Card / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <meta name="apple-itunes-app" content="app-id=284910350" />
+
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -21,15 +23,63 @@
   </script>
 
   <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
+    .dialog.page .action a {
+      max-width: 18em;
     }
+
+
+    /* OPTIONAL: Present the particpant names as tooltips */
+    .dialog.page .action a {
+      position: relative;
+    }
+    .dialog.page .action a .tip {
+
+      /* @tooltip */
+      font-size: 0.75em;
+      position: absolute;
+      background: rgb(250, 134, 40); /* @orange */
+      color: white;
+      left: -9999px;
+      bottom: 0;
+      margin-bottom: 4em;
+      margin-left: -4.4375em;
+      width: 8em;
+      text-align: center;
+      padding: 0 0.4375em;
+
+      opacity: 0;
+      transition: opacity 0.2s;
+      font-weight: bold;
+    }
+    .dialog.page .action a .tip:before {
+
+      /* @pointer */
+      content: "";
+      display: block;
+      background: rgb(250, 134, 40); /* @orange */
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-bottom: -0.5em;
+      margin-left: -0.5em;
+      width: 1em;
+      height: 1em;
+      -webkit-transform : rotate(45deg);
+      -moz-transform    : rotate(45deg);
+      -o-transform      : rotate(45deg);
+      transform         : rotate(45deg);
+    }
+
+    /* Active state */
+    .dialog.page .action a.active .tip {
+      left: 50%;
+      opacity: 1;
+    }
+
   </style>
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -267,30 +317,70 @@
     </defs>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30"><use xlink:href="#ctzn" /><foreignObject>CTZN</foreignObject></svg></a></h2>
-    <nav>
-      <ul>
-        <li><a href="../patterns/">Patterns</a></li>
-        <li><a href="../messages/">Messages</a></li>
-        <li><a href="../prototype/">Prototype</a></li>
-        <li><a href="../email/">Email</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section class="dialog page">
 
-  <h1>Design</h1>
+    <div>
+      <svg class="icon"><use xlink:href="#ctzn" /></svg>
 
-  <div class="pattern-list">
-    <section>
-      <ul>
-        <li><a href="../prototype/preview.html">Preview</a></li>
-        <li><a href="../prototype/preview-empty.html">Preview (empty feed)</a></li>
-        <li><a href="../messages/safari.html">Safari message</a></li>
-        <li><a href="safari.html">Safari message (with notes)</a></li>
+      <h1>Oops! This page only works in&nbsp;Safari.</h1>
+      
+      <ul class="logos">
+        <li><img src="../assets/images/logos/safari.png" width="100" height="100" alt=""></li>
       </ul>
-    </section>
-  </div>
+
+      <p class="action">
+        <a href="http://goodinc.github.io/ctzn-ui/messages/safari.html">
+          Press and hold to copy URL
+          <span class="tip">Keep holding</span>
+        </a>
+      </p>
+
+    </div>
+    <div>
+
+      <p class="action">
+        <a href="https://itunes.apple.com/us/app/yelp/id284910350?mt=8">Yelp in the iTunes Store</a>
+        (“http” protocol)
+      </p>
+
+      <p class="action">
+        <a href="itms://itunes.apple.com/us/app/yelp/id284910350">Yelp in the iTunes Store</a>
+        (“itms” protocol)
+      </p>
+    </div>
+    <div>
+
+      <p>Sadly, this <a href="http://stackoverflow.com/questions/10390479/open-mobile-safari-from-a-link-in-a-webview">doesn’t appear to be supported</a>…</p>
+      <p class="action">
+        <a href="safari://goodinc.github.io/ctzn-ui/messages/safari.html">Open this page in Safari</a>
+      </p>
+
+
+    </div>
+
+  </section>
+
+  <script>
+  (function() {
+    var link = document.querySelector('.dialog.page .action a');
+
+    if (link) {      
+
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+      }, false);
+
+      link.addEventListener('mousedown', function() {
+        link.className += ' active';
+      }, false);
+
+      link.addEventListener('mouseup', function() {
+        link.className = link.className.replace(/active/, '');
+      }, false);
+
+    }
+  })();
+  </script>
 
 </body>
 </html>
