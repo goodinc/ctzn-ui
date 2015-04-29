@@ -975,12 +975,17 @@
   .post-list > li:last-child {
     border-bottom-width: 0;
   }
-  .post-list .next     a,
-  .post-list .previous a {
-    display: block;
+  .post-list .next,
+  .post-list .previous {
     text-align: center;
-    font-size: 1.5em;
-    padding: 0.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  .post-list .next {
+    margin-bottom: 3em;
+  }
+  .post-list .previous {
+    margin-top: 3em;
   }
 
 
@@ -2354,10 +2359,6 @@
 
   /* =Push Preview
   ----------------------------------------------- */
-  .push-card .post-list .next     a,
-  .push-card .post-list .previous a {
-    color: inherit;
-  }
   .push-card .post-list .post-item {
     background: rgba(0, 0, 0, 0.1);
   }
