@@ -353,7 +353,11 @@
 
 <ol class="post-list">
       
-
+<li class="previous">
+  <a href="#previous" data-bind="click: onPreviousPage">
+    <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#up"></use><foreignObject>Previous Page</foreignObject></svg>
+  </a>
+</li>
       
 <li id="post-5311">
         <article class="post-item">
@@ -387,6 +391,10 @@
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>5</span>
+              </li>
+              <li>
+                <svg class="icon"><use xlink:href="#star" /></svg>
+                featured
               </li>
               
               
@@ -501,13 +509,15 @@
                 Comment
               </a>
             </li>
-            
             <li>
-              
-                <a href="#post-options">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              
+              <button role="checkbox" aria-checked="true">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use><foreignobject>Feature</foreignobject></svg>
+              </button>
+            </li>
+            <li>              
+              <a href="#post-options">
+                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+              </a>
             </li>
           </ul>
           </footer>
