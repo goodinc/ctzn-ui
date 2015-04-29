@@ -376,7 +376,15 @@
         link.className += ' active';
       }, false);
 
-      link.addEventListener('mouseup', function() {
+      document.body.addEventListener('mouseup', function() {
+        link.className = link.className.replace(/active/, '');
+      }, false);
+
+      link.addEventListener('touchstart', function() {
+        link.className += ' active';
+      }, false);
+
+      document.body.addEventListener('touchend', function() {
         link.className = link.className.replace(/active/, '');
       }, false);
 
