@@ -384,10 +384,10 @@
                   @<span>aubrey</span>
               </h3>
               <p class="source">
-                <!-- ko if: source == 'twitter' --><!-- /ko -->
-                <!-- ko if: source == 'instagram' -->
+                
+                
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-                <!-- /ko -->
+                
               </p>
               <p>
                 <a href="#post">
@@ -411,16 +411,16 @@
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg> Comment
                 </a>
               </li>
-              <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+              
               <li>
-                <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+                
                   <a href="#post-options" class="options">
                     <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                   </a>
-                <!-- /ko -->
+                
               </li>
             </ul>
-            <!-- ko if: attaboys().length > 0 || comments().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
+            
             </footer>
           </article>
 

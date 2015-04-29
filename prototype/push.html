@@ -288,16 +288,16 @@
 
       <h2 class="name">Neighborday</h2>
       <h3 class="about">The first ever global, local holiday—celebrating our blocks and the people we live next door to. Join in the last Saturday in April.</h3>
-      <!-- ko if: push.site && push.display_site --><!-- /ko -->
+      
 
       <div class="meta">
 
-        <!-- ko if: posts.length > 0 -->
+        
         <p>
           <span class="count">48</span>
           <span class="label">Posts</span>
         </p>
-        <!-- /ko -->
+        
 
         <p>
           <a href="#members">
@@ -352,9 +352,9 @@
     </div>
 
 <ol class="post-list">
-      <!-- ko if: showPrevButton --><!-- /ko -->
+      
 
-      <!-- ko foreach: visiblePosts -->
+      
 <li id="post-5311">
         <article class="post-item">
           <header>
@@ -381,19 +381,19 @@
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>5</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 -->
+          
           <div class="comments">
             <ol class="post-list">
               
@@ -404,10 +404,10 @@
                     <h3>
                       <a href="#profile">
                         <span class="avatar">
-                          <!-- ko if: user.profile_image -->
+                          
                           <img height="15" width="15" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
-                          <!-- /ko -->
-                          <!-- ko if: !user.profile_image --><!-- /ko -->
+                          
+                          
                         </span>
                         @<span>aldo</span>:
                       </a>
@@ -434,10 +434,10 @@
                     <h3>
                       <a href="#profile">
                         <span class="avatar">
-                          <!-- ko if: user.profile_image -->
+                          
                           <img height="15" width="15" alt="" src="https://m.ctznapp.com/s3/ctzn/b765ec52ca58b60945076f06436f62d500aab1da=c30x30">
-                          <!-- /ko -->
-                          <!-- ko if: !user.profile_image --><!-- /ko -->
+                          
+                          
                         </span>
                         @<span>lou</span>:
                       </a>
@@ -464,10 +464,10 @@
                     <h3>
                       <a href="#profile">
                         <span class="avatar">
-                          <!-- ko if: user.profile_image -->
+                          
                           <img height="15" width="15" alt="" src="https://m.ctznapp.com/s3/ctzn/77a29da9bcadd433c85195b007d4f9674f686279=c30x30">
-                          <!-- /ko -->
-                          <!-- ko if: !user.profile_image --><!-- /ko -->
+                          
+                          
                         </span>
                         @<span>good_hq</span>:
                       </a>
@@ -487,7 +487,7 @@
               </li>
             </ol>
           </div>
-          <!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -501,13 +501,13 @@
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -526,11 +526,11 @@
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -545,19 +545,19 @@
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>1</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -571,13 +571,13 @@
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -597,11 +597,11 @@
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' -->
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use><foreignObject>via twitter</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -614,9 +614,9 @@
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -630,13 +630,13 @@
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -671,19 +671,19 @@
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>6</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -697,13 +697,13 @@
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -736,19 +736,19 @@
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -762,13 +762,13 @@
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -803,19 +803,19 @@
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -829,13 +829,13 @@
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -868,19 +868,19 @@
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>2</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -894,13 +894,13 @@
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -933,19 +933,19 @@
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -959,13 +959,13 @@
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -985,11 +985,11 @@
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1003,19 +1003,19 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1029,13 +1029,13 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1055,11 +1055,11 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1074,19 +1074,19 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>2</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1100,13 +1100,13 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1126,11 +1126,11 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+              
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use><foreignObject>via facebook</foreignObject></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
               <a href="#post">
@@ -1145,19 +1145,19 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>2</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1171,13 +1171,13 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1197,11 +1197,11 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1216,19 +1216,19 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1242,13 +1242,13 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1281,19 +1281,19 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>4</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1307,13 +1307,13 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1333,11 +1333,11 @@ When you don't want the party to end. #letsneighbor #goodhq #neighborday</p></di
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1351,19 +1351,19 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>5</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1377,13 +1377,13 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1416,19 +1416,19 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>4</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1442,13 +1442,13 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1481,19 +1481,19 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1507,13 +1507,13 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1544,19 +1544,19 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>5</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1570,13 +1570,13 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1596,11 +1596,11 @@ Leon and Lula. ❤️ #letsneighbor</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1614,19 +1614,19 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>5</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1640,13 +1640,13 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1666,11 +1666,11 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1685,19 +1685,19 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>4</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1711,13 +1711,13 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1737,11 +1737,11 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1756,19 +1756,19 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>5</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1782,13 +1782,13 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1808,11 +1808,11 @@ Root Down LA. An incredible organization. Look them up on FB. #letsneighbor</p><
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1826,19 +1826,19 @@ The @ilovemicheladas van arrives #neighborday</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>5</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1852,13 +1852,13 @@ The @ilovemicheladas van arrives #neighborday</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1878,11 +1878,11 @@ The @ilovemicheladas van arrives #neighborday</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1897,19 +1897,19 @@ The @ilovemicheladas van arrives #neighborday</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>4</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1923,13 +1923,13 @@ The @ilovemicheladas van arrives #neighborday</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -1949,11 +1949,11 @@ The @ilovemicheladas van arrives #neighborday</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -1967,19 +1967,19 @@ Partying and planning for #neighborday</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>4</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -1993,13 +1993,13 @@ Partying and planning for #neighborday</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -2019,11 +2019,11 @@ Partying and planning for #neighborday</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -2038,19 +2038,19 @@ Partying and planning for #neighborday</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -2064,13 +2064,13 @@ Partying and planning for #neighborday</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -2090,11 +2090,11 @@ Partying and planning for #neighborday</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -2109,19 +2109,19 @@ Partying and planning for #neighborday</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -2135,13 +2135,13 @@ Partying and planning for #neighborday</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -2161,11 +2161,11 @@ Partying and planning for #neighborday</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -2180,19 +2180,19 @@ Partying and planning for #neighborday</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>3</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -2206,13 +2206,13 @@ Partying and planning for #neighborday</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -2232,11 +2232,11 @@ Partying and planning for #neighborday</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -2250,19 +2250,19 @@ The #michemobil is here! #letsneighbor #michelada</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>4</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -2276,13 +2276,13 @@ The #michemobil is here! #letsneighbor #michelada</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -2302,11 +2302,11 @@ The #michemobil is here! #letsneighbor #michelada</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -2320,19 +2320,19 @@ Let's neighbor, ya'll! ? #neighborday</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>2</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -2346,13 +2346,13 @@ Let's neighbor, ya'll! ? #neighborday</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -2372,11 +2372,11 @@ Let's neighbor, ya'll! ? #neighborday</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -2391,9 +2391,9 @@ Let's neighbor, ya'll! ? #neighborday</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) --><!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -2407,13 +2407,13 @@ Let's neighbor, ya'll! ? #neighborday</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -2433,11 +2433,11 @@ Let's neighbor, ya'll! ? #neighborday</p></div>
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -2451,19 +2451,19 @@ Veggies grown a few feet from where I stand. #goodhq #neighborday #letsneighbor<
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>5</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -2477,13 +2477,13 @@ Veggies grown a few feet from where I stand. #goodhq #neighborday #letsneighbor<
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
@@ -2503,11 +2503,11 @@ Veggies grown a few feet from where I stand. #goodhq #neighborday #letsneighbor<
               </a>
             </h3>
             <p class="source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+              
+              
               <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
               <a href="#post">
@@ -2521,19 +2521,19 @@ A great day for a barbecue on #neighborday #goodhq</p></div>
 
           <footer class="activity">
 
-          <!-- ko if: attaboys().length > 0 || (good.currentPush().currentUserIsOwner && featured_by) -->
+          
             <ul class="meta">
-              <!-- ko if: attaboys().length > 0 -->
+              
               <li>
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignobject>Heart</foreignobject></svg>
                 <span>1</span>
               </li>
-              <!-- /ko -->
-              <!-- ko if: good.currentPush().currentUserIsOwner && featured_by --><!-- /ko -->
+              
+              
             </ul>
-          <!-- /ko -->
+          
 
-          <!-- ko if: comments().length > 0 --><!-- /ko -->
+          
 
           <ul class="action">
             <li>
@@ -2547,27 +2547,27 @@ A great day for a barbecue on #neighborday #goodhq</p></div>
                 Comment
               </a>
             </li>
-            <!-- ko if: good.currentPush().currentUserIsOwner --><!-- /ko -->
+            
             <li>
-              <!-- ko if: good.currentUser().is_admin || good.currentUser().id === user.id || good.currentPush().currentUserIsOwner -->
+              
                 <a href="#post-options">
                   <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
                 </a>
-              <!-- /ko -->
+              
             </li>
           </ul>
           </footer>
         </article>
       </li>
-      <!-- /ko -->
+      
 
-      <!-- ko if: $root.showNextButton -->
+      
       <li class="next">
         <a href="#next">
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use><foreignObject>Next Page</foreignObject></svg>
         </a>
       </li>
-      <!-- /ko -->
+      
     </ol>
   </section>
 

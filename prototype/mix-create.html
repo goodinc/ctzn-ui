@@ -262,15 +262,15 @@
 
       <a href="#push" class="back">
         <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use><foreignObject>Go Back</foreignObject></svg></a>
-    </header><!-- ko if: images().length < 2 --><!-- /ko -->
+    </header>
 
-    <!-- ko if: images().length >= 2 -->
+    
     <form>
       <div class="selected-images">
         <h2 style="display: none;">Select images</h2>
 
         <ol id="selectedImageList" style="">
-<!-- ko foreach: selectedImages --><li role="button" tabindex="0">
+<li role="button" tabindex="0">
             <img width="50" height="50" src="https://m.ctznapp.com/s3/ctzn/e21be1b7a4dc912883277ec5117283efe909b435=c100x100" alt="Selected Image 1">
 </li>
           <li role="button" tabindex="0">
@@ -282,14 +282,14 @@
           <li role="button" tabindex="0">
             <img width="50" height="50" src="https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c100x100" alt="Selected Image 4">
 </li>
-          <!-- /ko -->
+          
         </ol>
 </div>
 
-      <!-- ko if: !oneImageLoaded() --><!-- /ko -->
+      
 
       <ul id="unselectedImageList" class="image-list">
-<!-- ko foreach: images --><li role="checkbox" tabindex="0" aria-checked="false" class="">
+<li role="checkbox" tabindex="0" aria-checked="false" class="">
           <img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/e97a160173e094a404d4198cf2db14bedb21a779=c100x100" alt="Image 1"><span class="number"></span>
         </li>
         <li role="checkbox" tabindex="0" aria-checked="false" class="">
@@ -871,14 +871,14 @@
         <li role="checkbox" tabindex="0" aria-checked="false">
           <img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/6521c01a76bebc9dbfdf0fd2b55a87fd26a65e8d=c100x100" alt="Image 194"><span class="number"></span>
         </li>
-        <!-- /ko -->
+        
       </ul>
 <p class="submit">
         <button>Next</button>
       </p>
 
     </form>
-    <!-- /ko -->
+    
 
   </section>
 

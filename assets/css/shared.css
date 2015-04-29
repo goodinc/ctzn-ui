@@ -3771,6 +3771,7 @@
 
   /* SHIM: Reduce the vertical space between sections, during onboarding */
   .settings .introduction {
+    padding-top: 1.5em;
     padding-bottom: 0;
   }
   .settings .introduction + .option-list {

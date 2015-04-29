@@ -274,29 +274,29 @@
     </div>
 
     <ol class="post-list">
-      <!-- ko foreach: push().public_posts -->
-        <li data-bind="attr: { id: 'post-' + id }" id="post-5818">
+      
+        <li id="post-5818">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
+                <span class="avatar">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldo</span>
+                <span class="avatar"></span>
+                @<span>aldo</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-25T18:47:54.000+00:00">3 days ago</time>
+                <time datetime="2015-04-25T18:47:54.000+00:00">3 days ago</time>
               </p>
-              <p class="source" data-bind="if: source">
+              <p class="source">
                 <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
               </p>
             </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"><p><img src="https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s256x256 256w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s384x384 384w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s512x512 512w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s768x768 768w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
+            <div class="body"><p><img src="https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s256x256 256w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s384x384 384w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s512x512 512w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s768x768 768w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/b99becb255994391cca151d6370e9e4df2f04b66=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
 
 <p>#proyectojardin #neighborday 2015</p></div>
 
-            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            
             <footer class="activity">
               <ul class="meta">
                 <li>
@@ -305,29 +305,29 @@
                 </li>
               </ul>
             </footer>
-            <!-- /ko -->
+            
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-5808">
+        <li id="post-5808">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
+                <span class="avatar">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldo</span>
+                <span class="avatar"></span>
+                @<span>aldo</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-04-25T17:38:10.000+00:00">3 days ago</time>
+                <time datetime="2015-04-25T17:38:10.000+00:00">3 days ago</time>
               </p>
             </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Getting started on day 1 of Eastside Earth Day 2015</p>
+            <div class="body"><p>Getting started on day 1 of Eastside Earth Day 2015</p>
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s256x256 256w, https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s384x384 384w, https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s512x512 512w, https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s768x768 768w, https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/f67b2dc7a49ed96946487cbf6b7c454d386f6767=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
 
-            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            
             <footer class="activity">
               <ul class="meta">
                 <li>
@@ -336,31 +336,31 @@
                 </li>
               </ul>
             </footer>
-            <!-- /ko -->
+            
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-3695">
+        <li id="post-3695">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
+                <span class="avatar">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldo</span>
+                <span class="avatar"></span>
+                @<span>aldo</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-19T01:27:46.000+00:00">6 weeks ago</time>
+                <time datetime="2015-03-19T01:27:46.000+00:00">6 weeks ago</time>
               </p>
             </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Learning more about composting.</p>
+            <div class="body"><p>Learning more about composting.</p>
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s256x256 256w, https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s384x384 384w, https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s512x512 512w, https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s768x768 768w, https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/e3b902d1e85e8b3bd76ffbf0bf20ce74b71b876f=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s512x512" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s256x256 256w, https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s384x384 384w, https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s512x512 512w, https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s768x768 768w, https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/cc613df972e51f5dedbd6615c14be101b20440a9=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
 
-            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            
             <footer class="activity">
               <ul class="meta">
                 <li>
@@ -373,25 +373,25 @@
                 </li>
               </ul>
             </footer>
-            <!-- /ko -->
+            
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-3627">
+        <li id="post-3627">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
+                <span class="avatar">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldo</span>
+                <span class="avatar"></span>
+                @<span>aldo</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-18T16:59:43.000+00:00">6 weeks ago</time>
+                <time datetime="2015-03-18T16:59:43.000+00:00">6 weeks ago</time>
               </p>
             </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>PJ is partaking in the Wellness Center's One Year celebration.</p>
+            <div class="body"><p>PJ is partaking in the Wellness Center's One Year celebration.</p>
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s256x256 256w, https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s384x384 384w, https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s512x512 512w, https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s768x768 768w, https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/f42e8b76c2f0a0861ae957baa8d57b9b2683c7fd=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
 
@@ -399,7 +399,7 @@
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s512x512" alt="Uploaded image 3" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s256x256 256w, https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s384x384 384w, https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s512x512 512w, https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s768x768 768w, https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/26640586d339967648842e2048b0168e02deeb31=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
 
-            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            
             <footer class="activity">
               <ul class="meta">
                 <li>
@@ -412,25 +412,25 @@
                 </li>
               </ul>
             </footer>
-            <!-- /ko -->
+            
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-3626">
+        <li id="post-3626">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
+                <span class="avatar">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldo</span>
+                <span class="avatar"></span>
+                @<span>aldo</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-03-18T16:55:12.000+00:00">6 weeks ago</time>
+                <time datetime="2015-03-18T16:55:12.000+00:00">6 weeks ago</time>
               </p>
             </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Admiring the garden boxes this morning at the Wellness Center.</p>
+            <div class="body"><p>Admiring the garden boxes this morning at the Wellness Center.</p>
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s256x256 256w, https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s384x384 384w, https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s512x512 512w, https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s768x768 768w, https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/a241dc8432041ae5f64083fe668f365281c018bc=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p>
 
@@ -438,7 +438,7 @@
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s512x512" alt="Uploaded image 3" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s256x256 256w, https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s384x384 384w, https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s512x512 512w, https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s768x768 768w, https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/bb6da42893b2cb64a7da517b6a337c688cf0372e=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
 
-            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            
             <footer class="activity">
               <ul class="meta">
                 <li>
@@ -451,29 +451,29 @@
                 </li>
               </ul>
             </footer>
-            <!-- /ko -->
+            
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2297">
+        <li id="post-2297">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="k"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 clover" data-content="k"></span>
                 </span>
-                @<span data-bind="text: username">kalina</span>
+                @<span>kalina</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-07T23:05:16.000+00:00">11 weeks ago</time>
+                <time datetime="2015-02-07T23:05:16.000+00:00">11 weeks ago</time>
               </p>
             </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>PJ Board logging in to CTZN! #proyectojardin #beetthesystem</p>
+            <div class="body"><p>PJ Board logging in to CTZN! #proyectojardin #beetthesystem</p>
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s256x256 256w, https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s384x384 384w, https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s512x512 512w, https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s768x768 768w, https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/4f63c72f579b67c72e31395544419890b364b283=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
 
-            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            
             <footer class="activity">
               <ul class="meta">
                 <li>
@@ -486,31 +486,31 @@
                 </li>
               </ul>
             </footer>
-            <!-- /ko -->
+            
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2198">
+        <li id="post-2198">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
+                <span class="avatar">
+                  <img sizes="(min-width: 600px) 60px, 30px" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30 30w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 60w, https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60 2x" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c30x30">
                 </span>
-                <span class="avatar" data-bind="if: !profile_image"></span>
-                @<span data-bind="text: username">aldo</span>
+                <span class="avatar"></span>
+                @<span>aldo</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-05T03:28:13.000+00:00">12 weeks ago</time>
+                <time datetime="2015-02-05T03:28:13.000+00:00">12 weeks ago</time>
               </p>
             </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>@irene @kalina thank you for meeting with @cogg and me this afternoon! We're looking forward to seeing the many ways CTZN can support Proyecto Jardin.</p>
+            <div class="body"><p>@irene @kalina thank you for meeting with @cogg and me this afternoon! We're looking forward to seeing the many ways CTZN can support Proyecto Jardin.</p>
 
 <p>Also: Thank you for sharing some of your harvest with us! Yum.🌱🌵🌿😎</p>
 
 <p><img src="https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s512x512" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s2048x2048' })" srcset="https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s256x256 256w, https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s384x384 384w, https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s512x512 512w, https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s768x768 768w, https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s1024x1024 1024w, https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s1536x1536 1536w, https://m.ctznapp.com/s3/ctzn/d74c68e061396ffc5bbc5bf053daa973d0faa66c=s1024x1024 2x" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 595px, (min-width: 600px) 531px, (min-width: 512px) 512px, 100vw"></p></div>
 
-            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            
             <footer class="activity">
               <ul class="meta">
                 <li>
@@ -523,27 +523,27 @@
                 </li>
               </ul>
             </footer>
-            <!-- /ko -->
+            
           </article>
         </li>
       
-        <li data-bind="attr: { id: 'post-' + id }" id="post-2190">
+        <li id="post-2190">
           <article class="post-item">
             <header>
               <h3>
-                <span class="avatar" data-bind="if: profile_image"></span>
-                <span class="avatar" data-bind="if: !profile_image">
-                  <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="k"></span>
+                <span class="avatar"></span>
+                <span class="avatar">
+                  <span class="size30 clover" data-content="k"></span>
                 </span>
-                @<span data-bind="text: username">kalina</span>
+                @<span>kalina</span>
               </h3>
               <p>
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-02-05T01:24:12.000+00:00">12 weeks ago</time>
+                <time datetime="2015-02-05T01:24:12.000+00:00">12 weeks ago</time>
               </p>
             </header>
-            <div class="body" data-bind="html: good.postBodyToHtml(body)"><p>Beautiful succulents for sale in the garden! 🌵 #beetthesystem #proyectojardin</p></div>
+            <div class="body"><p>Beautiful succulents for sale in the garden! 🌵 #beetthesystem #proyectojardin</p></div>
 
-            <!-- ko if: attaboy_count > 0 || comment_count > 0 -->
+            
             <footer class="activity">
               <ul class="meta">
                 <li>
@@ -556,10 +556,10 @@
                 </li>
               </ul>
             </footer>
-            <!-- /ko -->
+            
           </article>
         </li>
-      <!-- /ko -->
+      
     </ol>
 
   </section>
