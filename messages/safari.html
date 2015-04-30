@@ -336,6 +336,17 @@
 
     </div>
 
+    <div class="instructions">
+
+      <h6>
+        Please open Safari and then paste the URL you copied.
+      </h6>
+      <p style="font-size: 0.875em; color: rgb(153, 153, 153);">
+        http://goodinc.github.io/ctzn-ui/messages/safari.html
+      </p>
+
+    </div>
+
     <!--
     <div>
 
@@ -370,24 +381,29 @@
 
       link.addEventListener('click', function(e) {
         e.preventDefault();
-      }, false);
-
-      link.addEventListener('mousedown', function() {
         link.className += ' active';
+        if (timer) clearTimeout(timer);
       }, false);
 
-      document.body.addEventListener('mouseup', function() {
-        link.className = link.className.replace(/active/, '');
-      }, false);
-
-      link.addEventListener('touchstart', function() {
-        link.className += ' active';
-      }, false);
-
-      document.body.addEventListener('touchend', function() {
-        link.className = link.className.replace(/active/, '');
-      }, false);
-
+      var instructions = document.querySelector('.dialog.page .instructions');
+      if (instructions) {
+        instructions.style.opacity = '0';
+        var timer;
+        link.addEventListener('mousedown', function() {
+          if (timer) clearTimeout(timer);
+          timer = setTimeout(function() {
+            instructions.style.opacity = '1';
+            link.className = link.className.replace(/active/, '');
+          }, 2000);
+        }, false);
+        link.addEventListener('touchstart', function() {
+          if (timer) clearTimeout(timer);
+          timer = setTimeout(function() {
+            instructions.style.opacity = '1';
+            link.className = link.className.replace(/active/, '');
+          }, 2000);
+        }, false);
+      }
     }
   })();
   </script>
