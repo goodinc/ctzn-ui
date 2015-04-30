@@ -1887,7 +1887,7 @@
       left: 0;
       width: 100%;
       box-sizing: border-box;
-      padding: 0.75em 5em; /* The right/left padding numbers here are arbitrary, but ideally large
+      padding: 0.75em 6em; /* The right/left padding numbers here are arbitrary, but ideally large
                               enough to prevent the title from overlapping with the back/next buttons. */
     }
 
