@@ -46,8 +46,8 @@
     margin-top: 0;
   }
   header.pattern h2 svg.icon {
-    width: auto;
-    height: auto;
+    width: 2.6666666667em; /* 80px / 30px */
+    height: 1em; /* 30px / 30px */
   }
   header.pattern h2,
   header.pattern nav {
