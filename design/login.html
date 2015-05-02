@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,16 +19,8 @@
     })();
   </script>
 
-  <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-    }
-  </style>
-
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -282,47 +273,45 @@
     </defs>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30"><use xlink:href="#ctzn" /><foreignObject>CTZN</foreignObject></svg></a></h2>
-    <nav>
-      <ul>
-        <li><a href="../patterns/">Patterns</a></li>
-        <li><a href="../messages/">Messages</a></li>
-        <li><a href="../prototype/">Prototype</a></li>
-        <li><a href="../email/">Email</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section class="login page">
+    <header>
+      <h1>Log In</h1>
 
-  <h1>Design</h1>
+      <a href="" class="back">
+        <svg class="icon" style="display: inline; margin-right: 0.5em;"><use xlink:href="#back" /></svg>
+        Go Back
+      </a>
+    </header>
 
-  <div class="pattern-list">
-    <section>
-      <h2>Onboarding</h2>
-      <ul>
-        <li><a href="push-join.html">Join</a></li>
-        <li><a href="preview-share.html">Preview</a></li>
-        <li><a href="register.html">Sign Up</a></li>
-        <li><a href="register-email.html">Sign Up (Email)</a></li>
-        <li><a href="login.html">Log In</a></li>
-        <li><a href="ready.html">Ready for CTZN</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Preview (new design)</h2>
-      <ul>
-        <li><a href="../prototype/preview.html">Preview</a></li>
-        <li><a href="../prototype/preview-empty.html">Preview (empty feed)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Safari Message</h2>
-      <ul>
-        <li><a href="../messages/safari.html">Example</a></li>
-        <li><a href="safari.html">Example (with notes)</a></li>
-      </ul>
-    </section>
-  </div>
+    <div>
+      <p class="action facebook">
+        <a href="#facebook">
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg>
+          <span>Log in with Facebook</span>
+        </a>
+      </p>
+    </div>
+
+    <form class="has-icon">
+      <h2 class="or"><span>Or</span></h2>
+      <p class="text">
+        <label>
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-circle"></use><foreignObject>Username</foreignObject></svg><br>
+          <input type="text" placeholder="Username" autocapitalize="none" autocorrect="off">
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#padlock"></use><foreignObject>Password</foreignObject></svg><br>
+          <input type="password" placeholder="Password">
+        </label>
+        <em class="note"><a href="">Forgot password?</a></em>
+      </p>
+      <p class="submit">
+        <button>Log in</button>
+      </p>
+    </form>
+  </section>
 
 </body>
 </html>

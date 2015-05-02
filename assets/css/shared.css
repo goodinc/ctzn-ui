@@ -3628,9 +3628,6 @@
   .signup.page > header {
     border-color: transparent;
   }
-  .signup.page > header h1 {
-    color: transparent;
-  }
   .signup.page > header .next {
     text-decoration: none;
     text-transform: lowercase;
@@ -3645,6 +3642,7 @@
 
   .login.page  h2.or,
   .signup.page h2.or {
+    text-align: center;
 
     /* @divider */
     margin-top: 2em;
