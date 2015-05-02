@@ -7,6 +7,11 @@
 <!-- images/icons.svg -->[\s<a-z0-9A-Z="\.:/>,-/#]+?(?=</svg>)</svg>
 
 
+### Minimal set, for the promotional site…
+
+<!-- images/icons.svg \(minimal set\) -->[\s<a-z0-9A-Z="\.:/>,-/#]+?(?=</svg>)</svg>
+
+
 ## Replace the styles in HTML emails with the latest CSS…
 
 <!-- https://github.com/goodinc/ctzn-ui/blob/gh-pages/assets/css/email.css -->(.|\s)+?(?=</style>)</style>
