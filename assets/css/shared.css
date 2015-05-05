@@ -2016,6 +2016,146 @@
     }
   }
 
+
+  /* =Onboarding
+  -----------------------------------------------
+  TBD: Consider making these the default styles for all screens.
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+  .onboarding a {
+    color: rgb(246, 84, 136);
+  }
+  .onboarding a:active,
+  .onboarding a:focus {
+    color: black;
+  }
+  .onboarding button {
+    background-color: rgb(246, 84, 136);
+    font-weight: normal;
+    font-size: 1.25em;
+  }
+  .onboarding button:active,
+  .onboarding button:focus {
+    background-color: black;
+  }
+
+  .onboarding .option-list a {
+    background-color: rgb(234, 234, 234);
+    color: rgb(102, 102, 102);
+    text-transform: none;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+  .onboarding .option-list a img {
+    vertical-align: middle;
+    margin-right: 1.5em;
+    width: 3em;
+    height: auto;
+  }
+  .onboarding .option-list a svg.icon {
+    width: 3em;
+    height: 3em;
+    margin-right: 1.5em;
+  }
+
+  .onboarding form .note {
+    margin-top: 1.5em;
+    text-align: left;
+  }
+
+  .onboarding section.page {
+    background: rgb(246, 246, 246);
+  }
+
+  /* For the header on the preview page */
+  .powered-by h1 svg.icon {
+    width: 2em;
+    vertical-align: top;
+  }
+
+  .powered-by .back svg.icon,
+  .onboarding.page > header .back svg.icon {
+    display: inline;
+    margin-right: 0.5em;
+    vertical-align: top;
+  }
+  .powered-by .back svg.icon + span
+  .onboarding.page > header .back svg.icon + span {
+    position: absolute;
+    left: -9999px;
+  }
+  @media (min-width: 35em) {
+    .powered-by .back svg.icon + span
+    .onboarding.page > header .back svg.icon + span {
+      position: static;
+    }
+  }
+
+  /*
+  .onboarding.page > form {
+    padding-top: 1px;
+  }
+  .onboarding.page > form {
+    padding-top: 3em;
+  }
+  .onboarding.page > div {
+    padding-top: 3em;
+    padding-bottom: 1px;
+  }
+  .onboarding.page > div {
+    padding-top: 3em;
+  }
+  */
+  .onboarding.page > div + aside {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .onboarding.page > form:last-child {
+    padding-bottom: 1.5em;
+  }
+  .onboarding.page > div,
+  .onboarding.page > form,
+  .onboarding.page > aside {
+    max-width: 28em;
+  }
+  .onboarding > div,
+  .onboarding > form,
+  .onboarding > div + aside {
+    background: white;
+  }
+
+  .onboarding.page > header .back svg.icon {
+    display: inline;
+    margin-right: 0.5em;
+    vertical-align: top;
+  }
+  .onboarding.page > header .back .icon + span {
+    position: absolute;
+    left: -9999px;
+  }
+  @media (min-width: 35em) {
+    .onboarding.page > header .back .icon + span {
+      position: static;
+    }
+  }
+
+  .onboarding.page > .push-card {
+      max-width: 28em;
+  }
+  @media (min-width: 35em) and (min-height: 25em) {
+    .onboarding.page > div:first-child,
+    .onboarding.page > header + div,
+    .onboarding.page > .push-card {
+      margin-top: 3em;
+    }
+  }
+
+
   /* =Push Card
   -----------------------------------------------
   A themed header, preview, or form for a push
