@@ -19,6 +19,58 @@
     })();
   </script>
 
+  <style>
+    section.page {
+      background: rgb(246, 246, 246);
+    }
+    .page > header .back svg.icon {
+      display: inline;
+      margin-right: 0.5em;
+      vertical-align: top;
+    }
+    .page > header .back .icon + span {
+      position: absolute;
+      left: -9999px;
+    }
+    @media (min-width: 35em) {
+      .page > header .back .icon + span {
+        position: static;
+      }
+    }
+    .page > div,
+    .page > form {
+      max-width: 28em;
+      background: white;
+    }
+    .page > div {
+      padding-top: 3em;
+      padding-bottom: 1px;
+    }
+    .page > form {
+      padding-top: 1px;
+    }
+    @media (min-width: 25em) and (min-height: 25em) {
+      .page > header + div {
+        margin-top: 3em;
+      }
+    }
+    .page > form:last-child {
+      padding-bottom: 1.5em;
+    }
+    a {
+      color: rgb(246, 84, 136);
+    }
+    button {
+      background-color: rgb(246, 84, 136);
+      font-weight: normal;
+      font-size: 1.25em;
+    }
+    form .note {
+      margin-top: 1.5em;
+      text-align: left;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -278,8 +330,8 @@
       <h1>Log In</h1>
 
       <a href="" class="back">
-        <svg class="icon" style="display: inline; margin-right: 0.5em;"><use xlink:href="#back" /></svg>
-        Go Back
+        <svg class="icon"><use xlink:href="#back" /></svg>
+        <span>Go Back</span>
       </a>
     </header>
 
@@ -305,7 +357,7 @@
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#padlock"></use><foreignObject>Password</foreignObject></svg><br>
           <input type="password" placeholder="Password">
         </label>
-        <em class="note" style="text-align: left;"><a href="">Forgot password?</a></em>
+        <em class="note"><a href="">Forgot password?</a></em>
       </p>
       <p class="submit" style="position: static;">
         <button>Log in</button>

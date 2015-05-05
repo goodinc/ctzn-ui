@@ -19,6 +19,28 @@
     })();
   </script>
 
+  <style>
+    .option-list a {
+      background-color: rgb(234, 234, 234);
+      color: rgb(102, 102, 102);
+      text-transform: none;
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
+      padding-left: 1.5em;
+    }
+    .option-list a img {
+      vertical-align: middle;
+      margin-right: 1.5em;
+      width: 3em;
+      height: auto;
+    }
+    .option-list a svg.icon {
+      width: 3em;
+      height: 3em;
+      margin-right: 1.5em;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -285,9 +307,24 @@
 
     <div class="option-list">
       <ul>
-        <li><a href="">Install the Android app on this device</a></li>
-        <li><a href="">Continue using Chrome</a></li>
-        <li><a href="">Learn how to post and more via email</a></li>
+        <li>
+          <a href="">
+            <img style="width: 5em;" src="../assets/images/logos/google.png" width="224" height="77" alt="" />
+            Install the Android app on this device
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img style="margin-left: 1em; margin-right: 2.5em;" src="../assets/images/logos/chrome.svg" width="24" height="24" alt="" />
+            Continue using Chrome
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg style="margin-left: 1em; margin-right: 2.5em;" class="icon"><use xlink:href="#envelope" /></svg>
+            Learn how to post and more via email
+          </a>
+        </li>
       </ul>
     </div>
 

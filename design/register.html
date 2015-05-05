@@ -19,6 +19,34 @@
     })();
   </script>
 
+  <style>
+    .page > div {
+      padding-top: 3em;
+    }
+    .page > div,
+    .page > aside {
+      max-width: 28em;
+    }
+    .page > div,
+    .page > div + aside {
+      background: white;
+    }
+    .page > div + aside {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
+    }
+    a {
+      color: rgb(246, 84, 136);
+    }
+    button {
+      background-color: rgb(246, 84, 136);
+      font-weight: normal;
+      font-size: 1.25em;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -303,7 +331,7 @@
     </div>
 
     <aside>
-      Already have an account? <a href="">Log In</a>
+      <p class="note">Already have an account? <a href="">Log In</a></p>
     </aside>
 
     <aside>
