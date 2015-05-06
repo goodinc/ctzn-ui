@@ -1724,6 +1724,7 @@
 
   /* OPTIONAL: Spact things out a bit, if the screen is tall. */
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    .join.page > div,
     .start.page > div,
     .page > header + div,
     .page > header + form {
@@ -2070,142 +2071,6 @@
   @media (min-width: 40em) {
     section.push > .option-list li a {
       text-align: center;
-    }
-  }
-
-
-  /* =Onboarding
-  -----------------------------------------------
-  TBD: Consider making these the default styles for all screens.
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-  .ready.page > div {
-    background: white;
-    padding-top: 1.875em;
-    padding-left: 0.375em;
-    padding-right: 0.375em;
-    padding-bottom: 0.375em;
-  }
-  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-    .ready.page > div {
-      margin-top: 3em;
-    }
-  }
-  .ready.page h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
-    font-size     : 1.5em;     /* 24px / @font-size */
-    line-height: inherit;
-  }
-  .ready.page ul {
-    margin-top: 1.875em;
-    margin-bottom: 0;
-  }
-  .ready.page ul,
-  .ready.page li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .ready.page li {
-    margin-top: 0.375em;
-  }
-  .ready.page li a {
-    display: block;
-    color: rgb(102, 102, 102);
-    padding: 1.5em 4.5em 1.5em 9em;
-    background-color: rgb(238, 238, 238); /* @seashell */
-    text-decoration: none;
-    position: relative;
-  }
-  .ready.page li a:hover,
-  .ready.page li a:active,
-  .ready.page li a:focus {
-    background-color: rgb(222, 222, 222); /* @silver */
-  }
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .ready.page ul a {
-      margin-left: -0.375em;
-      margin-right: -0.375em;
-    }
-  }
-  .ready.page li a img + br,
-  .ready.page li a svg + br {
-    display: none;
-  }
-  .ready.page li a img[width="77"],
-  .ready.page li a svg[width="77"],
-  .ready.page li a img[width="224"] {
-    position: absolute;
-    top: 50%;
-    left: 1.5em;
-    width: 5.6em; /* 224px / 16px / 2.5 */
-    height: 3.2083333333em; /* 77px / 16px / 1.5 */
-    margin-top: -1.6041666667em;  /* 3.2083333333em / 2 */
-  }
-  .ready.page li a img[width="224"] {
-    width: 5.6em; /* 224px / 16px / 2.5 */
-    height: 1.925em; /* 77px / 16px / 2.5 */
-    margin-top: -0.9625em;  /* 1.925em / 2 */
-  }
-  .ready.page li a svg[width="20"] {
-    position: absolute;
-    margin-top: -0.75em;
-    top: 50%;
-    right: 1.5em;
-  }
-  /*
-  .ready-list a {
-    background-color: rgb(234, 234, 234);
-    color: rgb(102, 102, 102);
-    text-transform: none;
-  }
-  .ready-list a span {
-    padding: 1.5em 1.5em 1.5em 9em;
-    position: relative;
-  }
-  .ready-lista img,
-  .ready-list a svg.icon {
-    position: absolute;
-    left: 1.5em;
-  }
-  .ready-list a img {
-    vertical-align: middle;
-    margin-right: 1.5em;
-    width: 3em;
-    height: auto;
-  }
-  .ready-list a svg.icon {
-    width: 3em;
-    height: 3em;
-    margin-right: 1.5em;
-  }
-  */
-
-  /* For the header on the preview page */
-  .powered-by h1 svg.icon {
-    width: 2em;
-    vertical-align: top;
-  }
-
-  /* For back buttons with both an icon and a label */
-  .page > header .back svg.icon {
-    display: inline;
-    margin-right: 0.5em;
-    vertical-align: top;
-  }
-  .page > header .back svg.icon:last-child {
-    margin-right: 0;
-  }
-  .page > header .back svg.icon + span {
-    position: absolute;
-    left: -9999px;
-  }
-  @media (min-width: 35em) {
-    .page > header .back svg.icon + span {
-      position: static;
     }
   }
 
@@ -4601,6 +4466,160 @@
   section.edit.page.outro {
     -webkit-animation: slide-down 0.3s both;
             animation: slide-down 0.3s both;
+  }
+
+
+  /* =Onboarding
+  ----------------------------------------------- */
+  .join.page h2 {
+    font-weight: inherit;
+    font-size: 1.5em;
+    line-height: inherit;
+    padding: 0.75em;
+    margin: 0;
+    text-transform: lowercase;
+    text-align: center;
+  }
+  .join.page > div {
+    background-color: rgb(250, 134, 40); /* @orange */
+    color: white;
+  }
+  .join.page > form {
+    background: white;
+    padding-bottom: 1.5em;
+  }
+
+  .ready.page > div {
+    background: white;
+    padding-top: 1.875em;
+    padding-left: 0.375em;
+    padding-right: 0.375em;
+    padding-bottom: 0.375em;
+  }
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    .ready.page > div {
+      margin-top: 3em;
+    }
+  }
+  .ready.page h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size     : 1.5em;     /* 24px / @font-size */
+    line-height: inherit;
+  }
+  .ready.page ul {
+    margin-top: 1.875em;
+    margin-bottom: 0;
+  }
+  .ready.page ul,
+  .ready.page li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .ready.page li {
+    margin-top: 0.375em;
+  }
+  .ready.page li a {
+    display: block;
+    color: rgb(102, 102, 102);
+    padding: 1.5em 4.5em 1.5em 9em;
+    background-color: rgb(238, 238, 238); /* @seashell */
+    text-decoration: none;
+    position: relative;
+  }
+  .ready.page li a:hover,
+  .ready.page li a:active,
+  .ready.page li a:focus {
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .ready.page ul a {
+      margin-left: -0.375em;
+      margin-right: -0.375em;
+    }
+  }
+  .ready.page li a img + br,
+  .ready.page li a svg + br {
+    display: none;
+  }
+  .ready.page li a img,
+  .ready.page li a svg[width="77"] {
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+  }
+  .ready.page li a svg[width="77"],
+  .ready.page li a img[width="77"],
+  .ready.page li a img[width="224"] {
+    top: 50%;
+    width: 5.6em; /* 224px / 16px / 2.5 */
+    height: 3.2083333333em; /* 77px / 16px / 1.5 */
+    margin-top: -1.6041666667em;  /* 3.2083333333em / 2 */
+  }
+  .ready.page li a img[width="224"] {
+    width: 5.6em; /* 224px / 16px / 2.5 */
+    height: 1.925em; /* 77px / 16px / 2.5 */
+    margin-top: -0.9625em;  /* 1.925em / 2 */
+  }
+  .ready.page li a svg[width="20"] {
+    position: absolute;
+    margin-top: -0.75em;
+    top: 50%;
+    right: 1.5em;
+  }
+  /*
+  .ready-list a {
+    background-color: rgb(234, 234, 234);
+    color: rgb(102, 102, 102);
+    text-transform: none;
+  }
+  .ready-list a span {
+    padding: 1.5em 1.5em 1.5em 9em;
+    position: relative;
+  }
+  .ready-lista img,
+  .ready-list a svg.icon {
+    position: absolute;
+    left: 1.5em;
+  }
+  .ready-list a img {
+    vertical-align: middle;
+    margin-right: 1.5em;
+    width: 3em;
+    height: auto;
+  }
+  .ready-list a svg.icon {
+    width: 3em;
+    height: 3em;
+    margin-right: 1.5em;
+  }
+  */
+
+  /* For the header on the preview page */
+  .powered-by h1 svg.icon {
+    width: 2em;
+    vertical-align: top;
+  }
+
+  /* For back buttons with both an icon and a label */
+  .page > header .back svg.icon {
+    display: inline;
+    margin-right: 0.5em;
+    vertical-align: top;
+  }
+  .page > header .back svg.icon:last-child {
+    margin-right: 0;
+  }
+  .page > header .back svg.icon + span {
+    position: absolute;
+    left: -9999px;
+  }
+  @media (min-width: 35em) {
+    .page > header .back svg.icon + span {
+      position: static;
+    }
   }
 
 
