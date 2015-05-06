@@ -2348,6 +2348,13 @@
   .push-card .website a:focus {
     color: white;
   }
+  .start.page > div {
+    background: rgba(0, 0, 0, 0.1);
+    padding-bottom: 1.5em !important;
+  }
+  .start.page aside {
+    text-transform: lowercase;
+  }
   .start.page aside a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
