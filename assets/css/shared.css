@@ -1823,6 +1823,11 @@
     margin-top: 0;
     padding: 0.375em;
   }
+  .page > header .action a {
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
 
   /* OPTIONAL: Give edit and detail pages a white header. */
   .mix.page          > header,
@@ -2325,7 +2330,7 @@
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
-  .push-card.page > header a {
+  .push-card.page > header h1 a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
@@ -3791,9 +3796,11 @@
   .settings .introduction + .option-list {
     padding-top: 0;
   }
+  /*
   .settings > form {
     padding: 0;
   }
+  */
   .option-list + .option-list {
     padding-top: 0;
   }
