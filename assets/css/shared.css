@@ -7,8 +7,9 @@
 
   For example…
 
-  @font-size  : 16px;
-  @line-height: 24px;
+  @font-size      : 16px;
+  @line-height    : 24px;
+  @page-max-width : 32em;
 
   Sections are grouped under headings with a “=” symbol,
   to make searching easier.
@@ -32,6 +33,7 @@
     color: rgb(250, 56, 136); /* @strawberry */
     transition: opacity 0.2s, color 0.2s, background-color 0.2s;
   }
+  a:hover,
   a:active,
   a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -405,8 +407,10 @@
     text-transform: lowercase;
     margin: 0;
   }
+  .action a:hover,
   .action a:active,
   .action a:focus,
+  button:hover,
   button:active,
   button:focus {
     background-color: rgb(193, 16, 65); /* @raspberry */
@@ -420,6 +424,7 @@
     background-color: rgb(255, 49, 59); /* @apple */
     color: white;
   }
+  .warning button:hover,
   .warning button:active,
   .warning button:focus {
     background-color: rgb(255, 29, 39);
@@ -441,8 +446,10 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     transition: all 0.2s;
   }
+  .error-message          button:hover,
   .error-message          button:active,
   .error-message          button:focus,
+  .update-indicator a:hover,
   .update-indicator a:active,
   .update-indicator a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -487,14 +494,21 @@
     color: inherit;
     opacity: 0.5;
   }
+  form ul.submit a:hover,
   form ul.submit a:active,
   form ul.submit a:focus {
     opacity: 1;
+  }
+  form .submit button,
+  form .submit a {
+    font-size: 1.25em;
   }
 
   .signup.page .note,
   form .note {
     display: block;
+
+    /* @note */
     font-style: italic;
     font-size: 0.875em;
     margin-top: 1.5em;
@@ -898,6 +912,7 @@
     color: rgb(102, 102, 102); /* @tin */
     border-radius: 0.25em;
   }
+  .list li a:hover,
   .list li a:active,
   .list li a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -942,7 +957,7 @@
   .list ul .message svg {
     display: block;
   }
-  @media (max-width: 34.25em) {
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
     .list li + li {
       margin-top: 0;
     }
@@ -1017,6 +1032,7 @@
     color: inherit;
     text-decoration: none;
   }
+  .post-item header h3 a:hover,
   .post-item header h3 a:active,
   .post-item header h3 a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -1047,6 +1063,7 @@
     color: inherit;
     text-decoration: none;
   }
+  .post-item header p a:hover,
   .post-item header p a:active,
   .post-item header p a:focus {
     color: black;
@@ -1055,6 +1072,7 @@
     text-decoration: none;
     color: inherit;
   }
+  .post-item a.body:hover,
   .post-item a.body:active,
   .post-item a.body:focus {
     background-color: rgba(0, 0, 0, 0.25);
@@ -1114,8 +1132,10 @@
     border-width: 1px;
     vertical-align: middle;
   }
+  .post-item footer .action a:hover,
   .post-item footer .action a:active,
   .post-item footer .action a:focus,
+  .post-item footer .action button:hover,
   .post-item footer .action button:active,
   .post-item footer .action button:focus {
     background: rgb(238, 238, 238); /* @seashell */
@@ -1149,6 +1169,7 @@
     color: inherit;
     text-decoration: none;
   }
+  .post-item footer .meta li a:hover,
   .post-item footer .meta li a:active,
   .post-item footer .meta li a:focus {
     color: rgb(250, 56, 136); /* @strawberry */
@@ -1232,6 +1253,7 @@
   .post-options li.warning button {
     color: rgb(255, 49, 59); /* @apple */
   }
+  .post-options li button:hover,
   .post-options li button:active,
   .post-options li button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -1333,6 +1355,7 @@
     right: 0;
     padding: 0.5625em; /* (48px - 30px) / 2 / @font-size */
   }
+  header.primary .profile:hover,
   header.primary .profile:active,
   header.primary .profile:focus {
     opacity: 0.75;
@@ -1353,6 +1376,7 @@
     color: inherit;
     text-decoration: none;
   }
+  header.primary a:hover,
   header.primary a:active,
   header.primary a:focus {
     color: white;
@@ -1646,6 +1670,7 @@
     padding: 0.75em 0 1em;
     text-align: center;
   }
+  ul.create a:hover,
   ul.create a:active,
   ul.create a:focus {
     color: white;
@@ -1664,6 +1689,7 @@
     fill: rgb(204, 204, 204); /* @aluminum */
     transition: fill 0.2s;
   }
+  ul.create li a:hover  .icon,
   ul.create li a:active .icon,
   ul.create li a:focus  .icon {
     fill: currentColor;
@@ -1784,6 +1810,7 @@
   .page > header a {
     color: rgb(204, 204, 204); /* @aluminum */
   }
+  .page > header a:hover,
   .page > header a:active,
   .page > header a:focus {
     color: white;
@@ -1828,7 +1855,6 @@
     color: rgba(255, 255, 255, 0.95);
   }
 
-
   /* OPTIONAL: Give edit and detail pages a white header. */
   .mix.page          > header,
   .mixes.page        > header,
@@ -1849,29 +1875,41 @@
     border-color: transparent !important;
     color: rgb(102, 102, 102); /* @tin */
   }
+  .mix.page          > header a:hover,
   .mix.page          > header a:active,
   .mix.page          > header a:focus,
+  .mixes.page        > header a:hover,
   .mixes.page        > header a:active,
   .mixes.page        > header a:focus,
+  .mix-editor.page   > header a:hover,
   .mix-editor.page   > header a:active,
   .mix-editor.page   > header a:focus,
+  .post.page         > header a:hover,
   .post.page         > header a:active,
   .post.page         > header a:focus,
+  .edit.page         > header a:hover,
   .edit.page         > header a:active,
   .edit.page         > header a:focus,
+  .edit-profile.page > header a:hover,
   .edit-profile.page > header a:active,
   .edit-profile.page > header a:focus {
     color: black;
   }
 
   /* OPTIONAL: Position the submit button in the header */
-  .post-editor.page > header ~ form .submit,
-  .mix-editor.page  > header ~ form .submit {
+  .edit-profile.page > header ~ form .submit,
+  .post-editor.page  > header ~ form .submit,
+  .mix-editor.page   > header ~ form .submit {
     position: absolute;
     z-index: 2;
     top: 0.375em;
     right: 0.375em;
     margin: 0;
+  }
+  .edit-profile.page > header ~ form .submit button,
+  .post-editor.page  > header ~ form .submit button,
+  .mix-editor.page   > header ~ form .submit button {
+    font-size: inherit;
   }
 
   @media (min-width: 20em) {
@@ -1895,6 +1933,11 @@
       padding: 0.75em 6em; /* The right/left padding numbers here are arbitrary, but ideally large
                               enough to prevent the title from overlapping with the back/next buttons. */
     }
+    .edit-profile.page > header ~ form .submit,
+    .post-editor.page  > header ~ form .submit,
+    .mix-editor.page   > header ~ form .submit {
+      position: fixed; /* Position the submit button in the header */
+    }
 
     /* OPTIONAL: Limit the headline to a single line. */
     .page > header h1 {
@@ -1905,12 +1948,6 @@
       white-space: nowrap;
       word-wrap     : inherit;
       overflow-wrap : inherit;
-    }
-
-    /* OPTIONAL: Position the submit button in the header */
-    .post-editor.page > header ~ form .submit,
-    .mix-editor.page  > header ~ form .submit {
-      position: fixed;
     }
   }
 
@@ -1976,7 +2013,7 @@
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
   }
-  @media (max-width: 34.25em) {
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
     .option-list ul + ul {
       margin-top: 0.75em;
     }
@@ -1999,8 +2036,10 @@
       box-sizing: content-box;
     }
   }
+  .option-list a:hover,
   .option-list a:active,
   .option-list a:focus,
+  .option-list button:hover,
   .option-list button:active,
   .option-list button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -2041,25 +2080,109 @@
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
-  .option-list.has-logos a {
+  .ready.page > div {
+    background: white;
+    padding-top: 1.875em;
+    padding-left: 0.375em;
+    padding-right: 0.375em;
+    padding-bottom: 0.375em;
+  }
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    .ready.page > div {
+      margin-top: 3em;
+    }
+  }
+  .ready.page h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size     : 1.5em;     /* 24px / @font-size */
+    line-height: inherit;
+  }
+  .ready.page ul {
+    margin-top: 1.875em;
+    margin-bottom: 0;
+  }
+  .ready.page ul,
+  .ready.page li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .ready.page li {
+    margin-top: 0.375em;
+  }
+  .ready.page li a {
+    display: block;
+    color: rgb(102, 102, 102);
+    padding: 1.5em 4.5em 1.5em 9em;
+    background-color: rgb(238, 238, 238); /* @seashell */
+    text-decoration: none;
+    position: relative;
+  }
+  .ready.page li a:hover,
+  .ready.page li a:active,
+  .ready.page li a:focus {
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .ready.page ul a {
+      margin-left: -0.375em;
+      margin-right: -0.375em;
+    }
+  }
+  .ready.page li a img + br,
+  .ready.page li a svg + br {
+    display: none;
+  }
+  .ready.page li a img[width="77"],
+  .ready.page li a svg[width="77"],
+  .ready.page li a img[width="224"] {
+    position: absolute;
+    top: 50%;
+    left: 1.5em;
+    width: 5.6em; /* 224px / 16px / 2.5 */
+    height: 3.2083333333em; /* 77px / 16px / 1.5 */
+    margin-top: -1.6041666667em;  /* 3.2083333333em / 2 */
+  }
+  .ready.page li a img[width="224"] {
+    width: 5.6em; /* 224px / 16px / 2.5 */
+    height: 1.925em; /* 77px / 16px / 2.5 */
+    margin-top: -0.9625em;  /* 1.925em / 2 */
+  }
+  .ready.page li a svg[width="20"] {
+    position: absolute;
+    margin-top: -0.75em;
+    top: 50%;
+    right: 1.5em;
+  }
+  /*
+  .ready-list a {
     background-color: rgb(234, 234, 234);
     color: rgb(102, 102, 102);
     text-transform: none;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    padding-left: 1.5em;
   }
-  .option-list.has-logos a img {
+  .ready-list a span {
+    padding: 1.5em 1.5em 1.5em 9em;
+    position: relative;
+  }
+  .ready-lista img,
+  .ready-list a svg.icon {
+    position: absolute;
+    left: 1.5em;
+  }
+  .ready-list a img {
     vertical-align: middle;
     margin-right: 1.5em;
     width: 3em;
     height: auto;
   }
-  .option-list.has-logos a svg.icon {
+  .ready-list a svg.icon {
     width: 3em;
     height: 3em;
     margin-right: 1.5em;
   }
+  */
 
   /* For the header on the preview page */
   .powered-by h1 svg.icon {
@@ -2101,8 +2224,9 @@
   }
 
   /* Sometimes the push card is a link. */
-  .push-card:focus,
-  .push-card:active {
+  .push-card:hover,
+  .push-card:active,
+  .push-card:focus {
     color: black;
     color: rgba(0, 0, 0, 0.95);
   }
@@ -2194,6 +2318,7 @@
     color: rgb(51, 51, 51);
     color: rgba(0, 0, 0, 0.8);
   }
+  .push-card .website a:hover,
   .push-card .website a:active,
   .push-card .website a:focus {
     color: black;
@@ -2233,6 +2358,7 @@
     margin: -0.75em -1.125em;
     padding: 0.75em  1.125em;
   }
+  .push-card .meta p a:hover,
   .push-card .meta p a:active,
   .push-card .meta p a:focus {
     background-color: rgba(0, 0, 0, 0.1);
@@ -2302,16 +2428,22 @@
     background-color: rgb(59, 89, 153); /* @facebook */
     color: white;
   }
+  .login  .action a:hover,
   .login  .action a:active,
   .login  .action a:focus,
+  .signup .action a:hover,
   .signup .action a:active,
   .signup .action a:focus,
+  .dialog.page .action a:hover,
   .dialog.page .action a:active,
   .dialog.page .action a:focus,
+  .dialog.page .action button:hover,
   .dialog.page .action button:active,
   .dialog.page .action button:focus,
+  .dialog.page .details    button:hover,
   .dialog.page .details    button:active,
   .dialog.page .details    button:focus,
+  .push-card   .details    button:hover,
   .push-card   .details    button:active,
   .push-card   .details    button:focus {
     background: black;
@@ -2344,6 +2476,7 @@
     color: rgb(204, 204, 204);
     color: rgba(255, 255, 255, 0.8);
   }
+  .push-card .website a:hover,
   .push-card .website a:active,
   .push-card .website a:focus {
     color: white;
@@ -2630,6 +2763,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5em;
   }
+  .toggle-mixable button:hover,
   .toggle-mixable button:active,
   .toggle-mixable button:focus {
     background-color: black;
@@ -2842,12 +2976,15 @@
   .file input[type="file"] ~ span {
     margin-left: 0.125em;
   }
-  .file button:focus,
+  .file button:hover,
   .file button:active,
-  .file input[type="file"]:focus  ~ .icon,
+  .file button:focus,
+  .file input[type="file"]:hover  ~ .icon,
   .file input[type="file"]:active ~ .icon,
-  .file input[type="file"]:focus   ~ span,
-  .file input[type="file"]:active  ~ span {
+  .file input[type="file"]:focus  ~ .icon,
+  .file input[type="file"]:hover   ~ span,
+  .file input[type="file"]:active  ~ span,
+  .file input[type="file"]:focus   ~ span {
     color: black;
   }
 
@@ -2914,8 +3051,9 @@
     width: 1em;
     height: 1em;
   }
-  form .images li button:focus  span,
-  form .images li button:active span {
+  form .images li button:hover  span,
+  form .images li button:active span,
+  form .images li button:focus  span {
     opacity: 1;
   }
   form .images + p {
@@ -3005,8 +3143,10 @@
     background: rgba(0, 0, 0, 0.5);
     border: 0.125em solid white;
   }
+  .image-viewer button:hover,
   .image-viewer button:active,
   .image-viewer button:focus,
+  .image-viewer .action a:hover,
   .image-viewer .action a:active,
   .image-viewer .action a:focus {
     background-color: black;
@@ -3196,6 +3336,7 @@
     height: auto;
     transition: opacity 0.2s;
   }
+  .mix-list a:hover  img,
   .mix-list a:active img,
   .mix-list a:focus  img {
     opacity: 0.75;
@@ -3229,6 +3370,7 @@
     -webkit-justify-content: center;
             justify-content: center;
   }
+  .mix-list .add a:hover,
   .mix-list .add a:active,
   .mix-list .add a:focus {
     background-color: rgba(255, 49, 102, 0.85); /* @strawberry */
@@ -3359,6 +3501,7 @@
   .mix footer .attaboyed {
     color: rgb(250, 56, 136); /* @strawberry */
   }
+  .mix footer p a:hover,
   .mix footer p a:active,
   .mix footer p a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -3667,6 +3810,7 @@
   .signup.page > header .next {
     color: rgb(250, 56, 136); /* @strawberry */
   }
+  .signup.page > header .next:hover,
   .signup.page > header .next:active,
   .signup.page > header .next:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -3766,6 +3910,9 @@
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
+  .settings .introduction {
+    margin-bottom: 3em;
+  }
   .settings .introduction svg.icon {
     display: block;
     width: 4.5em;
@@ -3779,13 +3926,20 @@
     font-size: 1.125em; /* 18px / @font-size */
     line-height: 1.3333333333em;
     color: rgb(102, 102, 102); /* @tin */
-    margin-bottom: 3em;
   }
   .settings .introduction h2 strong {
     font-size: 1.3333333333em; /* 24px / 18px */
     color: black;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
+  }
+  .settings .introduction p {
+    text-align: center;
+
+    /* @note */
+    font-size: 0.875em;
+    margin-top: 1.5em;
+    color: rgb(153, 153, 153); /* @nickel */
   }
 
   /* SHIM: Reduce the vertical space between sections, during onboarding */
@@ -4063,6 +4217,7 @@
     padding: 1.5em;
     text-align: left;
   }
+  .switch li a:hover,
   .switch li a:active,
   .switch li a:focus {
     opacity: 0.75;
@@ -4162,14 +4317,18 @@
   .dialog.page    button.restart {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
+  .dialog.page .action a.reinstall:hover,
   .dialog.page .action a.reinstall:active,
   .dialog.page .action a.reinstall:focus,
+  .dialog.page    button.reinstall:hover,
   .dialog.page    button.reinstall:active,
   .dialog.page    button.reinstall:focus {
     background-color: rgb(215, 34, 44); /* dark apple */
   }
+  .dialog.page .action a.restart:hover,
   .dialog.page .action a.restart:active,
   .dialog.page .action a.restart:focus,
+  .dialog.page    button.restart:hover,
   .dialog.page    button.restart:active,
   .dialog.page    button.restart:focus {
     background-color: rgb(85, 141, 207); /* dark boysenberry */
