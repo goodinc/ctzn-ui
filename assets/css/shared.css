@@ -4489,6 +4489,20 @@
     padding-bottom: 1.5em;
   }
 
+  .signup.page > div,
+  .signup.page > div + aside {
+    background: white;
+  }
+  .signup.page > div {
+    margin-bottom: 0;
+  }
+  .signup.page > div + aside {
+    margin-top: 0;
+  }
+  .signup.page aside .note {
+    margin-top: 0;
+  }
+
   .ready.page > div {
     background: white;
     padding-top: 1.875em;
