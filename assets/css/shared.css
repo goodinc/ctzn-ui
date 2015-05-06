@@ -502,6 +502,7 @@
   form .submit button,
   form .submit a {
     font-size: 1.25em;
+    font-weight: inherit;
   }
 
   .signup.page .note,
