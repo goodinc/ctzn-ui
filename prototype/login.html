@@ -277,16 +277,23 @@
     <header>
       <h1>Log In</h1>
 
-      <a href="#start" class="back">
-        Cancel
+      <a href="" class="back">
+        <svg class="icon"><use xlink:href="#back" /></svg>
+        <span>Go Back</span>
       </a>
     </header>
 
-    
+    <div>
+      <p class="action facebook">
+        <a href="#facebook">
+          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg>
+          <span>Log in with Facebook</span>
+        </a>
+      </p>
+    </div>
 
-    
-
-    <form class="has-icon">
+    <form action="" method="post" class="has-icon">
+      <h2 class="or"><span>Or</span></h2>
       <p class="text">
         <label>
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-circle"></use><foreignObject>Username</foreignObject></svg><br>
@@ -298,22 +305,12 @@
           <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#padlock"></use><foreignObject>Password</foreignObject></svg><br>
           <input type="password" placeholder="Password">
         </label>
-        <em class="note"><a href="">Forgot?</a></em>
+        <em class="note"><a href="">Forgot password?</a></em>
       </p>
       <p class="submit">
-        <button disabled="">Next</button>
+        <button type="submit">Log in</button>
       </p>
     </form>
-
-    <div>
-      <h2 class="or"><span>Or</span></h2>
-      <p class="action facebook">
-        <a href="#facebook">
-          <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg>
-          <span>Log in with Facebook</span>
-        </a>
-      </p>
-    </div>
   </section>
 
 </body>

@@ -277,12 +277,13 @@
     <header>
       <h1>Create Account</h1>
 
-      <a href="#start" class="back">
-        <svg class="icon"><use xlink:href="#back" /><foreignobject>Go Back</foreignobject></svg>
+      <a href="" class="back">
+        <svg class="icon"><use xlink:href="#back" /></svg>
+        <span>Go Back</span>
       </a>
     </header>
 
-    <form class="has-icon">
+    <form action="" method="post" class="has-icon">
       <p class="text">
         <label>
           <svg class="icon"><use xlink:href="#user-circle" /><foreignobject>Username</foreignobject></svg><br />
@@ -303,13 +304,13 @@
       </p>
       <p class="text">
         <label>
-          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>Repeat Password</foreignobject></svg><br />
-          <input type="password" placeholder="Repeat Password" name="password_confirm" />
+          <svg class="icon"><use xlink:href="#padlock" /><foreignobject>Confirm Password</foreignobject></svg><br />
+          <input type="password" placeholder="Confirm Password" name="password_confirm" />
         </label>
       </p>
       <p class="note">Password must be at least 4 characters.</p>
       <p class="submit">
-        <button>Next</button>
+        <button type="submit">Next</button>
       </p>
     </form>
   </section>

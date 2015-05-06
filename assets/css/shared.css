@@ -460,6 +460,7 @@
     margin-top: 0.75em;
   }
   form p.submit {
+    margin-top: 1.5em;
     text-align: right;
   }
   form ul.submit:after {
@@ -494,10 +495,9 @@
   .signup.page .note,
   form .note {
     display: block;
-    text-align: right;
     font-style: italic;
     font-size: 0.875em;
-    margin-top: 0.75em;
+    margin-top: 1.5em;
     color: rgb(153, 153, 153); /* @nickel */
   }
 
@@ -1689,10 +1689,26 @@
     max-width: 32em; /* image width / font-size (512px / 16px) */
     margin: 0 auto;
   }
+
   .page > div:last-child,
   .page > form:last-child,
   .page > aside:last-child {
     padding-bottom: 4.5em;
+  }
+
+  /* OPTIONAL: Spact things out a bit, if the screen is tall. */
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    .start.page > div,
+    .page > header + div,
+    .page > header + form {
+      margin-top: 3em;
+    }
+
+    /* Don’t add space above a push-card (since it spans the full-width of the screen). */
+    .page > div.push-card,
+    .page > div.preview {
+      margin-top: 0;
+    }
   }
 
   /* SHIM: Add extra padding to the bottom of pages with forms, to prevent the virtual keyboard
@@ -1702,21 +1718,6 @@
   .start.page >    div:last-child,
   .post.page >     div:last-child {
     padding-bottom: 17.5em;
-  }
-  .page .submit {
-    margin-top: 0.75em;
-  }
-  .page > aside {
-    padding-top: 0;
-  }
-  .page aside {
-    margin-top: 1.5em;
-  }
-  .submit + aside {
-    margin-top: 3em;
-  }
-  .page > form > p:first-child {
-    margin-top: 0;
   }
 
   /* For the editor, preview and dialog pages */
@@ -1738,6 +1739,20 @@
     margin-bottom: 0.75em;
     font-size: inherit;
     line-height: inherit;
+  }
+
+  /* For the settings pages during onboarding? */
+  .page > aside {
+    padding-top: 0;
+  }
+  .page aside {
+    margin-top: 1.5em;
+  }
+  .submit + aside {
+    margin-top: 3em;
+  }
+  .page > form > p:first-child {
+    margin-top: 0;
   }
 
 
@@ -1845,16 +1860,13 @@
   }
 
   /* OPTIONAL: Position the submit button in the header */
-  .page > header ~ form .submit {
+  .post-editor.page > header ~ form .submit,
+  .mix-editor.page  > header ~ form .submit {
     position: absolute;
     z-index: 2;
     top: 0.375em;
     right: 0.375em;
     margin: 0;
-  }
-  .page > header ~ form .submit.warning {
-    margin-top: 0.75em;
-    position: static;
   }
 
   @media (min-width: 20em) {
@@ -1891,7 +1903,8 @@
     }
 
     /* OPTIONAL: Position the submit button in the header */
-    .page > header ~ form .submit {
+    .post-editor.page > header ~ form .submit,
+    .mix-editor.page  > header ~ form .submit {
       position: fixed;
     }
   }
@@ -2023,24 +2036,7 @@
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
-  .onboarding a {
-    color: rgb(246, 84, 136);
-  }
-  .onboarding a:active,
-  .onboarding a:focus {
-    color: black;
-  }
-  .onboarding button {
-    background-color: rgb(246, 84, 136);
-    font-weight: normal;
-    font-size: 1.25em;
-  }
-  .onboarding button:active,
-  .onboarding button:focus {
-    background-color: black;
-  }
-
-  .onboarding .option-list a {
+  .option-list.has-logos a {
     background-color: rgb(234, 234, 234);
     color: rgb(102, 102, 102);
     text-transform: none;
@@ -2048,25 +2044,16 @@
     padding-bottom: 1.5em;
     padding-left: 1.5em;
   }
-  .onboarding .option-list a img {
+  .option-list.has-logos a img {
     vertical-align: middle;
     margin-right: 1.5em;
     width: 3em;
     height: auto;
   }
-  .onboarding .option-list a svg.icon {
+  .option-list.has-logos a svg.icon {
     width: 3em;
     height: 3em;
     margin-right: 1.5em;
-  }
-
-  .onboarding form .note {
-    margin-top: 1.5em;
-    text-align: left;
-  }
-
-  .onboarding section.page {
-    background: rgb(246, 246, 246);
   }
 
   /* For the header on the preview page */
@@ -2075,83 +2062,22 @@
     vertical-align: top;
   }
 
-  .powered-by .back svg.icon,
-  .onboarding.page > header .back svg.icon {
+  /* For back buttons with both an icon and a label */
+  .page > header .back svg.icon {
     display: inline;
     margin-right: 0.5em;
     vertical-align: top;
   }
-  .powered-by .back svg.icon + span
-  .onboarding.page > header .back svg.icon + span {
+  .page > header .back svg.icon:last-child {
+    margin-right: 0;
+  }
+  .page > header .back svg.icon + span {
     position: absolute;
     left: -9999px;
   }
   @media (min-width: 35em) {
-    .powered-by .back svg.icon + span
-    .onboarding.page > header .back svg.icon + span {
+    .page > header .back svg.icon + span {
       position: static;
-    }
-  }
-
-  /*
-  .onboarding.page > form {
-    padding-top: 1px;
-  }
-  .onboarding.page > form {
-    padding-top: 3em;
-  }
-  .onboarding.page > div {
-    padding-top: 3em;
-    padding-bottom: 1px;
-  }
-  .onboarding.page > div {
-    padding-top: 3em;
-  }
-  */
-  .onboarding.page > div + aside {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-  }
-
-  .onboarding.page > form:last-child {
-    padding-bottom: 1.5em;
-  }
-  .onboarding.page > div,
-  .onboarding.page > form,
-  .onboarding.page > aside {
-    max-width: 28em;
-  }
-  .onboarding > div,
-  .onboarding > form,
-  .onboarding > div + aside {
-    background: white;
-  }
-
-  .onboarding.page > header .back svg.icon {
-    display: inline;
-    margin-right: 0.5em;
-    vertical-align: top;
-  }
-  .onboarding.page > header .back .icon + span {
-    position: absolute;
-    left: -9999px;
-  }
-  @media (min-width: 35em) {
-    .onboarding.page > header .back .icon + span {
-      position: static;
-    }
-  }
-
-  .onboarding.page > .push-card {
-      max-width: 28em;
-  }
-  @media (min-width: 35em) and (min-height: 25em) {
-    .onboarding.page > div:first-child,
-    .onboarding.page > header + div,
-    .onboarding.page > .push-card {
-      margin-top: 3em;
     }
   }
 
@@ -2308,9 +2234,11 @@
   }
 
   /* Join Button */
+  /*
   .start.page > div {
     margin-top: 1.5em;
   }
+  */
   .push-card form {
     margin-top: 1.875em;
     margin-bottom: 0;
@@ -2426,8 +2354,6 @@
 
   /* OPTIONAL: Space things out a little more on tall screens */
   @media (min-height: 500px) {
-    .signup.page > div,
-    .start.page  > div,
     .push-card .details {
       margin-top: 3em;
     }
@@ -2890,10 +2816,7 @@
     height: 6.75em; /* (@line-height x 4) + (0.375em x 2) */
     box-sizing: border-box;
   }
-  @media (min-height: 40em) and (min-width: 45em) {
-    .page > header + form {
-      margin-top: 3em;
-    }
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
     .post textarea {
       height: 9.75em;
     }
@@ -3724,42 +3647,6 @@
     margin: 0.5em auto 0;
     height: 3em;
     width: 100%;
-  }
-  .start.page aside a {
-    background: transparent;
-    background: rgba(0, 0, 0, 0.05);
-    color: black;
-    border-width: 0;
-  }
-  .start.page aside a:active,
-  .start.page aside a:focus {
-    background: rgba(0, 0, 0, 0.15);
-    color: white;
-  }
-
-  /* OPTIONAL: Position the login button at the top */
-  .start.page {
-    padding-top: 1.5em; 
-  }
-  .start.page aside {
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: right;
-  }
-  .start.page aside p {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .start.page aside a {
-    text-align: right;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
   }
 
 
