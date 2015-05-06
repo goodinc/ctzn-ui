@@ -837,7 +837,7 @@
     /* @h2 */
     font-size     : 1.875em;   /* 30px / @font-size */
     line-height   : 1.2em;     /* 36px / 30px  */
-    margin-top    : 1.2em;
+    margin-top    : 0;
     margin-bottom : 0.6em;     /* 1.2em / 2 */
   }
   .empty-message ul,
@@ -1591,7 +1591,7 @@
     box-sizing: border-box;
 
     /* Make space for “.create” */
-    padding-bottom: 1.5em;
+    padding-bottom: 6em;
   }
 
   /* Update Indicator */
@@ -1912,6 +1912,7 @@
   .post-editor.page  > header ~ form .submit button,
   .mix-editor.page   > header ~ form .submit button {
     font-size: inherit;
+    font-weight: bold;
   }
 
   @media (min-width: 20em) {
@@ -4507,9 +4508,6 @@
   .ready.page > div {
     background: white;
     padding-top: 1.875em;
-    padding-left: 0.375em;
-    padding-right: 0.375em;
-    padding-bottom: 0.375em;
   }
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
     .ready.page > div {
@@ -4551,8 +4549,8 @@
   }
   @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
     .ready.page ul a {
-      margin-left: -0.375em;
-      margin-right: -0.375em;
+      margin-left: -1.25em;
+      margin-right: -1.25em;
     }
   }
   .ready.page li a img + br,
