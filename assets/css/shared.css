@@ -4563,7 +4563,7 @@
     height: 1.925em; /* 77px / 16px / 2.5 */
     margin-top: -0.9625em;  /* 1.925em / 2 */
   }
-  .ready.page li a svg[width="20"] {
+  .ready.page li a svg.icon {
     position: absolute;
     margin-top: -0.75em;
     top: 50%;
