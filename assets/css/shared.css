@@ -1704,6 +1704,7 @@
 
   section.page {
     background-color: rgb(250, 250, 250); /* @casper */
+    background-color: rgb(246, 246, 246);
     color: rgb(5, 5, 5); /* @tungsten */
 
     min-height: 100%;
@@ -4484,7 +4485,7 @@
     font-weight: inherit;
     font-size: 1.5em;
     line-height: inherit;
-    padding: 0.75em;
+    padding: 1.5em 0.75em;
     margin: 0;
     text-transform: lowercase;
     text-align: center;
