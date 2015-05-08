@@ -28,6 +28,9 @@
 <!-- /ko -->
 
 
-## Find the icon elements…
+## Find the icon elements within a label…
 
-<svg class="icon"><use xlink:href="#$1" /><foreignobject>$2</foreignobject></svg>
+<label>([\s]+)<svg class="icon"><use xlink:href="#([^"]+)" /><foreignobject>([^<]+)</foreignobject></svg>
+
+And replace…
+<label>$1<svg class="icon"><use xlink:href="#$2" /></svg><span>$3</span><br />

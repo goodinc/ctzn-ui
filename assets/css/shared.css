@@ -542,8 +542,10 @@
     line-height: 1.5;
     box-sizing: border-box;
     transition: border-color 0.2s;
-    border-width: 0;
     display: inline-block;
+    background: white;
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
+    margin-top: 0.25em;
   }
   textarea {
     display: block;
@@ -557,6 +559,14 @@
     http://stackoverflow.com/questions/262158/disabled-input-text-color */
     -webkit-text-fill-color: rgb(153, 153, 153); /* @nickel */
   }
+  .supports-placeholder input[type="text"],
+  .supports-placeholder input[type="email"],
+  .supports-placeholder input[type="password"],
+  .supports-placeholder input[type="number"],
+  .supports-placeholder textarea {
+    margin-top: 0;
+    border-width: 0;
+  }
 
 
   /* =Labels
@@ -568,8 +578,6 @@
     display: none;
   }
   .text label {
-    background: white;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     display: block;
     /*
     border-radius: 0.25em;
@@ -577,6 +585,10 @@
     padding-top: 0.1875em;
     padding-bottom: 0.1875em;
     position: relative;
+  }
+  .supports-placeholder .text label {
+    background: white;
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
 
     /* Make space for the success & error icons */
     padding-right: 1.75em;
@@ -590,7 +602,7 @@
     margin-left: 0;
     padding-left: 0;
   }
-  form .text li + li label {
+  .supports-placeholder form .text li + li label {
     border-top-width: 0;
   }
   form .text li:first-of-type label {
@@ -604,11 +616,11 @@
   .text.error label .icon:first-child {
     color: rgb(255, 49, 59); /* @apple */
   }
-  .text label span:first-child {
+  .text label span {
     color: rgb(153, 153, 153); /* @nickel */
-    padding: 0.75em;
+    padding: 0 0.75em;
   }
-  .supports-placeholder .text label span:first-child {
+  .supports-placeholder .text label span {
     /* @hidden-accessible */
     position: absolute;
     left: -9999px;
@@ -617,11 +629,15 @@
     content: "";
     position: absolute;
     right: 0.5em;
-    top: 0;
+    top: 0.25em;
     width: 1.5em;
-    height: 100%;
+    height: 1.5em;
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .supports-placeholder .success label:after {
+    top: 0;
+    height: 100%;
   }
   .success label:after {
     /* @icon-checkmark */ /* @pear */
@@ -632,15 +648,8 @@
 
   /* =Label Icons
   ----------------------------------------------- */
-  form.has-icon .text label {
-    padding-left: 2.5em;
-  }
   .text label .icon:first-child {
-    position: absolute;
-    left: auto;
-    margin-left: -1.875em;
-    margin-top: 0.375em;
-
+    margin-left: 0.25em;
     /* @item-icon */
     width: 1.75em;
     height: 1.75em;
@@ -648,6 +657,17 @@
   }
   .disabled label .icon:first-child {
     color: rgb(240, 240, 240);
+  }
+
+  .supports-placeholder form.has-icon .text label {
+    padding-left: 2.5em;
+  }
+  .supports-placeholder .text label .icon:first-child {
+    margin-left: 0;
+    position: absolute;
+    left: auto;
+    margin-left: -1.875em;
+    margin-top: 0.25em;
   }
 
 
