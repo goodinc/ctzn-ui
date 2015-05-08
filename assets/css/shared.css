@@ -463,7 +463,8 @@
   -----------------------------------------------
   ----------------------------------------------- */
 
-  form p + p {
+  form p + p,
+  form li + li {
     margin-top: 0.75em;
   }
   form ul.text + .text {
@@ -487,6 +488,7 @@
   }
   form ul.submit li {
     float: right;
+    margin-top: 0;
     margin-left: 0.375em;
   }
   form ul.submit a {
@@ -601,6 +603,9 @@
     list-style: none;
     margin-left: 0;
     padding-left: 0;
+  }
+  .supports-placeholder form .text li + li {
+    margin-top: 0;
   }
   .supports-placeholder form .text li + li label {
     border-top-width: 0;
