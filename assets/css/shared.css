@@ -42,6 +42,11 @@
     border-width: 0;
   }
 
+  /* Older browsers sometimes render these inline */
+  header, footer, section, article, aside, nav, hgroup {
+    display: block;
+  }
+
 
   /* =Type
   ----------------------------------------------- */
@@ -150,8 +155,8 @@
     border-radius: 50%;
     -webkit-animation : spin 1.3s infinite linear;
             animation : spin 1.3s infinite linear;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
   .loading-icon:after {
@@ -168,8 +173,8 @@
     border-radius: 50%;
     -webkit-animation : spin 2s infinite linear;
             animation : spin 2s infinite linear;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
 
@@ -546,8 +551,8 @@
     width: 100%;
     padding: 0.375em 0.75em;
     line-height: 1.5;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     transition: border-color 0.2s;
     display: inline-block;
@@ -754,8 +759,8 @@
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
     width: 100%;
     padding: 0.75em 1.5em;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     position: absolute;
     z-index: 9999; /* @infinity */
@@ -814,8 +819,8 @@
   section.update-countdown,
   section.upload-message {
     padding: 0.75em 1.5em;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver */
     line-height: 1.3333333333; /* @line-height / 1.125em */
@@ -884,8 +889,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     z-index: 9999; /* @infinity */
   }
@@ -1272,8 +1277,8 @@
     color: rgb(51, 51, 51); /* @iron */
     text-align: center;
     width: 100%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     position: absolute;
     left: -9999px;
@@ -1336,8 +1341,8 @@
     position: relative;
     padding: 0.75em 0.75em 0.75em 1em;
     z-index: 9;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
   }
@@ -1639,8 +1644,8 @@
       position: fixed;
       z-index: 1;
       width: 100%;
-      -webkit-box-sizing: border-box; 
-         -moz-box-sizing: border-box; 
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
               box-sizing: border-box;
     }
   }
@@ -1653,8 +1658,8 @@
     color: rgb(5, 5, 5); /* @tungsten */
 
     min-height: 100%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
 
     /* Make space for “.create” */
@@ -1702,8 +1707,8 @@
     background: rgb(51, 51, 51); /* @iron */
     color: rgb(153, 153, 153); /* @nickel */
     width: 100%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     transition: opacity 0.2s;
     text-align: center;
@@ -1776,8 +1781,8 @@
     color: rgb(5, 5, 5); /* @tungsten */
 
     min-height: 100%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
   .page > div,
@@ -1860,8 +1865,8 @@
   .page > header {
     text-align: center;
     padding: 3em 0.75em 0.75em;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     background-color: rgb(51, 51, 51); /* @iron */
     color: white;
@@ -2005,8 +2010,8 @@
       top: 0;
       left: 0;
       width: 100%;
-      -webkit-box-sizing: border-box; 
-         -moz-box-sizing: border-box; 
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
               box-sizing: border-box;
       padding: 0.75em 6em; /* The right/left padding numbers here are arbitrary, but ideally large
                               enough to prevent the title from overlapping with the back/next buttons. */
@@ -2066,8 +2071,8 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     border-radius: 0.25em;
     width: 100%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     background: white;
     color: rgb(250, 56, 136); /* @strawberry */
@@ -2155,8 +2160,8 @@
     border-radius: 0;
     border-left-width: 0;
     border-right-width: 0;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     background-image: none;
   }
@@ -2873,8 +2878,8 @@
     position: relative;
     z-index: 1;
     padding: 1.5em;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
   @media (min-aspect-ratio: 1/1) {
@@ -2936,8 +2941,8 @@
   .post.page .comments textarea,
   .post.text textarea {
     height: 6.75em; /* (@line-height x 4) + (0.375em x 2) */
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     border-radius: 0.125em;
   }
@@ -3336,8 +3341,8 @@
     height: 80%;
     border-radius: 0.25em;
     margin: 10%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     text-align: center;
     text-decoration: none;
@@ -3380,8 +3385,8 @@
     width: 95%; /* image size / @font-size (125px / 16px) */
     height: 95%;
     margin: 2.5%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     text-decoration: none;
   }
@@ -3400,8 +3405,8 @@
     min-width: 100px;
     min-height: 100px;
     margin: 2.5%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
   .mix-list .mix-error > span {
@@ -3638,8 +3643,8 @@
     height: auto;
     height: 33.333333333vw;
     border: 1px solid black;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     position: relative;
     z-index: 1;
@@ -3676,8 +3681,8 @@
     width: 100%;
     min-height: 100%;
     border: 1px solid black;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
     top: 0;
     left: 0;
@@ -4184,8 +4189,8 @@
     color: white;
     color: rgba(255, 255, 255, 0.95);
     min-height: 100%;
-    -webkit-box-sizing: border-box; 
-       -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
   .switch ul,
