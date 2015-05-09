@@ -339,7 +339,14 @@ A healthy org has healthy practice. Company bike helmets to accompany company bi
         <footer class="activity">
         
           <ul class="meta">
-            <li><span>1</span> love</li>
+            <li>
+              <svg class="icon"><use xlink:href="#heart" /><foreignobject>Heart</foreignobject></svg>
+              <span>2</span>
+            </li>
+            <li>
+              <svg class="icon"><use xlink:href="#star" /></svg>
+              <span>Favorite</span>
+            </li>
           </ul>
 
           <div class="comments">
@@ -425,25 +432,27 @@ A healthy org has healthy practice. Company bike helmets to accompany company bi
 
           <ul class="action">
             <li>
-              <button role="checkbox" aria-checked="false">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+              <button role="checkbox" aria-checked="true">
+                <svg class="icon"><use xlink:href="#heart" /><foreignobject>Heart</foreignobject></svg>
               </button>
             </li>
             <li>
-              <a href="#add-comment">
-                <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reply"></use></svg> Comment
+              <a href="">
+                <svg class="icon"><use xlink:href="#reply" /></svg>
+                Comment
               </a>
             </li>
-            
             <li>
-              
-                <a href="#post-options" class="options">
-                  <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                </a>
-              
+              <button role="checkbox" aria-checked="true">
+                <svg class="icon"><use xlink:href="#star" /><foreignobject>Featured</foreignobject></svg>
+              </button>
+            </li>
+            <li>
+              <a href="">
+                <svg class="icon"><use xlink:href="#more" /><foreignObject>Options</foreignObject></svg>
+              </a>
             </li>
           </ul>
-
         </footer>
       </article>
     </div>

@@ -177,9 +177,6 @@
   body.pattern .page > header {
     position: absolute;
   }
-  body.pattern .page > header ~ form .submit {
-    position: absolute;
-  }
 
   body.pattern .start.page aside {
     position: relative;
