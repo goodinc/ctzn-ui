@@ -20,8 +20,10 @@
     })();
   </script>
 
+  <script src="../assets/js/supports.js"></script>
+
 </head>
-<body>
+<body class="pattern">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -276,28 +278,201 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
     <h2><a href="../"><svg class="icon" width="80" height="30"><use xlink:href="#ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
     <nav>
       <ul>
-        <li><a href="../patterns/">Patterns</a></li>
-        <li class="active"><a href="../messages/">Messages</a></li>
-        <li><a href="../prototype/">Prototype</a></li>
-        <li><a href="../email/">Email</a></li>
+        <li><a href="../design/">Design</a></li>
+        <li><a href="../build/">Build</a></li>
+        <li class="active"><a href="../test/">Test</a></li>
       </ul>
     </nav>
   </header>
 
-  <h1>Dialog (error)</h1>
+  <h1>Developer Tools</h1>
 
-  <section class="dialog page instructions">
+  <p class="developer action">
+    <a href="#"><svg class="icon"><use xlink:href="#settings"></use><foreignobject>Show Developer Tools</foreignobject></svg></a>
+  </p>
+
+  <section class="developer dialog page">
+
+    <a href="#close">
+      <svg class="icon">
+        <use xlink:href="#close"></use>
+        <foreignobject>Close</foreignobject>
+      </svg>
+    </a>
+
     <div>
-      <svg class="icon alert"><use xlink:href="#alert"></use></svg>
-      <h1>CTZN can’t save data.</h1>
-      <p>If this is a private window, please open this page in a regular window. Otherwise please try again in another browser or on another device.</p>
-      <p style="margin-top: 3em;">CTZN is built for <a href="https://www.android.com/phones/">Android</a> and <a href="https://www.apple.com/iphone/">iPhone</a>.</p>
-      <ul class="logos">
-        <li><a href="https://www.android.com/phones/"><img src="../assets/images/logos/android.png" width="100" height="100" alt="Android"></a></li>
-        <li><a href="https://www.apple.com/iphone/"><img src="../assets/images/logos/iphone.png" width="100" height="100" alt="iPhone"></a></li>
+      <svg class="icon"><use xlink:href="#settings"></use></svg>
+
+      <h1>Developer Tools</h1>
+
+      <ul class="action">
+        <li>
+          <button class="restart">Restart</button>
+        </li>
+        <li>
+          <button class="reinstall" onclick="good.reinstall();">Reinstall</button>
+        </li>
+        <li>
+          <button>Upload logs</button>
+        </li>
+        <li>
+          <button>Clear upload queue</button>
+        </li>
       </ul>
-      <p style="margin-top: 3em;">If you’re on a laptop or desktop, it also works in <a href="http://www.google.com/chrome/">Chrome</a> and <a href="http://www.apple.com/safari/">Safari</a>.</p>
+
+      <dl>
+        <dt>Version</dt>
+        <dd>6d97a0c8871a9d945abff65bb1c89b96</dd>
+        <dt>DB</dt>
+        <dd>/1dbQ+ZBhuswZ+4SjyXCpB7CSdg=</dd>
+      </dl>
+
+      <form>
+        <h2>Diagnostic Report:</h2>
+        <p class="action">
+          <button>Generate</button>
+        </p>
+        <pre>Generated at Mon Feb 02 2015 15:51:19 GMT-0800 (PST)
+navigator.userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.94 Safari/537.36
+good.currentScreen: {"name":"push"}
+good.realtimeConnectionState: CONNECTED
+good.appCacheStatus: IDLE
+good.IS_HYBRID_APP: false
+GOODConfig.APPCACHE_VERSION: 259345111b2c59164b0f5eae5d24219c
+
+GOODConfig.DB_FORMAT_VERSION: /1dbQ+ZBhuswZ+4SjyXCpB7CSdg=
+GOODConfig.BASE_URL: https://m.ctznapp.demo.goodalpaca.com/
+GOODConfig.BASE_IMAGE_URL: https://m.ctznapp.demo.goodalpaca.com/
+GOODConfig.BASE_WEB_URL: http://www.ctznapp.demo.goodalpaca.com/
+GOODConfig.MIXPANEL_TOKEN: bd1e62b941493af2b6ea7cb737671a05
+GOODConfig.MIXPANEL_API_HOST: https://m.ctznapp.demo.goodalpaca.com/p/mxpnl
+GOODConfig.AIRBRAKE_API_KEY: 6fb40acfe14526118e7985b65a2d8c05
+GOODConfig.REALTIME_APP_KEY: 3u40KC
+GOODConfig.REALTIME_URL: /p/ortc/server/2.1/
+GOODConfig.MAX_POST_SIZE: 10485760
+localStorage.current_push_id: 17
+localStorage.current_user_id: 4
+localStorage.last_logged_in_user_id: 4
+localStorage.last_sync: 2015-02-02 23:51:02
+localStorage.realtime_auth_token: 86fe4489a9a92c766041fc150b967d5b4205bb94
+localStorage.sync_db_format_version: /1dbQ+ZBhuswZ+4SjyXCpB7CSdg=
+localStorage.sync_reference_point: 2015-02-02 23:29:21
+localStorage.sync_schema: soUJxv8JBIzGjIiD1w4S9qT1us4=
+WebSQL database: ctzn
+Error examining table ctzn.__WebKitDatabaseInfoTable__: could not prepare statement (23 access to __WebKitDatabaseInfoTable__.key is prohibited)
+Table persisted_queue__upload_post has 0 row(s), estimated 0 bytes
+Table posts has 468 row(s), estimated 78,239 bytes
+Table users has 25 row(s), estimated 2,701 bytes
+Table push_users has 25 row(s), estimated 925 bytes
+Table attaboys has 352 row(s), estimated 23,232 bytes
+Table pushes has 1 row(s), estimated 100 bytes
+Table social_media_feeds has 0 row(s), estimated 0 bytes
+Table notifications has 23 row(s), estimated 1,771 bytes
+Table mixes has 11 row(s), estimated 2,218 bytes
+Table push_hashtags has 2 row(s), estimated 140 bytes
+Database ctzn estimated size 109,326 bytes
+WebSQL database: ctzn_logs
+Error examining table ctzn_logs.__WebKitDatabaseInfoTable__: could not prepare statement (23 access to __WebKitDatabaseInfoTable__.key is prohibited)
+Table logs has 65 row(s), estimated 63,300 bytes
+Database ctzn_logs estimated size 63,300 bytes
+Estimated app-wide storage: 172,902 bytes</pre>
+      </form>
+
+      <form>
+        <h2>Simulators</h2>
+        <p>
+          <label>
+            <span>Simulate server call delay (in seconds):</span><br />
+            <input type="number" placeholder="Enter a number" />
+          </label>
+        </p>
+        <p>
+          <label>
+            <span>Simulate error on all server calls</span><br />
+            <select>
+              <option value="">Choose one</option>
+              <option value=""></option>
+              <option value="CONNECTION_ERROR">CONNECTION_ERROR</option>
+              <option value="NOT_FOUND">NOT_FOUND</option>
+              <option value="SERVICE_UNAVAILABLE_ERROR">Service Outage</option>
+              <option value="MUST_UPDATE_ERROR">Required Update</option>
+            </select>
+          </label>
+        </p>
+      </form>
+
+      <div class="logs">
+        <h2>Logs:</h2>
+        <ul>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>LOAD_PUSH_DATA_FROM_WEBSQL (at 49ms): emitted first item</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.currentPush took 0ms</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>LOAD_PUSH_DATA_FROM_WEBSQL (at 49ms): completed successfully</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>Controller "push screen" onResume()</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>showTemplate #push-screen</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>WebSQL tables updated (syncRequestNumber 1). Updating sync metadata.</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>Sync: nothing changed</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.currentPush took 147ms</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.globalDataModel took 148ms</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:16">2015-01-28 21:19:16</time><span>realtime onException: Unable to connect</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:17">2015-01-28 21:19:17</time><span>realtime onException: Unable to connect</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:21">2015-01-28 21:19:21</time><span>realtime onException: Unable to connect</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>Controller "post options" onResume()</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>showTemplate #post-options-toolbar</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>realtime onException: Unable to connect</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:23">2015-01-28 21:19:23</time><span>Controller "post options" onPause()</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:23">2015-01-28 21:19:23</time><span>removeScreen #post-options-toolbar</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>Controller "push screen" onPause()</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>removeScreen #push-screen</span>
+          </li>
+          <li>
+            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>Controller "post screen" onResume()</span>
+          </li>
+        </ul>
+      </div><!-- /.logs -->
+
+      <p class="action">
+        <a href="#close"><svg class="icon"><use xlink:href="#close"></use></svg> Close</a>
+      </p>
+
     </div>
+
   </section>
 
 </body>

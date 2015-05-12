@@ -278,24 +278,32 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
     <h2><a href="../"><svg class="icon" width="80" height="30"><use xlink:href="#ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
     <nav>
       <ul>
-        <li><a href="../patterns/">Patterns</a></li>
-        <li class="active"><a href="../messages/">Messages</a></li>
-        <li><a href="../prototype/">Prototype</a></li>
-        <li><a href="../email/">Email</a></li>
+        <li><a href="../design/">Design</a></li>
+        <li><a href="../build/">Build</a></li>
+        <li class="active"><a href="../test/">Test</a></li>
       </ul>
     </nav>
   </header>
 
-  <h1>Sending</h1>
+  <h1>Validation</h1>
 
-  <section class="upload-message" role="status">
-    <h1>
-      <!-- @placeholder-image -->
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
-      Sending
-      <span class="sending icon"></span>
-    </h1>
+  <section class="upload-message error" role="status">
+    <h1>Oops! That email address isn’t valid.</p>
   </section>
+
+  <div style="margin-top: 3em"></div>
+
+  <form>
+    <p class="validation-message">Oops! There’s something wrong with that field.</p>
+  </form>
+
+  <div class="blueberry push-card">
+    <h1 class="name">Push Card</h1>
+    <p class="about">About this push</p>
+    <form>
+      <p style="color: red; background-color: white; padding: 0.5em;">Oops! There’s something wrong with that field</p>
+    </form>
+  </div>
 
 </body>
 </html>

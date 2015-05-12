@@ -20,10 +20,8 @@
     })();
   </script>
 
-  <script src="../assets/js/supports.js"></script>
-
 </head>
-<body class="pattern">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -278,173 +276,31 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
     <h2><a href="../"><svg class="icon" width="80" height="30"><use xlink:href="#ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
     <nav>
       <ul>
-        <li><a href="../patterns/">Patterns</a></li>
-        <li class="active"><a href="../messages/">Messages</a></li>
-        <li><a href="../prototype/">Prototype</a></li>
-        <li><a href="../email/">Email</a></li>
+        <li><a href="../design/">Design</a></li>
+        <li><a href="../build/">Build</a></li>
+        <li class="active"><a href="../test/">Test</a></li>
       </ul>
     </nav>
   </header>
 
-  <h1>Sending Error</h1>
-  <p>If a post fails to upload, a message appears with options to try again or cancel.</p>
+  <h1>Dialog (error)</h1>
 
-  <section class="pattern">
+  <section class="dialog page">
+    <div>
+      <svg class="icon"><use xlink:href="#alert"></use></svg>
 
-    <section class="upload-message error" role="status">
-      <h1>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
-        <span>Unable to connect to the server, please retry later.</span>
-      </h1>
-      <ul>
+      <h1>Something went wrong while loading CTZN.</h1>
+
+      <ul class="action">
         <li>
-          <button>
-            <svg class="icon"><use xlink:href="#refresh"></use><foreignobject>Try again</foreignobject></svg>
-          </button>
-        </li>
-        <li>
-          <button>
-            <svg class="icon"><use xlink:href="#close"></use><foreignobject>Cancel</foreignobject></svg>
-          </button>
+          <a class="restart" href="">
+            <svg class="icon"><use xlink:href="#refresh"></use></svg>
+            Restart
+          </a>
         </li>
       </ul>
-    </section>
-
-<pre><code>&lt;section class=&quot;upload-message <mark>error</mark>&quot; role=&quot;status&quot;&gt;
-  &lt;h1&gt;
-    &lt;img src=&quot;…&quot; width=&quot;30&quot; height=&quot;30&quot; alt=&quot;&quot; /&gt;
-    &lt;span&gt;Unable to connect to the server, please retry later.&lt;/span&gt;
-  &lt;/h1&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;button&gt;
-        &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#refresh&quot; /&gt;&lt;foreignobject&gt;Try again&lt;/foreignobject&gt;&lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;button&gt;
-        &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#close&quot; /&gt;&lt;foreignobject&gt;Cancel&lt;/foreignobject&gt;&lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;</code></pre>
-
-  </section><!-- /.pattern -->
-  <section class="pattern">
-
-    <section class="page">
-      <header>
-        <h1>Page Title</h1>
-
-        <a href="" class="back">
-          Cancel
-        </a>
-      </header>
-
-      <div class="plumb header push-card">
-
-        <div class="image">
-          <span class="avatar">
-            <span class="size100 grape" data-content="a"></span>
-          </span>
-        </div>
-
-        <div class="details">
-          <h2 class="name">aubrey</h2>
-          <p class="joined">Joined <time datetime="2015-02-06T18:41:32.000+00:00">5 weeks ago</time></p>
-        </div>
-
-        <div class="meta">
-          <p>
-            <span class="count">4</span>
-            <span class="label">Posts</span>
-          </p>
-          <p>
-            <a href="#profile-pushes">
-              <span class="count">1</span>
-              <span class="label">Push</span>
-            </a>
-          </p>
-        </div>
-      </div>
-
-      <section class="upload-message error" role="status">
-        <h1>
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
-          <span>Unable to connect to the server, please retry later.</span>
-        </h1>
-        <ul>
-          <li>
-            <button>
-              <svg class="icon"><use xlink:href="#refresh"></use><foreignobject>Try again</foreignobject></svg>
-            </button>
-          </li>
-          <li>
-            <button>
-              <svg class="icon"><use xlink:href="#close"></use><foreignobject>Cancel</foreignobject></svg>
-            </button>
-          </li>
-        </ul>
-      </section>
-
-      <ol class="post-list">
-        <li id="post-3386">
-          <article class="post-item">
-            <header>
-              <h3>
-                  <span class="avatar"></span>
-                  <span class="avatar">
-                    <span class="size30 grape" data-content="a"></span>
-                  </span>
-                  @<span>aubrey</span>
-              </h3>
-              <p class="source">
-                
-                
-                <svg class="icon"><use xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
-                
-              </p>
-              <p>
-                <a href="#post">
-                  <time datetime="2015-03-13T17:38:25+00:00">2 hours ago</time>
-                </a>
-              </p>
-            </header>
-
-            <a href="#post" class="body"><p><img src="https://m.ctznapp.qa2.goodalpaca.com/s3/qa.ctzn/f8bbf48f8633d57cd5ee37144ddf285998227aa7=s500x500" alt="939929128917574474_3757855">
-  You guys. We have office chickens @goodhq 🐤🐥🐣</p></a>
-
-            <footer>
-            <ul class="action">
-              <li>
-                <button role="checkbox" aria-checked="false">
-                  <svg class="icon"><use xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
-                </button>
-              </li>
-              <li>
-                <a href="#post">
-                  <svg class="icon"><use xlink:href="#reply"></use></svg> Comment
-                </a>
-              </li>
-              
-              <li>
-                
-                  <a href="#post-options" class="options">
-                    <svg class="icon"><use xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
-                  </a>
-                
-              </li>
-            </ul>
-            
-            </footer>
-          </article>
-
-        </li>
-      </ol>
-
-    </section>
-
-  </section><!-- /.pattern -->
+    </div>
+  </section>
 
 </body>
 </html>

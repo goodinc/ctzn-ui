@@ -278,203 +278,172 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
     <h2><a href="../"><svg class="icon" width="80" height="30"><use xlink:href="#ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
     <nav>
       <ul>
-        <li><a href="../patterns/">Patterns</a></li>
-        <li class="active"><a href="../messages/">Messages</a></li>
-        <li><a href="../prototype/">Prototype</a></li>
-        <li><a href="../email/">Email</a></li>
+        <li><a href="../design/">Design</a></li>
+        <li><a href="../build/">Build</a></li>
+        <li class="active"><a href="../test/">Test</a></li>
       </ul>
     </nav>
   </header>
 
-  <h1>Developer Tools</h1>
+  <h1>Sending Error</h1>
+  <p>If a post fails to upload, a message appears with options to try again or cancel.</p>
 
-  <p class="developer action">
-    <a href="#"><svg class="icon"><use xlink:href="#settings"></use><foreignobject>Show Developer Tools</foreignobject></svg></a>
-  </p>
+  <section class="pattern">
 
-  <section class="developer dialog page">
-
-    <a href="#close">
-      <svg class="icon">
-        <use xlink:href="#close"></use>
-        <foreignobject>Close</foreignobject>
-      </svg>
-    </a>
-
-    <div>
-      <svg class="icon"><use xlink:href="#settings"></use></svg>
-
-      <h1>Developer Tools</h1>
-
-      <ul class="action">
+    <section class="upload-message error" role="status">
+      <h1>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+        <span>Unable to connect to the server, please retry later.</span>
+      </h1>
+      <ul>
         <li>
-          <button class="restart">Restart</button>
+          <button>
+            <svg class="icon"><use xlink:href="#refresh"></use><foreignobject>Try again</foreignobject></svg>
+          </button>
         </li>
         <li>
-          <button class="reinstall" onclick="good.reinstall();">Reinstall</button>
-        </li>
-        <li>
-          <button>Upload logs</button>
-        </li>
-        <li>
-          <button>Clear upload queue</button>
+          <button>
+            <svg class="icon"><use xlink:href="#close"></use><foreignobject>Cancel</foreignobject></svg>
+          </button>
         </li>
       </ul>
+    </section>
 
-      <dl>
-        <dt>Version</dt>
-        <dd>6d97a0c8871a9d945abff65bb1c89b96</dd>
-        <dt>DB</dt>
-        <dd>/1dbQ+ZBhuswZ+4SjyXCpB7CSdg=</dd>
-      </dl>
+<pre><code>&lt;section class=&quot;upload-message <mark>error</mark>&quot; role=&quot;status&quot;&gt;
+  &lt;h1&gt;
+    &lt;img src=&quot;…&quot; width=&quot;30&quot; height=&quot;30&quot; alt=&quot;&quot; /&gt;
+    &lt;span&gt;Unable to connect to the server, please retry later.&lt;/span&gt;
+  &lt;/h1&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;button&gt;
+        &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#refresh&quot; /&gt;&lt;foreignobject&gt;Try again&lt;/foreignobject&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;button&gt;
+        &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#close&quot; /&gt;&lt;foreignobject&gt;Cancel&lt;/foreignobject&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;</code></pre>
 
-      <form>
-        <h2>Diagnostic Report:</h2>
-        <p class="action">
-          <button>Generate</button>
-        </p>
-        <pre>Generated at Mon Feb 02 2015 15:51:19 GMT-0800 (PST)
-navigator.userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.94 Safari/537.36
-good.currentScreen: {"name":"push"}
-good.realtimeConnectionState: CONNECTED
-good.appCacheStatus: IDLE
-good.IS_HYBRID_APP: false
-GOODConfig.APPCACHE_VERSION: 259345111b2c59164b0f5eae5d24219c
+  </section><!-- /.pattern -->
+  <section class="pattern">
 
-GOODConfig.DB_FORMAT_VERSION: /1dbQ+ZBhuswZ+4SjyXCpB7CSdg=
-GOODConfig.BASE_URL: https://m.ctznapp.demo.goodalpaca.com/
-GOODConfig.BASE_IMAGE_URL: https://m.ctznapp.demo.goodalpaca.com/
-GOODConfig.BASE_WEB_URL: http://www.ctznapp.demo.goodalpaca.com/
-GOODConfig.MIXPANEL_TOKEN: bd1e62b941493af2b6ea7cb737671a05
-GOODConfig.MIXPANEL_API_HOST: https://m.ctznapp.demo.goodalpaca.com/p/mxpnl
-GOODConfig.AIRBRAKE_API_KEY: 6fb40acfe14526118e7985b65a2d8c05
-GOODConfig.REALTIME_APP_KEY: 3u40KC
-GOODConfig.REALTIME_URL: /p/ortc/server/2.1/
-GOODConfig.MAX_POST_SIZE: 10485760
-localStorage.current_push_id: 17
-localStorage.current_user_id: 4
-localStorage.last_logged_in_user_id: 4
-localStorage.last_sync: 2015-02-02 23:51:02
-localStorage.realtime_auth_token: 86fe4489a9a92c766041fc150b967d5b4205bb94
-localStorage.sync_db_format_version: /1dbQ+ZBhuswZ+4SjyXCpB7CSdg=
-localStorage.sync_reference_point: 2015-02-02 23:29:21
-localStorage.sync_schema: soUJxv8JBIzGjIiD1w4S9qT1us4=
-WebSQL database: ctzn
-Error examining table ctzn.__WebKitDatabaseInfoTable__: could not prepare statement (23 access to __WebKitDatabaseInfoTable__.key is prohibited)
-Table persisted_queue__upload_post has 0 row(s), estimated 0 bytes
-Table posts has 468 row(s), estimated 78,239 bytes
-Table users has 25 row(s), estimated 2,701 bytes
-Table push_users has 25 row(s), estimated 925 bytes
-Table attaboys has 352 row(s), estimated 23,232 bytes
-Table pushes has 1 row(s), estimated 100 bytes
-Table social_media_feeds has 0 row(s), estimated 0 bytes
-Table notifications has 23 row(s), estimated 1,771 bytes
-Table mixes has 11 row(s), estimated 2,218 bytes
-Table push_hashtags has 2 row(s), estimated 140 bytes
-Database ctzn estimated size 109,326 bytes
-WebSQL database: ctzn_logs
-Error examining table ctzn_logs.__WebKitDatabaseInfoTable__: could not prepare statement (23 access to __WebKitDatabaseInfoTable__.key is prohibited)
-Table logs has 65 row(s), estimated 63,300 bytes
-Database ctzn_logs estimated size 63,300 bytes
-Estimated app-wide storage: 172,902 bytes</pre>
-      </form>
+    <section class="page">
+      <header>
+        <h1>Page Title</h1>
 
-      <form>
-        <h2>Simulators</h2>
-        <p>
-          <label>
-            <span>Simulate server call delay (in seconds):</span><br />
-            <input type="number" placeholder="Enter a number" />
-          </label>
-        </p>
-        <p>
-          <label>
-            <span>Simulate error on all server calls</span><br />
-            <select>
-              <option value="">Choose one</option>
-              <option value=""></option>
-              <option value="CONNECTION_ERROR">CONNECTION_ERROR</option>
-              <option value="NOT_FOUND">NOT_FOUND</option>
-              <option value="SERVICE_UNAVAILABLE_ERROR">Service Outage</option>
-              <option value="MUST_UPDATE_ERROR">Required Update</option>
-            </select>
-          </label>
-        </p>
-      </form>
+        <a href="" class="back">
+          Cancel
+        </a>
+      </header>
 
-      <div class="logs">
-        <h2>Logs:</h2>
+      <div class="plumb header push-card">
+
+        <div class="image">
+          <span class="avatar">
+            <span class="size100 grape" data-content="a"></span>
+          </span>
+        </div>
+
+        <div class="details">
+          <h2 class="name">aubrey</h2>
+          <p class="joined">Joined <time datetime="2015-02-06T18:41:32.000+00:00">5 weeks ago</time></p>
+        </div>
+
+        <div class="meta">
+          <p>
+            <span class="count">4</span>
+            <span class="label">Posts</span>
+          </p>
+          <p>
+            <a href="#profile-pushes">
+              <span class="count">1</span>
+              <span class="label">Push</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <section class="upload-message error" role="status">
+        <h1>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+          <span>Unable to connect to the server, please retry later.</span>
+        </h1>
         <ul>
           <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>LOAD_PUSH_DATA_FROM_WEBSQL (at 49ms): emitted first item</span>
+            <button>
+              <svg class="icon"><use xlink:href="#refresh"></use><foreignobject>Try again</foreignobject></svg>
+            </button>
           </li>
           <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.currentPush took 0ms</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>LOAD_PUSH_DATA_FROM_WEBSQL (at 49ms): completed successfully</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>Controller "push screen" onResume()</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>showTemplate #push-screen</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>WebSQL tables updated (syncRequestNumber 1). Updating sync metadata.</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>Sync: nothing changed</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.currentPush took 147ms</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:13">2015-01-28 21:19:13</time><span>setting good.globalDataModel took 148ms</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:16">2015-01-28 21:19:16</time><span>realtime onException: Unable to connect</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:17">2015-01-28 21:19:17</time><span>realtime onException: Unable to connect</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:21">2015-01-28 21:19:21</time><span>realtime onException: Unable to connect</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>Controller "post options" onResume()</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>showTemplate #post-options-toolbar</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:22">2015-01-28 21:19:22</time><span>realtime onException: Unable to connect</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:23">2015-01-28 21:19:23</time><span>Controller "post options" onPause()</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:23">2015-01-28 21:19:23</time><span>removeScreen #post-options-toolbar</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>Controller "push screen" onPause()</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>removeScreen #push-screen</span>
-          </li>
-          <li>
-            <time datetime="2015-01-28 21:19:25">2015-01-28 21:19:25</time><span>Controller "post screen" onResume()</span>
+            <button>
+              <svg class="icon"><use xlink:href="#close"></use><foreignobject>Cancel</foreignobject></svg>
+            </button>
           </li>
         </ul>
-      </div><!-- /.logs -->
+      </section>
 
-      <p class="action">
-        <a href="#close"><svg class="icon"><use xlink:href="#close"></use></svg> Close</a>
-      </p>
+      <ol class="post-list">
+        <li id="post-3386">
+          <article class="post-item">
+            <header>
+              <h3>
+                  <span class="avatar"></span>
+                  <span class="avatar">
+                    <span class="size30 grape" data-content="a"></span>
+                  </span>
+                  @<span>aubrey</span>
+              </h3>
+              <p class="source">
+                
+                
+                <svg class="icon"><use xlink:href="#instagram"></use><foreignObject>via instagram</foreignObject></svg>
+                
+              </p>
+              <p>
+                <a href="#post">
+                  <time datetime="2015-03-13T17:38:25+00:00">2 hours ago</time>
+                </a>
+              </p>
+            </header>
 
-    </div>
+            <a href="#post" class="body"><p><img src="https://m.ctznapp.qa2.goodalpaca.com/s3/qa.ctzn/f8bbf48f8633d57cd5ee37144ddf285998227aa7=s500x500" alt="939929128917574474_3757855">
+  You guys. We have office chickens @goodhq 🐤🐥🐣</p></a>
 
-  </section>
+            <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon"><use xlink:href="#heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon"><use xlink:href="#reply"></use></svg> Comment
+                </a>
+              </li>
+              
+              <li>
+                
+                  <a href="#post-options" class="options">
+                    <svg class="icon"><use xlink:href="#more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                
+              </li>
+            </ul>
+            
+            </footer>
+          </article>
+
+        </li>
+      </ol>
+
+    </section>
+
+  </section><!-- /.pattern -->
 
 </body>
 </html>
