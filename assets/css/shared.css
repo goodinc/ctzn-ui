@@ -2055,7 +2055,7 @@
   .option-list li + li {
     margin-top: 0;
   }
-  .option-list a .icon:first-child {
+  .option-list a > .icon:first-child {
     margin-right: 0.5em; /* SHIM: 0.75em - one whitespace character */
 
     color: rgb(102, 102, 102); /* @tin */
@@ -2086,7 +2086,6 @@
   .option-list button {
     text-align: center;
   }
-  .tags.option-list button,
   .option-list a {
 
     /* @background-icon */
@@ -2099,11 +2098,6 @@
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
   }
-  .tags.option-list button {
-    text-align: left;
-    color: black;
-    background-image: none;
-  }
 
   .option-list li + li a,
   .option-list li + li button {
@@ -2114,7 +2108,12 @@
     border-radius: 0;
     position: relative;
   }
-  .option-list li .icon:last-child {
+  .tags.option-list button {
+    text-align: left;
+    color: black;
+  }
+  .tags.option-list li .icon:last-child,
+  .option-list li a[role="checkbox"] .icon:last-child {
     margin-top: -0.75em;
     position: absolute;
     top: 50%;
@@ -2370,8 +2369,8 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-  .login  .action a,
-  .signup .action a,
+  .login  > div .action a,
+  .signup > div .action a,
   .dialog.page .action a,
   .dialog.page .action button,
   .dialog.page .details    button,
@@ -2391,17 +2390,17 @@
             box-sizing: border-box;
     text-align: center;
   }
-  .login  .action.facebook a,
-  .signup .action.facebook a {
+  .login  > div .action.facebook a,
+  .signup > div .action.facebook a {
     background-color: rgb(59, 89, 153); /* @facebook */
     color: white;
   }
-  .login  .action a:hover,
-  .login  .action a:active,
-  .login  .action a:focus,
-  .signup .action a:hover,
-  .signup .action a:active,
-  .signup .action a:focus,
+  .login  > div .action a:hover,
+  .login  > div .action a:active,
+  .login  > div .action a:focus,
+  .signup > div .action a:hover,
+  .signup > div .action a:active,
+  .signup > div .action a:focus,
   .dialog.page .action a:hover,
   .dialog.page .action a:active,
   .dialog.page .action a:focus,
@@ -2453,10 +2452,10 @@
     background: rgba(0, 0, 0, 0.1);
     padding-bottom: 1.5em !important;
   }
-  .start.page aside {
+  .start.page .details aside {
     text-transform: lowercase;
   }
-  .start.page aside a {
+  .start.page .details aside a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
@@ -3802,21 +3801,6 @@
 
   /* =Log In & Sign Up
   ----------------------------------------------- */
-  .signup.page > header {
-    border-color: transparent;
-  }
-  .signup.page > header .next {
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-  .signup.page > header .next {
-    color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .signup.page > header .next:hover,
-  .signup.page > header .next:active,
-  .signup.page > header .next:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
-  }
 
   .login.page  h2.or,
   .signup.page h2.or {
@@ -3858,8 +3842,8 @@
     margin-right: auto;
   }
 
-  .login  .action a,
-  .signup .action a {
+  .login  > div .action a,
+  .signup > div .action a {
     position: relative;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
@@ -4615,7 +4599,36 @@
   .join.page > div {
     background-color: rgb(250, 134, 40); /* @orange */
     color: white;
+    transition: background-color 0.4s;
   }
+  .join.page > div.lime {
+    background-color: rgb(218, 243, 121); /* @lime */
+  }
+  .join.page > div.cucumber {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .join.page > div.blueberry {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .join.page > div.boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .join.page > div.plumb {
+    background-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .join.page > div.strawberry {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .join.page > div.apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .join.page > div.tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .join.page > div.orange {
+    background-color: rgb(250, 134, 40); /* @orange */
+  }
+
   .join.page > form {
     background: white;
     padding-bottom: 1.5em;
