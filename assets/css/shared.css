@@ -2071,19 +2071,35 @@
     font-weight: normal;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     border-radius: 0.25em;
-    /*
+    background: white;
+    color: rgb(250, 56, 136); /* @strawberry */
+  }
+
+  /* TRICKY: Buttons don’t fill the full width of the screen (even with “display” set to “block”).
+  http://stackoverflow.com/questions/27605390/why-doesnt-display-block-width-auto-stretch-a-button-to-fill-the-contai#answer-27605483 */
+  .option-list button {
     width: 100%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    */
-    background: white;
-    color: rgb(250, 56, 136); /* @strawberry */
   }
 
   /* TRICKY: Allow uppercase in usernames from social networks on the settings page */
   .option-list .username {
     text-transform: none;
+  }
+
+  /* OPTIONAL: Make options stick to the sides at narrow window sizes. */
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .option-list a,
+    .option-list button {
+      border-left-width: 0;
+      border-right-width: 0;
+      margin: 0 -1.25em; /* @page-padding */
+    }
+    .option-list button {
+      width: calc(100% + 2.5em);
+    }
   }
 
   .option-list button {
@@ -2127,17 +2143,6 @@
     color: rgb(102, 204, 0); /* @pear */
   }
 
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .option-list a,
-    .option-list button {
-      border-left-width: 0;
-      border-right-width: 0;
-      margin: 0 -1.25em; /* @page-padding */
-      -webkit-box-sizing: content-box; 
-         -moz-box-sizing: content-box; 
-              box-sizing: content-box;
-    }
-  }
   .option-list a:hover,
   .option-list a:active,
   .option-list a:focus,
