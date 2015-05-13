@@ -2355,6 +2355,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .push-card.page .details .action a,
   .push-card.page .details button,
   .dialog.page .action a,
   .dialog.page .action button {
@@ -2382,6 +2383,7 @@
   .dialog.page .action a,
   .dialog.page .action button,
   .dialog.page .details    button,
+  .push-card.page .details .action a,
   .push-card   .details    button {
     background: black;
     background: rgba(0, 0, 0, 0.75);
@@ -3804,6 +3806,10 @@
     margin: 0.5em auto 0;
     height: 3em;
     width: 100%;
+  }
+  .start.page .details .action,
+  .start.page .details aside {
+    margin-top: 3em;
   }
 
 

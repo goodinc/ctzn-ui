@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Form / CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -277,51 +277,19 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
     </symbol>
   </svg>
 
-  <section class="edit page">
+  <section class="notifications page">
     <header>
-      <h1>Page Title</h1>
-
-      <a href="" class="back">
-        Cancel
+      <h1>Notifications</h1>
+      <a href="#push" class="back">
+        <svg class="icon"><use xlink:href="#back"></use><foreignObject>Go Back</foreignObject></svg>
       </a>
     </header>
 
-    <section class="upload-message error" role="status">
-      <h1>
-        <svg class="icon"><use xlink:href="#alert"></use></svg>
-        Something went wrong while sending the form data.
-      </h1>
-    </section>
-
-    <form class="has-icon">
-      <p>Note about the whole form</p>
-      <p class="text error">
-        <label>
-          <svg class="icon"><use xlink:href="#user"></use></svg><span>Field label</span><br />
-          <input type="text" placeholder="Field label" />
-        </label>
-      </p>
-      <p class="validation-message">
-        Oops! There’s something wrong with this field.
-      </p>
-      <p class="text">
-        <label>
-          <svg class="icon"><use xlink:href="#envelope"></use></svg><span>Email</span><br />
-          <input type="email" placeholder="Email" />
-        </label>
-      </p>
-      <p class="text">
-        <label>
-          <svg class="icon"><use xlink:href="#padlock"></use></svg><span>Password</span><br />
-          <input type="password" placeholder="Password" />
-        </label>
-        <em class="note">Note with details about this field.</em>
-      </p>
-      <p class="submit">
-        <button>Send</button>
-      </p>
-    </form>
-
+    <div>
+      <section class="empty-message">
+        <h1>Your notifications will appear here.</h1>
+      </section>
+    </div>
   </section>
 
 </body>
