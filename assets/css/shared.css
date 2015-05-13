@@ -2065,15 +2065,18 @@
     display: block;
     text-align: left;
     padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
+    padding-right: 3em;
     text-decoration: none;
     text-transform: lowercase;
     font-weight: normal;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     border-radius: 0.25em;
+    /*
     width: 100%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+    */
     background: white;
     color: rgb(250, 56, 136); /* @strawberry */
   }
@@ -4674,6 +4677,9 @@
   }
   .signup.page > div + aside {
     margin-top: 0;
+  }
+  .signup.page > div + aside + aside {
+    margin-top: 4.5em;
   }
   .signup.page aside .note {
     margin-top: 0;
