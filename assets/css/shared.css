@@ -4680,7 +4680,6 @@
   }
 
   .ready.page > div {
-    background: white;
     padding-top: 1.875em;
   }
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
@@ -4712,7 +4711,7 @@
     display: block;
     color: rgb(102, 102, 102);
     padding: 1.5em 3em 1.5em 1.5em;
-    background-color: rgb(238, 238, 238); /* @seashell */
+    background-color: white;
     text-decoration: none;
     position: relative;
 
