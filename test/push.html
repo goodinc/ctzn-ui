@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
   <title>Prototype / CTZN</title>
@@ -332,6 +332,30 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
         </p>
       </div>
     </header>
+
+<section class="upload-message error" role="status">
+      <h1>
+        <!-- @placeholder-image -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="">
+        Something went wrong while sending your post.
+      </h1>
+      <p>Signature expired: 20150513T224300Z is now earlier than 20150514T004721Z (20150514T010221Z - 15 min.)</p>
+      <ul>
+        <!-- ko ifnot: error.permanentFailure -->
+        <li>
+          <button data-bind="click: function(){ good.uploadQueue().attemptProcessing() }">
+            <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#refresh"></use><foreignObject>Try again</foreignObject></svg>
+          </button>
+        </li>
+        <!-- /ko -->
+        <li>
+          <button data-bind="click: function(){ $root.removeUploadQueueError($data) }">
+            <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use><foreignObject>Cancel</foreignObject></svg>
+          </button>
+        </li>
+      </ul>
+    </section>
+
     <ul class="create">
       <li>
         <a href="#switch">

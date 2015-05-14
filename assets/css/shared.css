@@ -33,7 +33,7 @@
     color: rgb(250, 56, 136); /* @strawberry */
     transition: opacity 0.2s, color 0.2s, background-color 0.2s;
   }
-  a:hover,
+  .hoverable a:hover,
   a:active,
   a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -416,10 +416,10 @@
     text-transform: lowercase;
     margin: 0;
   }
-  .action a:hover,
+  .hoverable .action a:hover,
   .action a:active,
   .action a:focus,
-  button:hover,
+  .hoverable button:hover,
   button:active,
   button:focus {
     background-color: rgb(193, 16, 65); /* @raspberry */
@@ -433,7 +433,7 @@
     background-color: rgb(255, 49, 59); /* @apple */
     color: white;
   }
-  .warning button:hover,
+  .hoverable .warning button:hover,
   .warning button:active,
   .warning button:focus {
     background-color: rgb(255, 29, 39);
@@ -455,10 +455,10 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     transition: all 0.2s;
   }
-  .error-message          button:hover,
+  .hoverable .error-message          button:hover,
   .error-message          button:active,
   .error-message          button:focus,
-  .update-indicator a:hover,
+  .hoverable .update-indicator a:hover,
   .update-indicator a:active,
   .update-indicator a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -508,7 +508,7 @@
     color: inherit;
     opacity: 0.5;
   }
-  form ul.submit a:hover,
+  .hoverable form ul.submit a:hover,
   form ul.submit a:active,
   form ul.submit a:focus {
     opacity: 1;
@@ -864,9 +864,6 @@
     font-size: 1.125em;
     font-weight: inherit;
   }
-  section.upload-message p {
-    margin: 0;
-  }
   section.upload-message ul,
   section.upload-message li {
     list-style: none;
@@ -984,7 +981,7 @@
   .list li + li a {
     border-top-width: 0;
   }
-  .list li a:hover,
+  .hoverable .list li a:hover,
   .list li a:active,
   .list li a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -1044,8 +1041,15 @@
     list-style: none;
     padding-left: 0;
   }
+
+  /* OPTIONAL: Remove whitespace above the list on the push page. */
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .post-list {
+      margin-top: 0;
+    }
+  }
+
   .post-list {
-    margin: 0 auto;
     padding-bottom: 3em;
   }
   .post-list > li {
@@ -1097,7 +1101,7 @@
     color: inherit;
     text-decoration: none;
   }
-  .post-item header h3 a:hover,
+  .hoverable .post-item header h3 a:hover,
   .post-item header h3 a:active,
   .post-item header h3 a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -1128,7 +1132,7 @@
     color: inherit;
     text-decoration: none;
   }
-  .post-item header p a:hover,
+  .hoverable .post-item header p a:hover,
   .post-item header p a:active,
   .post-item header p a:focus {
     color: black;
@@ -1137,7 +1141,7 @@
     text-decoration: none;
     color: inherit;
   }
-  .post-item a.body:hover,
+  .hoverable .post-item a.body:hover,
   .post-item a.body:active,
   .post-item a.body:focus {
     background-color: rgba(0, 0, 0, 0.25);
@@ -1156,6 +1160,14 @@
     background-color: rgba(0, 0, 0, 0.25);
     min-width: 9em;
     min-height: 9em;
+  }
+  .post-item .body img[onclick] {
+    transition: opacity 0.2s;
+  }
+  .hoverable .post-item .body img[onclick]:hover,
+  .post-item .body img[onclick]:active,
+  .post-item .body img[onclick]:focus {
+    opacity: 0.8;
   }
   .post-item .body {
     /* @wrap-long-words */
@@ -1197,10 +1209,10 @@
     border-width: 1px;
     vertical-align: middle;
   }
-  .post-item footer .action a:hover,
+  .hoverable .post-item footer .action a:hover,
   .post-item footer .action a:active,
   .post-item footer .action a:focus,
-  .post-item footer .action button:hover,
+  .hoverable .post-item footer .action button:hover,
   .post-item footer .action button:active,
   .post-item footer .action button:focus {
     background: rgb(238, 238, 238); /* @seashell */
@@ -1234,7 +1246,7 @@
     color: inherit;
     text-decoration: none;
   }
-  .post-item footer .meta li a:hover,
+  .hoverable .post-item footer .meta li a:hover,
   .post-item footer .meta li a:active,
   .post-item footer .meta li a:focus {
     color: rgb(250, 56, 136); /* @strawberry */
@@ -1320,7 +1332,7 @@
   .post-options li.warning button {
     color: rgb(255, 49, 59); /* @apple */
   }
-  .post-options li button:hover,
+  .hoverable .post-options li button:hover,
   .post-options li button:active,
   .post-options li button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -1424,7 +1436,7 @@
     right: 0;
     padding: 0.5625em; /* (48px - 30px) / 2 / @font-size */
   }
-  header.primary .profile:hover,
+  .hoverable header.primary .profile:hover,
   header.primary .profile:active,
   header.primary .profile:focus {
     opacity: 0.75;
@@ -1445,7 +1457,7 @@
     color: inherit;
     text-decoration: none;
   }
-  header.primary a:hover,
+  .hoverable header.primary a:hover,
   header.primary a:active,
   header.primary a:focus {
     color: white;
@@ -1745,7 +1757,7 @@
     padding: 0.75em 0 1em;
     text-align: center;
   }
-  ul.create a:hover,
+  .hoverable ul.create a:hover,
   ul.create a:active,
   ul.create a:focus {
     color: white;
@@ -1764,7 +1776,7 @@
     fill: rgb(204, 204, 204); /* @aluminum */
     transition: fill 0.2s;
   }
-  ul.create li a:hover  .icon,
+  .hoverable ul.create li a:hover  .icon,
   ul.create li a:active .icon,
   ul.create li a:focus  .icon {
     fill: currentColor;
@@ -1805,6 +1817,12 @@
     .start.page > div,
     .page > header + div,
     .page > header + form {
+      margin-top: 3em;
+    }
+
+    /* SHIM: Handle the case where a hidden status message appears before the content */
+    .page > header + *[style*="display: none"] + div,
+    .page > header + *[style*="display: none"] + form {
       margin-top: 3em;
     }
 
@@ -1890,7 +1908,7 @@
   .page > header a {
     color: rgb(204, 204, 204); /* @aluminum */
   }
-  .page > header a:hover,
+  .hoverable .page > header a:hover,
   .page > header a:active,
   .page > header a:focus {
     color: white;
@@ -1955,22 +1973,22 @@
     border-color: transparent !important;
     color: rgb(102, 102, 102); /* @tin */
   }
-  .mix.page          > header a:hover,
+  .hoverable .mix.page          > header a:hover,
   .mix.page          > header a:active,
   .mix.page          > header a:focus,
-  .mixes.page        > header a:hover,
+  .hoverable .mixes.page        > header a:hover,
   .mixes.page        > header a:active,
   .mixes.page        > header a:focus,
-  .mix-editor.page   > header a:hover,
+  .hoverable .mix-editor.page   > header a:hover,
   .mix-editor.page   > header a:active,
   .mix-editor.page   > header a:focus,
-  .post.page         > header a:hover,
+  .hoverable .post.page         > header a:hover,
   .post.page         > header a:active,
   .post.page         > header a:focus,
-  .edit.page         > header a:hover,
+  .hoverable .edit.page         > header a:hover,
   .edit.page         > header a:active,
   .edit.page         > header a:focus,
-  .edit-profile.page > header a:hover,
+  .hoverable .edit-profile.page > header a:hover,
   .edit-profile.page > header a:active,
   .edit-profile.page > header a:focus {
     color: black;
@@ -2143,10 +2161,10 @@
     color: rgb(102, 204, 0); /* @pear */
   }
 
-  .option-list a:hover,
+  .hoverable .option-list a:hover,
   .option-list a:active,
   .option-list a:focus,
-  .option-list button:hover,
+  .hoverable .option-list button:hover,
   .option-list button:active,
   .option-list button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -2197,7 +2215,7 @@
   }
 
   /* Sometimes the push card is a link. */
-  .push-card:hover,
+  .hoverable .push-card:hover,
   .push-card:active,
   .push-card:focus {
     color: black;
@@ -2291,7 +2309,7 @@
     color: rgb(51, 51, 51);
     color: rgba(0, 0, 0, 0.8);
   }
-  .push-card .website a:hover,
+  .hoverable .push-card .website a:hover,
   .push-card .website a:active,
   .push-card .website a:focus {
     color: black;
@@ -2331,7 +2349,7 @@
     margin: -0.75em -1.125em;
     padding: 0.75em  1.125em;
   }
-  .push-card .meta p a:hover,
+  .hoverable .push-card .meta p a:hover,
   .push-card .meta p a:active,
   .push-card .meta p a:focus {
     background-color: rgba(0, 0, 0, 0.1);
@@ -2405,22 +2423,22 @@
     background-color: rgb(59, 89, 153); /* @facebook */
     color: white;
   }
-  .login  > div .action a:hover,
+  .hoverable .login  > div .action a:hover,
   .login  > div .action a:active,
   .login  > div .action a:focus,
-  .signup > div .action a:hover,
+  .hoverable .signup > div .action a:hover,
   .signup > div .action a:active,
   .signup > div .action a:focus,
-  .dialog.page .action a:hover,
+  .hoverable .dialog.page .action a:hover,
   .dialog.page .action a:active,
   .dialog.page .action a:focus,
-  .dialog.page .action button:hover,
+  .hoverable .dialog.page .action button:hover,
   .dialog.page .action button:active,
   .dialog.page .action button:focus,
-  .dialog.page .details    button:hover,
+  .hoverable .dialog.page .details    button:hover,
   .dialog.page .details    button:active,
   .dialog.page .details    button:focus,
-  .push-card   .details    button:hover,
+  .hoverable .push-card   .details    button:hover,
   .push-card   .details    button:active,
   .push-card   .details    button:focus {
     background: black;
@@ -2453,7 +2471,7 @@
     color: rgb(204, 204, 204);
     color: rgba(255, 255, 255, 0.8);
   }
-  .push-card .website a:hover,
+  .hoverable .push-card .website a:hover,
   .push-card .website a:active,
   .push-card .website a:focus {
     color: white;
@@ -2749,7 +2767,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5em;
   }
-  .toggle-mixable button:hover,
+  .hoverable .toggle-mixable button:hover,
   .toggle-mixable button:active,
   .toggle-mixable button:focus {
     background-color: black;
@@ -2977,13 +2995,13 @@
   .file input[type="file"] ~ span {
     margin-left: 0.125em;
   }
-  .file button:hover,
+  .hoverable .file button:hover,
   .file button:active,
   .file button:focus,
-  .file input[type="file"]:hover  ~ .icon,
+  .hoverable .file input[type="file"]:hover  ~ .icon,
   .file input[type="file"]:active ~ .icon,
   .file input[type="file"]:focus  ~ .icon,
-  .file input[type="file"]:hover   ~ span,
+  .hoverable .file input[type="file"]:hover   ~ span,
   .file input[type="file"]:active  ~ span,
   .file input[type="file"]:focus   ~ span {
     color: black;
@@ -3052,7 +3070,7 @@
     width: 1em;
     height: 1em;
   }
-  form .images li button:hover  span,
+  .hoverable form .images li button:hover  span,
   form .images li button:active span,
   form .images li button:focus  span {
     opacity: 1;
@@ -3144,10 +3162,10 @@
     background: rgba(0, 0, 0, 0.5);
     border: 0.125em solid white;
   }
-  .image-viewer button:hover,
+  .hoverable .image-viewer button:hover,
   .image-viewer button:active,
   .image-viewer button:focus,
-  .image-viewer .action a:hover,
+  .hoverable .image-viewer .action a:hover,
   .image-viewer .action a:active,
   .image-viewer .action a:focus {
     background-color: black;
@@ -3337,7 +3355,7 @@
     height: auto;
     transition: opacity 0.2s;
   }
-  .mix-list a:hover  img,
+  .hoverable .mix-list a:hover  img,
   .mix-list a:active img,
   .mix-list a:focus  img {
     opacity: 0.75;
@@ -3373,7 +3391,7 @@
     -webkit-justify-content: center;
             justify-content: center;
   }
-  .mix-list .add a:hover,
+  .hoverable .mix-list .add a:hover,
   .mix-list .add a:active,
   .mix-list .add a:focus {
     background-color: rgba(255, 49, 102, 0.85); /* @strawberry */
@@ -3508,7 +3526,7 @@
   .mix footer .attaboyed {
     color: rgb(250, 56, 136); /* @strawberry */
   }
-  .mix footer p a:hover,
+  .hoverable .mix footer p a:hover,
   .mix footer p a:active,
   .mix footer p a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -3623,6 +3641,7 @@
   }
   .mix-editor .image-list      li,
   .mix-editor .selected-images li {
+    margin-top: 0;
     float: left;
   }
   .mix-editor .image-list      li img,
@@ -3630,6 +3649,7 @@
     display: block;
   }
 
+  .mix-editor .selected-images li,
   .mix-editor .image-list li {
     background-color: rgba(255, 255, 255, 0.25);
   }
@@ -3738,6 +3758,7 @@
   .mix-editor p.text label {
     background-color: transparent;
     border-width: 0;
+    padding: 0;
   }
   .mix-editor form .title input[type="text"] {
     background: transparent;
@@ -4164,10 +4185,6 @@
     position: absolute;
     left: -9999px;
   }
-  .notifications .post-list,
-  .comments      .post-list {
-    margin-top: 0.75em;
-  }
   .comments .post-item form {
     margin-top: -15px;
   }
@@ -4212,7 +4229,7 @@
     padding: 1.5em;
     text-align: left;
   }
-  .switch li a:hover,
+  .hoverable .switch li a:hover,
   .switch li a:active,
   .switch li a:focus {
     opacity: 0.75;
@@ -4312,18 +4329,18 @@
   .dialog.page    button.restart {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .dialog.page .action a.reinstall:hover,
+  .hoverable .dialog.page .action a.reinstall:hover,
   .dialog.page .action a.reinstall:active,
   .dialog.page .action a.reinstall:focus,
-  .dialog.page    button.reinstall:hover,
+  .hoverable .dialog.page    button.reinstall:hover,
   .dialog.page    button.reinstall:active,
   .dialog.page    button.reinstall:focus {
     background-color: rgb(215, 34, 44); /* dark apple */
   }
-  .dialog.page .action a.restart:hover,
+  .hoverable .dialog.page .action a.restart:hover,
   .dialog.page .action a.restart:active,
   .dialog.page .action a.restart:focus,
-  .dialog.page    button.restart:hover,
+  .hoverable .dialog.page    button.restart:hover,
   .dialog.page    button.restart:active,
   .dialog.page    button.restart:focus {
     background-color: rgb(85, 141, 207); /* dark boysenberry */
@@ -4742,7 +4759,7 @@
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
   }
-  .ready.page li a:hover,
+  .hoverable .ready.page li a:hover,
   .ready.page li a:active,
   .ready.page li a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -4846,7 +4863,7 @@
   .page > header .back svg.icon:last-child {
     margin-right: 0;
   }
-  @media (max-width: 35em) {
+  @media (max-width: 60em) {
     .page > header .back svg.icon {
       margin-right: 0;
       display: block;
