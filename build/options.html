@@ -285,6 +285,8 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
   <h2>Tricky</h2>
   <p>Add a class name of <code>active</code> to the options element, to make it appear.</p>
 
+  <div style="margin-bottom: 20em"></div>
+
   <div class="post-options active">
     <div>
       <ul>
@@ -306,6 +308,14 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
           </button>
         </li>
       </ul>
+      <section class="upload-message" role="status">
+        <h1>Sending <span class="sending icon"></span></h1>
+      </section>
+       <section class="upload-message error" role="status">
+        <h1><svg class="icon"><use xlink:href="#alert"></use></svg> Something went wrong.</h1>
+        <p>Signature expired: 20150513T224300Z is now earlier than 20150514T004721Z (20150514T010221Z - 15 min.)</p>
+      </section>
+
     </div>
   </div>
 

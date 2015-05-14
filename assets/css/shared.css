@@ -13,6 +13,10 @@
 
   Sections are grouped under headings with a “=” symbol,
   to make searching easier.
+
+
+  Styles for :hover effects are prefixed with “hoverable” so they can be disabled on touch devices.
+  (This helps prevent “sticky” buttons in the app.)
 */
 
 
@@ -881,6 +885,9 @@
     margin-top: -0.375em; /* button padding */
     display: inline-block;
   }
+  section.upload-message p:last-child {
+    margin-bottom: 0;
+  }
   section.update-countdown {
     position: fixed;
     top: 0;
@@ -1335,8 +1342,6 @@
   .hoverable .post-options li button:hover,
   .post-options li button:active,
   .post-options li button:focus {
-    background-color: rgb(222, 222, 222); /* @silver */
-    border-radius: 0;
   }
 
 
@@ -1821,8 +1826,8 @@
     }
 
     /* SHIM: Handle the case where a hidden status message appears before the content */
-    .page > header + *[style*="display: none"] + div,
-    .page > header + *[style*="display: none"] + form {
+    .page > header ~ *[style*="display: none"] + div,
+    .page > header ~ *[style*="display: none"] + form {
       margin-top: 3em;
     }
 
@@ -3695,6 +3700,15 @@
   }
 
   /* Show selections */
+  .mix-editor .selected-images li {
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .hoverable .mix-editor .selected-images li:hover,
+  .mix-editor .selected-images li:active,
+  .mix-editor .selected-images li:focus {
+    opacity: 0.8;
+  }
   .mix-editor .image-list li {
     position: relative;
     cursor: pointer;
@@ -3722,9 +3736,11 @@
     opacity: 0;
     z-index: 1;
   }
+  .hoverable .mix-editor .image-list li:hover,
   .mix-editor .image-list li:focus {
     z-index: 1;
   }
+  .hoverable .mix-editor .image-list li:hover .number,
   .mix-editor .image-list li:focus .number {
     opacity: 0.25;
   }
@@ -3831,6 +3847,9 @@
   .start.page .details .action,
   .start.page .details aside {
     margin-top: 3em;
+  }
+  .start.page .details aside p:last-child {
+    margin-bottom: 0;
   }
 
 
