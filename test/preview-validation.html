@@ -295,28 +295,36 @@ z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.
       </a>
     </header>
 
+    <section class="upload-message error" role="status">
+      <h1>
+        <svg class="icon"><use xlink:href="#alert"></use></svg>
+        Something went wrong while sending the form data.
+      </h1>
+      <p>Signature expired: 20150514T213224Z is now earlier than 20150514T225411Z (20150514T230911Z - 15 min.)</p>
+    </section>
+
     <div class="details">
       <h1 class="name">Headline</h1>
 
       <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
 
-    <form>
-      <p class="validation-message">
-        <svg class="icon"><use xlink:href="#alert"></use></svg>
-        Oops! There’s something wrong with that field.
-      </p>
-      <p class="text">
-        <label>
-          <span>Field Label</span><br />
-          <input type="text" placeholder="Field Label" />
-        </label>
-      </p>
-      <p class="submit">
-        <button type="submit">Join</button>
-      </p>
-    </form>
+      <form>
+        <p class="validation-message">
+          <svg class="icon"><use xlink:href="#alert"></use></svg>
+          Oops! There’s something wrong with that field.
+        </p>
+        <p class="text">
+          <label>
+            <span>Field Label</span><br />
+            <input type="text" placeholder="Field Label" />
+          </label>
+        </p>
+        <p class="submit">
+          <button type="submit">Join</button>
+        </p>
+      </form>
+    </div>
 
   </section>
 

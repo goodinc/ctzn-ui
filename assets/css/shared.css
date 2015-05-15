@@ -555,6 +555,7 @@
     width: 100%;
     padding: 0.375em 0.75em;
     line-height: 1.5;
+    min-height: 1.5em;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -2393,11 +2394,15 @@
     padding: 0;
     margin: 0;
   }
+  .push-card .text label span {
+    color: black;
+  }
   .push-card input[type="text"] {
     text-align: center;
     font-size: 1.125em; /* 18px / @font-size */
     border-radius: 0.2222222222em; /* 4px / 18px */
     line-height: 2.7777777778em; /* 50px / 18px */
+    min-height: 2.7777777778em;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -3782,6 +3787,7 @@
     text-align: inherit;
     font-size: 2.25em; /* 36px / @font-size */
     line-height: 1.3333333333; /* 48px / 2.25em */
+    min-height: 1.3333333333em;
     border-width: 0;
     border-radius: 0;
   }
@@ -4646,23 +4652,26 @@
     padding: 0.4285714286em 1.2857142858em; /* 0.375em / 0.875em         0.375em x 3 / 0.875em */
   }
   .logged-in h2 {
+    margin-top: 0.6em;
     font-size: inherit;
     line-height: inherit;
     font-weight: inherit;
-  }
-  .logged-in h2,
-  .logged-in p {
-    display: inline;
   }
   .logged-in h2 strong {
     font-weight: inherit;
     color: white;
   }
-  .logged-in p:before {
-    margin-left: 0.3em;
-    margin-right: 0.6em;
-    content: "|";
-    opacity: 0.5;
+  @media (min-width: 30em) {
+    .logged-in h2,
+    .logged-in p {
+      display: inline;
+    }
+    .logged-in p:before {
+      margin-left: 0.3em;
+      margin-right: 0.6em;
+      content: "|";
+      opacity: 0.5;
+    }
   }
 
   .join.page > div h2 {
