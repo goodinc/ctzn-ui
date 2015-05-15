@@ -2387,7 +2387,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .push-card label {
+  .push-card .text label {
     background: transparent;
     border-width: 0;
     padding: 0;
@@ -4669,47 +4669,32 @@
     font-weight: inherit;
     font-size: 1.5em;
     line-height: inherit;
-    padding: 1.5em 0.75em;
+    padding: 0.375em 1.5em;
     margin: 0;
     text-transform: lowercase;
     text-align: center;
   }
-  .join.page > div {
-    background-color: rgb(250, 134, 40); /* @orange */
+  @media (min-width: 40em) {
+    .join.page > div h2 {
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
+    }
+  }
+  .join.page > .header {
+    background-color: rgba(0, 0, 0, 0.1);
     color: white;
-    transition: background-color 0.4s;
-  }
-  .join.page > div.lime {
-    background-color: rgb(218, 243, 121); /* @lime */
-  }
-  .join.page > div.cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
-  }
-  .join.page > div.blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
-  }
-  .join.page > div.boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .join.page > div.plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
-  }
-  .join.page > div.strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .join.page > div.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
-  }
-  .join.page > div.tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .join.page > div.orange {
-    background-color: rgb(250, 134, 40); /* @orange */
+    margin: 0;
+    max-width: none;
   }
 
-  .join.page > form {
-    background: white;
+  .join.page > .details {
+    background-color: transparent;
     padding-bottom: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .join.page > .details form {
+    margin-top: 0.75em;
   }
 
   .signup.page > div,
