@@ -3028,6 +3028,7 @@
     padding-left: 0;
   }
   form .images li {
+    margin-top: 0;
     vertical-align: top;
     display: inline-block;
   }
