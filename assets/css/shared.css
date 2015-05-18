@@ -1343,6 +1343,14 @@
   .hoverable .post-options li button:hover,
   .post-options li button:active,
   .post-options li button:focus {
+    background-color: rgb(222, 222, 222); /* @silver */
+    color: rgb(60, 109, 218); /* @elderberry */
+    border-radius: 0;
+  }
+  .hoverable .post-options li.warning button:hover,
+  .post-options li.warning button:active,
+  .post-options li.warning button:focus {
+    color: rgb(255, 49, 59); /* @apple */
   }
 
 
