@@ -354,6 +354,10 @@
     max-width: 100%;
     height: auto;
   }
+  .article .summary video {
+    display: block;
+    height: 100px;
+  }
   .article .summary img {
     display: block;
     height: 100px;
