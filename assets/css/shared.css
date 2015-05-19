@@ -1161,6 +1161,14 @@
     height: auto;
     display: block;
   }
+  .post-item .body img.video-fallback {
+    margin-bottom: 0;
+  }
+  .post-item .body span.video-fallback {
+    font-size: 0.75em;
+    opacity: 0.5;
+    font-style: italic;
+  }
   .post-item .body img {
     border-radius: 0.125em;
 

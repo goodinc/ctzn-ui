@@ -358,6 +358,14 @@
     display: block;
     height: 100px;
   }
+  .article .summary img.video-fallback {
+    margin-bottom: 0;
+  }
+  .article .summary span.video-fallback {
+    font-size: 0.75em;
+    opacity: 0.5;
+    font-style: italic;
+  }
   .article .summary img {
     display: block;
     height: 100px;
