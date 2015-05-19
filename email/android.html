@@ -8,38 +8,100 @@
 
   <link rel="stylesheet" href="../assets/css/email.css" />
 
+  <style>
+    .container {
+      text-align: center;
+    }
+    .headline {
+      border-top: 10px solid rgb(0, 255, 208); /* @kiwi */
+    }
+    .headline h1 {
+      margin-top: 30px;
+    }
+    .headline h1 img {
+      vertical-align: middle;
+    }
+
+    .announcement {
+      background: white;
+      padding: 1px 30px 30px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+    }
+    .announcement h3 {
+      color: black;
+      margin-bottom: 0;
+    }
+    .announcement .body {
+      max-width: 20em;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 18px;
+      margin-top: 0;
+      color: rgb(102, 102, 102);
+    }
+    .announcement .body a {
+      display: inline-block;
+    }
+    .announcement .image-action {
+      margin-top: 30px;
+    }
+
+    .details {
+      padding-left: 40px;
+      padding-right: 40px;
+      max-width: 500px;
+      background: #333;
+      color: rgb(153, 153, 153);
+      font-size: 14px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .first {
+      margin-top: 0;
+    }
+    .details .last {
+      margin-bottom: 0;
+    }
+    .details .last a {
+      color: white;
+    }
+  </style>
+
 </head>
 <body>
 
-  <div class="container" style="text-align: center">
+  <div class="container">
 
-    <div class="headline" style="border-top: 10px solid rgb(0, 255, 208); /* @kiwi */">
-      <h1 style="margin-top: 30px;">
-        <img style="vertical-align: middle;" src="../assets/images/email/ctzn-android.png" height="70" alt="CTZN for Android " />
+    <div class="headline" >
+      <h1>
+        <img src="../assets/images/email/ctzn-android.png" height="70" alt="CTZN for Android " />
       </h1>
 
     </div><!-- /.headline -->
 
-    <div style="background: white; padding: 1px 30px 30px; max-width: 520px; margin-left: auto; margin-right: auto; margin-top: 0;">
+    <div class="announcement">
 
-      <h3 style="color: black; margin-bottom: 0;">It’s here!</h3>
-      <p style="max-width: 20em; margin-left: auto; margin-right: auto; font-size: 18px; margin-top: 0; color: rgb(102, 102, 102);">
+      <h3>It’s here!</h3>
+      <p class="body">
         We are excited to announce that
-        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn" style="display: inline-block;">CTZN for Android</a>
+        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">CTZN for Android</a>
         is now&nbsp;available!
       </p>
-      <p style="margin-top: 30px;">
+      <p class="image-action">
         <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
           <img src="../assets/images/email/google-play.png" width="170" height="60" alt="Get it on Google Play" />
         </a>
       </p>
     </div><!-- /.details -->
 
-    <div class="details" style="padding-left: 40px; padding-right: 40px; max-width: 500px; background: #333; color: rgb(153, 153, 153); font-size: 14px; line-height: 20px; text-align: left;">
-      <p style="margin-top: 0">
+    <div class="details">
+      <p class="first">
         CTZN is a platform built for people pushing to better their communities. CTZN helps people capture and show the heart of their push — as told through the eyes and voice of the communities making it happen.  
       </p>
-      <p style="margin-bottom: 0;">Learn more by visiting <a href="http://getctzn.com" style="color: white;">getctzn.com</a></p>
+      <p class="last">Learn more by visiting <a href="http://getctzn.com">getctzn.com</a></p>
     </div><!-- /.details -->
 
     <div class="footer">
