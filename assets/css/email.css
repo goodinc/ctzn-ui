@@ -354,17 +354,38 @@
     max-width: 100%;
     height: auto;
   }
-  .article .summary video {
+  .article .body a.video {
+    background: rgb(44, 44, 44); /* @thorium */
+    color: white;
+    text-decoration: none;
     display: block;
-    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 512px;
+    text-align: center;
   }
-  .article .summary img.video-fallback {
+  .article .body a.video:hover,
+  .article .body a.video:active,
+  .article .body a.video:focus {
+    background: black;
+  }
+  .article .body a.video img {
     margin-bottom: 0;
   }
-  .article .summary span.video-fallback {
-    font-size: 0.75em;
-    opacity: 0.5;
-    font-style: italic;
+  .article .body a.video span {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .article .body a.video span img {
+    margin: 0 5px 0 0;
+    width: 24px;
+    height: 24px;
+    display: inline;
+    vertical-align: middle;
+    min-width: 1px;
+    min-height: 1px;
+    background-color: transparent;
   }
   .article .summary img {
     display: block;
