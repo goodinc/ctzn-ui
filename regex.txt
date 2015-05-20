@@ -30,7 +30,7 @@
 
 ## Find the icon elements within a label…
 
-<label>([\s]+)<svg class="icon"><use xlink:href="#([^"]+)" /><foreignobject>([^<]+)</foreignobject></svg><br />
+<label>([\s]+)<svg class="icon"([^>]+)><use xlink:href="#([^"]+)"></use><foreignobject>([^<]+)</foreignobject></svg><br />
 
 And replace…
-<label>$1<svg class="icon"><use xlink:href="#$2"></use></svg><span>$3</span><br />
+<label>$1<svg class="icon"$2><use xlink:href="#$3"></use></svg><span>$4</span><br />
