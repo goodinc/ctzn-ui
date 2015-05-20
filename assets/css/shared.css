@@ -4168,19 +4168,8 @@
   .activity .action:first-child {
     margin-top: 0;
   }
-  .activity .comments:first-child .post-list {
-    margin-top: 0;
-  }
-  .activity .action ~ .meta {
-    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
-    margin-top: 1.25em !important;
-    padding-top: 1.25em;
-  }
-  .activity .action ~ .comments {
+  .activity .comments {
     margin-top: 0.75em;
-  }
-  .activity .action ~ .comments .post-list {
-    margin-top: 0;
   }
   .activity .more {
     margin-bottom: 0.25em;
