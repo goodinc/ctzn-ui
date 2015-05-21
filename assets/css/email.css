@@ -354,42 +354,17 @@
     max-width: 100%;
     height: auto;
   }
-  .article a.video {
-    background: rgb(44, 44, 44); /* @thorium */
-    color: white;
-    text-decoration: none;
+  .article .summary video {
     display: block;
-    text-align: center;
+    height: 100px;
   }
-  .article .body a.video {
-    max-width: 512px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .article .summary a.video {
-    max-width: 200px;
-  }
-  .article a.video:hover,
-  .article a.video:active,
-  .article a.video:focus {
-    background: black;
-  }
-  .article a.video img {
+  .article .summary img.video-fallback {
     margin-bottom: 0;
   }
-  .article a.video span {
-    display: block;
-    padding: 10px;
-  }
-  .article a.video span img {
-    margin: 0 5px 0 0;
-    width: 24px;
-    height: 24px;
-    display: inline;
-    vertical-align: middle;
-    min-width: 1px;
-    min-height: 1px;
-    background-color: transparent;
+  .article .summary span.video-fallback {
+    font-size: 0.75em;
+    opacity: 0.5;
+    font-style: italic;
   }
   .article .summary img {
     display: block;
@@ -399,9 +374,6 @@
     min-height: 30px;
     min-width: 30px;
     background-color: rgba(0, 0, 0, 0.25);
-  }
-  .article .summary a.video > img {
-    height: 200px;
   }
   .article .comment h4 {
     margin: 0;
@@ -440,6 +412,50 @@
     font-size: inherit;
     font-weight: normal;
     color: rgb(31, 31, 31); /* @steel */
+  }
+
+
+  /* =Video
+  ----------------------------------------------- */
+  .article a.video {
+    background: rgb(44, 44, 44); /* @thorium */
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  .article a.video:hover,
+  .article a.video:active,
+  .article a.video:focus {
+    background: black;
+  }
+  .article a.video img {
+    margin-bottom: 0;
+  }
+  .article a.video span {
+    display: block;
+    padding: 10px;
+  }
+  .article a.video span img {
+    margin: 0 5px 0 0;
+    width: 26px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+    min-width: 1px;
+    min-height: 1px;
+    background-color: transparent;
+  }
+  .article .body a.video {
+    max-width: 512px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .article .summary a.video {
+    max-width: 200px;
+  }
+  .article .summary a.video > img {
+    height: 200px;
   }
 
 
@@ -521,4 +537,3 @@
       float: right;
     }
   }
-
