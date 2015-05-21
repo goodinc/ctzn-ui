@@ -4727,13 +4727,14 @@
     margin-bottom: 0;
   }
   .signup.page > div + aside {
-    margin-top: 0;
+    padding-top: 1.5em;
   }
   .signup.page > div + aside + aside {
     margin-top: 4.5em;
   }
   .signup.page aside .note {
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .ready.page > div {
