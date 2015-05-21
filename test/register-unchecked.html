@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,20 +19,14 @@
     })();
   </script>
 
-  <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-    }
-  </style>
+  <script src="../assets/js/supports.js"></script>
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/modernizer.js"></script>
+  <![endif]-->
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -284,73 +277,58 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30"><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../design/">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section class="signup page">
 
-  <h1>Design</h1>
+    <header>
+      <h1>Sign Up</h1>
 
-  <div class="pattern-list">
-    <section>
-      <h2>Video in Email</h2>
-      <ul>
-        <li><a href="mention.html">Mention</a></li>
-        <li><a href="comment.html">Comment</a></li>
-        <li><a href="digest.html">Morning Digest</a></li>
-      </ul>
+      <a href="" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignobject>←</foreignobject></svg>
+        <span>Go Back</span>
+      </a>
+    </header>
+
+    <section class="upload-message error" role="status">
+      <h1>Oops! You must agree to the terms of service.</h1>
     </section>
-    <section>
-      <h2>Onboarding</h2>
-      <ul>
-        <li><a href="../test/join.html">Join</a></li>
-        <li><a href="../test/preview-onboarding.html">Preview</a></li>
-        <li><a href="../test/register.html">Sign Up (choose)</a></li>
-        <li><a href="../test/register-unchecked.html">Sign Up (unchecked)</a></li>
-        <li><a href="../test/terms.html">Terms of Service</a></li>
-        <li><a href="../test/register-email.html">Sign Up (form)</a></li>
-        <li><a href="../test/connect.html">Social Accounts</a></li>
-        <li><a href="../test/hashtags.html">Hashtags</a></li>
-        <li><a href="../test/add-hashtag.html">Add Hashtag</a></li>
-        <li><a href="../test/ready.html">Ready for CTZN</a></li>
-        <li><a href="../test/email.html">About Email</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Log In</h2>
-      <ul>
-        <li><a href="../test/start.html">Start</a></li>
-        <li><a href="../test/login.html">Log In</a></li>
-        <li><a href="../test/forgot-password.html">Forgot Password</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Notifications</h2>
-      <ul>
-        <li><a href="notifications-empty.html">Empty Message</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Preview (new design)</h2>
-      <ul>
-        <li><a href="preview-alt.html">Preview</a></li>
-        <li><a href="preview-alt-empty.html">Preview (empty feed)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Safari Message</h2>
-      <ul>
-        <li><a href="safari.html">Example</a></li>
-        <li><a href="safari-notes.html">Example (with notes)</a></li>
-      </ul>
-    </section>
-  </div>
+
+    <div>
+      <p class="action facebook">
+        <a href="">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use></svg>
+          <span>Sign up with Facebook</span>
+        </a>
+      </p>
+
+      <p class="note">
+        We will never share anything to your friends without&nbsp;permission.
+      </p>
+
+      <h2 class="or"><span>Or</span></h2>
+      <p class="action">
+        <a href=""><span>Sign up with email</span></a>
+      </p>
+
+      <form action="" method="post">
+        <p class="note checkbox">
+          <label>
+            <input type="checkbox" />
+            I agree to the <a href="terms.html">terms of service</a>
+          </label>
+        </p>
+      </form>
+    </div>
+
+    <aside>
+      <p class="note">Already have an account? <a href="">Log In</a></p>
+    </aside>
+
+    <aside>
+      <p class="note">
+        <a href="http://getctzn.com/privacy/" target="_blank">Privacy Policy</a>
+      </p>
+    </aside>
+  </section>
 
 </body>
 </html>
