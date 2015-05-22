@@ -1822,6 +1822,7 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
+  .page > article,
   .page > div,
   .page > form,
   .page > aside {
@@ -1830,6 +1831,7 @@
     margin: 0 auto;
   }
 
+  .page > article:last-child,
   .page > div:last-child,
   .page > form:last-child,
   .page > aside:last-child {
@@ -1840,6 +1842,7 @@
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
     .join.page > div,
     .start.page > div,
+    .page > header + article,
     .page > header + div,
     .page > header + form {
       margin-top: 3em;
@@ -3955,9 +3958,6 @@
     text-align: inherit;
     font-style: normal;
   }
-  .signup.page aside .note {
-    font-size: inherit;
-  }
 
 
   /* =Account
@@ -4731,16 +4731,22 @@
   }
   .signup.page > div + aside {
     padding-top: 1.5em;
+    padding-bottom: 1.5em;
   }
-  .signup.page > div + aside + aside {
-    margin-top: 4.5em;
+  .signup.page .note:first-child {
+    margin-top: 0;
+  }
+  .signup.page .note:last-child {
+    margin-bottom: 0;
   }
   .signup.page aside .note {
-    margin-top: 0;
-    margin-bottom: 0;
+    font-size: inherit;
   }
   .signup.page .checkbox label {
     text-transform: none;
+  }
+  .signup.page .checkbox label a {
+    display: inline-block;
   }
 
   .ready.page > div {
@@ -4771,7 +4777,22 @@
   .ready.page li {
     margin-top: 0.375em;
   }
-  .ready.page li a {
+
+  .ready.page aside {
+    display: block;
+    color: rgb(102, 102, 102);
+    padding: 1.5em 3em 1.5em 1.5em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: white;
+    position: relative;
+  }
+  .ready.page aside p {
+    margin: 0;
+  }
+
+  .ready.page li > a {
     display: block;
     color: rgb(102, 102, 102);
     padding: 1.5em 3em 1.5em 1.5em;
@@ -4790,12 +4811,12 @@
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
   }
   .hoverable .ready.page li a:hover,
-  .ready.page li a:active,
-  .ready.page li a:focus {
+  .ready.page li > a:active,
+  .ready.page li > a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
   }
   @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .ready.page ul a {
+    .ready.page ul li > a {
       margin-left: -1.25em;
       margin-right: -1.25em;
     }
@@ -4813,15 +4834,18 @@
   .ready.page li a > div {
     margin-bottom: 0.75em;    
   }
+  .ready.page aside > div img,
   .ready.page li a > div img,
   .ready.page li a > div .icon {
     margin: 0.75em 0.25em;
   }
   @media (min-width: 20em) {
-    .ready.page li a {
+    .ready.page aside,
+    .ready.page li > a {
       padding-left: 10em;
     }
-    .ready.page li a > div {
+    .ready.page aside > div,
+    .ready.page li > a > div {
       position: absolute;
       top: 0;
       left: 0;
@@ -4918,3 +4942,42 @@
   body > #screen > div[data-screen] {
     display: inline;
   }
+
+
+  /* SHIM: Make headlines look nice on the “Terms of Service” page. (TBD: Consider making these the default.) */
+  .page article h1 {
+    font-size     : 1.875em;   /* 30px / @font-size */
+    line-height   : 1.4em;     /* 42px / 30px  */
+    margin-top    : 1.4em;
+    margin-bottom : 0.7em;     /* 1.4em / 2 */
+  }
+  .page article h2 {
+    font-size     : 1.5em;     /* 24px / @font-size */
+  }
+  .page article h3 {
+    font-size     : 1.3125em;  /* 21px / @font-size */
+    line-height   : 1.4285714286em; /* 30px / 21px */
+    margin-top    : 1.4285714286em;
+    margin-bottom : 0.7142857143em; /* 1.4285714286em / 2 */
+  }
+
+  @media (min-width: 30em) {
+    .page article h1 {
+      font-size     : 3em;       /* 48px / @font-size */
+      line-height   : 1.25em;    /* 60px / 48px */
+      margin-top    : 1.25em;
+      margin-bottom : 0.625em;   /* 1.25em / 2 */
+    }
+    .page article h2 {
+      font-size     : 1.875em;   /* 30px / @font-size */
+      line-height   : 1.2em;     /* 36px / 30px  */
+      margin-top    : 1.2em;
+      margin-bottom : 0.6em;     /* 1.2em / 2 */
+    }
+    .page article h3 {
+      font-size     : 1.5em;     /* 24px / @font-size */
+    }
+  }
+
+
+
