@@ -4945,39 +4945,18 @@
 
 
   /* SHIM: Make headlines look nice on the “Terms of Service” page. (TBD: Consider making these the default.) */
-  .page article h1 {
+  .page article.text h1 {
     font-size     : 1.875em;   /* 30px / @font-size */
     line-height   : 1.4em;     /* 42px / 30px  */
     margin-top    : 1.4em;
     margin-bottom : 0.7em;     /* 1.4em / 2 */
   }
-  .page article h2 {
+  .page article.text h2 {
     font-size     : 1.5em;     /* 24px / @font-size */
   }
-  .page article h3 {
+  .page article.text h3 {
     font-size     : 1.3125em;  /* 21px / @font-size */
     line-height   : 1.4285714286em; /* 30px / 21px */
     margin-top    : 1.4285714286em;
     margin-bottom : 0.7142857143em; /* 1.4285714286em / 2 */
   }
-
-  @media (min-width: 30em) {
-    .page article h1 {
-      font-size     : 3em;       /* 48px / @font-size */
-      line-height   : 1.25em;    /* 60px / 48px */
-      margin-top    : 1.25em;
-      margin-bottom : 0.625em;   /* 1.25em / 2 */
-    }
-    .page article h2 {
-      font-size     : 1.875em;   /* 30px / @font-size */
-      line-height   : 1.2em;     /* 36px / 30px  */
-      margin-top    : 1.2em;
-      margin-bottom : 0.6em;     /* 1.2em / 2 */
-    }
-    .page article h3 {
-      font-size     : 1.5em;     /* 24px / @font-size */
-    }
-  }
-
-
-
