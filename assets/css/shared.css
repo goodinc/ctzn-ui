@@ -570,7 +570,7 @@
   }
   textarea {
     display: block;
-    height: 4.5em;
+    height: 4.5em; /* @line-height x 3 */
   }
   input[type="text"]:disabled {
     background-color: transparent;
@@ -3808,15 +3808,22 @@
     border-width: 0;
     padding: 0;
   }
+  .mix-editor form .title textarea,
   .mix-editor form .title input[type="text"] {
     background: transparent;
     color: inherit;
     text-align: inherit;
+    border-width: 0;
+    border-radius: 0;
+  }
+  .mix-editor form .title input[type="text"] {
     font-size: 2.25em; /* 36px / @font-size */
     line-height: 1.3333333333; /* 48px / 2.25em */
     min-height: 1.3333333333em;
-    border-width: 0;
-    border-radius: 0;
+  }
+  .mix-editor form .title textarea {
+    font-size: 1.25em;
+    font-weight: bold;
   }
   .mix-editor form .preview {
     background: rgb(218, 243, 121); /* @lime */
