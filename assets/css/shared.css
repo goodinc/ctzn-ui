@@ -13,6 +13,10 @@
 
   Sections are grouped under headings with a “=” symbol,
   to make searching easier.
+
+
+  Styles for :hover effects are prefixed with “hoverable” so they can be disabled on touch devices.
+  (This helps prevent “sticky” buttons in the app.)
 */
 
 
@@ -33,13 +37,18 @@
     color: rgb(250, 56, 136); /* @strawberry */
     transition: opacity 0.2s, color 0.2s, background-color 0.2s;
   }
-  a:hover,
+  .hoverable a:hover,
   a:active,
   a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
   }
   a img {
     border-width: 0;
+  }
+
+  /* Older browsers sometimes render these inline */
+  header, footer, section, article, aside, nav, hgroup {
+    display: block;
   }
 
 
@@ -150,7 +159,9 @@
     border-radius: 50%;
     -webkit-animation : spin 1.3s infinite linear;
             animation : spin 1.3s infinite linear;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .loading-icon:after {
     content: "";
@@ -166,7 +177,9 @@
     border-radius: 50%;
     -webkit-animation : spin 2s infinite linear;
             animation : spin 2s infinite linear;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
 
 
@@ -407,10 +420,10 @@
     text-transform: lowercase;
     margin: 0;
   }
-  .action a:hover,
+  .hoverable .action a:hover,
   .action a:active,
   .action a:focus,
-  button:hover,
+  .hoverable button:hover,
   button:active,
   button:focus {
     background-color: rgb(193, 16, 65); /* @raspberry */
@@ -424,7 +437,7 @@
     background-color: rgb(255, 49, 59); /* @apple */
     color: white;
   }
-  .warning button:hover,
+  .hoverable .warning button:hover,
   .warning button:active,
   .warning button:focus {
     background-color: rgb(255, 29, 39);
@@ -446,10 +459,10 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     transition: all 0.2s;
   }
-  .error-message          button:hover,
+  .hoverable .error-message          button:hover,
   .error-message          button:active,
   .error-message          button:focus,
-  .update-indicator a:hover,
+  .hoverable .update-indicator a:hover,
   .update-indicator a:active,
   .update-indicator a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -499,7 +512,7 @@
     color: inherit;
     opacity: 0.5;
   }
-  form ul.submit a:hover,
+  .hoverable form ul.submit a:hover,
   form ul.submit a:active,
   form ul.submit a:focus {
     opacity: 1;
@@ -542,12 +555,18 @@
     width: 100%;
     padding: 0.375em 0.75em;
     line-height: 1.5;
-    box-sizing: border-box;
+    min-height: 1.5em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     transition: border-color 0.2s;
     display: inline-block;
     background: white;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     margin-top: 0.25em;
+  }
+  input[type="checkbox"] {
+    font-size: inherit;
   }
   textarea {
     display: block;
@@ -647,7 +666,8 @@
   .success label:after {
     /* @icon-checkmark */ /* @pear */
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg> */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDEwMiwgMjA0LCAwKSIgZD0iTTcuODU5IDE1LjUyMWwtNC42NTQtNC45MzZjLTAuNDc0LTAuNTAxLTAuNDUxLTEuMjk0IDAuMDUxLTEuNzY2czEuMjk1LTAuNDUgMS43NjcgMC4wNTFsMi44ODkgMy4wNjQgNy4wODktNy4wODljMC40ODktMC40ODkgMS4yNzktMC40ODkgMS43NjcgMHMwLjQ4OSAxLjI4IDAgMS43NjdsLTguOTEgOC45MXoiPjwvcGF0aD48L3N2Zz4=);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALVJREFUeNpiYBgFwx4wUsOQtDMMAkBqPpTbOMuE4QJMjoVKhu8HYgMk4UAYg4kGhn9AVsNEZcNBQVNIcRzgMdwRGP4fcFoA1GgA1QhSFIgcWeQYji2I+oEYZIACyBCohWQbjs2Cg0hsAaglCuQajjUOgAaB0nMCmiGgZLeeVMNxRjIWS9ABUYbjTUVAS86juZhkwwnlA0eoYWQbTjAfoEUsyYYTldGgloCSbyGpho+CEQIAAgwA/ilJznrDGpYAAAAASUVORK5CYII=);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDEwMiwgMjA0LCAwKSIgZD0iTTcuODU5IDE1LjUyMWwtNC42NTQtNC45MzZjLTAuNDc0LTAuNTAxLTAuNDUxLTEuMjk0IDAuMDUxLTEuNzY2czEuMjk1LTAuNDUgMS43NjcgMC4wNTFsMi44ODkgMy4wNjQgNy4wODktNy4wODljMC40ODktMC40ODkgMS4yNzktMC40ODkgMS43NjcgMHMwLjQ4OSAxLjI4IDAgMS43NjdsLTguOTEgOC45MXoiPjwvcGF0aD48L3N2Zz4=), none;
   }
 
 
@@ -747,7 +767,9 @@
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
     width: 100%;
     padding: 0.75em 1.5em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     position: absolute;
     z-index: 9999; /* @infinity */
     left: -9999px;
@@ -805,7 +827,9 @@
   section.update-countdown,
   section.upload-message {
     padding: 0.75em 1.5em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver */
     line-height: 1.3333333333; /* @line-height / 1.125em */
     position: relative;
@@ -848,9 +872,6 @@
     font-size: 1.125em;
     font-weight: inherit;
   }
-  section.upload-message p {
-    margin: 0;
-  }
   section.upload-message ul,
   section.upload-message li {
     list-style: none;
@@ -868,12 +889,17 @@
     margin-top: -0.375em; /* button padding */
     display: inline-block;
   }
+  section.upload-message p:last-child {
+    margin-bottom: 0;
+  }
   section.update-countdown {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     z-index: 9999; /* @infinity */
   }
 
@@ -966,7 +992,7 @@
   .list li + li a {
     border-top-width: 0;
   }
-  .list li a:hover,
+  .hoverable .list li a:hover,
   .list li a:active,
   .list li a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -1026,8 +1052,15 @@
     list-style: none;
     padding-left: 0;
   }
+
+  /* OPTIONAL: Remove whitespace above the list on the push page. */
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .post-list {
+      margin-top: 0;
+    }
+  }
+
   .post-list {
-    margin: 0 auto;
     padding-bottom: 3em;
   }
   .post-list > li {
@@ -1079,7 +1112,7 @@
     color: inherit;
     text-decoration: none;
   }
-  .post-item header h3 a:hover,
+  .hoverable .post-item header h3 a:hover,
   .post-item header h3 a:active,
   .post-item header h3 a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -1110,7 +1143,7 @@
     color: inherit;
     text-decoration: none;
   }
-  .post-item header p a:hover,
+  .hoverable .post-item header p a:hover,
   .post-item header p a:active,
   .post-item header p a:focus {
     color: black;
@@ -1119,7 +1152,7 @@
     text-decoration: none;
     color: inherit;
   }
-  .post-item a.body:hover,
+  .hoverable .post-item a.body:hover,
   .post-item a.body:active,
   .post-item a.body:focus {
     background-color: rgba(0, 0, 0, 0.25);
@@ -1131,6 +1164,14 @@
     height: auto;
     display: block;
   }
+  .post-item .body img.video-fallback {
+    margin-bottom: 0;
+  }
+  .post-item .body span.video-fallback {
+    font-size: 0.75em;
+    opacity: 0.5;
+    font-style: italic;
+  }
   .post-item .body img {
     border-radius: 0.125em;
 
@@ -1138,6 +1179,14 @@
     background-color: rgba(0, 0, 0, 0.25);
     min-width: 9em;
     min-height: 9em;
+  }
+  .post-item .body img[onclick] {
+    transition: opacity 0.2s;
+  }
+  .hoverable .post-item .body img[onclick]:hover,
+  .post-item .body img[onclick]:active,
+  .post-item .body img[onclick]:focus {
+    opacity: 0.8;
   }
   .post-item .body {
     /* @wrap-long-words */
@@ -1179,10 +1228,10 @@
     border-width: 1px;
     vertical-align: middle;
   }
-  .post-item footer .action a:hover,
+  .hoverable .post-item footer .action a:hover,
   .post-item footer .action a:active,
   .post-item footer .action a:focus,
-  .post-item footer .action button:hover,
+  .hoverable .post-item footer .action button:hover,
   .post-item footer .action button:active,
   .post-item footer .action button:focus {
     background: rgb(238, 238, 238); /* @seashell */
@@ -1216,7 +1265,7 @@
     color: inherit;
     text-decoration: none;
   }
-  .post-item footer .meta li a:hover,
+  .hoverable .post-item footer .meta li a:hover,
   .post-item footer .meta li a:active,
   .post-item footer .meta li a:focus {
     color: rgb(250, 56, 136); /* @strawberry */
@@ -1259,7 +1308,9 @@
     color: rgb(51, 51, 51); /* @iron */
     text-align: center;
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     position: absolute;
     left: -9999px;
 
@@ -1300,11 +1351,17 @@
   .post-options li.warning button {
     color: rgb(255, 49, 59); /* @apple */
   }
-  .post-options li button:hover,
+  .hoverable .post-options li button:hover,
   .post-options li button:active,
   .post-options li button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
+    color: rgb(60, 109, 218); /* @elderberry */
     border-radius: 0;
+  }
+  .hoverable .post-options li.warning button:hover,
+  .post-options li.warning button:active,
+  .post-options li.warning button:focus {
+    color: rgb(255, 49, 59); /* @apple */
   }
 
 
@@ -1321,7 +1378,9 @@
     position: relative;
     padding: 0.75em 0.75em 0.75em 1em;
     z-index: 9;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
   }
   header.primary h1 {
@@ -1402,7 +1461,7 @@
     right: 0;
     padding: 0.5625em; /* (48px - 30px) / 2 / @font-size */
   }
-  header.primary .profile:hover,
+  .hoverable header.primary .profile:hover,
   header.primary .profile:active,
   header.primary .profile:focus {
     opacity: 0.75;
@@ -1423,7 +1482,7 @@
     color: inherit;
     text-decoration: none;
   }
-  header.primary a:hover,
+  .hoverable header.primary a:hover,
   header.primary a:active,
   header.primary a:focus {
     color: white;
@@ -1622,7 +1681,9 @@
       position: fixed;
       z-index: 1;
       width: 100%;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
     }
   }
 
@@ -1634,7 +1695,9 @@
     color: rgb(5, 5, 5); /* @tungsten */
 
     min-height: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 
     /* Make space for “.create” */
     padding-bottom: 6em;
@@ -1681,7 +1744,9 @@
     background: rgb(51, 51, 51); /* @iron */
     color: rgb(153, 153, 153); /* @nickel */
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     transition: opacity 0.2s;
     text-align: center;
 
@@ -1714,19 +1779,19 @@
     color: inherit;
     font-size: 0.75em;
     line-height: 1;
-    padding: 0.75em 0 1em;
+    padding: 0.75em 0.75em 1em;
     text-align: center;
   }
-  ul.create a:hover,
+  .hoverable ul.create a:hover,
   ul.create a:active,
   ul.create a:focus {
     color: white;
   }
   ul.create li:first-child a {
-    padding-left: 0.375em;
+    padding-left: 1.5em;
   }
   ul.create li:last-child a {
-    padding-right: 0.375em;
+    padding-right: 1.5em;
   }
   ul.create li a .icon {
     width  : 2.25em; /* 27px / @font-size */
@@ -1736,7 +1801,7 @@
     fill: rgb(204, 204, 204); /* @aluminum */
     transition: fill 0.2s;
   }
-  ul.create li a:hover  .icon,
+  .hoverable ul.create li a:hover  .icon,
   ul.create li a:active .icon,
   ul.create li a:focus  .icon {
     fill: currentColor;
@@ -1753,8 +1818,11 @@
     color: rgb(5, 5, 5); /* @tungsten */
 
     min-height: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
+  .page > article,
   .page > div,
   .page > form,
   .page > aside {
@@ -1763,6 +1831,7 @@
     margin: 0 auto;
   }
 
+  .page > article:last-child,
   .page > div:last-child,
   .page > form:last-child,
   .page > aside:last-child {
@@ -1773,8 +1842,15 @@
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
     .join.page > div,
     .start.page > div,
+    .page > header + article,
     .page > header + div,
     .page > header + form {
+      margin-top: 3em;
+    }
+
+    /* SHIM: Handle the case where a hidden status message appears before the content */
+    .page > header ~ *[style*="display: none"] + div,
+    .page > header ~ *[style*="display: none"] + form {
       margin-top: 3em;
     }
 
@@ -1835,7 +1911,9 @@
   .page > header {
     text-align: center;
     padding: 3em 0.75em 0.75em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     background-color: rgb(51, 51, 51); /* @iron */
     color: white;
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
@@ -1858,7 +1936,7 @@
   .page > header a {
     color: rgb(204, 204, 204); /* @aluminum */
   }
-  .page > header a:hover,
+  .hoverable .page > header a:hover,
   .page > header a:active,
   .page > header a:focus {
     color: white;
@@ -1923,28 +2001,31 @@
     border-color: transparent !important;
     color: rgb(102, 102, 102); /* @tin */
   }
-  .mix.page          > header a:hover,
+  .hoverable .mix.page          > header a:hover,
   .mix.page          > header a:active,
   .mix.page          > header a:focus,
-  .mixes.page        > header a:hover,
+  .hoverable .mixes.page        > header a:hover,
   .mixes.page        > header a:active,
   .mixes.page        > header a:focus,
-  .mix-editor.page   > header a:hover,
+  .hoverable .mix-editor.page   > header a:hover,
   .mix-editor.page   > header a:active,
   .mix-editor.page   > header a:focus,
-  .post.page         > header a:hover,
+  .hoverable .post.page         > header a:hover,
   .post.page         > header a:active,
   .post.page         > header a:focus,
-  .edit.page         > header a:hover,
+  .hoverable .edit.page         > header a:hover,
   .edit.page         > header a:active,
   .edit.page         > header a:focus,
-  .edit-profile.page > header a:hover,
+  .hoverable .edit-profile.page > header a:hover,
   .edit-profile.page > header a:active,
   .edit-profile.page > header a:focus {
     color: black;
   }
 
   /* OPTIONAL: Position the submit button in the header */
+  .edit-profile.page > header ~ form ul.text {
+    margin-bottom: 0;
+  }
   .edit-profile.page > header ~ form .submit,
   .post-editor.page  > header ~ form .submit,
   .mix-editor.page   > header ~ form .submit {
@@ -1978,7 +2059,9 @@
       top: 0;
       left: 0;
       width: 100%;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
       padding: 0.75em 6em; /* The right/left padding numbers here are arbitrary, but ideally large
                               enough to prevent the title from overlapping with the back/next buttons. */
     }
@@ -2018,7 +2101,10 @@
   .option-list ul + ul {
     margin-top: 0.75em;
   }
-  .option-list a .icon {
+  .option-list li + li {
+    margin-top: 0;
+  }
+  .option-list a > .icon:first-child {
     margin-right: 0.5em; /* SHIM: 0.75em - one whitespace character */
 
     color: rgb(102, 102, 102); /* @tin */
@@ -2028,20 +2114,41 @@
     display: block;
     text-align: left;
     padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
+    padding-right: 3em;
     text-decoration: none;
     text-transform: lowercase;
     font-weight: normal;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     border-radius: 0.25em;
-    width: 100%;
-    box-sizing: border-box;
     background: white;
     color: rgb(250, 56, 136); /* @strawberry */
+  }
+
+  /* TRICKY: Buttons don’t fill the full width of the screen (even with “display” set to “block”).
+  http://stackoverflow.com/questions/27605390/why-doesnt-display-block-width-auto-stretch-a-button-to-fill-the-contai#answer-27605483 */
+  .option-list button {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
 
   /* TRICKY: Allow uppercase in usernames from social networks on the settings page */
   .option-list .username {
     text-transform: none;
+  }
+
+  /* OPTIONAL: Make options stick to the sides at narrow window sizes. */
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .option-list a,
+    .option-list button {
+      border-left-width: 0;
+      border-right-width: 0;
+      margin: 0 -1.25em; /* @page-padding */
+    }
+    .option-list button {
+      width: calc(100% + 2.5em);
+    }
   }
 
   .option-list button {
@@ -2052,7 +2159,7 @@
     /* @background-icon */
     background-size: 1.5em auto;
     background-repeat: no-repeat;
-    background-position: 100% 50%;
+    background-position: 97% 50%;
     background-position: calc(100% - 0.75em) 50%;
 
     /* @icon-right */ /* @aluminum */
@@ -2067,21 +2174,28 @@
   .option-list a,
   .option-list button {
     border-radius: 0;
+    position: relative;
+  }
+  .tags.option-list button {
+    text-align: left;
+    color: black;
+  }
+  .tags.option-list li .icon:last-child,
+  .option-list li a[role="checkbox"] .icon:last-child {
+    margin-top: -0.75em;
+    position: absolute;
+    top: 50%;
+    right: 0.75em;
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .option-list li a[role="checkbox"] .icon:last-child {
+    color: rgb(102, 204, 0); /* @pear */
   }
 
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .option-list a,
-    .option-list button {
-      border-left-width: 0;
-      border-right-width: 0;
-      margin: 0 -1.25em; /* @page-padding */
-      box-sizing: content-box;
-    }
-  }
-  .option-list a:hover,
+  .hoverable .option-list a:hover,
   .option-list a:active,
   .option-list a:focus,
-  .option-list button:hover,
+  .hoverable .option-list button:hover,
   .option-list button:active,
   .option-list button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
@@ -2102,7 +2216,9 @@
     border-radius: 0;
     border-left-width: 0;
     border-right-width: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     background-image: none;
   }
   section.push > .option-list li:first-child a {
@@ -2130,7 +2246,7 @@
   }
 
   /* Sometimes the push card is a link. */
-  .push-card:hover,
+  .hoverable .push-card:hover,
   .push-card:active,
   .push-card:focus {
     color: black;
@@ -2224,7 +2340,7 @@
     color: rgb(51, 51, 51);
     color: rgba(0, 0, 0, 0.8);
   }
-  .push-card .website a:hover,
+  .hoverable .push-card .website a:hover,
   .push-card .website a:active,
   .push-card .website a:focus {
     color: black;
@@ -2237,7 +2353,7 @@
     margin-right: auto;
   }
   .push-card .meta p {
-    background: rgb(204, 204, 204); /* @aluminum */
+    background: rgb(153, 153, 153); /* @nickel */
     background: rgba(0, 0, 0, 0.1);
     margin: 0;
     text-transform: uppercase;
@@ -2264,7 +2380,7 @@
     margin: -0.75em -1.125em;
     padding: 0.75em  1.125em;
   }
-  .push-card .meta p a:hover,
+  .hoverable .push-card .meta p a:hover,
   .push-card .meta p a:active,
   .push-card .meta p a:focus {
     background-color: rgba(0, 0, 0, 0.1);
@@ -2288,6 +2404,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .push-card.page .details .action a,
   .push-card.page .details button,
   .dialog.page .action a,
   .dialog.page .action button {
@@ -2296,25 +2413,30 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .push-card label {
+  .push-card .text label {
     background: transparent;
     border-width: 0;
     padding: 0;
     margin: 0;
+  }
+  .push-card .text label span {
+    color: black;
   }
   .push-card input[type="text"] {
     text-align: center;
     font-size: 1.125em; /* 18px / @font-size */
     border-radius: 0.2222222222em; /* 4px / 18px */
     line-height: 2.7777777778em; /* 50px / 18px */
+    min-height: 2.7777777778em;
     padding-top: 0;
     padding-bottom: 0;
   }
-  .login  .action a,
-  .signup .action a,
+  .login  > div .action a,
+  .signup > div .action a,
   .dialog.page .action a,
   .dialog.page .action button,
   .dialog.page .details    button,
+  .push-card.page .details .action a,
   .push-card   .details    button {
     background: black;
     background: rgba(0, 0, 0, 0.75);
@@ -2326,30 +2448,32 @@
     line-height: 2.0833333333em; /* 50px / 24px */
     padding-top: 0;
     padding-bottom: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     text-align: center;
   }
-  .login  .action.facebook a,
-  .signup .action.facebook a {
+  .login  > div .action.facebook a,
+  .signup > div .action.facebook a {
     background-color: rgb(59, 89, 153); /* @facebook */
     color: white;
   }
-  .login  .action a:hover,
-  .login  .action a:active,
-  .login  .action a:focus,
-  .signup .action a:hover,
-  .signup .action a:active,
-  .signup .action a:focus,
-  .dialog.page .action a:hover,
+  .hoverable .login  > div .action a:hover,
+  .login  > div .action a:active,
+  .login  > div .action a:focus,
+  .hoverable .signup > div .action a:hover,
+  .signup > div .action a:active,
+  .signup > div .action a:focus,
+  .hoverable .dialog.page .action a:hover,
   .dialog.page .action a:active,
   .dialog.page .action a:focus,
-  .dialog.page .action button:hover,
+  .hoverable .dialog.page .action button:hover,
   .dialog.page .action button:active,
   .dialog.page .action button:focus,
-  .dialog.page .details    button:hover,
+  .hoverable .dialog.page .details    button:hover,
   .dialog.page .details    button:active,
   .dialog.page .details    button:focus,
-  .push-card   .details    button:hover,
+  .hoverable .push-card   .details    button:hover,
   .push-card   .details    button:active,
   .push-card   .details    button:focus {
     background: black;
@@ -2382,7 +2506,7 @@
     color: rgb(204, 204, 204);
     color: rgba(255, 255, 255, 0.8);
   }
-  .push-card .website a:hover,
+  .hoverable .push-card .website a:hover,
   .push-card .website a:active,
   .push-card .website a:focus {
     color: white;
@@ -2391,10 +2515,10 @@
     background: rgba(0, 0, 0, 0.1);
     padding-bottom: 1.5em !important;
   }
-  .start.page aside {
+  .start.page .details aside {
     text-transform: lowercase;
   }
-  .start.page aside a {
+  .start.page .details aside a {
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
@@ -2479,7 +2603,9 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     z-index: 1;
     margin-bottom: 0;
     font-size: 0.6875em;
@@ -2676,7 +2802,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5em;
   }
-  .toggle-mixable button:hover,
+  .hoverable .toggle-mixable button:hover,
   .toggle-mixable button:active,
   .toggle-mixable button:focus {
     background-color: black;
@@ -2691,7 +2817,9 @@
   .mixable .push-card.page .details,
   .mixable .post-list .post-item {
     height: 100vh;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     overflow: hidden;
   }
   .mixable .post-list {
@@ -2812,7 +2940,9 @@
     position: relative;
     z-index: 1;
     padding: 1.5em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
   @media (min-aspect-ratio: 1/1) {
     .mixable .push-card.page .post-item .body {
@@ -2873,7 +3003,9 @@
   .post.page .comments textarea,
   .post.text textarea {
     height: 6.75em; /* (@line-height x 4) + (0.375em x 2) */
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 0.125em;
   }
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
@@ -2898,13 +3030,13 @@
   .file input[type="file"] ~ span {
     margin-left: 0.125em;
   }
-  .file button:hover,
+  .hoverable .file button:hover,
   .file button:active,
   .file button:focus,
-  .file input[type="file"]:hover  ~ .icon,
+  .hoverable .file input[type="file"]:hover  ~ .icon,
   .file input[type="file"]:active ~ .icon,
   .file input[type="file"]:focus  ~ .icon,
-  .file input[type="file"]:hover   ~ span,
+  .hoverable .file input[type="file"]:hover   ~ span,
   .file input[type="file"]:active  ~ span,
   .file input[type="file"]:focus   ~ span {
     color: black;
@@ -2921,11 +3053,13 @@
     padding-left: 0;
   }
   form .images li {
+    margin-top: 0;
     vertical-align: top;
     display: inline-block;
   }
   form .images li button {
     background: white;
+    color: black;
     padding: 0;
     min-width: 3em;
     height: 6.25em;
@@ -2973,7 +3107,7 @@
     width: 1em;
     height: 1em;
   }
-  form .images li button:hover  span,
+  .hoverable form .images li button:hover  span,
   form .images li button:active span,
   form .images li button:focus  span {
     opacity: 1;
@@ -3065,10 +3199,10 @@
     background: rgba(0, 0, 0, 0.5);
     border: 0.125em solid white;
   }
-  .image-viewer button:hover,
+  .hoverable .image-viewer button:hover,
   .image-viewer button:active,
   .image-viewer button:focus,
-  .image-viewer .action a:hover,
+  .hoverable .image-viewer .action a:hover,
   .image-viewer .action a:active,
   .image-viewer .action a:focus {
     background-color: black;
@@ -3258,7 +3392,7 @@
     height: auto;
     transition: opacity 0.2s;
   }
-  .mix-list a:hover  img,
+  .hoverable .mix-list a:hover  img,
   .mix-list a:active img,
   .mix-list a:focus  img {
     opacity: 0.75;
@@ -3271,7 +3405,9 @@
     height: 80%;
     border-radius: 0.25em;
     margin: 10%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     text-align: center;
     text-decoration: none;
     text-transform: lowercase;
@@ -3292,7 +3428,7 @@
     -webkit-justify-content: center;
             justify-content: center;
   }
-  .mix-list .add a:hover,
+  .hoverable .mix-list .add a:hover,
   .mix-list .add a:active,
   .mix-list .add a:focus {
     background-color: rgba(255, 49, 102, 0.85); /* @strawberry */
@@ -3313,7 +3449,9 @@
     width: 95%; /* image size / @font-size (125px / 16px) */
     height: 95%;
     margin: 2.5%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     text-decoration: none;
   }
 
@@ -3331,7 +3469,9 @@
     min-width: 100px;
     min-height: 100px;
     margin: 2.5%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .mix-list .mix-error > span {
     background: rgb(255, 49, 59); /* @apple */
@@ -3423,7 +3563,7 @@
   .mix footer .attaboyed {
     color: rgb(250, 56, 136); /* @strawberry */
   }
-  .mix footer p a:hover,
+  .hoverable .mix footer p a:hover,
   .mix footer p a:active,
   .mix footer p a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
@@ -3538,6 +3678,7 @@
   }
   .mix-editor .image-list      li,
   .mix-editor .selected-images li {
+    margin-top: 0;
     float: left;
   }
   .mix-editor .image-list      li img,
@@ -3545,6 +3686,7 @@
     display: block;
   }
 
+  .mix-editor .selected-images li,
   .mix-editor .image-list li {
     background-color: rgba(255, 255, 255, 0.25);
   }
@@ -3567,7 +3709,9 @@
     height: auto;
     height: 33.333333333vw;
     border: 1px solid black;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     position: relative;
     z-index: 1;
   }
@@ -3588,6 +3732,15 @@
   }
 
   /* Show selections */
+  .mix-editor .selected-images li {
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .hoverable .mix-editor .selected-images li:hover,
+  .mix-editor .selected-images li:active,
+  .mix-editor .selected-images li:focus {
+    opacity: 0.8;
+  }
   .mix-editor .image-list li {
     position: relative;
     cursor: pointer;
@@ -3603,7 +3756,9 @@
     width: 100%;
     min-height: 100%;
     border: 1px solid black;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     top: 0;
     left: 0;
 
@@ -3613,9 +3768,11 @@
     opacity: 0;
     z-index: 1;
   }
+  .hoverable .mix-editor .image-list li:hover,
   .mix-editor .image-list li:focus {
     z-index: 1;
   }
+  .hoverable .mix-editor .image-list li:hover .number,
   .mix-editor .image-list li:focus .number {
     opacity: 0.25;
   }
@@ -3649,6 +3806,7 @@
   .mix-editor p.text label {
     background-color: transparent;
     border-width: 0;
+    padding: 0;
   }
   .mix-editor form .title input[type="text"] {
     background: transparent;
@@ -3656,6 +3814,7 @@
     text-align: inherit;
     font-size: 2.25em; /* 36px / @font-size */
     line-height: 1.3333333333; /* 48px / 2.25em */
+    min-height: 1.3333333333em;
     border-width: 0;
     border-radius: 0;
   }
@@ -3718,25 +3877,17 @@
     height: 3em;
     width: 100%;
   }
+  .start.page .details .action,
+  .start.page .details aside {
+    margin-top: 3em;
+  }
+  .start.page .details aside p:last-child {
+    margin-bottom: 0;
+  }
 
 
   /* =Log In & Sign Up
   ----------------------------------------------- */
-  .signup.page > header {
-    border-color: transparent;
-  }
-  .signup.page > header .next {
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-  .signup.page > header .next {
-    color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .signup.page > header .next:hover,
-  .signup.page > header .next:active,
-  .signup.page > header .next:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
-  }
 
   .login.page  h2.or,
   .signup.page h2.or {
@@ -3745,16 +3896,15 @@
     /* @divider */
     margin-top: 2em;
     border-top: 0.08333333333em solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 2em;
+    margin-bottom: 1.4em; /* top margin (2em) - line height (1.2) / 2   */
   }
   .login.page  h2.or span,
   .signup.page h2.or span {
-    position: absolute;
+    display: inline-block;
     background-color: rgb(246, 246, 246); /* @casper */
-    margin-top: -0.5em;
-    margin-left: -1em;
-    width: 2em;
-    line-height: 1;
+    position: relative;
+    top: -0.6em; /* line height (1.2) / 2 */
+    padding: 0 0.375em;
   }
 
   .login.page > form + div {
@@ -3779,8 +3929,8 @@
     margin-right: auto;
   }
 
-  .login  .action a,
-  .signup .action a {
+  .login  > div .action a,
+  .signup > div .action a {
     position: relative;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
@@ -3807,9 +3957,6 @@
   .signup.page .note {
     text-align: inherit;
     font-style: normal;
-  }
-  .signup.page aside .note {
-    font-size: inherit;
   }
 
 
@@ -3869,6 +4016,7 @@
     padding-top: 1.5em;
     padding-bottom: 0;
   }
+  .settings .introduction + form,
   .settings .introduction + .option-list {
     padding-top: 0;
   }
@@ -3902,14 +4050,17 @@
     text-transform: lowercase;
   }
 
-  .option-list .instagram .icon {
+  .option-list .instagram .icon:first-child {
     color: rgb(40, 81, 127);
   }
-  .option-list .twitter .icon {
+  .option-list .twitter .icon:first-child {
     color: rgb(94, 171, 244);
   }
-  .option-list .facebook .icon {
+  .option-list .facebook .icon:first-child {
     color: rgb(59, 89, 153); /* @facebook */
+  }
+  .option-list a[role="checkbox"] {
+    background-image: none;
   }
   .option-list a[role="checkbox"][aria-checked="false"] {
     color: rgb(153, 153, 153); /* @nickel */
@@ -3920,15 +4071,6 @@
   }
   .option-list a[role="checkbox"][aria-checked="true"] {
     color: rgb(5, 5, 5); /* @tungsten */
-
-    /* @icon-checkmark */ /* @pear */
-    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg> */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDEwMiwgMjA0LCAwKSIgZD0iTTcuODU5IDE1LjUyMWwtNC42NTQtNC45MzZjLTAuNDc0LTAuNTAxLTAuNDUxLTEuMjk0IDAuMDUxLTEuNzY2czEuMjk1LTAuNDUgMS43NjcgMC4wNTFsMi44ODkgMy4wNjQgNy4wODktNy4wODljMC40ODktMC40ODkgMS4yNzktMC40ODkgMS43NjcgMHMwLjQ4OSAxLjI4IDAgMS43NjdsLTguOTEgOC45MXoiPjwvcGF0aD48L3N2Zz4=);
-  }
-  .tags.option-list a[role="checkbox"][aria-checked="true"] {
-    /* @icon-close */ /* @aluminum */
-    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M17.792 3.766l-1.558-1.559-6.234 6.234-6.234-6.234-1.559 1.558 6.234 6.234-6.234 6.234 1.558 1.558 6.234-6.234 6.234 6.234 1.558-1.558-6.234-6.234z"></path></svg> */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNMTcuNzkyIDMuNzY2bC0xLjU1OC0xLjU1OS02LjIzNCA2LjIzNC02LjIzNC02LjIzNC0xLjU1OSAxLjU1OCA2LjIzNCA2LjIzNC02LjIzNCA2LjIzNCAxLjU1OCAxLjU1OCA2LjIzNC02LjIzNCA2LjIzNCA2LjIzNCAxLjU1OC0xLjU1OC02LjIzNC02LjIzNHoiPjwvcGF0aD48L3N2Zz4=);
   }
 
 
@@ -4029,19 +4171,8 @@
   .activity .action:first-child {
     margin-top: 0;
   }
-  .activity .comments:first-child .post-list {
-    margin-top: 0;
-  }
-  .activity .action ~ .meta {
-    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
-    margin-top: 1.25em !important;
-    padding-top: 1.25em;
-  }
-  .activity .action ~ .comments {
+  .activity .comments {
     margin-top: 0.75em;
-  }
-  .activity .action ~ .comments .post-list {
-    margin-top: 0;
   }
   .activity .more {
     margin-bottom: 0.25em;
@@ -4092,10 +4223,6 @@
     position: absolute;
     left: -9999px;
   }
-  .notifications .post-list,
-  .comments      .post-list {
-    margin-top: 0.75em;
-  }
   .comments .post-item form {
     margin-top: -15px;
   }
@@ -4115,7 +4242,9 @@
     color: white;
     color: rgba(255, 255, 255, 0.95);
     min-height: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .switch ul,
   .switch li {
@@ -4138,7 +4267,7 @@
     padding: 1.5em;
     text-align: left;
   }
-  .switch li a:hover,
+  .hoverable .switch li a:hover,
   .switch li a:active,
   .switch li a:focus {
     opacity: 0.75;
@@ -4238,18 +4367,18 @@
   .dialog.page    button.restart {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .dialog.page .action a.reinstall:hover,
+  .hoverable .dialog.page .action a.reinstall:hover,
   .dialog.page .action a.reinstall:active,
   .dialog.page .action a.reinstall:focus,
-  .dialog.page    button.reinstall:hover,
+  .hoverable .dialog.page    button.reinstall:hover,
   .dialog.page    button.reinstall:active,
   .dialog.page    button.reinstall:focus {
     background-color: rgb(215, 34, 44); /* dark apple */
   }
-  .dialog.page .action a.restart:hover,
+  .hoverable .dialog.page .action a.restart:hover,
   .dialog.page .action a.restart:active,
   .dialog.page .action a.restart:focus,
-  .dialog.page    button.restart:hover,
+  .hoverable .dialog.page    button.restart:hover,
   .dialog.page    button.restart:active,
   .dialog.page    button.restart:focus {
     background-color: rgb(85, 141, 207); /* dark boysenberry */
@@ -4527,22 +4656,67 @@
 
   /* =Onboarding
   ----------------------------------------------- */
-  .join.page h2 {
+  .logged-in {
+    text-transform: lowercase;
+    background: black;
+    color: rgb(153, 153, 153); /* @nickel */
+    font-size: 0.875em;
+    line-height: 1.7142857143em; /* @line-height / 0.875em */
+    padding: 0.4285714286em 1.2857142858em; /* 0.375em / 0.875em         0.375em x 3 / 0.875em */
+  }
+  .logged-in h2 {
+    margin-top: 0.6em;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+  .logged-in h2 strong {
+    font-weight: inherit;
+    color: white;
+  }
+  @media (min-width: 30em) {
+    .logged-in h2,
+    .logged-in p {
+      display: inline;
+    }
+    .logged-in p:before {
+      margin-left: 0.3em;
+      margin-right: 0.6em;
+      content: "|";
+      opacity: 0.5;
+    }
+  }
+
+  .join.page > div h2 {
     font-weight: inherit;
     font-size: 1.5em;
     line-height: inherit;
-    padding: 1.5em 0.75em;
+    padding: 0.375em 1.5em;
     margin: 0;
     text-transform: lowercase;
     text-align: center;
   }
-  .join.page > div {
-    background-color: rgb(250, 134, 40); /* @orange */
-    color: white;
+  @media (min-width: 40em) {
+    .join.page > div h2 {
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
+    }
   }
-  .join.page > form {
-    background: white;
+  .join.page > .header {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    margin: 0;
+    max-width: none;
+  }
+
+  .join.page > .details {
+    background-color: transparent;
     padding-bottom: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .join.page > .details form {
+    margin-top: 0.75em;
   }
 
   .signup.page > div,
@@ -4556,14 +4730,27 @@
     margin-bottom: 0;
   }
   .signup.page > div + aside {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+  .signup.page .note:first-child {
     margin-top: 0;
   }
+  .signup.page .note:last-child {
+    margin-bottom: 0;
+  }
   .signup.page aside .note {
-    margin-top: 0;
+    font-size: inherit;
+  }
+  .signup.page .checkbox label {
+    text-transform: none;
+  }
+  .signup.page .checkbox label a {
+    display: inline-block;
+    text-transform: inherit;
   }
 
   .ready.page > div {
-    background: white;
     padding-top: 1.875em;
   }
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
@@ -4591,81 +4778,130 @@
   .ready.page li {
     margin-top: 0.375em;
   }
-  .ready.page li a {
+
+  .ready.page aside {
     display: block;
     color: rgb(102, 102, 102);
-    padding: 1.5em 4.5em 1.5em 9em;
-    background-color: rgb(238, 238, 238); /* @seashell */
-    text-decoration: none;
+    padding: 1.5em 3em 1.5em 1.5em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: white;
     position: relative;
   }
-  .ready.page li a:hover,
-  .ready.page li a:active,
-  .ready.page li a:focus {
+  .ready.page aside p {
+    margin: 0;
+  }
+
+  .ready.page li > a {
+    display: block;
+    color: rgb(102, 102, 102);
+    padding: 1.5em 3em 1.5em 1.5em;
+    background-color: white;
+    text-decoration: none;
+    position: relative;
+
+    /* @background-icon */
+    background-size: 1.5em auto;
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    background-position: calc(100% - 0.75em) 50%;
+
+    /* @icon-right */ /* @aluminum */
+    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
+  }
+  .hoverable .ready.page li a:hover,
+  .ready.page li > a:active,
+  .ready.page li > a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
   }
   @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .ready.page ul a {
+    .ready.page ul li > a {
       margin-left: -1.25em;
       margin-right: -1.25em;
     }
   }
-  .ready.page li a img + br,
-  .ready.page li a svg + br {
-    display: none;
-  }
-  .ready.page li a img,
-  .ready.page li a svg[width="77"] {
-    position: absolute;
-    top: 1.5em;
-    left: 1.5em;
-  }
-  .ready.page li a svg[width="77"],
-  .ready.page li a img[width="77"],
-  .ready.page li a img[width="224"] {
-    top: 50%;
-    width: 5.6em; /* 224px / 16px / 2.5 */
-    height: 3.2083333333em; /* 77px / 16px / 1.5 */
-    margin-top: -1.6041666667em;  /* 3.2083333333em / 2 */
-  }
-  .ready.page li a img[width="224"] {
-    width: 5.6em; /* 224px / 16px / 2.5 */
-    height: 1.925em; /* 77px / 16px / 2.5 */
-    margin-top: -0.9625em;  /* 1.925em / 2 */
-  }
-  .ready.page li a svg.icon {
-    position: absolute;
-    margin-top: -0.75em;
-    top: 50%;
-    right: 1.5em;
-  }
-  /*
-  .ready-list a {
-    background-color: rgb(234, 234, 234);
-    color: rgb(102, 102, 102);
-    text-transform: none;
-  }
-  .ready-list a span {
-    padding: 1.5em 1.5em 1.5em 9em;
-    position: relative;
-  }
-  .ready-lista img,
-  .ready-list a svg.icon {
-    position: absolute;
-    left: 1.5em;
-  }
-  .ready-list a img {
+
+  .ready.page li a > div img {
     vertical-align: middle;
-    margin-right: 1.5em;
-    width: 3em;
-    height: auto;
+    margin: 0 0.25em;
   }
-  .ready-list a svg.icon {
+  .ready.page li a > div .icon {
     width: 3em;
     height: 3em;
-    margin-right: 1.5em;
   }
-  */
+
+  .ready.page li a > div {
+    margin-bottom: 0.75em;    
+  }
+  .ready.page aside > div img,
+  .ready.page li a > div img,
+  .ready.page li a > div .icon {
+    margin: 0.75em 0.25em;
+  }
+  @media (min-width: 20em) {
+    .ready.page aside,
+    .ready.page li > a {
+      padding-left: 10em;
+    }
+    .ready.page aside > div,
+    .ready.page li > a > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      text-align: center;
+      width: 10em; /* item left padding */
+      margin-bottom: 0;
+
+      display: -webkit-flex;
+      display: flex;
+
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+    }
+  }
+
+  .email.page > div {
+    text-align: center;
+  }
+  .email.page h2 {
+    margin-bottom: 1.5em;
+  }
+  .email.page h2 .icon {
+    color: rgb(102, 102, 102); /* @tin */
+    margin-bottom: 0.25em;
+    font-size: 1.5em;
+  }
+  .email.page ul,
+  .email.page li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .email.page li {
+    margin-top: 1.5em;
+    padding: 1.5em;
+    background: white;
+  }
+  .email.page li h3 {
+    margin-top: 0;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .email.page li p {
+    color: rgb(102, 102, 102); /* @tin */
+  }
 
   /* For the header on the preview page */
   .powered-by h1 svg.icon {
@@ -4677,11 +4913,12 @@
   .page > header .back svg.icon {
     display: inline;
     margin-right: 0.5em;
+    vertical-align: top;
   }
   .page > header .back svg.icon:last-child {
     margin-right: 0;
   }
-  @media (max-width: 35em) {
+  @media (max-width: 60em) {
     .page > header .back svg.icon {
       margin-right: 0;
       display: block;
@@ -4705,4 +4942,22 @@
   body > #screen,
   body > #screen > div[data-screen] {
     display: inline;
+  }
+
+
+  /* SHIM: Make headlines look nice on the “Terms of Service” page. (TBD: Consider making these the default.) */
+  .page article.text h1 {
+    font-size     : 1.875em;   /* 30px / @font-size */
+    line-height   : 1.4em;     /* 42px / 30px  */
+    margin-top    : 1.4em;
+    margin-bottom : 0.7em;     /* 1.4em / 2 */
+  }
+  .page article.text h2 {
+    font-size     : 1.5em;     /* 24px / @font-size */
+  }
+  .page article.text h3 {
+    font-size     : 1.3125em;  /* 21px / @font-size */
+    line-height   : 1.4285714286em; /* 30px / 21px */
+    margin-top    : 1.4285714286em;
+    margin-bottom : 0.7142857143em; /* 1.4285714286em / 2 */
   }

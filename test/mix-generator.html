@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="hoverable">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slideshow</title>
+
+  <style>
+
+    /* =Elements
+    ----------------------------------------------- */
+    html, body {
+      height: 100%;
+    }
+    body {
+      font: 100%/1.25 "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      padding: 0;
+      margin: 0;
+      font-size: 2.666666667vw;
+      background-color: black;
+
+      /* OPTIONAL: Handle the case where the mix title is really long and won’t wrap naturally. */
+      word-wrap     : break-word; /* Currently supported in most browsers */
+      overflow-wrap : break-word; /* TBD: Proposed standard that will be supported everywhere eventually? */
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+    .slide section {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 100%;
+    }
+    .slide section > div {
+      display: table-row;
+    }
+    .slide section > div > div {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .image.blur {
+      opacity: 0.5;
+      -webkit-filter: blur(15px);
+      filter: blur(15px);
+    }
+    .slide.with-logo:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 1.25em;
+      right: 1.25em;
+      width: 6.25em;
+      height: 2.5em;
+      opacity: 0.4;
+      z-index: 9999; /* @infinity */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      /* Data URI encoded from white/ctzn.svg */
+      background-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iY3R6biIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDM4Ij4KICA8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTguNzc2LDM2LjcwMmMtMS43ODktMC43NDQtMy4zMzgtMS43NzktNC42NDQtMy4xMDZTMS44MSwzMC42NiwxLjA4NiwyOC43N0MwLjM2MiwyNi44OCwwLDI0Ljc4OSwwLDIyLjQ5OAogICAgYzAtMi4yOTIsMC4zNjItNC4zNzMsMS4wODYtNi4yNDNjMC43MjQtMS44NywxLjczOS0zLjQ3OCwzLjA0Ni00LjgyNXMyLjg1NS0yLjM4Miw0LjY0NC0zLjEwNmMxLjc4OS0wLjcyNCwzLjc1LTEuMDg2LDUuODgxLTEuMDg2CiAgICBjMi41NzMsMCw0LjczNSwwLjQzMiw2LjQ4NCwxLjI5N2MxLjc0OSwwLjg2NCwzLjAyNiwxLjc1OSwzLjgzLDIuNjg0bC00Ljc2NSw3LjA1N2MtMC41MjMtMC42MDMtMS4xMzYtMS4wOTYtMS44NC0xLjQ3OAogICAgYy0wLjcwNC0wLjM4Mi0xLjUxOC0wLjU3My0yLjQ0My0wLjU3M2MtMS41MjgsMC0yLjgyNSwwLjU0My0zLjg5LDEuNjI5Yy0xLjA2NiwxLjA4Ni0xLjU5OCwyLjYzNC0xLjU5OCw0LjY0NAogICAgYzAsMi4wMSwwLjUzMywzLjU2OSwxLjU5OCw0LjY3NGMxLjA2NiwxLjEwNiwyLjM2MiwxLjY1OSwzLjg5LDEuNjU5YzAuOTI1LDAsMS43MzktMC4yMDEsMi40NDMtMC42MDMKICAgIGMwLjcwNC0wLjQwMiwxLjMxNy0wLjkwNSwxLjg0LTEuNTA4bDQuNzY1LDcuMTE3Yy0wLjgwNCwwLjkyNS0yLjA4MSwxLjgxOS0zLjgzLDIuNjg0Yy0xLjc0OSwwLjg2NC0zLjkxLDEuMjk3LTYuNDg0LDEuMjk3CiAgICBDMTIuNTI1LDM3LjgxOCwxMC41NjUsMzcuNDQ2LDguNzc2LDM2LjcwMnoiLz4KICA8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTMxLjYwNCwzNS42MTZjLTEuNDQ4LTEuNDY4LTIuMTcxLTMuNjg5LTIuMTcxLTYuNjY1VjE2Ljc2OGgtMy42NzlWNy45NjJoMy42NzlWMGgxMC4xOTN2Ny45NjJoNC41ODQKICAgIHY4LjgwNmgtNC41ODR2OS41OWMwLDAuNzY0LDAuMTYxLDEuMzY3LDAuNDgyLDEuODA5czAuNzg0LDAuNjYzLDEuMzg3LDAuNjYzYzAuMzYyLDAsMC43MTQtMC4wNSwxLjA1Ni0wLjE1MQogICAgYzAuMzQyLTAuMTAxLDAuNTczLTAuMjMxLDAuNjk0LTAuMzkybDEuNjg5LDcuOTYyYy0wLjU2MywwLjQ0Mi0xLjM5NywwLjgxNC0yLjUwMywxLjExNmMtMS4xMDYsMC4zMDItMi40MjMsMC40NTItMy45NTEsMC40NTIKICAgIEMzNS4zNDQsMzcuODE4LDMzLjA1MiwzNy4wODQsMzEuNjA0LDM1LjYxNnoiLz4KICA8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTQ3LjM0NiwyOS42MTVsOS40NjktMTIuODQ3aC05LjQ2OVY3Ljk2MmgyMi41NTh2Ny4xNzdsLTkuNTksMTMuMTQ5aDkuODMxdjguODA2SDQ3LjM0NlYyOS42MTV6Ii8+CiAgPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik04OS44MDcsMTkuNDgyYzAtMS4xNjYtMC4yNjEtMi0wLjc4NC0yLjUwM2MtMC41MjMtMC41MDMtMS4yNjctMC43NTQtMi4yMzItMC43NTQKICAgIHMtMS43NTksMC4yODItMi4zODMsMC44NDRjLTAuNjIzLDAuNTYzLTEuMTE2LDEuMTI2LTEuNDc4LDEuNjg5djE4LjMzNkg3Mi43OThWNy45NjJoMTAuMTMzdjMuMzc4CiAgICBjMC43MjQtMS4wMDUsMS44Ni0xLjk0LDMuNDA4LTIuODA1YzEuNTQ4LTAuODY1LDMuMzI3LTEuMjk3LDUuMzM4LTEuMjk3YzIuOTM1LDAsNS4wNTYsMC43NzQsNi4zNjMsMi4zMjIKICAgIGMxLjMwNywxLjU0OCwxLjk2LDMuNDY4LDEuOTYsNS43NnYyMS43NzRIODkuODA3VjE5LjQ4MnoiLz4KPC9zdmc+);
+    }
+
+    .lime {
+      background-color: rgb(218, 243, 121); /* @lime */
+    }
+    .cucumber {
+      background-color: rgb(153, 248, 115); /* @cucumber */
+    }
+    .blueberry {
+      background-color: rgb(40, 221, 181); /* @blueberry */
+    }
+    .boysenberry {
+      background-color: rgb(101, 152, 254); /* @boysenberry */
+    }
+    .plumb {
+      background-color: rgb(193, 76, 172); /* @plumb */
+    }
+    .strawberry {
+      background-color: rgb(250, 56, 136); /* @strawberry */
+    }
+    .apple {
+      background-color: rgb(255, 49, 59); /* @apple */
+    }
+    .tangerine {
+      background-color: rgb(255, 204, 0); /* @tangerine */
+    }
+    .orange {
+      background-color: rgb(250, 134, 40); /* @orange */
+    }
+
+    .push > div > div {
+      padding: 3.75em;
+      font-weight: bold;
+    }
+    .push h1 {
+      font-size: 3em;
+      color: black;
+      margin: 0;
+    }
+    .push p {
+      font-size: 3em;
+      color: white;
+      margin: 0;
+    }
+    .title > div > div {
+      padding: 1.25em;
+      text-align: center;
+    }
+    .title > div > div:before {
+      content: "";
+      display: block;
+      background: black;
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .title h1 {
+      font-size: 4.5em;
+      color: white;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .avatar {
+      position: absolute;
+      bottom: 1.25em;
+      left: 1.25em;
+      color: white;
+    }
+    .avatar img {
+      border-radius: 100%;
+      vertical-align: middle;
+      margin-right: 0.25em;
+    }
+    .credits > div > div {
+      padding: 1.25em;
+      text-align: center;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+    .credits h1 {
+      font-size: 2em;
+      margin: 0 0 1.5em;
+    }
+    .credits img {
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="slide with-logo" data-duration="2.4" style="background-color: rgb(136, 129, 240);">
+    <section class="push">
+      <div><div>
+        <h1>Project Citizen:</h1>
+        <p>Helping social creatives celebrate the work they do</p>
+      </div></div>
+    </section>
+  </div>
+  <div class="slide with-logo" data-duration="2.4">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/c862361c852d279c2f39b39702f32049d797b53a=c600x600);"></div>
+    <section class="title">
+      <div><div>
+        <h1>Our First Event: The Kickback</h1>
+      </div></div>
+    </section>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/6a75a691292145346a4df6a16a4c6e6f7777c93d=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/053/493/original/key-west.JPG=c130x130" width="40" height="40" alt="" />
+      Craig O.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/d6f500e75957708c103954f8d7c915e05f56b2d2=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/292/104/original/195670_1043164079_987381920_n.jpg=c130x130" width="40" height="40" alt="" />
+      Jelena W.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/881eabdbb1d9a9dbbb1c1a78f95ad985fb4ee0b7=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/avatars/1144037/original/bw_caseycaplowe.jpg=c130x130" width="40" height="40" alt="" />
+      Casey C.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/d7aa39845737769b7e3c9cfcfd4b45412511ffc5=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/292/104/original/195670_1043164079_987381920_n.jpg=c130x130" width="40" height="40" alt="" />
+      Jelena W.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/53f3cea36051bf2966d5eee8b0cda3a2e90d2845=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/292/104/original/195670_1043164079_987381920_n.jpg=c130x130" width="40" height="40" alt="" />
+      Jelena W.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c600x600);"></div>
+    <div class="avatar">
+      Brian N.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/09ee43f3546d5364b3533da09e3eb2a2452fa5be=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/292/104/original/195670_1043164079_987381920_n.jpg=c130x130" width="40" height="40" alt="" />
+      Jelena W.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/3a40d357bedac416cc04712da1744e6e1c19ad41=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/292/104/original/195670_1043164079_987381920_n.jpg=c130x130" width="40" height="40" alt="" />
+      Jelena W.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/f430b8995a18b042c1963c132c17ad4218276de4=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/477/317/original/anton_sipos_photo.JPG=c130x130" width="40" height="40" alt="" />
+      Anton S.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/99527aff06b1584d9d7b40187beda993bcfa21f1=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/292/104/original/195670_1043164079_987381920_n.jpg=c130x130" width="40" height="40" alt="" />
+      Jelena W.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="0.6">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c600x600);"></div>
+    <div class="avatar">
+      <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/292/104/original/195670_1043164079_987381920_n.jpg=c130x130" width="40" height="40" alt="" />
+      Jelena W.
+    </div>
+  </div>
+  <div class="slide with-logo" data-duration="3" data-transition="1.2">
+    <div class="image blur" style="background-image: url(https://m.ctznapp.com/s3/ctzn/3f661e87b9c1515a631a9817822a959a552cf7f7=c600x600);"></div>
+    <section class="credits">
+      <div><div>
+        <h1>Proud to be pushing together on Project Citizen</h1>
+        <div class="avatar-list">
+          <p>Images from</p>
+          <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/053/493/original/key-west.JPG=c130x130" width="40" height="40" alt="" />
+          <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/292/104/original/195670_1043164079_987381920_n.jpg=c130x130" width="40" height="40" alt="" />
+          <img src="http://assets.goodstatic.com/s3/prod/avatars/1144037/original/bw_caseycaplowe.jpg=c130x130" width="40" height="40" alt="" />
+          <img src="http://assets.goodstatic.com/s3/prod/users/avatars/002/477/317/original/anton_sipos_photo.JPG=c130x130" width="40" height="40" alt="" />
+        </div>
+      </div></div>
+    </section>
+  </div>
+  <div class="slide empty" data-duration="1.5" data-transition="1.2" style="background-color: black"></div>
+
+  <div class="slide" data-duration="0">
+    <div class="image" style="background-image: url(https://m.ctznapp.com/s3/ctzn/c862361c852d279c2f39b39702f32049d797b53a=c600x600);"></div>
+    <section class="title">
+      <div><div>
+        <h1>Our First Event: The Kickback</h1>
+      </div></div>
+    </section>
+  </div>
+
+  <script>
+
+    var framesPerSecond = 30;
+    var framesPerSlide;      // Seconds
+    var framesPerTransition; // Seconds
+
+    var slides;
+    var cursor = 0;
+    var stepCounter = 0;
+    var previous;
+
+    slides = document.querySelectorAll(".slide");
+    // Show the first slide
+    slides[cursor].style.opacity = 1;
+    updateTiming();
+
+    // Show the next slide
+    function next() {
+      previous = slides[cursor];
+      previous.style.zIndex = 1;
+
+      cursor++;
+      if (cursor >= slides.length) {
+        console.log('done');
+        cursor = 0;
+      }
+
+      slides[cursor].style.opacity = 0;
+      slides[cursor].style.zIndex = 10;
+      updateTiming();
+    }
+    function updateTiming() {
+      var duration = slides[cursor].getAttribute('data-duration') || 1;
+      framesPerSlide = framesPerSecond * Number(duration);
+
+      var transition = slides[cursor].getAttribute('data-transition') || 0;
+      framesPerTransition = framesPerSecond * Number(transition);
+    }
+
+
+    // KUDOS: http://gizma.com/easing
+    // t: current time, b: begInnIng value, c: change In value, d: duration
+    function linear(t, b, c, d) {
+      return c*t/d + b;
+    }
+    function easeOutQuad(t, b, c, d) {
+      t /= d;
+      return -c * t*(t-2) + b;
+    }
+    function easeInOutQuad(t, b, c, d) {
+      t /= d/2;
+      if (t < 1) return c/2*t*t + b;
+      t--;
+      return -c/2 * (t*(t-2) - 1) + b;
+    }
+
+
+    // Show the next frame
+    function step() {
+      stepCounter++;
+
+      if (stepCounter <= framesPerTransition) {
+        // Fade in
+        if (Number(slides[cursor].style.opacity) < 1) slides[cursor].style.opacity = easeOutQuad(stepCounter, 0, 1, framesPerTransition);
+        // Fade out
+        if (previous) previous.style.opacity = 1 - easeOutQuad(stepCounter, 0, 1, framesPerTransition);
+
+      } else {
+        // If we’re finished, snap to the appropriate values
+        slides[cursor].style.opacity = 1;
+        if (previous) previous.style.opacity = 0;
+      }
+
+      if (stepCounter >= framesPerSlide) {
+        next();
+        stepCounter = 0;
+      }
+
+      console.log('step');
+    }
+
+
+    // For testing…
+    var timer;
+    function play() {
+      if (!timer) timer = setInterval(step, Math.round(1000 / framesPerSecond));
+    }
+    function pause() {
+      if (timer) {
+        clearInterval(timer);
+        timer = undefined;
+      }
+    }
+    play();
+  </script>
+</body>
+</html>

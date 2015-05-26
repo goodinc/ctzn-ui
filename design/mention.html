@@ -1,0 +1,611 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>@caseycaplowe mentioned you in a post on GOOD LA</title>
+
+  <style>
+
+/*
+  Styles for notification emails sent by the server (Welcome, New Comment and Mix Ready)
+*/
+
+  html, body {
+    height: 100%;
+  }
+  .container {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    font: 16px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: rgb(238, 238, 238); /* @seashell */
+    color: rgb(83, 83, 83);
+    padding-bottom: 30px;
+  }
+  @media (min-width: 600px) {
+    .container {
+      padding: 20px 0 60px;
+    }
+  }
+
+  a {
+    color: rgb(31, 31, 31); /* @steel */
+    transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+  a img {
+    border-width: 0;
+  }
+
+  .headline h1,
+  .details h2,
+  .details h3 {
+    font-weight: inherit;
+    color: rgb(31, 31, 31); /* @steel */
+  }
+  .headline h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .details h2 {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .details h3 {
+    font-size: inherit;
+    color: inherit;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .details h3 strong {
+    font-weight: inherit;
+    color: rgb(31, 31, 31); /* @steel */
+  }
+  .details p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .header {
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .header h2 {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+
+
+  /* Containers */
+  .headline,
+  .details,
+  .article,
+  .footer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .headline,
+  .article,
+  .details {
+    background-color: white;
+  }
+  .headline,
+  .details {
+    max-width: 520px; /* 580px - (30px x 2) */
+  }
+  .headline {
+    padding: 25px 30px;
+  }
+  /* SHIM: Give details a little more padding at the bottom, for the mix notification */
+  .details {
+    padding: 25px 30px 30px;
+  }
+  .article {
+    max-width: 600px;
+    padding: 15px;
+    max-width: 550px; /* 580px - (15px x 2) */
+  }
+  .footer {
+    max-width: 580px;
+  }
+  .details,
+  .article {
+    margin-top: 1px;
+  }
+
+
+  /* =Profile Preview
+  ----------------------------------------------- */
+  .profile {
+    margin: 20px 0;
+    padding-bottom: 20px;
+    text-align: center;
+    background: rgb(204, 204, 204); /* @aluminum */
+  }
+  .profile h3 {
+    padding: 14px;
+    background-color: rgb(51, 51, 51); /* @iron */
+    color: white;
+    border-bottom: 1px solid rgb(51, 51, 51); /* @iron */
+    margin: 0;
+  }
+  .profile .image {
+    max-width: none;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .profile img {
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .profile h4 {
+    color: white;
+    font-size: 28px;
+    line-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .profile .action a {
+    background: white;
+    border-color: white;
+  }
+  .profile .joined {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: black;
+    opacity: 0.5;
+    margin: 0;
+  }
+
+
+  /* =Avatars
+  ----------------------------------------------- */
+  .avatar img {
+    border-radius: 100%;
+    vertical-align: middle;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .avatar > span {
+    display: inline-block;
+    color: black;
+    width       : 1.25em; /* 20px / 16px */
+    line-height : 1.25em;
+    vertical-align: middle;
+  }
+  .avatar .letter {
+    display: block;
+    speak: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8em; /* 16px / 20px */
+    font-style: normal;
+    font-weight: bold;
+  }
+
+
+  /* =Member Avatars
+  ----------------------------------------------- */
+  .avatar .size30 {
+    font-size: 1.5em; /* 30px / 20px */
+    border-radius: 100%;
+  }
+
+  .avatar .clover {
+    background-color: rgb(0, 235, 98); /* @clover */
+  }
+  .avatar .kiwi {
+    background-color: rgb(0, 255, 208); /* @kiwi */
+  }
+  .avatar .grape {
+    background-color: rgb(159, 104, 246); /* @grape */
+  }
+  .avatar .bluebird {
+    background-color: rgb(0, 206, 250); /* @bluebird */
+  }
+  .avatar .cantaloupe {
+    background-color: rgb(255, 203, 117); /* @cantaloupe */
+  }
+  .avatar .cranberry {
+    background-color: rgb(251, 59, 147); /* @cranberry */
+  }
+  .avatar .amethyst {
+    background-color: rgb(255, 152, 248); /* @amethyst */
+  }
+  .avatar .sky {
+    background-color: rgb(0, 255, 254); /* @sky */
+  }
+  .avatar .ocean {
+    background-color: rgb(24, 57, 245); /* @ocean */
+    color: white;
+  }
+
+
+  /* =Push Colors
+  ----------------------------------------------- */
+  .profile.lime {
+    background-color: rgb(218, 243, 121); /* @lime */
+  }
+  .profile.cucumber {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .profile.blueberry {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .profile.boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .profile.plumb {
+    background-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .profile.strawberry {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .profile.apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .profile.tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .profile.orange {
+    background-color: rgb(250, 134, 40); /* @orange */
+  }
+
+
+  .headline.lime {
+    border-top: 10px solid rgb(218, 243, 121); /* @lime */
+  }
+  .headline.cucumber {
+    border-top: 10px solid rgb(153, 248, 115); /* @cucumber */
+  }
+  .headline.blueberry {
+    border-top: 10px solid rgb(40, 221, 181); /* @blueberry */
+  }
+  .headline.boysenberry {
+    border-top: 10px solid rgb(101, 152, 254); /* @boysenberry */
+  }
+  .headline.plumb {
+    border-top: 10px solid rgb(193, 76, 172); /* @plumb */
+  }
+  .headline.strawberry {
+    border-top: 10px solid rgb(250, 56, 136); /* @strawberry */
+  }
+  .headline.apple {
+    border-top: 10px solid rgb(255, 49, 59); /* @apple */
+  }
+  .headline.tangerine {
+    border-top: 10px solid rgb(255, 204, 0); /* @tangerine */
+  }
+  .headline.orange {
+    border-top: 10px solid rgb(250, 134, 40); /* @orange */
+  }
+
+
+  .article .summary.lime {
+    border-left: 5px solid rgb(218, 243, 121); /* @lime */
+  }
+  .article .summary.cucumber {
+    border-left: 5px solid rgb(153, 248, 115); /* @cucumber */
+  }
+  .article .summary.blueberry {
+    border-left: 5px solid rgb(40, 221, 181); /* @blueberry */
+  }
+  .article .summary.boysenberry {
+    border-left: 5px solid rgb(101, 152, 254); /* @boysenberry */
+  }
+  .article .summary.plumb {
+    border-left: 5px solid rgb(193, 76, 172); /* @plumb */
+  }
+  .article .summary.strawberry {
+    border-left: 5px solid rgb(250, 56, 136); /* @strawberry */
+  }
+  .article .summary.apple {
+    border-left: 5px solid rgb(255, 49, 59); /* @apple */
+  }
+  .article .summary.tangerine {
+    border-left: 5px solid rgb(255, 204, 0); /* @tangerine */
+  }
+  .article .summary.orange {
+    border-left: 5px solid rgb(250, 134, 40); /* @orange */
+  }
+
+
+  /* =Article
+  ----------------------------------------------- */
+  .article.summary-container {
+    background: rgb(250, 250, 250); /* @casper */
+  }
+  .article h4 {
+    margin-top: 0;
+  }
+  .article h4 .avatar {
+    margin-right: 7px;
+  }
+  .article .body img {
+    display: block;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    min-width: 200px;
+    min-height: 200px;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .article .body {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgb(51, 51, 51); /* @iron */
+  }
+  .article .body img {
+    margin: 15px auto;
+    max-width: 100%;
+    height: auto;
+  }
+  .article .summary img {
+    display: block;
+    height: 100px;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    min-height: 30px;
+    min-width: 30px;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .article .comment h4 {
+    margin: 0;
+  }
+  .article h4 a {
+    text-decoration: none;
+  }
+  .article .comment p {
+    margin-top: 0;
+    padding-left: 42px;
+  }
+  .article .action {
+    margin-top: 30px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+  }
+  .article .action a {
+    text-decoration: none;
+  }
+  .article .summary {
+    margin-top: 0;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(135, 135, 135);
+    font-style: italic;
+  }
+  .article .summary h5,
+  .article .summary p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .article .summary h5 {
+    font-size: inherit;
+    font-weight: normal;
+    color: rgb(31, 31, 31); /* @steel */
+  }
+
+
+  /* =Video
+  ----------------------------------------------- */
+  .article a.video {
+    background: rgb(44, 44, 44); /* @thorium */
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  .article a.video:hover,
+  .article a.video:active,
+  .article a.video:focus {
+    background: black;
+  }
+  .article a.video img {
+    margin-bottom: 0;
+  }
+  .article a.video span {
+    display: block;
+    padding: 10px;
+  }
+  .article a.video span img {
+    margin: 0 5px 0 0;
+    width: 24px;
+    height: 24px;
+    display: inline;
+    vertical-align: middle;
+    min-width: 1px;
+    min-height: 1px;
+    background-color: transparent;
+  }
+  .article .body a.video {
+    max-width: 512px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .article .summary a.video {
+    max-width: 200px;
+  }
+  .article .summary a.video > img {
+    height: 200px;
+  }
+
+
+  /* =Action
+  ----------------------------------------------- */
+  .details .action {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .action a {
+    border: 1px solid rgb(204, 204, 204); /* @aluminum */
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(51, 51, 51); /* @iron */
+  }
+  .action a:hover,
+  .action a:active,
+  .action a:focus {
+    background: rgb(238, 238, 238); /* @seashell */
+    color: black;
+  }
+
+
+  /* =Icon
+  ----------------------------------------------- */
+  svg.icon {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+
+  /* =Footer
+  ----------------------------------------------- */
+  .footer {
+    text-align: center;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .footer h2 {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .footer .unsubscribe {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  .mute {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+  }
+  ul.mute,
+  ul.mute li {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  @media (min-width: 600px) {
+    .footer {
+      text-align: left;
+    }
+    .footer h2 {
+      float: left;
+    }
+    .footer .unsubscribe {
+      margin-bottom: 0;
+      line-height: 30px;
+      float: right;
+    }
+  }
+
+
+  </style>
+
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h2>– REPLY ABOVE –</h2>
+    </div><!-- /.header -->
+
+    <div class="headline plumb">
+      <h1><b>@caseycaplowe mentioned you</b> in a post on GOOD LA</h1>
+    </div><!-- /.headline -->
+
+    <div class="article">
+      <h4>
+        <a href="http://ctznapp.com">
+          <span class="avatar">
+            <img src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c60x60" width="30" height="30" alt="" />
+          </span>
+          @caseycaplowe
+        </a>
+      </h4>
+
+      <div class="body">
+        <p>@aldo Here’s a recap mix of the views everyone shared of #GOODLA.</p>
+        <p>
+          <a href="http://ctznapp.com" class="video">
+            <img src="https://m.ctznapp.com/s3/ctzn/85a9cd353e202814266a06cd57a64210e9442322=c512x512" alt="Video" />
+            <span>
+              <img src="http://goodinc.github.io/ctzn-ui/assets/images/email/52x52/play.png" alt="" />
+              play in app
+            </span>
+          </a>
+        </p>
+      </div>
+
+      <p class="action">
+        <a href="mailto:example@ctznapp.com">
+          reply via email
+        </a>
+        <a href="http://ctznapp.com">
+          view post
+        </a>
+      </p>
+
+    </div><!-- /.article -->
+
+    <div class="footer">
+      <h2>
+        <a href="http://ctznapp.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 45.382" width="75" height="29">
+            <path d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"/>
+            <path d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"/>
+            <path d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/>
+            <path d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"/>
+            <foreignobject><img src="http://goodinc.github.io/ctzn-ui/assets/images/email/ctzn.png" alt="CTZN" width="75" height="28" /></foreignobject>
+          </svg>
+        </a>
+      </h2>
+      <p class="unsubscribe">Done with this conversation? <a href="http://ctznapp.com">Mute conversation</a></p>
+
+      <div style="clear: both"></div>
+    </div><!-- /.footer -->
+
+    <p class="mute"><a href="http://ctznapp.com">Mute all mentions of you in posts or comments notifications</a></p>
+
+  </div><!-- ./container -->
+
+</body>
+</html>
