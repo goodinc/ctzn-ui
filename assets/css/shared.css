@@ -973,9 +973,6 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .list ul {
-    margin: 0 -1.25em; /* @page-padding */
-  }
   .list li {
     margin: 0;
     position: relative;
@@ -1037,7 +1034,12 @@
   .list ul .message svg {
     display: block;
   }
+
+  /* OPTIONAL: Make list items stick to the sides at narrow window sizes. */
   @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .list ul {
+      margin: 0 -1.25em; /* @page-padding */
+    }
     .list li a {
       border-left-width: 0;
       border-right-width: 0;
