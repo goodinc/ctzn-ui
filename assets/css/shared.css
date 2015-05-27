@@ -3801,11 +3801,13 @@
 
   /* =Preview
   ----------------------------------------------- */
-  .mix-editor form .title {
+  .mix-editor form {
     margin: 0;
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 0.75em;
+  }
+  .mix-editor p.text {
     text-align: center;
   }
   .mix-editor p.text label {
@@ -3813,15 +3815,15 @@
     border-width: 0;
     padding: 0;
   }
-  .mix-editor form .title textarea,
-  .mix-editor form .title input[type="text"] {
+  .mix-editor textarea,
+  .mix-editor input[type="text"] {
     background: transparent;
     color: inherit;
     text-align: inherit;
     border-width: 0;
     border-radius: 0;
   }
-  .mix-editor form .title input[type="text"] {
+  .mix-editor input[type="text"] {
     font-weight: bold;
     font-size: 2.25em; /* 36px / @font-size */
     line-height: 1.3333333333; /* 48px / 2.25em */
@@ -3834,55 +3836,63 @@
       font-size: 2.666666667vw;
     }
   }
-  .mix-editor form .title textarea {
+  .mix-editor textarea {
     font-weight: bold;
     height: 4.5em;
+    font-size: 1.25em;
   }
 
-  .mix-editor form.preview {
+  .mix-editor .preview {
     background: rgb(218, 243, 121); /* @lime */
 
     text-align: center;
     padding: 1.5em;
   }
-  .mix-editor form.preview img {
+  .mix-editor .preview img {
     max-width: 100%;
     height: auto;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
-    display: block;
   }
-  .mix-editor form.preview.lime {
+  .mix-editor .preview.lime {
     background-color: rgb(218, 243, 121); /* @lime */
   }
-  .mix-editor form.preview.cucumber {
+  .mix-editor .preview.cucumber {
     background-color: rgb(153, 248, 115); /* @cucumber */
   }
-  .mix-editor form.preview.blueberry {
+  .mix-editor .preview.blueberry {
     background-color: rgb(40, 221, 181); /* @blueberry */
   }
-  .mix-editor form.preview.boysenberry {
+  .mix-editor .preview.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .mix-editor form.preview.plumb {
+  .mix-editor .preview.plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
-  .mix-editor form.preview.strawberry {
+  .mix-editor .preview.strawberry {
     background-color: rgb(250, 56, 136); /* @strawberry */
   }
-  .mix-editor form.preview.apple {
+  .mix-editor .preview.apple {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  .mix-editor form.preview.tangerine {
+  .mix-editor .preview.tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
-  .mix-editor form.preview.orange {
+  .mix-editor .preview.orange {
     background-color: rgb(250, 134, 40); /* @orange */
   }
-  .mix-editor form.preview div {
+  .mix-editor .preview div {
     background-size: cover;
     background-position: center;
   }
-  .mix-editor form.preview div p label {
+  /*
+  .mix-editor .preview iframe {
+    display: block;
+    margin: 0 auto;
+    border-width: 0;
+  }
+  */
+  /*
+  .mix-editor .preview div p label {
     min-height: 15em;
     min-height: 70vw;
     min-height: calc(90vmin - 4.5em);
@@ -3902,10 +3912,11 @@
     -webkit-justify-content: center;
             justify-content: center;
   }
-  .mix-editor form.preview textarea {
+  .mix-editor .preview textarea {
     width: calc(100vw - 4.5em);
     font-size: 1.25em;
   }
+  */
 
 
 

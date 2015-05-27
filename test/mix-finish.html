@@ -279,20 +279,22 @@
 
   <section class="mix-editor page">
     <header>
-      <h1>Add Message</h1>
+      <h1>Create Mix</h1>
 
       <a href="#back" class="back">
         <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></svg>
       </a>
     </header>
-    <form class="preview plumb">
-      <div style="background-image: url(https://m.ctznapp.com/s3/ctzn/e21be1b7a4dc912883277ec5117283efe909b435=c640x640)">
-        <p class="text title">
-          <label>
-            <span>Enter a parting message</span><br />
-            <textarea placeholder="Enter message"></textarea>
-          </label>
-        </p>
+    <form action="mixes.html" method="get">
+      <p class="text">
+        <label>
+          <span>Enter a parting message</span><br />
+          <textarea placeholder="Enter message"></textarea>
+        </label>
+        <em class="note">Your message will appear on the last slide</em>
+      </p>
+      <div class="preview orange">
+        <img width="640" height="640" alt="preview" src="https://m.ctznapp.com/s3/ctzn/e21be1b7a4dc912883277ec5117283efe909b435=c640x640" />
       </div>
       <p class="submit">
         <button>Done</button>
