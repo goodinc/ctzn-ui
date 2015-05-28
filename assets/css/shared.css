@@ -1222,6 +1222,10 @@
   }
   .post-item .profile h2 {
     margin: 0;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   .post-item .profile p.name {
     margin-top: 0;
