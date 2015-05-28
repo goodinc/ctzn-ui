@@ -595,6 +595,21 @@
       font-style: italic;
     }
 
+    .members .role,
+    .members .joined {
+      margin-top: 6px;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+    .members .role {
+      float: left;
+      margin-right: 3px;
+    }
+    .members .role:after {
+      content: " – ";
+    }
+
 
     /* =Action
     ----------------------------------------------- */
@@ -709,6 +724,7 @@
             <b>@anton</b>
             <span class="name">Anton Sipos</span>
           </a>
+          <p class="joined">Joined 3 weeks ago</p>
         </li>
         <li>
           <a href="http://ctznapp.com">
@@ -718,6 +734,7 @@
             <b>@brian</b>
             <span class="name">Brian</span>
           </a>
+          <p class="joined">Joined 3 weeks ago</p>
         </li>
         <!--
         <li>
@@ -739,6 +756,8 @@
             <span class="name">Steve Vasquez</span>
           </a>
           <p class="about">Cooking with Gabby director of communications, filmmaker, traveler, eater…</p>
+          <p class="role">Group Curator</p>
+          <p class="joined">Joined 3 weeks ago</p>
         </li>
         <li>
           <a href="http://ctznapp.com">
@@ -747,6 +766,7 @@
             </span>
             <b>@vogg</b>
           </a>
+          <p class="joined">Joined 3 weeks ago</p>
         </li>
       </ul>
     </div><!-- /.members -->
