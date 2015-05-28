@@ -321,6 +321,16 @@
     text-align: center;
     opacity: 0.75;
   }
+  .avatar [data-content].has-icon:after {
+    opacity: 0;
+  }
+  .avatar svg {
+    position: absolute;
+    opacity: 0.5;
+    font-size: 1.3333333333em; /* 40px / 30px */
+    margin-top: -0.1875em;
+    margin-left: -0.1875em;
+  }
 
   .avatar .name {
     /* @hidden-accessible */
