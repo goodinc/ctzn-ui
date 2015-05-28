@@ -308,7 +308,7 @@
     font-size: 1.25em; /* 2/3 x 30px / @font-size */
   }
   .avatar .size100 {
-    font-size: 4.1666666667em; /* 2/3 x 30px / @font-size */
+    font-size: 4.1666666667em; /* 2/3 x 100px / @font-size */
   }
 
   .avatar [data-content]:after {
@@ -324,12 +324,26 @@
   .avatar [data-content].has-icon:after {
     opacity: 0;
   }
+  .avatar [data-content].has-icon {
+    position: relative;
+  }
   .avatar svg {
     position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0.5;
-    font-size: 1.3333333333em; /* 40px / 30px */
-    margin-top: -0.1875em;
-    margin-left: -0.1875em;
+  }
+
+  /* OPTIONAL: Make the icon a little larger, so the shape will reach the edges */
+  .avatar .size30 svg {
+    font-size: 1.1333333333em; /* 34px / 30px */
+    margin-top: -0.06818181818em; /* 5px / (2/3 x 100px x 1.1em) */
+    margin-left: -0.06818181818em;
+  }
+  .avatar .size100 svg {
+    font-size: 1.1em; /* 110px / 100px */
+    margin-top: -0.06818181818em; /* 5px / (2/3 x 100px x 1.1em) */
+    margin-left: -0.06818181818em;
   }
 
   .avatar .name {
@@ -1218,10 +1232,20 @@
     list-style-type: disc;
   }
   .post-item .profile {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border: 0.0625em solid rgb(204, 204, 204); /* @aluminum */
+    padding: 0.75em;
+    border-radius: 0.25em;
     text-align: center;
   }
+  .post-item .profile .avatar {
+    display: inline-block;
+    position: relative;
+  }
   .post-item .profile h2 {
-    margin: 0;
+    margin-top: 0.4em; /* 0.75em / 1.875em */
+    margin-bottom: 0;
 
     /* @wrap-long-words */
     word-wrap     : break-word;
@@ -1234,20 +1258,11 @@
   .post-item .profile p.about {
     font-style: italic;
   }
+  .post-item .profile p.action {
+    margin-top: 1.5em;
+  }
   .post-item .profile p:last-child {
     margin-bottom: 0;
-  }
-  .post-item .profile {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    border: 0.0625em solid rgb(204, 204, 204); /* @aluminum */
-    padding: 0.75em;
-    border-radius: 0.25em;
-  }
-  .post-item .profile img {
-    margin-right: 0.75em;
-    margin-bottom: 0.75em;
-    border-radius: 100%;
   }
   .post-item .profile .action a {
     display: block;
