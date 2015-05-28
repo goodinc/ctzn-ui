@@ -323,6 +323,9 @@
     .ready a {
       text-decoration: none;
     }
+    .ready .icon {
+      display: block;
+    }
 
     /* Icons */
     .heart svg,
@@ -586,6 +589,7 @@
       margin-left: 0;
       padding-left: 0;
       margin-top: 0;
+      padding-bottom: 0.75em;
     }
     .members li {
       color: rgb(153, 153, 153); /* @nickel */
@@ -689,9 +693,9 @@
       <p class="curator">
         <a href="http://ctznapp.com">
           <span class="avatar">
-            <img src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100" width="30" height="30" alt="" />
+            <img src="https://m.ctznapp.com/s3/ctzn/87d1308471f1b43983d939f945f8f4e00d26540b=c60x60" width="30" height="30" alt="" />
           </span>
-          <b>@curatorname</b>
+          <b>@aishathinker</b>
         </a>
       </p>
     </div><!-- /.message -->
@@ -745,22 +749,21 @@
         <li>
           <a href="http://ctznapp.com">
             <span class="avatar">
-              <span class="size30 sky"><span class="letter">a</span></span>
+              <span class="size30 grape"><span class="letter">a</span></span>
             </span>
-            <b>@anton</b>
-            <span class="name">Anton Sipos</span>
+            <b>@aubery</b>
           </a>
-          <p class="joined">Joined 3 weeks ago</p>
+          <p class="joined">Joined 3 hours ago</p>
         </li>
         <li>
           <a href="http://ctznapp.com">
             <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="30" height="30" alt="" />
+              <img src="https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c60x60" width="30" height="30" alt="" />
             </span>
-            <b>@brian</b>
-            <span class="name">Brian</span>
+            <b>@benisonchoi</b>
+            <span class="name">Benison Choi</span>
           </a>
-          <p class="joined">Joined 3 weeks ago</p>
+          <p class="joined">Joined 1 day ago</p>
         </li>
         <!--
         <li>
@@ -776,25 +779,27 @@
         <li>
           <a href="http://ctznapp.com">
             <span class="avatar">
-              <span class="size30 grape"><span class="letter">s</span></span>
+              <img src="https://m.ctznapp.com/s3/ctzn/fc2a6013c86b48e0cd1de05ae9a82b57842d280d=c60x60" width="30" height="30" alt="" />
             </span>
-            <b>@stevenger</b>
-            <span class="name">Steve Vasquez</span>
+            <b>@tomcarroll</b>
+            <span class="name">Tom Carroll</span>
           </a>
-          <p class="about">Cooking with Gabby director of communications, filmmaker, traveler, eater…</p>
+          <p class="about">Host of T.E.L.A.</p>
           <p class="role">Group Curator</p>
           <p class="joined">Joined 3 weeks ago</p>
         </li>
         <li>
-          <a href="http://ctznapp.com">
-            <span class="avatar">
-              <span class="size30 bluebird"><span class="letter">v</span></span>
-            </span>
-            <b>@vogg</b>
-          </a>
-          <p class="joined">Joined 3 weeks ago</p>
+          <b>
+            <a href="http://ctznapp.com">@aaron</a>,
+            <a href="http://ctznapp.com">@aldoatgood</a>,
+            <a href="http://ctznapp.com">@vogg</a>,
+            <a href="http://ctznapp.com">@caseycaplowe</a>,
+            <a href="http://ctznapp.com">@cogg</a>,
+            <a href="http://ctznapp.com">@eshah</a>
+          </b>
         </li>
       </ul>
+
     </div><!-- /.members -->
     
 
@@ -920,40 +925,40 @@
       <ul>
         <li>
           <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
-            <div>
+            <b class="icon">
               <img src="../assets/images/logos/google-play.svg" height="35" alt="" />
-            </div>
+            </b>
             Get CTZN for&nbsp;Android
           </a>
         </li>
         <li class="not-first">
           <a href="https://itunes.apple.com/us/genre/ios/id36?mt=8">
-            <div>
+            <b class="icon">
               <img src="../assets/images/logos/apple-store.svg" height="35" alt="" />
-            </div>
+            </b>
             Get CTZN for&nbsp;iPhone
           </a>
         </li>
         <li class="not-first">
           <a href="start.html">
-            <div>
+            <b class="icon">
               <img src="../assets/images/logos/chrome.svg" height="50" alt="" />
               <img src="../assets/images/logos/safari.svg" height="50" alt="" />
-            </div>
+            </b>
             Use CTZN from Chrome or&nbsp;Safari
           </a>
         </li>
         <li class="not-first">
           <a href="email.html">
-            <div>
-              <svg class="icon" viewBox="0 0 24 24" width="50" height="50">
+            <b class="icon">
+              <svg viewBox="0 0 24 24" width="50" height="50">
                 <path d="M17.7,3.2c-0.1,0-0.2-0.1-0.3-0.1c0,0,0,0,0,0c-0.1,0-0.3,0-0.4,0H3c-0.1,0-0.3,0-0.4,0c0,0,0,0,0,0
                   c-0.1,0-0.2,0.1-0.3,0.1C1.5,3.5,1,4.2,1,5.1v9.8c0,0.9,0.5,1.6,1.3,1.9c0.1,0,0.2,0.1,0.3,0.1c0,0,0,0,0,0c0.1,0,0.3,0,0.4,0h14
                   c0.1,0,0.3,0,0.4,0c0,0,0,0,0,0c0.1,0,0.2-0.1,0.3-0.1c0.8-0.3,1.3-1,1.3-1.9V5.1C19,4.2,18.5,3.5,17.7,3.2z M16.7,4.4l-4.6,4.6
                   L11.1,10l-0.7,0.7c-0.3,0.2-0.7,0.2-0.9,0L8.9,10L7.9,9.1L3.3,4.4H16.7z M2.3,14.6V5.4L7,10L2.3,14.6z M3.3,15.6l4.6-4.6l0.7,0.7
                   C9,12,9.5,12.2,10,12.2s1-0.2,1.4-0.6l0.7-0.7l4.6,4.6H3.3z M17.7,14.6L13,10l4.6-4.6V14.6z"/>
               </svg>
-            </div>
+            </b>
             Use CTZN via&nbsp;email
           </a>
         </li>
@@ -961,7 +966,7 @@
     </div><!-- /.ready -->
 
     <div class="message">
-      <p>Have feedback? Let us know by emailing <a href="ctzn@goodinc.com">ctzn@goodinc.com</a>.</p>
+      <p><b>Have feedback?</b> Let us know by emailing <a href="ctzn@goodinc.com">ctzn@goodinc.com</a>.</p>
     </div>
 
     <div class="footer">
