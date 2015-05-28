@@ -2474,13 +2474,13 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-  .login  > div .action a,
-  .signup > div .action a,
-  .dialog.page .action a,
-  .dialog.page .action button,
-  .dialog.page .details    button,
+  .login  > div   .action  a,
+  .signup > div   .action  a,
+  .dialog.page    .action  a,
+  .dialog.page    .action  button,
+  .dialog.page    .details button,
   .push-card.page .details .action a,
-  .push-card   .details    button {
+  .push-card      .details button {
     background: black;
     background: rgba(0, 0, 0, 0.75);
     color: white;
@@ -2507,23 +2507,26 @@
     color: white;
   }
   .hoverable .login  > div .action a:hover,
-  .login  > div .action a:active,
-  .login  > div .action a:focus,
+             .login  > div .action a:active,
+             .login  > div .action a:focus,
   .hoverable .signup > div .action a:hover,
-  .signup > div .action a:active,
-  .signup > div .action a:focus,
-  .hoverable .dialog.page .action a:hover,
-  .dialog.page .action a:active,
-  .dialog.page .action a:focus,
-  .hoverable .dialog.page .action button:hover,
-  .dialog.page .action button:active,
-  .dialog.page .action button:focus,
-  .hoverable .dialog.page .details    button:hover,
-  .dialog.page .details    button:active,
-  .dialog.page .details    button:focus,
-  .hoverable .push-card   .details    button:hover,
-  .push-card   .details    button:active,
-  .push-card   .details    button:focus {
+             .signup > div .action a:active,
+             .signup > div .action a:focus,
+  .hoverable .dialog.page  .action a:hover,
+             .dialog.page  .action a:active,
+             .dialog.page  .action a:focus,
+  .hoverable .dialog.page  .action button:hover,
+             .dialog.page  .action button:active,
+             .dialog.page  .action button:focus,
+  .hoverable .dialog.page .details button:hover,
+             .dialog.page .details button:active,
+             .dialog.page .details button:focus,
+  .hoverable .push-card   .details .action a:hover,
+             .push-card   .details .action a:active,
+             .push-card   .details .action a:focus,
+  .hoverable .push-card   .details button:hover,
+             .push-card   .details button:active,
+             .push-card   .details button:focus {
     background: black;
   }
   .dialog.page .action a svg.icon,
@@ -2568,7 +2571,12 @@
   }
   .start.page .details aside a {
     color: white;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .hoverable .start.page .details aside a:hover,
+             .start.page .details aside a:active,
+             .start.page .details aside a:focus {
+    color: white;
   }
   .start.page h1 span {
     color: white;
