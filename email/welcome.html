@@ -140,6 +140,7 @@
     .headline,
     .message,
     .steps,
+    .ready,
     .footer,
     .pointer {
       margin-left: auto;
@@ -147,6 +148,7 @@
     }
     .footer,
     .steps,
+    .ready,
     .pointer {
       max-width: 580px;
     }
@@ -156,6 +158,7 @@
     }
     .headline,
     .message,
+    .ready,
     .steps {
       background-color: white;
     }
@@ -179,7 +182,8 @@
       padding-bottom: 1px;
     }
     .message,
-    .steps {
+    .steps,
+    .ready {
       margin-top: 1px;
     }
     .footer {
@@ -296,6 +300,28 @@
     .steps .icons img,
     .steps .icons svg {
       margin-right: 25px;
+    }
+
+    /* Ready */
+    .ready ul,
+    .ready li {
+      list-style: none;
+      margin-left: 0;
+    }
+    .ready ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      text-align: center;
+      padding-left: 0;
+    }
+    .ready li {
+      padding: 20px 30px;
+    }
+    .ready .not-first {
+      border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+    }
+    .ready a {
+      text-decoration: none;
     }
 
     /* Icons */
@@ -791,7 +817,7 @@
               <foreignobject><img src="../assets/images/email/70x70/upload.png" width="35" height="35" alt="" /></foreignobject>
             </svg>
           </b>
-          <div>Post your <b>CicLAvia</b> photos, videos, and notes directly to CTZN</div>
+          <div>Post your <b>CicLAvia</b> photos and notes directly to CTZN</div>
 
           <div class="icons">
 
@@ -884,6 +910,59 @@
       <p>You are currently signed up for the <b>CicLAvia</b> Morning Report, a digest of the previous day’s activity.</p>
       <p class="action"><a href="http://ctznapp.com">Manage Preferences</a></p>
     </div><!-- /.message -->
+
+
+    <div class="headline">
+      <h2>You’re Ready to Use&nbsp;CTZN</h2>
+    </div><!-- /.headline -->
+
+    <div class="ready">
+      <ul>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
+            <div>
+              <img src="../assets/images/logos/google-play.svg" height="35" alt="" />
+            </div>
+            Get CTZN for&nbsp;Android
+          </a>
+        </li>
+        <li class="not-first">
+          <a href="https://itunes.apple.com/us/genre/ios/id36?mt=8">
+            <div>
+              <img src="../assets/images/logos/apple-store.svg" height="35" alt="" />
+            </div>
+            Get CTZN for&nbsp;iPhone
+          </a>
+        </li>
+        <li class="not-first">
+          <a href="start.html">
+            <div>
+              <img src="../assets/images/logos/chrome.svg" height="50" alt="" />
+              <img src="../assets/images/logos/safari.svg" height="50" alt="" />
+            </div>
+            Use CTZN from Chrome or&nbsp;Safari
+          </a>
+        </li>
+        <li class="not-first">
+          <a href="email.html">
+            <div>
+              <svg class="icon" viewBox="0 0 24 24" width="50" height="50">
+                <path d="M17.7,3.2c-0.1,0-0.2-0.1-0.3-0.1c0,0,0,0,0,0c-0.1,0-0.3,0-0.4,0H3c-0.1,0-0.3,0-0.4,0c0,0,0,0,0,0
+                  c-0.1,0-0.2,0.1-0.3,0.1C1.5,3.5,1,4.2,1,5.1v9.8c0,0.9,0.5,1.6,1.3,1.9c0.1,0,0.2,0.1,0.3,0.1c0,0,0,0,0,0c0.1,0,0.3,0,0.4,0h14
+                  c0.1,0,0.3,0,0.4,0c0,0,0,0,0,0c0.1,0,0.2-0.1,0.3-0.1c0.8-0.3,1.3-1,1.3-1.9V5.1C19,4.2,18.5,3.5,17.7,3.2z M16.7,4.4l-4.6,4.6
+                  L11.1,10l-0.7,0.7c-0.3,0.2-0.7,0.2-0.9,0L8.9,10L7.9,9.1L3.3,4.4H16.7z M2.3,14.6V5.4L7,10L2.3,14.6z M3.3,15.6l4.6-4.6l0.7,0.7
+                  C9,12,9.5,12.2,10,12.2s1-0.2,1.4-0.6l0.7-0.7l4.6,4.6H3.3z M17.7,14.6L13,10l4.6-4.6V14.6z"/>
+              </svg>
+            </div>
+            Use CTZN via&nbsp;email
+          </a>
+        </li>
+      </ul>
+    </div><!-- /.ready -->
+
+    <div class="message">
+      <p>Have feedback? Let us know by emailing <a href="ctzn@goodinc.com">ctzn@goodinc.com</a>.</p>
+    </div>
 
     <div class="footer">
       <h2>
