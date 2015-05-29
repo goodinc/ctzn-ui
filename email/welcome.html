@@ -629,27 +629,36 @@
       margin-top: 0;
     }
     .members li {
-      color: rgb(153, 153, 153); /* @nickel */
       background-color: white;
       margin-left: auto;
       margin-right: auto;
-      max-width: 520px; /* 580px - (30px x 2) */
-      padding: 20px 30px;
+      max-width: 580px; /* 580px - (30px x 2) */
       margin-top: 1px;
     }
     .members li a {
       text-decoration: none;
     }
+    .members li > a {
+      display: block;
+      padding: 20px 30px;
+    }
     .members li .avatar {
       margin-right: 5px;
+    }
+    .members li .about,
+    .members li .role,
+    .members li .joined {
+      color: rgb(102, 102, 102); /* @tin */
     }
     .members li .name {
       font-size: 14px;
       display: inline-block;
       color: rgb(153, 153, 153); /* @nickel */
     }
-    .members li b {
+    .members li > b {
+      display: block;
       color: black;
+      padding: 20px 30px;
       margin-right: 5px;
     }
     .members li p {
@@ -664,9 +673,9 @@
 
     .members .role,
     .members .joined {
-      margin-top: 6px;
+      margin-top: 0;
       text-transform: uppercase;
-      font-size: 12px;
+      font-size: 10px;
       margin-bottom: 0;
     }
     .members .role {
@@ -801,10 +810,10 @@
             </span>
             <b>@tomcarroll</b>
             <span class="name">Tom Carroll</span>
+            <p class="about">Host of T.E.L.A.</p>
+            <p class="role">Group Curator</p>
+            <p class="joined">Joined 3 weeks ago</p>
           </a>
-          <p class="about">Host of T.E.L.A.</p>
-          <p class="role">Group Curator</p>
-          <p class="joined">Joined 3 weeks ago</p>
         </li>
         <li>
           <a href="http://ctznapp.com">
@@ -813,8 +822,8 @@
             </span>
             <b>@benisonchoi</b>
             <span class="name">Benison Choi</span>
+            <p class="joined">Joined 1 day ago</p>
           </a>
-          <p class="joined">Joined 1 day ago</p>
         </li>
         <li>
           <a href="http://ctznapp.com">
@@ -822,8 +831,8 @@
               <span class="size30 grape"><span class="letter">a</span></span>
             </span>
             <b>@aubery</b>
+            <p class="joined">Joined 3 hours ago</p>
           </a>
-          <p class="joined">Joined 3 hours ago</p>
         </li>
         <li>
           <b>
