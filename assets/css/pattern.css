@@ -90,7 +90,8 @@
   header.pattern h2 a:hover,
   header.pattern h2 a:active,
   header.pattern h2 a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    background-color: black;
+    color: inherit;
   }
   header.pattern nav a {
     padding: 0.125em; /* 2px / @font-size */
@@ -106,7 +107,7 @@
   header.pattern nav .active a[href]:hover,
   header.pattern nav .active a[href]:active,
   header.pattern nav .active a[href]:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    background-color: black;
   }
   .pattern.index h1,
   .pattern-list {
@@ -155,6 +156,7 @@
   .pattern-list li a[href],
   header.pattern nav a[href] {
     color: rgb(250, 56, 136); /* @strawberry */
+    color: rgb(218, 243, 121); /* @lime */
   }
   header.pattern nav a[href]:visited,
   .pattern-list   li a[href]:visited {
@@ -166,7 +168,7 @@
   .pattern-list   li a[href]:hover,
   .pattern-list   li a[href]:active,
   .pattern-list   li a[href]:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    background-color: black;
   }
   body.pattern p + code {
     margin-top: -0.5em;

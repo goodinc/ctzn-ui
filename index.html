@@ -56,7 +56,18 @@
     }
     section a {
       text-decoration: none;
+      display: block;
+    }
+    section a,
+    .hoverable section a[href]:hover,
+    section a[href]:active,
+    section a[href]:focus {
       color: inherit;
+    }
+    section a[href]:hover,
+    section a[href]:active,
+    section a[href]:focus {
+      background-color: black;
     }
     section a h3,
     section a p {
@@ -74,6 +85,7 @@
       color: rgb(250, 134, 40); /* @orange */
       color: rgb(102, 204, 0); /* @pear */
       color: rgb(250, 56, 136); /* @strawberry */
+      color: rgb(218, 243, 121); /* @lime */
       text-decoration: underline;
     }
     section a[href]:visited h3 {
