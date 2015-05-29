@@ -331,32 +331,44 @@
     .ready li a {
       text-decoration: none;
       padding: 20px 30px;
+      display: block;
+      text-align: center;
     }
     .ready .icon {
       display: block;
-      width: 120px;
-      padding-right: 30px;
-      float: left;
-      text-align: center;
+      margin-bottom: 20px;
     }
     .ready .icon img {
       vertical-align: top;
     }
 
-    /* OPTIONAL: Center the text vertically */
-    .ready li a {
-      display: -webkit-flex;
-      display:         flex;
+    @media (min-width: 300px) {
+      .ready li a {
+        text-align: left;
+      }
+      .ready .icon {
+        width: 120px;
+        padding-right: 30px;
+        float: left;
+        text-align: center;
+        margin-bottom: 0;
+      }
 
-      -webkit-flex-direction: row;
-              flex-direction: row;
+      /* OPTIONAL: Center the text vertically */
+      .ready li a {
+        display: -webkit-flex;
+        display:         flex;
 
-      -webkit-align-items: center;
-              align-items: center;
-    }
-    .ready .icon {
-      -webkit-flex: none;
-              flex: none;
+        -webkit-flex-direction: row;
+                flex-direction: row;
+
+        -webkit-align-items: center;
+                align-items: center;
+      }
+      .ready .icon {
+        -webkit-flex: none;
+                flex: none;
+      }
     }
 
 
@@ -646,6 +658,10 @@
     .members li a b {
       margin-right: 5px;
     }
+    .members li h3 {
+      font-size: inherit;
+      margin: 0;
+    }
     .members li .about,
     .members li .role,
     .members li .joined {
@@ -653,6 +669,7 @@
     }
     .members li .name {
       font-size: 14px;
+      font-weight: normal;
       display: inline-block;
       color: rgb(153, 153, 153); /* @nickel */
     }
@@ -806,11 +823,13 @@
       <ul>
         <li>
           <a href="http://ctznapp.com">
-            <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/fc2a6013c86b48e0cd1de05ae9a82b57842d280d=c60x60" width="30" height="30" alt="" />
-            </span>
-            <b>@tomcarroll</b>
-            <span class="name">Tom Carroll</span>
+            <h3>
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/fc2a6013c86b48e0cd1de05ae9a82b57842d280d=c60x60" width="30" height="30" alt="" />
+              </span>
+              @tomcarroll
+              <span class="name">Tom Carroll</span>
+            </h3>
             <p class="about">Host of T.E.L.A.</p>
             <p class="role">Group Curator</p>
             <p class="joined">Joined 3 weeks ago</p>
@@ -818,20 +837,24 @@
         </li>
         <li>
           <a href="http://ctznapp.com">
-            <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c60x60" width="30" height="30" alt="" />
-            </span>
-            <b>@benisonchoi</b>
-            <span class="name">Benison Choi</span>
+            <h3>
+              <span class="avatar">
+                <img src="https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c60x60" width="30" height="30" alt="" />
+              </span>
+              @benisonchoi
+              <span class="name">Benison Choi</span>
+            </h3>
             <p class="joined">Joined 1 day ago</p>
           </a>
         </li>
         <li>
           <a href="http://ctznapp.com">
-            <span class="avatar">
-              <span class="size30 grape"><span class="letter">a</span></span>
-            </span>
-            <b>@aubery</b>
+            <h3>
+              <span class="avatar">
+                <span class="size30 grape"><span class="letter">a</span></span>
+              </span>
+              @aubery
+            </h3>
             <p class="joined">Joined 3 hours ago</p>
           </a>
         </li>
