@@ -80,6 +80,8 @@
       display: inline-block;
     }
     .intro h2 {
+      margin-top: 10px;
+      margin-bottom: 0;
       margin-right: 5px;
     }
     .intro .avatar {
@@ -212,12 +214,16 @@
 
     /* Headlines */
     .headline h1,
-    .headline h2,
-    .intro    h2 {
+    .headline h2 {
       font-weight: bold;
       margin-top: 0;
       margin-bottom: 0;
       font-size: 18px;
+      color: rgb(102, 102, 102); /* @tin */
+    }
+    .headline h1 b,
+    .headline h2 b {
+      color: black;
     }
     .headline p {
       margin-bottom: 0;
@@ -606,7 +612,7 @@
       margin-left: auto;
       margin-right: auto;
       max-width: 520px; /* 580px - (30px x 2) */
-      padding: 10px 30px;
+      padding: 20px 30px;
       margin-top: 1px;
     }
     .members li a {
@@ -677,7 +683,7 @@
   <div class="container">
 
     <div class="first boysenberry headline">
-      <h1>Welcome to CicLAvia!</h1>
+      <h1>Welcome to <b>CicLAvia</b></h1>
       <p class="ctzn">
         POWERED BY
         <b>
@@ -694,8 +700,9 @@
     </div><!-- /.headline -->
 
     <div class="message">
-      <!-- If they signed up through Facebook -->
+      <!-- If they signed up through Facebook
       <p>And thanks for signing up with Facebook.</p>
+       -->
 
       <p>CTZN helps our group to better know one another. Here’s a quick snapshot of how others see you.</p>
     </div><!-- /.message -->
