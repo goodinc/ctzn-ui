@@ -73,71 +73,48 @@
     .intro div {
       border: 1px solid rgb(238, 238, 238); /* @seashell */
       padding: 20px;
+      position: relative;
     }
-    .first.intro {
-      padding-top: 45px;
+    .intro h2,
+    .intro .name,
+    .intro .about {
+      display: inline-block;
     }
-    .last.intro {
-      padding-bottom: 45px;
+    .intro h2,
+    .intro .name {
+      margin-right: 20px;
     }
-    .intro .heart,
     .intro .avatar {
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
-    .intro .heart,
-    .intro .avatar,
-    .intro h2,
-    .intro .edit,
-    .intro .secondary {
-      margin-right: 20px;
+    .intro .name {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .intro .about {
+      font-style: italic;
+      margin-top: 10px;
+      margin-bottom: 0;
     }
     .intro a:hover,
     .intro a:active,
     .intro a:focus {
       color: black;
     }
-    .intro h2,
-    .intro .edit,
-    .intro .secondary {
-      display: inline-block;
-      margin-top: 0;
+    .intro .action {
       margin-bottom: 0;
     }
-    @media (min-width: 600px) {
-      .intro .heart,
-      .intro .avatar {
-        display: inline-block !important;
-        vertical-align: middle;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+    @media (min-width: 300px) {
+      .intro .action {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        margin-top: 0;
       }
     }
-    .intro p.secondary {
+    .intro p.name {
       opacity: 0.5;
-    }
-    .intro .heart img {
-      display: block;
-    }
-    .math-sign {
-      margin-top: 15px;
-      margin-bottom: 0;
-      margin-left: 10px;
-      line-height: 30px;
-      width: 40px;
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .pointer div {
-      margin: 0 0 25px 10px;
-      color: rgb(31, 31, 31); /* @steel */
-      width: 0;
-      height: 0;
-      border-width: 20px 20px 0 20px;
-      border-style: solid;
-      border-left-color: transparent;
-      border-right-color: transparent;
     }
 
 
@@ -357,7 +334,6 @@
     }
 
     /* Icons */
-    .heart svg,
     .icon  svg,
     .icons svg {
       width : 35px;
@@ -634,16 +610,15 @@
       padding: 10px 30px;
       margin-top: 1px;
     }
-    .curator a,
     .members li a {
       text-decoration: none;
     }
-    .curator .avatar,
     .members li .avatar {
       margin-right: 5px;
     }
     .members li .name {
       font-size: 14px;
+      display: inline-block;
     }
     .members li b {
       color: black;
@@ -722,27 +697,62 @@
       <!-- If they signed up through Facebook -->
       <p>And thanks for signing up with Facebook.</p>
 
-      <p>CTZN helps our group to better know one another. Here’s a quick snapshot of how others see you.</p>
+      <p>CTZN helps our group to better know one another. Here’s a quick snapshot of how others see you.</p>
     </div><!-- /.message -->
 
     <div class="intro">
       <div>
         <span class="avatar">
-          <!--
-          <span class="size60 kiwi">
-            <span class="letter">B</span>
-          </span>
-          -->
+          <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" width="60" height="60" alt="" />
+          <!-- If there isn’t an image available…
           <span class="size60">
             <img src="../assets/images/email/ready/user-circle.png" width="60" height="60" alt="" />
           </span>
-          <!-- If an image is available (via Facebook)
-          <img src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c120x120" width="60" height="60" alt="" />
-           -->
+          -->
         </span>
         <h2>@brian</h2>
-        <p class="secondary">Brian Nilsen</p>
-        <p class="edit"><a href="http://ctznapp.com">Edit Profile</a></p>
+        <p class="name">Brian Nilsen</p>
+        <p class="about">I am fluffy, destroyer of worlds.</p>
+        <p class="action"><a href="http://ctznapp.com">Edit Profile</a></p>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div>
+        <span class="avatar">
+          <span class="size60">
+            <img src="../assets/images/email/ready/user-circle.png" width="60" height="60" alt="" />
+          </span>
+        </span>
+        <h2>@ben</h2>
+        <p class="action"><a href="http://ctznapp.com">Edit Profile</a></p>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div>
+        <span class="avatar">
+          <span class="size60">
+            <img src="../assets/images/email/ready/user-circle.png" width="60" height="60" alt="" />
+          </span>
+        </span>
+        <h2>@eshah</h2>
+        <p class="name">Esha Shah</p>
+        <p class="action"><a href="http://ctznapp.com">Edit Profile</a></p>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div>
+        <span class="avatar">
+          <span class="size60">
+            <img src="../assets/images/email/ready/user-circle.png" width="60" height="60" alt="" />
+          </span>
+        </span>
+        <h2>@supercalifragilisticexpialidocious</h2>
+        <p class="name">Mary Poppins</p>
+        <p class="about">Just a spoonful of sugar makes the medicine go down.</p>
+        <p class="action"><a href="http://ctznapp.com">Edit Profile</a></p>
       </div>
     </div>
     
@@ -756,11 +766,14 @@
         <li>
           <a href="http://ctznapp.com">
             <span class="avatar">
-              <span class="size30 grape"><span class="letter">a</span></span>
+              <img src="https://m.ctznapp.com/s3/ctzn/fc2a6013c86b48e0cd1de05ae9a82b57842d280d=c60x60" width="30" height="30" alt="" />
             </span>
-            <b>@aubery</b>
+            <b>@tomcarroll</b>
+            <span class="name">Tom Carroll</span>
           </a>
-          <p class="joined">Joined 3 hours ago</p>
+          <p class="about">Host of T.E.L.A.</p>
+          <p class="role">Group Curator</p>
+          <p class="joined">Joined 3 weeks ago</p>
         </li>
         <li>
           <a href="http://ctznapp.com">
@@ -772,28 +785,14 @@
           </a>
           <p class="joined">Joined 1 day ago</p>
         </li>
-        <!--
         <li>
           <a href="http://ctznapp.com">
             <span class="avatar">
-              <img src="" width="30" height="30" alt="" />
+              <span class="size30 grape"><span class="letter">a</span></span>
             </span>
-            <b>@loading</b>
-            <span class="name">Loading Image</span>
+            <b>@aubery</b>
           </a>
-        </li>
-        -->
-        <li>
-          <a href="http://ctznapp.com">
-            <span class="avatar">
-              <img src="https://m.ctznapp.com/s3/ctzn/fc2a6013c86b48e0cd1de05ae9a82b57842d280d=c60x60" width="30" height="30" alt="" />
-            </span>
-            <b>@tomcarroll</b>
-            <span class="name">Tom Carroll</span>
-          </a>
-          <p class="about">Host of T.E.L.A.</p>
-          <p class="role">Group Curator</p>
-          <p class="joined">Joined 3 weeks ago</p>
+          <p class="joined">Joined 3 hours ago</p>
         </li>
         <li>
           <b>
