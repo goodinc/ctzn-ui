@@ -264,7 +264,7 @@
 
   .avatar > span {
     display: inline-block;
-    background-color: rgb(255, 203, 117); /* @cantaloupe */
+    background-color: rgb(204, 204, 204); /* @aluminum */
     color: black;
     width       : 1.5em;
     line-height : 1.5em;
