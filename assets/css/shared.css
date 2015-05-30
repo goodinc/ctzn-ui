@@ -1239,6 +1239,11 @@
     border-radius: 0.25em;
     text-align: center;
   }
+  .post-item .profile > a {
+    display: block;
+    color: inherit;
+    text-decoration: inherit;
+  }
   .post-item .profile .avatar {
     display: inline-block;
     position: relative;
@@ -1246,10 +1251,16 @@
   .post-item .profile h2 {
     margin-top: 0.4em; /* 0.75em / 1.875em */
     margin-bottom: 0;
+    transition: color 0.2s;
 
     /* @wrap-long-words */
     word-wrap     : break-word;
     overflow-wrap : break-word;
+  }
+  .hoverable .post-item .profile > a:hover  h2,
+             .post-item .profile > a:active h2,
+             .post-item .profile > a:focus  h2 {
+    color: rgb(193, 16, 65); /* @raspberry */
   }
   .post-item .profile p.name {
     margin-top: 0;
@@ -1266,14 +1277,7 @@
   }
   .post-item .profile .action a {
     display: block;
-    text-align: center;
-    background-color: rgb(51, 51, 51); /* @iron */
     padding: 0.75em;
-  }
-  .hoverable .post-item .profile .action a:hover,
-  .post-item .profile .action a:active,
-  .post-item .profile .action a:focus {
-    background: black;
   }
   .post-item footer {
     margin-top: 1.25em;
@@ -3066,9 +3070,11 @@
 
   /* =Post Details
   ----------------------------------------------- */
+  /*
   .post.page > div h2 {
     font-size: inherit;
   }
+  */
   .post.page .details {
     background: white;
     padding: 0;
@@ -3366,17 +3372,25 @@
     margin: 0;
   }
 
+  .profile.page .switch {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: none;
+  }
   .profile.page .switch h2 {
+    margin-top: 2em;
+
     /* @tiny-headline */
     font-size: 0.75em;
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .profile.page .switch ul {
-      margin-left: -1.25em;
-      margin-right: -1.25em;
-    }
+  .profile.page .switch ul {
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+  }
+  .profile.page .switch + .post-list {
+    margin-top: 3em;
   }
 
 
