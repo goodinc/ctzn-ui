@@ -2319,8 +2319,12 @@
 
   .push-card {
     text-align: center;
+  }
 
-    background-color: rgb(246, 246, 246); /* @casper */
+  /* TRICKY: A “.page” selector is included here to override the default .page style */
+  .push-card,
+  .push-card.page {
+    background-color: rgb(204, 204, 204); /* @aluminum */
     color: black;
     color: rgba(0, 0, 0, 0.95);
   }
