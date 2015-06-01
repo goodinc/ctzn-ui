@@ -173,25 +173,6 @@
     margin: 0;
   }
 
-  /* Intro */
-  .summary .summary-profile {
-    text-align: center;
-  }
-  .summary .summary-profile .avatar img {
-    height: auto;
-    display: inline;
-  }
-  .summary .summary-profile h2 {
-    margin-bottom: 0;
-    color: black;
-  }
-  .summary .summary-profile .name {
-    margin-top: 5px;
-  }
-  .summary .summary-profile .about {
-    margin-top: 10px;
-  }
-
 
   /* =Avatars
   ----------------------------------------------- */
