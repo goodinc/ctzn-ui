@@ -162,12 +162,33 @@
     background: white;
     border-color: white;
   }
+  .profile .about {
+    color: black;
+  }
   .profile .joined {
     font-size: 11px;
     text-transform: uppercase;
     color: black;
     opacity: 0.5;
     margin: 0;
+  }
+
+  /* Intro */
+  .summary .summary-profile {
+    text-align: center;
+  }
+  .summary .summary-profile .avatar img {
+    height: auto;
+    display: inline;
+  }
+  .summary .summary-profile h2 {
+    margin-bottom: 0;
+  }
+  .summary .summary-profile .name {
+    margin-top: 5px;
+  }
+  .summary .summary-profile .about {
+    margin-top: 10px;
   }
 
 
