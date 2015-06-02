@@ -2418,16 +2418,10 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .push-card .website a {
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(51, 51, 51);
-    color: rgba(0, 0, 0, 0.8);
-  }
-  .hoverable .push-card .website a:hover,
-  .push-card .website a:active,
-  .push-card .website a:focus {
-    color: black;
+    background: rgb(204, 204, 204); /* @aluminum */
+    background: rgba(0, 0, 0, 0.1);
   }
 
   /* Meta */
@@ -2593,15 +2587,6 @@
   .push-card .name {
     color: white;
     color: rgba(255, 255, 255, 0.95);
-  }
-  .push-card .website a {
-    color: rgb(204, 204, 204);
-    color: rgba(255, 255, 255, 0.8);
-  }
-  .hoverable .push-card .website a:hover,
-  .push-card .website a:active,
-  .push-card .website a:focus {
-    color: white;
   }
   .start.page > div {
     background: rgba(0, 0, 0, 0.1);
