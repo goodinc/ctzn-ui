@@ -299,30 +299,39 @@
   }
 
 
+  .article .join-summary.lime,
   .article .summary.lime {
     border-left: 5px solid rgb(218, 243, 121); /* @lime */
   }
+  .article .join-summary.cucumber,
   .article .summary.cucumber {
     border-left: 5px solid rgb(153, 248, 115); /* @cucumber */
   }
+  .article .join-summary.blueberry,
   .article .summary.blueberry {
     border-left: 5px solid rgb(40, 221, 181); /* @blueberry */
   }
+  .article .join-summary.boysenberry,
   .article .summary.boysenberry {
     border-left: 5px solid rgb(101, 152, 254); /* @boysenberry */
   }
+  .article .join-summary.plumb,
   .article .summary.plumb {
     border-left: 5px solid rgb(193, 76, 172); /* @plumb */
   }
+  .article .join-summary.strawberry,
   .article .summary.strawberry {
     border-left: 5px solid rgb(250, 56, 136); /* @strawberry */
   }
+  .article .join-summary.apple,
   .article .summary.apple {
     border-left: 5px solid rgb(255, 49, 59); /* @apple */
   }
+  .article .join-summary.tangerine,
   .article .summary.tangerine {
     border-left: 5px solid rgb(255, 204, 0); /* @tangerine */
   }
+  .article .join-summary.orange,
   .article .summary.orange {
     border-left: 5px solid rgb(250, 134, 40); /* @orange */
   }
@@ -396,6 +405,7 @@
   .article .action a {
     text-decoration: none;
   }
+  .article .join-summary,
   .article .summary {
     margin-top: 0;
     padding-left: 15px;
@@ -415,6 +425,12 @@
     font-size: inherit;
     font-weight: normal;
     color: rgb(31, 31, 31); /* @steel */
+  }
+  .article .join-summary .avatar {
+    margin-right: 5px;
+  }
+  .article .join-summary b {
+    color: inherit;
   }
 
 
