@@ -97,6 +97,9 @@
 
     /* =Sections
     ----------------------------------------------- */
+    .tip,
+    .download,
+    .feedback,
     .header,
     .members li,
     .article {
@@ -104,12 +107,20 @@
       margin-left: auto;
       margin-right: auto;
     }
+    .tip,
+    .download,
+    .feedback,
     .header,
     .members li {
       max-width: 520px; /* 580px - (30px x 2) */
     }
+    .download,
     .container > .header {
       padding: 20px 30px;
+    }
+    .tip,
+    .feedback {
+      padding: 10px 30px;
     }
     .article {
       max-width: 550px; /* 580px - (15px x 2) */
@@ -125,8 +136,13 @@
     .article {
       margin-top: 1px;
     }
+    .tip,
+    .download,
     .section .header {
       margin-top: 10px;
+    }
+    .feedback {
+      margin-top: 1px;
     }
     .footer {
       max-width: 580px;
@@ -522,6 +538,7 @@
     svg.icon {
       vertical-align: middle;
       margin-right: 5px;
+      fill: currentColor;
     }
     div.heart {
       max-height: 0;
@@ -536,6 +553,56 @@
       border-radius: 100%;
       margin-left: 3px;
       color: rgb(251, 59, 147); /* @cranberry */
+    }
+
+
+    .article p.source {
+      margin-top: 0;
+      color: rgb(193, 193, 193);
+      font-size: 14px;
+      float: right;
+    }
+
+    .tip {
+      font-size: 14px;
+    }
+    .tip h2 {
+      margin-top: 20px;
+      font-size: inherit;
+      color: inherit;
+    }
+    .tip img {
+      margin-right: 5px;
+    }
+    .tip h2,
+    .tip p {
+      display: inline-block;
+    }
+    .tip p {
+      color: rgb(102, 102, 102); /* @tin */
+    }
+    .tip img {
+      vertical-align: middle;
+    }
+    .download img {
+      vertical-align: middle;
+    }
+    .download,
+    .feedback {
+      background-color: rgb(0, 181, 138);
+      color: white;
+    }
+    .download h2 {
+      color: inherit;
+      font-size: 24px;
+      margin-right: 20px;
+    }
+    .download h2,
+    .download p {
+      display: inline-block;
+    }
+    .feedback {
+      font-size: 14px;
     }
 
   </style>
@@ -635,7 +702,7 @@
 
             reply via email
           </a>
-          <a href="">view post</a>
+          <a href="">view in app</a>
         </p>
 
       </div><!-- /.article -->
