@@ -1800,9 +1800,11 @@
       width: 100%;
     }
     /* Make space for the sticky header */
-    section.push {
-      padding-top: 3em;
+    header.primary ~ section.push,
+    header.primary ~ section.switch {
+      padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
     }
+
   }
 
 
