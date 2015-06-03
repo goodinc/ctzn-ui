@@ -125,9 +125,6 @@
     .section .header {
       margin-top: 10px;
     }
-    .feedback {
-      border-top: 1px solid rgb(102, 102, 102); /* @tin */
-    }
     .footer {
       max-width: 580px;
       margin-left: auto;
@@ -519,6 +516,66 @@
       border-bottom-width: 0;
     }
 
+    .download,
+    .feedback {
+      position: relative;
+      z-index: 1;
+    }
+    .download::after,
+    .feedback::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: black;
+      z-index: -1;
+    }
+    .download::after {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .feedback::after {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .download.lime,
+    .feedback.lime {
+      background-color: rgb(218, 243, 121); /* @lime */
+    }
+    .download.cucumber,
+    .feedback.cucumber {
+      background-color: rgb(153, 248, 115); /* @cucumber */
+    }
+    .download.blueberry,
+    .feedback.blueberry {
+      background-color: rgb(40, 221, 181); /* @blueberry */
+    }
+    .download.boysenberry,
+    .feedback.boysenberry {
+      background-color: rgb(101, 152, 254); /* @boysenberry */
+    }
+    .download.plumb,
+    .feedback.plumb {
+      background-color: rgb(193, 76, 172); /* @plumb */
+    }
+    .download.strawberry,
+    .feedback.strawberry {
+      background-color: rgb(250, 56, 136); /* @strawberry */
+    }
+    .download.apple,
+    .feedback.apple {
+      background-color: rgb(255, 49, 59); /* @apple */
+    }
+    .download.tangerine,
+    .feedback.tangerine {
+      background-color: rgb(255, 204, 0); /* @tangerine */
+    }
+    .download.orange,
+    .feedback.orange {
+      background-color: rgb(250, 134, 40); /* @orange */
+    }
+
 
     /* =Action
     ----------------------------------------------- */
@@ -601,7 +658,7 @@
     .feedback {
       background-color: rgb(0, 181, 138);
       background-color: rgb(51, 51, 51); /* @iron */
-      color: white;
+      border-width: 0;
     }
     .download h2 {
       color: inherit;
@@ -610,6 +667,8 @@
       line-height: 35px;
       margin-top: 5px;
       margin-bottom: 5px;
+      color: white;
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     }
     .download h2,
     .download p {
@@ -624,11 +683,11 @@
       margin: 5px;
     }
     .feedback {
-      color: rgb(153, 153, 153);
       font-size: 14px;
+      color: white;
     }
     .feedback a {
-      color: white;
+      color: inherit;
     }
 
   </style>
@@ -865,15 +924,15 @@
       </p>
     </div><!-- /.tip -->
 
-    <div class="download">
+    <div class="lime download">
       <h2>Get the CTZN app!</h2>
       <p>
-        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn"><img src="../assets/images/email/welcome/google-play.png" height="35" alt="Android: Get it on Google Play" /></a>
-        <a href="https://itunes.apple.com/us/genre/ios/id36?mt=8"><img src="../assets/images/email/welcome/apple-store.png" height="35" alt="iPhone: Download on the App Store" /></a>
+        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn"><img src="../assets/images/email/welcome/google-play.png" height="35" alt="Get CTZN for Android" /></a>
+        <a href="https://itunes.apple.com/us/genre/ios/id36?mt=8"><img src="../assets/images/email/welcome/apple-store.png" height="35" alt="Get CTZN for iPhone" /></a>
       </p>
     </div><!-- /.download -->
 
-    <div class="feedback">
+    <div class="lime feedback">
       <p><b>Have feedback?</b> Let us know by emailing <a href="ctzn@goodinc.com">ctzn@goodinc.com</a></p>
     </div><!-- /.feedback -->
 
