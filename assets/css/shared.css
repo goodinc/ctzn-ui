@@ -1253,6 +1253,9 @@
     margin-bottom: 0;
     transition: color 0.2s;
 
+    line-height   : 1.5;
+    font-size     : 1.5em;     /* 24px / @font-size */
+
     /* @wrap-long-words */
     word-wrap     : break-word;
     overflow-wrap : break-word;
@@ -1288,9 +1291,12 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .post-item footer .meta   li,
+  .post-item footer .meta   li li,
   .post-item footer .action li {
     display: inline;
+  }
+  .post-item footer .meta > li + li {
+    margin-top: 0.375em;
   }
 
   .post-item footer .action a,
@@ -1324,26 +1330,70 @@
     float: right;
     margin-right: 0;
   }
-  .post-item footer .meta {
+
+.disabled  .post-item footer .meta {
     font-size: 0.6875em; /* 11px / @font-size */
     line-height: 1.0909090909em; /* @line-height / 0.6875em x 0.5 */
     margin-top : 1.6363636364em; /* @line-height / 0.6875em x 0.75 */
     margin-bottom: 0;
+}
+  .post-item footer .meta {
+    margin: 0;
+    font-size: 0.875em; /* 14px / @font-size */
+    color: rgb(193, 193, 193);
   }
-  .post-item footer .meta li {
-    margin-right: 1em;
-    text-transform: uppercase;
-    color: rgb(83, 83, 83);
-    color: rgba(0, 0, 0, 0.35);
+
+  .post-item footer .meta > li {
+    padding-left: 1.7857142857em; /* 25px / 14px */
+    position: relative;
   }
-  .post-item footer .meta li a {
-    color: inherit;
+  .post-item footer .meta > li > svg,
+  .post-item footer .meta > li > a > svg {
+    position: absolute;
+    top: 0.3em; /* 3px / 10px */
+    left: 0;
+    font-size: 0.7142857143em; /* 10px / 14px */
+    color: black;
+    color: rgb(193, 193, 193);
+  }
+  .post-item footer .meta > li > a {
     text-decoration: none;
+    color: rgb(193, 193, 193);
+    display: block;
   }
-  .hoverable .post-item footer .meta li a:hover,
-  .post-item footer .meta li a:active,
-  .post-item footer .meta li a:focus {
-    color: rgb(250, 56, 136); /* @strawberry */
+  .hoverable .post-item footer .meta > li > a:hover,
+             .post-item footer .meta > li > a:active,
+             .post-item footer .meta > li > a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+  .hoverable .post-item footer .meta > li > a:hover  svg,
+             .post-item footer .meta > li > a:active svg,
+             .post-item footer .meta > li > a:focus  svg {
+    color: inherit;
+  }
+  .post-item footer .meta > li > span,
+  .post-item footer .meta > li > a span {
+    font-size: 0.8571428571em; /* 12px / 14px */
+    text-transform: uppercase;
+  }
+  .post-item footer .meta li ul {
+    display: inline;
+  }
+  .post-item footer .meta li li::after {
+    content: ", ";
+  }
+  .post-item footer .meta li li:last-child::after {
+    content: "";
+  }
+  .post-item footer .meta li li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .hoverable .post-item footer .meta li li a:hover,
+  .post-item footer .meta li li a:active,
+  .post-item footer .meta li li a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
   }
 
 
@@ -4308,12 +4358,6 @@
   }
 
 
-  .post-item footer.activity .meta {
-    margin: 0;
-  }
-  .post-item footer.activity .meta li svg {
-    font-size: 0.8333333333em; /* 10px / 12px */
-  }
   .activity .more a,
   .activity .post-item {
     padding-top    : 0.2857142857em; /* 4px / 14px */
