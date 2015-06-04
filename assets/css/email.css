@@ -23,7 +23,7 @@
   }
   @media (min-width: 600px) {
     .container {
-      padding: 20px 0 60px;
+      padding: 20px 0 60px !important;
     }
   }
 
@@ -544,14 +544,11 @@
   }
 
   @media (min-width: 600px) {
-    .footer {
-      text-align: left;
-    }
     .footer h2 {
       float: left;
     }
     .footer .unsubscribe {
-      margin-bottom: 0;
+      margin-bottom: 0 !important;
       line-height: 30px;
       float: right;
     }
