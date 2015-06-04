@@ -1970,7 +1970,7 @@
     padding-bottom: 4.5em;
   }
 
-  /* OPTIONAL: Spact things out a bit, if the screen is tall. */
+  /* OPTIONAL: Space things out a bit, if the screen is tall. */
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
     .join.page > div,
     .start.page > div,
@@ -3421,10 +3421,11 @@
   .profile.page .switch {
     padding-top: 0;
     padding-bottom: 0;
-    max-width: none;
+    max-width: 29.5em;
   }
   .profile.page .switch h2 {
-    margin-top: .75em;
+    margin: 0;
+    line-height: 3.5;
 
     /* @tiny-headline */
     font-size: 0.75em;
@@ -3432,11 +3433,37 @@
     color: rgb(159, 165, 162); /* @barium */
   }
   .profile.page .switch ul {
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
-  .profile.page .switch + .post-list {
+
+  .profile.page .post-list-headline {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 29.5em;
+  }
+  .profile.page .post-list-headline h2 {
+    margin: 0;
+    line-height: 3.5;
+
+    /* @tiny-headline */
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+  .profile.page .post-list-headline + .post-list {
     margin-top: 0;
+  }
+
+
+  /* OPTIONAL: Space things out a bit, if the screen is tall. */
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+   .profile.page .switch,
+   .profile.page .post-list-headline {
+      margin-top: 3em;
+    }
   }
 
 
