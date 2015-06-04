@@ -3424,7 +3424,7 @@
     max-width: none;
   }
   .profile.page .switch h2 {
-    margin-top: 2em;
+    margin-top: .75em;
 
     /* @tiny-headline */
     font-size: 0.75em;
@@ -3436,7 +3436,7 @@
     margin-right: -1.25em;
   }
   .profile.page .switch + .post-list {
-    margin-top: 3em;
+    margin-top: 0;
   }
 
 
