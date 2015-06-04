@@ -1343,6 +1343,7 @@
     line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
     color: rgb(193, 193, 193);
     text-transform: uppercase;
+    color: rgb(102, 102, 102);
   }
 
   .post-item footer .meta > li {
@@ -1355,13 +1356,17 @@
     top: 0.3em; /* 3px / 10px */
     left: 0;
     font-size: 0.9090909091em; /* 10px / 11px */
+    font-size: 0.7142857143em; /* 10px / 14px */
     color: black;
-    color: rgb(193, 193, 193);
   }
   .post-item footer .meta > li > a {
     text-decoration: none;
     color: rgb(193, 193, 193);
+    font-size: 1.2727272727em; /* 14px / 11px */
     display: block;
+    color: black;
+    font-weight: bold;
+    color: black;
   }
   .hoverable .post-item footer .meta > li > a:hover,
              .post-item footer .meta > li > a:active,
@@ -1387,6 +1392,8 @@
     text-decoration: none;
     color: rgb(102, 102, 102);
     font-size: 1.2727272727em; /* 14px / 11px */
+    font-weight: bold;
+    color: black;
   }
   .hoverable .post-item footer .meta li li a:hover,
   .post-item footer .meta li li a:active,
