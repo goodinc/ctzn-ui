@@ -30,6 +30,11 @@
   a {
     color: rgb(31, 31, 31); /* @steel */
     transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+
+    /* For password reset email */
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   a:hover,
   a:active,
@@ -73,6 +78,9 @@
   .details p {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  .details p:first-child {
+    margin-top: 0;
   }
 
   .header {
@@ -159,8 +167,15 @@
     margin-bottom: 0;
   }
   .profile .action a {
-    background: white;
     border-color: white;
+    background-color: white;
+    color: rgb(51, 51, 51); /* @iron */
+  }
+  .profile .action a:hover,
+  .profile .action a:active,
+  .profile .action a:focus {
+    background: rgb(238, 238, 238); /* @seashell */
+    color: black;
   }
   .profile .about {
     color: black;
@@ -480,25 +495,32 @@
 
   /* =Action
   ----------------------------------------------- */
-  .details .action {
-    margin-top: 20px;
-    margin-bottom: 0;
-  }
   .action a {
-    border: 1px solid rgb(204, 204, 204); /* @aluminum */
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
     display: inline-block;
     padding: 7px 15px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    color: rgb(51, 51, 51); /* @iron */
+    background-color: rgb(250, 56, 136); /* @strawberry */
+    color: white;
   }
   .action a:hover,
   .action a:active,
   .action a:focus {
-    background: rgb(238, 238, 238); /* @seashell */
-    color: black;
+    background-color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+  /* For mix ready email */
+  .details .action {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .details .action:last-child {
+    margin-bottom: 0;
   }
 
 

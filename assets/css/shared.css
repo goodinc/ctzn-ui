@@ -1089,6 +1089,12 @@
   .post-list {
     padding-bottom: 3em;
   }
+
+  /* For the profile page */
+  .post-list:last-child {
+    margin-bottom: 0;
+  }
+
   .post-list > li {
     margin: 0 auto;
     max-width: 32em; /* image width / @font-size (512px / 16px) */
