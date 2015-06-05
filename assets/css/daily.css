@@ -508,8 +508,12 @@
 
   .download,
   .feedback {
+    background-color: rgb(31, 31, 31); /* @steel */
     position: relative;
     z-index: 1;
+  }
+  .download {
+    background-color: rgb(51, 51, 51); /* @iron */
   }
   .download::after,
   .feedback::after {
@@ -520,49 +524,48 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: black;
     z-index: -1;
   }
   .download::after {
-    background: rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
   }
   .feedback::after {
-    background: rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
   }
-  .download.lime,
-  .feedback.lime {
+  .download.lime::after,
+  .feedback.lime::after {
     background-color: rgb(218, 243, 121); /* @lime */
   }
-  .download.cucumber,
-  .feedback.cucumber {
+  .download.cucumber::after,
+  .feedback.cucumber::after {
     background-color: rgb(153, 248, 115); /* @cucumber */
   }
-  .download.blueberry,
-  .feedback.blueberry {
+  .download.blueberry::after,
+  .feedback.blueberry::after {
     background-color: rgb(40, 221, 181); /* @blueberry */
   }
-  .download.boysenberry,
-  .feedback.boysenberry {
+  .download.boysenberry::after,
+  .feedback.boysenberry::after {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .download.plumb,
-  .feedback.plumb {
+  .download.plumb::after,
+  .feedback.plumb::after {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
-  .download.strawberry,
-  .feedback.strawberry {
+  .download.strawberry::after,
+  .feedback.strawberry::after {
     background-color: rgb(250, 56, 136); /* @strawberry */
   }
-  .download.apple,
-  .feedback.apple {
+  .download.apple::after,
+  .feedback.apple::after {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  .download.tangerine,
-  .feedback.tangerine {
+  .download.tangerine::after,
+  .feedback.tangerine::after {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
-  .download.orange,
-  .feedback.orange {
+  .download.orange::after,
+  .feedback.orange::after {
     background-color: rgb(250, 134, 40); /* @orange */
   }
 
@@ -570,19 +573,33 @@
   /* =Action
   ----------------------------------------------- */
   .action a {
-    text-decoration: none;
-    border: 1px solid rgb(204, 204, 204); /* @aluminum */
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
     display: inline-block;
     padding: 7px 15px;
-    border-radius: 0.25em;
+    border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
-    font-style: normal;
-    color: rgb(51, 51, 51); /* @iron */
+    text-decoration: none;
+    background-color: rgb(250, 56, 136); /* @strawberry */
+    color: white;
   }
   .action a:hover,
   .action a:active,
   .action a:focus {
+    background-color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+
+  .article .action a {
+    border-color: rgb(204, 204, 204); /* @aluminum */
+    background-color: white;
+    color: rgb(51, 51, 51); /* @iron */
+  }
+  .article .action a:hover,
+  .article .action a:active,
+  .article .action a:focus {
     background: rgb(238, 238, 238); /* @seashell */
   }
 
@@ -646,8 +663,6 @@
   }
   .download,
   .feedback {
-    background-color: rgb(0, 181, 138);
-    background-color: rgb(51, 51, 51); /* @iron */
     border-width: 0;
   }
   .download h2 {
