@@ -1331,19 +1331,12 @@
     margin-right: 0;
   }
 
-.disabled  .post-item footer .meta {
-    font-size: 0.6875em; /* 11px / @font-size */
-    line-height: 1.0909090909em; /* @line-height / 0.6875em x 0.5 */
-    margin-top : 1.6363636364em; /* @line-height / 0.6875em x 0.75 */
-    margin-bottom: 0;
-}
   .post-item footer .meta {
     margin: 0;
     font-size: 0.6875em; /* 11px / @font-size */
     line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
-    color: rgb(193, 193, 193);
     text-transform: uppercase;
-    color: rgb(102, 102, 102);
+    color: black;
   }
 
   .post-item footer .meta > li {
