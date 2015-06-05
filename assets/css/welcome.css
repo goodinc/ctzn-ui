@@ -15,10 +15,12 @@
   }
 
   .container {
+    min-height: 100%;
     font: 16px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
+    box-sizing: border-box;
+
     color: rgb(102, 102, 102); /* @tin */
-    padding-bottom: 30px;
   }
   @media (min-width: 600px) {
     .container {
@@ -92,7 +94,7 @@
     font-style: italic;
     margin-top: 10px;
     margin-bottom: 0;
-    color: rgb(153, 153, 153); /* @nickel */
+    color: rgb(102, 102, 102); /* @tin */
     font-size: 14px;
   }
   .intro .action {
@@ -112,6 +114,9 @@
   .message,
   .steps,
   .ready,
+  .tip,
+  .download,
+  .feedback,
   .footer {
     margin-left: auto;
     margin-right: auto;
@@ -122,13 +127,23 @@
     max-width: 580px;
   }
   .headline,
-  .message {
+  .message,
+  .tip,
+  .download,
+  .feedback {
     max-width: 520px; /* 580px - (30px x 2) */
   }
   .headline,
   .message,
-  .steps {
+  .steps,
+  .tip,
+  .download,
+  .feedback {
     background-color: white;
+  }
+  .tip,
+  .download {
+    margin-top: 10px;
   }
   .headline {
     margin-top: 10px;
@@ -144,6 +159,13 @@
   .message {
     max-width: 520px; /* 580px - (30px x 2) */
     padding: 15px 30px;
+  }
+  .download {
+    padding: 20px 30px;
+  }
+  .tip,
+  .feedback {
+    padding: 10px 30px;
   }
   .message.first {
     padding-top: 1px;
@@ -273,116 +295,16 @@
     margin-right: 25px;
   }
 
-  /* Ready */
-  .ready {
-    background-color: rgb(51, 51, 51); /* @iron */
-    color: white;
-  }
-  .ready.lime {
-    background-color: rgb(218, 243, 121); /* @lime */
-  }
-  .ready.cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
-  }
-  .ready.blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
-  }
-  .ready.boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .ready.plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
-  }
-  .ready.strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .ready.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
-  }
-  .ready.tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .ready.orange {
-    background-color: rgb(250, 134, 40); /* @orange */
+
+  /* =Icon
+  ----------------------------------------------- */
+  svg.icon {
+    vertical-align: middle;
+    margin-right: 5px;
+    fill: currentColor;
   }
 
-  .ready-headline {
-    background-color: black;
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-  .ready-headline h2 {
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-  .ready ul,
-  .ready li {
-    list-style: none;
-    margin-left: 0;
-  }
-  .ready ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    font-weight: bold;
-  }
-  .ready .not-first,
-  .ready-message {
-    border-top: 1px solid rgb(102, 102, 102); /* @tin */
-  }
-  .ready-message {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 20px 30px;
-    color: rgb(153, 153, 153); /* @nickel */
-    font-size: 14px;
-  }
-  .ready a {
-    color: white;
-  }
-  .ready li a {
-    text-decoration: none;
-    padding: 20px 30px;
-    display: block;
-    text-align: center;
-  }
-  .ready .icon {
-    display: block;
-    margin-bottom: 20px;
-  }
-  .ready .icon img {
-    vertical-align: top;
-  }
-
-  @media (min-width: 300px) {
-    .ready li a {
-      text-align: left !important;
-    }
-    .ready .icon {
-      width: 120px;
-      padding-right: 30px;
-      float: left;
-      text-align: center;
-      margin-bottom: 0 !important;
-    }
-
-    /* OPTIONAL: Center the text vertically */
-    .ready li a {
-      display: -webkit-flex !important;
-      display:         flex !important;
-
-      -webkit-flex-direction: row;
-              flex-direction: row;
-
-      -webkit-align-items: center;
-              align-items: center;
-    }
-    .ready .icon {
-      -webkit-flex: none;
-              flex: none;
-    }
-  }
-
-
-  /* Icons */
+  /* Steps */
   .icon  svg,
   .icons svg {
     width : 35px;
@@ -653,5 +575,225 @@
   .action a:active,
   .action a:focus {
     background-color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+
+  /* =Ready
+  ----------------------------------------------- */
+  .ready ul,
+  .ready li {
+    list-style: none;
+    margin-left: 0;
+  }
+  .ready ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    font-weight: bold;
+  }
+  /*
+  .ready li,
+  .feedback {
+    margin-top: 1px;
+  }
+  */
+  .ready a {
+    color: white;
+  }
+  .ready li a {
+    text-decoration: none;
+    padding: 20px 30px;
+    display: block;
+    text-align: center;
+  }
+  .ready .icon {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .ready .icon img {
+    vertical-align: top;
+  }
+
+  @media (min-width: 300px) {
+    .ready li a {
+      text-align: left !important;
+    }
+    .ready .icon {
+      width: 120px;
+      padding-right: 30px;
+      float: left;
+      text-align: center;
+      margin-bottom: 0 !important;
+    }
+
+    /* OPTIONAL: Center the text vertically */
+    .ready li a {
+      display: -webkit-flex !important;
+      display:         flex !important;
+
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-align-items: center;
+              align-items: center;
+    }
+    .ready .icon {
+      -webkit-flex: none;
+              flex: none;
+    }
+  }
+
+
+  .ready-headline,
+  .ready li,
+  .download,
+  .feedback {
+    background-color: rgb(51, 51, 51); /* @iron */
+    position: relative;
+    z-index: 1;
+  }
+  .feedback {
+    background-color: rgb(31, 31, 31); /* @steel */
+  }
+  .ready-headline::after,
+  .ready li::after,
+  .download::after,
+  .feedback::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .ready-headline::after,
+  .download::after,
+  .ready li::after {
+    opacity: 0.9;
+  }
+  .ready li::after {
+    opacity: 0.85;
+  }
+  .feedback::after {
+    opacity: 0.8;
+  }
+  .ready-headline.lime::after,
+  .ready.lime li::after,
+  .download.lime::after,
+  .feedback.lime::after {
+    background-color: rgb(218, 243, 121); /* @lime */
+  }
+  .ready-headline.cucumber::after,
+  .ready.cucumber li::after,
+  .download.cucumber::after,
+  .feedback.cucumber::after {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .ready-headline.blueberry::after,
+  .ready.blueberry li::after,
+  .download.blueberry::after,
+  .feedback.blueberry::after {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .ready-headline.boysenberry::after,
+  .ready.boysenberry li::after,
+  .download.boysenberry::after,
+  .feedback.boysenberry::after {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .ready-headline.plumb::after,
+  .ready.plumb li::after,
+  .download.plumb::after,
+  .feedback.plumb::after {
+    background-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .ready-headline.strawberry::after,
+  .ready.strawberry li::after,
+  .download.strawberry::after,
+  .feedback.strawberry::after {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .ready-headline.apple::after,
+  .ready.apple li::after,
+  .download.apple::after,
+  .feedback.apple::after {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .ready-headline.tangerine::after,
+  .ready.tangerine li::after,
+  .download.tangerine::after,
+  .feedback.tangerine::after {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .ready-headline.orange::after,
+  .ready.orange li::after,
+  .download.orange::after,
+  .feedback.orange::after {
+    background-color: rgb(250, 134, 40); /* @orange */
+  }
+
+  .tip {
+    font-size: 14px;
+  }
+  .tip h2 {
+    margin-top: 20px;
+    font-size: inherit;
+    color: black;
+  }
+  .tip svg,
+  .tip img {
+    margin-right: 5px;
+  }
+  .tip h2,
+  .tip p {
+    display: inline-block;
+  }
+  .tip p {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .tip svg,
+  .tip img {
+    color: rgb(204, 204, 204); /* @aluminum */
+    vertical-align: middle;
+  }
+  .download img {
+    vertical-align: top;
+  }
+  .download,
+  .feedback {
+    border-width: 0;
+  }
+  .ready-headline h2,
+  .download h2 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  }
+  .download h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .download h2,
+  .download p {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .download p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .download p img {
+    margin: 5px;
+  }
+  .feedback {
+    font-size: 14px;
+    color: white;
+  }
+  .feedback a {
+    color: black;
   }
 

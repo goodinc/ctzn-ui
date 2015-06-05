@@ -18,12 +18,13 @@
     min-height: 100%;
     font: 16px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
-    color: black;
     box-sizing: border-box;
+
+    color: black;
   }
   @media (min-width: 600px) {
     .container {
-      padding: 20px 0 !important;
+      padding: 20px 0 60px !important;
     }
   }
 
@@ -506,69 +507,6 @@
     border-bottom-width: 0;
   }
 
-  .download,
-  .feedback {
-    background-color: rgb(31, 31, 31); /* @steel */
-    position: relative;
-    z-index: 1;
-  }
-  .download {
-    background-color: rgb(51, 51, 51); /* @iron */
-  }
-  .download::after,
-  .feedback::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-  }
-  .download::after {
-    opacity: 0.9;
-  }
-  .feedback::after {
-    opacity: 0.8;
-  }
-  .download.lime::after,
-  .feedback.lime::after {
-    background-color: rgb(218, 243, 121); /* @lime */
-  }
-  .download.cucumber::after,
-  .feedback.cucumber::after {
-    background-color: rgb(153, 248, 115); /* @cucumber */
-  }
-  .download.blueberry::after,
-  .feedback.blueberry::after {
-    background-color: rgb(40, 221, 181); /* @blueberry */
-  }
-  .download.boysenberry::after,
-  .feedback.boysenberry::after {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .download.plumb::after,
-  .feedback.plumb::after {
-    background-color: rgb(193, 76, 172); /* @plumb */
-  }
-  .download.strawberry::after,
-  .feedback.strawberry::after {
-    background-color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .download.apple::after,
-  .feedback.apple::after {
-    background-color: rgb(255, 49, 59); /* @apple */
-  }
-  .download.tangerine::after,
-  .feedback.tangerine::after {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .download.orange::after,
-  .feedback.orange::after {
-    background-color: rgb(250, 134, 40); /* @orange */
-  }
-
 
   /* =Action
   ----------------------------------------------- */
@@ -634,13 +572,79 @@
     float: right;
   }
 
+
+  /* =Ready
+  ----------------------------------------------- */
+  .download,
+  .feedback {
+    background-color: rgb(51, 51, 51); /* @iron */
+    position: relative;
+    z-index: 1;
+  }
+  .feedback {
+    background-color: rgb(31, 31, 31); /* @steel */
+  }
+  .download::after,
+  .feedback::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .feedback::after {
+    opacity: 0.8;
+  }
+  .download::after {
+    opacity: 0.9;
+  }
+  .download.lime::after,
+  .feedback.lime::after {
+    background-color: rgb(218, 243, 121); /* @lime */
+  }
+  .download.cucumber::after,
+  .feedback.cucumber::after {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .download.blueberry::after,
+  .feedback.blueberry::after {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .download.boysenberry::after,
+  .feedback.boysenberry::after {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .download.plumb::after,
+  .feedback.plumb::after {
+    background-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .download.strawberry::after,
+  .feedback.strawberry::after {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .download.apple::after,
+  .feedback.apple::after {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .download.tangerine::after,
+  .feedback.tangerine::after {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .download.orange::after,
+  .feedback.orange::after {
+    background-color: rgb(250, 134, 40); /* @orange */
+  }
+
   .tip {
     font-size: 14px;
   }
   .tip h2 {
     margin-top: 20px;
     font-size: inherit;
-    color: inherit;
+    color: black;
   }
   .tip svg,
   .tip img {
@@ -692,5 +696,6 @@
     color: white;
   }
   .feedback a {
-    color: inherit;
+    color: black;
   }
+
