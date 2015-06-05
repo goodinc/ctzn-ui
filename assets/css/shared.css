@@ -1105,14 +1105,21 @@
   .post-list .next,
   .post-list .previous {
     text-align: center;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
   }
   .post-list .next {
     margin-bottom: 3em;
   }
   .post-list .previous {
     margin-top: 3em;
+  }
+  .post-list-headline + .post-list .previous {
+    margin-top: 0;
+  }
+  .post-list-headline + .post-list .previous {
+    padding-top: 1.25em;
+    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver */
   }
 
 
@@ -2693,9 +2700,6 @@
 
   /* OPTIONAL: Make the meta data stick to the bottom of
                the card, on the push and profile pages. */
-  .header.push-card {
-    border-bottom: 0.0625em solid rgb(222, 222, 222); /* @silver */
-  }
   .header.push-card .meta {
     background: rgb(204, 204, 204); /* @aluminum */
     background: rgba(0, 0, 0, 0.1);
