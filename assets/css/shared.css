@@ -3474,7 +3474,7 @@
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
    .profile.page .switch,
    .profile.page .post-list-header {
-      margin-top: 3em;
+      margin-top: 1.5em;
     }
   }
 
