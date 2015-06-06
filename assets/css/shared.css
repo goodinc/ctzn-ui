@@ -1114,10 +1114,10 @@
   .post-list .previous {
     margin-top: 3em;
   }
-  .post-list-headline + .post-list .previous {
+  .post-list-header + .post-list .previous {
     margin-top: 0;
   }
-  .post-list-headline + .post-list .previous {
+  .post-list-header + .post-list .previous {
     padding-top: 1.25em;
     border-top: 0.0625em solid rgb(222, 222, 222); /* @silver */
   }
@@ -1257,6 +1257,7 @@
     border-bottom-width: 0;
     border-left-width: 0;
     padding: 0;
+    border-radius: 0;
   }
   .post-item .profile > a {
     display: block;
@@ -1294,6 +1295,9 @@
   .post-item .profile p.action {
     margin-top: 1.5em;
   }
+  .post-item .profile p:first-child {
+    margin-top: 0;
+  }
   .post-item .profile p:last-child {
     margin-bottom: 0;
   }
@@ -1315,7 +1319,7 @@
     display: inline;
   }
   .post-item footer .meta > li + li {
-    margin-top: 0.375em;
+    margin-top: 0.3636363636em; /* 4px / 11px */
   }
 
   .post-item footer .action a,
@@ -1359,24 +1363,23 @@
   }
 
   .post-item footer .meta > li {
-    padding-left: 2.1818181818em; /* 25px / 11px */
+    padding-left: 1.8181818182em; /* 20px / 11px */
     position: relative;
   }
   .post-item footer .meta > li > svg,
   .post-item footer .meta > li > a > svg {
     position: absolute;
-    top: 0.3em; /* 3px / 10px */
+    top: 0.4em; /* 4px / 10px */
     left: 0;
     font-size: 0.9090909091em; /* 10px / 11px */
     font-size: 0.7142857143em; /* 10px / 14px */
     color: black;
   }
+  .post-item footer .meta > li > span,
   .post-item footer .meta > li > a {
     text-decoration: none;
-    color: rgb(193, 193, 193);
     font-size: 1.2727272727em; /* 14px / 11px */
     display: block;
-    color: black;
     font-weight: bold;
     color: black;
   }
@@ -3448,12 +3451,12 @@
     margin-right: -1.25em;
   }
 
-  .profile.page .post-list-headline {
+  .profile.page .post-list-header {
     padding-top: 0;
     padding-bottom: 0;
     max-width: 29.5em;
   }
-  .profile.page .post-list-headline h2 {
+  .profile.page .post-list-header h2 {
     margin: 0;
     line-height: 3.5;
 
@@ -3462,7 +3465,7 @@
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
-  .profile.page .post-list-headline + .post-list {
+  .profile.page .post-list-header + .post-list {
     margin-top: 0;
   }
 
@@ -3470,7 +3473,7 @@
   /* OPTIONAL: Space things out a bit, if the screen is tall. */
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
    .profile.page .switch,
-   .profile.page .post-list-headline {
+   .profile.page .post-list-header {
       margin-top: 3em;
     }
   }
@@ -4403,7 +4406,7 @@
   .activity .post-item {
     padding-top    : 0.2857142857em; /* 4px / 14px */
     padding-bottom : 0.2857142857em;
-    padding-left   : 3.2142857143em; /* 50px / 14px */
+    padding-left   : 2.8571428571em; /* 40px / 14px */
   }
   .activity .post-item header .avatar {
     top: 0.1428571429em; /* 2px / 14px */
@@ -4420,7 +4423,10 @@
     margin-top: 0;
   }
   .activity .comments {
-    margin-top: 0.75em;
+    margin-top: 0.25em; /* 4px / @font-size */
+  }
+  .activity .comments .post-list {
+    margin-top: 0;
   }
   .activity .more {
     margin-bottom: 0.25em;
