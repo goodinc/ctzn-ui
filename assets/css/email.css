@@ -496,21 +496,32 @@
   /* =Action
   ----------------------------------------------- */
   .action a {
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent;
     display: inline-block;
     padding: 7px 15px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    background-color: rgb(250, 56, 136); /* @strawberry */
-    color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204); /* @aluminum */
+    background-color: white;
+    color: rgb(51, 51, 51); /* @iron */
   }
   .action a:hover,
   .action a:active,
   .action a:focus {
+    background: rgb(238, 238, 238); /* @seashell */
+  }
+
+  .action.primary a {
+    border-color: transparent;
+    background-color: rgb(250, 56, 136); /* @strawberry */
+    color: white;
+  }
+  .action.primary a:hover,
+  .action.primary a:active,
+  .action.primary a:focus {
     background-color: rgb(193, 16, 65); /* @raspberry */
   }
 
