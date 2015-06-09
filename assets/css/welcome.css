@@ -113,7 +113,6 @@
   .headline,
   .message,
   .steps,
-  .ready,
   .tip,
   .download,
   .feedback,
@@ -122,8 +121,7 @@
     margin-right: auto;
   }
   .footer,
-  .steps,
-  .ready {
+  .steps {
     max-width: 580px;
   }
   .headline,
@@ -589,74 +587,8 @@
   }
 
 
-  /* =Ready
+  /* =Promotions
   ----------------------------------------------- */
-  .ready ul,
-  .ready li {
-    list-style: none;
-    margin-left: 0;
-  }
-  .ready ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    font-weight: bold;
-  }
-  /*
-  .ready li,
-  .feedback {
-    margin-top: 1px;
-  }
-  */
-  .ready a {
-    color: white;
-  }
-  .ready li a {
-    text-decoration: none;
-    padding: 20px 30px;
-    display: block;
-    text-align: center;
-  }
-  .ready .icon {
-    display: block;
-    margin-bottom: 20px;
-  }
-  .ready .icon img {
-    vertical-align: top;
-  }
-
-  @media (min-width: 300px) {
-    .ready li a {
-      text-align: left !important;
-    }
-    .ready .icon {
-      width: 120px;
-      padding-right: 30px;
-      float: left;
-      text-align: center;
-      margin-bottom: 0 !important;
-    }
-
-    /* OPTIONAL: Center the text vertically */
-    .ready li a {
-      display: -webkit-flex !important;
-      display:         flex !important;
-
-      -webkit-flex-direction: row;
-              flex-direction: row;
-
-      -webkit-align-items: center;
-              align-items: center;
-    }
-    .ready .icon {
-      -webkit-flex: none;
-              flex: none;
-    }
-  }
-
-
-  .ready-headline,
-  .ready li,
   .download,
   .feedback {
     background-color: rgb(51, 51, 51); /* @iron */
@@ -666,8 +598,6 @@
   .feedback {
     background-color: rgb(31, 31, 31); /* @steel */
   }
-  .ready-headline::after,
-  .ready li::after,
   .download::after,
   .feedback::after {
     content: "";
@@ -679,67 +609,44 @@
     right: 0;
     z-index: -1;
   }
-  .ready-headline::after,
-  .download::after,
-  .ready li::after {
+  .download::after {
     opacity: 0.9;
-  }
-  .ready li::after {
-    opacity: 0.85;
   }
   .feedback::after {
     opacity: 0.8;
   }
-  .ready-headline.lime::after,
-  .ready.lime li::after,
   .download.lime::after,
   .feedback.lime::after {
     background-color: rgb(218, 243, 121); /* @lime */
   }
-  .ready-headline.cucumber::after,
-  .ready.cucumber li::after,
   .download.cucumber::after,
   .feedback.cucumber::after {
     background-color: rgb(153, 248, 115); /* @cucumber */
   }
-  .ready-headline.blueberry::after,
-  .ready.blueberry li::after,
   .download.blueberry::after,
   .feedback.blueberry::after {
     background-color: rgb(40, 221, 181); /* @blueberry */
   }
-  .ready-headline.boysenberry::after,
-  .ready.boysenberry li::after,
   .download.boysenberry::after,
   .feedback.boysenberry::after {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .ready-headline.plumb::after,
-  .ready.plumb li::after,
   .download.plumb::after,
   .feedback.plumb::after {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
-  .ready-headline.strawberry::after,
-  .ready.strawberry li::after,
   .download.strawberry::after,
   .feedback.strawberry::after {
     background-color: rgb(250, 56, 136); /* @strawberry */
   }
-  .ready-headline.apple::after,
-  .ready.apple li::after,
   .download.apple::after,
   .feedback.apple::after {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  .ready-headline.tangerine::after,
-  .ready.tangerine li::after,
   .download.tangerine::after,
   .feedback.tangerine::after {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
-  .ready-headline.orange::after,
-  .ready.orange li::after,
   .download.orange::after,
   .feedback.orange::after {
     background-color: rgb(250, 134, 40); /* @orange */
@@ -775,7 +682,6 @@
   .feedback {
     border-width: 0;
   }
-  .ready-headline h2,
   .download h2 {
     color: white;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
