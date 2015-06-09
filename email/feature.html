@@ -4,16 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CTZN for Android</title>
+  <title>Welcome to CicLAvia</title>
 
-  <link rel="stylesheet" href="../assets/css/email.css" />
+  <link rel="stylesheet" href="../assets/css/welcome.css" />
 
   <style>
     .container {
       text-align: center;
     }
-    .headline {
-      border-top: 10px solid rgb(0, 255, 208); /* @kiwi */
+
+    .screenshot {
+      width: 580px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
 
     .announcement {
@@ -42,26 +47,6 @@
     .announcement .image-action {
       margin-top: 30px;
     }
-
-    .details {
-      padding-left: 40px;
-      padding-right: 40px;
-      max-width: 500px;
-      background: #333;
-      color: rgb(153, 153, 153);
-      font-size: 14px;
-      line-height: 20px;
-      text-align: left;
-    }
-    .details .first {
-      margin-top: 0;
-    }
-    .details .last {
-      margin-bottom: 0;
-    }
-    .details .last a {
-      color: white;
-    }
   </style>
 
 </head>
@@ -69,34 +54,39 @@
 
   <div class="container">
 
-    <div class="headline" >
+    <div class="first cucumber headline">
       <h1>
-        <img src="../assets/images/email/android/ctzn.png" height="70" alt="CTZN for Android " />
+        <img src="../assets/images/email/ctzn-update.png" height="70" alt="CTZN Update" />
       </h1>
-
     </div><!-- /.headline -->
+
+    <img class="screenshot" src="../assets/images/email/ctzn-update.jpg" alt="" />
 
     <div class="announcement">
 
-      <h3>It’s here!</h3>
+      <h3>Meet New People</h3>
       <p class="body">
-        We are excited to announce that
-        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">CTZN for Android</a>
-        is now&nbsp;available!
+        See when people join your push – directly in the feed!
+        Say hello, give some love, and start connecting.
       </p>
-      <p class="image-action">
-        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
-          <img src="../assets/images/email/android/google-play.png" width="170" height="60" alt="Get it on Google Play" />
+      <p class="action">
+        <a href="http://ctznapp.com">
+          Check it out
         </a>
       </p>
     </div><!-- /.details -->
 
-    <div class="details">
-      <p class="first">
-        CTZN is a platform built for people pushing to better their communities. CTZN helps people capture and show the heart of their push — as told through the eyes and voice of the communities making it happen.  
+    <div class="cucumber download">
+      <h2>Get the CTZN app!</h2>
+      <p>
+        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn"><img src="../assets/images/email/welcome/google-play.png" height="35" alt="Get CTZN for Android" /></a>
+        <a href="https://itunes.apple.com/us/genre/ios/id36?mt=8"><img src="../assets/images/email/welcome/apple-store.png" height="35" alt="Get CTZN for iPhone" /></a>
       </p>
-      <p class="last">Learn more by visiting <a href="http://getctzn.com">getctzn.com</a></p>
-    </div><!-- /.details -->
+    </div><!-- /.download -->
+
+    <div class="cucumber feedback">
+      <p><b>Have feedback?</b> Let us know by emailing <a href="mailto:ctzn@goodinc.com">ctzn@goodinc.com</a></p>
+    </div><!-- /.feedback -->
 
     <div class="footer">
       <h2>
@@ -110,10 +100,11 @@
           </svg>
         </a>
       </h2>
-      <p class="unsubscribe"><a href="http://ctznapp.com">Unsubscribe</a></p>
 
       <div style="clear: both"></div>
     </div><!-- /.footer -->
+
+    <p class="mute"><a href="http://ctznapp.com">Unsubscribe from emails like this one</a></p>
 
   </div><!-- ./container -->
 

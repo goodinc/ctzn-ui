@@ -1371,14 +1371,11 @@
     position: absolute;
     top: 0.4em; /* 4px / 10px */
     left: 0;
-    font-size: 0.9090909091em; /* 10px / 11px */
     font-size: 0.7142857143em; /* 10px / 14px */
     color: black;
   }
-  .post-item footer .meta > li > span,
   .post-item footer .meta > li > a {
     text-decoration: none;
-    font-size: 1.2727272727em; /* 14px / 11px */
     display: block;
     font-weight: bold;
     color: black;
