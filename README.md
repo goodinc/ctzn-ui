@@ -33,11 +33,6 @@ These have been useful for updating files in this repository. (For example, usin
     <!-- images/icons.svg -->[\s<a-z0-9A-Z="\.:/>,-/#]+?(?=</svg>)</svg>
 
 
-### Replace the styles in HTML emails with the latest CSS…
-
-    <!-- https://github.com/goodinc/ctzn-ui/blob/gh-pages/assets/css/email.css -->(.|\s)+?(?=</style>)</style>
-
-
 ### Remove knockout attributes (to reduce the HTML to a bare minimum)…
 
     data-bind="[^"]*"
@@ -56,3 +51,4 @@ These have been useful for updating files in this repository. (For example, usin
 #### And replace…
 
     <label>$1<svg class="icon"$2><use xlink:href="#$3"></use></svg><span>$4</span><br />
+

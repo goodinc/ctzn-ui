@@ -95,6 +95,8 @@
     margin-top: 0;
   }
 
+
+  /* “Reply above” header */
   .header {
     padding-top: 10px;
     text-align: center;
@@ -861,12 +863,12 @@
   ----------------------------------------------- */
   .download,
   .feedback {
-    background-color: rgb(51, 51, 51); /* @iron */
+    background-color: rgb(153, 153, 153); /* @nickel */
     position: relative;
     z-index: 1;
   }
   .feedback {
-    background-color: rgb(31, 31, 31); /* @steel */
+    background-color: rgb(102, 102, 102); /* @tin */
   }
   .download::after,
   .feedback::after {
@@ -878,11 +880,6 @@
     bottom: 0;
     right: 0;
     z-index: -1;
-  }
-  .download::after {
-    opacity: 0.9;
-  }
-  .feedback::after {
     opacity: 0.8;
   }
   .download.lime::after,
