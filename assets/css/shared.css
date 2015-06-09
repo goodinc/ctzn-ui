@@ -1050,6 +1050,8 @@
     font-size: 0.875em; /* 14px / @font-size */
     white-space: nowrap;
   }
+
+  /* TBD: Do we still need this? */
   .list ul .message {
     position: absolute;
     top: 0.75em;
@@ -1057,6 +1059,31 @@
   }
   .list ul .message svg {
     display: block;
+  }
+
+  .list ul button {
+    position: absolute;
+    top: 0.8333333333em; /* 10px / 12px */
+    right: 0.8333333333em;
+    background: white;
+    color: rgb(135, 135, 135);
+    font-size: 0.75em;
+    border-width: 0.08333333333em; /* 1px / 12px (font size) */
+    border-style: solid;
+    border-color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .list ul button svg {
+    vertical-align: top;
+  }
+  .hoverable .list ul button:hover,
+  .list ul button:active,
+  .list ul button:focus {
+    background: rgb(238, 238, 238); /* @seashell */
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .list ul button[aria-checked="true"] {
+    background: rgb(238, 238, 238); /* @seashell */
+    color: rgb(245, 83, 135) !important; /* @strawberry */
   }
 
   /* OPTIONAL: Make list items stick to the sides at narrow window sizes. */
