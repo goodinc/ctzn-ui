@@ -23,33 +23,33 @@ The site is published on GitHub:
 
 
 
-# Handy regular expressions.
+## Handy regular expressions.
 
 These have been useful for updating files in this repository. (For example, using search and replace in Sublime Text)
 
 
-## Replace the icons in each HTML file (to add new icons)…
+### Replace the icons in each HTML file (to add new icons)…
 
 <!-- images/icons.svg -->[\s<a-z0-9A-Z="\.:/>,-/#]+?(?=</svg>)</svg>
 
 
-## Replace the styles in HTML emails with the latest CSS…
+### Replace the styles in HTML emails with the latest CSS…
 
 <!-- https://github.com/goodinc/ctzn-ui/blob/gh-pages/assets/css/email.css -->(.|\s)+?(?=</style>)</style>
 
 
-## Remove knockout attributes (to reduce the HTML to a bare minimum)…
+### Remove knockout attributes (to reduce the HTML to a bare minimum)…
 
  data-bind="[^"]*"
 
 
-## Remove knockout elements…
+### Remove knockout elements…
 
 <!-- ko [^-]* -->
 <!-- /ko -->
 
 
-## Find the icon elements within a label…
+### Find the icon elements within a label…
 
 <label>([\s]+)<svg class="icon"([^>]*)><use xlink:href="#([^"]+)"></use><foreignobject>([^<]+)</foreignobject></svg><br />
 

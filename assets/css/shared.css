@@ -1423,6 +1423,7 @@
   .post-item footer .meta li li:last-child::after {
     content: "";
   }
+  .post-item footer .meta li li > span,
   .post-item footer .meta li li a {
     text-decoration: none;
     color: rgb(102, 102, 102);
