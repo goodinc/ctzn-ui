@@ -1050,6 +1050,11 @@
     font-size: 0.875em; /* 14px / @font-size */
     white-space: nowrap;
   }
+  .list ul button {
+    position: absolute;
+    top: 0.8333333333em; /* 10px / 12px */
+    right: 0.8333333333em;
+  }
 
   /* TBD: Do we still need this? */
   .list ul .message {
@@ -1059,31 +1064,6 @@
   }
   .list ul .message svg {
     display: block;
-  }
-
-  .list ul button {
-    position: absolute;
-    top: 0.8333333333em; /* 10px / 12px */
-    right: 0.8333333333em;
-    background: white;
-    color: rgb(135, 135, 135);
-    font-size: 0.75em;
-    border-width: 0.08333333333em; /* 1px / 12px (font size) */
-    border-style: solid;
-    border-color: rgb(204, 204, 204); /* @aluminum */
-  }
-  .list ul button svg {
-    vertical-align: top;
-  }
-  .hoverable .list ul button:hover,
-  .list ul button:active,
-  .list ul button:focus {
-    background: rgb(238, 238, 238); /* @seashell */
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .list ul button[aria-checked="true"] {
-    background: rgb(238, 238, 238); /* @seashell */
-    color: rgb(245, 83, 135) !important; /* @strawberry */
   }
 
   /* OPTIONAL: Make list items stick to the sides at narrow window sizes. */
@@ -1349,6 +1329,8 @@
     margin-top: 0.3636363636em; /* 4px / 11px */
   }
 
+  .header.push-card .meta button,
+  .list ul button,
   .post-item footer .action a,
   .post-item footer .action button {
     background: white;
@@ -1359,6 +1341,17 @@
     border-color: rgb(204, 204, 204); /* @aluminum */
     vertical-align: middle;
   }
+  .header.push-card .meta button {
+    margin-top: -0.0625em; /* 1px / 16px */
+    font-size: inherit;
+    border-width: 0;
+  }
+  .hoverable .header.push-card .meta button:hover,
+  .header.push-card .meta button:active,
+  .header.push-card .meta button:focus,
+  .hoverable .list ul button:hover,
+  .list ul button:active,
+  .list ul button:focus,
   .hoverable .post-item footer .action a:hover,
   .post-item footer .action a:active,
   .post-item footer .action a:focus,
@@ -1368,10 +1361,13 @@
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(102, 102, 102); /* @tin */
   }
+  .list ul button[aria-checked="true"] svg,
   .post-item footer .action a      svg,
   .post-item footer .action button svg {
     vertical-align: top;
   }
+  .header.push-card .meta button[aria-checked="true"],
+  .list ul button[aria-checked="true"],
   .post-item footer .action [aria-checked="true"] {
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(245, 83, 135) !important; /* @strawberry */
