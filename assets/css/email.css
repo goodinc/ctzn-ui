@@ -1,6 +1,6 @@
 
 /*
-  Styles for notification emails sent by the server (New Mention, Comment and Mix Ready)
+  Styles for notification emails sent by the server (Welcome, New Mention, Comment and Mix Ready)
 */
 
   html, body {
@@ -16,6 +16,7 @@
   }
 
   .container {
+    min-height: 100%;
     font: 16px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(83, 83, 83);
@@ -46,7 +47,6 @@
     border-width: 0;
   }
 
-  .headline h1,
   .details h2,
   .details h3 {
     font-weight: inherit;
@@ -57,6 +57,18 @@
     margin-bottom: 0;
     font-size: 20px;
     line-height: 30px;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .headline h2 {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .headline h1 b,
+  .headline h2 b {
+    color: black;
   }
   .details h2 {
     font-size: 30px;
@@ -99,21 +111,32 @@
   .headline,
   .details,
   .article,
+  .message,
+  .steps,
+  .tip,
+  .download,
+  .feedback,
   .footer {
     margin-left: auto;
     margin-right: auto;
   }
   .headline,
+  .details,
   .article,
-  .details {
+  .message,
+  .steps,
+  .tip,
+  .download,
+  .feedback {
     background-color: white;
   }
   .headline,
-  .details {
+  .details,
+  .message,
+  .tip,
+  .download,
+  .feedback {
     max-width: 520px; /* 580px - (30px x 2) */
-  }
-  .headline {
-    padding: 25px 30px;
   }
   /* SHIM: Give details a little more padding at the bottom, for the mix notification */
   .details {
@@ -124,11 +147,56 @@
     padding: 15px;
     max-width: 550px; /* 580px - (15px x 2) */
   }
-  .footer {
+  .footer,
+  .steps {
     max-width: 580px;
   }
+  .headline {
+    margin-top: 10px;
+    padding: 25px 30px;
+  }
+  .headline.first {
+    margin-top: 0;
+  }
+  .headline.first h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .ctzn {
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    background: rgb(135, 135, 135);
+    color: white;
+    padding: 0 6px;
+    font-size: 10px;
+    display: inline-block;
+  }
+
+  .download {
+    padding: 20px 30px;
+  }
+  .tip,
+  .feedback {
+    padding: 10px 30px;
+  }
+  .message {
+    max-width: 520px; /* 580px - (30px x 2) */
+    padding: 15px 30px;
+  }
+  .message.first {
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  .tip,
+  .download {
+    margin-top: 10px;
+  }
   .details,
-  .article {
+  .article,
+  .message,
+  .steps {
     margin-top: 1px;
   }
 
@@ -221,6 +289,10 @@
   ----------------------------------------------- */
   .avatar .size30 {
     font-size: 1.5em; /* 30px / 20px */
+    border-radius: 100%;
+  }
+  .avatar .size60 {
+    font-size: 48px; /* 60 / 1.25 */
     border-radius: 100%;
   }
 
@@ -493,6 +565,140 @@
   }
 
 
+  /* =Intro
+  ----------------------------------------------- */
+  .intro {
+    max-width: 520px; /* 580px - (30px x 2) */
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    background: white;
+    color: rgb(31, 31, 31); /* @steel */
+  }
+  .intro div {
+    border: 1px solid rgb(238, 238, 238); /* @seashell */
+    padding: 20px;
+    position: relative;
+  }
+  .intro h2,
+  .intro .name {
+    display: inline-block;
+  }
+  .intro h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+  .intro .avatar {
+    margin-right: 10px;
+    float: left;
+  }
+  .intro .name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .intro .about {
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: rgb(102, 102, 102); /* @tin */
+    font-size: 14px;
+  }
+  .intro .action {
+    clear: both;
+    padding-top: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .intro .action a {
+    display: block;
+    text-align: center;
+  }
+
+
+  /* =Members
+  ----------------------------------------------- */
+  .members ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 0;
+  }
+  .members li {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 580px; /* 580px - (30px x 2) */
+    margin-top: 1px;
+  }
+  .members li a {
+    text-decoration: none;
+  }
+  .members li > a {
+    display: block;
+    padding: 20px 30px;
+  }
+  .members li .avatar,
+  .members li a b {
+    margin-right: 5px;
+  }
+  .members li h3 {
+    font-size: inherit;
+    margin: 0;
+  }
+  .members .also h3,
+  .members li .about,
+  .members li .role,
+  .members li .joined {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .members li .name {
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .members li .also {
+    display: block;
+    color: black;
+    padding: 20px 30px;
+    font-size: 12px;
+  }
+  .members li .also h3 {
+    margin-bottom: 10px;
+  }
+  .members li p {
+    padding-left: 42px;
+  }
+  .members li p.about {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  .members .also h3,
+  .members .role,
+  .members .joined {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 0;
+    font-weight: inherit;
+  }
+  .members .role {
+    float: left;
+    margin-right: 3px;
+  }
+  .members .role:after {
+    content: " – ";
+  }
+
+
   /* =Action
   ----------------------------------------------- */
   .action a {
@@ -540,12 +746,217 @@
   svg.icon {
     vertical-align: middle;
     margin-right: 5px;
+    fill: currentColor;
+  }
+
+
+  /* =Steps
+  ----------------------------------------------- */
+  .icon  svg,
+  .icons svg {
+    width : 35px;
+    height: 35px;
+    vertical-align: middle;
+    fill: currentColor;
+  }
+  .icons svg {
+    width : 25px;
+    height: 25px;
+  }
+
+  .steps ol {
+    margin: 0;
+    padding: 30px 0 30px 60px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .steps li {
+    padding-right: 20px;
+  }
+  .steps div {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  .steps   b,
+  .message b {
+    color: black;
+  }
+  .steps .not-first {
+    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+    margin-top: 30px;
+    padding-top: 30px;
+    position: relative;
+  }
+  .steps .not-first:before {
+    content: "";
+    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+    position: absolute;
+    top: -1px;
+    left: -60px;
+    width: calc(100% + 60px);
+    height: 1px;
+  }
+  .intro .icon,
+  .steps .icon {
+    display: inline-block;
+    border: 3px solid rgb(238, 238, 238); /* @seashell */
+    padding: 9px;
+    border-radius: 10px;
+  }
+  .intro .icon {
+    background: white;
+    border-color: white;
+  }
+  .steps .icon {
+    margin-bottom: 20px;
+    float: right;
+    margin-top: -10px;
+    margin-left: 20px;
+  }
+  .steps .icon img {
+    display: block;
+  }
+  .steps .icons {
+    margin-top: 20px;
+  }
+  .steps .icons img,
+  .steps .icons svg {
+    margin-right: 25px;
+  }
+
+
+  /* =Promotions
+  ----------------------------------------------- */
+  .download,
+  .feedback {
+    background-color: rgb(51, 51, 51); /* @iron */
+    position: relative;
+    z-index: 1;
+  }
+  .feedback {
+    background-color: rgb(31, 31, 31); /* @steel */
+  }
+  .download::after,
+  .feedback::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .download::after {
+    opacity: 0.9;
+  }
+  .feedback::after {
+    opacity: 0.8;
+  }
+  .download.lime::after,
+  .feedback.lime::after {
+    background-color: rgb(218, 243, 121); /* @lime */
+  }
+  .download.cucumber::after,
+  .feedback.cucumber::after {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .download.blueberry::after,
+  .feedback.blueberry::after {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .download.boysenberry::after,
+  .feedback.boysenberry::after {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .download.plumb::after,
+  .feedback.plumb::after {
+    background-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .download.strawberry::after,
+  .feedback.strawberry::after {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .download.apple::after,
+  .feedback.apple::after {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .download.tangerine::after,
+  .feedback.tangerine::after {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .download.orange::after,
+  .feedback.orange::after {
+    background-color: rgb(250, 134, 40); /* @orange */
+  }
+
+  .tip {
+    font-size: 14px;
+  }
+  .tip h2 {
+    font-size: inherit;
+    color: black;
+  }
+  .tip svg,
+  .tip img {
+    margin-right: 5px;
+  }
+  .tip h2,
+  .tip p {
+    display: inline-block;
+  }
+  .tip p {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .tip svg,
+  .tip img {
+    color: rgb(204, 204, 204); /* @aluminum */
+    vertical-align: middle;
+  }
+  .download img {
+    vertical-align: top;
+  }
+  .download,
+  .feedback {
+    border-width: 0;
+  }
+  .download h2 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  }
+  .download h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .download h2,
+  .download p {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .download p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .download p img {
+    margin: 5px;
+  }
+  .feedback {
+    font-size: 14px;
+    color: white;
+  }
+  .feedback a {
+    color: black;
   }
 
 
   /* =Footer
   ----------------------------------------------- */
   .footer {
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
     color: rgb(102, 102, 102); /* @tin */
   }
