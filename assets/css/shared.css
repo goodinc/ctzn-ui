@@ -3451,14 +3451,18 @@
     margin: 0;
   }
 
-  .profile.page .switch {
+  .profile.page .switch,
+  .profile.page .post-list-header {
     padding-top: 0;
     padding-bottom: 0;
     max-width: 29.5em;
   }
-  .profile.page .switch h2 {
+  .profile.page .switch h2,
+  .profile.page .post-list-header h2 {
     margin: 0;
-    line-height: 3.5;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    line-height: 1.5;
 
     /* @tiny-headline */
     font-size: 0.75em;
@@ -3471,25 +3475,9 @@
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
-
-  .profile.page .post-list-header {
-    padding-top: 0;
-    padding-bottom: 0;
-    max-width: 29.5em;
-  }
-  .profile.page .post-list-header h2 {
-    margin: 0;
-    line-height: 3.5;
-
-    /* @tiny-headline */
-    font-size: 0.75em;
-    text-transform: uppercase;
-    color: rgb(159, 165, 162); /* @barium */
-  }
   .profile.page .post-list-header + .post-list {
     margin-top: 0;
   }
-
 
   /* OPTIONAL: Space things out a bit, if the screen is tall. */
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
