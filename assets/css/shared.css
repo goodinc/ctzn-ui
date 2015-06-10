@@ -1389,30 +1389,6 @@
     padding-left: 1.8181818182em; /* 20px / 11px */
     position: relative;
   }
-  .post-item footer .meta > li > svg,
-  .post-item footer .meta > li > a > svg {
-    position: absolute;
-    top: 0.4em; /* 4px / 10px */
-    left: 0;
-    font-size: 0.7142857143em; /* 10px / 14px */
-    color: black;
-  }
-  .post-item footer .meta > li > a {
-    text-decoration: none;
-    display: block;
-    font-weight: bold;
-    color: black;
-  }
-  .hoverable .post-item footer .meta > li > a:hover,
-             .post-item footer .meta > li > a:active,
-             .post-item footer .meta > li > a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
-  }
-  .hoverable .post-item footer .meta > li > a:hover  svg,
-             .post-item footer .meta > li > a:active svg,
-             .post-item footer .meta > li > a:focus  svg {
-    color: inherit;
-  }
   .post-item footer .meta li ul {
     display: inline;
     text-transform: none;
@@ -1426,15 +1402,41 @@
   .post-item footer .meta li li > span,
   .post-item footer .meta li li a {
     text-decoration: none;
-    color: rgb(102, 102, 102);
     font-size: 1.2727272727em; /* 14px / 11px */
     font-weight: bold;
     color: black;
   }
-  .hoverable .post-item footer .meta li li a:hover,
-  .post-item footer .meta li li a:active,
-  .post-item footer .meta li li a:focus {
+  .post-item footer .meta > li > a {
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: black;
+    font-size: 1.2727272727em; /* 14px / 11px */
+  }
+  .hoverable .post-item footer .meta li a:hover,
+             .post-item footer .meta li a:active,
+             .post-item footer .meta li a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+
+  .post-item footer .meta > li > svg {
+    font-size: 0.9090909091em; /* 10px / 11px */
+  }
+  .post-item footer .meta > li > a > svg {
+    font-size: 0.7142857143em; /* 10px / 14px */
+  }
+  .post-item footer .meta > li > svg,
+  .post-item footer .meta > li > a > svg {
+    position: absolute;
+    top: 0.2em; /* 2px / 10px */
+    left: 0;
+    color: black;
+  }
+  .hoverable .post-item footer .meta > li > a:hover  svg,
+             .post-item footer .meta > li > a:active svg,
+             .post-item footer .meta > li > a:focus  svg {
+    color: inherit;
   }
 
 
