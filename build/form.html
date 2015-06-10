@@ -293,7 +293,7 @@
       </h1>
     </section>
 
-    <form class="has-icon">
+    <form action="" method="post" class="has-icon">
       <p>Note about the whole form</p>
       <p class="text error">
         <label>
@@ -304,19 +304,21 @@
       <p class="validation-message">
         Oops! There’s something wrong with this field.
       </p>
-      <p class="text">
-        <label>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg><span>Email</span><br />
-          <input type="email" placeholder="Email" />
-        </label>
-      </p>
-      <p class="text">
-        <label>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg><span>Password</span><br />
-          <input type="password" placeholder="Password" />
-        </label>
-        <em class="note">Note with details about this field.</em>
-      </p>
+      <ul class="text">
+        <li>
+          <label>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg><span>Email</span><br />
+            <input type="email" placeholder="Email" />
+          </label>
+        </li>
+        <li>
+          <label>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg><span>Password</span><br />
+            <input type="password" placeholder="Password" />
+          </label>
+          <em class="note">Note with details about this field.</em>
+        </li>
+      </ul>
       <p class="submit">
         <button>Send</button>
       </p>
