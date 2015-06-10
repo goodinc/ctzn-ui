@@ -861,62 +861,85 @@
 
   /* =Promotions
   ----------------------------------------------- */
-  .download,
-  .feedback {
+  .download {
     background-color: rgb(153, 153, 153); /* @nickel */
-    position: relative;
-    z-index: 1;
   }
   .feedback {
     background-color: rgb(102, 102, 102); /* @tin */
   }
-  .download::after,
-  .feedback::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    opacity: 0.8;
-  }
-  .download.lime::after,
-  .feedback.lime::after {
+
+  .download.lime {
     background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(198, 223, 101); /* 4% darker */
   }
-  .download.cucumber::after,
-  .feedback.cucumber::after {
+  .feedback.lime {
+    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(178, 203, 81); /* 8% darker */
+  }
+
+  .download.cucumber {
     background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(133, 228, 95); /* 4% darker */
   }
-  .download.blueberry::after,
-  .feedback.blueberry::after {
+  .feedback.cucumber {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(113, 208, 75); /* 8% darker */
+  }
+
+  .download.blueberry {
     background-color: rgb(40, 221, 181); /* @blueberry */
   }
-  .download.boysenberry::after,
-  .feedback.boysenberry::after {
+  .feedback.blueberry {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(20, 201, 161); /* 4% darker */
+  }
+
+  .download.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .download.plumb::after,
-  .feedback.plumb::after {
+  .feedback.boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+    background-color: rgb(91, 132, 234); /* 4% darker */
+  }
+
+  .download.plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
-  .download.strawberry::after,
-  .feedback.strawberry::after {
+  .feedback.plumb {
+    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(173, 56, 152); /* 4% darker */
+  }
+
+  .download.strawberry {
     background-color: rgb(250, 56, 136); /* @strawberry */
   }
-  .download.apple::after,
-  .feedback.apple::after {
+  .feedback.strawberry {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(230, 36, 116); /* 4% darker */
+  }
+
+  .download.apple {
     background-color: rgb(255, 49, 59); /* @apple */
   }
-  .download.tangerine::after,
-  .feedback.tangerine::after {
+  .feedback.apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(235, 29, 39); /* 4% darker */
+  }
+
+  .download.tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
-  .download.orange::after,
-  .feedback.orange::after {
+  .feedback.tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+    background-color: rgb(235, 184, 0); /* 4% darker */
+  }
+
+  .download.orange {
     background-color: rgb(250, 134, 40); /* @orange */
+  }
+  .feedback.orange {
+    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(230, 114, 20); /* 4% darker */
   }
 
   .tip {
