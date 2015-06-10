@@ -2520,9 +2520,14 @@
     margin-right: auto;
   }
 
-  .push-card .website a {
+  .push-card .action a {
     background: rgb(204, 204, 204); /* @aluminum */
     background: rgba(0, 0, 0, 0.1);
+  }
+  .hoverable .push-card .action a:hover,
+             .push-card .action a:active,
+             .push-card .action a:focus {
+    background-color: black;
   }
 
   /* Meta */
