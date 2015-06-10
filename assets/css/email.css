@@ -863,10 +863,10 @@
   /* =Promotions
   ----------------------------------------------- */
   .download {
-    background-color: rgb(153, 153, 153); /* @nickel */
+    background-color: rgb(176, 176, 176);
   }
   .feedback {
-    background-color: rgb(102, 102, 102); /* @tin */
+    background-color: rgb(153, 153, 153); /* @nickel */
   }
 
   .download.lime {
