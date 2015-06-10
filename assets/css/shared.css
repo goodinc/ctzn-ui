@@ -2163,6 +2163,7 @@
   .mix-editor.page   > header,
   .post.page         > header,
   .edit.page         > header,
+  .edit-push.page    > header,
   .edit-profile.page > header {
     background-color: white;
     color: black;
@@ -2173,35 +2174,41 @@
   .mix-editor.page   > header a,
   .post.page         > header a,
   .edit.page         > header a,
+  .edit-push.page    > header a,
   .edit-profile.page > header a {
     border-color: transparent !important;
     color: rgb(102, 102, 102); /* @tin */
   }
   .hoverable .mix.page          > header a:hover,
-  .mix.page          > header a:active,
-  .mix.page          > header a:focus,
+             .mix.page          > header a:active,
+             .mix.page          > header a:focus,
   .hoverable .mixes.page        > header a:hover,
-  .mixes.page        > header a:active,
-  .mixes.page        > header a:focus,
+             .mixes.page        > header a:active,
+             .mixes.page        > header a:focus,
   .hoverable .mix-editor.page   > header a:hover,
-  .mix-editor.page   > header a:active,
-  .mix-editor.page   > header a:focus,
+             .mix-editor.page   > header a:active,
+             .mix-editor.page   > header a:focus,
   .hoverable .post.page         > header a:hover,
-  .post.page         > header a:active,
-  .post.page         > header a:focus,
+             .post.page         > header a:active,
+             .post.page         > header a:focus,
   .hoverable .edit.page         > header a:hover,
-  .edit.page         > header a:active,
-  .edit.page         > header a:focus,
+             .edit.page         > header a:active,
+             .edit.page         > header a:focus,
+  .hoverable .edit-push.page    > header a:hover,
+             .edit-push.page    > header a:active,
+             .edit-push.page    > header a:focus,
   .hoverable .edit-profile.page > header a:hover,
-  .edit-profile.page > header a:active,
-  .edit-profile.page > header a:focus {
+             .edit-profile.page > header a:active,
+             .edit-profile.page > header a:focus {
     color: black;
   }
 
   /* OPTIONAL: Position the submit button in the header */
+  .edit-push.page    > header ~ form ul.text,
   .edit-profile.page > header ~ form ul.text {
     margin-bottom: 0;
   }
+  .edit-push.page    > header ~ form .submit,
   .edit-profile.page > header ~ form .submit,
   .post-editor.page  > header ~ form .submit,
   .mix-editor.page   > header ~ form .submit {
@@ -2211,6 +2218,7 @@
     right: 0.375em;
     margin: 0;
   }
+  .edit-push.page    > header ~ form .submit button,
   .edit-profile.page > header ~ form .submit button,
   .post-editor.page  > header ~ form .submit button,
   .mix-editor.page   > header ~ form .submit button {
