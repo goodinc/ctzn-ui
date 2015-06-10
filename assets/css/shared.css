@@ -429,7 +429,8 @@
   -----------------------------------------------
   ----------------------------------------------- */
   button,
-  .action a {
+  .action a,
+  a .action {
     border-width: 0;
     font-family: inherit;
     font-size: inherit;
@@ -444,16 +445,20 @@
     text-transform: lowercase;
     margin: 0;
   }
-  .hoverable .action a:hover,
-  .action a:active,
-  .action a:focus,
   .hoverable button:hover,
-  button:active,
-  button:focus {
+             button:active,
+             button:focus,
+  .hoverable .action a:hover,
+             .action a:active,
+             .action a:focus,
+  .hoverable a:hover  .action,
+             a:active .action,
+             a:focus  .action {
     background-color: rgb(193, 16, 65); /* @raspberry */
     color: white;
   }
-  .action a {
+  .action a,
+  a .action {
     display: inline-block;
     text-decoration: none;
   }
@@ -1921,7 +1926,7 @@
     text-align: center;
 
     display: -webkit-flex;
-    display: flex;
+    display:         flex;
 
     -webkit-justify-content: stretch;
             justify-content: stretch;
@@ -2531,7 +2536,7 @@
     margin: 0;
     text-transform: uppercase;
     display: inline-block;
-    padding: 0.75em 1.125em; /* @line-height / 2 */
+    padding: 0.75em 1.25em; /* @line-height / 2 */
     text-align: left;
   }
   .push-card .meta p .count {
@@ -2740,9 +2745,6 @@
     margin-left   : -1.25em; /* @page-padding */
     margin-right  : -1.25em; /* @page-padding */
     margin-bottom : -1.5em; /* @line-height */
-
-    /* FUSSY: Line up with the left margin of the page */
-    padding-left: 0.125em; /* @page-padding - 1.125em */
   }
   .header.push-card .meta p {
     background-color: transparent;
@@ -3315,7 +3317,7 @@
     height: 100%;
 
     display: -webkit-flex;
-    display: flex;
+    display:         flex;
 
     -webkit-flex-direction: column;
             flex-direction: column;
@@ -3346,7 +3348,7 @@
     min-height: 100vh;
 
     display: -webkit-flex;
-    display: flex;
+    display:         flex;
 
     -webkit-flex-direction: column;
             flex-direction: column;
@@ -3626,7 +3628,7 @@
     padding: 0.75em 0.5em;
 
     display: -webkit-flex;
-    display: flex;
+    display:         flex;
 
     -webkit-flex-direction: column;
             flex-direction: column;
@@ -4105,7 +4107,7 @@
     min-height: calc(90vmin - 4.5em);
 
     display: -webkit-flex;
-    display: flex;
+    display:         flex;
 
     -webkit-flex-direction: row;
             flex-direction: row;
@@ -4529,13 +4531,7 @@
     clear: both;
   }
   .switch li > a {
-    padding: 1.5em;
     text-align: left;
-  }
-  .hoverable .switch li a:hover,
-  .switch li a:active,
-  .switch li a:focus {
-    opacity: 0.75;
   }
   .switch li h2 + p {
     margin: 0;
@@ -4554,7 +4550,119 @@
   .switch .join a .icon {
     font-size: 2em;
   }
+  .switch li > a {
+    position: relative;
+    z-index: 1;
+  }
+  .switch li > a .name {
+    text-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
+  }
+  .switch li > a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: background-color 0.2s;
+  }
+  .hoverable .switch li a:hover::before,
+             .switch li a:active::before,
+             .switch li a:focus::before {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  /*
+  .switch li a .action {
+    position: absolute;
+    top: 1.25em;
+    right: 1.25em;
+  }
+  */
+  .switch li a.push-card {
+    padding: 1.25em;
+  }
+  .switch li a.push-card .name {
+    line-height: 1.5333333333;
+  }
+  /*
+  .switch li a .action {
+    float: right;
+  }
+  */
+  .switch li a.push-card .name {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .switch li a .action {
+    margin-top: 0.75em;
+    display: table;
+    /*
+    background: white;
+    color: rgb(135, 135, 135);
+    */
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .hoverable .switch li a:hover  .action,
+             .switch li a:active .action,
+             .switch li a:focus  .action {
+    /*
+    background: rgb(238, 238, 238);
+    color: rgb(102, 102, 102);
+    */
+    background-color: black;
+  }
 
+  /* OPTIONAL: Position the action on the right */
+  @media (min-width: 20em) {
+    .switch li a.push-card {
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-justify-content: space-between;
+              justify-content: space-between;
+
+              /*
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: space-between;
+              justify-content: space-between;
+              */
+    }
+    /*
+    .switch li a.push-card .name {
+      -webkit-flex-grow: 1;
+              flex-grow: 1;
+    }
+    */
+    .switch li a.push-card .name {
+      margin-right: 1.5em;
+    }
+    .switch li a .action {
+      margin-top: 0;
+      margin-left: auto;
+      -webkit-flex: none;
+              flex: none;
+    }
+    /*
+    .switch.has-action li a.push-card {
+      padding-right: 8em;
+    }
+    .switch li a .action {
+      margin-top: 0;
+      position: absolute;
+      top: 1.25em;
+      right: 1.25em;
+    }
+    */
+  }
 
 
   /* =Loading
@@ -4633,19 +4741,19 @@
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
   .hoverable .dialog.page .action a.reinstall:hover,
-  .dialog.page .action a.reinstall:active,
-  .dialog.page .action a.reinstall:focus,
+             .dialog.page .action a.reinstall:active,
+             .dialog.page .action a.reinstall:focus,
   .hoverable .dialog.page    button.reinstall:hover,
-  .dialog.page    button.reinstall:active,
-  .dialog.page    button.reinstall:focus {
+             .dialog.page    button.reinstall:active,
+             .dialog.page    button.reinstall:focus {
     background-color: rgb(215, 34, 44); /* dark apple */
   }
   .hoverable .dialog.page .action a.restart:hover,
-  .dialog.page .action a.restart:active,
-  .dialog.page .action a.restart:focus,
+             .dialog.page .action a.restart:active,
+             .dialog.page .action a.restart:focus,
   .hoverable .dialog.page    button.restart:hover,
-  .dialog.page    button.restart:active,
-  .dialog.page    button.restart:focus {
+             .dialog.page    button.restart:active,
+             .dialog.page    button.restart:focus {
     background-color: rgb(85, 141, 207); /* dark boysenberry */
   }
   .dialog.page .action {
@@ -5121,7 +5229,7 @@
       margin-bottom: 0;
 
       display: -webkit-flex;
-      display: flex;
+      display:         flex;
 
       -webkit-flex-direction: row;
               flex-direction: row;
