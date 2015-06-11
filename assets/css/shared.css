@@ -371,59 +371,6 @@
   }
 
 
-  /* =Push Avatars
-  ----------------------------------------------- */
-  .avatar .lime {
-    background-color: rgb(218, 243, 121); /* @lime */
-    color: white;
-  }
-  .avatar .cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
-    color: white;
-  }
-  .avatar .blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
-    color: white;
-  }
-  .avatar .boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-    color: white;
-  }
-  .avatar .plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
-    color: white;
-  }
-  .avatar .strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
-    color: white;
-  }
-  .avatar .apple {
-    background-color: rgb(255, 49, 59); /* @apple */
-    color: white;
-  }
-  .avatar .tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-    color: white;
-  }
-  .avatar .orange {
-    background-color: rgb(250, 134, 40); /* @orange */
-    color: white;
-  }
-
-  /* OPTIONAL: Give push avatars a square shape */
-  .avatar .lime,
-  .avatar .cucumber,
-  .avatar .blueberry,
-  .avatar .boysenberry,
-  .avatar .plumb,
-  .avatar .strawberry,
-  .avatar .apple,
-  .avatar .tangerine,
-  .avatar .orange {
-    border-radius: 0;
-  }
-
-
   /* =Buttons
   -----------------------------------------------
   -----------------------------------------------
@@ -1399,10 +1346,10 @@
     display: inline;
     text-transform: none;
   }
-  .post-item footer .meta li li::after {
+  .post-item footer .meta li li:after {
     content: ", ";
   }
-  .post-item footer .meta li li:last-child::after {
+  .post-item footer .meta li li:last-child:after {
     content: "";
   }
   .post-item footer .meta li li > span,
@@ -2765,6 +2712,11 @@
   }
 
   /* Settings button (for the push page) */
+  .header.push-card .meta:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   .push-card .meta .settings {
     margin: 0;
     float: right;
@@ -4540,22 +4492,34 @@
   .switch li {
     margin-bottom: 0.0625em; /* 1px */
   }
-  .switch li > a:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .switch li > a {
+  .switch li a.push-card {
+    padding: 1.25em;
     text-align: left;
   }
+  .switch li a.push-card .name {
+    line-height: 1.5333333333;
+    margin-left: 0;
+    margin-right: 0;
+    text-shadow: 0 0 2.5em rgba(0, 0, 0, 0.3);
+  }
+  .switch li a .action {
+    margin-left: 1.5em;
+    font-size: 0.875em;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s;
+  }
+  .hoverable .switch li a:hover  .action,
+             .switch li a:active .action,
+             .switch li a:focus  .action {
+    background-color: black;
+  }
+
+  /* OPTIONAL: Make links darker when active */
   .switch li > a {
     position: relative;
     z-index: 1;
   }
-  .switch li > a .name {
-    text-shadow: 0 0 2.5em rgba(0, 0, 0, 0.3);
-  }
-  .switch li > a::before {
+  .switch li > a:before {
     content: "";
     position: absolute;
     top: 0;
@@ -4565,101 +4529,44 @@
     z-index: -1;
     transition: background-color 0.2s;
   }
-  .hoverable .switch li a:hover::before,
-             .switch li a:active::before,
-             .switch li a:focus::before {
+  .hoverable .switch li a:hover:before,
+             .switch li a:active:before,
+             .switch li a:focus:before {
     background: rgba(0, 0, 0, 0.1);
-  }
-  /*
-  .switch li a .action {
-    position: absolute;
-    top: 1.25em;
-    right: 1.25em;
-  }
-  */
-  .switch li a.push-card {
-    padding: 1.25em;
-  }
-  .switch li a.push-card .name {
-    line-height: 1.5333333333;
-  }
-  /*
-  .switch li a .action {
-    float: right;
-  }
-  */
-  .switch li a.push-card .name {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .switch li a .action {
-    margin-top: 1em;
-    display: table;
-    font-size: 0.875em;
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s;
-  }
-  .hoverable .switch li a:hover  .action,
-             .switch li a:active .action,
-             .switch li a:focus  .action {
-    background-color: black;
   }
 
   /* OPTIONAL: Position the action on the right */
-  @media (min-width: 20em) {
-    .switch li a.push-card {
-      display: -webkit-flex;
-      display:         flex;
+  .switch li:after {
+    /* @clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .switch li a .action {
+    float: right;
+  }
+  .switch li a.push-card {
+    display: -webkit-flex;
+    display:         flex;
 
-      -webkit-flex-direction: row;
-              flex-direction: row;
+    -webkit-flex-direction: row;
+            flex-direction: row;
 
-      -webkit-justify-content: space-between;
-              justify-content: space-between;
+    -webkit-align-items: center;
+            align-items: center;
 
-              /*
-      -webkit-align-items: center;
-              align-items: center;
-
-      -webkit-align-content: center;
-              align-content: center;
-
-      -webkit-justify-content: space-between;
-              justify-content: space-between;
-              */
-    }
-    /*
-    .switch li a.push-card .name {
-      -webkit-flex-grow: 1;
-              flex-grow: 1;
-    }
-    */
-    .switch li a.push-card .name {
-      margin-right: 1.5em;
-    }
-    .switch li a .action {
-      margin-top: 0;
-      margin-left: auto;
-      -webkit-flex: none;
-              flex: none;
-    }
-    /*
-    .switch.has-action li a.push-card {
-      padding-right: 8em;
-    }
-    .switch li a .action {
-      margin-top: 0;
-      position: absolute;
-      top: 1.25em;
-      right: 1.25em;
-    }
-    */
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
   }
 
+  /* SHIM: Override styles meant for .page */
   .switch .option-list a {
     margin-left: 0;
     margin-right: 0;
-    
+  }
+
+  /* OPTIONAL: Give option lists a dark background */
+  .switch .option-list a {
     border-color: black;
     background-color: black;
     color: rgb(153, 153, 153); /* @nickel */

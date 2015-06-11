@@ -27,13 +27,19 @@
   body.pattern::after {
     content: "";
     background: black;
-    opacity: 0.2;
+    opacity: 0.1;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: fixed;
     z-index: -1;   
+  }
+  header.pattern h2,
+  header.pattern nav,
+  .pattern.index h1,
+  .pattern-list {
+    text-shadow: 0 0 2.5em rgba(0, 0, 0, 0.25);
   }
 
   body.pattern code {
