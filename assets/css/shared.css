@@ -3421,7 +3421,7 @@
     margin: 0;
   }
 
-  .profile.page .switch,
+  .page .switch,
   .profile.page .post-list-header {
     padding-top: 0;
     padding-bottom: 0;
@@ -3439,7 +3439,7 @@
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
-  .profile.page .switch ul {
+  .page .switch ul {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: -1.25em;
@@ -3451,7 +3451,7 @@
 
   /* OPTIONAL: Space things out a bit, if the screen is tall. */
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-   .profile.page .switch,
+   .page .switch,
    .profile.page .post-list-header {
       margin-top: 1.5em;
     }
@@ -4470,16 +4470,12 @@
 
   /* =Switch Push
   ----------------------------------------------- */
-  section.switch {
+  .pushes.page {
     background: rgb(51, 51, 51); /* @iron */
     color: white;
     color: rgba(255, 255, 255, 0.95);
-    padding-bottom: 3em;
-    min-height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
   }
+
   .switch ul,
   .switch li {
     list-style: none;
@@ -4559,21 +4555,18 @@
             justify-content: space-between;
   }
 
-  /* SHIM: Override styles meant for .page */
-  .switch .option-list a {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   /* OPTIONAL: Give option lists a dark background */
-  .switch .option-list a {
+  .pushes.page .option-list li + li {
+    margin-top: 0.0625em;
+  }
+  .pushes.page .option-list a {
     border-color: black;
     background-color: black;
     color: rgb(153, 153, 153); /* @nickel */
   }
-  .hoverable .switch .option-list a:hover,
-             .switch .option-list a:active,
-             .switch .option-list a:focus {
+  .hoverable .pushes.page .option-list a:hover,
+             .pushes.page .option-list a:active,
+             .pushes.page .option-list a:focus {
     background-color: black;
     color: white;
   }
