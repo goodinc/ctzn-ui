@@ -4548,23 +4548,6 @@
   .switch li > a {
     text-align: left;
   }
-  .switch li h2 + p {
-    margin: 0;
-    color: black;
-  }
-  .switch .join {
-    text-align: center;
-    font-size: inherit;
-  }
-  .switch .join a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 1.5em;
-    color: inherit;
-  }
-  .switch .join a .icon {
-    font-size: 2em;
-  }
   .switch li > a {
     position: relative;
     z-index: 1;
