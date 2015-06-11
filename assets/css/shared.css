@@ -1503,6 +1503,7 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
   }
   header.primary h1 {
     margin: 0;
@@ -2040,6 +2041,7 @@
     background-color: rgb(51, 51, 51); /* @iron */
     color: white;
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
   }
   .page > header h1 {
     margin: 0;
@@ -4507,7 +4509,6 @@
   }
   .switch li a .action {
     margin-left: 1.5em;
-    font-size: 0.875em;
     background-color: rgba(0, 0, 0, 0.25);
     transition: background-color 0.2s;
   }
@@ -4569,12 +4570,11 @@
   .pushes.page .option-list a {
     border-color: black;
     background-color: black;
-    color: rgb(153, 153, 153); /* @nickel */
+    color: rgb(204, 204, 204)
   }
   .hoverable .pushes.page .option-list a:hover,
              .pushes.page .option-list a:active,
              .pushes.page .option-list a:focus {
-    background-color: black;
     color: white;
   }
 
