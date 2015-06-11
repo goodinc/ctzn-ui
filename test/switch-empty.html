@@ -281,28 +281,24 @@
     <h1><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignObject>ctzn</foreignObject></svg></h1>
 
     <a href="#profile" class="profile">
-      <span class="avatar">
-        <span class="size30 has-icon" data-content="B">
-          <svg class="icon"><use xlink:href="#icon-user-circle"></use></svg>
-        </span>
-      </span>
+      <span class="avatar"><img height="30" width="30" alt="Brian Nilsen" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" /></span>
     </a>
   </header>
 
   <section class="switch">
-    <div>
-      <section class="error-message">
-        <!-- ko if: good.globalDataModel().pushes.length <= 0 -->
-          <h1>You’ve left your only push on CTZN.</h1>
-          <p><a href="#join-push" data-bind="click: good.onNavClick">Join another push</a> if you have a new push code.</p>
-        <!-- /ko -->
-        <!-- ko if: good.globalDataModel().pushes.length > 0 --><!-- /ko -->
-      </section>
-      <h2 class="join">
-        <a href="join.html">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-add-circle"></use><foreignobject>Join Another Push</foreignobject></svg>
-        </a>
-      </h2>
+    <div class="option-list">
+      <ul>
+        <li class="facebook">
+          <a href="#">
+            Join a push
+          </a>
+        </li>
+        <li class="twitter">
+          <a href="#">
+            Start a new push
+          </a>
+        </li>
+      </ul>
     </div>
   </section>
 

@@ -4522,6 +4522,7 @@
     background: rgb(51, 51, 51); /* @iron */
     color: white;
     color: rgba(255, 255, 255, 0.95);
+    padding-bottom: 3em;
     min-height: 100%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -4569,7 +4570,7 @@
     z-index: 1;
   }
   .switch li > a .name {
-    text-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 2.5em rgba(0, 0, 0, 0.3);
   }
   .switch li > a::before {
     content: "";
@@ -4609,22 +4610,25 @@
     margin-right: 0;
   }
   .switch li a .action {
-    margin-top: 0.75em;
+    margin-top: 1em;
     display: table;
+    font-size: 0.875em;
     /*
+    background-color: rgba(0, 0, 0, 0.1);
     background: white;
     color: rgb(135, 135, 135);
     */
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: transparent;
   }
   .hoverable .switch li a:hover  .action,
              .switch li a:active .action,
              .switch li a:focus  .action {
     /*
+    background-color: black;
     background: rgb(238, 238, 238);
     color: rgb(102, 102, 102);
     */
-    background-color: black;
+    background-color: transparent;
   }
 
   /* OPTIONAL: Position the action on the right */
@@ -4676,6 +4680,21 @@
       right: 1.25em;
     }
     */
+  }
+
+  .switch .option-list a {
+    margin-left: 0;
+    margin-right: 0;
+    
+    border-color: black;
+    background-color: black;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .hoverable .switch .option-list a:hover,
+             .switch .option-list a:active,
+             .switch .option-list a:focus {
+    background-color: black;
+    color: white;
   }
 
 
