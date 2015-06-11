@@ -3449,10 +3449,17 @@
     margin-top: 0;
   }
 
+  .page > .option-list:first-child {
+    padding-top: 0;
+  }
+
   /* OPTIONAL: Space things out a bit, if the screen is tall. */
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-   .page .switch,
-   .profile.page .post-list-header {
+    .page > .option-list:first-child {
+      margin-top: 1.5em;
+    }
+    .page .switch,
+    .profile.page .post-list-header {
       margin-top: 1.5em;
     }
   }
