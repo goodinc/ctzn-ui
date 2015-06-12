@@ -1502,7 +1502,7 @@
     color: rgb(204, 204, 204); /* @aluminum */
     position: relative;
     padding: 0.75em 0.75em 0.75em 1em;
-    z-index: 9;
+    z-index: 2;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -2047,7 +2047,7 @@
     color: white;
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
     position: relative;
-    z-index: 9;
+    z-index: 2;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
   }
   .page > header h1 {
@@ -3996,6 +3996,46 @@
     border-width: 0;
     padding: 0;
   }
+
+  .mix-editor .preview {
+    position: relative;
+  }
+  .mix-editor .preview p.text {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .mix-editor .preview p.text label {
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .mix-editor .preview p.text label textarea {
+    height: 100%;
+    padding: 0.75em;
+  }
+  .mix-editor .preview .note {
+    color: black;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  .mix-editor .preview p.text label ::-webkit-input-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .mix-editor .preview p.text label ::-moz-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .mix-editor .preview p.text label :-ms-input-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+
   .mix-editor textarea,
   .mix-editor input[type="text"] {
     background: transparent;
@@ -4004,6 +4044,7 @@
     border-width: 0;
     border-radius: 0;
   }
+  .mix-editor .title textarea,
   .mix-editor input[type="text"] {
     font-weight: bold;
     font-size: 2.25em; /* 36px / @font-size */
@@ -4030,6 +4071,7 @@
     padding: 1.5em;
   }
   .mix-editor .preview img {
+    vertical-align: top;
     max-width: 100%;
     height: auto;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
@@ -4528,7 +4570,7 @@
   .pushes.page .option-list a {
     border-color: black;
     background-color: black;
-    color: rgb(204, 204, 204)
+    color: rgb(204, 204, 204); /* @aluminum */
   }
   .hoverable .pushes.page .option-list a:hover,
              .pushes.page .option-list a:active,
