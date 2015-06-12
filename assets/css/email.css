@@ -345,30 +345,39 @@
 
   /* =Push Colors
   ----------------------------------------------- */
+  .push.intro.lime div,
   .profile.lime {
     background-color: rgb(218, 243, 121); /* @lime */
   }
+  .push.intro.cucumber div,
   .profile.cucumber {
     background-color: rgb(153, 248, 115); /* @cucumber */
   }
+  .push.intro.blueberry div,
   .profile.blueberry {
     background-color: rgb(40, 221, 181); /* @blueberry */
   }
+  .push.intro.boysenberry div,
   .profile.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
+  .push.intro.plumb div,
   .profile.plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
+  .push.intro.strawberry div,
   .profile.strawberry {
     background-color: rgb(250, 56, 136); /* @strawberry */
   }
+  .push.intro.apple div,
   .profile.apple {
     background-color: rgb(255, 49, 59); /* @apple */
   }
+  .push.intro.tangerine div,
   .profile.tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
+  .push.intro.orange div,
   .profile.orange {
     background-color: rgb(250, 134, 40); /* @orange */
   }
@@ -610,28 +619,29 @@
     padding: 20px;
     position: relative;
   }
-  .push-intro div {
-    padding: 20px;
-    position: relative;
+  .push.intro div {
     text-align: center;
-    background-color: rgb(218, 243, 121);
-    border-width: 0px;
-  }  
-  .push-intro .action a {
+    background-color: rgb(204, 204, 204); /* @aluminum */
+    border-width: 0;
+  }
+  .push.intro .action a {
     color: white;
-    border-width: 0px;
+    border-width: 0;
     border-color: white;
     background-color: rgba(0, 0, 0, 0.1);
-  }  
-  .push-intro .action a:hover {
+  }
+  .push.intro .action a:hover,
+  .push.intro .action a:active,
+  .push.intro .action a:focus {
     background-color: black;
-  }  
+  }
+
   .intro h2,
   .intro .name {
     display: inline-block;
   }
-  .push-intro h2 {
-    color:white;  
+  .push.intro h2 {
+    color: white;  
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   }
   .intro h2 {
@@ -654,6 +664,7 @@
     margin-top: 10px;
     margin-bottom: 0;
     color: rgb(102, 102, 102); /* @tin */
+    color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
   }
   .intro .action {
@@ -1038,6 +1049,11 @@
   }
   .feedback a {
     color: black;
+  }
+  .feedback a:hover,
+  .feedback a:active,
+  .feedback a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
   }
 
 
