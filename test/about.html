@@ -6,16 +6,44 @@
 
   <title>CTZN</title>
 
-  <link rel="stylesheet" href="http://fast.fonts.net/cssapi/10a9d239-187d-4d7f-856c-2687a38610fd.css" />
-  <link rel="stylesheet" href="../assets/css/minimal.css" />
-
-    <script>
+  <script>
     (function() {
       // OPTIONAL: Add an extra class for styling, in browsers that support the placeholder attribute.
       // http://stackoverflow.com/questions/8263891/simple-way-to-check-if-placeholder-is-supported
       if ('placeholder' in document.createElement('input') && 'placeholder' in document.createElement('textarea')) {
         var html = document.getElementsByTagName("html")[0]; html.className += " supports-placeholder";
       }
+    })();
+  </script>
+
+  <style>
+    /*
+      This CSS resource incorporates links to font software which is the valuable copyrighted
+      property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+      redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+      Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
+    */
+    @font-face {
+      font-family: "Proxima Nova";
+      src: url(../assets/fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix);
+      src: url(../assets/fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix) format("eot"),
+           url(../assets/fonts/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff) format("woff"),
+           url(../assets/fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf) format("truetype"),
+           url(../assets/fonts/8152bc4e-d700-4c78-b6be-326893e6f53f.svg#8152bc4e-d700-4c78-b6be-326893e6f53f) format("svg");
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+
+  <link rel="stylesheet" href="../assets/css/minimal.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
