@@ -744,7 +744,7 @@
     background-color: white;
     color: rgb(51, 51, 51); /* @iron */
     font-weight: bold;
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
     width: 100%;
     padding: 0.75em 1.5em;
     -webkit-box-sizing: border-box;
@@ -990,6 +990,11 @@
   .list li a .name > span > span {
     display: table-cell;
     vertical-align: middle;
+  }
+  .list li a .role {
+    font-size: 0.6875em; /* 11px / @font-size */
+    line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
+    text-transform: uppercase;
   }
   .list ul h3,
   .list ul p {
@@ -1271,6 +1276,9 @@
   .post-item footer {
     margin-top: 1.25em;
   }
+  .post-item footer:first-child {
+    margin-top: 0;
+  }
   .post-item footer ul,
   .post-item footer li {
     list-style: none;
@@ -1334,11 +1342,14 @@
   }
 
   .post-item footer .meta {
-    margin: 0;
     font-size: 0.6875em; /* 11px / @font-size */
     line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
     text-transform: uppercase;
     color: black;
+    margin-bottom: 0;
+    margin-top : 1.8181818182em; /* 1.25em / 0.6875em */
+    padding-top: 1.8181818182em;
+    border-top: 0.09090909091em solid rgb(204, 204, 204); /* @aluminum */
   }
 
   .post-item footer .meta > li {
@@ -1507,7 +1518,7 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(44, 44, 44); /* @thorium */
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
   }
   header.primary h1 {
     margin: 0;
@@ -1684,7 +1695,7 @@
 
 
   /* For the push preview */
-  /* TODO: Consider combining this with footer.primary */
+  /* TODO: Consider combining this with header.primary */
   .preview.page > header h1 svg {
     width: 2em;
     vertical-align: top;
@@ -1703,114 +1714,6 @@
     display: table;
     margin: 0.75em auto 0;
     padding: 0.375em 0.75em;
-  }
-  footer.about,
-  footer.preview {
-    padding: 0.75em;
-    background: rgb(51, 51, 51);
-    text-align: center;
-  }
-  footer.about {
-    color: rgb(153, 153, 153); /* @nickel */
-    text-transform: uppercase;
-  }
-  footer.about h2,
-  footer.about p {
-    display: inline-block;
-    margin: 0;
-    font-size: 0.6875em;
-    line-height: 2.1818181818em;
-    font-weight: normal;
-  }
-  footer.preview:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  footer.preview h2 {
-    font-size: inherit;
-    line-height: inherit;
-  }
-  footer.preview h2,
-  footer.preview p {
-    display: inline-block;
-    margin: 0;
-  }
-  footer.preview p {
-    margin: 0.75em;
-  }
-
-  @media (max-width: 30em) {
-    footer.preview h2 {
-      margin: 0 0 0 0.375em;
-      width: calc(100% - 8.75em);
-      float: left;
-      text-align: left;
-    }
-    footer.preview p {
-      margin: 0.375em 0.375em 0;
-      width: calc(8em - 0);
-      float: right;
-      text-align: right;
-    }
-  }
-
-  footer.about h2 {
-    position: relative;
-    padding-right: 1em;
-    margin-right: 0.5em;
-  }
-  footer.about h2:after {
-    content: "";
-    display: block;
-    border-right: 0.1em solid;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -0.5em;
-    height: 1em;
-  }
-  footer.about h2 .icon {
-    color: white;
-    width: 3em;
-    height: 1em;
-    vertical-align: baseline;
-    /*
-    font-size: 1.75em;
-    vertical-align: -0.4em;
-    margin-left: 0.15em;
-    margin-right: 0.5em;
-    */
-  }
-  footer.about a {
-    color: rgb(204, 204, 204); /* @aluminum */
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  /* OPTIONAL: Make the footer sticky */
-  @media (min-width: 20em) and (min-height: 20em) {
-
-    /* SHIM: Make space for the sticky footer */
-    .preview.page,
-    .push-card.page {
-      padding-bottom: 4.5em;
-    }
-    .mixable .push-card.page {
-      padding-bottom: 0;
-    }
-
-    footer.about,
-    footer.preview {
-      bottom: 0;
-      left: 0;
-      position: fixed;
-      z-index: 1;
-      width: 100%;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-    }
   }
 
 
@@ -2048,7 +1951,7 @@
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
     position: relative;
     z-index: 2;
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
   }
   .page > header h1 {
     margin: 0;
@@ -3713,7 +3616,7 @@
   }
 
   .mix .preview div {
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
     background: black;
     color: white;
     margin: 0 auto;
@@ -3822,7 +3725,7 @@
       width: 100%;
       background: black;
       border-bottom: 0.0625em solid black;
-      box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+      box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
     }
     .mix-editor .selected-images ol {
       padding-top: 0.0625em;
@@ -4074,7 +3977,12 @@
     vertical-align: top;
     max-width: 100%;
     height: auto;
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+    min-width: 9em;
+    min-height: 9em;
   }
   .mix-editor .preview.lime {
     background-color: rgb(218, 243, 121); /* @lime */
