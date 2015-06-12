@@ -38,8 +38,8 @@
     transition: opacity 0.2s, color 0.2s, background-color 0.2s;
   }
   .hoverable a:hover,
-  a:active,
-  a:focus {
+             a:active,
+             a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
   }
   a img {
@@ -252,6 +252,7 @@
   }
 
 
+
   /* =Avatars
   -----------------------------------------------
   -----------------------------------------------
@@ -371,6 +372,7 @@
   }
 
 
+
   /* =Buttons
   -----------------------------------------------
   -----------------------------------------------
@@ -445,6 +447,7 @@
     border-color: rgb(222, 222, 222); /* @silver */
     color: rgb(193, 16, 65); /* @raspberry */
   }
+
 
 
   /* =Forms
@@ -1300,28 +1303,28 @@
     border-width: 0;
   }
   .hoverable .header.push-card .meta button:hover,
-  .header.push-card .meta button:active,
-  .header.push-card .meta button:focus,
+             .header.push-card .meta button:active,
+             .header.push-card .meta button:focus,
   .hoverable .list ul button:hover,
-  .list ul button:active,
-  .list ul button:focus,
+             .list ul button:active,
+             .list ul button:focus,
   .hoverable .post-item footer .action a:hover,
-  .post-item footer .action a:active,
-  .post-item footer .action a:focus,
+             .post-item footer .action a:active,
+             .post-item footer .action a:focus,
   .hoverable .post-item footer .action button:hover,
-  .post-item footer .action button:active,
-  .post-item footer .action button:focus {
+             .post-item footer .action button:active,
+             .post-item footer .action button:focus {
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(102, 102, 102); /* @tin */
   }
   .list ul button[aria-checked="true"] svg,
-  .post-item footer .action a      svg,
-  .post-item footer .action button svg {
+  .post-item footer .action a          svg,
+  .post-item footer .action button     svg {
     vertical-align: top;
   }
   .header.push-card .meta button[aria-checked="true"],
-  .list ul button[aria-checked="true"],
-  .post-item footer .action [aria-checked="true"] {
+  .list ul                button[aria-checked="true"],
+  .post-item footer     .action [aria-checked="true"] {
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(245, 83, 135) !important; /* @strawberry */
   }
@@ -1473,17 +1476,18 @@
     color: rgb(255, 49, 59); /* @apple */
   }
   .hoverable .post-options li button:hover,
-  .post-options li button:active,
-  .post-options li button:focus {
+             .post-options li button:active,
+             .post-options li button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
     color: rgb(60, 109, 218); /* @elderberry */
     border-radius: 0;
   }
   .hoverable .post-options li.warning button:hover,
-  .post-options li.warning button:active,
-  .post-options li.warning button:focus {
+             .post-options li.warning button:active,
+             .post-options li.warning button:focus {
     color: rgb(255, 49, 59); /* @apple */
   }
+
 
 
   /* =Push
@@ -1498,7 +1502,7 @@
     color: rgb(204, 204, 204); /* @aluminum */
     position: relative;
     padding: 0.75em 0.75em 0.75em 1em;
-    z-index: 9;
+    z-index: 2;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -1584,8 +1588,8 @@
     padding: 0.5625em; /* (48px - 30px) / 2 / @font-size */
   }
   .hoverable header.primary .profile:hover,
-  header.primary .profile:active,
-  header.primary .profile:focus {
+             header.primary .profile:active,
+             header.primary .profile:focus {
     opacity: 0.75;
   }
   header.primary .notifications.active:before {
@@ -1605,8 +1609,8 @@
     text-decoration: none;
   }
   .hoverable header.primary a:hover,
-  header.primary a:active,
-  header.primary a:focus {
+             header.primary a:active,
+             header.primary a:focus {
     color: white;
   }
   header.primary > a, /* For the push preview */
@@ -1926,10 +1930,11 @@
     transition: fill 0.2s;
   }
   .hoverable ul.create li a:hover  .icon,
-  ul.create li a:active .icon,
-  ul.create li a:focus  .icon {
+             ul.create li a:active .icon,
+             ul.create li a:focus  .icon {
     fill: currentColor;
   }
+
 
 
   /* =Page
@@ -1956,9 +1961,9 @@
   }
 
   .page > article:last-child,
-  .page > div:last-child,
-  .page > form:last-child,
-  .page > aside:last-child {
+  .page >     div:last-child,
+  .page >    form:last-child,
+  .page >   aside:last-child {
     padding-bottom: 4.5em;
   }
 
@@ -2042,7 +2047,7 @@
     color: white;
     border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
     position: relative;
-    z-index: 9;
+    z-index: 2;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
   }
   .page > header h1 {
@@ -2064,8 +2069,8 @@
     color: rgb(204, 204, 204); /* @aluminum */
   }
   .hoverable .page > header a:hover,
-  .page > header a:active,
-  .page > header a:focus {
+             .page > header a:active,
+             .page > header a:focus {
     color: white;
   }
   .page > header .action,
@@ -2327,16 +2332,16 @@
   }
 
   .hoverable .option-list a:hover,
-  .option-list a:active,
-  .option-list a:focus,
+             .option-list a:active,
+             .option-list a:focus,
   .hoverable .option-list button:hover,
-  .option-list button:active,
-  .option-list button:focus {
+             .option-list button:active,
+             .option-list button:focus {
     background-color: rgb(222, 222, 222); /* @silver */
   }
   .hoverable .option-list button:hover,
-  .option-list button:active,
-  .option-list button:focus {
+             .option-list button:active,
+             .option-list button:focus {
     color: rgb(193, 16, 65); /* @raspberry */
   }
   .option-list,
@@ -2390,8 +2395,8 @@
 
   /* Sometimes the push card is a link. */
   .hoverable .push-card:hover,
-  .push-card:active,
-  .push-card:focus {
+             .push-card:active,
+             .push-card:focus {
     color: black;
     color: rgba(0, 0, 0, 0.95);
   }
@@ -2523,17 +2528,12 @@
     padding: 0.75em  1.125em;
   }
   .hoverable .push-card .meta p a:hover,
-  .push-card .meta p a:active,
-  .push-card .meta p a:focus {
+             .push-card .meta p a:active,
+             .push-card .meta p a:focus {
     background-color: rgba(0, 0, 0, 0.1);
   }
 
   /* Join Button */
-  /*
-  .start.page > div {
-    margin-top: 1.5em;
-  }
-  */
   .push-card form {
     margin-top: 1.875em;
     margin-bottom: 0;
@@ -2948,8 +2948,8 @@
     padding: 0.5em;
   }
   .hoverable .toggle-mixable button:hover,
-  .toggle-mixable button:active,
-  .toggle-mixable button:focus {
+             .toggle-mixable button:active,
+             .toggle-mixable button:focus {
     background-color: black;
   }
 
@@ -3122,11 +3122,6 @@
 
   /* =Post Details
   ----------------------------------------------- */
-  /*
-  .post.page > div h2 {
-    font-size: inherit;
-  }
-  */
   .post.page .details {
     background: white;
     padding: 0;
@@ -3178,14 +3173,14 @@
     margin-left: 0.125em;
   }
   .hoverable .file button:hover,
-  .file button:active,
-  .file button:focus,
+             .file button:active,
+             .file button:focus,
   .hoverable .file input[type="file"]:hover  ~ .icon,
-  .file input[type="file"]:active ~ .icon,
-  .file input[type="file"]:focus  ~ .icon,
+             .file input[type="file"]:active ~ .icon,
+             .file input[type="file"]:focus  ~ .icon,
   .hoverable .file input[type="file"]:hover   ~ span,
-  .file input[type="file"]:active  ~ span,
-  .file input[type="file"]:focus   ~ span {
+             .file input[type="file"]:active  ~ span,
+             .file input[type="file"]:focus   ~ span {
     color: black;
   }
 
@@ -3255,8 +3250,8 @@
     height: 1em;
   }
   .hoverable form .images li button:hover  span,
-  form .images li button:active span,
-  form .images li button:focus  span {
+             form .images li button:active span,
+             form .images li button:focus  span {
     opacity: 1;
   }
   form .images + p {
@@ -3347,11 +3342,11 @@
     border: 0.125em solid white;
   }
   .hoverable .image-viewer button:hover,
-  .image-viewer button:active,
-  .image-viewer button:focus,
+             .image-viewer button:active,
+             .image-viewer button:focus,
   .hoverable .image-viewer .action a:hover,
-  .image-viewer .action a:active,
-  .image-viewer .action a:focus {
+             .image-viewer .action a:active,
+             .image-viewer .action a:focus {
     background-color: black;
     background-color: rgba(0, 0, 0, 0.75);
   }
@@ -3583,8 +3578,8 @@
     transition: opacity 0.2s;
   }
   .hoverable .mix-list a:hover  img,
-  .mix-list a:active img,
-  .mix-list a:focus  img {
+             .mix-list a:active img,
+             .mix-list a:focus  img {
     opacity: 0.75;
   }
   .mix-list .add a {
@@ -3619,8 +3614,8 @@
             justify-content: center;
   }
   .hoverable .mix-list .add a:hover,
-  .mix-list .add a:active,
-  .mix-list .add a:focus {
+             .mix-list .add a:active,
+             .mix-list .add a:focus {
     background-color: rgba(255, 49, 102, 0.85); /* @strawberry */
   }
   .mix-list li {
@@ -3754,8 +3749,8 @@
     color: rgb(250, 56, 136); /* @strawberry */
   }
   .hoverable .mix footer p a:hover,
-  .mix footer p a:active,
-  .mix footer p a:focus {
+             .mix footer p a:active,
+             .mix footer p a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
   }
   .mix footer .count {
@@ -3928,8 +3923,8 @@
     transition: opacity 0.2s;
   }
   .hoverable .mix-editor .selected-images li:hover,
-  .mix-editor .selected-images li:active,
-  .mix-editor .selected-images li:focus {
+             .mix-editor .selected-images li:active,
+             .mix-editor .selected-images li:focus {
     opacity: 0.8;
   }
   .mix-editor .image-list li {
@@ -4001,6 +3996,46 @@
     border-width: 0;
     padding: 0;
   }
+
+  .mix-editor .preview {
+    position: relative;
+  }
+  .mix-editor .preview p.text {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .mix-editor .preview p.text label {
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .mix-editor .preview p.text label textarea {
+    height: 100%;
+    padding: 0.75em;
+  }
+  .mix-editor .preview .note {
+    color: black;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  .mix-editor .preview p.text label ::-webkit-input-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .mix-editor .preview p.text label ::-moz-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .mix-editor .preview p.text label :-ms-input-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+
   .mix-editor textarea,
   .mix-editor input[type="text"] {
     background: transparent;
@@ -4009,6 +4044,7 @@
     border-width: 0;
     border-radius: 0;
   }
+  .mix-editor .title textarea,
   .mix-editor input[type="text"] {
     font-weight: bold;
     font-size: 2.25em; /* 36px / @font-size */
@@ -4035,6 +4071,7 @@
     padding: 1.5em;
   }
   .mix-editor .preview img {
+    vertical-align: top;
     max-width: 100%;
     height: auto;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
@@ -4070,39 +4107,6 @@
     background-size: cover;
     background-position: center;
   }
-  /*
-  .mix-editor .preview iframe {
-    display: block;
-    margin: 0 auto;
-    border-width: 0;
-  }
-  */
-  /*
-  .mix-editor .preview div p label {
-    min-height: 15em;
-    min-height: 70vw;
-    min-height: calc(90vmin - 4.5em);
-
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-direction: row;
-            flex-direction: row;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-align-content: center;
-            align-content: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-  .mix-editor .preview textarea {
-    width: calc(100vw - 4.5em);
-    font-size: 1.25em;
-  }
-  */
 
 
 
@@ -4207,6 +4211,7 @@
   }
 
 
+
   /* =Account
   -----------------------------------------------
   -----------------------------------------------
@@ -4267,11 +4272,6 @@
   .settings .introduction + .option-list {
     padding-top: 0;
   }
-  /*
-  .settings > form {
-    padding: 0;
-  }
-  */
   .option-list + .option-list {
     padding-top: 0;
   }
@@ -4391,7 +4391,6 @@
     left: 0.625em; /* 10px / 16px */
   }
 
-
   .activity .more a,
   .activity .post-item {
     padding-top    : 0.2857142857em; /* 4px / 14px */
@@ -4427,7 +4426,6 @@
     font-size: 0.875em; /* 14px / @font-size */
     font-weight: bold;
   }
-
 
   .notifications .post-item .body img {
     margin: 0;
@@ -4572,13 +4570,14 @@
   .pushes.page .option-list a {
     border-color: black;
     background-color: black;
-    color: rgb(204, 204, 204)
+    color: rgb(204, 204, 204); /* @aluminum */
   }
   .hoverable .pushes.page .option-list a:hover,
              .pushes.page .option-list a:active,
              .pushes.page .option-list a:focus {
     color: white;
   }
+
 
 
   /* =Loading
@@ -4814,11 +4813,6 @@
     opacity: 0.5;
     display: block;
   }
-  /*
-  .dialog.page .action:last-child {
-    margin-top: 3em;
-  }
-  */
 
 
 
@@ -5250,3 +5244,4 @@
     margin-top    : 1.4285714286em;
     margin-bottom : 0.7142857143em; /* 1.4285714286em / 2 */
   }
+
