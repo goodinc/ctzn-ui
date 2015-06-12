@@ -103,6 +103,12 @@
   .details p:first-child {
     margin-top: 0;
   }
+  .details p.note {
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 14px;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
 
 
   /* “Reply above” header */
