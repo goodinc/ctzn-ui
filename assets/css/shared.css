@@ -991,6 +991,11 @@
     display: table-cell;
     vertical-align: middle;
   }
+  .list li a .role {
+    font-size: 0.6875em; /* 11px / @font-size */
+    line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
+    text-transform: uppercase;
+  }
   .list ul h3,
   .list ul p {
     margin: 0;
@@ -1270,6 +1275,9 @@
   }
   .post-item footer {
     margin-top: 1.25em;
+  }
+  .post-item footer:first-child {
+    margin-top: 0;
   }
   .post-item footer ul,
   .post-item footer li {
