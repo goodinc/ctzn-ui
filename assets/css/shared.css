@@ -744,7 +744,7 @@
     background-color: white;
     color: rgb(51, 51, 51); /* @iron */
     font-weight: bold;
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
     width: 100%;
     padding: 0.75em 1.5em;
     -webkit-box-sizing: border-box;
@@ -1518,7 +1518,7 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     border-bottom: 0.0625em solid rgb(44, 44, 44); /* @thorium */
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
   }
   header.primary h1 {
     margin: 0;
@@ -3616,7 +3616,7 @@
   }
 
   .mix .preview div {
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
     background: black;
     color: white;
     margin: 0 auto;
@@ -3725,7 +3725,7 @@
       width: 100%;
       background: black;
       border-bottom: 0.0625em solid black;
-      box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+      box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
     }
     .mix-editor .selected-images ol {
       padding-top: 0.0625em;
@@ -3977,7 +3977,7 @@
     vertical-align: top;
     max-width: 100%;
     height: auto;
-    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); /* @shadow */
 
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
     background-color: rgba(0, 0, 0, 0.25);
