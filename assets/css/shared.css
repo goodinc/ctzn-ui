@@ -1285,11 +1285,6 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .post-item footer .meta {
-    margin-top: 1.5em !important;
-    padding-top: 1.5em;
-    border-top: 1px solid rgb(204, 204, 204);
-  }
   .post-item footer .meta   li li,
   .post-item footer .action li {
     display: inline;
@@ -1347,11 +1342,14 @@
   }
 
   .post-item footer .meta {
-    margin: 0;
     font-size: 0.6875em; /* 11px / @font-size */
     line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
     text-transform: uppercase;
     color: black;
+    margin-bottom: 0;
+    margin-top : 1.8181818182em; /* 1.25em / 0.6875em */
+    padding-top: 1.8181818182em;
+    border-top: 0.09090909091em solid rgb(204, 204, 204); /* @aluminum */
   }
 
   .post-item footer .meta > li {
