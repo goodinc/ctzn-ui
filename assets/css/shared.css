@@ -4075,6 +4075,11 @@
     max-width: 100%;
     height: auto;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.375); /* @shadow */
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+    min-width: 9em;
+    min-height: 9em;
   }
   .mix-editor .preview.lime {
     background-color: rgb(218, 243, 121); /* @lime */
