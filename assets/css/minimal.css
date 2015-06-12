@@ -198,11 +198,6 @@
     margin: 0.5em auto 0;
     color: black;
   }
-  @media (min-width: 30em) {
-    main h1.logo {
-      font-size: 6em;
-    }
-  }
   main h1.logo svg.icon {
     width : 2.6354166667em; /* 253px / 96px */
     height: 1em;            /*  96px / 96px */
@@ -210,11 +205,6 @@
   main h1.logo + h2 {
     font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
     font-weight: normal;
-  }
-  @media (min-width: 25em) {
-    main h1.logo + h2 strong {
-      display: block;
-    }
   }
   main h2 strong {
     color: white;
@@ -270,7 +260,7 @@
     color: white;
     border-width: 0;
     font-size: inherit;
-    font-weight: bold;
+    font-weight: normal;
     padding: 0.375em 1.125em;
     line-height: 1.5em;
     border-radius: 0.25em;
@@ -413,7 +403,7 @@
   ----------------------------------------------- */
   .confirmation {
     text-align: left;
-    max-width: 40em;
+    max-width: 32em;
     margin-left: auto;
     margin-right: auto;
   }
@@ -423,17 +413,6 @@
   .confirmation h1 {
     font-size: inherit;
     line-height: inherit;
-  }
-  @media (min-width: 30em) {
-    .confirmation h1,
-    .confirmation p {
-      font-size: 1.5em;
-      line-height: 1.25;
-    } 
-    .confirmation svg.icon {
-      width: 2.75em; /* 44px / 16px */
-      height: 2.75em;
-    }
   }
   .confirmation h1 {
     margin-top: 0.75em;
@@ -615,16 +594,6 @@
     padding-top: 4.5em;
     padding-bottom: 4.5em;
   }
-  @media (min-width: 30em) {
-    div.about .header {
-      padding-top: 4em;
-      padding-bottom: 5.5em;
-    }  
-    div.about section:last-child {
-      padding-top: 7.5em;
-      padding-bottom: 7.5em;
-    }
-  }
   div.about section h3 {
     font-family: "Proxima N W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
     font-weight: normal;
@@ -634,12 +603,6 @@
   div.about section h3 {
     margin-top: 0;
     font-size: 1.5em;     /* 24px / @font-size */
-  }
-  @media (min-width: 30em) {
-    div.about section h3 {
-      font-size: 1.875em; /* 30px / @font-size */
-      line-height: 1.4; /* 42px / 30px */
-    }
   }
 
   div.about .feature h3 strong {
@@ -659,14 +622,6 @@
   }
   div.about .text svg.icon:first-child {
     font-size: 1.25em;
-  }
-  @media (min-width: 30em) {
-    div.about .text svg.icon {
-      margin-left: 1.25em;
-      margin-right: 1.25em;
-      width: 2.75em; /* 44px / 16px */
-      height: 2.75em;
-    }
   }
 
   /* OPTIONAL: Add space below groups of icons, for easier reading */
@@ -731,7 +686,7 @@
   }
   .privacy > .container {
     display: block;
-    max-width: 40em;
+    max-width: 32em;
     margin-left: auto;
     margin-right: auto;
   }
