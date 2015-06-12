@@ -1684,7 +1684,7 @@
 
 
   /* For the push preview */
-  /* TODO: Consider combining this with footer.primary */
+  /* TODO: Consider combining this with header.primary */
   .preview.page > header h1 svg {
     width: 2em;
     vertical-align: top;
@@ -1703,114 +1703,6 @@
     display: table;
     margin: 0.75em auto 0;
     padding: 0.375em 0.75em;
-  }
-  footer.about,
-  footer.preview {
-    padding: 0.75em;
-    background: rgb(51, 51, 51);
-    text-align: center;
-  }
-  footer.about {
-    color: rgb(153, 153, 153); /* @nickel */
-    text-transform: uppercase;
-  }
-  footer.about h2,
-  footer.about p {
-    display: inline-block;
-    margin: 0;
-    font-size: 0.6875em;
-    line-height: 2.1818181818em;
-    font-weight: normal;
-  }
-  footer.preview:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  footer.preview h2 {
-    font-size: inherit;
-    line-height: inherit;
-  }
-  footer.preview h2,
-  footer.preview p {
-    display: inline-block;
-    margin: 0;
-  }
-  footer.preview p {
-    margin: 0.75em;
-  }
-
-  @media (max-width: 30em) {
-    footer.preview h2 {
-      margin: 0 0 0 0.375em;
-      width: calc(100% - 8.75em);
-      float: left;
-      text-align: left;
-    }
-    footer.preview p {
-      margin: 0.375em 0.375em 0;
-      width: calc(8em - 0);
-      float: right;
-      text-align: right;
-    }
-  }
-
-  footer.about h2 {
-    position: relative;
-    padding-right: 1em;
-    margin-right: 0.5em;
-  }
-  footer.about h2:after {
-    content: "";
-    display: block;
-    border-right: 0.1em solid;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -0.5em;
-    height: 1em;
-  }
-  footer.about h2 .icon {
-    color: white;
-    width: 3em;
-    height: 1em;
-    vertical-align: baseline;
-    /*
-    font-size: 1.75em;
-    vertical-align: -0.4em;
-    margin-left: 0.15em;
-    margin-right: 0.5em;
-    */
-  }
-  footer.about a {
-    color: rgb(204, 204, 204); /* @aluminum */
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  /* OPTIONAL: Make the footer sticky */
-  @media (min-width: 20em) and (min-height: 20em) {
-
-    /* SHIM: Make space for the sticky footer */
-    .preview.page,
-    .push-card.page {
-      padding-bottom: 4.5em;
-    }
-    .mixable .push-card.page {
-      padding-bottom: 0;
-    }
-
-    footer.about,
-    footer.preview {
-      bottom: 0;
-      left: 0;
-      position: fixed;
-      z-index: 1;
-      width: 100%;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-    }
   }
 
 
