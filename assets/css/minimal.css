@@ -87,21 +87,25 @@
     font-size: inherit;
   }
 
-  @media (min-width: 30em) {
-    h1 {
-      font-size     : 3em;       /* 48px / @font-size */
-      line-height   : 1.25em;    /* 60px / 48px */
-      margin-top    : 1.25em;
-      margin-bottom : 0.625em;   /* 1.25em / 2 */
+  /* OPTIONAL: Increase the font size on big screens. */
+  @media (min-width: 600px) and (min-height: 600px) {
+    body {
+      font-size: 112.5%;
     }
-    h2 {
-      font-size     : 1.875em;   /* 30px / @font-size */
-      line-height   : 1.4em;     /* 42px / 30px  */
-      margin-top    : 1.4em;
-      margin-bottom : 0.7em;     /* 1.4em / 2 */
+  }
+  @media (min-width: 800px) and (min-height: 800px) {
+    body {
+      font-size: 125%;
     }
-    h3 {
-      font-size     : 1.5em;     /* 24px / @font-size */
+  }
+  @media (min-width: 1000px) and (min-height: 1000px) {
+    body {
+      font-size: 137.5%;
+    }
+  }
+  @media (min-width: 1200px) and (min-height: 1200px) {
+    body {
+      font-size: 150%;
     }
   }
 
