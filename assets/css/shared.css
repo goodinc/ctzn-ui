@@ -2107,6 +2107,7 @@
       padding: 0.75em 6em; /* The right/left padding numbers here are arbitrary, but ideally large
                               enough to prevent the title from overlapping with the back/next buttons. */
     }
+    .edit-push.page > header ~ form .submit,
     .edit-profile.page > header ~ form .submit,
     .post-editor.page  > header ~ form .submit,
     .mix-editor.page   > header ~ form .submit {
