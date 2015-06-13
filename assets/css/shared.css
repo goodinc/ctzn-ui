@@ -1346,10 +1346,18 @@
     line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
     text-transform: uppercase;
     color: black;
+    margin-top: 0;
     margin-bottom: 0;
+  }
+  .post-item footer .action + .meta {
     margin-top : 1.8181818182em; /* 1.25em / 0.6875em */
     padding-top: 1.8181818182em;
     border-top: 0.09090909091em solid rgb(204, 204, 204); /* @aluminum */
+  }
+  .post-item footer .action + .comments {
+    margin-top : 1.25em;
+    padding-top: 1.25em;
+    border-top: 0.0625em solid rgb(204, 204, 204); /* @aluminum */
   }
 
   .post-item footer .meta > li {
@@ -3926,7 +3934,7 @@
     border-width: 0;
     border-radius: 0;
   }
-  .mix-editor .title textarea,
+  .mix-editor .preview .title textarea,
   .mix-editor input[type="text"] {
     font-weight: bold;
     font-size: 2.25em; /* 36px / @font-size */
