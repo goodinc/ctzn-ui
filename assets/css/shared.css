@@ -2577,7 +2577,7 @@
   }
 
   /* OPTIONAL: Space things out a little more on tall screens */
-  @media (min-height: 500px) {
+  @media (min-height: 30em) {
     .push-card .details {
       margin-top: 3em;
     }
@@ -2642,7 +2642,7 @@
 
   /* Position post headers at the bottom */
   .push-card .post-list .post-item {
-    padding: 0 0 3em 0;
+    padding: 0 0 3.75em 0;
   }
   .push-card .post-list .post-item header {
     color: white;
@@ -2657,28 +2657,6 @@
     z-index: 1;
     margin-bottom: 0;
     font-size: 0.6875em;
-  }
-  .push-card .post-list .post-item footer {
-    margin: 0 0 1.5em 0;
-    text-align: center;
-  }
-
-  /* If there’s room, line the footer up with the header */
-  @media (min-width: 360px) {
-    .push-card .post-list .post-item {
-      padding-bottom: 4.5em;
-    }
-    .push-card .post-list .post-item footer {
-      position: absolute;
-      bottom: 1.03125em; /* 1.5em * 11px/16px */
-      right: 1.03125em; /* 1.5em * 11px/16px */
-      margin: 0;
-    }
-    .push-card .post-list .post-item footer li {
-      margin-right: 0;
-      margin-left: 1em;
-      line-height: 1.8181818182em; /* 20px (header line height) / 11px */
-    }
   }
 
   .push-card .post-list .post-item header h3 {
@@ -4334,6 +4312,11 @@
     font-size: 0.875em; /* 14px / @font-size */
     font-weight: bold;
   }
+  .hoverable .activity .more a:hover,
+             .activity .more a:active,
+             .activity .more a:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
 
   .notifications .post-item .body img {
     margin: 0;
@@ -4920,18 +4903,32 @@
   .signup.page > div {
     margin-bottom: 0;
   }
-  .signup.page > div + aside {
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
+  .signup.page aside {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .signup.page aside a {
+    display: block;
+    font-size: inherit;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+    color: rgb(153, 153, 153); /* @nickel */
+    text-decoration: inherit;
+  }
+  .signup.page aside a strong {
+    font-weight: normal;
+    color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .hoverable .signup.page aside a:hover  strong,
+             .signup.page aside a:active strong,
+             .signup.page aside a:focus  strong {
+    color: rgb(193, 16, 65); /* @raspberry */
   }
   .signup.page .note:first-child {
     margin-top: 0;
   }
   .signup.page .note:last-child {
     margin-bottom: 0;
-  }
-  .signup.page aside .note {
-    font-size: inherit;
   }
   .signup.page .checkbox label {
     text-transform: none;
