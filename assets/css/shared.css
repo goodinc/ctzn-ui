@@ -957,7 +957,7 @@
     margin: 0;
     position: relative;
   }
-  .list li a {
+  .list li a:first-child {
     display: block;
     vertical-align: middle;
     padding: 0.75em 3em 0.75em 3.25em;
@@ -966,15 +966,15 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     color: rgb(102, 102, 102); /* @tin */
   }
-  .list li + li a {
+  .list li + li a:first-child {
     border-top-width: 0;
   }
-  .hoverable .list li a:hover,
-  .list li a:active,
-  .list li a:focus {
+  .hoverable .list li a:first-child:hover,
+  .list li a:first-child:active,
+  .list li a:first-child:focus {
     background-color: rgb(222, 222, 222); /* @silver */
   }
-  .list li a .avatar {
+  .list li a:first-child .avatar {
     position: absolute;
     left: 0.75em; /* 12px / @font-size */
 
@@ -1017,11 +1017,19 @@
     right: 0.8333333333em;
   }
 
-  /* TBD: Do we still need this? */
   .list ul .message {
     position: absolute;
-    top: 0.75em;
-    right: 0.75em;
+    top: 0;
+    right: 0;
+    padding: 0.75em;
+  }
+  .list ul a.message {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .list ul a.message:hover,
+  .list ul a.message:active,
+  .list ul a.message:focus {
+    color: rgb(193, 16, 65); /* @raspberry */
   }
   .list ul .message svg {
     display: block;
@@ -4604,9 +4612,11 @@
   }
   .dialog.page ul.logos li {
     display: inline;
+    margin-left: 0.375em;
+    margin-right: 0.375em;
   }
-  .dialog.page ul.logos li + li {
-    margin-left: 1.5em;
+  .dialog.page ul.logos li a img {
+    max-width: 100%;
   }
 
 
