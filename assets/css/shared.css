@@ -981,6 +981,7 @@
     /* Center vertically. Assume the item is 48 pixels tall and the avatar is 30 pixels tall. (48px - 30px) / 2 = 9px */
     top: 0.5625em; /* 9px / @font-size */
   }
+  /*
   .list li a .name {
     display: table;
   }
@@ -991,11 +992,7 @@
     display: table-cell;
     vertical-align: middle;
   }
-  .list li a .role {
-    font-size: 0.6875em; /* 11px / @font-size */
-    line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
-    text-transform: uppercase;
-  }
+  */
   .list ul h3,
   .list ul p {
     margin: 0;
@@ -1010,6 +1007,13 @@
     color: rgb(153, 153, 153); /* @nickel */
     font-size: 0.875em; /* 14px / @font-size */
     white-space: nowrap;
+  }
+  .list li a .role {
+    display: block;
+    font-size: 0.625em; /* 10px / @font-size */
+    line-height: 1.8em; /* @line-height / 0.625em x 3/4 */
+    text-transform: uppercase;
+    color: rgb(102, 102, 102); /* @tin */
   }
   .list ul button {
     position: absolute;
