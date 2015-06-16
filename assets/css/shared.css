@@ -1357,7 +1357,13 @@
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(245, 83, 135) !important; /* @strawberry */
   }
-  .post-item footer .action li:last-child {
+  .post-item footer .action li.options {
+    float: right;
+    margin-right: 0;
+  }
+
+  /* SHIM: Float the options to the right, if the class name isn’t present (until we have a chance to update it) */
+  .post-item footer .action li + li + li:last-child {
     float: right;
     margin-right: 0;
   }
