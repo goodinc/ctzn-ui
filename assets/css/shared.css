@@ -524,6 +524,7 @@
 
   /* =Fields
   ----------------------------------------------- */
+  .text-clone span,
   input[type="text"],
   input[type="url"],
   input[type="email"],
@@ -548,6 +549,7 @@
   input[type="checkbox"] {
     font-size: inherit;
   }
+  .text-clone span,
   textarea {
     display: block;
     height: 4.5em; /* @line-height x 3 */
@@ -559,6 +561,7 @@
     http://stackoverflow.com/questions/262158/disabled-input-text-color */
     -webkit-text-fill-color: rgb(153, 153, 153); /* @nickel */
   }
+  .supports-placeholder .text-clone span,
   .supports-placeholder input[type="text"],
   .supports-placeholder input[type="url"],
   .supports-placeholder input[type="email"],
@@ -3908,6 +3911,7 @@
     margin-right: auto;
     position: relative;
   }
+  .mix-editor .preview .text-clone,
   .mix-editor .preview p.text label {
     border-radius: 0;
     position: absolute;
@@ -3919,10 +3923,21 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  .mix-editor .preview p.text label textarea {
-    height: 100%;
-    padding: 0.75em;
+
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
   }
   .mix-editor .preview .note {
     color: black;
@@ -3938,6 +3953,7 @@
     color: rgb(204, 204, 204); /* @aluminum */
   }
 
+  .mix-editor .preview .text-clone span,
   .mix-editor textarea,
   .mix-editor input[type="text"] {
     background: transparent;
@@ -3946,24 +3962,62 @@
     border-width: 0;
     border-radius: 0;
   }
+  .mix-editor .preview textarea {
+    border: 1px solid white;
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  .mix-editor .preview .text-clone span,
+  .mix-editor .preview textarea {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .mix-editor .preview .title .text-clone span,
   .mix-editor .preview .title textarea,
   .mix-editor input[type="text"] {
     font-weight: bold;
     font-size: 2.25em; /* 36px / @font-size */
     line-height: 1.3333333333; /* 48px / 2.25em */
     min-height: 1.3333333333em;
+    padding: 0.6666666667em 0;
+  }
+  .mix-editor .preview .text label {
+    padding: 0 0.75em;
+  }
+  .mix-editor .preview .title label {
+    padding: 0 0.6666666667em;
   }
 
   /* OPTIONAL: Mimic the type size used in the generated mix. */
   @media (min-width: 600px) {
+    .mix-editor .preview .text-clone,
     .mix-editor p.text label {
       font-size: 2.666666667vw;
     }
   }
+  .mix-editor .preview .text-clone span,
   .mix-editor textarea {
     font-weight: bold;
-    height: 4.5em;
     font-size: 1.25em;
+  }
+
+  .mix-editor .preview .text textarea {
+    height: 3.75em; /* @line-height x 2.5 */
+  }
+  .mix-editor .preview .text .title textarea {
+    height: 2.6666666666em;
+  }
+  .mix-editor .preview .text-clone span {
+    height: auto;
+  }
+
+  .mix-editor .preview .text-clone {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .mix-editor .preview .text .title textarea,
+  .mix-editor .preview .text-clone span {
+    height: auto;
   }
 
   .mix-editor .preview {

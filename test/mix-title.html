@@ -291,8 +291,11 @@
           <img width="640" height="640" alt="preview" src="https://m.ctznapp.com/s3/ctzn/56aa31e2ca2a4bd3730347843294fed17929ac2a=c640x640" />
           <label>
             <span>Enter Title</span><br />
-            <textarea placeholder="Enter Title"></textarea>
+            <textarea id="title" placeholder="Enter Title"></textarea>
           </label>
+          <span class="text-clone">
+            <span id="clone" role="presentation">enter title</span>
+          </span>
         </p>
         <p class="note">Your title will appear on the first frame</p>
       </div>
@@ -301,6 +304,29 @@
       </p>
     </form>
   </section>
+
+  <script>
+  (function() {
+    var title = document.getElementById('title');
+    var clone = document.getElementById('clone');
+    if (title && clone) {
+      title.style.height = 'auto';
+      title.style.minHeight = '2.6666666666em'; // One line
+      clone.style.height = 'auto';
+      //var minimum = title.offsetHeight;
+
+      function update() {
+        clone.innerText = title.value;
+        //if (clone.offsetHeight > minimum) {
+          title.style.minHeight = clone.offsetHeight + 'px';
+        //}
+      }
+      update();
+      title.addEventListener('keyup', update, false);
+      window.addEventListener('resize', update, false);
+    }
+  })();
+  </script>
 
 </body>
 </html>
