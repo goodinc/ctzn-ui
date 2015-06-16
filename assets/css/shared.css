@@ -960,7 +960,7 @@
     margin: 0;
     position: relative;
   }
-  .list li a:first-child {
+  .list li > a:first-child {
     display: block;
     vertical-align: middle;
     padding: 0.75em 3em 0.75em 3.25em;
@@ -969,15 +969,15 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     color: rgb(102, 102, 102); /* @tin */
   }
-  .list li + li a:first-child {
+  .list li + li > a:first-child {
     border-top-width: 0;
   }
-  .hoverable .list li a:first-child:hover,
-  .list li a:first-child:active,
-  .list li a:first-child:focus {
+  .hoverable .list li > a:first-child:hover,
+             .list li > a:first-child:active,
+             .list li > a:first-child:focus {
     background-color: rgb(222, 222, 222); /* @silver */
   }
-  .list li a:first-child .avatar {
+  .list li > a:first-child .avatar {
     position: absolute;
     left: 0.75em; /* 12px / @font-size */
 
@@ -1006,7 +1006,7 @@
     color: rgb(5, 5, 5); /* @tungsten */
     margin-right: 0.5em;
   }
-  .list li p {
+  .list li a p {
     color: rgb(153, 153, 153); /* @nickel */
     font-size: 0.875em; /* 14px / @font-size */
     white-space: nowrap;
@@ -1018,7 +1018,8 @@
     text-transform: uppercase;
     color: rgb(102, 102, 102); /* @tin */
   }
-  .list ul button {
+  .list ul button,
+  .list ul .action a {
     position: absolute;
     top: 0.8333333333em; /* 10px / 12px */
     right: 0.8333333333em;
@@ -1309,6 +1310,7 @@
   }
 
   .header.push-card .meta button,
+  .list ul .action a,
   .list ul button,
   .post-item footer .action a,
   .post-item footer .action button {
@@ -1328,6 +1330,9 @@
   .hoverable .header.push-card .meta button:hover,
              .header.push-card .meta button:active,
              .header.push-card .meta button:focus,
+  .hoverable .list ul .action a:hover,
+             .list ul .action a:active,
+             .list ul .action a:focus,
   .hoverable .list ul button:hover,
              .list ul button:active,
              .list ul button:focus,
@@ -1340,7 +1345,8 @@
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(102, 102, 102); /* @tin */
   }
-  .list ul button[aria-checked="true"] svg,
+  .list ul button    svg,
+  .list ul .action a svg,
   .post-item footer .action a          svg,
   .post-item footer .action button     svg {
     vertical-align: top;
@@ -2653,8 +2659,20 @@
     min-width: 0;
   }
   .push-card .meta .settings a {
+    margin: 0;
+    background: black;
+    background: rgba(0, 0, 0, 0.25);
     color: white;
-    line-height: 2.25em;
+    padding: 0.375em 1.125em;
+    border-radius: 0.25em;
+  }
+  .hoverable .push-card .meta .settings a:hover,
+             .push-card .meta .settings a:active,
+             .push-card .meta .settings a:focus {
+    background: black;
+  }
+  .push-card .meta .settings a svg {
+    vertical-align: top;
   }
 
 
