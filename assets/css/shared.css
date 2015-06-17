@@ -1393,7 +1393,6 @@
     color: rgb(245, 83, 135) !important; /* @strawberry */
   }
 
-  /* SHIM: Float the options to the right, if the class name isn’t present (until we have a chance to update it) */
   .post-item footer .action li:last-child {
     float: right;
     margin-right: 0;
@@ -1933,7 +1932,7 @@
   .page >     div:last-child,
   .page >    form:last-child,
   .page >   aside:last-child {
-    padding-bottom: 4.5em;
+    padding-bottom: 4.5em; /* @page-bottom-padding */
   }
 
   /* OPTIONAL: Space things out a bit, if the screen is tall. */
