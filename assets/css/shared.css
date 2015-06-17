@@ -3084,6 +3084,9 @@
 
   /* =Post Details
   ----------------------------------------------- */
+  .post.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
   .post.page .details {
     background: white;
     padding: 0;
@@ -4133,6 +4136,9 @@
   -----------------------------------------------
   ----------------------------------------------- */
 
+  .start.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
   .start.page h1 {
     font-size: 1.875em;
     line-height: 1.2; /* @line-height x 1.5 / 1.875 */
@@ -4237,10 +4243,6 @@
 
   /* =Settings
   ----------------------------------------------- */
-  section.settings {
-    padding-bottom: 4.5em;
-  }
-
   .settings h3 {
     margin-top: 1em; /* @line-height / 2 / 0.75em */
 
@@ -5027,6 +5029,9 @@
     margin-top: 0.75em;
   }
 
+  .signup.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
   .signup.page > div,
   .signup.page > div + aside {
     background: white;
@@ -5072,6 +5077,10 @@
     text-transform: inherit;
   }
 
+
+  .ready.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
   .ready.page > div {
     padding-top: 1.875em;
   }
