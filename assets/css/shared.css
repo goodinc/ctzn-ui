@@ -1116,7 +1116,23 @@
     padding: 1.25em 1.25em 1.5em 1.25em; /* 20px 20px 24px 20px */
     margin-bottom: 0.625em;
     text-align: left;
+    z-index: 1;
   }
+
+  .post-item.moderated {
+    box-shadow: inset 0 0 0.125em rgb(102, 102, 102); /* @tin */
+  }
+  .post-item.moderated:before {
+    content: "";
+    position: absolute;
+    top: 0.75em;
+    left: 0;
+    width: 100%;
+    height: 2.5em;
+    background-color: rgb(222, 222, 222); /* @silver */
+    z-index: -1;
+  }
+
   .post-item header h3,
   .post-item header p {
     float: none;
@@ -1829,7 +1845,7 @@
       bottom: 0;
       left: 0;
       position: fixed;
-      z-index: 1;
+      z-index: 2;
     }
   }
 
@@ -1930,12 +1946,14 @@
 
   /* SHIM: Add extra padding to the bottom of pages with forms, to prevent the virtual keyboard
            from obscuring the fields and buttons on Android (in standalone webview mode). */
+  /*
   .page >         form:last-child,
   .page > form ~ aside:last-child,
   .start.page >    div:last-child,
   .post.page >     div:last-child {
     padding-bottom: 17.5em;
   }
+  */
 
   /* For the editor, preview and dialog pages */
   .page > a {
