@@ -1120,83 +1120,24 @@
   }
 
   .post-item.moderated {
-    border-width: 0;
-    border-style: solid;
-    border-color: rgb(204, 204, 204); /* @aluminum */
+    background-color: rgb(222, 222, 222); /* @silver */
   }
-  @media (min-width: 32em) { /* @page-max-width */
-    .post-item.moderated {
-      border-width: 0.125em;
-    }
+  .post-item.moderated img,
+  .post-item.moderated .avatar {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
   }
-  .post-item.moderated:before {
-    content: "";
-    position: absolute;
-    top: 0.75em;
-    left: 0;
-    width: 100%;
-    height: 2.5em;
-    background-color: rgb(204, 204, 204); /* @aluminum */
-    z-index: -1;
-  }
-  .post-item.moderated header {
+  .post-item.moderated footer .action button {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-color: transparent;
     color: white;
   }
-
-  .lime ~ .post-list .post-item.moderated {
-    border-color: rgb(218, 243, 121); /* @lime */
-  }
-  .cucumber ~ .post-list .post-item.moderated {
-    border-color: rgb(153, 248, 115); /* @cucumber */
-  }
-  .blueberry ~ .post-list .post-item.moderated {
-    border-color: rgb(40, 221, 181); /* @blueberry */
-  }
-  .boysenberry ~ .post-list .post-item.moderated {
-    border-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .plumb ~ .post-list .post-item.moderated {
-    border-color: rgb(193, 76, 172); /* @plumb */
-  }
-  .strawberry ~ .post-list .post-item.moderated {
-    border-color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .apple ~ .post-list .post-item.moderated {
-    border-color: rgb(255, 49, 59); /* @apple */
-  }
-  .tangerine ~ .post-list .post-item.moderated {
-    border-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .orange ~ .post-list .post-item.moderated {
-    border-color: rgb(250, 134, 40); /* @orange */
-  }
-
-  .lime ~ .post-list .post-item.moderated:before {
-    background-color: rgb(218, 243, 121); /* @lime */
-  }
-  .cucumber ~ .post-list .post-item.moderated:before {
-    background-color: rgb(153, 248, 115); /* @cucumber */
-  }
-  .blueberry ~ .post-list .post-item.moderated:before {
-    background-color: rgb(40, 221, 181); /* @blueberry */
-  }
-  .boysenberry ~ .post-list .post-item.moderated:before {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .plumb ~ .post-list .post-item.moderated:before {
-    background-color: rgb(193, 76, 172); /* @plumb */
-  }
-  .strawberry ~ .post-list .post-item.moderated:before {
-    background-color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .apple ~ .post-list .post-item.moderated:before {
-    background-color: rgb(255, 49, 59); /* @apple */
-  }
-  .tangerine ~ .post-list .post-item.moderated:before {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .orange ~ .post-list .post-item.moderated:before {
-    background-color: rgb(250, 134, 40); /* @orange */
+  .hoverable .post-item.moderated footer .action button:hover,
+             .post-item.moderated footer .action button:active,
+             .post-item.moderated footer .action button:focus {
+    background-color: black;
+    color: white;
   }
 
   .post-item header h3,
