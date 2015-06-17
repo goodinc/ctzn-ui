@@ -1122,8 +1122,10 @@
   .post-item.moderated {
     background-color: rgb(222, 222, 222); /* @silver */
   }
-  .post-item.moderated img,
-  .post-item.moderated .avatar {
+  .post-item.moderated .avatar span[data-content] {
+    background-color: rgb(153, 153, 153); /* @nickel */
+  }
+  .post-item.moderated img {
     -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
   }
@@ -1386,7 +1388,7 @@
   }
 
   /* SHIM: Float the options to the right, if the class name isn’t present (until we have a chance to update it) */
-  .post-item footer .action li + li + li:last-child {
+  .post-item footer .action li:last-child {
     float: right;
     margin-right: 0;
   }
