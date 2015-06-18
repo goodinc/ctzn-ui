@@ -416,8 +416,8 @@
     color: white;
   }
   .hoverable .warning button:hover,
-  .warning button:active,
-  .warning button:focus {
+             .warning button:active,
+             .warning button:focus {
     background-color: rgb(255, 29, 39);
     color: white;
   }
@@ -430,19 +430,19 @@
   }
 
   /* OPTIONAL: Make buttons lighter if they appear on a dark background. */
-  .error-message          button,
+  .error-message button,
   .update-indicator a {
     background: white;
     color: rgb(250, 56, 136); /* @strawberry */
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     transition: all 0.2s;
   }
-  .hoverable .error-message          button:hover,
-  .error-message          button:active,
-  .error-message          button:focus,
+  .hoverable .error-message button:hover,
+             .error-message button:active,
+             .error-message button:focus,
   .hoverable .update-indicator a:hover,
-  .update-indicator a:active,
-  .update-indicator a:focus {
+             .update-indicator a:active,
+             .update-indicator a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
     border-color: rgb(222, 222, 222); /* @silver */
     color: rgb(193, 16, 65); /* @raspberry */
@@ -583,9 +583,6 @@
   }
   .text label {
     display: block;
-    /*
-    border-radius: 0.25em;
-    */
     padding-top: 0.1875em;
     padding-bottom: 0.1875em;
     position: relative;
@@ -939,6 +936,99 @@
   section.confirmation-message .action {
     display: block;
     margin-top: 1.5em;
+  }
+
+
+  /* =Options (pop-up at the bottom of the screen)
+  ----------------------------------------------- */
+  .post-options {
+    background: black;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    z-index: 9999; /* @infinity */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .post-options.active {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  .post-options ul,
+  .post-options li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .post-options ul {
+    margin: 0;
+    border-radius: 0.15em;
+  }
+  .post-options ul + ul {
+    margin-top: 0.375em;
+  }
+  .post-options div {
+    background: rgb(246, 246, 246); /* @casper */
+    padding: 0.375em;
+    color: rgb(51, 51, 51); /* @iron */
+    text-align: center;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    position: absolute;
+    left: -9999px;
+
+    transition: -webkit-transform 0.3s;
+    transition:         transform 0.3s;
+
+    -webkit-transform: translateY(30em);
+            transform: translateY(30em);
+  }
+  .post-options.active div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 1.5em;
+
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .post-options ul {
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
+    background: white;
+  }
+  .post-options li + li {
+    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver */
+  }
+  .post-options li button {
+    display: block;
+    width: 100%;
+    text-transform: none;
+    font-size: 1.125em;
+    padding: 0.6666666667em; /* @line-height / 2 / 1.125 */
+    line-height: 1.3333333333; /* @line-height / 1.125 */
+    background: white;
+    color: rgb(101, 152, 254); /* @boysenberry */
+    color: rgb(60, 109, 218); /* @elderberry */
+    font-weight: bold;
+  }
+  .post-options li.warning button {
+    color: rgb(255, 49, 59); /* @apple */
+  }
+  .hoverable .post-options li button:hover,
+             .post-options li button:active,
+             .post-options li button:focus {
+    background-color: rgb(222, 222, 222); /* @silver */
+    color: rgb(60, 109, 218); /* @elderberry */
+    border-radius: 0;
+  }
+  .hoverable .post-options li.warning button:hover,
+             .post-options li.warning button:active,
+             .post-options li.warning button:focus {
+    color: rgb(255, 49, 59); /* @apple */
   }
 
 
@@ -1469,99 +1559,6 @@
              .post-item footer .meta > li > a:active svg,
              .post-item footer .meta > li > a:focus  svg {
     color: inherit;
-  }
-
-
-  /* =Options
-  ----------------------------------------------- */
-  .post-options {
-    background: black;
-    background: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    z-index: 9999; /* @infinity */
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  .post-options.active {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-  }
-  .post-options ul,
-  .post-options li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .post-options ul {
-    margin: 0;
-    border-radius: 0.15em;
-  }
-  .post-options ul + ul {
-    margin-top: 0.375em;
-  }
-  .post-options div {
-    background: rgb(246, 246, 246); /* @casper */
-    padding: 0.375em;
-    color: rgb(51, 51, 51); /* @iron */
-    text-align: center;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    position: absolute;
-    left: -9999px;
-
-    transition: -webkit-transform 0.3s;
-    transition:         transform 0.3s;
-
-    -webkit-transform: translateY(30em);
-            transform: translateY(30em);
-  }
-  .post-options.active div {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding-bottom: 1.5em;
-
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  .post-options ul {
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
-    background: white;
-  }
-  .post-options li + li {
-    border-top: 0.0625em solid rgb(222, 222, 222); /* @silver */
-  }
-  .post-options li button {
-    display: block;
-    width: 100%;
-    text-transform: none;
-    font-size: 1.125em;
-    padding: 0.6666666667em; /* @line-height / 2 / 1.125 */
-    line-height: 1.3333333333; /* @line-height / 1.125 */
-    background: white;
-    color: rgb(101, 152, 254); /* @boysenberry */
-    color: rgb(60, 109, 218); /* @elderberry */
-    font-weight: bold;
-  }
-  .post-options li.warning button {
-    color: rgb(255, 49, 59); /* @apple */
-  }
-  .hoverable .post-options li button:hover,
-             .post-options li button:active,
-             .post-options li button:focus {
-    background-color: rgb(222, 222, 222); /* @silver */
-    color: rgb(60, 109, 218); /* @elderberry */
-    border-radius: 0;
-  }
-  .hoverable .post-options li.warning button:hover,
-             .post-options li.warning button:active,
-             .post-options li.warning button:focus {
-    color: rgb(255, 49, 59); /* @apple */
   }
 
 
