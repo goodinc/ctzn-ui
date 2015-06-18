@@ -2061,6 +2061,14 @@
     right: 0;
     border-left-width: 0.0625em;
   }
+  .page > header .action {
+    margin-top: 0;
+    padding: 0.375em;
+  }
+  .page > header .action a {
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+  }
   .page > header .back {
     left: 0;
     border-right-width: 0.0625em;
@@ -2071,13 +2079,24 @@
     color: rgb(204, 204, 204); /* @aluminum */
   }
 
-  .page > header .action {
-    margin-top: 0;
-    padding: 0.375em;
+  /* Back buttons sometimes have both an icon and a label */
+  .page > header .back svg.icon {
+    display: inline;
+    margin-right: 0.5em;
+    vertical-align: top;
   }
-  .page > header .action a {
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
+  .page > header .back svg.icon:last-child {
+    margin-right: 0;
+  }
+  @media (max-width: 60em) {
+    .page > header .back svg.icon {
+      margin-right: 0;
+      display: block;
+    }
+    .page > header .back svg.icon + span {
+      position: absolute;
+      left: -9999px;
+    }
   }
 
   /* OPTIONAL: Give edit and detail pages a white header. */
@@ -4231,6 +4250,299 @@
   }
 
 
+  /* =Onboarding
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  /* For the header on the preview page */
+  .powered-by h1 svg.icon {
+    width: 2em;
+    vertical-align: top;
+  }
+
+
+  /* =Join
+  ----------------------------------------------- */
+  .join.page > div h2 {
+    font-weight: inherit;
+    font-size: 1.5em;
+    line-height: inherit;
+    padding: 0.375em 1.5em;
+    margin: 0;
+    text-transform: lowercase;
+    text-align: center;
+  }
+  @media (min-width: 40em) {
+    .join.page > div h2 {
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
+    }
+  }
+  .join.page > .header {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    margin: 0;
+    max-width: none;
+  }
+
+  .join.page > .details {
+    background-color: transparent;
+    padding-bottom: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .join.page > .details form {
+    margin-top: 0.75em;
+  }
+
+
+  /* For the “logged in as @username” indicator */
+  .logged-in {
+    text-transform: lowercase;
+    background: black;
+    color: rgb(153, 153, 153); /* @nickel */
+    font-size: 0.875em;
+    line-height: 1.7142857143em; /* @line-height / 0.875em */
+    padding: 0.4285714286em 1.2857142858em; /* 0.375em / 0.875em         0.375em x 3 / 0.875em */
+  }
+  .logged-in h2 {
+    margin-top: 0.6em;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+  .logged-in h2 strong {
+    font-weight: inherit;
+    color: white;
+  }
+  @media (min-width: 30em) {
+    .logged-in h2,
+    .logged-in p {
+      display: inline;
+    }
+    .logged-in p:before {
+      margin-left: 0.3em;
+      margin-right: 0.6em;
+      content: "|";
+      opacity: 0.5;
+    }
+  }
+
+
+  /* =Sign Up (choose)
+  ----------------------------------------------- */
+  .signup.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
+  .signup.page > div,
+  .signup.page > div + aside {
+    background: white;
+  }
+  .signup.page h2.or span {
+    background: white;
+  }
+  .signup.page > div {
+    margin-bottom: 0;
+  }
+  .signup.page aside {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .signup.page aside a {
+    display: block;
+    font-size: inherit;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+    color: rgb(153, 153, 153); /* @nickel */
+    text-decoration: inherit;
+  }
+  .signup.page aside a strong {
+    font-weight: normal;
+    color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .hoverable .signup.page aside a:hover  strong,
+             .signup.page aside a:active strong,
+             .signup.page aside a:focus  strong {
+    color: rgb(193, 16, 65); /* @raspberry */
+  }
+  .signup.page .note:first-child {
+    margin-top: 0;
+  }
+  .signup.page .note:last-child {
+    margin-bottom: 0;
+  }
+  .signup.page .checkbox label {
+    text-transform: none;
+  }
+  .signup.page .checkbox label a {
+    display: inline-block;
+    text-transform: inherit;
+  }
+
+
+  /* =Ready (ways to use CTZN)
+  ----------------------------------------------- */
+  .ready.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
+  .ready.page > div {
+    padding-top: 1.875em;
+  }
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    .ready.page > div {
+      margin-top: 3em;
+    }
+  }
+  .ready.page h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size     : 1.5em;     /* 24px / @font-size */
+    line-height: inherit;
+  }
+  .ready.page ul {
+    margin-top: 1.875em;
+    margin-bottom: 0;
+  }
+  .ready.page ul,
+  .ready.page li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .ready.page li {
+    margin-top: 0.375em;
+  }
+
+  .ready.page aside {
+    display: block;
+    color: rgb(102, 102, 102);
+    padding: 1.5em 3em 1.5em 1.5em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: white;
+    position: relative;
+  }
+  .ready.page aside p {
+    margin: 0;
+  }
+
+  .ready.page li > a {
+    display: block;
+    color: rgb(102, 102, 102);
+    padding: 1.5em 3em 1.5em 1.5em;
+    background-color: white;
+    text-decoration: none;
+    position: relative;
+
+    /* @background-icon */
+    background-size: 1.5em auto;
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    background-position: calc(100% - 0.75em) 50%;
+
+    /* @icon-right */ /* @aluminum */
+    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
+  }
+  .hoverable .ready.page li a:hover,
+  .ready.page li > a:active,
+  .ready.page li > a:focus {
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .ready.page ul li > a {
+      margin-left: -1.25em;
+      margin-right: -1.25em;
+    }
+  }
+
+  .ready.page li a > div img {
+    vertical-align: middle;
+    margin: 0 0.25em;
+  }
+  .ready.page li a > div .icon {
+    width: 3em;
+    height: 3em;
+  }
+
+  .ready.page li a > div {
+    margin-bottom: 0.75em;    
+  }
+  .ready.page aside > div img,
+  .ready.page li a > div img,
+  .ready.page li a > div .icon {
+    margin: 0.75em 0.25em;
+  }
+  @media (min-width: 20em) {
+    .ready.page aside,
+    .ready.page li > a {
+      padding-left: 10em;
+    }
+    .ready.page aside > div,
+    .ready.page li > a > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      text-align: center;
+      width: 10em; /* item left padding */
+      margin-bottom: 0;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+    }
+  }
+
+
+  /* =Email
+  ----------------------------------------------- */
+  .email.page > div {
+    text-align: center;
+  }
+  .email.page h2 {
+    margin-bottom: 1.5em;
+  }
+  .email.page h2 .icon {
+    color: rgb(102, 102, 102); /* @tin */
+    margin-bottom: 0.25em;
+    font-size: 1.5em;
+  }
+  .email.page ul,
+  .email.page li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .email.page li {
+    margin-top: 1.5em;
+    padding: 1.5em;
+    background: white;
+  }
+  .email.page li h3 {
+    margin-top: 0;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .email.page li p {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+
+
 
   /* =Account
   -----------------------------------------------
@@ -4733,22 +5045,6 @@
   }
 
 
-  /* =Launch Button
-  ----------------------------------------------- */
-  .developer.action {
-    position: fixed;
-    z-index: 9999; /* @infinity */
-    top: 50%;
-    left: 0.375em;
-    height: 6em;
-    margin-top: -3em;
-  }
-  .developer.action a {
-    background-color: black;
-    padding: 0.375em;
-  }
-
-
   /* =Developer Tools
   ----------------------------------------------- */
 
@@ -4957,303 +5253,6 @@
   section.edit.page.outro {
     -webkit-animation: slide-down 0.3s both;
             animation: slide-down 0.3s both;
-  }
-
-
-  /* =Onboarding
-  ----------------------------------------------- */
-  .logged-in {
-    text-transform: lowercase;
-    background: black;
-    color: rgb(153, 153, 153); /* @nickel */
-    font-size: 0.875em;
-    line-height: 1.7142857143em; /* @line-height / 0.875em */
-    padding: 0.4285714286em 1.2857142858em; /* 0.375em / 0.875em         0.375em x 3 / 0.875em */
-  }
-  .logged-in h2 {
-    margin-top: 0.6em;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-  }
-  .logged-in h2 strong {
-    font-weight: inherit;
-    color: white;
-  }
-  @media (min-width: 30em) {
-    .logged-in h2,
-    .logged-in p {
-      display: inline;
-    }
-    .logged-in p:before {
-      margin-left: 0.3em;
-      margin-right: 0.6em;
-      content: "|";
-      opacity: 0.5;
-    }
-  }
-
-  .join.page > div h2 {
-    font-weight: inherit;
-    font-size: 1.5em;
-    line-height: inherit;
-    padding: 0.375em 1.5em;
-    margin: 0;
-    text-transform: lowercase;
-    text-align: center;
-  }
-  @media (min-width: 40em) {
-    .join.page > div h2 {
-      padding-top: 0.75em;
-      padding-bottom: 0.75em;
-    }
-  }
-  .join.page > .header {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: white;
-    margin: 0;
-    max-width: none;
-  }
-
-  .join.page > .details {
-    background-color: transparent;
-    padding-bottom: 1.5em;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .join.page > .details form {
-    margin-top: 0.75em;
-  }
-
-  .signup.page {
-    padding-bottom: 4.5em; /* @page-bottom-padding */
-  }
-  .signup.page > div,
-  .signup.page > div + aside {
-    background: white;
-  }
-  .signup.page h2.or span {
-    background: white;
-  }
-  .signup.page > div {
-    margin-bottom: 0;
-  }
-  .signup.page aside {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .signup.page aside a {
-    display: block;
-    font-size: inherit;
-    padding-top: 1.25em;
-    padding-bottom: 1.25em;
-    color: rgb(153, 153, 153); /* @nickel */
-    text-decoration: inherit;
-  }
-  .signup.page aside a strong {
-    font-weight: normal;
-    color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .hoverable .signup.page aside a:hover  strong,
-             .signup.page aside a:active strong,
-             .signup.page aside a:focus  strong {
-    color: rgb(193, 16, 65); /* @raspberry */
-  }
-  .signup.page .note:first-child {
-    margin-top: 0;
-  }
-  .signup.page .note:last-child {
-    margin-bottom: 0;
-  }
-  .signup.page .checkbox label {
-    text-transform: none;
-  }
-  .signup.page .checkbox label a {
-    display: inline-block;
-    text-transform: inherit;
-  }
-
-
-  .ready.page {
-    padding-bottom: 4.5em; /* @page-bottom-padding */
-  }
-  .ready.page > div {
-    padding-top: 1.875em;
-  }
-  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-    .ready.page > div {
-      margin-top: 3em;
-    }
-  }
-  .ready.page h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
-    font-size     : 1.5em;     /* 24px / @font-size */
-    line-height: inherit;
-  }
-  .ready.page ul {
-    margin-top: 1.875em;
-    margin-bottom: 0;
-  }
-  .ready.page ul,
-  .ready.page li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .ready.page li {
-    margin-top: 0.375em;
-  }
-
-  .ready.page aside {
-    display: block;
-    color: rgb(102, 102, 102);
-    padding: 1.5em 3em 1.5em 1.5em;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    background-color: white;
-    position: relative;
-  }
-  .ready.page aside p {
-    margin: 0;
-  }
-
-  .ready.page li > a {
-    display: block;
-    color: rgb(102, 102, 102);
-    padding: 1.5em 3em 1.5em 1.5em;
-    background-color: white;
-    text-decoration: none;
-    position: relative;
-
-    /* @background-icon */
-    background-size: 1.5em auto;
-    background-repeat: no-repeat;
-    background-position: 97% 50%;
-    background-position: calc(100% - 0.75em) 50%;
-
-    /* @icon-right */ /* @aluminum */
-    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
-  }
-  .hoverable .ready.page li a:hover,
-  .ready.page li > a:active,
-  .ready.page li > a:focus {
-    background-color: rgb(222, 222, 222); /* @silver */
-  }
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .ready.page ul li > a {
-      margin-left: -1.25em;
-      margin-right: -1.25em;
-    }
-  }
-
-  .ready.page li a > div img {
-    vertical-align: middle;
-    margin: 0 0.25em;
-  }
-  .ready.page li a > div .icon {
-    width: 3em;
-    height: 3em;
-  }
-
-  .ready.page li a > div {
-    margin-bottom: 0.75em;    
-  }
-  .ready.page aside > div img,
-  .ready.page li a > div img,
-  .ready.page li a > div .icon {
-    margin: 0.75em 0.25em;
-  }
-  @media (min-width: 20em) {
-    .ready.page aside,
-    .ready.page li > a {
-      padding-left: 10em;
-    }
-    .ready.page aside > div,
-    .ready.page li > a > div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      text-align: center;
-      width: 10em; /* item left padding */
-      margin-bottom: 0;
-
-      display: -webkit-flex;
-      display:         flex;
-
-      -webkit-flex-direction: row;
-              flex-direction: row;
-
-      -webkit-align-items: center;
-              align-items: center;
-
-      -webkit-align-content: center;
-              align-content: center;
-
-      -webkit-justify-content: center;
-              justify-content: center;
-    }
-  }
-
-  .email.page > div {
-    text-align: center;
-  }
-  .email.page h2 {
-    margin-bottom: 1.5em;
-  }
-  .email.page h2 .icon {
-    color: rgb(102, 102, 102); /* @tin */
-    margin-bottom: 0.25em;
-    font-size: 1.5em;
-  }
-  .email.page ul,
-  .email.page li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .email.page li {
-    margin-top: 1.5em;
-    padding: 1.5em;
-    background: white;
-  }
-  .email.page li h3 {
-    margin-top: 0;
-    font-size: inherit;
-    line-height: inherit;
-  }
-  .email.page li p {
-    color: rgb(102, 102, 102); /* @tin */
-  }
-
-  /* For the header on the preview page */
-  .powered-by h1 svg.icon {
-    width: 2em;
-    vertical-align: top;
-  }
-
-  /* For back buttons with both an icon and a label */
-  .page > header .back svg.icon {
-    display: inline;
-    margin-right: 0.5em;
-    vertical-align: top;
-  }
-  .page > header .back svg.icon:last-child {
-    margin-right: 0;
-  }
-  @media (max-width: 60em) {
-    .page > header .back svg.icon {
-      margin-right: 0;
-      display: block;
-    }
-    .page > header .back svg.icon + span {
-      position: absolute;
-      left: -9999px;
-    }
   }
 
 
