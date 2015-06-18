@@ -1261,8 +1261,8 @@
     text-decoration: none;
   }
   .hoverable .post-item header h3 a:hover,
-  .post-item header h3 a:active,
-  .post-item header h3 a:focus {
+             .post-item header h3 a:active,
+             .post-item header h3 a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
   }
 
@@ -1292,8 +1292,8 @@
     text-decoration: none;
   }
   .hoverable .post-item header p a:hover,
-  .post-item header p a:active,
-  .post-item header p a:focus {
+             .post-item header p a:active,
+             .post-item header p a:focus {
     color: black;
   }
   .post-item a.body {
@@ -1301,8 +1301,8 @@
     color: inherit;
   }
   .hoverable .post-item a.body:hover,
-  .post-item a.body:active,
-  .post-item a.body:focus {
+             .post-item a.body:active,
+             .post-item a.body:focus {
     background-color: rgba(0, 0, 0, 0.25);
   }
   .post-item .body img,
@@ -1332,8 +1332,8 @@
     transition: opacity 0.2s;
   }
   .hoverable .post-item .body img[onclick]:hover,
-  .post-item .body img[onclick]:active,
-  .post-item .body img[onclick]:focus {
+             .post-item .body img[onclick]:active,
+             .post-item .body img[onclick]:focus {
     opacity: 0.8;
   }
   .post-item .body {
