@@ -1356,12 +1356,13 @@
   .post-item .profile {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    border: 0.0625em solid rgb(238, 238, 238); /* @seashell */
+    border: 0.0625em solid rgb(204, 204, 204); /* @aluminum */
     padding: 0.75em;
     border-radius: 0.25em;
     text-align: center;
   }
   .post-item .profile.empty {
+    /* reset */
     border-right-width: 0;
     border-bottom-width: 0;
     border-left-width: 0;
@@ -1499,7 +1500,7 @@
   .post-item footer .action + .meta {
     margin-top : 1.8181818182em; /* 1.25em / 0.6875em */
     padding-top: 1.8181818182em;
-    border-top: 0.09090909091em solid rgb(238, 238, 238); /* @seashell */
+    border-top: 0.09090909091em solid rgb(204, 204, 204); /* @aluminum */
   }
   .post-item footer .action + .comments {
     margin-top : 1.25em;
