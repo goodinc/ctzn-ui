@@ -21,7 +21,6 @@
     font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; /* @regular */
     padding: 0;
     margin: 0;
-    width: 100%;
   }
 
   a {
@@ -95,25 +94,6 @@
 
   /* =Containers
   ----------------------------------------------- */
-  body {
-    display: table;
-  }
-  header,
-  section,
-  footer,
-  main {
-    display: table-row;
-  }
-  .container {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  header  .container,
-  section .container,
-  footer  .container {
-    height: 1px;
-  }
-
   header .container,
   footer .about,
   footer .legal {
@@ -127,6 +107,28 @@
   }
   footer .about {
     background: black;
+  }
+
+
+  /* OPTIONAL: Make the page fill the available viewport height */
+  body.dialog {
+    display: table;
+    width: 100%;
+  }
+  .dialog header,
+  .dialog section,
+  .dialog footer,
+  .dialog main {
+    display: table-row;
+  }
+  .dialog .container {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .dialog header  .container,
+  .dialog section .container,
+  .dialog footer  .container {
+    height: 1px;
   }
 
 
