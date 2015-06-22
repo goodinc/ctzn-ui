@@ -40,6 +40,14 @@
     max-width: 100%;
     height: auto;
   }
+  a img {
+    border-width: 0;
+  }
+
+  /* Older browsers sometimes render these inline */
+  header, footer, section, article, aside, nav, hgroup {
+    display: block;
+  }
 
 
   /* =Type
