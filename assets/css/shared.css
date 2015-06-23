@@ -1979,8 +1979,10 @@
             box-sizing: border-box;
   }
 
-  /* OPTIONAL: Remove the excess space at the top of the page */
-  .page > div:first-child > h1:first-child,
+  /* OPTIONAL: Reduce the space at the top of the page */
+  .page > div:first-child > h1:first-child {
+    margin-top: 0.7em;
+  }
   .page > header + form   >  p:first-child {
     margin-top: 0;
   }
