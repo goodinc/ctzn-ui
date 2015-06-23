@@ -22,11 +22,22 @@
     var random = Math.floor(Math.random() * (max - min + 1) + min);
     var cursor = random;
 
+    var color;
+
     function update() {
       cursor++;
       if (cursor > colors.length - 1) cursor = 0;
       var element = document.getElementById('color');
-      if (element) element.className = colors[cursor];
+      if (element) {
+        if (element.className.indexOf('animated') <= 0) element.className += ' animated';
+
+        // Remove the old color
+        if (color) element.className = element.className.replace(color, '');
+
+        // Add the new color
+        color = colors[cursor];
+        element.className += ' ' + color;
+      }
       else setTimeout(update, 10);
     }
 

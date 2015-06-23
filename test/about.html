@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,7 +35,7 @@
     }
   </style>
 
-  <link rel="stylesheet" href="../assets/css/minimal.css" />
+  <link rel="stylesheet" href="../assets/css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -299,22 +299,19 @@
     </symbol>
   </svg>
 
-  <header>
-    <div class="container">
-      <h2><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></h2>
-    </div>
+  <header class="primary">
+    <h2><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></h2>
   </header>
 
-  <main>
-    <div class="container">
-      <div class="about">
+  <section class="about">
+    <div>
 
-        <div class="strawberry header">
+        <div class="strawberry header push-card">
           <h1 class="logo"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></h1>
           <h2>Connect and push, <strong>together</strong></h2>
         </div>
 
-        <section class="tangerine feature">
+        <section class="tangerine feature push-card">
           <div class="text">
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-note"></use></svg>
             <h3>
@@ -324,7 +321,7 @@
 
           <p><img src="../assets/images/promote/connect.jpg" alt="Read posts by other people in your group using the app" /></p>
         </section>
-        <section class="blueberry feature">
+        <section class="blueberry feature push-card">
           <div class="text">
             <div class="icons">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-note"></use></svg>
@@ -340,7 +337,7 @@
           <p><img src="../assets/images/promote/collect.jpg" alt="Collect stories from Twitter, Facebook and Instagram" /></p>
         </section>
 
-        <section class="plumb feature">
+        <section class="plumb feature push-card">
           <div class="text">
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
             <h3>Mix everything <strong>into videos</strong></h3>
@@ -349,7 +346,7 @@
           <p><img src="../assets/images/promote/mix.jpg" alt="Choose photos to create a new mix" /></p>
         </section>
 
-        <section class="cucumber feature">
+        <section class="cucumber feature push-card">
           <div class="text">
             <div class="icons">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-link"></use></svg>
@@ -363,7 +360,7 @@
           <p><img src="../assets/images/promote/share.jpg" alt="Your finished mix will be a shareable video" /></p>
         </section>
 
-        <section class="boysenberry feature">
+        <section class="boysenberry feature push-card">
           <div class="text">
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
             <h3>Stay in touch <strong>from your inbox</strong></h3>
@@ -372,20 +369,18 @@
           <p class="email-image"><img src="../assets/images/promote/email.jpg" alt="An email about new posts and people in your group" /></p>
         </section>
 
-        <section class="orange" id="color">
-
-          <div class="subscribe">
+        <section class="orange push-card" id="color">
 
             <!-- Begin MailChimp Signup Form -->
             <form action="//good.us2.list-manage.com/subscribe/post?u=5b63a0823e3b9c105434c46d7&amp;id=f9c7839dae" method="post" name="mc-embedded-subscribe-form">
               <h3>I want to push forward!</h3>
-              <p>
+              <p class="text">
                 <label>
                   <span>Full name</span><br />
                   <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Full name" />
                 </label>
               </p>
-              <p>
+              <p class="text">
                 <label>
                   <span>Email address</span><br />
                   <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address" />
@@ -395,25 +390,20 @@
               <div style="position: absolute; left: -5000px;">
                 <input type="text" name="b_5b63a0823e3b9c105434c46d7_f9c7839dae" tabindex="-1" value="">
               </div>
-              <p>
+              <p class="submit">
                 <button type="submit" value="Subscribe" name="subscribe">send updates</button>
               </p>
             </form>
             <!--End mc_embed_signup-->
 
-          </div><!-- /.subscribe -->
-
         </section>
 
-      </div><!-- /.about -->
-    </div><!-- /.container -->
-  </main>
-
-  <footer>
-    <div class="container">
-      <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></svg></a> app</h2>
-      <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
     </div>
+  </section>
+
+  <footer class="primary">
+    <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></svg></a> app</h2>
+    <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
   </footer>
 
   <script src="../assets/js/color.js"></script>

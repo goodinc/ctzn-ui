@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Thanks, you’re signed up!</title>
 
-  <link rel="stylesheet" href="../assets/css/minimal.css" />
+  <link rel="stylesheet" href="../assets/css/shared.css" />
 
 </head>
-<body class="dialog">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -260,29 +260,18 @@
     </symbol>
   </svg>
 
-  <header>
-    <div class="container">
-      <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-    </div>
+  <header class="primary">
+    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
   </header>
 
-  <main id="color">
-    <div class="container">
-      <div class="confirmation">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark-circle"></use></svg>
-        <h1>Thanks, you’re signed up!</h1>
-        <p>We’ll be in touch…</p>
-        <p class="finish">Yay!</p>
-      </div>
+  <section class="confirmation push-card page" id="color">
+    <div class="details">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark-circle"></use></svg>
+      <h1>Thanks, you’re signed up!</h1>
+      <p>We’ll be in touch…</p>
+      <p class="finish">Yay!</p>
     </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></svg></a> app</h2>
-      <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
-    </div>
-  </footer>
+  </section>
 
   <script src="../assets/js/color.js"></script>
 

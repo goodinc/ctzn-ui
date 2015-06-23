@@ -29,6 +29,8 @@
     font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
+
+    /* SHIM: Avoid a flicker when a black loading screen appears temporarily before the content. */
     background: black;
     color: white;
   }
@@ -46,8 +48,14 @@
     border-width: 0;
   }
 
-  /* Older browsers sometimes render these inline */
-  header, footer, section, article, aside, nav, hgroup {
+  /* Fit media to the available width */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Browsers sometimes render these as inline elements, by default */
+  main, header, footer, section, article, aside, nav, hgroup {
     display: block;
   }
 
@@ -68,19 +76,19 @@
   }
 
   h1 {
-    font-size     : 3em;       /* 48px / @font-size */
-    line-height   : 1.25em;    /* 60px / 48px */
-    margin-top    : 1.25em;
-    margin-bottom : 0.625em;   /* 1.25em / 2 */
+    font-size     : 1.875em;   /* 30px / @font-size */
+    line-height   : 1.4em;     /* 42px / 30px  */
+    margin-top    : 1.4em;
+    margin-bottom : 0.7em;     /* 1.4em / 2 */
   }
   h2 {
-    font-size     : 1.875em;   /* 30px / @font-size */
-    line-height   : 1.2em;     /* 36px / 30px  */
-    margin-top    : 1.2em;
-    margin-bottom : 0.6em;     /* 1.2em / 2 */
+    font-size     : 1.5em;     /* 24px / @font-size */
   }
   h3 {
-    font-size     : 1.5em;     /* 24px / @font-size */
+    font-size     : 1.3125em;  /* 21px / @font-size */
+    line-height   : 1.4285714286em; /* 30px / 21px */
+    margin-top    : 1.4285714286em;
+    margin-bottom : 0.7142857143em; /* 1.4285714286em / 2 */
   }
   h4, h5, h6 {
     font-size: inherit;
@@ -894,11 +902,7 @@
     margin: 1.5em 0;
   }
   .empty-message h1 {
-    /* @h2 */
-    font-size     : 1.875em;   /* 30px / @font-size */
-    line-height   : 1.2em;     /* 36px / 30px  */
-    margin-top    : 0;
-    margin-bottom : 0.6em;     /* 1.2em / 2 */
+    margin-top: 0;
   }
   .empty-message ul,
   .empty-message li {
@@ -936,6 +940,59 @@
   section.confirmation-message .action {
     display: block;
     margin-top: 1.5em;
+  }
+
+
+  /* =Confirmation
+  -----------------------------------------------
+  (for the “mute conversation” and “unsubscribe” pages)
+  ----------------------------------------------- */
+  .confirmation.push-card.page {
+    text-align: left;
+  }
+  .confirmation.push-card.page > div svg.icon {
+    color: white;
+  }
+  .confirmation.page > div h1 {
+    font-size: inherit;
+    line-height: inherit;
+    margin-top: 0.75em;
+    margin-bottom: 0.375em;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .confirmation.page > div h1 + p {
+    margin-top: 0;
+  }
+  .confirmation.page > div p {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .confirmation.page > div p.finish {
+    margin-top: 1.125em;
+    display: table;
+  }
+  .confirmation.push-card.page > div p.finish {
+    color: white;
+  }
+  .confirmation.push-card.page > div p.finish a {
+    color: inherit;
+  }
+  .confirmation.page > div p.finish:before {
+    content: "";
+    display: block;
+    border-top: 0.25em solid black;
+    border-top-color: rgba(0, 0, 0, 0.95);
+    margin-bottom: 1.125em;
+  }
+  @media (min-width: 30em) {
+    .confirmation.page > div h1,
+    .confirmation.page > div p {
+      font-size: 1.25em;
+      line-height: 1.2;
+    } 
+    .confirmation.page > div svg.icon {
+      font-size: 1.25em;
+    }
   }
 
 
@@ -1583,13 +1640,20 @@
     border-bottom: 0.0625em solid rgb(44, 44, 44); /* @thorium */
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
   }
-  header.primary h1 {
+  header.primary h1,
+  header.primary h2 {
     margin: 0;
     font-size: inherit;
     display: block;
     height: 1.5em;
   }
-  header.primary h1 a {
+  header.primary h2:first-child:last-child {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.primary h1 a,
+  header.primary h2 a {
     display: block;
     float: left;
     line-height: 1;
@@ -1598,7 +1662,8 @@
     border-radius: 0.25em;
     margin: -0.75em -1em;
   }
-  header.primary h1 svg.icon {
+  header.primary h1 svg.icon,
+  header.primary h2 svg.icon {
     width: 2.6315789474em;
     height: 1.5em;
     vertical-align: top;
@@ -1682,9 +1747,11 @@
   header.primary > a, /* For the push preview */
   header.primary h1,
   header.primary h2,
+  header.primary h3,
   header.primary p {
     display: inline-block;
     margin: 0;
+    vertical-align: top;
   }
 
   /* SHIM: Allow the logo to be positioned on the push preview (“couch” mode) */
@@ -1692,18 +1759,19 @@
     display: inline;
   }
 
-  header.primary h1 {
+  header.primary h1,
+  header.primary h2 {
     vertical-align: bottom;
     margin-right: 0.75em;
   }
 
 
   /* For the push preview */
-  header.primary h2 {
+  header.primary h3 {
     font-weight: inherit;
     text-transform: lowercase;
   }
-  header.primary h2,
+  header.primary h3,
   header.primary p {
     font-size: 0.875em;
     line-height: 1.7142857143em; /* 1.5em / 0.875em */
@@ -1810,6 +1878,7 @@
     }
     /* Make space for the sticky header */
     header.primary ~ section.push,
+    header.primary ~ section.about,
     header.primary ~ section.switch {
       padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
     }
@@ -1909,6 +1978,13 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
+
+  /* OPTIONAL: Remove the excess space at the top of the page */
+  .page > div:first-child > h1:first-child,
+  .page > header + form   >  p:first-child {
+    margin-top: 0;
+  }
+
   .page > article,
   .page > div,
   .page > form,
@@ -1927,6 +2003,7 @@
 
   /* OPTIONAL: Space things out a bit, if the screen is tall. */
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    header.primary ~ .page > div,
     .join.page > div,
     .start.page > div,
     .page > header + article,
@@ -1973,7 +2050,8 @@
   }
 
   /* For the dialog page */
-  .page h1 {
+  .page > header h1,
+  .dialog.page h1 {
     margin-top: 0;
     margin-bottom: 0.75em;
     font-size: inherit;
@@ -2526,6 +2604,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .push-card.page ul.action a,
   .push-card.page .details .action a,
   .push-card.page .details button,
   .dialog.page .action a,
@@ -2535,24 +2614,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .push-card .text label {
-    background: transparent;
-    border-width: 0;
-    padding: 0;
-    margin: 0;
-  }
-  .push-card .text label span {
-    color: black;
-  }
-  .push-card input[type="text"] {
-    text-align: center;
-    font-size: 1.125em; /* 18px / @font-size */
-    border-radius: 0.2222222222em; /* 4px / 18px */
-    line-height: 2.7777777778em; /* 50px / 18px */
-    min-height: 2.7777777778em;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+
   .login  > div   .action  a,
   .signup > div   .action  a,
   .dialog.page    .action  a,
@@ -2579,6 +2641,12 @@
     /* @wrap-long-words */
     word-wrap     : break-word;
     overflow-wrap : break-word;
+  }
+  .push-card.page ul.action a {
+    font-weight: normal;
+  }
+  .push-card.page ul.action a > .icon:first-child {
+    margin-right: 0.5em;
   }
   .login  > div .action.facebook a,
   .signup > div .action.facebook a {
@@ -2612,19 +2680,6 @@
   .dialog.page    button svg.icon {
     width: 1em;
     height: 1em;
-  }
-
-  .push-card h1 {
-    color: black;
-    color: rgba(0, 0, 0, 0.95);
-  }
-  .push-card.page > header h1 {
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
-  }
-  .push-card.page > header h1 a {
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
   }
 
   /* OPTIONAL: Make some of the content white instead of black. */
@@ -3704,6 +3759,7 @@
     display: block;
     max-width: 100%;
     height: auto;
+    min-height: 50vh;
   }
   .mix footer {
     margin-top: 0.75em;
@@ -3741,6 +3797,240 @@
     /* @wrap-long-words */
     word-wrap     : break-word;
     overflow-wrap : break-word;
+  }
+
+
+  /* =Shareable Mix
+  ----------------------------------------------- */
+  .shareable-mix > div h1 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: left;
+    padding-left: 48px;
+    padding-bottom: 8px;
+  }
+  .shareable-mix h1 .avatar {
+    margin-left: -48px;
+    position: absolute;
+    margin-top: -8px;
+  }
+  .shareable-mix h1 span {
+    font-weight: bold;
+  }
+  .shareable-mix h1 strong {
+    color: black;
+  }
+  .shareable-mix.page .video {
+    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+    background: black;
+    color: white;
+    margin: 0 auto;
+    display: table;
+  }
+  .shareable-mix.page .video video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  /* Video not supported message */
+  .shareable-mix.page .video .message {
+    padding: 1.5em;
+  }
+  .shareable-mix.page .video .message h1,
+  .shareable-mix.page .video .message p {
+    margin: 1.5em;
+    font-size: inherit;
+    max-width: 31.5em;
+    text-align: left;
+    padding: 0;
+
+    /* SHIM: Override a style intended for the main headline */
+    color: inherit;
+  }
+  .shareable-mix.page .video .message h1 {
+    font-weight: bold;
+  }
+  .shareable-mix.page .video .message p a {
+    color: white;
+  }
+
+  .shareable-mix.page .about {
+    margin-top: 1.5em;
+  }
+  .shareable-mix.page .about a {
+    color: black;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+  }
+  .hoverable .shareable-mix.page .about a:hover,
+             .shareable-mix.page .about a:active,
+             .shareable-mix.page .about a:focus {
+    color: black;
+  }
+
+  .shareable-mix.page .action {
+    margin-top: 3em;
+  }
+  .shareable-mix.page .action a {
+    background: black;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+  }
+
+
+  /* =About
+  ----------------------------------------------- */
+  section.about {
+    background-color: rgb(51, 51, 51); /* @iron */
+    color: rgb(204, 204, 204); /* @aluminum */
+    text-align: center;
+  }
+  section.about .header {
+    padding: 2.5em 1.5em 3em;
+  }
+  section.about h1.logo {
+    font-size: 4em;
+    line-height: 1;
+    margin: 0.5em auto 0;
+    color: black;
+  }
+  section.about h1.logo svg.icon {
+    width : 2.6354166667em; /* 253px / 96px */
+    height: 1em;            /*  96px / 96px */
+  }
+  section.about h1.logo + h2 {
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
+    font-weight: bold;
+  }
+  section.about h2 strong {
+    color: white;
+    font-weight: inherit;
+  }
+  .about section {
+    display: block;
+    padding: 4em 1.5em 3em;
+  }
+  .about section:last-child {
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+  }
+  .about section h3 {
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
+    font-weight: bold;
+  }
+
+  /* @h2 */
+  section.about section h3 {
+    margin-top: 0;
+    font-size: 1.5em;     /* 24px / @font-size */
+    line-height: inherit;
+  }
+
+  section.about .feature h3 strong {
+    color: white;
+    font-weight: inherit;
+  }
+  @media (min-width: 20em) {
+    section.about .feature h3 strong {
+      display: block;
+    }
+  }
+  section.about .feature .text svg.icon {
+    margin: 0 0.75em 0.75em;
+    width: 2em;
+    height: 2em;
+    color: white;
+  }
+  section.about .feature .text svg.icon:first-child {
+    font-size: 1.25em;
+  }
+
+  /* OPTIONAL: Add space below groups of icons, for easier reading */
+  section.about section .icons {
+    margin-bottom: 1.5em;
+  }
+
+  /* OPTIONAL: Position the icons on the left */
+  @media (min-width: 30em) {
+    section.about .feature h3 {
+      margin-bottom: 0;
+    }
+    section.about .feature p {
+      margin-top: 0.375em;
+      margin-bottom: 0;
+    }
+    section.about .feature .icons,
+    section.about .feature h3 {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+    }
+    section.about .feature .icons {
+      margin-right: 1.5em;
+    }
+  }
+
+  section.about .feature .text,
+  section.about .feature .text + p {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+  section.about .feature .text + p {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  section.about .feature .email-image img {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  @media (min-width: 30em) {
+    section.about .feature p.email-image {
+      margin: 3em;
+    }
+  }
+
+  section.about form {
+    max-width: 20em;
+    margin: 0 auto;
+  }
+
+  section.about .text label {
+    background: transparent;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+  }
+  section.about .text label span {
+    color: black;
+  }
+  section.about input[type="text"],
+  section.about input[type="email"] {
+    font-size: 1.125em; /* 18px / @font-size */
+    border-radius: 0.2222222222em; /* 4px / 18px */
+    line-height: 2.7777777778em; /* 50px / 18px */
+    min-height: 2.7777777778em;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  section.about .submit {
+    text-align: center;
+  }
+  section.about .submit button {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .hoverable section.about button:hover,
+             section.about button:active,
+             section.about button:focus {
+    background-color: black;
   }
 
 
@@ -4457,6 +4747,17 @@
     vertical-align: middle;
     margin: 0 0.25em;
   }
+
+  /* SHIM: Give the store and browser buttons a uniform height. */
+  .ready.page li a > div img[height="35"] {
+    height: 2.1875em; /* 35px / 16px */
+  }
+  .ready.page li a  > div img[height="50"],
+  .ready.page aside > div img[height="50"] {
+    height: 3.125em; /* 50px / 16px */
+  }
+
+
   .ready.page li a > div .icon {
     width: 3em;
     height: 3em;
@@ -4509,6 +4810,7 @@
     text-align: center;
   }
   .email.page h2 {
+    margin-top: 0;
     margin-bottom: 1.5em;
   }
   .email.page h2 .icon {
@@ -4568,6 +4870,7 @@
     font-weight: normal;
     font-size: 1.125em; /* 18px / @font-size */
     line-height: 1.3333333333em;
+    margin-top: 1.3333333333em;
     color: rgb(102, 102, 102); /* @tin */
   }
   .settings .introduction h2 strong {
@@ -5038,6 +5341,16 @@
     max-width: 100%;
   }
 
+  /* SHIM: Give the store buttons a uniform height. */
+  .dialog.page ul.logos li a img[height="50"] {
+    height: 3.125em; /* 50px / 16px */
+  }
+
+  /* OPTIONAL: Make the browsers buttons scale with the font size */
+  .dialog.page ul.logos li a img[width="70"] {
+    width: 4.375em; /* 70px / 16px */
+  }
+
 
   /* =Developer Tools
   ----------------------------------------------- */
@@ -5094,15 +5407,18 @@
   .dialog.page ul.action {
     margin-top: 1.5em;
   }
-  .dialog.page ul.action,
-  .dialog.page ul.action li,
+  .push-card.page ul.action,
+  .push-card.page ul.action li,
+  .dialog.page    ul.action,
+  .dialog.page    ul.action li,
   .dialog.page .logs ul,
   .dialog.page .logs li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .dialog.page ul.action li + li {
+  .push-card.page ul.action li + li,
+  .dialog.page    ul.action li + li {
     margin-top: 0.75em;
   }
   .dialog.page .logs   li + li {

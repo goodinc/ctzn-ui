@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>CTZN</title>
 
-  <link rel="stylesheet" href="../assets/css/minimal.css" />
+  <link rel="stylesheet" href="../assets/css/shared.css" />
 
 </head>
-<body class="dialog">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -260,22 +260,18 @@
     </symbol>
   </svg>
 
-  <header>
-    <div class="container">
-      <h2><a href="https://ctznapp.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-    </div>
+  <header class="primary">
+    <h2><a href="http://ctznapp.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
   </header>
 
-  <main class="orange">
-    <div class="container">
-      <div class="confirmation">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark-circle"></use></svg>
-        <h1>This conversation is now mute.</h1>
-        <p>You will only receive additional notifications when you are @mentioned.</p>
-        <p class="finish">Yay!</p>
-      </div>
+  <section class="orange push-card confirmation page">
+    <div class="details">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark-circle"></use></svg>
+      <h1>This conversation is now mute.</h1>
+      <p>You will only receive additional notifications when you are @mentioned.</p>
+      <p class="finish">Yay!</p>
     </div>
-  </main>
+  </section>
 
 </body>
 </html>
