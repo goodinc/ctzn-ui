@@ -24,12 +24,24 @@
 
     var color;
 
+    // Handle the case where the element has a default color
+    (function() {
+      var element = document.getElementById('color');
+      if (element) {
+        for (var index = 0; index < colors.length; index++) {
+          if (element.className.indexOf(colors[index]) >= 0) {
+            color = colors[index];
+          }
+        }
+      }
+    })();
+
     function update() {
       cursor++;
       if (cursor > colors.length - 1) cursor = 0;
       var element = document.getElementById('color');
       if (element) {
-        if (element.className.indexOf('animated') <= 0) element.className += ' animated';
+        if (element.className.indexOf('animated') < 0) element.className += ' animated';
 
         // Remove the old color
         if (color) element.className = element.className.replace(color, '');

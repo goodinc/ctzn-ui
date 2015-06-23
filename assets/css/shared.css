@@ -431,10 +431,13 @@
   }
 
   button:disabled {
-    background-color: rgb(122, 122, 122);
+    background-color: rgb(102, 102, 102); /* @tin */
     color: white;
     opacity: 0.5;
     cursor: default;
+  }
+  .hoverable button:disabled:hover {
+    background-color: rgb(102, 102, 102); /* @tin */
   }
 
   /* OPTIONAL: Make buttons lighter if they appear on a dark background. */
@@ -2616,12 +2619,31 @@
     margin-left: auto;
     margin-right: auto;
   }
-
+  .push-card .text label {
+    background: transparent;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .push-card .text label span {
+    color: black;
+  }
+  .push-card input[type="text"],
+  .push-card input[type="email"] {
+    text-align: center;
+    font-size: 1.125em; /* 18px / @font-size */
+    border-radius: 0.2222222222em; /* 4px / 18px */
+    line-height: 2.7777777778em; /* 50px / 18px */
+    min-height: 2.7777777778em;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .login  > div   .action  a,
   .signup > div   .action  a,
   .dialog.page    .action  a,
   .dialog.page    .action  button,
   .dialog.page    .details button,
+  section.about            button,
   .push-card.page .details .action a,
   .push-card      .details button {
     background: black;
@@ -2673,6 +2695,9 @@
   .hoverable .push-card   .details .action a:hover,
              .push-card   .details .action a:active,
              .push-card   .details .action a:focus,
+  .hoverable  section.about        button:hover,
+              section.about        button:active,
+              section.about        button:focus,
   .hoverable .push-card   .details button:hover,
              .push-card   .details button:active,
              .push-card   .details button:focus {
@@ -3012,7 +3037,7 @@
     font-size: 1.5em;
     font-size: 2vmax;
   }
-  .mixable header.primary h1 {
+  .mixable header.primary h2 {
     float: right;
     color: white;
     color: rgba(255, 255, 255, 0.5);
@@ -3020,7 +3045,7 @@
   }
 
   /* Hide the rest of the header, the footer, and the push details */
-  .mixable header.primary h2,
+  .mixable header.primary h3,
   .mixable header.primary p,
   .mixable footer.primary,
   .mixable .push-card.page .details {
@@ -4000,39 +4025,6 @@
   section.about form {
     max-width: 20em;
     margin: 0 auto;
-  }
-
-  section.about .text label {
-    background: transparent;
-    border-width: 0;
-    padding: 0;
-    margin: 0;
-  }
-  section.about .text label span {
-    color: black;
-  }
-  section.about input[type="text"],
-  section.about input[type="email"] {
-    font-size: 1.125em; /* 18px / @font-size */
-    border-radius: 0.2222222222em; /* 4px / 18px */
-    line-height: 2.7777777778em; /* 50px / 18px */
-    min-height: 2.7777777778em;
-    padding-top: 0;
-    padding-bottom: 0;
-    text-align: center;
-  }
-
-  section.about .submit {
-    text-align: center;
-  }
-  section.about .submit button {
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.75);
-  }
-  .hoverable section.about button:hover,
-             section.about button:active,
-             section.about button:focus {
-    background-color: black;
   }
 
 
