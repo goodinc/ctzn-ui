@@ -624,15 +624,15 @@
     background-color: rgb(204, 204, 204); /* @aluminum */
     border-width: 0;
   }
-  .push.intro .action a {
+  .push.intro div .action a {
     color: white;
     border-width: 0;
     border-color: white;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.75);
   }
-  .push.intro .action a:hover,
-  .push.intro .action a:active,
-  .push.intro .action a:focus {
+  .push.intro div .action a:hover,
+  .push.intro div .action a:active,
+  .push.intro div .action a:focus {
     background-color: black;
   }
 
@@ -667,13 +667,13 @@
     color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
   }
-  .intro .action {
+  .intro div .action {
     clear: both;
     padding-top: 20px;
     margin-top: 0;
     margin-bottom: 0;
   }
-  .intro .action a {
+  .intro div .action a {
     display: block;
     text-align: center;
   }
