@@ -4965,6 +4965,13 @@
     top: 0.625em; /* 10px / 16px */
     left: 0.625em; /* 10px / 16px */
   }
+  .notifications .post-item header .icon {
+    position: absolute;
+    font-size: 1.1428571429em; /* 1 / 0.875 */
+
+    top: 1em; /* 10px / 16px */
+    left: 0.75em; /* 10px / 16px */
+  }
 
   .activity .more a,
   .activity .post-item {
