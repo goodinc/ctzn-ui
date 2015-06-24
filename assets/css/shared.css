@@ -3835,7 +3835,6 @@
     background: black;
     color: white;
     margin: 0 auto;
-    display: table;
   }
   .shareable-mix.page .video video {
     display: block;
