@@ -1,8 +1,8 @@
 # CTZN User Interface
 
-These are HTML and CSS patterns used on ctznapp.com and getctzn.com
+These are HTML and CSS patterns for [ctznapp.com](http://ctznapp.com) and [getctzn.com](http://getctzn.com)
 
-You can browse the patterns here:
+The patterns are published on GitHub:
 <http://goodinc.github.io/ctzn-ui/>
 
 ## Project Goals
