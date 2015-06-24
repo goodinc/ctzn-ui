@@ -691,25 +691,12 @@
   ----------------------------------------------- */
   ::-webkit-input-placeholder {
     text-transform: lowercase;
-    color: rgb(153, 153, 153); /* @nickel */
   }
   ::-moz-placeholder {
     text-transform: lowercase;
-    color: rgb(153, 153, 153); /* @nickel */
   }
   :-ms-input-placeholder {
     text-transform: lowercase;
-    color: rgb(153, 153, 153); /* @nickel */
-  }
-
-  input[disabled]::-webkit-input-placeholder {
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-  input[disabled]::-moz-placeholder {
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-  input[disabled]:-ms-input-placeholder {
-    color: rgb(204, 204, 204); /* @aluminum */
   }
 
 
@@ -1981,13 +1968,8 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
-
-  /* OPTIONAL: Reduce the space at the top of the page */
-  .page > div:first-child > h1:first-child {
-    margin-top: 0.7em;
-  }
-  .page > header + form   >  p:first-child {
-    margin-top: 0;
+  section.text.page {
+    background-color: white;
   }
 
   .page > article,
@@ -4542,7 +4524,7 @@
 
   /* =Join
   ----------------------------------------------- */
-  .join.page > div h2 {
+  .join.page > div h1 {
     font-weight: inherit;
     font-size: 1.5em;
     line-height: inherit;
@@ -4552,7 +4534,7 @@
     text-align: center;
   }
   @media (min-width: 40em) {
-    .join.page > div h2 {
+    .join.page > div h1 {
       padding-top: 0.75em;
       padding-bottom: 0.75em;
     }
@@ -4664,19 +4646,17 @@
   .ready.page {
     padding-bottom: 4.5em; /* @page-bottom-padding */
   }
-  .ready.page > div {
-    padding-top: 1.875em;
-  }
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
     .ready.page > div {
       margin-top: 3em;
     }
   }
-  .ready.page h2 {
-    margin-top: 0;
+  .ready.page h1 {
     margin-bottom: 0;
     text-align: center;
-    font-size     : 1.5em;     /* 24px / @font-size */
+
+    /* @h2 */
+    font-size: 1.5em;     /* 24px / @font-size */
     line-height: inherit;
   }
   .ready.page ul {
@@ -4803,11 +4783,12 @@
   .email.page > div {
     text-align: center;
   }
-  .email.page h2 {
-    margin-top: 0;
-    margin-bottom: 1.5em;
+  .email.page h1 {
+    /* @h2 */
+    font-size: 1.5em; /* 24px / @font-size */
+    line-height: inherit;
   }
-  .email.page h2 .icon {
+  .email.page h1 .icon {
     color: rgb(102, 102, 102); /* @tin */
     margin-bottom: 0.25em;
     font-size: 1.5em;
