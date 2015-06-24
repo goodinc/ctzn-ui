@@ -657,7 +657,6 @@
   .success label:after {
     /* @icon-checkmark */ /* @pear */
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg> */
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALVJREFUeNpiYBgFwx4wUsOQtDMMAkBqPpTbOMuE4QJMjoVKhu8HYgMk4UAYg4kGhn9AVsNEZcNBQVNIcRzgMdwRGP4fcFoA1GgA1QhSFIgcWeQYji2I+oEYZIACyBCohWQbjs2Cg0hsAaglCuQajjUOgAaB0nMCmiGgZLeeVMNxRjIWS9ABUYbjTUVAS86juZhkwwnlA0eoYWQbTjAfoEUsyYYTldGgloCSbyGpho+CEQIAAgwA/ilJznrDGpYAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDEwMiwgMjA0LCAwKSIgZD0iTTcuODU5IDE1LjUyMWwtNC42NTQtNC45MzZjLTAuNDc0LTAuNTAxLTAuNDUxLTEuMjk0IDAuMDUxLTEuNzY2czEuMjk1LTAuNDUgMS43NjcgMC4wNTFsMi44ODkgMy4wNjQgNy4wODktNy4wODljMC40ODktMC40ODkgMS4yNzktMC40ODkgMS43NjcgMHMwLjQ4OSAxLjI4IDAgMS43NjdsLTguOTEgOC45MXoiPjwvcGF0aD48L3N2Zz4=), none;
   }
 
@@ -1804,29 +1803,6 @@
     color: rgb(102, 102, 102); /* @tin */
     font-size: 0.75em;
     line-height: 2em;
-  }
-
-
-  /* For the push preview */
-  /* TODO: Consider combining this with header.primary */
-  .preview.page > header h1 svg {
-    width: 2em;
-    vertical-align: top;
-  }
-  .preview.page .welcome h2 {
-    text-align: center;
-
-    /* @tiny-headline */
-    font-size: 0.75em;
-    text-transform: uppercase;
-    color: rgb(159, 165, 162); /* @barium */
-  }
-  .preview.page .first {
-    background: rgba(255, 255, 255, 0.125);
-    color: white;
-    display: table;
-    margin: 0.75em auto 0;
-    padding: 0.375em 0.75em;
   }
 
 
