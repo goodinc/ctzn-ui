@@ -1,21 +1,21 @@
 # CTZN User Interface
 
-These are HTML prototypes that represent the CTZN app.
+These are HTML and CSS patterns used on ctznapp.com and getctzn.com
 
-The site is published on GitHub:
+You can browse the patterns here:
 <http://goodinc.github.io/ctzn-ui/>
 
 ## Project Goals
 
-* Make the app load fast.
+* Make the interface load quickly.
 
 * Use minimal bandwidth for images and styles.
 
-* Make the app usable on any device.
+* Make the interface usable on any device.
 
-* Make the app look good in modern browsers on any size screen.
+* Make the interface look good in modern browsers on any size screen.
 
-* Make the app accessible for users with diverse input devices, like touchscreens and screen readers.
+* Make the interface accessible for users with diverse input devices, like touchscreens and screen readers.
 
 * Use simple, consistent HTML patterns to make integration with templates easy.
 
@@ -25,23 +25,22 @@ The site is published on GitHub:
 
 ## Handy regular expressions
 
-These have been useful for updating files in this repository. (For example, using search and replace in Sublime Text)
+These are useful for updating files in this repository (for example, using search and replace in a text editor like Sublime Text).
 
 
-### Replace the icons in each HTML file (to add new icons)…
+### Find the icons in each HTML file…
 
     <!-- images/icons.svg -->[\s<a-z0-9A-Z="\.:/>,-/#]+?(?=</svg>)</svg>
 
 
-### Remove knockout attributes (to reduce the HTML to a bare minimum)…
+### Find knockout attributes…
 
     data-bind="[^"]*"
 
 
-### Remove knockout elements…
+### Find knockout elements…
 
     <!-- ko [^-]* -->
-    <!-- /ko -->
 
 
 ### Find the icon elements within a label…
