@@ -636,6 +636,10 @@
     background-color: black;
   }
 
+  .push.intro > .action {
+    margin-top: 37px;
+  }
+
   .intro h2,
   .intro .name {
     display: inline-block;
