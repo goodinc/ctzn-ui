@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Prototype / CTZN</title>
+  <title>Edit Push / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -277,63 +277,28 @@
     </symbol>
   </svg>
 
-  <section class="settings page">
+  <section class="edit page">
     <header>
-      <h1>Email Notifications</h1>
+      <h1>Request to join</h1>
 
-      <a href="settings.html" class="back">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
-          <use xlink:href="#icon-back"></use>
-          <foreignobject>Go Back</foreignobject>
-        </svg>
+      <a href="" class="back">
+        Cancel
       </a>
-
-      <p class="action">
-        <a href="">Done</a>
-      </p>
     </header>
 
-    <div class="blueberry push-card">
-      <h2 class="name">Free Lots Angeles</h2>
-    </div>
-
-    <div class="option-list">
-      <ul>
+    <form action="" method="post">
+      <ul class="text">
         <li>
-          <a href="#" role="checkbox" aria-checked="false">
-            comments on your post
-          </a>
-        </li>
-        <li>
-          <a href="#" role="checkbox" aria-checked="false">
-            comments in a conversation
-          </a>
-        </li>
-        <li>
-          <a href="#" role="checkbox" aria-checked="false">
-            mentioned in a post or conversation
-          </a>
-        </li>
-        <li>
-          <a href="#" role="checkbox" aria-checked="true">
-            @group mentions
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
-          </a>
-        </li>
-        <li>
-          <a href="#" role="checkbox" aria-checked="true">
-            requests to join
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
-          </a>
-        </li>
-        <li>
-          <a href="#" role="checkbox" aria-checked="true">
-            requests accepted
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
-          </a>
+          <label>
+            <span>enter message (optional)</span><br />
+            <textarea placeholder="enter message (optional)">Hello! I’d like to join your push for CicLAvia.</textarea>
+          </label>
         </li>
       </ul>
-    </div>
+      <p class="submit">
+        <button>Send</button>
+      </p>
+    </form>
 
   </section>
 
