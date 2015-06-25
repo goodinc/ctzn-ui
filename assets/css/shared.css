@@ -2504,12 +2504,12 @@
     margin-right: auto;
   }
 
-  .push-card .name + .action {
+  .push-card .name + p.action {
     margin-top: 1.25em;
   }
   .push-card .action a {
     background: rgb(51, 51, 51);
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.25);
     font-weight: normal;
   }
   .hoverable .push-card .action a:hover,
