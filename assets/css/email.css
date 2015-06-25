@@ -628,7 +628,7 @@
     color: white;
     border-width: 0;
     border-color: white;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.25);
   }
   .push.intro div .action a:hover,
   .push.intro div .action a:active,
@@ -678,6 +678,7 @@
     text-align: center;
   }
 
+  /* SHIM: Add space above buttons in the “Request to Join” email. */
   .intro > .action {
     margin-top: 37px;
   }
