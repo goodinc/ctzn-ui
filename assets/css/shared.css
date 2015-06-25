@@ -80,6 +80,10 @@
     line-height   : 1.4em;     /* 42px / 30px  */
     margin-top    : 1.4em;
     margin-bottom : 0.7em;     /* 1.4em / 2 */
+
+    /* OPTIONAL: Reduce the margin above the main headline,
+    since it tends to appear first in the main content area. */
+    margin-top    : 0.7em;     /* 1.4em / 2 */
   }
   h2 {
     font-size     : 1.5em;     /* 24px / @font-size */
@@ -1845,8 +1849,7 @@
     }
     /* Make space for the sticky header */
     header.primary ~ section.push,
-    header.primary ~ section.about,
-    header.primary ~ section.switch {
+    header.primary ~ main.about {
       padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
     }
 
@@ -1936,6 +1939,7 @@
   -----------------------------------------------
   ----------------------------------------------- */
 
+     main.page,
   section.page {
     background-color: rgb(246, 246, 246); /* @casper */
     color: rgb(5, 5, 5); /* @tungsten */
@@ -1945,6 +1949,7 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
+     main.text.page,
   section.text.page {
     background-color: white;
   }
@@ -2204,6 +2209,7 @@
   @media (min-width: 20em) and (min-height: 20em) {
 
     /* OPTIONAL: Make the header sticky */
+       main.page,
     section.page {
       padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
     }
@@ -2498,9 +2504,13 @@
     margin-right: auto;
   }
 
+  .push-card .name + .action {
+    margin-top: 1.25em;
+  }
   .push-card .action a {
-    background: rgb(204, 204, 204); /* @aluminum */
-    background: rgba(0, 0, 0, 0.1);
+    background: rgb(51, 51, 51);
+    background: rgba(0, 0, 0, 0.75);
+    font-weight: normal;
   }
   .hoverable .push-card .action a:hover,
              .push-card .action a:active,
@@ -2595,7 +2605,7 @@
   .dialog.page    .action  a,
   .dialog.page    .action  button,
   .dialog.page    .details button,
-  section.about            button,
+  main.about            button,
   .push-card.page .details .action a,
   .push-card      .details button {
     background: black;
@@ -2647,9 +2657,9 @@
   .hoverable .push-card   .details .action a:hover,
              .push-card   .details .action a:active,
              .push-card   .details .action a:focus,
-  .hoverable  section.about        button:hover,
-              section.about        button:active,
-              section.about        button:focus,
+  .hoverable  main.about        button:hover,
+              main.about        button:active,
+              main.about        button:focus,
   .hoverable .push-card   .details button:hover,
              .push-card   .details button:active,
              .push-card   .details button:focus {
@@ -3861,29 +3871,29 @@
 
   /* =About
   ----------------------------------------------- */
-  section.about {
+  main.about {
     background-color: rgb(51, 51, 51); /* @iron */
     color: rgb(204, 204, 204); /* @aluminum */
     text-align: center;
   }
-  section.about .header {
+  main.about .header {
     padding: 2.5em 1.5em 3em;
   }
-  section.about h1.logo {
+  main.about h1.logo {
     font-size: 4em;
     line-height: 1;
     margin: 0.5em auto 0;
     color: black;
   }
-  section.about h1.logo svg.icon {
+  main.about h1.logo svg.icon {
     width : 2.6354166667em; /* 253px / 96px */
     height: 1em;            /*  96px / 96px */
   }
-  section.about h1.logo + h2 {
+  main.about h1.logo + h2 {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
     font-weight: bold;
   }
-  section.about h2 strong {
+  main.about h2 strong {
     color: white;
     font-weight: inherit;
   }
@@ -3901,79 +3911,79 @@
   }
 
   /* @h2 */
-  section.about section h3 {
+  main.about section h3 {
     margin-top: 0;
     font-size: 1.5em;     /* 24px / @font-size */
     line-height: inherit;
   }
 
-  section.about .feature h3 strong {
+  main.about .feature h3 strong {
     color: white;
     font-weight: inherit;
   }
   @media (min-width: 20em) {
-    section.about .feature h3 strong {
+    main.about .feature h3 strong {
       display: block;
     }
   }
-  section.about .feature .text svg.icon {
+  main.about .feature .text svg.icon {
     margin: 0 0.75em 0.75em;
     width: 2em;
     height: 2em;
     color: white;
   }
-  section.about .feature .text svg.icon:first-child {
+  main.about .feature .text svg.icon:first-child {
     font-size: 1.25em;
   }
 
   /* OPTIONAL: Add space below groups of icons, for easier reading */
-  section.about section .icons {
+  main.about section .icons {
     margin-bottom: 1.5em;
   }
 
   /* OPTIONAL: Position the icons on the left */
   @media (min-width: 30em) {
-    section.about .feature h3 {
+    main.about .feature h3 {
       margin-bottom: 0;
     }
-    section.about .feature p {
+    main.about .feature p {
       margin-top: 0.375em;
       margin-bottom: 0;
     }
-    section.about .feature .icons,
-    section.about .feature h3 {
+    main.about .feature .icons,
+    main.about .feature h3 {
       display: inline-block;
       vertical-align: top;
       text-align: left;
     }
-    section.about .feature .icons {
+    main.about .feature .icons {
       margin-right: 1.5em;
     }
   }
 
-  section.about .feature .text,
-  section.about .feature .text + p {
+  main.about .feature .text,
+  main.about .feature .text + p {
     display: inline-block;
     vertical-align: middle;
     max-width: 100%;
   }
-  section.about .feature .text + p {
+  main.about .feature .text + p {
     padding-left: 1.5em;
     padding-right: 1.5em;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
-  section.about .feature .email-image img {
+  main.about .feature .email-image img {
     border: 1px solid rgba(0, 0, 0, 0.25);
   }
   @media (min-width: 30em) {
-    section.about .feature p.email-image {
+    main.about .feature p.email-image {
       margin: 3em;
     }
   }
 
-  section.about form {
+  main.about form {
     max-width: 20em;
     margin: 0 auto;
   }
@@ -5069,6 +5079,12 @@
     color: white;
     color: rgba(255, 255, 255, 0.95);
   }
+  .pushes h1,
+  .pushes .option-list h3 {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
 
   .switch ul,
   .switch li {
@@ -5491,11 +5507,11 @@
   /* =Switch Push (intro)
   ----------------------------------------------- */
   /*
-  section.switch li:nth-child(2n+1) {
+  main.pushes .switch li:nth-child(2n+1) {
     -webkit-animation: slide-left 0.2s both;
             animation: slide-left 0.2s both;
   }
-  section.switch li:nth-child(2n) {
+  main.pushes .switch li:nth-child(2n) {
     -webkit-animation: slide-right 0.2s both;
             animation: slide-right 0.2s both;
   }
