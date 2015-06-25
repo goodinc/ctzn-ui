@@ -4976,7 +4976,7 @@
     position: absolute;
     font-size: 1.1428571429em; /* 1 / 0.875 */
 
-/* SHIM: These numbers are arbitrary, but seem to work well */
+    /* SHIM: These numbers are arbitrary, but seem to work well. */
     top: 1em;
     left: 0.75em;
   }
