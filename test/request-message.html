@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Send a Message / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,20 +19,14 @@
     })();
   </script>
 
-  <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-    }
-  </style>
+  <script src="../assets/js/placeholder.js"></script>
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -284,96 +277,30 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../design/">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section class="edit page">
+    <header>
+      <h1>Send a Message</h1>
 
-  <h1>Design</h1>
+      <a href="" class="back">
+        Cancel
+      </a>
+    </header>
 
-  <div class="pattern-list">
-    <section>
-      <h2>Flagged Content</h2>
-      <ul>
-        <li><a href="../test/notifications.html">Notifications</a></li>
-        <li><a href="../email/inappropriate.html">Email (inappropriate)</a></li>
-        <li><a href="../email/cleared.html">Email (cleared)</a></li>
-        <li><a href="../test/settings-email.html">Settings</a></li>
+    <form action="" method="post">
+      <ul class="text">
+        <li>
+          <label>
+            <span>Enter message</span><br />
+            <textarea placeholder="Enter message"></textarea>
+          </label>
+        </li>
       </ul>
-    </section>
-    <section>
-      <h2>Request to Join</h2>
-      <ul>
-        <li><a href="../test/preview-request.html">Preview</a></li>
-        <li><a href="../test/request-form.html">Form</a></li>
-        <li><a href="../test/push.html">Push</a></li>
-        <li><a href="../test/requests.html">Requests</a></li>
-        <li><a href="../test/requests-message.html">Requests (alternate)</a></li>
-        <li><a href="../email/request.html">Email (request)</a></li>
-        <li><a href="../email/accepted.html">Email (accepted)</a></li>
-        <li><a href="../test/settings-email.html">Settings</a></li>
-        <li><a href="../test/request-decline.html">Decline Form</a></li>
-        <li><a href="../test/request-message.html">Decline Form (alternate)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Facebook Error</h2>
-      <ul>
-        <li><a href="../test/notifications.html">Notifications</a></li>
-        <li><a href="../email/error.html">Email</a></li>
-        <li><a href="../test/settings.html">Settings</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Curators</h2>
-      <ul>
-        <li><a href="../test/members.html">Members</a></li>
-        <li><a href="../test/members-options.html">Members (dialog)</a></li>
-        <li><a href="../test/profile.html">Profile</a></li>
-        <li><a href="../test/profile-options.html">Profile (dialog)</a></li>
-        <li><a href="../test/push.html">Hidden Post</a></li>
-        <li><a href="../test/curator.html">Tips</a></li>
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Comments</h2>
-      <ul>
-        <li><a href="../test/push.html">Push</a></li>
-        <li><a href="../test/post.html">Post</a></li>
-        <li><a href="../test/comments.html">Comments</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Edit Push</h2>
-      <ul>
-        <li><a href="../test/settings.html">Settings</a></li>
-        <li><a href="../test/push-edit.html">Form</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Pushes</h2>
-      <ul>
-        <li><a href="../test/switch.html">Switch</a></li>
-        <li><a href="../test/switch-empty.html">Switch (empty)</a></li>
-        <li><a href="../test/profile.html">Profile</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Create Mix</h2>
-      <ul>
-        <li><a href="../test/mix-title.html">Title</a></li>
-        <li><a href="../test/mix-finish.html">Message</a></li>
-      </ul>
-    </section>
-    -->
-  </div>
+      <p class="submit">
+        <button>Send</button>
+      </p>
+    </form>
+
+  </section>
 
 </body>
 </html>

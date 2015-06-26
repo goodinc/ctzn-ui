@@ -1501,6 +1501,9 @@
     border-color: rgb(204, 204, 204); /* @aluminum */
     vertical-align: middle;
   }
+  .post-item footer .action form {
+    display: inline;
+  }
   .header.push-card .meta button {
     margin-top: -0.0625em; /* 1px / 16px */
     font-size: inherit;
