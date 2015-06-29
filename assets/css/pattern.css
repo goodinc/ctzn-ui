@@ -221,7 +221,11 @@
     position: relative;
   }
 
-  body.pattern section.editor.page {
+  body.pattern div.post-options,
+  body.pattern div.post-options.active div,
+  body.pattern section.message.active,
+  body.pattern section.editor.page,
+  body.pattern section.update-countdown {
     position: relative;
   }
 
@@ -232,6 +236,18 @@
     height: auto;
   }
 
+  /* Buttons */
+  .update-indicator,
+  .toggle-mixable,
+  .image-viewer .action,
+  .image-viewer .image-options,
+  .edit-push.page    > header ~ form .submit,
+  .edit-profile.page > header ~ form .submit,
+  .post-editor.page  > header ~ form .submit,
+  .mix-editor.page   > header ~ form .submit {
+    position: relative;
+  }
+
   body.pattern .developer.action {
     position: static;
     margin-top: 1.5em;
@@ -240,4 +256,5 @@
   section.pattern {
     margin-top: 6em;
   }
+
 
