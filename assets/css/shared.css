@@ -2350,7 +2350,7 @@
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
   }
-  .option-list a {
+  .option-list a.disabled {
     background-image: none;
   }
 
