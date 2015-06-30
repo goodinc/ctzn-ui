@@ -520,6 +520,7 @@
     font-weight: inherit;
   }
 
+  .option-list p.note,
   .signup.page .note,
   form .note {
     display: block;
@@ -2290,7 +2291,6 @@
 
     color: rgb(102, 102, 102); /* @tin */
   }
-  .invite-link,
   .option-list a,
   .option-list button {
     display: block;
@@ -2303,13 +2303,6 @@
     border-radius: 0.25em;
     background: white;
     color: rgb(250, 56, 136); /* @strawberry */
-  }
-  .invite-link {
-    text-align: center;
-
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
   }
 
   /* TRICKY: Buttons don’t fill the full width of the screen (even with “display” set to “block”).
@@ -2343,6 +2336,9 @@
     text-align: center;
   }
   .option-list a {
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
 
     /* @background-icon */
     background-size: 1.5em auto;
@@ -2353,6 +2349,9 @@
     /* @icon-right */ /* @aluminum */
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
+  }
+  .option-list a {
+    background-image: none;
   }
 
   .option-list li + li a,
