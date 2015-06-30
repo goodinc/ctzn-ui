@@ -2291,6 +2291,7 @@
 
     color: rgb(102, 102, 102); /* @tin */
   }
+  .option-list .text,
   .option-list a,
   .option-list button {
     display: block;
@@ -2300,8 +2301,12 @@
     text-transform: lowercase;
     font-weight: normal;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
-    border-radius: 0.25em;
     background: white;
+    position: relative;
+    border-radius: 0;
+  }
+  .option-list a,
+  .option-list button {
     color: rgb(250, 56, 136); /* @strawberry */
   }
 
@@ -2321,6 +2326,7 @@
 
   /* OPTIONAL: Make options stick to the sides at narrow window sizes. */
   @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .option-list .text,
     .option-list a,
     .option-list button {
       border-left-width: 0;
@@ -2357,11 +2363,6 @@
   .option-list li + li a,
   .option-list li + li button {
     border-top-width: 0;
-  }
-  .option-list a,
-  .option-list button {
-    border-radius: 0;
-    position: relative;
   }
   .tags.option-list button {
     text-align: left;
