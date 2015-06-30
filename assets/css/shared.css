@@ -2290,6 +2290,7 @@
 
     color: rgb(102, 102, 102); /* @tin */
   }
+  .invite-link,
   .option-list a,
   .option-list button {
     display: block;
@@ -2302,6 +2303,13 @@
     border-radius: 0.25em;
     background: white;
     color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .invite-link {
+    text-align: center;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
 
   /* TRICKY: Buttons don’t fill the full width of the screen (even with “display” set to “block”).
