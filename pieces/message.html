@@ -2,31 +2,28 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Push Card / CTZN</title>
+  <title>CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <script src="../assets/js/placeholder.js"></script>
+
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
+  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
     (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
-  <script src="../assets/js/placeholder.js"></script>
-
-  <!--[if lte IE 8]>
-    <script src="../assets/js/html5.js"></script>
-  <![endif]-->
-
 </head>
-<body>
+<body class="pattern">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -277,37 +274,387 @@
     </symbol>
   </svg>
 
-  <header class="primary">
-    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-  </header>
 
-  <section class="plumb push-card page">
+      <section class="upload-message error" role="status">
+        <h1>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+          <span>Unable to connect to the server, please retry later.</span>
+        </h1>
+        <ul>
+          <li>
+            <button>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Try again</foreignobject></svg>
+            </button>
+          </li>
+          <li>
+            <button>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Cancel</foreignobject></svg>
+            </button>
+          </li>
+        </ul>
+      </section>
 
-    <div class="details">
-      <h1 class="name">Free Lots Angeles</h1>
-      <p class="about">Free Lots Angeles organizes "pop up" events on vacant lots.</p>
+
+  <p class="update-indicator action">
+    <a href="">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-sync"></use></svg>
+      Update
+    </a>
+  </p>
+
+
+  <section class="message active" role="status">
+    <div>
+      <p>Profile Saved. That profile update looks great on you.</p>
+    </div>
+    
+  </section>
+
+
+  <section class="loading-message" role="status">
+    <h1><span class="loading-icon"></span> <span class="message">Loading...</span></h1>
+  </section>
+
+  <section class="loading" role="status">
+    <div><div>
+      <h1><span class="loading-icon"></span> <span class="message">Loading images...</span></h1>
+    </div></div>
+  </section>
+
+  <section class="loading" role="status">
+    <div><div>
+      <h1>
+        <svg class="icon" width="100" height="38" viewBox="0 0 100 38">
+          <use xlink:href="#icon-ctzn"></use>
+          <foreignobject>CTZN</foreignobject>
+        </svg>
+        <span class="loading-icon"></span>
+      </h1>
+    </div></div>
+  </section>
+
+
+  <section class="error-message">
+    <h1 role="status">Well, this is embarrassing. Our server appears to be offline</p></h1>
+    <p><button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Try again</foreignobject></svg></button></p>
+  </section>
+
+
+  <p class="update-indicator action">
+    <a href="">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-sync"></use></svg>
+      Update
+    </a>
+  </p>
+
+
+
+  <section class="update-countdown" role="status">
+    <h1>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-alert"></use></svg>
+      Updating in 3…
+    </h1>
+  </section>
+
+
+  <section class="upload-message" role="status">
+    <h1>
+      <!-- @placeholder-image -->
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+      Sending
+      <span class="sending icon"></span>
+    </h1>
+  </section>
+
+
+
+  <section class="upload-message error" role="status">
+    <h1>Oops! That email address isn’t valid.</h1>
+  </section>
+
+  <section class="empty-message">
+    <h1>Empty Content</h1>
+    <ul class="action">
+      <li><a href="#settings">Action to take</a></li>
+      <li><a href="#edit-post">Another action to take</a></li>
+    </ul>
+  </section>
+
+
+
+
+    <section class="upload-message error" role="status">
+      <h1>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+        <span>Unable to connect to the server, please retry later.</span>
+      </h1>
+      <ul>
+        <li>
+          <button>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Try again</foreignobject></svg>
+          </button>
+        </li>
+        <li>
+          <button>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Cancel</foreignobject></svg>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+
+  <form>
+    <p class="validation-message">Oops! There’s something wrong with that field.</p>
+  </form>
+
+
+  <p class="update-indicator action">
+    <a href="">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-sync"></use></svg>
+      Update
+    </a>
+  </p>
+
+  <section class="update-countdown" role="status">
+    <h1>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-alert"></use></svg>
+      Updating in 3…
+    </h1>
+  </section>
+
+
+
+
+  <section class="message active" role="status">
+    <div class="error">
+      <p>Well, this is embarrassing. Something went wrong when updating your profile. Care to try again?</p>
+    </div>
+    
+  </section>
+
+
+
+
+  <section class="notifications page">
+    <header>
+      <h1>Notifications</h1>
+      <a href="#push" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></svg>
+      </a>
+    </header>
+
+    <div>
+      <section class="empty-message">
+        <h1>Activity from other people</h1>
+        <p>When someone loves or comments on one of your posts, you’ll see it here.</p>
+      </section>
+    </div>
+  </section>
+
+
+
+    <div class="option-list">
+      <ul>
+        <li>
+          <a href="">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
+            Invite more people via email
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+
+  <section class="push">
+
+    <header class="plumb header push-card">
+      <h1 class="name">Good</h1>
+      <h2 class="about">Pushing the world forward</h2>
 
       <div class="meta">
         <p>
-          <span class="count">53</span>
-          <span class="label">Posts</span>
+          <span class="count">328</span>
+          <span class="label">Moments</span>
         </p>
         <p>
-          <span class="count">7</span>
-          <span class="label">People</span>
+          <a href="members.html">
+            <span class="count">36</span>
+            <span class="label">Members</span>
+          </a>
+        </p>
+        <p class="settings">
+          <a href="#settings">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use><foreignObject>My Settings</foreignObject></svg>
+          </a>
         </p>
       </div>
+    </header>
+    <ul class="create">
+      <li>
+        <a href="#switch">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-switch"></use></svg>
+          Switch Push
+        </a>
+      </li>
+      <li>
+        <a href="#edit-post">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-note"></use></svg>
+          New Post
+        </a>
+      </li>
+      <li>
+        <a href="#new-mix">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
+          New Mix
+        </a>
+      </li>
+      <li>
+        <a href="#mixes">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mixes"></use></svg>
+          My Mixes
+        </a>
+      </li>
+    </ul>
 
-      <form action="" method="post">
-        <p class="submit">
-          <button type="submit">Join Now</button>
-        </p>
-      </form>
+    <div class="option-list">
+      <ul>
+        <li>
+          <!-- KUDOS: http://stackoverflow.com/questions/10356329/mailto-link-multiple-body-lines -->
+          <a href="mailto:?subject=Join our push on CTZN!&amp;body=Dear team — We have been invited to the private beta of CTZN, a new app from GOOD http://getctzn.com/about%0D%0A%0D%0ATo join our push, simply visit: http://ctznapp.com/[invitecode]%0D%0A%0D%0AOnward!">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
+            Invite more people via email
+          </a>
+        </li>
+      </ul>
     </div>
+
+    <section class="empty-message">
+      <h1>Start Pushing!</h1>
+      <ul class="action">
+        <li><a href="#settings">Connect social accounts</a></li>
+        <li><a href="#edit-post">Create a new post</a></li>
+      </ul>
+    </section>
 
   </section>
 
-  <script src="../assets/js/color.js"></script>
+
+
+
+
+    <section class="page">
+      <header>
+        <h1>Page Title</h1>
+
+        <a href="" class="back">
+          Cancel
+        </a>
+      </header>
+
+      <div class="plumb header push-card">
+
+        <div class="image">
+          <span class="avatar">
+            <span class="size100 grape" data-content="a"></span>
+          </span>
+        </div>
+
+        <div class="details">
+          <h2 class="name">aubrey</h2>
+          <p class="joined">Joined <time datetime="2015-02-06T18:41:32.000+00:00">5 weeks ago</time></p>
+        </div>
+
+        <div class="meta">
+          <p>
+            <span class="count">4</span>
+            <span class="label">Posts</span>
+          </p>
+          <p>
+            <a href="#profile-pushes">
+              <span class="count">1</span>
+              <span class="label">Push</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <section class="upload-message error" role="status">
+        <h1>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+          <span>Unable to connect to the server, please retry later.</span>
+        </h1>
+        <ul>
+          <li>
+            <button>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Try again</foreignobject></svg>
+            </button>
+          </li>
+          <li>
+            <button>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Cancel</foreignobject></svg>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <ol class="post-list">
+        <li id="post-3386">
+          <article class="post-item">
+            <header>
+              <h3>
+                  <span class="avatar"></span>
+                  <span class="avatar">
+                    <span class="size30 grape" data-content="a"></span>
+                  </span>
+                  @<span>aubrey</span>
+              </h3>
+              <p class="source">
+                
+                
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg>
+                
+              </p>
+              <p>
+                <a href="#post">
+                  <time datetime="2015-03-13T17:38:25+00:00">2 hours ago</time>
+                </a>
+              </p>
+            </header>
+
+            <a href="#post" class="body"><p><img src="https://m.ctznapp.qa2.goodalpaca.com/s3/qa.ctzn/f8bbf48f8633d57cd5ee37144ddf285998227aa7=s500x500" alt="939929128917574474_3757855">
+  You guys. We have office chickens @goodhq 🐤🐥🐣</p></a>
+
+            <footer>
+            <ul class="action">
+              <li>
+                <button role="checkbox" aria-checked="false">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-heart"></use><foreignObject>I like this</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="#post">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-reply"></use></svg> Comment
+                </a>
+              </li>
+              
+              <li>
+                
+                  <a href="#post-options" class="options">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-more"></use><foreignObject>Options</foreignObject></svg>
+                  </a>
+                
+              </li>
+            </ul>
+            
+            </footer>
+          </article>
+
+        </li>
+      </ol>
+
+    </section>
+
 
 </body>
 </html>

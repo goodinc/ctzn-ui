@@ -2,31 +2,28 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Push Card / CTZN</title>
+  <title>CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <script src="../assets/js/placeholder.js"></script>
+
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
+  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
     (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
-  <script src="../assets/js/placeholder.js"></script>
-
-  <!--[if lte IE 8]>
-    <script src="../assets/js/html5.js"></script>
-  <![endif]-->
-
 </head>
-<body>
+<body class="pattern">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -277,37 +274,38 @@
     </symbol>
   </svg>
 
-  <header class="primary">
-    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-  </header>
+  <section class="image-viewer">
 
-  <section class="plumb push-card page">
+    <div class="image">
+      <p>
+        <a href="#back"><img alt="Uploaded image at largest size" src="https://m.ctznapp.com/s3/ctzn/71100f42c4c6229e80aa841440c856e3d5b28ae7=s2048x2048" style="height: 866px"></a>
+      </p>
+    </div>
 
-    <div class="details">
-      <h1 class="name">Free Lots Angeles</h1>
-      <p class="about">Free Lots Angeles organizes "pop up" events on vacant lots.</p>
+    <div class="image-options">
+      <ul>
+        <li>
+          <button id="zoom-in">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-add"></use><foreignObject>Zoom In</foreignObject></svg>
+          </button>
+        </li>
+        <li>
+          <button id="zoom-out">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-subtract"></use><foreignObject>Zoom Out</foreignObject></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
 
-      <div class="meta">
-        <p>
-          <span class="count">53</span>
-          <span class="label">Posts</span>
-        </p>
-        <p>
-          <span class="count">7</span>
-          <span class="label">People</span>
-        </p>
-      </div>
+    <p class="action">
+      <a href="#back">Done</a>
+    </p>
 
-      <form action="" method="post">
-        <p class="submit">
-          <button type="submit">Join Now</button>
-        </p>
-      </form>
+    <div class="empty-images">
+      <span class="loading-icon"></span>
     </div>
 
   </section>
-
-  <script src="../assets/js/color.js"></script>
 
 </body>
 </html>

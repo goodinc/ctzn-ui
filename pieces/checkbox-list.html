@@ -2,31 +2,28 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Push Card / CTZN</title>
+  <title>CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <script src="../assets/js/placeholder.js"></script>
+
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
+  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
     (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
-  <script src="../assets/js/placeholder.js"></script>
-
-  <!--[if lte IE 8]>
-    <script src="../assets/js/html5.js"></script>
-  <![endif]-->
-
 </head>
-<body>
+<body class="pattern">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -277,37 +274,195 @@
     </symbol>
   </svg>
 
-  <header class="primary">
-    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-  </header>
+  <section class="settings page">
+    <header>
+      <h1>Email Notifications</h1>
 
-  <section class="plumb push-card page">
+      <a href="settings.html" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+          <use xlink:href="#icon-back"></use>
+          <foreignobject>Go Back</foreignobject>
+        </svg>
+      </a>
 
-    <div class="details">
-      <h1 class="name">Free Lots Angeles</h1>
-      <p class="about">Free Lots Angeles organizes "pop up" events on vacant lots.</p>
+      <p class="action">
+        <a href="">Done</a>
+      </p>
+    </header>
 
-      <div class="meta">
-        <p>
-          <span class="count">53</span>
-          <span class="label">Posts</span>
-        </p>
-        <p>
-          <span class="count">7</span>
-          <span class="label">People</span>
-        </p>
-      </div>
+    <div class="blueberry push-card">
+      <h2 class="name">Free Lots Angeles</h2>
+    </div>
 
-      <form action="" method="post">
-        <p class="submit">
-          <button type="submit">Join Now</button>
-        </p>
-      </form>
+    <div class="option-list">
+      <ul>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            @group mentions
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="false">
+            comments on your post
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="false">
+            comments in a conversation
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            inappropriate posts
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="false">
+            mentioned in a post or conversation
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            requests to join
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            requests accepted
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
+          </a>
+        </li>
+      </ul>
     </div>
 
   </section>
 
-  <script src="../assets/js/color.js"></script>
+
+
+
+
+  <section class="settings page">
+    <header>
+      <h1>Connect</h1>
+
+      <a href="#push" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignobject>←</foreignobject></svg>
+        <span>Go back</span>
+      </a>
+    </header>
+
+    <div class="introduction">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use></svg>
+      <h2>
+        Post to CTZN from<br />Instagram, Twitter, or Facebook<br />when you connect your&nbsp;accounts
+      </h2>
+    </div>
+
+    <form action="" method="post">
+      <div class="option-list">
+        <h3>Your Acccounts</h3>
+        <ul>
+          <li class="instagram">
+            <a href="#instagram" role="checkbox" aria-checked="false">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use></svg>
+              <span>Connect my Instagram</span>
+            </a>
+          </li>
+          <li class="twitter">
+            <a href="#twitter-add" role="checkbox" aria-checked="true">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use><foreignobject>Twitter</foreignobject></svg>
+              <span>@supervolunteerla</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Connected</foreignobject></svg>
+            </a>
+          </li>
+          <li class="facebook">
+            <a href="#facebook-add" role="checkbox" aria-checked="true">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignobject>Facebook</foreignobject></svg>
+              <span>@supervolunteerla</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Connected</foreignobject></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="submit"><button type="submit">Next</button></p>
+    </form>
+
+    <aside>
+      <h3>Pssst…</h3>
+      <p>You can tell us which hashtags you use for 826LA Volunteers, next…</p>
+    </aside>
+
+  </section>
+
+
+
+
+  <section class="settings page">
+    <header>
+      <h1>Hashtags</h1>
+
+      <a href="#push" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignobject>←</foreignobject></svg>
+        <span>Go back</span>
+      </a>
+    </header>
+
+    <div class="introduction">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-hashtag"></use></svg>
+      <h2>
+        Add the hashtags you use for<br />
+        <strong>Free Lots Angeles</strong>
+      </h2>
+      <p>
+        (These hashtags help you post to CTZN
+        from your connected social&nbsp;accounts)
+      </p>
+    </div>
+
+    <div class="tags option-list">
+      <h3>Your Hashtags</h3>
+      <ul>
+        <li>
+          <form action="" method="post">
+            <button type="submit">
+              <span>#freelots</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Delete</foreignobject></svg>
+            </button>
+          </form>
+        </li>
+        <li>
+          <form action="" method="post">
+            <button type="submit">
+              <span>#freelotsla</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Delete</foreignobject></svg>
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+
+    <div class="option-list">
+      <ul>
+        <li>
+          <a href="#add-hashtag">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <use xlink:href="#icon-add"></use>
+            </svg>
+            <span>Add hashtag</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <form>
+      <p class="submit"><button type="submit">Done</button></p>
+    </form>
+
+  </section>
+
 
 </body>
 </html>

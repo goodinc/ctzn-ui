@@ -21,6 +21,17 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url(../fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix);
+    src: url(../fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix) format("eot"),
+         url(../fonts/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff) format("woff"),
+         url(../fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf) format("truetype"),
+         url(../fonts/8152bc4e-d700-4c78-b6be-326893e6f53f.svg#8152bc4e-d700-4c78-b6be-326893e6f53f) format("svg");
+    font-weight: bold;
+    font-style: normal;
+  }
+
   /*
   @font-face {
     font-family: "Proxima Nova";
@@ -43,16 +54,4 @@
     font-weight: normal;
     font-style: italic;
   }
-
-  @font-face {
-    font-family: "Proxima Nova";
-    src: url(../fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix);
-    src: url(../fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix) format("eot"),
-         url(../fonts/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff) format("woff"),
-         url(../fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf) format("truetype"),
-         url(../fonts/8152bc4e-d700-4c78-b6be-326893e6f53f.svg#8152bc4e-d700-4c78-b6be-326893e6f53f) format("svg");
-    font-weight: bold;
-    font-style: normal;
-  }
   */
-

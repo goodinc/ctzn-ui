@@ -2,31 +2,28 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Push Card / CTZN</title>
+  <title>CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <script src="../assets/js/placeholder.js"></script>
+
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
+  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
     (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
-  <script src="../assets/js/placeholder.js"></script>
-
-  <!--[if lte IE 8]>
-    <script src="../assets/js/html5.js"></script>
-  <![endif]-->
-
 </head>
-<body>
+<body class="pattern">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -277,37 +274,555 @@
     </symbol>
   </svg>
 
-  <header class="primary">
-    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-  </header>
+  <section class="edit-profile page">
+    <header>
+      <h1>Edit Profile</h1>
 
-  <section class="plumb push-card page">
+      <a href="#profile" class="back">
+        Cancel
+      </a>
+    </header>
+    <!--
+    <section class="upload-message" role="status">
+      <h1>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+        Sending
+        <span class="icon sending"></span>
+      </h1>
+    </section>
+    -->
+    <form class="has-icon">
+      <p class="file">
+        <!-- For the web app
+        <label>
+          <input type="file" accept="image/*" />
+          <span>
+            <img src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100"  height="100" width="100" alt="" /><br />
+            <span>Change photo</span>
+          </span>
+        </label>
+        -->
+        <!-- For the hybrid app -->
+          <span class="avatar">
+            <span class="size100 sky" data-content="T"></span>
+          </span>
+            <span class="loading-image"><span class="sending icon"></span></span>
+        <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"  height="100" width="100" alt="Profile image" />
+        <button>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-picture-stack"></use><foreignobject>Photo library</foreignobject></svg>
+        </button>
+        <button>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-camera"></use><foreignobject>Take photo</foreignobject></svg>
+        </button>
+      </p>
+      <p class="text full-name">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user"></use></svg><span>Full Name</span><br />
+          <input type="text" placeholder="Full Name" name="full_name" />
+        </label>
+      </p>
+      <p class="text disabled">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user-circle"></use></svg><span>Username</span><br />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-info-circle"></use></svg><span>Biography</span><br />
+          <textarea placeholder="Bio" name="bio"></textarea>
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit">Done</button>
+      </p>
+    </form>
 
-    <div class="details">
-      <h1 class="name">Free Lots Angeles</h1>
-      <p class="about">Free Lots Angeles organizes "pop up" events on vacant lots.</p>
+    <aside class="option-list">
+      <ul>
+        <li>
+          <a href="change-password.html">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg>
+            Change Password
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-exit"></use></svg>
+            Log Out
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close-circle"></use></svg>
+            Delete Profile
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </section>
 
-      <div class="meta">
-        <p>
-          <span class="count">53</span>
-          <span class="label">Posts</span>
-        </p>
-        <p>
-          <span class="count">7</span>
-          <span class="label">People</span>
-        </p>
-      </div>
 
-      <form action="" method="post">
-        <p class="submit">
-          <button type="submit">Join Now</button>
-        </p>
-      </form>
+
+
+
+
+  <section class="edit-profile page">
+    <header>
+      <h1>Edit Profile</h1>
+
+      <a href="#profile" class="back">
+        Cancel
+      </a>
+    </header>
+    <!--
+    <section class="upload-message" role="status">
+      <h1>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+        Sending
+        <span class="icon sending"></span>
+      </h1>
+    </section>
+    -->
+    <form class="has-icon">
+      <p class="file">
+        <!-- For the web app
+        <label>
+          <input type="file" accept="image/*" />
+          <span>
+            <img src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100"  height="100" width="100" alt="" /><br />
+            <span>Change photo</span>
+          </span>
+        </label>
+        -->
+        <!-- For the hybrid app -->
+        <!--
+        <span class="loading-image"><span class="sending icon"></span></span>
+        -->
+        <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"  height="100" width="100" alt="Profile image" />
+        <button>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-picture-stack"></use><foreignobject>Photo library</foreignobject></svg>
+        </button>
+        <button>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-camera"></use><foreignobject>Take photo</foreignobject></svg>
+        </button>
+      </p>
+      <p class="text full-name">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user"></use></svg><span>Full Name</span><br />
+          <input type="text" placeholder="Full Name" name="full_name" />
+        </label>
+      </p>
+      <p class="text disabled">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user-circle"></use></svg><span>Username</span><br />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-info-circle"></use></svg><span>Biography</span><br />
+          <textarea placeholder="Bio" name="bio"></textarea>
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit">Done</button>
+      </p>
+    </form>
+
+    <aside class="option-list">
+      <ul>
+        <li>
+          <a href="change-password.html">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg>
+            Change Password
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-exit"></use></svg>
+            Log Out
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close-circle"></use></svg>
+            Delete Profile
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+
+
+
+
+
+
+  <section class="edit-profile page">
+    <header>
+      <h1>Edit Profile</h1>
+
+      <a href="#profile" class="back">
+        Cancel
+      </a>
+    </header>
+    <!--
+    <section class="upload-message" role="status">
+      <h1>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="" />
+        Sending
+        <span class="icon sending"></span>
+      </h1>
+    </section>
+    -->
+    <form class="has-icon">
+      <p class="file">
+        <!-- For the web app
+        <label>
+          <input type="file" accept="image/*" />
+          <span>
+            <img src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100"  height="100" width="100" alt="" /><br />
+            <span>Change photo</span>
+          </span>
+        </label>
+        -->
+        <!-- For the hybrid app -->
+        <span class="loading-image"><span class="sending icon"></span></span>
+        <!--
+        <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"  height="100" width="100" alt="Profile image" />
+        -->
+        <button>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-picture-stack"></use><foreignobject>Photo library</foreignobject></svg>
+        </button>
+        <button>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-camera"></use><foreignobject>Take photo</foreignobject></svg>
+        </button>
+      </p>
+      <p class="text full-name">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user"></use></svg><span>Full Name</span><br />
+          <input type="text" placeholder="Full Name" name="full_name" />
+        </label>
+      </p>
+      <p class="text disabled">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user-circle"></use></svg><span>Username</span><br />
+          <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" />
+        </label>
+      </p>
+      <p class="text">
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-info-circle"></use></svg><span>Biography</span><br />
+          <textarea placeholder="Bio" name="bio"></textarea>
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit">Done</button>
+      </p>
+    </form>
+
+    <aside class="option-list">
+      <ul>
+        <li>
+          <a href="change-password.html">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg>
+            Change Password
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-exit"></use></svg>
+            Log Out
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close-circle"></use></svg>
+            Delete Profile
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+
+
+  <section class="edit-profile page">
+    <header>
+      <h1>Edit Profile</h1>
+
+      <a href="#profile" class="back">
+        Cancel
+      </a>
+    </header>
+    <form class="has-icon">
+      <p class="file">
+        <label>
+          <input type="file" accept="image/*" />
+          <span>
+            <img src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" srcset="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c200x200 2x, https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c300x300 3x" height="100" width="100" alt="" /><br />
+            <span>Change photo</span>
+          </span>
+        </label>
+      </p>
+      <ul class="text">
+        <li class="full-name">
+          <label>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user"></use></svg><span>Full Name</span><br />
+            <input type="text" placeholder="Full Name" name="full_name" />
+          </label>
+        </li>
+        <li class="disabled">
+          <label>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user-circle"></use></svg><span>Username</span><br />
+            <input type="text" placeholder="Username" name="username" autocapitalize="off" disabled="disabled" />
+          </label>
+        </li>
+        <li>
+          <label>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-info-circle"></use></svg><span>Biography</span><br />
+            <textarea placeholder="Bio" name="bio"></textarea>
+          </label>
+        </li>
+        <li>
+          <label>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-link"></use></svg><span>Website</span><br />
+            <input type="url" placeholder="Website" name="site" />
+          </label>
+        </li>
+      </svg>
+      <p class="submit">
+        <button type="submit">Done</button>
+      </p>
+    </form>
+
+    <aside class="option-list">
+      <ul>
+        <li>
+          <a href="change-password.html">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg>
+            Change Password
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-exit"></use></svg>
+            Log Out
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close-circle"></use></svg>
+            Delete Profile
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+
+
+
+
+  <section class="settings page">
+    <header>
+      <h1>Push Notifications</h1>
+
+      <a href="settings.html" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+          <use xlink:href="#icon-back"></use>
+          <foreignobject>Go Back</foreignobject>
+        </svg>
+      </a>
+
+      <p class="action">
+        <a href="">Done</a>
+      </p>
+    </header>
+
+    <div class="blueberry push-card">
+      <h2 class="name">Free Lots Angeles</h2>
+    </div>
+
+    <div class="option-list">
+      <ul>
+        <li>
+          <a href="#" role="checkbox" aria-checked="false">
+            @group mentions
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            comments on your post
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            comments in a conversation
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            mentioned in a post or conversation
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            morning digest
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Enabled</foreignobject></svg>
+          </a>
+        </li>
+      </ul>
     </div>
 
   </section>
 
-  <script src="../assets/js/color.js"></script>
+
+
+
+
+
+
+  <section class="settings page">
+    <header>
+      <h1>My Settings</h1>
+
+      <p class="action">
+        <a href="">Done</a>
+      </p>
+    </header>
+
+    <div class="plumb push-card">
+      <h2 class="name">GOOD</h2>
+      <p class="action">
+        <a href="push-edit.html">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-edit"></use></svg>
+          Edit Push
+        </a>
+      </p>
+    </div>
+
+    <div class="tags option-list">
+      <h3>Pull These Hashtags</h3>
+      <ul>
+        <li>
+          <button>
+            <span>#freelotsangeles</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Delete</foreignobject></svg>
+          </button>
+        </li>
+        <li>
+          <button>
+            <span>#myla</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Delete</foreignobject></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="option-list">
+      <ul>
+        <li>
+          <a href="#add-hashtag">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <use xlink:href="#icon-add"></use>
+            </svg>
+            <span>add another hashtag</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="option-list">
+      <h3>From These Accounts</h3>
+      <ul>
+        <li class="instagram">
+          <a href="#instagram" role="checkbox" aria-checked="true">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use><foreignobject>Instagram</foreignobject></svg>
+            @<span>aldoatgood</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Connected</foreignobject></svg>
+          </a>
+        </li>
+        <li class="twitter">
+          <a href="#twitter-add" role="checkbox" aria-checked="false">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use><foreignobject>sync my twitter</foreignobject></svg>
+            <span>sync my twitter</span>
+          </a>
+        </li>
+        <li class="facebook">
+          <a href="#facebook-remove" data-bind="click: function() { $parents[1].unlinkFeed($data); }" role="checkbox" aria-checked="true">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use></use><foreignObject>Facebook</foreignObject></svg>
+            <span class="username">aldoatgood</span>
+            <svg style="color: rgb(255, 49, 59); /* @apple */" class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-alert"></use></use><foreignObject>Something went wrong. Fix my settings</foreignObject></svg>
+          </a>
+        </li>
+        <!--
+        <li class="facebook">
+          <a href="#facebook-remove" data-bind="click: function() { $parents[1].unlinkFeed($data); }" role="checkbox" aria-checked="true">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use></use><foreignObject>Facebook</foreignObject></svg>
+            <span class="username">aldoatgood</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use></use><foreignObject>My Settings</foreignObject></svg>
+          </a>
+        </li>
+        <li class="facebook">
+          <a href="#facebook-add" role="checkbox" aria-checked="false">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignobject>sync my facebook</foreignobject></svg>
+            <span>sync my facebook</span>
+          </a>
+        </li>
+        -->
+      </ul>
+    </div>
+
+    <div class="option-list">
+      <h3>Notifications</h3>
+      <ul>
+        <li>
+          <a href="settings-email.html">Email Notifications</a>
+        </li>
+        <li>
+          <a href="settings-push.html">Push Notifications</a>
+        </li>
+      </ul>
+    </div>
+    <div class="option-list">
+      <h3>Live Channel</h3>
+      <ul>
+        <li>
+          <a href="http://www.ctznapp.com/push/0E4E704E/good" target="_blank">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-link"></use><foreignObject>Link</foreignObject></svg>
+            ctznapp.com/push/0E4E704E/good
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <form action="" method="post">
+            <button>Leave Push</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+
+
+
+
 
 </body>
 </html>

@@ -627,6 +627,9 @@
   .supports-placeholder form .text li + li label {
     border-top-width: 0;
   }
+  .supports-placeholder form .text li.error + li label {
+    border-top-width: 0.0625em;
+  }
   form .text li:first-of-type label {
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
@@ -635,7 +638,8 @@
     border-bottom-left-radius: 0.25em;
     border-bottom-right-radius: 0.25em;
   }
-  .text.error label .icon:first-child {
+  .text .error label .icon:first-child,
+  .text.error  label .icon:first-child {
     color: rgb(255, 49, 59); /* @apple */
   }
   .text label span {

@@ -2,31 +2,28 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Push Card / CTZN</title>
+  <title>CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <script src="../assets/js/placeholder.js"></script>
+
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
+  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
     (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
-  <script src="../assets/js/placeholder.js"></script>
-
-  <!--[if lte IE 8]>
-    <script src="../assets/js/html5.js"></script>
-  <![endif]-->
-
 </head>
-<body>
+<body class="pattern">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -277,9 +274,106 @@
     </symbol>
   </svg>
 
-  <header class="primary">
-    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-  </header>
+  <section class="push">
+
+    <!--
+    <p class="update-indicator action">
+      <a href="">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-sync"></use></svg>
+        Update
+      </a>
+    </p>
+    -->
+
+    <header class="header push-card boysenberry">
+
+      <h2 class="name">Neighborday</h2>
+      <h3 class="about">The first ever global, local holiday—celebrating our blocks and the people we live next door to. Join in the last Saturday in April.</h3>
+      
+
+      <div class="meta">
+
+        
+        <p>
+          <span class="count">48</span>
+          <span class="label">Posts</span>
+        </p>
+        
+
+        <p>
+          <a href="#members">
+            <span class="count">49</span>
+            <span class="label">People</span>
+          </a>
+        </p>
+        
+
+        <p>
+          <a href="#members">
+            <span class="count">5</span>
+            <span class="label">Requests</span>
+          </a>
+        </p>
+
+        <p class="settings">
+          <a href="#settings">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use><foreignObject>My Settings</foreignObject></svg>
+          </a>
+        </p>
+      </div>
+    </header>
+  </section>
+
+
+  <section class="profile page">
+    <header>
+      <h1>@<span>supercalifragilisticexpialidocious</span></h1>
+
+      <a href="#edit-profile" class="next">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-edit"></use><foreignObject>Edit Profile</foreignObject></svg>
+      </a>
+      <a href="#push" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></svg>
+      </a>
+    </header>
+
+    
+    <div class="header push-card orange">
+
+      <div class="image">
+        <img height="100" width="100" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" alt="eshah’s photo"
+          srcset="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c200x200 2x, https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c300x300 3x" />
+      </div>
+      <div class="details">
+
+        <h2 class="name">Esha </h2>
+
+        <p class="about">Keen eyes + Glassess</p>
+        <p class="action"><a href="http://www.eshah.com">www.eshah.com</a></p>
+
+        <p class="joined">Joined <time datetime="2014-09-30T19:24:18.000+00:00">23 weeks ago</time></p>
+      </div>
+
+      
+      <div class="meta">
+        <p>
+          <span class="count">61</span>
+          <span class="label">Posts</span>
+        </p>
+        <p>
+          <span class="count">5</span>
+          <span class="label">Pushes</span>
+        </p>
+
+        <p class="settings">
+          <a href="">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-more"></use><foreignobject>Options</foreignobject></svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
 
   <section class="plumb push-card page">
 
@@ -306,8 +400,6 @@
     </div>
 
   </section>
-
-  <script src="../assets/js/color.js"></script>
 
 </body>
 </html>

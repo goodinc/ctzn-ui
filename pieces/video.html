@@ -2,31 +2,28 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Push Card / CTZN</title>
+  <title>CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <script src="../assets/js/placeholder.js"></script>
+
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
+  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
     (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
+      t.src = '//fast.fonts.net/t/trackingCode.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
-  <script src="../assets/js/placeholder.js"></script>
-
-  <!--[if lte IE 8]>
-    <script src="../assets/js/html5.js"></script>
-  <![endif]-->
-
 </head>
-<body>
+<body class="pattern">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -277,37 +274,223 @@
     </symbol>
   </svg>
 
-  <header class="primary">
-    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-  </header>
+  <main class="orange push-card shareable-mix page">
+    <div>
+      <h1>
+        <span class="avatar">
+          <img src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c40x40" width="40" height="40" alt="">
+        </span>
+        <span>jim</span>’s mix: <strong>Project Citizen, from day one to Beta</strong>
+      </h1>
 
-  <section class="plumb push-card page">
-
-    <div class="details">
-      <h1 class="name">Free Lots Angeles</h1>
-      <p class="about">Free Lots Angeles organizes "pop up" events on vacant lots.</p>
-
-      <div class="meta">
-        <p>
-          <span class="count">53</span>
-          <span class="label">Posts</span>
-        </p>
-        <p>
-          <span class="count">7</span>
-          <span class="label">People</span>
-        </p>
+      <div class="video">
+        <video width="640" height="640" poster="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640" preload="meta" controls>
+          <source src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.m4v" type="video/mp4"></source>
+          <source src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.webm" type="video/webm"></source>
+          <div class="message">
+            <h1>Aw, shucks.</h1>
+            <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
+          </div>
+        </video>
       </div>
 
-      <form action="" method="post">
-        <p class="submit">
-          <button type="submit">Join Now</button>
-        </p>
-      </form>
-    </div>
+      <p class="about">a mix for <a href="">GOOD</a></p>
 
+      <ul class="action">
+        <li>
+          <a href="http://www.facebook.com">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use></svg>
+            Share on Facebook
+          </a>
+        </li>
+        <li>
+          <a href="http://twitter.com">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
+            Share on Twitter
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+
+  <section class="mix-editor page">
+    <header>
+      <h1>Add Message</h1>
+
+      <a href="#back" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></svg>
+      </a>
+    </header>
+    <form action="mixes.html" method="get">
+      <div class="lime preview">
+        <p class="message text">
+          <img width="640" height="640" alt="preview" src="https://m.ctznapp.com/s3/ctzn/e21be1b7a4dc912883277ec5117283efe909b435=c640x640" />
+          <label>
+            <span>Enter message</span><br />
+            <textarea placeholder="Enter message"></textarea>
+          </label>
+        </p>
+        <p class="note">Your message will appear on the last frame</p>
+      </div>
+      <p class="submit">
+        <button>Done</button>
+      </p>
+    </form>
   </section>
 
-  <script src="../assets/js/color.js"></script>
+
+
+  <section class="mix-editor page">
+    <header>
+      <h1>Add Title</h1>
+
+      <a href="#back" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></svg>
+      </a>
+    </header>
+    <form action="mix-finish.html" method="get">
+      <div class="lime preview">
+        <p class="title text">
+          <img width="640" height="640" alt="preview" src="https://m.ctznapp.com/s3/ctzn/56aa31e2ca2a4bd3730347843294fed17929ac2a=c640x640" />
+          <label>
+            <span>Enter Title</span><br />
+            <textarea id="title" placeholder="Enter Title"></textarea>
+          </label>
+          <span class="text-clone">
+            <span id="clone" role="presentation">enter title</span>
+          </span>
+        </p>
+        <p class="note">Your title will appear on the first frame</p>
+      </div>
+      <p class="submit">
+        <button>Next</button>
+      </p>
+    </form>
+  </section>
+
+
+
+
+
+  <section class="mix page">
+    <header>
+      <h1>Mix</h1>
+
+      <a href="#mixes" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></svg>
+      </a>
+      <a href="" class="next"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-more"></use><foreignobject>Options</foreignobject></svg></a>
+
+    </header>
+    <div class="preview orange">
+      <div>
+        <!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 -->
+        <video type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640"><source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v" type="video/mp4"><source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.webm" type="video/webm"><h1>Oops!</h1>
+          <p>It looks like our video player isn’t working in your web browser. We recommend using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.apple.com/safari/" target="_blank">Safari</a> to watch this mix.</p>
+        </video><!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 -->
+      </div>
+    </div>
+
+    <div class="option-list">
+      <h3>Share Mix</h3>
+      <ul>
+        <li class="facebook">
+          <a target="_blank" href="http://www.facebook.com/sharer.php?t=Lights%20Mix&amp;u=http%3A%2F%2Fwww.ctznapp.com%2Fmix%2FB9E118C9">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use></svg>
+            Share on Facebook
+          </a>
+        </li>
+        <li class="twitter">
+          <a target="_blank" href="http://twitter.com/intent/tweet?text=Lights%20Mix&amp;url=http%3A%2F%2Fwww.ctznapp.com%2Fmix%2FB9E118C9">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
+            Share on Twitter
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-share-android"></use></svg>
+            Share your mix
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-download"></use></svg>
+            Download your mix
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://www.ctznapp.com/mix/B9E118C9">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-link"></use><foreignObject>Link</foreignObject></svg>
+            <span>ctznapp.com/mix/B9E118C9</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <section class="mix page">
+    <header>
+      <h1>Mix</h1>
+
+      <a href="#mixes" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></svg>
+      </a>
+      <a href="" class="next"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-more"></use><foreignobject>Options</foreignobject></svg></a>
+
+    </header>
+    <div class="preview orange">
+      <div>
+        <!-- ko if: navigator.userAgent.indexOf('OS 8') == -1 -->
+        <video type="video/mp4" width="640" height="640" preload="meta" controls="" poster="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640"><source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v" type="video/mp4"><source src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.webm" type="video/webm"><h1>Oops!</h1>
+          <p>It looks like our video player isn’t working in your web browser. We recommend using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.apple.com/safari/" target="_blank">Safari</a> to watch this mix.</p>
+        </video><!-- ko if: navigator.userAgent.indexOf('OS 8') != -1 -->
+      </div>
+    </div>
+
+    <section class="upload-message" role="status">
+      <h1>
+        Downloading
+        <span class="sending icon"></span>
+      </h1>
+    </section>
+
+    <div class="option-list">
+      <h3>Share Mix</h3>
+      <ul>
+        <li class="facebook">
+          <a target="_blank" href="http://www.facebook.com/sharer.php?t=Lights%20Mix&amp;u=http%3A%2F%2Fwww.ctznapp.com%2Fmix%2FB9E118C9">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></svg>
+            Share on Facebook
+          </a>
+        </li>
+        <li class="twitter">
+          <a target="_blank" href="http://twitter.com/intent/tweet?text=Lights%20Mix&amp;url=http%3A%2F%2Fwww.ctznapp.com%2Fmix%2FB9E118C9">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></svg>
+            Share on Twitter
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.m4v">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-download"></use><foreignObject>Download</foreignObject></svg>
+            Download
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://www.ctznapp.com/mix/B9E118C9">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-link"></use><foreignObject>Link</foreignObject></svg>
+            <span>ctznapp.com/mix/B9E118C9</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
 </body>
 </html>
