@@ -2832,7 +2832,6 @@
             box-sizing: border-box;
     z-index: 1;
     margin-bottom: 0;
-    font-size: 0.6875em;
   }
 
   .push-card .post-list .post-item header h3 {
@@ -3025,6 +3024,7 @@
     overflow: hidden;
   }
   .mixable .post-list {
+    margin-top: 0;
     padding-bottom: 0;
   }
 
@@ -3065,14 +3065,15 @@
     border-width: 0;
     position: fixed;
     top: auto;
-    bottom: 0.1875em;
+    bottom: 0.9375em;
     left: auto;
-    right: 0.1875em;
+    right: 0.9375em;
     width: auto;
     background: transparent;
     color: white;
     color: rgba(255, 255, 255, 0.5);
     position: fixed;
+    box-shadow: none;
   }
 
   /* Hide the rest of the header, the footer, and the push details */
@@ -3189,11 +3190,13 @@ display: none;
       font-size: 2em;
     }
   }
+  /*
   @media (min-width: 1000px), (min-height: 1000px) {
     .mixable .push-card .post-list .post-item {
       font-size: 2vmax;
     }
   }
+  */
 
 
 
