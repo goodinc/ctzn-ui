@@ -4538,6 +4538,9 @@
     width: 2em;
     vertical-align: top;
   }
+  .powered-by h1 a {
+    text-decoration: none;
+  }
 
 
   /* =Join
