@@ -520,7 +520,7 @@
     font-weight: inherit;
   }
 
-  .option-list p.note,
+  .option-list p.note, /* For the “invite curator” form */
   .signup.page .note,
   form .note {
     display: block;
@@ -628,9 +628,12 @@
   .supports-placeholder form .text li + li label {
     border-top-width: 0;
   }
+
+/* TBD: Should the error message be outside of the item? */
   .supports-placeholder form .text li.error + li label {
     border-top-width: 0.0625em;
   }
+
   form .text li:first-of-type label {
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
@@ -2291,7 +2294,7 @@
 
     color: rgb(102, 102, 102); /* @tin */
   }
-  .option-list .text,
+  .option-list .text, /* For the settings page */
   .option-list a,
   .option-list button {
     display: block;
@@ -2356,6 +2359,7 @@
     /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
   }
+  /* For the “invite curator” form */
   .option-list a.disabled {
     background-image: none;
   }
@@ -3072,7 +3076,7 @@
   }
 
   /* Hide the rest of the header, the footer, and the push details */
-  footer.primary,
+  .mixable footer.primary,
   .mixable .push-card.page .details {
     display: none;
   }
