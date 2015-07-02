@@ -3028,6 +3028,21 @@
     padding-bottom: 0;
   }
 
+  /* Position the name of the push in the upper left */
+  .mixable .push-card.page .details + .action {
+    margin: 0;
+    position: absolute;
+    top: 0.75em;
+    left: 0.75em;
+    z-index: 9999;
+  }
+  .mixable .push-card.page .details + .action a {
+    text-transform: none;
+  }
+  .mixable .push-card.page .details + .action a .icon {
+    margin-left: 0.5em;
+  }
+
   /* Position the logo in the lower right */
   .mixable header.primary {
     top: auto;
@@ -3063,7 +3078,7 @@
     */
     padding: 0.75em 1.25em;
     border-width: 0;
-    position: fixed;
+    position: absolute;
     top: auto;
     bottom: 0.9375em;
     left: auto;
@@ -3072,8 +3087,42 @@
     background: transparent;
     color: white;
     color: rgba(255, 255, 255, 0.5);
-    position: fixed;
     box-shadow: none;
+  }
+
+  /* OPTIONAL: Hide the post date on small screens */
+  .mixable .push-card.page .post-item header p {
+    visibility: hidden;
+  }
+  @media (min-width: 30em) {
+    .mixable .push-card.page .post-item header p {
+      visibility: visible;
+    }
+  }
+
+  /* OPTIONAL: Hide the “powered by” text on small screens */
+  .mixable .push-card.page > header.powered-by h1 a {
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: relative;
+    width: 3em;
+    height: 1.5em;
+  }
+  .mixable .push-card.page > header.powered-by h1 a svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  @media (min-width: 30em) {
+    .mixable .push-card.page > header.powered-by h1 a {
+      text-indent: 0;
+      width: auto;
+      height: auto;
+    }
+    .mixable .push-card.page > header.powered-by h1 a svg {
+      position: static;
+    }
   }
 
   /* Hide the rest of the header, the footer, and the push details */
@@ -3161,10 +3210,15 @@
 display: none;
   }
 
+  .mixable .push-card.page .post-item {
+    padding-top: 4.5em;
+  }
   .mixable .push-card.page .post-item .body {
-    margin: 1.5em 0 0;
-    max-height: 8.25em;
+    margin: 0;
+    max-height: 3em;
+    /*
     max-height: calc(100vh - 3.5em);
+    */
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -3173,11 +3227,32 @@ display: none;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
+  .mixable .push-card.page .post-item .body p {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+  }
+  @media (min-height: 15em) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 6em;
+    }
+  }
+  @media (min-height: 20em) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 9em;
+    }
+  }
+  @media (min-height: 35em) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 12em;
+    }
+  }
+  /*
   @media (min-aspect-ratio: 1/1) {
     .mixable .push-card.page .post-item .body {
       max-height: 8.25em;
     }
   }
+  */
 
   /* OPTIONAL: Make the text larger on big screens  */
   @media (min-width: 400px) and (min-height: 400px) {
