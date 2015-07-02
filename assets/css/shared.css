@@ -528,7 +528,7 @@
     /* @note */
     font-style: italic;
     font-size: 0.875em;
-    margin-top: 1.5em;
+    margin-top: 0.75em;
     color: rgb(153, 153, 153); /* @nickel */
   }
 
@@ -4974,6 +4974,19 @@ display: none;
     color: rgb(5, 5, 5); /* @tungsten */
   }
 
+
+  /* =New Push
+  ----------------------------------------------- */
+  .settings.page form h1 {
+    font-size: 1.3333333333em;
+    color: rgb(0, 0, 0);
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+  .settings.page form ul + h3 {
+    margin-top: 2.25em;
+  }
 
 
   /* =Notifications
