@@ -3041,6 +3041,8 @@
   }
   .mixable .push-card.page .details + .action a .icon {
     margin-left: 0.5em;
+    width: 1.25em;
+    height: 1.25em;
   }
 
   /* Position the logo in the lower right */
