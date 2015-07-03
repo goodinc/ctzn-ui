@@ -1685,7 +1685,7 @@
     margin: -0.75em -1em;
   }
   header.primary h2 svg.icon {
-    width: 2.6315789474em;
+    width: 2.625em; /* 42px / @font-size */
     height: 1.5em;
     vertical-align: top;
   }
@@ -2991,21 +2991,34 @@
 
   /* =Mixable (“couch mode” for the push preview)
   ----------------------------------------------- */
-  .toggle-mixable {
+  .action.channel {
     position: fixed;
-    top: 3.9375em; /* 4.5em x 7/8 */
-    right: 0.75em;
+    top: 0.375em;
+    right: 0.375em;
     z-index: 9999;
     margin: 0;
   }
-  .toggle-mixable button {
-    padding: 0.5em;
+
+  .toggle-mixable {
+    position: fixed;
+    top: 0.75em;
+    right: 0.75em;
+    z-index: 9999;
+    margin: 0;
   }
 
   .mixable .push-card.page .details + .action a,
   .toggle-mixable button {
     background-color: rgb(51, 51, 51); /* @iron */
     background-color: rgba(0, 0, 0, 0.5);
+  }
+  .toggle-mixable button {
+    padding-left: 0.375em;
+    padding-right: 0.375em;
+  }
+  .mixable .push-card.page .details + .action a .icon,
+  .toggle-mixable button .icon {
+    vertical-align: top;
   }
 
   .hoverable .mixable .push-card.page .details + .action a:hover,
@@ -3015,11 +3028,6 @@
              .toggle-mixable button:active,
              .toggle-mixable button:focus {
     background-color: black;
-  }
-
-  /* Move the toggle up button up a little, when we’re in mixable mode */
-  .mixable .toggle-mixable {
-    top: 0.75em;
   }
 
   /* Make the content into a series of slides */
@@ -3039,7 +3047,7 @@
   /* Position the name of the push in the upper left */
   .mixable .push-card.page .details + .action {
     margin: 0 4.5em 0 0;
-    position: absolute;
+    position: fixed;
     top: 0.75em;
     left: 0.75em;
     z-index: 9999;
@@ -3047,7 +3055,6 @@
   }
   .mixable .push-card.page .details + .action a {
     text-transform: none;
-    line-height: 1.875em;
   }
   .mixable .push-card.page .details + .action a span {
     margin-right: 0.5em;
@@ -3075,20 +3082,9 @@
   }
 
   .mixable .push-card.page > header {
-    /*
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: auto;
-    left: auto;
-    bottom: 0;
-    right: 0;
-    width: auto;
-    padding: 0.375em 0.75em;
-    */
     padding: 0.75em 1.25em;
     border-width: 0;
-    position: absolute;
+    position: fixed;
     top: auto;
     bottom: 0.9375em;
     left: auto;
@@ -3111,27 +3107,14 @@
   }
 
   /* OPTIONAL: Hide the “powered by” text on small screens */
-  .mixable .push-card.page > header.powered-by h1 a {
-    display: block;
-    text-indent: -9999px;
-    overflow: hidden;
-    position: relative;
-    width: 3em;
-    height: 1.5em;
-  }
-  .mixable .push-card.page > header.powered-by h1 a svg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-  @media (min-width: 30em) {
-    .mixable .push-card.page > header.powered-by h1 a {
-      text-indent: 0;
-      width: auto;
-      height: auto;
+  @media (max-width: 30em) {
+    .push-card.page > header.powered-by h1 a span {
+      /* @hidden-accessible */
+      position: absolute;
+      left: -9999px;
     }
-    .mixable .push-card.page > header.powered-by h1 a svg {
-      position: static;
+    .push-card.page > header.powered-by h1 a svg {
+      width: 2.625em; /* 42px / @font-size */
     }
   }
 
@@ -4653,8 +4636,8 @@ display: none;
 
   /* For the header on the preview page */
   .powered-by h1 svg.icon {
-    width: 2em;
     vertical-align: top;
+    width: 2em;
   }
   .powered-by h1 a {
     text-decoration: none;
