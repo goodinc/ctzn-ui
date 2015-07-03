@@ -2832,6 +2832,10 @@
             box-sizing: border-box;
     z-index: 1;
     margin-bottom: 0;
+    font-size: 0.6875em; /* 12px / @font-size */
+  }
+  .mixable .push-card .post-list .post-item header {
+    font-size: inherit;
   }
 
   .push-card .post-list .post-item header h3 {
