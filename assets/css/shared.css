@@ -2092,6 +2092,7 @@
 
   .page > header a {
     color: rgb(204, 204, 204); /* @aluminum */
+    color: rgba(255, 255, 255, 0.8);
   }
   .hoverable .page > header a:hover,
              .page > header a:active,
@@ -2830,7 +2831,7 @@
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    z-index: 1;
+    z-index: 2;
     margin-bottom: 0;
     font-size: 0.6875em; /* 12px / @font-size */
   }
@@ -3149,11 +3150,6 @@
     max-width: none;
   }
 
-  .mixable .post-item header {
-    background: black;
-    background: rgba(0, 0, 0, 0.25);
-  }
-
   /* Darken images to improve legibility of the text on top of them */
   .mixable .push-card.page .post-item .images:before {
     content: "";
@@ -3162,9 +3158,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
-    background: rgba(0, 0, 0, 0.25);
     z-index: 1;
+
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+
+    /* transparent to black gradient */
+    /*
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+     <defs>
+      <linearGradient id="gradient" x1="0.5" y1="0" x2="0.5" y2="1">
+       <stop offset="0" stop-color="black" stop-opacity="0" />
+       <stop offset="1" stop-color="black" stop-opacity="0.5" />
+      </linearGradient>
+     </defs>
+     <g>
+      <rect fill="url(#gradient)" stroke-width="0" x="0" y="0" width="500" height="500" />
+     </g>
+    </svg>
+    */
+    background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNTAwIj4KIDxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwLjUiIHkxPSIwIiB4Mj0iMC41IiB5Mj0iMSI+CiAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iYmxhY2siIHN0b3Atb3BhY2l0eT0iMCIgLz4KICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSJibGFjayIgc3RvcC1vcGFjaXR5PSIwLjUiIC8+CiAgPC9saW5lYXJHcmFkaWVudD4KIDwvZGVmcz4KIDxnPgogIDxyZWN0IGZpbGw9InVybCgjZ3JhZGllbnQpIiBzdHJva2Utd2lkdGg9IjAiIHg9IjAiIHk9IjAiIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiAvPgogPC9nPgo8L3N2Zz4K) bottom repeat-x;
+    background-size: 50% 50%;
   }
 
   .mixable .push-card.page .post-item {
@@ -3207,9 +3221,7 @@
 display: none;
   }
 
-  .mixable .push-card.page .post-item {
-    padding-top: 4.5em;
-  }
+
   .mixable .push-card.page .post-item .body {
     margin: 0;
     max-height: 3em;
@@ -3217,7 +3229,10 @@ display: none;
     max-height: calc(100vh - 3.5em);
     */
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    bottom: 4.5em;
+    bottom: 4.5rem;
+    left: 0;
     z-index: 1;
     padding: 1.5em;
     -webkit-box-sizing: border-box;
