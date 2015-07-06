@@ -3509,6 +3509,7 @@ display: none;
     /* http://stackoverflow.com/questions/7774814/remove-white-space-below-image#answer-13876119 */
     vertical-align: top;
 
+    max-width: none;
     width: auto;
     height: auto;
   }
