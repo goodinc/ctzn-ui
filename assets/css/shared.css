@@ -2994,16 +2994,10 @@
   }
 
 
-  /* =Mixable (“couch mode” for the push preview)
+  /* =Live Channel (mixable push preview)
   ----------------------------------------------- */
-  .action.channel {
-    position: fixed;
-    top: 0.375em;
-    right: 0.375em;
-    z-index: 9999;
-    margin: 0;
-  }
 
+  /* TODO: Consider renaming this to “toggle-fullscreen” */
   .toggle-mixable {
     position: fixed;
     top: 0.75em;
@@ -3037,11 +3031,20 @@
 
   /* Make the content into a series of slides */
   .mixable .push-card.page .details,
-  .mixable .post-list .post-item {
+  .mixable .post-list > li {
     height: 100vh;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+    overflow: hidden;
+  }
+  .mixable .post-list > li {
+    position: relative;
+  }
+  .mixable .post-list > li .post-item {
+    height: 100vh;
+    height: calc(100vh - 3.75em);
+    top: calc(0vh + 3.75em);
     overflow: hidden;
   }
   .mixable .post-list {
@@ -3060,6 +3063,7 @@
   }
   .mixable .push-card.page .details + .action a {
     text-transform: none;
+    font-weight: bold;
   }
   .mixable .push-card.page .details + .action a span {
     margin-right: 0.5em;
@@ -3100,6 +3104,20 @@
     color: rgba(255, 255, 255, 0.5);
     box-shadow: none;
   }
+  .mixable .push-card.page > header.powered-by h1 a {
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 0.5625em; /* @line-height x 3/8 */
+    color: white;
+    display: block;
+    border-radius: 0.0625em;
+    font-variant: small-caps;
+  }
+  .hoverable .mixable .push-card.page > header.powered-by h1 a:hover,
+             .mixable .push-card.page > header.powered-by h1 a:active,
+             .mixable .push-card.page > header.powered-by h1 a:focus {
+    background: black;
+  }
 
   /* OPTIONAL: Hide the post date on small screens */
   .mixable .push-card.page .post-item header p {
@@ -3113,6 +3131,9 @@
 
   /* OPTIONAL: Hide the “powered by” text on small screens */
   @media (max-width: 30em) {
+    .mixable .push-card.page > header.powered-by h1 a {
+      background-color: transparent;
+    }
     .push-card.page > header.powered-by h1 a span {
       /* @hidden-accessible */
       position: absolute;
@@ -3181,9 +3202,6 @@
     background-size: 50% 50%;
   }
 
-  .mixable .push-card.page .post-item {
-    position: relative;
-  }
   .mixable .push-card.page .post-item .images {
     position: absolute;
     top: 0;
@@ -3194,6 +3212,7 @@
   .mixable .push-card.page .post-item .images {
     left:         50vw;
     top:          50vh;
+    top:          calc(50vh - 1.875em);
   }
   /* For wide screens (landscape aspect ratio) */
   .mixable .push-card.page .post-item .images {
@@ -3225,23 +3244,28 @@ display: none;
   .mixable .push-card.page .post-item .body {
     margin: 0;
     max-height: 3em;
+    max-width: 33em;
     /*
     max-height: calc(100vh - 3.5em);
     */
     overflow: hidden;
     position: absolute;
-    bottom: 4.5em;
-    bottom: 4.5rem;
+    bottom: 5em;
     left: 0;
     z-index: 1;
-    padding: 1.5em;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+    border-left: 0.125em solid white;
+    padding: 0 0.75em;
+    margin: 0 0.75em;
   }
   .mixable .push-card.page .post-item .body p {
     margin-top: 0;
     margin-bottom: 1.5em;
+  }
+  .mixable .push-card.page .post-item .body p:last-child {
+    margin-bottom: 0;
   }
   @media (min-height: 15em) {
     .mixable .push-card.page .post-item .body {
