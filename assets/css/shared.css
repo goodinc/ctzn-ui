@@ -2845,8 +2845,15 @@
   .push-card .post-list .post-item header time {
     color: rgb(204, 204, 204); /* @aluminum */
     color: rgba(255, 255, 255, 0.5);
+    /*
     text-transform: uppercase;
+    */
   }
+  /*
+  .mixable .push-card .post-list .post-item header time {
+    font-size: 0.875em;
+  }
+  */
   .push-card .post-list .post-item header .source {
     position: absolute;
     margin-bottom: -3em;
@@ -3016,10 +3023,12 @@
   .toggle-mixable button .icon {
     vertical-align: top;
   }
+  /*
   .mixable .push-card.page .details + .action a .icon {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
   }
+  */
 
   .hoverable .mixable .push-card.page .details + .action a:hover,
              .mixable .push-card.page .details + .action a:active,
@@ -3097,10 +3106,9 @@
     border-width: 0;
     position: fixed;
     top: auto;
-    bottom: 0.9375em;
-    bottom: 1.375em;
+    bottom: 1.0625em;
     left: auto;
-    right: 0.9375em;
+    right: 1em;
     width: auto;
     background: transparent;
     color: white;
@@ -3114,7 +3122,6 @@
     background: black;
     background: rgba(0, 0, 0, 0.5);
     padding: 0 0.5625em; /* @line-height x 3/8 */
-    color: white;
     display: block;
     border-radius: 0.0625em;
   }
@@ -3122,6 +3129,9 @@
              .mixable .push-card.page > header.powered-by h1 a:active,
              .mixable .push-card.page > header.powered-by h1 a:focus {
     background: black;
+  }
+  .mixable .push-card.page > header.powered-by h1 a .icon {
+    color: white;
   }
 
   /* OPTIONAL: Hide the post date on small screens */
@@ -3234,20 +3244,19 @@
     }
   }
 
-  /* Position the source above the text (so it won’t take up space in the flow). */
+  /* Don’t show the source on the live channel page */
   .mixable .push-card.page .post-item .body .source {
-    text-align: left;
-    margin-bottom: 0;
-    position: absolute;
-    top: 0;
-    left: 1.5em;
-
-display: none;
+    display: none;
   }
 
+  /*
   .mixable .push-card .post-list .post-item header h3 {
     font-size: 1.25em;
   }
+  .mixable .push-card.page > header {
+    bottom: 1.375em;
+  }
+  */
 
   .mixable .push-card.page .post-item .body {
     margin: 0;
