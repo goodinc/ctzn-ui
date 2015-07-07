@@ -2838,10 +2838,6 @@
   .mixable .push-card .post-list .post-item header {
     font-size: inherit;
   }
-
-  .push-card .post-list .post-item header h3 {
-    font-weight: normal;
-  }
   .push-card .post-list .post-item header .avatar {
     position: static;
     margin-right: 0.5em;
@@ -2849,6 +2845,7 @@
   .push-card .post-list .post-item header time {
     color: rgb(204, 204, 204); /* @aluminum */
     color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
   }
   .push-card .post-list .post-item header .source {
     position: absolute;
@@ -2994,7 +2991,7 @@
   }
 
 
-  /* =Live Channel (mixable push preview)
+  /* =Mixable (live channel)
   ----------------------------------------------- */
 
   /* TODO: Consider renaming this to “toggle-fullscreen” */
@@ -3018,6 +3015,10 @@
   .mixable .push-card.page .details + .action a .icon,
   .toggle-mixable button .icon {
     vertical-align: top;
+  }
+  .mixable .push-card.page .details + .action a .icon {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
   }
 
   .hoverable .mixable .push-card.page .details + .action a:hover,
@@ -3063,7 +3064,8 @@
   }
   .mixable .push-card.page .details + .action a {
     text-transform: none;
-    font-weight: bold;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900; /* @extra-bold */
   }
   .mixable .push-card.page .details + .action a span {
     margin-right: 0.5em;
@@ -3096,6 +3098,7 @@
     position: fixed;
     top: auto;
     bottom: 0.9375em;
+    bottom: 1.375em;
     left: auto;
     right: 0.9375em;
     width: auto;
@@ -3104,6 +3107,9 @@
     color: rgba(255, 255, 255, 0.5);
     box-shadow: none;
   }
+  header.powered-by h1 a {
+    font-variant: small-caps;
+  }
   .mixable .push-card.page > header.powered-by h1 a {
     background: black;
     background: rgba(0, 0, 0, 0.5);
@@ -3111,7 +3117,6 @@
     color: white;
     display: block;
     border-radius: 0.0625em;
-    font-variant: small-caps;
   }
   .hoverable .mixable .push-card.page > header.powered-by h1 a:hover,
              .mixable .push-card.page > header.powered-by h1 a:active,
@@ -3240,6 +3245,9 @@
 display: none;
   }
 
+  .mixable .push-card .post-list .post-item header h3 {
+    font-size: 1.25em;
+  }
 
   .mixable .push-card.page .post-item .body {
     margin: 0;
@@ -3259,6 +3267,8 @@ display: none;
     border-left: 0.125em solid white;
     padding: 0 0.75em;
     margin: 0 0.75em;
+    color: white;
+    text-shadow: 0 0 0.75em rgba(0, 0, 0, 0.15);
   }
   .mixable .push-card.page .post-item .body p {
     margin-top: 0;
