@@ -3270,47 +3270,60 @@
 
   .mixable .push-card.page .post-item .body {
     margin: 0;
-    max-height: 3em;
-    max-width: 33em;
     /*
     max-height: calc(100vh - 3.5em);
     */
     overflow: hidden;
     position: absolute;
-    bottom: 5em;
+    bottom: 6em;
     left: 0;
     z-index: 1;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     border-left: 0.125em solid white;
-    padding: 0 0.75em;
-    margin: 0 0.75em;
+    padding: 0 1.5em;
+    margin: 0 1.5em;
     color: white;
     text-shadow: 0 0 0.75em rgba(0, 0, 0, 0.15);
+    max-height: 4.5em; /* 2.25 (@line-height x font size) x 2 */
   }
   .mixable .push-card.page .post-item .body p {
     margin-top: 0;
     margin-bottom: 1.5em;
+    max-width: 33em;
+    font-size: 1.5em;
   }
   .mixable .push-card.page .post-item .body p:last-child {
     margin-bottom: 0;
   }
-  @media (min-height: 15em) {
+  @media (min-height: 30em) {
     .mixable .push-card.page .post-item .body {
-      max-height: 6em;
-    }
-  }
-  @media (min-height: 20em) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 9em;
+      max-height: 11.25em; /* 2.25 x 5 */
     }
   }
   @media (min-height: 35em) {
     .mixable .push-card.page .post-item .body {
-      max-height: 12em;
+      max-height: 16.875; /* 2.25 x 7.5 */
     }
   }
+  @media (min-height: 40em) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 22.5em; /* 2.25 x 10 */
+    }
+  }
+  /*
+  @media (min-height: 20em) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 90em;
+    }
+  }
+  @media (min-height: 35em) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 110.25em;
+    }
+  }
+  */
   /*
   @media (min-aspect-ratio: 1/1) {
     .mixable .push-card.page .post-item .body {
@@ -3320,17 +3333,24 @@
   */
 
   /* OPTIONAL: Make the text larger on big screens  */
-  @media (min-width: 400px) and (min-height: 400px) {
+  @media (min-width: 500px) and (min-height: 500px) {
+    .mixable .push-card.page .post-item header,
     .mixable .push-card.page .post-item .body {
-      font-size: 1.5em;
+      font-size: 1.125em;
     }
   }
-  @media (min-width: 600px) and (min-height: 600px) {
+  @media (min-width: 1000px) and (min-height: 1000px) {
+    .mixable .push-card.page .post-item header,
     .mixable .push-card.page .post-item .body {
-      font-size: 2em;
+      font-size: 1.25em;
     }
   }
   /*
+  @media (min-width: 600px) and (min-height: 600px) {
+    .mixable .push-card.page .post-item .body p {
+      font-size: 2em;
+    }
+  }
   @media (min-width: 1000px), (min-height: 1000px) {
     .mixable .push-card .post-list .post-item {
       font-size: 2vmax;
