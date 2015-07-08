@@ -2943,6 +2943,16 @@
     margin-right: -0.0625em;
   }
 
+  /* Show images one at a time, in the live channel */
+  .mixable .push-card .post-list .post-item .images figure img {
+    width: 100%;
+    border-width: 0;
+    margin: 0;
+  }
+
+  .mixable .push-card .post-list .post-item figure.inactive {
+    display: none;
+  }
 
   /* OPTIONAL: Add a pointer below the images */
   .push-card .post-list .post-item .images + .body {
