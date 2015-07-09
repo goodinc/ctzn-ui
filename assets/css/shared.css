@@ -3076,14 +3076,17 @@
 
   /* Position the name of the push in the upper left */
   .mixable .push-card.page .details + .action {
-    margin: 0 4.5em 0 0;
+    margin: 0;
     position: fixed;
-    padding: 0.75em;
+    padding: 0.75em 4em 0.75em 0.75em;
     top: 0;
     left: 0;
     z-index: 9999;
     text-align: left;
     width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .mixable .push-card.page .details + .action:before {
     content: "";
@@ -3318,17 +3321,21 @@
     color: white;
     text-shadow: 0 0 0.75em rgba(0, 0, 0, 0.15);
     max-height: 4.5em; /* 2.25 (@line-height x font size) x 2 */
+    max-width: 90%;
+    max-width: calc(100% - 3em); /* margin = 1.5 x 2 */
   }
   .mixable .push-card.page .post-item .body p {
     margin-top: 0;
     margin-bottom: 1.5em;
     max-width: 33em;
-    font-size: 1.5em;
   }
   .mixable .push-card.page .post-item .body p:last-child {
     margin-bottom: 0;
   }
   @media (min-height: 30em) {
+    .mixable .push-card.page .post-item .body p {
+      font-size: 1.5em;
+    }
     .mixable .push-card.page .post-item .body {
       max-height: 9em; /* 2.25 x 4 */
     }
