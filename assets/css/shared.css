@@ -3063,8 +3063,10 @@
   }
   .mixable .post-list > li .post-item {
     height: 100vh;
+    /*
     height: calc(100vh - 3.75em);
     top: calc(0vh + 3.75em);
+    */
     overflow: hidden;
   }
   .mixable .post-list {
@@ -3076,15 +3078,58 @@
   .mixable .push-card.page .details + .action {
     margin: 0 4.5em 0 0;
     position: fixed;
-    top: 0.75em;
-    left: 0.75em;
+    padding: 0.75em;
+    top: 0;
+    left: 0;
     z-index: 9999;
     text-align: left;
+    width: 100%;
   }
+  .mixable .push-card.page .details + .action:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+  }
+
+  .mixable .push-card.lime .details + .action:before {
+    background-color: rgb(218, 243, 121); /* @lime */
+  }
+  .mixable .push-card.cucumber .details + .action:before {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .mixable .push-card.blueberry .details + .action:before {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .mixable .push-card.boysenberry .details + .action:before {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .mixable .push-card.plumb .details + .action:before {
+    background-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .mixable .push-card.strawberry .details + .action:before {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .mixable .push-card.apple .details + .action:before {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .mixable .push-card.tangerine .details + .action:before {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .mixable .push-card.orange .details + .action:before {
+    background-color: rgb(250, 134, 40); /* @orange */
+  }
+
   .mixable .push-card.page .details + .action a {
     text-transform: none;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
+    position: relative;
+    z-index: 1;
   }
   .mixable .push-card.page .details + .action a span {
     margin-right: 0.5em;
@@ -3196,8 +3241,8 @@
     max-width: none;
   }
 
-  /* Darken images to improve legibility of the text on top of them */
-  .mixable .push-card.page .post-item .images:before {
+  /* Make text easier to read (by darkening the background) */
+  .mixable .push-card.page .post-item:before {
     content: "";
     position: absolute;
     top: 0;
@@ -3206,25 +3251,12 @@
     height: 100%;
     z-index: 1;
 
-    background: black;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient#Cross-browser_gradients */
     background: rgba(0, 0, 0, 0.5);
-
-    /* transparent to black gradient */
-    /*
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-     <defs>
-      <linearGradient id="gradient" x1="0.5" y1="0" x2="0.5" y2="1">
-       <stop offset="0" stop-color="black" stop-opacity="0" />
-       <stop offset="1" stop-color="black" stop-opacity="0.5" />
-      </linearGradient>
-     </defs>
-     <g>
-      <rect fill="url(#gradient)" stroke-width="0" x="0" y="0" width="500" height="500" />
-     </g>
-    </svg>
-    */
-    background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNTAwIj4KIDxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwLjUiIHkxPSIwIiB4Mj0iMC41IiB5Mj0iMSI+CiAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iYmxhY2siIHN0b3Atb3BhY2l0eT0iMCIgLz4KICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSJibGFjayIgc3RvcC1vcGFjaXR5PSIwLjUiIC8+CiAgPC9saW5lYXJHcmFkaWVudD4KIDwvZGVmcz4KIDxnPgogIDxyZWN0IGZpbGw9InVybCgjZ3JhZGllbnQpIiBzdHJva2Utd2lkdGg9IjAiIHg9IjAiIHk9IjAiIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiAvPgogPC9nPgo8L3N2Zz4K) bottom repeat-x;
-    background-size: 75% 75%;
+    background: -webkit-linear-gradient(top,       transparent, transparent 25%, rgba(0, 0, 0, 0.5));
+    background:    -moz-linear-gradient(top,       transparent, transparent 25%, rgba(0, 0, 0, 0.5));
+    background:      -o-linear-gradient(top,       transparent, transparent 25%, rgba(0, 0, 0, 0.5));
+    background:         linear-gradient(to bottom, transparent, transparent 25%, rgba(0, 0, 0, 0.5));
   }
 
   .mixable .push-card.page .post-item .images {
@@ -3237,7 +3269,6 @@
   .mixable .push-card.page .post-item .images {
     left:         50vw;
     top:          50vh;
-    top:          calc(50vh - 1.875em);
   }
   /* For wide screens (landscape aspect ratio) */
   .mixable .push-card.page .post-item .images {
@@ -3299,17 +3330,7 @@
   }
   @media (min-height: 30em) {
     .mixable .push-card.page .post-item .body {
-      max-height: 11.25em; /* 2.25 x 5 */
-    }
-  }
-  @media (min-height: 35em) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 16.875; /* 2.25 x 7.5 */
-    }
-  }
-  @media (min-height: 40em) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 22.5em; /* 2.25 x 10 */
+      max-height: 9em; /* 2.25 x 4 */
     }
   }
   /*
