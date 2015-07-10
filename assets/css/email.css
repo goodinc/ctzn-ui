@@ -184,7 +184,8 @@
     margin-top: 20px;
     margin-bottom: 0;
     text-transform: uppercase;
-    background: rgb(135, 135, 135);
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 0 6px;
     font-size: 10px;
@@ -409,6 +410,60 @@
   }
   .headline.orange {
     border-top: 10px solid rgb(250, 134, 40); /* @orange */
+  }
+
+
+  .daily.headline,
+  .weekly.headline {
+    border-top-width: 0;
+    color: white;
+  }
+  .daily.headline h1 {
+    color: white;
+  }
+  .weekly.headline h1 {
+    color: white;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+  }
+  .weekly.headline h1 b {
+    color: white;
+  }
+  .daily.headline.lime,
+  .weekly.headline.lime {
+    background-color: rgb(218, 243, 121); /* @lime */
+  }
+  .daily.headline.cucumber,
+  .weekly.headline.cucumber {
+    background-color: rgb(153, 248, 115); /* @cucumber */
+  }
+  .daily.headline.blueberry,
+  .weekly.headline.blueberry {
+    background-color: rgb(40, 221, 181); /* @blueberry */
+  }
+  .daily.headline.boysenberry,
+  .weekly.headline.boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .daily.headline.plumb,
+  .weekly.headline.plumb {
+    background-color: rgb(193, 76, 172); /* @plumb */
+  }
+  .daily.headline.strawberry,
+  .weekly.headline.strawberry {
+    background-color: rgb(250, 56, 136); /* @strawberry */
+  }
+  .daily.headline.apple,
+  .weekly.headline.apple {
+    background-color: rgb(255, 49, 59); /* @apple */
+  }
+  .daily.headline.tangerine,
+  .weekly.headline.tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .daily.headline.orange,
+  .weekly.headline.orange {
+    background-color: rgb(250, 134, 40); /* @orange */
   }
 
 
