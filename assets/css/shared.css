@@ -2132,22 +2132,36 @@
     left: 0;
     border-right-width: 0.0625em;
   }
+  .page > header .next,
   .page > header .back {
     text-decoration: none;
     text-transform: lowercase;
-    color: rgb(204, 204, 204); /* @aluminum */
   }
 
   /* Back buttons sometimes have both an icon and a label */
+  .page > header .next svg.icon {
+    display: inline;
+    margin-left: 0.5em;
+    vertical-align: top;
+  }
   .page > header .back svg.icon {
     display: inline;
     margin-right: 0.5em;
     vertical-align: top;
   }
+  .page > header .next svg.icon:first-child {
+    margin-left: 0;
+  }
   .page > header .back svg.icon:last-child {
     margin-right: 0;
   }
+
+  /* OPTIONAL: Hide the button labels on small screens */
   @media (max-width: 60em) {
+    .page > header .next svg.icon {
+      margin-left: 0;
+      display: block;
+    }
     .page > header .back svg.icon {
       margin-right: 0;
       display: block;
@@ -2155,6 +2169,13 @@
     .page > header .back svg.icon + span {
       position: absolute;
       left: -9999px;
+    }
+    .page > header .next span {
+      position: absolute;
+      left: -9999px;
+    }
+    .page > header .next span:first-child:last-child {
+      position: static;
     }
   }
 
