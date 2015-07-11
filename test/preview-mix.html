@@ -335,7 +335,7 @@
     </symbol>
   </svg>
 
-  <main class="orange push-card page">
+  <main class="lime push-card page">
 
     <header class="powered-by">
       <h1>
@@ -366,107 +366,945 @@
       </button>
     </p>
 
-<ol class="post-list " >
-<li >
+<ol class="post-list " data-bind="foreach: posts">
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 bluebird"  data-content="t"></span>
+                <span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="b"></span>
               </span>
-              @<span >tdgood</span>
+              @<span data-bind="text: username">brian</span>
             </h3>
             <p>
-              <time  datetime="2015-07-06T03:37:08.000+00:00">21 hours ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-06T17:48:05.000+00:00">5 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/7a06308e8f526fc3cd0b0fe00956e5d48baec76a=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/7a06308e8f526fc3cd0b0fe00956e5d48baec76a=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/7a06308e8f526fc3cd0b0fe00956e5d48baec76a=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/7a06308e8f526fc3cd0b0fe00956e5d48baec76a=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/7a06308e8f526fc3cd0b0fe00956e5d48baec76a=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/7a06308e8f526fc3cd0b0fe00956e5d48baec76a=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
 
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/6649dd705a295d389f5b42fec0b80fd34244bd02=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/6649dd705a295d389f5b42fec0b80fd34244bd02=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/6649dd705a295d389f5b42fec0b80fd34244bd02=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/6649dd705a295d389f5b42fec0b80fd34244bd02=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/6649dd705a295d389f5b42fec0b80fd34244bd02=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/6649dd705a295d389f5b42fec0b80fd34244bd02=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Look what I found at the Starbucks Reserve Tasting Room in Seattle!</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Sweet trailer</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 ocean"  data-content="g"></span>
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="b"></span>
               </span>
-              @<span >gabe</span>
+              @<span data-bind="text: username">benisonchoi</span>
             </h3>
             <p>
-              <time  datetime="2015-07-03T02:55:02.000+00:00">4 days ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-09T19:43:05.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >The greatest philosopher of our time, Jaden Smith, repping GOOD. Believe it.</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Onboarding the interns! Stoked</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 sky"  data-content="e"></span>
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="m"></span>
               </span>
-              @<span >ekma</span>
+              @<span data-bind="text: username">mindyvnguyen</span>
             </h3>
             <p>
-              <time  datetime="2015-07-02T17:35:33.000+00:00">4 days ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-09T21:09:15.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/2788ffdfe53c032ef5bd1553ff4ca96ccc66cb7d=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/2788ffdfe53c032ef5bd1553ff4ca96ccc66cb7d=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/2788ffdfe53c032ef5bd1553ff4ca96ccc66cb7d=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/2788ffdfe53c032ef5bd1553ff4ca96ccc66cb7d=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/2788ffdfe53c032ef5bd1553ff4ca96ccc66cb7d=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/2788ffdfe53c032ef5bd1553ff4ca96ccc66cb7d=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Happy Birthday @lizwaldorf!</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text"></p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 ocean"  data-content="e"></span>
+                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="g"></span>
               </span>
-              @<span >eddy</span>
+              @<span data-bind="text: username">good_marshall</span>
             </h3>
             <p>
-              <time  datetime="2015-07-02T04:52:41.000+00:00">5 days ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-10T00:39:52.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/76b04feac53130e62bcf296a263324174dde8412=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/76b04feac53130e62bcf296a263324174dde8412=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/76b04feac53130e62bcf296a263324174dde8412=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/76b04feac53130e62bcf296a263324174dde8412=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/76b04feac53130e62bcf296a263324174dde8412=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/76b04feac53130e62bcf296a263324174dde8412=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Great brainstorm sesh with the ROSIES Foundation on how to make CTZN more accessible to people of all abilities. 
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Rain.. What a drip..doh trip!</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="g"></span>
+              </span>
+              @<span data-bind="text: username">good_marshall</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-10T00:40:41.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/dfd121291fa70cf836b7e46059e103f685ab0acd=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/dfd121291fa70cf836b7e46059e103f685ab0acd=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/dfd121291fa70cf836b7e46059e103f685ab0acd=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/dfd121291fa70cf836b7e46059e103f685ab0acd=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/dfd121291fa70cf836b7e46059e103f685ab0acd=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/dfd121291fa70cf836b7e46059e103f685ab0acd=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Um....yes la Quinta!</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="m"></span>
+              </span>
+              @<span data-bind="text: username">mindyvnguyen</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-11T00:11:08.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/b3ebfb2eea3155d6d66f564a7ab5a92738f8c21d=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/b3ebfb2eea3155d6d66f564a7ab5a92738f8c21d=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/b3ebfb2eea3155d6d66f564a7ab5a92738f8c21d=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/b3ebfb2eea3155d6d66f564a7ab5a92738f8c21d=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/b3ebfb2eea3155d6d66f564a7ab5a92738f8c21d=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/b3ebfb2eea3155d6d66f564a7ab5a92738f8c21d=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">@ekma and @lizwaldorf representing at the #100StartsWith1 happy hour in NYC with our friends at the Feast!</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+              </span>
+              @<span data-bind="text: username">jeffdossett</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-11T15:19:41.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n-odd" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/1bb4fb2f31dbec57f0afbe97d632696b9c22fef6=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/1bb4fb2f31dbec57f0afbe97d632696b9c22fef6=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/1bb4fb2f31dbec57f0afbe97d632696b9c22fef6=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/1bb4fb2f31dbec57f0afbe97d632696b9c22fef6=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/1bb4fb2f31dbec57f0afbe97d632696b9c22fef6=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/1bb4fb2f31dbec57f0afbe97d632696b9c22fef6=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
 
-#ready4rosies #goodla #ctzn #globalctzn</p>
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/ba88940d0bfa0e04acddd98b99803c962e4ede78=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/ba88940d0bfa0e04acddd98b99803c962e4ede78=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/ba88940d0bfa0e04acddd98b99803c962e4ede78=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/ba88940d0bfa0e04acddd98b99803c962e4ede78=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/ba88940d0bfa0e04acddd98b99803c962e4ede78=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/ba88940d0bfa0e04acddd98b99803c962e4ede78=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/7ef87dedcc2d39977fad74ca1fe88d1f503b59ba=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/7ef87dedcc2d39977fad74ca1fe88d1f503b59ba=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/7ef87dedcc2d39977fad74ca1fe88d1f503b59ba=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/7ef87dedcc2d39977fad74ca1fe88d1f503b59ba=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/7ef87dedcc2d39977fad74ca1fe88d1f503b59ba=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/7ef87dedcc2d39977fad74ca1fe88d1f503b59ba=s2048x2048 2x" sizes="100vw" alt="Image 3"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Wearing all Gap threads and discussing @GOOD, @Gap, @TheEllenShow, gender equality, girl empowerment, STEAM education, @UNFoundation, @RED and the power of collective action/impact with Attica Jacues, vp global marketing at Gap Inc. So INSPI(RED)!</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 grape"  data-content="l"></span>
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
               </span>
-              @<span >lou</span>
+              @<span data-bind="text: username">earlcole</span>
             </h3>
             <p>
-              <time  datetime="2015-07-01T18:46:17.000+00:00">5 days ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-12T01:59:57.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/f5efa696ee66d9827e9fa5355e7193e9adde60f1=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/f5efa696ee66d9827e9fa5355e7193e9adde60f1=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/f5efa696ee66d9827e9fa5355e7193e9adde60f1=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/f5efa696ee66d9827e9fa5355e7193e9adde60f1=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/f5efa696ee66d9827e9fa5355e7193e9adde60f1=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/f5efa696ee66d9827e9fa5355e7193e9adde60f1=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Please join us in celebrating 100 Days of Change!
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">At our GOOD NBA watch party! Food, drinks, good folks, good fun... and hopefully a Warriors win!</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="g"></span>
+              </span>
+              @<span data-bind="text: username">goldhirsh</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-12T09:23:47.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/9fad6c74e295edb227d9239afeffc553b2bb5cfd=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9fad6c74e295edb227d9239afeffc553b2bb5cfd=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/9fad6c74e295edb227d9239afeffc553b2bb5cfd=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/9fad6c74e295edb227d9239afeffc553b2bb5cfd=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/9fad6c74e295edb227d9239afeffc553b2bb5cfd=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/9fad6c74e295edb227d9239afeffc553b2bb5cfd=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/9d3fdbb679684c8e2254bdab557ae17769c72373=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9d3fdbb679684c8e2254bdab557ae17769c72373=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/9d3fdbb679684c8e2254bdab557ae17769c72373=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/9d3fdbb679684c8e2254bdab557ae17769c72373=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/9d3fdbb679684c8e2254bdab557ae17769c72373=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/9d3fdbb679684c8e2254bdab557ae17769c72373=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Starting the push home. Heading west to the Maldives tonight. Up to Copenhagen through Qatar in a week. Then back to LA on the 24th and into the office on the 25th. So grateful to have had this time. So grateful for all the work you have put in over these months. I was planning on being on the road through August, but the time is right to return now. I'm more inspired by our mission than ever and I look forward to adding a set of legs to the effort shortly. I know we have done great things. I know we are headed to do even greater things. I think our work has done so much good over the years and that makes me very proud. I know we have our best and most impactful years ahead of us and that makes me so excited. @group, thank you for giving me the space to get perspective and to get my wind. I plan to bring my best to the field very shortly. Looking forward to catching up and sharing experiences soon, and hoping you are all doing really well wherever you are in the world right now.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
+              </span>
+              @<span data-bind="text: username">lou</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-12T15:16:10.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/34c5fb029279bdbf1e2d5bfb096128101fd84ef8=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/34c5fb029279bdbf1e2d5bfb096128101fd84ef8=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/34c5fb029279bdbf1e2d5bfb096128101fd84ef8=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/34c5fb029279bdbf1e2d5bfb096128101fd84ef8=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/34c5fb029279bdbf1e2d5bfb096128101fd84ef8=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/34c5fb029279bdbf1e2d5bfb096128101fd84ef8=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Yes. That is Gracie working during yoga time.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="c"></span>
+              </span>
+              @<span data-bind="text: username">cogg</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-12T16:55:50.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">We got word this week that the Annenberg Foundation is going to support CTZN with the maximum value they can give. It is humbling to have the support of such a fantastic force for good here in LA. I am extremely excited to be worthy of the grant.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
+              </span>
+              @<span data-bind="text: username">luckystar</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-12T19:26:34.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/7536baaf923c4cc60fd451428469d97f5f80bf65=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/7536baaf923c4cc60fd451428469d97f5f80bf65=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/7536baaf923c4cc60fd451428469d97f5f80bf65=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/7536baaf923c4cc60fd451428469d97f5f80bf65=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/7536baaf923c4cc60fd451428469d97f5f80bf65=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/7536baaf923c4cc60fd451428469d97f5f80bf65=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/9314d581536f9556cadcc65312a92deb66399085=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9314d581536f9556cadcc65312a92deb66399085=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/9314d581536f9556cadcc65312a92deb66399085=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/9314d581536f9556cadcc65312a92deb66399085=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/9314d581536f9556cadcc65312a92deb66399085=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/9314d581536f9556cadcc65312a92deb66399085=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">A love note from our youngest GOOD fan, Emilia!</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="m"></span>
+              </span>
+              @<span data-bind="text: username">my_name_is_hj</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-13T01:30:58.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/d67be94cec5757333e0f95f71ed04365cd32f0b6=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/d67be94cec5757333e0f95f71ed04365cd32f0b6=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/d67be94cec5757333e0f95f71ed04365cd32f0b6=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/d67be94cec5757333e0f95f71ed04365cd32f0b6=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/d67be94cec5757333e0f95f71ed04365cd32f0b6=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/d67be94cec5757333e0f95f71ed04365cd32f0b6=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">This. Just. Happened. #HelloAppleAppStore #WeMayNeedaNewCTO #BecauseHeJustExploded #NoMoreWaiting #GOTeamCTZN #LeveledUp #LetsDoThissssssss!!! @cogg</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="s"></span>
+              </span>
+              @<span data-bind="text: username">shari</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-13T01:31:48.000+00:00">4 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/9f3c7c87534a500d69c0722b6b7c16684b119c5a=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9f3c7c87534a500d69c0722b6b7c16684b119c5a=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/9f3c7c87534a500d69c0722b6b7c16684b119c5a=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/9f3c7c87534a500d69c0722b6b7c16684b119c5a=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/9f3c7c87534a500d69c0722b6b7c16684b119c5a=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/9f3c7c87534a500d69c0722b6b7c16684b119c5a=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">A lesson in Oceanography by Miss Lynch (my daughter) while the rest of us watched Game 4 of the NBA Finals. Can't help to feel the significance of the line noted on the white board in the background.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="m"></span>
+              </span>
+              @<span data-bind="text: username">max</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-16T23:18:28.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n-even" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/29da67168be319eaa161d032f4423127df4379da=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/29da67168be319eaa161d032f4423127df4379da=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/29da67168be319eaa161d032f4423127df4379da=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/29da67168be319eaa161d032f4423127df4379da=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/29da67168be319eaa161d032f4423127df4379da=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/29da67168be319eaa161d032f4423127df4379da=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/2f6d2e38e9f89c4488839a572ece21150381f293=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/2f6d2e38e9f89c4488839a572ece21150381f293=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/2f6d2e38e9f89c4488839a572ece21150381f293=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/2f6d2e38e9f89c4488839a572ece21150381f293=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/2f6d2e38e9f89c4488839a572ece21150381f293=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/2f6d2e38e9f89c4488839a572ece21150381f293=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/170c630c1ddd5a0157570c1f645fb82b3526b680=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/170c630c1ddd5a0157570c1f645fb82b3526b680=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/170c630c1ddd5a0157570c1f645fb82b3526b680=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/170c630c1ddd5a0157570c1f645fb82b3526b680=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/170c630c1ddd5a0157570c1f645fb82b3526b680=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/170c630c1ddd5a0157570c1f645fb82b3526b680=s2048x2048 2x" sizes="50vw" alt="Image 3"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/d4e398642636eab59007d309e4f2ced8d5a5029a=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/d4e398642636eab59007d309e4f2ced8d5a5029a=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/d4e398642636eab59007d309e4f2ced8d5a5029a=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/d4e398642636eab59007d309e4f2ced8d5a5029a=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/d4e398642636eab59007d309e4f2ced8d5a5029a=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/d4e398642636eab59007d309e4f2ced8d5a5029a=s2048x2048 2x" sizes="50vw" alt="Image 4"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">What a blessing to stay at Casey's childhood home last night before another big day of meetings. Onwards!</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+              </span>
+              @<span data-bind="text: username">jeffdossett</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-16T23:51:44.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/20c4ab3f7eedf6efdbafdf742a520d6273f66065=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/20c4ab3f7eedf6efdbafdf742a520d6273f66065=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/20c4ab3f7eedf6efdbafdf742a520d6273f66065=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/20c4ab3f7eedf6efdbafdf742a520d6273f66065=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/20c4ab3f7eedf6efdbafdf742a520d6273f66065=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/20c4ab3f7eedf6efdbafdf742a520d6273f66065=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/25f72d3c974ad89d7fd87f05bfeb931f5cf0df1c=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/25f72d3c974ad89d7fd87f05bfeb931f5cf0df1c=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/25f72d3c974ad89d7fd87f05bfeb931f5cf0df1c=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/25f72d3c974ad89d7fd87f05bfeb931f5cf0df1c=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/25f72d3c974ad89d7fd87f05bfeb931f5cf0df1c=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/25f72d3c974ad89d7fd87f05bfeb931f5cf0df1c=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">A #LEANIN day today, including 'being there' (school &amp; home) to care for Hannah during and after her nut allergy medical emergency, while Mom was able to remain at work (and yet very connected throughout) and then helping (just a little) our 11 yr old daughter build a robot. What a day. Thanks to the team at GOOD for your support today!
+#girlpower 
+#STEAM_ROCKS.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="a"></span>
+              </span>
+              @<span data-bind="text: username">aldo</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-17T03:44:17.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n-odd" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/df9b50e10e2559be27f30c169c658f569b86675c=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/df9b50e10e2559be27f30c169c658f569b86675c=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/df9b50e10e2559be27f30c169c658f569b86675c=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/df9b50e10e2559be27f30c169c658f569b86675c=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/df9b50e10e2559be27f30c169c658f569b86675c=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/df9b50e10e2559be27f30c169c658f569b86675c=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/98fa1a13c0afb3d6d0be74eb9134302088abf337=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/98fa1a13c0afb3d6d0be74eb9134302088abf337=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/98fa1a13c0afb3d6d0be74eb9134302088abf337=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/98fa1a13c0afb3d6d0be74eb9134302088abf337=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/98fa1a13c0afb3d6d0be74eb9134302088abf337=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/98fa1a13c0afb3d6d0be74eb9134302088abf337=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/111b8cf2197573c5e74b99263bfbd33413ace45a=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/111b8cf2197573c5e74b99263bfbd33413ace45a=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/111b8cf2197573c5e74b99263bfbd33413ace45a=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/111b8cf2197573c5e74b99263bfbd33413ace45a=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/111b8cf2197573c5e74b99263bfbd33413ace45a=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/111b8cf2197573c5e74b99263bfbd33413ace45a=s2048x2048 2x" sizes="100vw" alt="Image 3"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Putting together our postcards/zine #ctzn #amc2015 #good</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">vandenorth</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-18T15:33:33.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/9c118688fc537d7862d67d7ee3f4d0e498ddf2ae=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9c118688fc537d7862d67d7ee3f4d0e498ddf2ae=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/9c118688fc537d7862d67d7ee3f4d0e498ddf2ae=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/9c118688fc537d7862d67d7ee3f4d0e498ddf2ae=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/9c118688fc537d7862d67d7ee3f4d0e498ddf2ae=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/9c118688fc537d7862d67d7ee3f4d0e498ddf2ae=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source -->
+            <p class="source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            <!-- /ko -->
+            <p data-bind="text: text">San Francisco for 12 hours for the GOODcorps Lab, then Detroit for #AMC2015. From the new innovation capitol to the old, all in a day @goodhq. #goodcorps</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
+              </span>
+              @<span data-bind="text: username">eddy</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-18T23:29:28.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/bba95d97743f15fa35c3fde2afe37b58e4ed8c45=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/bba95d97743f15fa35c3fde2afe37b58e4ed8c45=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/bba95d97743f15fa35c3fde2afe37b58e4ed8c45=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/bba95d97743f15fa35c3fde2afe37b58e4ed8c45=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/bba95d97743f15fa35c3fde2afe37b58e4ed8c45=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/bba95d97743f15fa35c3fde2afe37b58e4ed8c45=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Mapping, contesting, and (re)imagining technology's role in community activism. #amc2015 #intersectionality #accessibility</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">vandenorth</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-19T02:01:44.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n-odd" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=s2048x2048 2x" sizes="50vw" alt="Image 3"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=s2048x2048 2x" sizes="50vw" alt="Image 4"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=s2048x2048 2x" sizes="100vw" alt="Image 5"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Lab SF is on! We've got about 25 people from Airbnb, Levi's, Oracle, Facebook and more. Oh, and some great views of the hills. #goodcorps</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
+              </span>
+              @<span data-bind="text: username">lou</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-19T03:26:51.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Prepping with Chef and Annie pre-lab.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
+              </span>
+              @<span data-bind="text: username">ekma</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-19T15:15:04.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n-odd" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=s2048x2048 2x" sizes="100vw" alt="Image 3"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">At Creative Mornings for this month's Revolution theme. Casey Gerald of MBAxAmerica KILLED IT! Note Venn diagram of doing well and doing good. Oh, Brooklyn Museum is ok too I guess...</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">vandenorth</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-19T23:46:37.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n-odd" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=s2048x2048 2x" sizes="100vw" alt="Image 3"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">@aldo giving @eddy a hearty laugh #amc2015</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="j"></span>
+              </span>
+              @<span data-bind="text: username">jim</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-20T05:29:56.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n-even" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=s2048x2048 2x" sizes="50vw" alt="Image 3"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=s2048x2048 2x" sizes="50vw" alt="Image 4"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Some of us decided to sneak up on @shaunanep during her last day here at the office today. Surprise!  ?</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">vandenorth</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-20T23:30:08.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">@eddy's friend drove from Chicago to Detroit to visit him for the night</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'" class="">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
+              </span>
+              @<span data-bind="text: username">earlcole</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-21T03:32:51.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure>
+              <img src="http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=s2048x2048" width="2048" height="1152" alt="Image 1">
+              <div style="background-image: url(http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=s2048x2048)"></div>
+            </figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes Yes, that is all. #GOODvibes</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">victor</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-21T13:53:34.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source -->
+            <p class="source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            <!-- /ko -->
+            <p data-bind="text: text">At HBS reppin' GOODcorps! #GOOD #GOODcorps</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cranberry" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="g"></span>
+              </span>
+              @<span data-bind="text: username">grace</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-21T18:23:15.000+00:00">3 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Two great meetings sharing the good of GOOD.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
+              </span>
+              @<span data-bind="text: username">lou</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-22T19:01:48.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">We got a drone! #good #goodla #ctzn</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="g"></span>
+              </span>
+              @<span data-bind="text: username">gabe</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-23T04:42:51.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Testing GOODForce 1. This thing is going to take our "Big Road Fix" series for Progressive to the next level.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
+              </span>
+              @<span data-bind="text: username">ekma</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-24T00:13:47.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Hanging with NY+Acumen tonight. Rep from Cornerstone Capital Management says "[corporate excellence] is the relentless pursuit of material progress towards a more regenerative and inclusive economy."</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="m"></span>
+              </span>
+              @<span data-bind="text: username">my_name_is_hj</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-24T18:05:09.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n-odd" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=s2048x2048 2x" sizes="100vw" alt="Image 3"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">A snapshot from our Field and Stream Insighs presentation + workshop.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="d"></span>
+              </span>
+              @<span data-bind="text: username">dan</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-25T15:31:21.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Quote from President Obama on Marc Maron's WTF podcast:
+
+“The issue is not the American people. That's where my faith is. The question is how do we build institutions and connections that allow the goodness, decency, [and] common sense of ordinary folks to express itself in the decisions that are made about how the country moves forward.”
+
+Someone needs to tell him about CTZN already!</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 cantaloupe" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="m"></span>
+              </span>
+              @<span data-bind="text: username">my_name_is_hj</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-25T20:57:25.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">We did our Levi's Kick-off meeting from the stadium ;) #howweroll...</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
+              </span>
+              @<span data-bind="text: username">lizwaldorf</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-26T15:00:32.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">The kindness and generosity of the CSI community continues to surprise and inspire me. When my glasses broke today, one of the members got on her hands and knees with me to find the teeny tiny screw and this "guy", also one of Town &amp; Country's Top 50 Global Philanthropists of the year, swooped in to help fix them with his own exacto knife. Feeling grateful and energized. #CSI</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="v"></span>
+              </span>
+              @<span data-bind="text: username">vandenorth</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-27T02:09:01.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Got a recap from the Field &amp; Stream team about "true sportsmanship." Talk about immersive research, check out Anna's archery skills. @my_name_is_hj made us cry per usual.</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
+              </span>
+              @<span data-bind="text: username">lou</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-27T02:55:13.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text"></p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
+              </span>
+              @<span data-bind="text: username">ekma</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-29T03:08:48.000+00:00">2 weeks ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Sir Ian McKellen as parade leader! #fangirl #NYCpride</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="p"></span>
+              </span>
+              @<span data-bind="text: username">parisla</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-29T19:58:39.000+00:00">1 week ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Words of wall wisdom #truth</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
+              </span>
+              @<span data-bind="text: username">lou</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-30T01:25:30.000+00:00">1 week ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Issue 34 is dropping. Failure and Success. #lactzn #goodla #good</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
+              </span>
+              @<span data-bind="text: username">ekma</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-30T03:57:44.000+00:00">1 week ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Repping GOOD at Get Quiet Live Loud event for Lululemon in NYC with 350 "educators" (store associates). Unbelievable production quality and motivational speakers.
+
+"When you are listening, you are being curious. And when you're being curious, you are open to the possibility of change."
+
+Also I sat next to Jacob, a yoga ambassador all the way from Nairobi!</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 kiwi" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="s"></span>
+              </span>
+              @<span data-bind="text: username">shari</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-30T17:09:39.000+00:00">1 week ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source -->
+            <p class="source">
+              <!-- ko if: source == 'twitter' --><!-- /ko --><!-- ko if: source == 'instagram' --><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg><!-- /ko --><!-- ko if: source == 'facebook' --><!-- /ko --></p>
+            <!-- /ko -->
+            <p data-bind="text: text">Separated at birth. Just some harmless city rivalry going on @goodhq #goodworldwide #lactzn</p>
+          </div>
+        </article>
+</li>
+    
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="l"></span>
+              </span>
+              @<span data-bind="text: username">lou</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-01T18:46:17.000+00:00">1 week ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+</div>
+          <!-- /ko -->
+          <div class="body">
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Please join us in celebrating 100 Days of Change!
 
 Sambazon's #100StartsWith1 campaign is built around a simple idea: Small actions can bring about big change. Every day for the past 100 days, we challenged you to shake things up and change your world for the better through positive, everyday actions.
  
@@ -479,519 +1317,159 @@ Please RSVP here: http://100startswith1.splashthat.com/
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 kiwi"  data-content="s"></span>
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
               </span>
-              @<span >shari</span>
+              @<span data-bind="text: username">eddy</span>
             </h3>
             <p>
-              <time  datetime="2015-06-30T17:09:39.000+00:00">6 days ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-02T04:52:41.000+00:00">1 week ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
-            
-            <p >Separated at birth. Just some harmless city rivalry going on @goodhq #goodworldwide #lactzn</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Great brainstorm sesh with the ROSIES Foundation on how to make CTZN more accessible to people of all abilities. 
+
+#ready4rosies #goodla #ctzn #globalctzn</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 sky"  data-content="e"></span>
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
               </span>
-              @<span >ekma</span>
+              @<span data-bind="text: username">ekma</span>
             </h3>
             <p>
-              <time  datetime="2015-06-30T03:57:44.000+00:00">7 days ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-02T17:35:33.000+00:00">1 week ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/37a4c4821e28ff062ad14c4cdf139c410043aab6=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Repping GOOD at Get Quiet Live Loud event for Lululemon in NYC with 350 "educators" (store associates). Unbelievable production quality and motivational speakers.
-
-"When you are listening, you are being curious. And when you're being curious, you are open to the possibility of change."
-
-Also I sat next to Jacob, a yoga ambassador all the way from Nairobi!</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Happy Birthday @lizwaldorf!</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 grape"  data-content="l"></span>
+                <span class="size30 ocean" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="g"></span>
               </span>
-              @<span >lou</span>
+              @<span data-bind="text: username">gabe</span>
             </h3>
             <p>
-              <time  datetime="2015-06-30T01:25:30.000+00:00">7 days ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-03T02:55:02.000+00:00">7 days ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/ca80d516b530ca2fb080840f6202bdda1657f461=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Issue 34 is dropping. Failure and Success. #lactzn #goodla #good</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">The greatest philosopher of our time, Jaden Smith, repping GOOD. Believe it.</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 amethyst"  data-content="p"></span>
+                <span class="size30 bluebird" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="t"></span>
               </span>
-              @<span >parisla</span>
+              @<span data-bind="text: username">tdgood</span>
             </h3>
             <p>
-              <time  datetime="2015-06-29T19:58:39.000+00:00">1 week ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-06T03:37:08.000+00:00">4 days ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/827894853b97d2903970dc2dc8face994adea467=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Words of wall wisdom #truth</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Look what I found at the Starbucks Reserve Tasting Room in Seattle!</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 sky"  data-content="e"></span>
+                <span class="size30 sky" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="e"></span>
               </span>
-              @<span >ekma</span>
+              @<span data-bind="text: username">ekma</span>
             </h3>
             <p>
-              <time  datetime="2015-06-29T03:08:48.000+00:00">1 week ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-06T19:11:55.000+00:00">3 days ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Sir Ian McKellen as parade leader! #fangirl #NYCpride</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Magazines just hit New York!</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 grape"  data-content="l"></span>
+                <span class="size30 amethyst" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="a"></span>
               </span>
-              @<span >lou</span>
+              @<span data-bind="text: username">aaron</span>
             </h3>
             <p>
-              <time  datetime="2015-06-27T02:55:13.000+00:00">1 week ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-07T02:35:36.000+00:00">3 days ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n2" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/8bd244627cfcb3dbadc2c45331e61154cff1154a=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/8bd244627cfcb3dbadc2c45331e61154cff1154a=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/8bd244627cfcb3dbadc2c45331e61154cff1154a=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8bd244627cfcb3dbadc2c45331e61154cff1154a=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/8bd244627cfcb3dbadc2c45331e61154cff1154a=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/8bd244627cfcb3dbadc2c45331e61154cff1154a=s2048x2048 2x" sizes="50vw" alt="Image 1"></figure>
+
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'" class=""><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s2048x2048 2x" sizes="50vw" alt="Image 2"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p ></p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Camp Tipsy is an "annual rotten boat building contest and camp-out held at East Park Reservoir in Colusa County, California" where my family spent the holiday weekend. The event hauls in broken parts from past years and sets up a wood shop on the shore. There were about 800 people there, who made roughly 50 boats.
+
+Our terrible boat, called the "Oh My God Becky, Look at That Golf Boat, It Is so Big", was entered into the Least Comfortable category. As we demonstrated its functionality, it was described to the audience as "Made from the scratchiest astroturf available and offering no shade, this golf course offers the discerning golfer a choice of three holes while trying to stay balanced on a totally unstable platform."
+
+We won! Our prize was an ugly trophy made out of scrap wood and dirty foam.
+
+We also had a lot of fun.
+
+More photos: https://goo.gl/MEZ3L2</p>
           </div>
         </article>
 </li>
     
-<li >
+<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? '' : 'inactive'">
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <span class="size30 ocean"  data-content="v"></span>
+                <span class="size30 clover" data-bind="{ attr: { 'data-content': username.charAt(0).replace('[', '*') }, css: good.avatarColor(user_id) }" data-content="g"></span>
               </span>
-              @<span >vandenorth</span>
+              @<span data-bind="text: username">goldhirsh</span>
             </h3>
             <p>
-              <time  datetime="2015-06-27T02:09:01.000+00:00">1 week ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
+              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-07T04:04:01.000+00:00">3 days ago</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? '' : 'inactive'"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/206f650079507e59fae151fea36a25f4bd013cf3=s2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/206f650079507e59fae151fea36a25f4bd013cf3=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/206f650079507e59fae151fea36a25f4bd013cf3=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/206f650079507e59fae151fea36a25f4bd013cf3=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/206f650079507e59fae151fea36a25f4bd013cf3=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/206f650079507e59fae151fea36a25f4bd013cf3=s2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          
+          <!-- /ko -->
           <div class="body">
-            
-            <p >Got a recap from the Field &amp; Stream team about "true sportsmanship." Talk about immersive research, check out Anna's archery skills. @my_name_is_hj made us cry per usual.</p>
+            <!-- ko if: source --><!-- /ko -->
+            <p data-bind="text: text">Earlier today, getting my game face on to meet with the awesome team at annenberg that has brought such great support to ctzn.</p>
           </div>
         </article>
 </li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 ocean"  data-content="l"></span>
-              </span>
-              @<span >lizwaldorf</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-26T15:00:32.000+00:00">1 week ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >The kindness and generosity of the CSI community continues to surprise and inspire me. When my glasses broke today, one of the members got on her hands and knees with me to find the teeny tiny screw and this "guy", also one of Town &amp; Country's Top 50 Global Philanthropists of the year, swooped in to help fix them with his own exacto knife. Feeling grateful and energized. #CSI</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 cantaloupe"  data-content="m"></span>
-              </span>
-              @<span >my_name_is_hj</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-25T20:57:25.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >We did our Levi's Kick-off meeting from the stadium ;) #howweroll...</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 grape"  data-content="d"></span>
-              </span>
-              @<span >dan</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-25T15:31:21.000+00:00">2 weeks ago</time></p>
-          </header>
-          <div class="body">
-            
-            <p >Quote from President Obama on Marc Maron's WTF podcast:
-
-“The issue is not the American people. That's where my faith is. The question is how do we build institutions and connections that allow the goodness, decency, [and] common sense of ordinary folks to express itself in the decisions that are made about how the country moves forward.”
-
-Someone needs to tell him about CTZN already!</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 cantaloupe"  data-content="m"></span>
-              </span>
-              @<span >my_name_is_hj</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-24T18:05:09.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n-odd" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c1024x1024 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c1024x1024 2x" sizes="50vw" alt="Image 2"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c2048x1024" srcset="http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c512x256 512w, http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c1024x512 1024w, http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c1536x768 1536w, http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c2048x1024 2048w, http://assets.goodstatic.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c2048x1024 2x" sizes="100vw" alt="Image 3"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >A snapshot from our Field and Stream Insighs presentation + workshop.</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 sky"  data-content="e"></span>
-              </span>
-              @<span >ekma</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-24T00:13:47.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Hanging with NY+Acumen tonight. Rep from Cornerstone Capital Management says "[corporate excellence] is the relentless pursuit of material progress towards a more regenerative and inclusive economy."</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 ocean"  data-content="g"></span>
-              </span>
-              @<span >gabe</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-23T04:42:51.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Testing GOODForce 1. This thing is going to take our "Big Road Fix" series for Progressive to the next level.</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 grape"  data-content="l"></span>
-              </span>
-              @<span >lou</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-22T19:01:48.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >We got a drone! #good #goodla #ctzn</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 cranberry"  data-content="g"></span>
-              </span>
-              @<span >grace</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-21T18:23:15.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Two great meetings sharing the good of GOOD.</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 sky"  data-content="v"></span>
-              </span>
-              @<span >victor</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-21T13:53:34.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
-            
-            <p >At HBS reppin' GOODcorps! #GOOD #GOODcorps</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 sky"  data-content="e"></span>
-              </span>
-              @<span >earlcole</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-21T03:32:51.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Yes, that is all. #GOODvibes</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 ocean"  data-content="v"></span>
-              </span>
-              @<span >vandenorth</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-20T23:30:08.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c2048x2048" srcset="http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c2048x2048 2x" sizes="100vw" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >@eddy's friend drove from Chicago to Detroit to visit him for the night</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 cantaloupe"  data-content="j"></span>
-              </span>
-              @<span >jim</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-20T05:29:56.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n-even" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c1024x1024 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c1024x1024 2x" sizes="50vw" alt="Image 2"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c1024x1024 2x" sizes="50vw" alt="Image 3"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c1024x1024 2x" sizes="50vw" alt="Image 4"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Some of us decided to sneak up on @shaunanep during her last day here at the office today. Surprise!  🎉</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 ocean"  data-content="v"></span>
-              </span>
-              @<span >vandenorth</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-19T23:46:37.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n-odd" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c1024x1024 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c1024x1024 2x" sizes="50vw" alt="Image 2"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c2048x1024" srcset="http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c512x256 512w, http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c1024x512 1024w, http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c1536x768 1536w, http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c2048x1024 2048w, http://assets.goodstatic.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c2048x1024 2x" sizes="100vw" alt="Image 3"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >@aldo giving @eddy a hearty laugh #amc2015</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 sky"  data-content="e"></span>
-              </span>
-              @<span >ekma</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-19T15:15:04.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n-odd" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/da935bdc1b26561c46125f6aba8e81f4a63806b7=c1024x1024 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/ac9e567352e8610f7fbc477a1335acd8a680614d=c1024x1024 2x" sizes="50vw" alt="Image 2"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=c2048x1024" srcset="http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=c512x256 512w, http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=c1024x512 1024w, http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=c1536x768 1536w, http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=c2048x1024 2048w, http://assets.goodstatic.com/s3/ctzn/04e5bdc924519177859dcf6a78cdced8b757f282=c2048x1024 2x" sizes="100vw" alt="Image 3"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >At Creative Mornings for this month's Revolution theme. Casey Gerald of MBAxAmerica KILLED IT! Note Venn diagram of doing well and doing good. Oh, Brooklyn Museum is ok too I guess...</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 grape"  data-content="l"></span>
-              </span>
-              @<span >lou</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-19T03:26:51.000+00:00">3 weeks ago</time></p>
-          </header><div class="images n2" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/93296bfefd9384dd4bb41288592963c2cb18456e=c1024x2048 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=c1024x2048" srcset="http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=c256x512 256w, http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=c512x1024 512w, http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=c768x1536 768w, http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=c1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/7d19cc4a1624e12e9100530abe79475ba59c70c5=c1024x2048 2x" sizes="50vw" alt="Image 2"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Prepping with Chef and Annie pre-lab.</p>
-          </div>
-        </article>
-</li>
-    
-<li >
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 ocean"  data-content="v"></span>
-              </span>
-              @<span >vandenorth</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-19T02:01:44.000+00:00">3 weeks ago</time></p>
-          </header><div class="images n-odd" >
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/544945661e3a2ee61ca83ab21c147dcc41ded74f=c1024x1024 2x" sizes="50vw" alt="Image 1"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=c1024x1024 2x" sizes="50vw" alt="Image 2"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/651ab855ceef93f23697b3cffe33a9d323efc94f=c1024x1024 2x" sizes="50vw" alt="Image 3"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=c1024x1024" srcset="http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=c256x256 256w, http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=c512x512 512w, http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=c768x768 768w, http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=c1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/0b2a24f35d8b6b83499b3992c2b2ce7f4a3bca02=c1024x1024 2x" sizes="50vw" alt="Image 4"></figure>
-
-            <figure><img  src="http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=c2048x1024" srcset="http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=c512x256 512w, http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=c1024x512 1024w, http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=c1536x768 1536w, http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=c2048x1024 2048w, http://assets.goodstatic.com/s3/ctzn/0decf35fbdb2798414ebd11b6f803802282626d1=c2048x1024 2x" sizes="100vw" alt="Image 5"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Lab SF is on! We've got about 25 people from Airbnb, Levi's, Oracle, Facebook and more. Oh, and some great views of the hills. #goodcorps</p>
-          </div>
-        </article>
-</li>
-    
     </ol>
   </main>
 

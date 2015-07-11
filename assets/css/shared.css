@@ -3054,12 +3054,6 @@
   .toggle-mixable button .icon {
     vertical-align: top;
   }
-  /*
-  .mixable .push-card.page .details + .action a .icon {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-  }
-  */
 
   .hoverable .mixable .push-card.page .details + .action a:hover,
              .mixable .push-card.page .details + .action a:active,
@@ -3283,51 +3277,31 @@
     background:         linear-gradient(to bottom, transparent, transparent 25%, rgba(0, 0, 0, 0.5));
   }
 
-  .mixable .push-card.page .post-item .images {
+  .mixable .push-card.page .post-item .images figure div {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
-  /* Center the image (this assumes the image is a square) */
-  .mixable .push-card.page .post-item .images {
-    left:         50vw;
-    top:          50vh;
-  }
-  /* For wide screens (landscape aspect ratio) */
-  .mixable .push-card.page .post-item .images {
-    width:       100vw;
-    margin-left: -50vw;
-    margin-top:  -50vw;
-  }
-  /* For tall screens (portrait aspect ratio) */
-  @media (max-aspect-ratio: 1/1) {
-    .mixable .push-card.page .post-item .images {
-      width:       100vh;
-      margin-left: -50vh;
-      margin-top:  -50vh;
-    }
+  /* SHIM: Override styles intended for the public page */
+  .mixable .push-card .post-list .post-item .images img {
+    border-width: 0 !important;
+    margin: 0 !important;
   }
 
-  /* Don’t show the source on the live channel page */
+  /* SHIM: Don’t show the source on the live channel page */
   .mixable .push-card.page .post-item .body .source {
     display: none;
   }
 
-  /*
-  .mixable .push-card .post-list .post-item header h3 {
-    font-size: 1.25em;
-  }
-  .mixable .push-card.page > header {
-    bottom: 1.375em;
-  }
-  */
-
   .mixable .push-card.page .post-item .body {
     margin: 0;
-    /*
-    max-height: calc(100vh - 3.5em);
-    */
     overflow: hidden;
     position: absolute;
     bottom: 6em;
@@ -3344,6 +3318,13 @@
     max-height: 4.5em; /* 2.25 (@line-height x font size) x 2 */
     max-width: 90%;
     max-width: calc(100% - 3em); /* margin = 1.5 x 2 */
+
+    /* OPTIONAL: Show an ellipses if the text has been truncated
+    http://dropshado.ws/post/1015351370/webkit-line-clamp */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
   .mixable .push-card.page .post-item .body p {
     margin-top: 0;
@@ -3353,33 +3334,17 @@
   .mixable .push-card.page .post-item .body p:last-child {
     margin-bottom: 0;
   }
-  @media (min-height: 30em) {
+
+  @media (min-height: 30em), (min-width: 30em) {
     .mixable .push-card.page .post-item .body p {
       font-size: 1.5em;
     }
+  }
+  @media (min-height: 30em) {
     .mixable .push-card.page .post-item .body {
       max-height: 9em; /* 2.25 x 4 */
     }
   }
-  /*
-  @media (min-height: 20em) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 90em;
-    }
-  }
-  @media (min-height: 35em) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 110.25em;
-    }
-  }
-  */
-  /*
-  @media (min-aspect-ratio: 1/1) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 8.25em;
-    }
-  }
-  */
 
   /* OPTIONAL: Make the text larger on big screens  */
   @media (min-width: 500px) and (min-height: 500px) {
@@ -3394,18 +3359,6 @@
       font-size: 1.25em;
     }
   }
-  /*
-  @media (min-width: 600px) and (min-height: 600px) {
-    .mixable .push-card.page .post-item .body p {
-      font-size: 2em;
-    }
-  }
-  @media (min-width: 1000px), (min-height: 1000px) {
-    .mixable .push-card .post-list .post-item {
-      font-size: 2vmax;
-    }
-  }
-  */
 
 
 
