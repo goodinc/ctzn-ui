@@ -5442,9 +5442,16 @@
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+  }
 
-    /* Make space for the header */
-    border-top: 3em solid transparent;
+  /* Make space for the header */
+  .archive.page iframe {
+    border-top: 5.3125em solid transparent; /* (@line-height x 3.5) + (1px / @font-size) */
+  }
+  @media (min-height: 20em) and (min-width: 20em) {
+    .archive.page iframe {
+      border-top: 3.0625em solid transparent; /* (@line-height x 2) + (1px / @font-size) */
+    }
   }
 
 
