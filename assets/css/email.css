@@ -1057,6 +1057,7 @@
     font-size: inherit;
     color: black;
   }
+  .tip h2,
   .tip svg,
   .tip img {
     margin-right: 5px;
@@ -1114,6 +1115,33 @@
   .feedback a:active,
   .feedback a:focus {
     color: rgb(193, 16, 65); /* @raspberry */
+  }
+
+  .stats ul,
+  .stats li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .stats ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .stats li {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    width: 32%;
+  }
+  .stats b {
+    color: black;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 10px;
+    display: block;
   }
 
 
