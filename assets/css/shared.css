@@ -597,13 +597,23 @@
   .settings select {
     font-size: inherit;
   }
+  .settings .datetime {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .settings .datetime + .datetime {
+    margin-left: 1.5em;
+  }
   @media (max-width: 25em) {
-    .settings select {
+    .settings .datetime {
+      width: 45%;
+      width: calc(49% - 0.75em);
+    }
+    .settings .datetime select {
       width: 100%;
     }
   }
-  .settings div .option-list + h3,
-  .settings div .select      + h3 {
+  .settings .datetime h3 {
     margin-top: 1.5em;
     margin-bottom: 0;
   }

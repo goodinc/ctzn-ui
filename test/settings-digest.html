@@ -277,10 +277,6 @@
     </symbol>
   </svg>
 
-  <header class="primary">
-    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></a></h2>
-  </header>
-
   <section class="settings page">
     <header>
       <h1>Email Digest</h1>
@@ -291,26 +287,26 @@
       </a>
     </header>
 
-    <div>
-      <form action="" method="post">
+    <form action="" method="post">
 
+      <div class="option-list">
         <h3>Frequency</h3>
-        <div class="option-list">
-          <ul>
-            <li>
-              <a href="#" role="checkbox" aria-checked="false">
-                Daily
-              </a>
-            </li>
-            <li>
-              <a href="#" role="checkbox" aria-checked="true">
-                Weekly
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Selected</foreignobject></svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <a href="#" role="checkbox" aria-checked="false">
+              Daily
+            </a>
+          </li>
+          <li>
+            <a href="#" role="checkbox" aria-checked="true">
+              Weekly
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Selected</foreignobject></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
 
+      <div class="datetime">
         <h3>At</h3>
         <p class="select">
           <label>
@@ -343,7 +339,9 @@
             </select>
           </label>
         </p>
+      </div>
 
+      <div class="datetime">
         <h3>On</h3>
         <p class="select">
           <label>
@@ -359,12 +357,12 @@
             </select>
           </label>
         </p>
+      </div>
 
-        <p class="submit">
-          <button type="submit">Save</button>
-        </p>
-      </form>
-    </div>
+      <p class="submit">
+        <button type="submit">Save</button>
+      </p>
+    </form>
 
   </section>
 
