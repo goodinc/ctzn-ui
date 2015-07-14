@@ -25,42 +25,6 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
-  <style>
-    .select {
-      margin-top: 1.5em;
-    }
-    .select label span:first-child {
-      /* @tiny-headline */
-      font-size: 0.75em;
-      text-transform: uppercase;
-      color: rgb(159, 165, 162); /* @barium */     
-      font-weight: bold;
-    }
-    .select label br {
-      display: block;
-    }
-    .select select {
-      font-size: inherit;
-    }
-    .select .color {
-      display: inline-block;
-      width: 1.875em;
-      height: 1.875em;
-      vertical-align: middle;
-      margin-left: 0.375em;
-      border-radius: 0.125em;
-    }
-    .option-list a .color {
-      display: inline-block;
-      width: 1.5em;
-      height: 1.5em;
-      vertical-align: middle;
-      margin-right: 0.375em;
-      margin-left: -0.75em;
-      border-radius: 0.125em;
-    }
-  </style>
-
 </head>
 <body>
 
@@ -313,7 +277,7 @@
     </symbol>
   </svg>
 
-  <section class="edit-push page">
+  <section class="edit-push settings page">
     <header>
       <h1>Edit Push</h1>
 
@@ -322,7 +286,7 @@
       </a>
     </header>
 
-    <form action="" method="post" style="padding-bottom: 0.75em;">
+    <form action="" method="post">
       <ul class="text">
         <li>
           <label>
@@ -349,6 +313,8 @@
           </label>
         </li>
       </ul>
+
+      <h3>Push Color</h3>
       <p class="select">
         <label>
           <span>Push Color</span><br />
@@ -363,7 +329,7 @@
             <option>Teal</option>
             <option>Blue</option>
           </select>
-          <span class="color" style="background-color: rgb(193, 76, 172); /* @plumb */"></span>
+          <span class="plumb push-card"></span>
         </label>
       </p>
       <p class="submit">
@@ -371,70 +337,7 @@
       </p>
     </form>
 
-    <!--
-    <div class="option-list">
-      <h3>Push Color</h3>
-      <ul>
-        <li>
-          <a href="" role="checkbox" aria-checked="true">
-            <span class="color" style="background-color: rgb(193, 76, 172); /* @plumb */"></span>
-            Purple
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Selected</foreignobject></svg>
-          </a>
-        </li>
-        <li>
-          <a href="" role="checkbox" aria-checked="false">
-            <span class="color" style="background-color: rgb(250, 56, 136); /* @strawberry */"></span>
-            Magenta
-          </a>
-        </li>
-        <li>
-          <a href="" role="checkbox" aria-checked="false">
-            <span class="color" style="background-color: rgb(255, 49, 59); /* @apple */"></span>
-            Red
-          </a>
-        </li>
-        <li>
-          <a href="" role="checkbox" aria-checked="false">
-            <span class="color" style="background-color: rgb(250, 134, 40); /* @orange */"></span>
-            Orange
-          </a>
-        </li>
-        <li>
-          <a href="" role="checkbox" aria-checked="false">
-            <span class="color" style="background-color: rgb(255, 204, 0); /* @tangerine */"></span>
-            Gold
-          </a>
-        </li>
-        <li>
-          <a href="" role="checkbox" aria-checked="false">
-            <span class="color" style="background-color: rgb(193, 245, 0); /* @lime */"></span>
-            Lime
-          </a>
-        </li>
-        <li>
-          <a href="" role="checkbox" aria-checked="false">
-            <span class="color" style="background-color: rgb(64, 222, 0); /* @cucumber */"></span>
-            Green
-          </a>
-        </li>
-        <li>
-          <a href="" role="checkbox" aria-checked="false">
-            <span class="color" style="background-color: rgb(40, 221, 181); /* @blueberry */"></span>
-            Teal
-          </a>
-        </li>
-        <li>
-          <a href="" role="checkbox" aria-checked="false">
-            <span class="color" style="background-color: rgb(101, 152, 254); /* @boysenberry */"></span>
-            Blue
-          </a>
-        </li>
-      </ul>
-    </div>
-    -->
-
-    <div class="tags option-list" style="margin-top: 0; padding-top: 0">
+    <div class="tags option-list">
       <h3>Invite Codes</h3>
       <ul>
         <li>

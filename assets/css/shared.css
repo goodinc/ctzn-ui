@@ -5176,7 +5176,7 @@
   }
 
 
-  /* =New Push
+  /* =Edit Push
   ----------------------------------------------- */
   .settings.page form h1 {
     font-size: 1.3333333333em;
@@ -5185,8 +5185,21 @@
     font-weight: 900;
     text-align: center;
   }
-  .settings.page form ul + h3 {
+  .settings.page form h3 {
     margin-top: 2.25em;
+  }
+  .settings.page form h1 + h3 {
+    margin-top: 0;
+  }
+  .settings  p.select label span.push-card {
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.875em;
+    height: 1.875em;
+    padding: 0;
+    border-radius: 0.125em;
+    margin-left: 0.375em;
   }
 
 
