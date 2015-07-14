@@ -25,6 +25,18 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
+  <style>
+    .option-list a .color {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      margin-right: 0.375em;
+      margin-left: -0.75em;
+      border-radius: 0.125em;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -291,25 +303,25 @@
         <li>
           <label>
             <span>Push Name</span><br />
-            <input type="text" placeholder="Push Name" />
+            <input type="text" placeholder="Push Name" value="Free Lots Angeles" />
           </label>
         </li>
         <li>
           <label>
             <span>Purpose (optional)</span><br />
-            <textarea placeholder="Purpose (optional)"></textarea>
+            <textarea placeholder="Purpose (optional)">Free Lots Angeles organizes “pop-up” events on vacant lots.</textarea>
           </label>
         </li>
         <li>
           <label>
             <span>Default Hashtag</span><br />
-            <input type="text" placeholder="Default Hashtag" />
+            <input type="text" placeholder="Default Hashtag" value="#freelotsangeles" />
           </label>
         </li>
         <li>
           <label>
             <span>Website (optional)</span><br />
-            <input type="url" placeholder="Website (optional)" />
+            <input type="url" placeholder="Website (optional)" value="https://www.facebook.com/freelotsangeles" />
           </label>
         </li>
       </ul>
@@ -317,6 +329,67 @@
         <button>Done</button>
       </p>
     </form>
+
+    <div class="option-list">
+      <h3>Push Color</h3>
+      <ul>
+        <li>
+          <a href="" role="checkbox" aria-checked="false">
+            <span class="color" style="background-color: #C1F500"></span>
+            Lime
+          </a>
+        </li>
+        <li>
+          <a href="" role="checkbox" aria-checked="false">
+            <span class="color" style="background-color: #40DE00"></span>
+            Green
+          </a>
+        </li>
+        <li>
+          <a href="" role="checkbox" aria-checked="false">
+            <span class="color" style="background-color: rgb(40, 221, 181); /* @blueberry */"></span>
+            Teal
+          </a>
+        </li>
+        <li>
+          <a href="" role="checkbox" aria-checked="false">
+            <span class="color" style="background-color: rgb(101, 152, 254); /* @boysenberry */"></span>
+            Blue
+          </a>
+        </li>
+        <li>
+          <a href="" role="checkbox" aria-checked="true">
+            <span class="color" style="background-color: rgb(193, 76, 172); /* @plumb */"></span>
+            Purple
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Selected</foreignobject></svg>
+          </a>
+        </li>
+        <li>
+          <a href="" role="checkbox" aria-checked="false">
+            <span class="color" style="background-color: rgb(250, 56, 136); /* @strawberry */"></span>
+            Magenta
+          </a>
+        </li>
+        <li>
+          <a href="" role="checkbox" aria-checked="false">
+            <span class="color" style="background-color: rgb(255, 49, 59); /* @apple */"></span>
+            Red
+          </a>
+        </li>
+        <li>
+          <a href="" role="checkbox" aria-checked="false">
+            <span class="color" style="background-color: rgb(255, 204, 0); /* @tangerine */"></span>
+            Gold
+          </a>
+        </li>
+        <li>
+          <a href="" role="checkbox" aria-checked="false">
+            <span class="color" style="background-color: rgb(250, 134, 40); /* @orange */"></span>
+            Orange
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <div class="tags option-list">
       <h3>Invite Codes</h3>
