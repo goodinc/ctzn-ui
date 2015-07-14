@@ -592,6 +592,34 @@
   }
 
 
+  /* =Settings
+  ----------------------------------------------- */
+  .settings select {
+    font-size: inherit;
+  }
+  @media (max-width: 25em) {
+    .settings select {
+      width: 100%;
+    }
+  }
+  .settings div .option-list + h3,
+  .settings div .select      + h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0;
+  }
+  .settings p.select {
+    margin-top: 0;
+  }
+  .settings p.select label span {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  .settings p.submit {
+    margin-top: 2.25em;
+  }
+
+
   /* =Labels
   ----------------------------------------------- */
   label {
