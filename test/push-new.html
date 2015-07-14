@@ -25,6 +25,37 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
+  <style>
+    .select {
+      margin-top: 1.5em;
+    }
+    .select label span:first-child {
+      position: static !important;
+
+      /* @tiny-headline */
+      font-size: 0.75em;
+      text-transform: uppercase;
+      color: rgb(159, 165, 162); /* @barium */     
+      font-weight: bold;
+    }
+    .select label br {
+      display: block;
+    }
+    .select select {
+      font-size: inherit;
+    }
+    .select .color {
+      position: static !important;
+
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      margin-left: 0.375em;
+      border-radius: 0.125em;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -313,10 +344,28 @@
         </li>
       </ul>
 
-      <h3>Invite Code</h3>
+      <p class="select" style="margin-top: 1.5em">
+        <label>
+          <span>Push Color</span><br />
+          <select>
+            <option>Purple</option>
+            <option>Magenta</option>
+            <option>Red</option>
+            <option>Orange</option>
+            <option>Gold</option>
+            <option>Lime</option>
+            <option>Green</option>
+            <option>Teal</option>
+            <option>Blue</option>
+          </select>
+          <span class="color" style="background-color: rgb(193, 76, 172); /* @plumb */"></span>
+        </label>
+      </p>
+
+      <h3 style="margin-top: 3em;">Invite Code</h3>
       <p class="text">
         <label>
-          <span>Invite Code</span><br>
+          <span>Invite Code</span><br />
           <input type="text" name="invite_code" placeholder="sampleinvitecode" autocapitalize="off" />
         </label>
         <em class="note">Please enter at least five characters. Valid characters are: a-z 0-9 _ ! * -</em>

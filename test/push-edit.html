@@ -26,6 +26,30 @@
   <![endif]-->
 
   <style>
+    .select {
+      margin-top: 1.5em;
+    }
+    .select label span:first-child {
+      /* @tiny-headline */
+      font-size: 0.75em;
+      text-transform: uppercase;
+      color: rgb(159, 165, 162); /* @barium */     
+      font-weight: bold;
+    }
+    .select label br {
+      display: block;
+    }
+    .select select {
+      font-size: inherit;
+    }
+    .select .color {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      margin-left: 0.375em;
+      border-radius: 0.125em;
+    }
     .option-list a .color {
       display: inline-block;
       width: 1.5em;
@@ -298,7 +322,7 @@
       </a>
     </header>
 
-    <form action="" method="post">
+    <form action="" method="post" style="padding-bottom: 0.75em;">
       <ul class="text">
         <li>
           <label>
@@ -325,11 +349,29 @@
           </label>
         </li>
       </ul>
+      <p class="select">
+        <label>
+          <span>Push Color</span><br />
+          <select>
+            <option>Purple</option>
+            <option>Magenta</option>
+            <option>Red</option>
+            <option>Orange</option>
+            <option>Gold</option>
+            <option>Lime</option>
+            <option>Green</option>
+            <option>Teal</option>
+            <option>Blue</option>
+          </select>
+          <span class="color" style="background-color: rgb(193, 76, 172); /* @plumb */"></span>
+        </label>
+      </p>
       <p class="submit">
         <button>Done</button>
       </p>
     </form>
 
+    <!--
     <div class="option-list">
       <h3>Push Color</h3>
       <ul>
@@ -390,8 +432,9 @@
         </li>
       </ul>
     </div>
+    -->
 
-    <div class="tags option-list">
+    <div class="tags option-list" style="margin-top: 0; padding-top: 0">
       <h3>Invite Codes</h3>
       <ul>
         <li>
