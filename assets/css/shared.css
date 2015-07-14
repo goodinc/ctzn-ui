@@ -5216,6 +5216,11 @@
     border-radius: 0.125em;
     margin-left: 0.375em;
   }
+  label abbr {
+    font-size: 0.875em;
+    margin-left: 0.25em;
+    text-transform: none;
+  }
 
 
   /* =Notifications
