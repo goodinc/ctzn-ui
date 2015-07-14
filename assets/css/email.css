@@ -362,6 +362,10 @@
   .profile.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
+  .push.intro.periwinkle div,
+  .profile.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
   .push.intro.plumb div,
   .profile.plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
@@ -395,6 +399,9 @@
   }
   .headline.boysenberry {
     border-top: 10px solid rgb(101, 152, 254); /* @boysenberry */
+  }
+  .headline.periwinkle {
+    border-top: 10px solid rgb(109, 90, 219); /* @periwinkle */
   }
   .headline.plumb {
     border-top: 10px solid rgb(193, 76, 172); /* @plumb */
@@ -445,6 +452,10 @@
   .weekly.headline.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
+  .daily.headline.periwinkle,
+  .weekly.headline.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
   .daily.headline.plumb,
   .weekly.headline.plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
@@ -482,6 +493,10 @@
   .article .join-summary.boysenberry,
   .article .summary.boysenberry {
     border-left: 5px solid rgb(101, 152, 254); /* @boysenberry */
+  }
+  .article .join-summary.periwinkle,
+  .article .summary.periwinkle {
+    border-left: 5px solid rgb(109, 90, 219); /* @periwinkle */
   }
   .article .join-summary.plumb,
   .article .summary.plumb {
@@ -1008,6 +1023,14 @@
   .feedback.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
     background-color: rgb(91, 132, 234); /* 4% darker */
+  }
+
+  .download.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .feedback.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+    background-color: rgb(89, 70, 199); /* 4% darker */
   }
 
   .download.plumb {

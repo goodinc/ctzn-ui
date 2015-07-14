@@ -2546,6 +2546,9 @@
   .push-card.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
+  .push-card.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
   .push-card.plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
@@ -3050,6 +3053,9 @@
   .push-card.boysenberry .post-item .images + .body:before {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
+  .push-card.periwinkle .post-item .images + .body:before {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
   .push-card.plumb .post-item .images + .body:before {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
@@ -3163,6 +3169,9 @@
   }
   .mixable .push-card.boysenberry .details + .action:before {
     background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .mixable .push-card.periwinkle .details + .action:before {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
   }
   .mixable .push-card.plumb .details + .action:before {
     background-color: rgb(193, 76, 172); /* @plumb */
@@ -3987,6 +3996,9 @@
   .mix .boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
+  .mix .periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
   .mix .plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
   }
@@ -4635,6 +4647,9 @@
   }
   .mix-editor .preview.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .mix-editor .preview.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
   }
   .mix-editor .preview.plumb {
     background-color: rgb(193, 76, 172); /* @plumb */
