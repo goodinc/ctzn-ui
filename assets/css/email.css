@@ -53,12 +53,16 @@
     color: rgb(31, 31, 31); /* @steel */
   }
 
+  .featured,
   .screenshot {
     width: 580px;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+  .featured + .headline {
+    margin-top: 0;
   }
 
   .headline h1 {
@@ -114,17 +118,32 @@
   /* “Reply above” header */
   .header {
     padding-top: 10px;
-    text-align: center;
     margin-bottom: 10px;
   }
-  .header h2 {
+  .header h2,
+  .header p {
     margin: 0;
     font-size: 12px;
+  }
+  .header h2 {
     color: rgb(159, 165, 162); /* @barium */
+    text-align: center;
+  }
+
+  /* “View in browser” header */
+  .header p {
+    text-align: right;
+    padding-right: 20px;
+  }
+  @media (min-width: 600px) {
+    .header p {
+      padding-right: 0;
+    }
   }
 
 
   /* Containers */
+  .header,
   .headline,
   .details,
   .article,
@@ -164,6 +183,7 @@
     padding: 15px;
     max-width: 550px; /* 580px - (15px x 2) */
   }
+  .header,
   .footer,
   .steps {
     max-width: 580px;
@@ -387,7 +407,7 @@
     background-color: rgb(255, 117, 9); /* @orange */
   }
 
-
+  /* Push Colors */
   .headline.lime {
     border-top: 10px solid rgb(176, 224, 0); /* @lime */
   }
@@ -419,6 +439,10 @@
     border-top: 10px solid rgb(255, 117, 9); /* @orange */
   }
 
+  /* CTZN General */
+  .headline.honeydew {
+    border-top: 10px solid rgb(150, 255, 108); /* @honeydew */
+  }
 
   .daily.headline,
   .weekly.headline {
@@ -427,6 +451,7 @@
   }
   .daily.headline h1 {
     color: white;
+    font-weight: normal;
   }
   .weekly.headline h1 {
     color: white;
@@ -991,6 +1016,7 @@
     background-color: rgb(153, 153, 153); /* @nickel */
   }
 
+  /* Push Colors */
   .download.lime {
     background-color: rgb(176, 224, 0); /* @lime */
     background-color: rgb(156, 204, 0); /* 4% darker */
@@ -1073,6 +1099,17 @@
     background-color: rgb(235, 97, 0); /* 4% darker */
   }
 
+  /* CTZN General */
+  .download.honeydew {
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    background-color: rgb(130, 235, 88); /* 4% darker */
+  }
+  .feedback.honeydew {
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    background-color: rgb(110, 215, 68); /* 8% darker */
+  }
+
+
   .tip {
     font-size: 14px;
   }
@@ -1140,6 +1177,11 @@
     color: white;
   }
 
+  .stats {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 560px; /* 580 - (10 x 2) */
+  }
   .stats ul,
   .stats li {
     list-style: none;
@@ -1153,6 +1195,7 @@
   .stats li {
     margin-top: 20px;
     margin-bottom: 10px;
+    vertical-align: top;
     display: inline-block;
     text-align: center;
     font-size: 14px;
