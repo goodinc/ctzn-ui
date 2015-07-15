@@ -13,7 +13,8 @@
       'orange',
       'boysenberry',
       'lime',
-      'tangerine'
+      'tangerine',
+      'periwinkle'
     ];
 
     var min = 0;
