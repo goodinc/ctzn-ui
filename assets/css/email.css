@@ -449,9 +449,21 @@
     border-top-width: 0;
     color: white;
   }
+  .daily.headline + .headline {
+    margin-top: 0;
+  }
+  .daily.headline {
+    margin-top: 20px;
+  }
   .daily.headline h1 {
     color: white;
     font-weight: normal;
+  }
+  .daily.headline h1 svg {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 3px;
+    border-radius: 50%;
+    margin-left: -15px; /* 10px + ((24px - 20px) / 2) + 5px      10px + icon.size - avatar.size */
   }
   .weekly.headline h1 {
     color: white;
@@ -1117,10 +1129,12 @@
     font-size: inherit;
     color: black;
   }
-  .tip h2,
+  .tip h2 {
+    margin-right: 5px;
+  }
   .tip svg,
   .tip img {
-    margin-right: 5px;
+    margin-right: 10px;
   }
   .tip h2,
   .tip p {
