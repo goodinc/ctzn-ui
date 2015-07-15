@@ -1787,12 +1787,29 @@
     display: block;
     position: absolute;
     background-color: rgb(255, 49, 102); /* @pitaya */
+    background-color: rgb(150, 255, 108); /* @honeydew */
     width: 0.325em;
     height: 0.325em;
     border-radius: 100%;
     margin-top: 0.675em;
     margin-left: -0.25em;
   }
+
+  .switch li a.push-card .name {
+    padding-left: 0.375em;
+  }
+  .switch li a.push-card.active .name:before {
+    content: "";
+    display: inline-block;
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    width: 0.375em;
+    height: 0.375em;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 0.375em;
+    margin-left: -0.75em;
+  }
+
   header.primary a {
     display: block;
     color: inherit;
