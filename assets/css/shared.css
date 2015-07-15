@@ -1,6 +1,6 @@
 
 /*
-  Shared styles, for screens in the CTZN app.
+  Shared styles, for pages on getctzn.com and ctznapp.com
 
   This style sheet has pseudo-variables prefixed
   with an “@” symbol, to help with search and replace.
@@ -36,13 +36,13 @@
   }
 
   a {
-    color: rgb(250, 56, 136); /* @strawberry */
+    color: rgb(255, 49, 102); /* @pitaya */
     transition: opacity 0.2s, color 0.2s, background-color 0.2s;
   }
   .hoverable a:hover,
              a:active,
              a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
   a img {
     border-width: 0;
@@ -206,10 +206,10 @@
       background-color: rgb(222, 222, 222); /* @silver */
     }
     66% {
-      background-color: rgb(250, 56, 136); /* @strawberry */
+      background-color: rgb(255, 49, 102); /* @pitaya */
     }
     100% {
-      background-color: rgb(250, 56, 136); /* @strawberry */
+      background-color: rgb(255, 49, 102); /* @pitaya */
     }
   }
   @keyframes blink {
@@ -217,10 +217,10 @@
       background-color: rgb(222, 222, 222); /* @silver */
     }
     66% {
-      background-color: rgb(250, 56, 136); /* @strawberry */
+      background-color: rgb(255, 49, 102); /* @pitaya */
     }
     100% {
-      background-color: rgb(250, 56, 136); /* @strawberry */
+      background-color: rgb(255, 49, 102); /* @pitaya */
     }
   }
 
@@ -399,7 +399,7 @@
     font-family: inherit;
     font-size: inherit;
     font-weight: bold;
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(255, 49, 102); /* @pitaya */
     color: white;
     padding: 0.375em 1.125em;
     line-height: 1.5em;
@@ -418,7 +418,7 @@
   .hoverable a:hover  .action,
              a:active .action,
              a:focus  .action {
-    background-color: rgb(193, 16, 65); /* @raspberry */
+    background-color: rgb(235, 29, 82); /* @raspberry */
     color: white;
   }
   .action a,
@@ -427,7 +427,7 @@
     text-decoration: none;
   }
   .warning button {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 49, 59); /* @watermelon */
     color: white;
   }
   .hoverable .warning button:hover,
@@ -451,7 +451,7 @@
   .error-message button,
   .update-indicator a {
     background: white;
-    color: rgb(250, 56, 136); /* @strawberry */
+    color: rgb(255, 49, 102); /* @pitaya */
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     transition: all 0.2s;
   }
@@ -463,7 +463,7 @@
              .update-indicator a:focus {
     background-color: rgb(222, 222, 222); /* @silver */
     border-color: rgb(222, 222, 222); /* @silver */
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
 
 
@@ -533,7 +533,7 @@
   }
 
   form .validation-message {
-    color: rgb(255, 49, 59); /* @apple */
+    color: rgb(255, 49, 59); /* @watermelon */
   }
 
   .push-card .validation-message {
@@ -682,7 +682,7 @@
   }
   .text .error label .icon:first-child,
   .text.error  label .icon:first-child {
-    color: rgb(255, 49, 59); /* @apple */
+    color: rgb(255, 49, 59); /* @watermelon */
   }
   .text label span {
     color: rgb(153, 153, 153); /* @nickel */
@@ -875,13 +875,13 @@
 
   .update-countdown,
   .upload-message.error {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 49, 59); /* @watermelon */
     color: white;
   }
   .upload-message a,
   .upload-message button {
     background-color: transparent;
-    color: rgb(250, 56, 136); /* @strawberry */
+    color: rgb(255, 49, 102); /* @pitaya */
   }
   .upload-message a,
   .upload-message button {
@@ -1115,7 +1115,7 @@
     font-weight: bold;
   }
   .post-options li.warning button {
-    color: rgb(255, 49, 59); /* @apple */
+    color: rgb(255, 49, 59); /* @watermelon */
   }
   .hoverable .post-options li button:hover,
              .post-options li button:active,
@@ -1127,7 +1127,7 @@
   .hoverable .post-options li.warning button:hover,
              .post-options li.warning button:active,
              .post-options li.warning button:focus {
-    color: rgb(255, 49, 59); /* @apple */
+    color: rgb(255, 49, 59); /* @watermelon */
   }
 
 
@@ -1226,7 +1226,7 @@
   .list ul a.message:hover,
   .list ul a.message:active,
   .list ul a.message:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
   .list ul .message svg {
     display: block;
@@ -1362,7 +1362,7 @@
   .hoverable .post-item header h3 a:hover,
              .post-item header h3 a:active,
              .post-item header h3 a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
 
   .post-item header {
@@ -1492,7 +1492,7 @@
   .hoverable .post-item .profile > a:hover  h2,
              .post-item .profile > a:active h2,
              .post-item .profile > a:focus  h2 {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
   .post-item .profile p.name {
     margin-top: 0;
@@ -1594,7 +1594,7 @@
   .list ul                button[aria-checked="true"],
   .post-item footer     .action [aria-checked="true"] {
     background: rgb(238, 238, 238); /* @seashell */
-    color: rgb(245, 83, 135) !important; /* @strawberry */
+    color: rgb(255, 49, 102) !important; /* @pitaya */
   }
 
   .post-item footer .action li:last-child {
@@ -1655,7 +1655,7 @@
   .hoverable .post-item footer .meta li a:hover,
              .post-item footer .meta li a:active,
              .post-item footer .meta li a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
 
 
@@ -1786,7 +1786,7 @@
     content: "";
     display: block;
     position: absolute;
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(255, 49, 102); /* @pitaya */
     width: 0.325em;
     height: 0.325em;
     border-radius: 100%;
@@ -2370,7 +2370,7 @@
   }
   .option-list a,
   .option-list button {
-    color: rgb(250, 56, 136); /* @strawberry */
+    color: rgb(255, 49, 102); /* @pitaya */
   }
 
   /* TRICKY: Buttons don’t fill the full width of the screen (even with “display” set to “block”).
@@ -2456,7 +2456,7 @@
   .hoverable .option-list button:hover,
              .option-list button:active,
              .option-list button:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
   .option-list,
   .option-list ul:first-child,
@@ -2535,13 +2535,13 @@
   }
 
   .push-card.lime {
-    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(176, 224, 0); /* @lime */
   }
   .push-card.cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(60, 210, 0); /* @cucumber */
   }
   .push-card.blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(0, 204, 204); /* @blueberry */
   }
   .push-card.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
@@ -2550,19 +2550,19 @@
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
   .push-card.plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .push-card.strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(250, 44, 162); /* @strawberry */
   }
   .push-card.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 0, 86); /* @apple */
   }
   .push-card.tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
   .push-card.orange {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
   }
 
   /* Sometimes the push-card is a link */
@@ -3042,13 +3042,13 @@
   }
 
   .push-card.lime .post-item .images + .body:before {
-    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(176, 224, 0); /* @lime */
   }
   .push-card.cucumber .post-item .images + .body:before {
-    background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(60, 210, 0); /* @cucumber */
   }
   .push-card.blueberry .post-item .images + .body:before {
-    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(0, 204, 204); /* @blueberry */
   }
   .push-card.boysenberry .post-item .images + .body:before {
     background-color: rgb(101, 152, 254); /* @boysenberry */
@@ -3057,19 +3057,19 @@
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
   .push-card.plumb .post-item .images + .body:before {
-    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .push-card.strawberry .post-item .images + .body:before {
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(250, 44, 162); /* @strawberry */
   }
   .push-card.apple .post-item .images + .body:before {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 0, 86); /* @apple */
   }
   .push-card.tangerine .post-item .images + .body:before {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
   .push-card.orange .post-item .images + .body:before {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
   }
 
 
@@ -3159,13 +3159,13 @@
   }
 
   .mixable .push-card.lime .details + .action:before {
-    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(176, 224, 0); /* @lime */
   }
   .mixable .push-card.cucumber .details + .action:before {
-    background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(60, 210, 0); /* @cucumber */
   }
   .mixable .push-card.blueberry .details + .action:before {
-    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(0, 204, 204); /* @blueberry */
   }
   .mixable .push-card.boysenberry .details + .action:before {
     background-color: rgb(101, 152, 254); /* @boysenberry */
@@ -3174,19 +3174,19 @@
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
   .mixable .push-card.plumb .details + .action:before {
-    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .mixable .push-card.strawberry .details + .action:before {
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(250, 44, 162); /* @strawberry */
   }
   .mixable .push-card.apple .details + .action:before {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 0, 86); /* @apple */
   }
   .mixable .push-card.tangerine .details + .action:before {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
   .mixable .push-card.orange .details + .action:before {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
   }
 
   .mixable .push-card.page .details + .action a {
@@ -3884,7 +3884,7 @@
   }
   .mix-list .add a {
     display: block;
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(255, 49, 102); /* @pitaya */
     color: white;
     width: 80%; /* image size / @font-size (125px / 16px) */
     height: 80%;
@@ -3916,7 +3916,7 @@
   .hoverable .mix-list .add a:hover,
              .mix-list .add a:active,
              .mix-list .add a:focus {
-    background-color: rgba(255, 49, 102, 0.85); /* @strawberry */
+    background-color: rgba(255, 49, 102, 0.85); /* @pitaya */
   }
   .mix-list li {
     width: 32.5%;
@@ -3959,7 +3959,7 @@
             box-sizing: border-box;
   }
   .mix-list .mix-error > span {
-    background: rgb(255, 49, 59); /* @apple */
+    background: rgb(255, 49, 59); /* @watermelon */
     padding: 0.375em 0.75em;
   }
   .mix-list .mix-loading .loading-icon {
@@ -3981,17 +3981,17 @@
   .mix .preview {
     padding: 1.5em;
     max-width: none;
-    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(176, 224, 0); /* @lime */
   }
 
   .mix .lime {
-    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(176, 224, 0); /* @lime */
   }
   .mix .cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(60, 210, 0); /* @cucumber */
   }
   .mix .blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(0, 204, 204); /* @blueberry */
   }
   .mix .boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
@@ -4000,19 +4000,19 @@
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
   .mix .plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .mix .strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(250, 44, 162); /* @strawberry */
   }
   .mix .apple {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 0, 86); /* @apple */
   }
   .mix .tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
   .mix .orange {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
   }
 
   .mix .preview div {
@@ -4050,12 +4050,12 @@
     text-decoration: none;
   }
   .mix footer .attaboyed {
-    color: rgb(250, 56, 136); /* @strawberry */
+    color: rgb(255, 49, 102); /* @pitaya */
   }
   .hoverable .mix footer p a:hover,
              .mix footer p a:active,
              .mix footer p a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
   .mix footer .count {
     font-size: 0.75em;
@@ -4436,7 +4436,7 @@
     cursor: pointer;
   }
   .mix-editor .image-list li .number {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
     display: block;
     text-align: center;
     color: white;
@@ -4620,7 +4620,7 @@
   }
 
   .mix-editor .preview {
-    background: rgb(218, 243, 121); /* @lime */
+    background: rgb(176, 224, 0); /* @lime */
 
     text-align: center;
     padding: 1.5em;
@@ -4637,13 +4637,13 @@
     min-height: 9em;
   }
   .mix-editor .preview.lime {
-    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(176, 224, 0); /* @lime */
   }
   .mix-editor .preview.cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(60, 210, 0); /* @cucumber */
   }
   .mix-editor .preview.blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(0, 204, 204); /* @blueberry */
   }
   .mix-editor .preview.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
@@ -4652,19 +4652,19 @@
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
   .mix-editor .preview.plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .mix-editor .preview.strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(250, 44, 162); /* @strawberry */
   }
   .mix-editor .preview.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 0, 86); /* @apple */
   }
   .mix-editor .preview.tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
   .mix-editor .preview.orange {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
   }
   .mix-editor .preview div {
     background-size: cover;
@@ -4889,12 +4889,12 @@
   }
   .signup.page aside a strong {
     font-weight: normal;
-    color: rgb(250, 56, 136); /* @strawberry */
+    color: rgb(255, 49, 102); /* @pitaya */
   }
   .hoverable .signup.page aside a:hover  strong,
              .signup.page aside a:active strong,
              .signup.page aside a:focus  strong {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
   .signup.page .note:first-child {
     margin-top: 0;
@@ -5206,12 +5206,12 @@
   .settings.page form h1 + h3 {
     margin-top: 0;
   }
-  .settings  p.select label span.push-card {
+  .settings p.select label span.push-card {
     position: static;
     display: inline-block;
     vertical-align: middle;
-    width: 1.875em;
-    height: 1.875em;
+    width: 1.75em;
+    height: 1.75em;
     padding: 0;
     border-radius: 0.125em;
     margin-left: 0.375em;
@@ -5341,7 +5341,7 @@
   .hoverable .activity .more a:hover,
              .activity .more a:active,
              .activity .more a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
 
   .notifications .post-item .body img {
@@ -5598,7 +5598,7 @@
   }
   .dialog.page .action a.reinstall,
   .dialog.page    button.reinstall {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 49, 59); /* @watermelon */
   }
   .dialog.page .action a.restart,
   .dialog.page    button.restart {
@@ -5610,7 +5610,8 @@
   .hoverable .dialog.page    button.reinstall:hover,
              .dialog.page    button.reinstall:active,
              .dialog.page    button.reinstall:focus {
-    background-color: rgb(215, 34, 44); /* dark apple */
+    background-color: rgb(255, 49, 59); /* @watermelon */
+    background-color: rgb(235, 29, 39); /* 4% darker */
   }
   .hoverable .dialog.page .action a.restart:hover,
              .dialog.page .action a.restart:active,
@@ -5618,7 +5619,8 @@
   .hoverable .dialog.page    button.restart:hover,
              .dialog.page    button.restart:active,
              .dialog.page    button.restart:focus {
-    background-color: rgb(85, 141, 207); /* dark boysenberry */
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+    background-color: rgb(81, 132, 234); /* 4% darker */
   }
   .dialog.page .action {
     margin-top: 1.5em;

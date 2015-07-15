@@ -11,13 +11,7 @@
     min-height: 100%;
     box-sizing: border-box;
 
-    background-color: rgb(250, 250, 250); /* @casper */
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-    background-color: rgb(51, 51, 51); /* @iron */
-    background-color: rgb(102, 102, 102); /* @tin */
     background-color: rgb(0, 206, 250); /* @bluebird */
-    background-image: url(https://m.ctznapp.com/s3/ctzn/58ab9a127c8618550bbb387aa017702749228da1=s2048x2048);
-    background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0796b1cf00f1f7ea28cc273d3363d5764a47562e=s2048x2048);
     background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -172,8 +166,7 @@
   }
   .pattern-list li a[href],
   header.pattern nav a[href] {
-    color: rgb(250, 56, 136); /* @strawberry */
-    color: rgb(218, 243, 121); /* @lime */
+    color: rgb(150, 255, 108); /* @green */
   }
   header.pattern nav a[href]:visited,
   .pattern-list   li a[href]:visited {

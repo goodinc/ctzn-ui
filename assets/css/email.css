@@ -40,7 +40,7 @@
   a:hover,
   a:active,
   a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: rgb(235, 29, 82); /* @raspberry */
   }
 
   a img {
@@ -348,15 +348,15 @@
   ----------------------------------------------- */
   .push.intro.lime div,
   .profile.lime {
-    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(176, 224, 0); /* @lime */
   }
   .push.intro.cucumber div,
   .profile.cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(60, 210, 0); /* @cucumber */
   }
   .push.intro.blueberry div,
   .profile.blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(0, 204, 204); /* @blueberry */
   }
   .push.intro.boysenberry div,
   .profile.boysenberry {
@@ -368,15 +368,15 @@
   }
   .push.intro.plumb div,
   .profile.plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .push.intro.strawberry div,
   .profile.strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(250, 44, 162); /* @strawberry */
   }
   .push.intro.apple div,
   .profile.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 0, 86); /* @apple */
   }
   .push.intro.tangerine div,
   .profile.tangerine {
@@ -384,18 +384,18 @@
   }
   .push.intro.orange div,
   .profile.orange {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
   }
 
 
   .headline.lime {
-    border-top: 10px solid rgb(218, 243, 121); /* @lime */
+    border-top: 10px solid rgb(176, 224, 0); /* @lime */
   }
   .headline.cucumber {
-    border-top: 10px solid rgb(153, 248, 115); /* @cucumber */
+    border-top: 10px solid rgb(60, 210, 0); /* @cucumber */
   }
   .headline.blueberry {
-    border-top: 10px solid rgb(40, 221, 181); /* @blueberry */
+    border-top: 10px solid rgb(0, 204, 204); /* @blueberry */
   }
   .headline.boysenberry {
     border-top: 10px solid rgb(101, 152, 254); /* @boysenberry */
@@ -404,19 +404,19 @@
     border-top: 10px solid rgb(109, 90, 219); /* @periwinkle */
   }
   .headline.plumb {
-    border-top: 10px solid rgb(193, 76, 172); /* @plumb */
+    border-top: 10px solid rgb(181, 62, 194); /* @plumb */
   }
   .headline.strawberry {
-    border-top: 10px solid rgb(250, 56, 136); /* @strawberry */
+    border-top: 10px solid rgb(250, 44, 162); /* @strawberry */
   }
   .headline.apple {
-    border-top: 10px solid rgb(255, 49, 59); /* @apple */
+    border-top: 10px solid rgb(255, 0, 86); /* @apple */
   }
   .headline.tangerine {
     border-top: 10px solid rgb(255, 204, 0); /* @tangerine */
   }
   .headline.orange {
-    border-top: 10px solid rgb(250, 134, 40); /* @orange */
+    border-top: 10px solid rgb(255, 117, 9); /* @orange */
   }
 
 
@@ -438,15 +438,15 @@
   }
   .daily.headline.lime,
   .weekly.headline.lime {
-    background-color: rgb(218, 243, 121); /* @lime */
+    background-color: rgb(176, 224, 0); /* @lime */
   }
   .daily.headline.cucumber,
   .weekly.headline.cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
+    background-color: rgb(60, 210, 0); /* @cucumber */
   }
   .daily.headline.blueberry,
   .weekly.headline.blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(0, 204, 204); /* @blueberry */
   }
   .daily.headline.boysenberry,
   .weekly.headline.boysenberry {
@@ -458,15 +458,15 @@
   }
   .daily.headline.plumb,
   .weekly.headline.plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .daily.headline.strawberry,
   .weekly.headline.strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(250, 44, 162); /* @strawberry */
   }
   .daily.headline.apple,
   .weekly.headline.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 0, 86); /* @apple */
   }
   .daily.headline.tangerine,
   .weekly.headline.tangerine {
@@ -474,21 +474,21 @@
   }
   .daily.headline.orange,
   .weekly.headline.orange {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
   }
 
 
   .article .join-summary.lime,
   .article .summary.lime {
-    border-left: 5px solid rgb(218, 243, 121); /* @lime */
+    border-left: 5px solid rgb(176, 224, 0); /* @lime */
   }
   .article .join-summary.cucumber,
   .article .summary.cucumber {
-    border-left: 5px solid rgb(153, 248, 115); /* @cucumber */
+    border-left: 5px solid rgb(60, 210, 0); /* @cucumber */
   }
   .article .join-summary.blueberry,
   .article .summary.blueberry {
-    border-left: 5px solid rgb(40, 221, 181); /* @blueberry */
+    border-left: 5px solid rgb(0, 204, 204); /* @blueberry */
   }
   .article .join-summary.boysenberry,
   .article .summary.boysenberry {
@@ -500,15 +500,15 @@
   }
   .article .join-summary.plumb,
   .article .summary.plumb {
-    border-left: 5px solid rgb(193, 76, 172); /* @plumb */
+    border-left: 5px solid rgb(181, 62, 194); /* @plumb */
   }
   .article .join-summary.strawberry,
   .article .summary.strawberry {
-    border-left: 5px solid rgb(250, 56, 136); /* @strawberry */
+    border-left: 5px solid rgb(250, 44, 162); /* @strawberry */
   }
   .article .join-summary.apple,
   .article .summary.apple {
-    border-left: 5px solid rgb(255, 49, 59); /* @apple */
+    border-left: 5px solid rgb(255, 0, 86); /* @apple */
   }
   .article .join-summary.tangerine,
   .article .summary.tangerine {
@@ -516,7 +516,7 @@
   }
   .article .join-summary.orange,
   .article .summary.orange {
-    border-left: 5px solid rgb(250, 134, 40); /* @orange */
+    border-left: 5px solid rgb(255, 117, 9); /* @orange */
   }
 
 
@@ -858,13 +858,13 @@
 
   .action.primary a {
     border-color: transparent;
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(255, 49, 102); /* @pitaya */
     color: white;
   }
   .action.primary a:hover,
   .action.primary a:active,
   .action.primary a:focus {
-    background-color: rgb(193, 16, 65); /* @raspberry */
+    background-color: rgb(235, 29, 82); /* @raspberry */
   }
 
   /* For mix ready email */
@@ -896,7 +896,7 @@
     width: 12px;
     border-radius: 100%;
     margin-left: 3px;
-    color: rgb(251, 59, 147); /* @cranberry */
+    color: rgb(255, 49, 102); /* @pitaya */
   }
 
   .article p.source {
@@ -992,29 +992,29 @@
   }
 
   .download.lime {
-    background-color: rgb(218, 243, 121); /* @lime */
-    background-color: rgb(198, 223, 101); /* 4% darker */
+    background-color: rgb(176, 224, 0); /* @lime */
+    background-color: rgb(156, 204, 0); /* 4% darker */
   }
   .feedback.lime {
-    background-color: rgb(218, 243, 121); /* @lime */
-    background-color: rgb(178, 203, 81); /* 8% darker */
+    background-color: rgb(176, 224, 0); /* @lime */
+    background-color: rgb(136, 184, 0); /* 8% darker */
   }
 
   .download.cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
-    background-color: rgb(133, 228, 95); /* 4% darker */
+    background-color: rgb(60, 210, 0); /* @cucumber */
+    background-color: rgb(40, 190, 0); /* 4% darker */
   }
   .feedback.cucumber {
-    background-color: rgb(153, 248, 115); /* @cucumber */
-    background-color: rgb(113, 208, 75); /* 8% darker */
+    background-color: rgb(60, 210, 0); /* @cucumber */
+    background-color: rgb(20, 170, 0); /* 8% darker */
   }
 
   .download.blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
+    background-color: rgb(0, 204, 204); /* @blueberry */
   }
   .feedback.blueberry {
-    background-color: rgb(40, 221, 181); /* @blueberry */
-    background-color: rgb(20, 201, 161); /* 4% darker */
+    background-color: rgb(0, 204, 204); /* @blueberry */
+    background-color: rgb(0, 184, 184); /* 4% darker */
   }
 
   .download.boysenberry {
@@ -1034,27 +1034,27 @@
   }
 
   .download.plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .feedback.plumb {
-    background-color: rgb(193, 76, 172); /* @plumb */
-    background-color: rgb(173, 56, 152); /* 4% darker */
+    background-color: rgb(181, 62, 194); /* @plumb */
+    background-color: rgb(161, 42, 174); /* 4% darker */
   }
 
   .download.strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
+    background-color: rgb(250, 44, 162); /* @strawberry */
   }
   .feedback.strawberry {
-    background-color: rgb(250, 56, 136); /* @strawberry */
-    background-color: rgb(230, 36, 116); /* 4% darker */
+    background-color: rgb(250, 44, 162); /* @strawberry */
+    background-color: rgb(230, 24, 142); /* 4% darker */
   }
 
   .download.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
+    background-color: rgb(255, 0, 86); /* @apple */
   }
   .feedback.apple {
-    background-color: rgb(255, 49, 59); /* @apple */
-    background-color: rgb(235, 29, 39); /* 4% darker */
+    background-color: rgb(255, 0, 86); /* @apple */
+    background-color: rgb(235, 0, 66); /* 4% darker */
   }
 
   .download.tangerine {
@@ -1066,11 +1066,11 @@
   }
 
   .download.orange {
-    background-color: rgb(250, 134, 40); /* @orange */
+    background-color: rgb(255, 117, 9); /* @orange */
   }
   .feedback.orange {
-    background-color: rgb(250, 134, 40); /* @orange */
-    background-color: rgb(230, 114, 20); /* 4% darker */
+    background-color: rgb(255, 117, 9); /* @orange */
+    background-color: rgb(235, 97, 0); /* 4% darker */
   }
 
   .tip {
@@ -1132,12 +1132,12 @@
     color: white;
   }
   .feedback a {
-    color: black;
+    color: white;
   }
   .feedback a:hover,
   .feedback a:active,
   .feedback a:focus {
-    color: rgb(193, 16, 65); /* @raspberry */
+    color: white;
   }
 
   .stats ul,
