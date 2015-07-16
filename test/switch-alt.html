@@ -25,6 +25,135 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
+  <style>
+    .page .switch {
+      max-width: none;
+    }
+    .switch,
+    .switch li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .switch:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .switch {
+      margin: 0 !important;
+      padding: 0.0625em 0 0 0.0625em;
+      padding: 1.5em 0 0 1.5em !important;
+    }
+    .switch ul {
+      margin: 0 !important;
+    }
+    .switch li {
+      float: left;
+      margin: 0 0.0625em 0.0625em 0;
+      margin: 0 1.5em 1.5em 0 !important;
+    }
+    .switch .add a {
+      display: block;
+      background-color: rgb(255, 49, 102); /* @pitaya */
+      color: white;
+      border-radius: 0.25em;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      text-align: center;
+      text-decoration: none;
+      text-transform: lowercase;
+      padding: 0.75em 0.5em;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: column;
+              flex-direction: column;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+    }
+    .hoverable .switch .add a:hover,
+               .switch .add a:active,
+               .switch .add a:focus {
+      background-color: rgba(255, 49, 102, 0.85); /* @pitaya */
+    }
+    .switch li {
+      width: 32.5%;
+      min-height: 100px;
+    }
+    .switch li {
+      width: 32.5vw;
+      height: 32.5vw;
+      padding-bottom: 1.875em;
+    }
+    .switch li {
+      width: calc(33.333333333vw - 2em); /* three per row (image size (100vw) / 3) - (4 x 1.5em / 3)  */
+      height: calc(33.333333333vw - 2em);
+    }
+    @media (min-width: 700px) {
+      .switch li {
+        width: calc(25vw - 1.875em); /* three per row (image size (100vw) / 4) - (5 x 1.5em / 4)  */
+        height: calc(25vw - 1.875em);
+      }
+    }
+    .switch li a {
+      display: block !important;
+      width: 100%; /* image size / @font-size (125px / 16px) */
+      height: 100%;
+      border-radius: 0.25em;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      text-decoration: none;
+    }
+    .switch li a .name {
+      position: absolute;
+      bottom: -1.875em;
+      left: 0;
+      width: 100%;
+      font-weight: inherit;
+      font-family: inherit;
+      font-size: 0.875em !important;
+      line-height: inherit;
+      text-shadow: none !important;
+    }
+    .switch li a.push-card.active .name:before {
+      position: absolute;
+      bottom: 0.55em;
+      left: 0.325em;
+    }
+    .switch li a .name span {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .switch li a .icon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -0.75em;
+      text-align: center;
+      font-size: 3em;
+      width: 100%;
+    }
+    .switch li a .icon:before {
+      content: attr(data-content);
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -294,47 +423,56 @@
       <ul>
         <li>
           <a href="push.html" class="active push-card lime">
-            <span class="name">Artizen Labs</span>
+            <span class="icon" data-content="A"></span>
+            <span class="name"><span>Artizen Labs</span></span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card cucumber">
-            <span class="name">Crafting Stories</span>
+            <span class="icon" data-content="C"></span>
+            <span class="name"><span>Crafting Stories</span></span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card blueberry">
-            <span class="name">LA 2050</span>
+            <span class="icon" data-content="C"></span>
+            <span class="name"><span>LA 2050</span></span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card boysenberry">
-            <span class="name">826LA</span>
+            <span class="icon" data-content="8"></span>
+            <span class="name"><span>826LA</span></span>
           </a>
         </li>
         <li>
           <a href="push.html" class="active push-card periwinkle">
-            <span class="name">Kaboom</span>
+            <span class="icon" data-content="K"></span>
+            <span class="name"><span>Kaboom</span></span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card plumb">
-            <span class="name">GOOD</span>
+            <span class="icon" data-content="G"></span>
+            <span class="name"><span>GOOD</span></span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card strawberry">
-            <span class="name">South LA Organizers</span>
+            <span class="icon" data-content="S"></span>
+            <span class="name"><span>South LA Organizers</span></span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card tangerine">
-            <span class="name">Global CTZN</span>
+            <span class="icon" data-content="G"></span>
+            <span class="name"><span>Global CTZN</span></span>
           </a>
         </li>
         <li>
           <a href="push.html" class="push-card orange">
-            <span class="name">The Making of CTZN</span>
+            <span class="icon" data-content="T"></span>
+            <span class="name"><span>The Making of CTZN</span></span>
           </a>
         </li>
       </ul>
