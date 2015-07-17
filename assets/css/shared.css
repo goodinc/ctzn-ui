@@ -5411,6 +5411,9 @@
     position: absolute;
     left: -9999px;
   }
+  .pushes .option-list ul {
+    margin-top: 0;
+  }
 
   .switch ul,
   .switch li {
