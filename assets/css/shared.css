@@ -597,10 +597,19 @@
   .settings select {
     font-size: inherit;
   }
+  .number li,
   .settings .datetime {
+    margin-top: 0;
     display: inline-block;
     vertical-align: top;
   }
+  .number li label span {
+    display: block;
+  }
+  .number li input {
+    width: 5em;
+  }
+  ul.number li + li,
   .settings .datetime + .datetime {
     margin-left: 1.5em;
   }
@@ -638,6 +647,7 @@
   label br {
     display: none;
   }
+  .number label,
   .text label {
     display: block;
     padding-top: 0.1875em;
@@ -651,9 +661,20 @@
     /* Make space for the success & error icons */
     padding-right: 1.75em;
   }
+  .placeholder label,
+  .number label,
   p.text label {
     border-radius: 0.25em;
   }
+  .code textarea,
+  .number input[type="number"] {
+    border-width: 0.0625em;
+  }
+  .code textarea {
+    height: 9em;
+  }
+  ul.number,
+  ul.number li,
   ul.text,
   ul.text li {
     list-style: none;
@@ -684,7 +705,9 @@
   .text.error  label .icon:first-child {
     color: rgb(255, 49, 59); /* @watermelon */
   }
-  .text label span {
+  .code   label span,
+  .number label span,
+  .text   label span {
     color: rgb(153, 153, 153); /* @nickel */
     padding: 0 0.75em;
   }
@@ -2421,7 +2444,10 @@
   }
   /* For the “invite curator” form */
   .option-list a.disabled {
+    background-color: white !important; /* override the hover states */
     background-image: none;
+    color: inherit;
+    cursor: default;
   }
 
   .option-list li + li a,

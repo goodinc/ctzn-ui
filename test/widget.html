@@ -288,30 +288,36 @@
       </a>
     </header>
 
-    <div>
-
-      <figure>
-        <iframe width="640" height="320" style="max-width: 100%" src="http://www.ctznapp.com/push/1582E0C6/the-making-of-ctzn?channel=1" frameborder="0" allowfullscreen></iframe>
-
-        <p><textarea rows="10" style="height: 7em" onclick="this.focus();this.select()" readonly="readonly">
-&lt;iframe width=&quot;640&quot; height=&quot;480&quot; src=&quot;http://www.ctznapp.com/push/1582E0C6/the-making-of-ctzn?channel=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</textarea></p>
-      </figure>
-          
+    <div class="orange push-card preview">
+      <iframe width="640" height="480" src="http://www.ctznapp.com/push/1582E0C6/the-making-of-ctzn?channel=1" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <form action="" method="post">
-      <p>
+
+      <ul class="number">
+        <li>
+          <label>
+            <span>Width</span><br />
+            <input type="number" value="640" />
+          </label>
+        </li>
+        <li>
+          <label>
+            <span>Height</span><br />
+            <input type="number" value="480" />
+          </label>
+        </li>
+      </ul>
+
+      <p class="code">
         <label>
-          <span>Width</span><br />
-          <input type="text" value="640" />
+          <span>Embed Code</span><br />
+          <code><textarea readonly="readonly" onclick="this.focus(); this.select();">
+&lt;iframe width=&quot;640&quot; height=&quot;480&quot; src=&quot;http://www.ctznapp.com/push/1582E0C6/the-making-of-ctzn?channel=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</textarea></code>
         </label>
       </p>
-      <p>
-        <label>
-          <span>Height</span><br />
-          <input type="text" value="480" />
-        </label>
-      </p>
+      <p class="note">Copy and paste this code into your web page template.</p>
+
     </form>
 
   </section>
