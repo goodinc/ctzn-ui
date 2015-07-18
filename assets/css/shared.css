@@ -1448,7 +1448,7 @@
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
     background-color: rgba(0, 0, 0, 0.25);
     min-width: 9em;
-    min-height: 9em;
+    min-height: 6em;
   }
   .post-item .body img[onclick] {
     transition: opacity 0.2s;
