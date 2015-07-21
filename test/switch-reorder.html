@@ -30,20 +30,73 @@
     .switch li {
       position: relative;
     }
-    .switch li a.push-card + button {
+    .switch li a.push-card ~ button {
+      z-index: 1;
       background-color: rgba(0, 0, 0, 0.25);
       background-color: transparent;
       color: rgba(0, 0, 0, 0.25);
+      padding: 0.5em 1em;
       position: absolute;
-      top: 1.125em;
-      right: 1.125em;
-      z-index: 1;
+      right: 0.0625em;
+      font-size: 0.875em;
     }
-    .switch li a.push-card + button:hover,
-    .switch li a.push-card + button:active,
-    .switch li a.push-card + button:focus {
+    .switch li a.push-card + button {
+      top: 0.0625em;
+    }
+    .switch li a.push-card + button + button {
+      bottom: 0.0625em;
+    }
+    .switch li a.push-card ~ button:hover,
+    .switch li a.push-card ~ button:active,
+    .switch li a.push-card ~ button:focus {
       color: black;
+      opacity: 1;
     }
+
+    @-webkit-keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .switch li.animate-in {
+      -webkit-animation : fade-in 0.2s both;
+              animation : fade-in 0.2s both;
+    }
+
+    @-webkit-keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .switch li.animate-out {
+      -webkit-animation : fade-out 0.1s both;
+              animation : fade-out 0.1s both;
+    }
+
   </style>
 
 </head>
@@ -298,6 +351,18 @@
     </symbol>
   </svg>
 
+  <svg display="none" width="0" height="0">
+    <symbol id="icon-drag" viewBox="0 0 20 20">
+      <path d="M9,11H2.9V9H9h2h6.1v2l0,0H11H9z"/>
+      <path d="M9,6H2.9V4H9h2h6.1v2l0,0H11H9z"/>
+      <path d="M9,16H2.9v-2H9h2h6.1v2l0,0H11H9z"/>
+    </symbol>
+    <symbol id="icon-up-arrow" viewBox="0 0 20 20">
+      <path d="M3.1,10.7c0.5,0.5,1.2,0.5,1.6,0l4.2-4.2v8.6c0,0.6,0.5,1.2,1.2,1.2s1.2-0.6,1.2-1.2l0-8.6l4.2,4.2c0.4,0.5,1.1,0.5,1.6,0
+        s0.4-1.1,0-1.6L10.8,3c-0.2-0.2-0.5-0.4-0.8-0.3C9.6,2.7,9.3,2.8,9.1,3L3,9.1C2.7,9.7,2.7,10.4,3.1,10.7z"/>
+    </symbol>
+  </svg>
+
   <header class="primary">
     <h2><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></h2>
 
@@ -317,55 +382,64 @@
           <a href="push.html" class="active push-card lime">
             <span class="name">Artizen Labs</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
         <li>
           <a href="push.html" class="push-card cucumber">
             <span class="name">Crafting Stories</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
         <li>
           <a href="push.html" class="push-card blueberry">
             <span class="name">LA 2050</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
         <li>
           <a href="push.html" class="push-card boysenberry">
             <span class="name">826LA</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
         <li>
           <a href="push.html" class="active push-card periwinkle">
             <span class="name">Kaboom</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
         <li>
           <a href="push.html" class="push-card plumb">
             <span class="name">GOOD</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
         <li>
           <a href="push.html" class="push-card strawberry">
             <span class="name">South LA Organizers</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
         <li>
           <a href="push.html" class="push-card tangerine">
             <span class="name">Global CTZN</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
         <li>
           <a href="push.html" class="push-card orange">
             <span class="name">The Making of CTZN</span>
           </a>
-          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg></button>
+          <button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg></button>
         </li>
       </ul>
     </div>
@@ -387,6 +461,86 @@
     </div>
 
   </section>
+
+  <script>
+  (function() {
+    function previousItem(item) {
+      if (item.previousSibling) {
+        if (item.previousSibling.nodeName.toLowerCase() === 'li') {
+          return item.previousSibling;
+        } else {
+          return previousItem(item.previousSibling);
+        }
+      }
+    }
+
+    function nextItem(item) {
+      if (item.nextSibling) {
+        if (item.nextSibling.nodeName.toLowerCase() === 'li') {
+          return item.nextSibling;
+        } else {
+          return nextItem(item.nextSibling);
+        }
+      }
+    }
+
+    var items = document.querySelectorAll('.switch li');
+    for (var index = 0; index < items.length; index++) {
+      (function() {
+        var item = items[index];
+        console.log('item: ' + item);
+        var buttons = item.querySelectorAll('button');
+        if (buttons[0]) {
+          buttons[0].addEventListener('click', function() {
+            console.log('up: ' + item);
+            var previous = previousItem(item);
+            var parent = item.parentNode;
+
+            item.className += ' animate-out';
+
+            setTimeout(function() {
+              parent.removeChild(item);
+              item.className = item.className.replace('animate-out', 'animate-in');
+
+              parent.insertBefore(item, previous || parent.firstChild);
+              item.className += ' animate-in';
+              setTimeout(function() {
+                item.className = item.className.replace('animate-in', '');
+              }, 200);
+
+            }, 100);
+          }, false);
+        }
+        if (buttons[1]) {
+          buttons[1].addEventListener('click', function() {
+            console.log('down: ' + item);
+            var next = nextItem(item);
+            var parent = item.parentNode;
+
+            item.className += ' animate-out';
+
+            setTimeout(function() {
+              parent.removeChild(item);
+              item.className = item.className.replace('animate-out', 'animate-in');
+
+              if (next && nextItem(next)) {
+                parent.insertBefore(item, nextItem(next));
+              } else {
+                parent.appendChild(item);
+              }
+
+              setTimeout(function() {
+                item.className = item.className.replace('animate-in', '');
+              }, 200);
+
+            }, 100);
+
+          }, false);
+        }
+      })();
+    }
+  })();
+  </script>
 
 </body>
 </html>

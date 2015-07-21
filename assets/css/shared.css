@@ -1448,8 +1448,16 @@
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
     background-color: rgba(0, 0, 0, 0.25);
     min-width: 9em;
-    min-height: 6em;
+    min-height: 9em;
   }
+
+  /* TRICKY: Remove the minimum width and height, once the image has loaded
+            (panoramic images are sometimes shorter than the minimum height). */
+  .post-item .body img.loaded {
+    min-width: 0;
+    min-height: 0;
+  }
+
   .post-item .body img[onclick] {
     transition: opacity 0.2s;
   }
