@@ -366,25 +366,25 @@
       </button>
     </p>
 
-<ol class="post-list " data-bind="foreach: posts">
-<li data-bind="css: ($root.slideshowActive() &amp;&amp; $root.currentSlide() == $index()) ? 'active' : 'inactive'">
+<ol class="post-list " >
+<li >
         <article class="post-item"><header><h3>
               <span class="avatar">
-                <!-- ko if: profile_image -->
-                <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, 100) }" src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/233b2518144e84c7abd6fa03a6a3036decf7af7e=c100x100"><!-- /ko --><!-- ko if: !profile_image --><!-- /ko -->
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.jim.goodalpaca.com/s3/ctzn/233b2518144e84c7abd6fa03a6a3036decf7af7e=c100x100">
               </span>
-              @<span data-bind="text: username">lou</span>
+              @<span >lou</span>
             </h3>
             <p>
-              <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-06-02T00:51:49.000+00:00">6 weeks ago</time></p>
-          </header><!-- ko if: images.length > 0 --><div class="images n-even" data-bind="foreach: images, css: 'n' + (images.length < 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
-            <figure class="active"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 2x" sizes="100vw" alt="Image 1"></figure>
-            <figure class="active"><img data-bind="attr: { src: $root.imageSource($data, $index(), $parent.images.length), srcset: $root.imageSourceSet($data, $index(), $parent.images.length), sizes: $root.imageSizes($index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" src="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 2x" sizes="100vw" alt="Image 1"></figure>
+              <time  datetime="2015-06-02T00:51:49.000+00:00">6 weeks ago</time></p>
+          </header><div class="images n-even" >
+            <figure class="active"><img  src="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 2x" sizes="100vw" alt="Image 1"></figure>
+            <figure class="active"><img  src="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s512x512 512w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 1024w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1536x1536 1536w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s2048x2048 2048w, http://assets.goodstatic.com/s3/ctzn/36f1dc9735ca750541f1808f6dda18b1a9bae0e1=s1024x1024 2x" sizes="100vw" alt="Image 1"></figure>
 </div>
-          <!-- /ko -->
+          
           <div class="body">
-            <!-- ko if: source --><!-- /ko -->
-            <p data-bind="text: text">Return of the Interns</p>
+            
+            <p >Return of the Interns</p>
           </div>
         </article>
 </li>

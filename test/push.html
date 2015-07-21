@@ -360,15 +360,15 @@
       </h1>
       <p>Signature expired: 20150513T224300Z is now earlier than 20150514T004721Z (20150514T010221Z - 15 min.)</p>
       <ul>
-        <!-- ko ifnot: error.permanentFailure -->
+        
         <li>
-          <button data-bind="click: function(){ good.uploadQueue().attemptProcessing() }">
+          <button >
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use></use><foreignObject>Try again</foreignObject></svg>
           </button>
         </li>
-        <!-- /ko -->
+        
         <li>
-          <button data-bind="click: function(){ $root.removeUploadQueueError($data) }">
+          <button >
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use></use><foreignObject>Cancel</foreignObject></svg>
           </button>
         </li>
@@ -420,7 +420,7 @@
 
 <!--
 <li class="previous action">
-  <a href="#previous" data-bind="click: onPreviousPage">
+  <a href="#previous" >
     <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg>
     Recent posts
   </a>
