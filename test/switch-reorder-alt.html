@@ -473,8 +473,11 @@
       }
     }
 
+    function absolutePosition(item) {
+      return item.offsetTop + (item.parentNode && item.parentNode.nodeName.toLowerCase() !== 'body' ? absolutePosition(item.parentNode) : 0);
+    }
+
     var items = document.querySelectorAll('.switch li');
-    var depth = 1;
     for (var index = 0; index < items.length; index++) {
       (function() {
         var item = items[index];
@@ -483,11 +486,15 @@
           handle: 'button'
         });
         draggie.on( 'dragStart', function( event, pointer ) {
-          item.style.zIndex = depth++;
+          item.style.zIndex = 2;
         });
         draggie.on( 'dragEnd', function( event, pointer ) {
 
+          console.dir(pointer);
+
           var parent = item.parentNode;
+          var next = nextItem(item);
+          var previous = previousItem(item);
 
           item.className += ' animate-out';
 
@@ -495,21 +502,58 @@
             parent.removeChild(item);
             item.className = item.className.replace('animate-out', 'animate-in');
 
-            if (Number(item.style.top.replace(/px/g, '') > 0)) {
-              var next = nextItem(item);
+            var offset = Number(item.style.top.replace(/px/g, ''));
+            var itemAbsolutePosition = previous ? absolutePosition(previous) + previous.offsetHeight : absolutePosition(parent);
+            console.log('itemAbsolutePosition: ' + itemAbsolutePosition);
+
+            // Down
+            if (offset >= 0) {
+              console.log('down: ' + offset);
+
+              // Look for the best spot to add the item
               if (next && nextItem(next)) {
-                parent.insertBefore(item, nextItem(next));
-              } else {
-                parent.appendChild(item);
+                do {
+                  var dragY = itemAbsolutePosition + item.offsetHeight + offset;
+                  var candidateY = absolutePosition(nextItem(next)) + nextItem(next).offsetHeight
+
+                  if (dragY < candidateY) {
+                    if (next) {
+                      parent.insertBefore(item, nextItem(next));
+                    }
+                    break;
+                  }
+                } while(next = nextItem(next))
               }
+
+              // Or at it at the end
+              if (!item.parentNode) parent.appendChild(item);
+
+            // Up
             } else {
-              var previous = previousItem(item);
-              parent.insertBefore(item, previous || parent.firstChild);
+              console.log('up: ' + offset);
+
+              // Look for the best spot to add the item
+              if (previous) {
+                do {
+                  var dragY = itemAbsolutePosition + offset;
+                  var candidateY = absolutePosition(previous) - previous.offsetHeight;
+
+                  if (dragY >= candidateY) {
+                    parent.insertBefore(item, previous || parent.firstChild);
+                    break;
+                  }
+                } while(previous = previousItem(previous))
+              }
+
+              // Or add it at the top
+              if (!item.parentNode) parent.insertBefore(item, parent.firstChild);
+
             }
 
             // Reset
             item.style.top = 0;
             item.style.left = 0;
+            item.style.zIndex = 'auto';
 
             item.className += ' animate-in';
             setTimeout(function() {
