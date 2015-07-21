@@ -3451,15 +3451,30 @@
 
   /* OPTIONAL: Make the text larger on big screens  */
   @media (min-width: 500px) and (min-height: 500px) {
+    .mixable .push-card.page .details + .action,
+    .toggle-mixable,
     .mixable .push-card.page .post-item header,
     .mixable .push-card.page .post-item .body {
       font-size: 1.125em;
     }
   }
   @media (min-width: 1000px) and (min-height: 1000px) {
+    .mixable .push-card.page .details + .action,
+    .toggle-mixable,
     .mixable .push-card.page .post-item header,
     .mixable .push-card.page .post-item .body {
       font-size: 1.25em;
+    }
+  }
+
+  /* OPTIONAL: Add more margin around the screen (for televisions) */
+  @media (min-width: 1920px) and (min-height: 1080px) {
+    .mixable .push-card.page .details + .action {
+      padding: 1.5em;
+    }
+    .toggle-mixable {
+      top: 1.5em;
+      right: 1.5em;
     }
   }
 
