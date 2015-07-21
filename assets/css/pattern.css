@@ -30,7 +30,6 @@
     position: fixed;
     z-index: -1;   
   }
-  header.pattern h2,
   header.pattern nav,
   .pattern.index h1,
   .pattern-list {
