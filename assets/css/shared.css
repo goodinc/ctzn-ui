@@ -2599,6 +2599,11 @@
     background-color: rgb(255, 117, 9); /* @orange */
   }
 
+  /* For the first slide in the “CTZN Live” channel */
+  .push-card.honeydew {
+    background-color: rgb(150, 255, 108); /* @honeydew */
+  }
+
   /* Sometimes the push-card is a link */
   a.push-card {
     display: block;
