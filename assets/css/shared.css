@@ -817,7 +817,7 @@
     background-color: white;
     color: rgb(51, 51, 51); /* @iron */
     font-weight: bold;
-    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
     width: 100%;
     padding: 0.75em 1.5em;
     -webkit-box-sizing: border-box;
@@ -2454,8 +2454,6 @@
   .option-list a.disabled {
     background-color: white !important; /* override the hover states */
     background-image: none;
-    color: inherit;
-    cursor: default;
   }
 
   .option-list li + li a,
@@ -4088,7 +4086,7 @@
 
   .widget .preview div,
   .mix .preview div {
-    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
     background: black;
     color: white;
     margin: 0 auto;
@@ -4169,7 +4167,7 @@
     color: black;
   }
   .shareable-mix.page .video {
-    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
     background: black;
     color: white;
     margin: 0 auto;
@@ -4702,7 +4700,7 @@
     vertical-align: top;
     max-width: 100%;
     height: auto;
-    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
 
     /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
     background-color: rgba(0, 0, 0, 0.25);
@@ -5963,7 +5961,6 @@
   ----------------------------------------------- */
   section.edit.page.has-intro {
     position: absolute;
-    z-index: 9999; /* @infinity */
     top: 0;
     left: 0;
     width: 100%;
@@ -5971,10 +5968,12 @@
   }
   section.edit.page.intro {
     position: fixed;
+    z-index: 9999; /* @infinity */
     -webkit-animation: slide-up 0.3s both;
             animation: slide-up 0.3s both;
   }
   section.edit.page.outro {
+    z-index: 9999; /* @infinity */
     -webkit-animation: slide-down 0.3s both;
             animation: slide-down 0.3s both;
   }
