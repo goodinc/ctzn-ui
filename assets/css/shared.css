@@ -3477,6 +3477,158 @@
   }
 
 
+  /* =Mixable Title
+  ----------------------------------------------- */
+
+  /* Show the push title as an individual slide before the other slides appear (handled with JavaScript) */
+  .mixable.title-only .push-card.page .details {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .mixable.title-only .push-card.page .details .about,
+  .mixable.title-only .push-card.page .details .action {
+    display: none;
+  }
+  .mixable.title-only .push-card.page .details .name {
+    margin: 0;
+    display: block;
+    max-width: none;
+    width: 100%;
+    padding: 0.75em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  /* Hide the link to the “Public” page, since it’s redundant with the title. */
+  .mixable.title-only .push-card.page .details + .action {
+    opacity: 0;
+  }
+
+  /*  Make the title larger on big screens */
+  @media (min-width: 30em) and (min-height: 30em) {
+    .mixable.title-only .push-card.page .details .name {
+      font-size: 10vmax;
+    }
+  }
+
+  /* Attempt to center the title */
+  @media (min-height: 10em) {
+    .mixable.title-only .push-card.page .details h1 {
+      margin-top: 0.75em;
+      margin-bottom: 0.75em;
+    }
+  }
+  @media (min-height: 15em) {
+    .mixable.title-only .push-card.page .details h1 {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+    }
+  }
+  @media (min-height: 20em) {
+    .mixable.title-only .push-card.page .details h1 {
+      margin-top: 2.25em;
+      margin-bottom: 2.25em;
+    }
+  }
+  @media (min-height: 30em) {
+    .mixable.title-only .push-card.page .details h1 {
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
+  }
+
+  .mixable.title-only .push-card.page .details {
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+
+  /* For the CTZN title slide */
+  .mixable.title-only .honeydew.push-card.page {
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+  .honeydew.push-card > div {
+    display: table;
+
+    /* Override style intended for basic pages */
+    padding-bottom: 0;
+  }
+  .honeydew.push-card h1 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  .honeydew.push-card h1 .icon {
+    width: 10em;
+    height: 4em;
+  }
+  @media (min-width: 30em) and (min-height: 30em) {
+    .honeydew.push-card div {
+      font-size: 1.5em;
+    }
+  }
+  @media (min-width: 40em) and (min-height: 40em) {
+    .honeydew.push-card div {
+      font-size: 2em;
+    }
+  }
+  @media (min-width: 50em) and (min-height: 50em) {
+    .honeydew.push-card div {
+      font-size: 2.5em;
+    }
+  }
+  @media (min-width: 60em) and (min-height: 60em) {
+    .honeydew.push-card div {
+      font-size: 3em;
+    }
+  }
+  .honeydew.push-card div {
+    font-size: 5vmin;
+  }
+  .honeydew.push-card h2 {
+    margin: 0.75em 0 0 0;
+    background: black;
+    color: white;
+    font-style: italic;
+    display: table;
+    margin-left: auto;
+    font-size: inherit;
+    text-transform: lowercase;
+    line-height: 1.2;
+  }
+
+
 
   /* =Post
   -----------------------------------------------
