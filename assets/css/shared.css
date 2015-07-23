@@ -3579,44 +3579,44 @@
     -webkit-justify-content: center;
             justify-content: center;
   }
-  .honeydew.push-card > div {
+  .mixable.title-only .honeydew.push-card > div {
     display: table;
 
     /* Override style intended for basic pages */
     padding-bottom: 0;
   }
-  .honeydew.push-card h1 {
+  .mixable.title-only .honeydew.push-card h1 {
     font-size: 1.5em;
     margin: 0;
   }
-  .honeydew.push-card h1 .icon {
+  .mixable.title-only .honeydew.push-card h1 .icon {
     width: 10em;
     height: 4em;
   }
   @media (min-width: 30em) and (min-height: 30em) {
-    .honeydew.push-card div {
+    .mixable.title-only .honeydew.push-card div {
       font-size: 1.5em;
     }
   }
   @media (min-width: 40em) and (min-height: 40em) {
-    .honeydew.push-card div {
+    .mixable.title-only .honeydew.push-card div {
       font-size: 2em;
     }
   }
   @media (min-width: 50em) and (min-height: 50em) {
-    .honeydew.push-card div {
+    .mixable.title-only .honeydew.push-card div {
       font-size: 2.5em;
     }
   }
   @media (min-width: 60em) and (min-height: 60em) {
-    .honeydew.push-card div {
+    .mixable.title-only .honeydew.push-card div {
       font-size: 3em;
     }
   }
-  .honeydew.push-card div {
+  .mixable.title-only .honeydew.push-card div {
     font-size: 5vmin;
   }
-  .honeydew.push-card h2 {
+  .mixable.title-only .honeydew.push-card h2 {
     margin: 0.75em 0 0 0;
     background: black;
     color: white;
