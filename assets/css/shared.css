@@ -5421,42 +5421,57 @@
     color: rgb(59, 89, 153); /* @facebook */
   }
 
-  .option-list label input[type="checkbox"] {
-    float: right;
-    margin-left: 0.375em;
-  }
-  .option-list label input[type="checkbox"] + span {
-    color: rgb(153, 153, 153); /* @nickel */
-  }
+  /* Hide the pseudo checkboxes by default */
   .option-list label input[type="checkbox"] ~ .icon {
     color: inherit;
+    display: none;
+  }
+
+  /* OPTIONAL: Make the checkbox label darker if the checkbox is checked  */
+  .option-list label input[type="checkbox"] + span {
+    color: rgb(153, 153, 153); /* @nickel */
   }
   .option-list label input[type="checkbox"]:checked + span {
     color: rgb(5, 5, 5); /* @tungsten */
   }
-  .option-list label input[type="checkbox"]:focus + span {
-    background-color: rgb(222, 222, 222); /* @silver */
+
+  /* OPTIONAL: Position the checkboxes on the right */
+  .option-list label input[type="checkbox"] {
+    float: right;
+    margin-left: 0.375em;
   }
 
-  /*
+  /* OPTIONAL: Replace the usual checkbox with a pseudo checkbox */
+  .option-list label input[type="checkbox"]:checked,
   .option-list label input[type="checkbox"]:not(:checked) {
     opacity: 0;
   }
-  */
-  .option-list label input[type="checkbox"] {
-    opacity: 0;
-  }
-  .option-list label input[type="checkbox"] ~ .icon {
+  .option-list label input[type="checkbox"]:checked       ~ .icon,
+  .option-list label input[type="checkbox"]:not(:checked) ~ .icon {
     margin-top: -0.75em;
     position: absolute;
     top: 50%;
     right: 0.75em;
     color: rgb(102, 204, 0); /* @pear */
-    display: none;
+    opacity: 0;
+    display: block;
+    outline: 0.125em solid transparent;
+    transition: outline-color 0.2s;
   }
   .option-list label input[type="checkbox"]:checked ~ .icon {
-    display: block;
+    opacity: 1;
   }
+  .option-list label input[type="checkbox"]:hover ~ .icon,
+  .option-list label input[type="checkbox"]:focus ~ .icon {
+    opacity: 1;
+    color: transparent;
+    outline-color: rgb(222, 222, 222); /* @silver */
+  }
+  .option-list label input[type="checkbox"]:checked:hover ~ .icon,
+  .option-list label input[type="checkbox"]:checked:focus ~ .icon {
+    color: rgb(102, 204, 0); /* @pear */
+  }
+
 
   /* Deprecated (consider using an input checkbox instead) */
   .option-list a[role="checkbox"] {
