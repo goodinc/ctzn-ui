@@ -5455,17 +5455,14 @@
     color: rgb(102, 204, 0); /* @pear */
     opacity: 0;
     display: block;
-    outline: 0.125em solid transparent;
-    transition: outline-color 0.2s;
   }
   .option-list label input[type="checkbox"]:checked ~ .icon {
     opacity: 1;
   }
-  .option-list label input[type="checkbox"]:hover ~ .icon,
   .option-list label input[type="checkbox"]:focus ~ .icon {
     opacity: 1;
     color: transparent;
-    outline-color: rgb(222, 222, 222); /* @silver */
+    outline: 0.125em solid rgb(222, 222, 222); /* @silver */
   }
   .option-list label input[type="checkbox"]:checked:hover ~ .icon,
   .option-list label input[type="checkbox"]:checked:focus ~ .icon {
