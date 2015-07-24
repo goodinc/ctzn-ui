@@ -2387,7 +2387,8 @@
   }
   .option-list .text, /* For the settings page */
   .option-list a,
-  .option-list button {
+  .option-list button,
+  .option-list label {
     display: block;
     text-align: left;
     padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
@@ -2422,7 +2423,8 @@
   @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
     .option-list .text,
     .option-list a,
-    .option-list button {
+    .option-list button,
+    .option-list label {
       border-left-width: 0;
       border-right-width: 0;
       margin: 0 -1.25em; /* @page-padding */
@@ -2457,7 +2459,8 @@
   }
 
   .option-list li + li a,
-  .option-list li + li button {
+  .option-list li + li button,
+  .option-list li + li label {
     border-top-width: 0;
   }
   .tags.option-list button {
@@ -3424,7 +3427,7 @@
     http://dropshado.ws/post/1015351370/webkit-line-clamp */
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
   .mixable .push-card.page .post-item .body p {
@@ -3436,14 +3439,25 @@
     margin-bottom: 0;
   }
 
-  @media (min-height: 30em), (min-width: 30em) {
-    .mixable .push-card.page .post-item .body p {
-      font-size: 1.5em;
+  /* Increase the line height on tall screens */
+  @media (min-height: 20em) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 6.75em; /* 2.25 x 3 */
+      -webkit-line-clamp: 3;
     }
   }
   @media (min-height: 30em) {
     .mixable .push-card.page .post-item .body {
       max-height: 9em; /* 2.25 x 4 */
+      -webkit-line-clamp: 4;
+    }
+  }
+
+  /* Increase the line height even more on tall, thin screens */
+  @media (min-height: 40em) and (max-width: 30em) {
+    .mixable .push-card.page .post-item .body {
+      max-height: 11.25em; /* 2.25 x 5 */
+      -webkit-line-clamp: 5;
     }
   }
 
@@ -3455,6 +3469,9 @@
     .mixable .push-card.page .post-item .body {
       font-size: 1.125em;
     }
+    .mixable .push-card.page .post-item .body p {
+      font-size: 1.25em;
+    }
   }
   @media (min-width: 1000px) and (min-height: 1000px) {
     .mixable .push-card.page .details + .action,
@@ -3463,9 +3480,13 @@
     .mixable .push-card.page .post-item .body {
       font-size: 1.25em;
     }
+    .mixable .push-card.page .post-item .body p {
+      font-size: 1.5em;
+    }
   }
 
   /* OPTIONAL: Add more margin around the screen (for televisions) */
+  /*
   @media (min-width: 1920px) and (min-height: 1080px) {
     .mixable .push-card.page .details + .action {
       padding: 1.5em;
@@ -3475,6 +3496,7 @@
       right: 1.5em;
     }
   }
+  */
 
 
   /* =Mixable Title
@@ -3563,7 +3585,9 @@
   }
 
   /* For the CTZN title slide */
-  .mixable.title-only .honeydew.push-card.page {
+  .mixable.title-only .honeydew.push-card {
+    min-height: 100%;
+
     display: -webkit-flex;
     display:         flex;
 
@@ -3581,9 +3605,6 @@
   }
   .mixable.title-only .honeydew.push-card > div {
     display: table;
-
-    /* Override style intended for basic pages */
-    padding-bottom: 0;
   }
   .mixable.title-only .honeydew.push-card h1 {
     font-size: 1.5em;
@@ -4027,7 +4048,7 @@
   }
   .edit-profile .file img {
     display: block;
-    margin: 0 auto 0.375em;
+    margin: -0.125em auto 0.375em;
     border-radius: 100%;
     border: 0.125em solid transparent;
   }
@@ -5399,6 +5420,45 @@
   .option-list .facebook .icon:first-child {
     color: rgb(59, 89, 153); /* @facebook */
   }
+
+  .option-list label input[type="checkbox"] {
+    float: right;
+    margin-left: 0.375em;
+  }
+  .option-list label input[type="checkbox"] + span {
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .option-list label input[type="checkbox"] ~ .icon {
+    color: inherit;
+  }
+  .option-list label input[type="checkbox"]:checked + span {
+    color: rgb(5, 5, 5); /* @tungsten */
+  }
+  .option-list label input[type="checkbox"]:focus + span {
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+
+  /*
+  .option-list label input[type="checkbox"]:not(:checked) {
+    opacity: 0;
+  }
+  */
+  .option-list label input[type="checkbox"] {
+    opacity: 0;
+  }
+  .option-list label input[type="checkbox"] ~ .icon {
+    margin-top: -0.75em;
+    position: absolute;
+    top: 50%;
+    right: 0.75em;
+    color: rgb(102, 204, 0); /* @pear */
+    display: none;
+  }
+  .option-list label input[type="checkbox"]:checked ~ .icon {
+    display: block;
+  }
+
+  /* Deprecated (consider using an input checkbox instead) */
   .option-list a[role="checkbox"] {
     background-image: none;
   }
