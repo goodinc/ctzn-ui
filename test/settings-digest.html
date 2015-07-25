@@ -294,19 +294,26 @@
         <ul>
           <li>
             <label>
-              <input type="radio" name="frequency" checked="checked" />
+              <input type="radio" name="frequency" value="daily" checked="checked" />
               <span>Daily</span>
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
             </label>
           </li>
           <li>
             <label>
-              <input type="radio" name="frequency" />
+              <input type="radio" name="frequency" value="weekly" />
               <span>Weekly</span>
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
             </label>
           </li>
-          <!-- Deprectated example
+          <li>
+            <label>
+              <input type="radio" name="frequency" value="none" />
+              <span>None</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
+            </label>
+          </li>
+          <!-- Deprecated example
           <li>
             <a href="#" role="checkbox" aria-checked="false">
               Daily

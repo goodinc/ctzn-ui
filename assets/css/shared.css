@@ -2726,8 +2726,10 @@
   .push-card.page .details p.action a {
     display: inline-block;
     width: auto;
-    min-width: 13.333333333em;
     max-width: 100%;
+  }
+  .start.push-card.page .details p.action a {
+    width: 13.333333333em;
   }
 
   .push-card .text label {
@@ -5468,7 +5470,7 @@
   .option-list label input[type="checkbox"]:checked ~ .icon {
     opacity: 1;
   }
-  .option-list label input[type="radio"   ]:focus ~ .icon
+  .option-list label input[type="radio"   ]:focus ~ .icon,
   .option-list label input[type="checkbox"]:focus ~ .icon {
     opacity: 1;
     color: transparent;
