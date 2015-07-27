@@ -2368,6 +2368,7 @@
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
+  ul.option-list,
   .option-list ul,
   .option-list li {
     list-style: none;
@@ -2380,7 +2381,8 @@
   .option-list li + li {
     margin-top: 0;
   }
-  .option-list a > .icon:first-child {
+  .option-list a      > .icon:first-child,
+  .option-list button > .icon:first-child {
     margin-right: 0.5em; /* SHIM: 0.75em - one whitespace character */
 
     color: rgb(102, 102, 102); /* @tin */
@@ -2397,6 +2399,7 @@
     font-weight: normal;
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     background: white;
+    color: rgb(5, 5, 5); /* @tungsten */
     position: relative;
     border-radius: 0;
   }
@@ -2463,12 +2466,16 @@
   .option-list li + li label {
     border-top-width: 0;
   }
-  .tags.option-list button {
+     .tags.option-list button,
+  .connect.option-list button {
     text-align: left;
-    color: black;
+    color: rgb(5, 5, 5); /* @tungsten */
+  }
+  .tags.option-list button {
     padding-right: 3em;
   }
-  .tags.option-list li .icon:last-child,
+     .tags.option-list li .icon:last-child,
+  .connect.option-list li .icon:last-child,
   .option-list li a[role="checkbox"] .icon:last-child {
     margin-top: -0.75em;
     position: absolute;
@@ -2476,6 +2483,7 @@
     right: 0.75em;
     color: rgb(204, 204, 204); /* @aluminum */
   }
+  .connect.option-list button .icon:last-child,
   .option-list li a[role="checkbox"] .icon:last-child {
     color: rgb(102, 204, 0); /* @pear */
   }
@@ -5423,6 +5431,19 @@
     color: rgb(59, 89, 153); /* @facebook */
   }
 
+  .connect.option-list button .icon:first-child {
+    color: inherit;
+  }
+  .connect.option-list .active.instagram button .icon:first-child {
+    color: rgb(40, 81, 127);
+  }
+  .connect.option-list .active.twitter button .icon:first-child {
+    color: rgb(94, 171, 244);
+  }
+  .connect.option-list .active.facebook button .icon:first-child {
+    color: rgb(59, 89, 153); /* @facebook */
+  }
+
   /* Hide the pseudo checkboxes by default */
   .option-list label input[type="radio"   ] ~ .icon,
   .option-list label input[type="checkbox"] ~ .icon {
@@ -5465,7 +5486,14 @@
     color: rgb(102, 204, 0); /* @pear */
     opacity: 0;
     display: block;
+    border: 0.125em solid transparent;
   }
+  /*
+  .option-list label input[type="radio"   ]:checked       ~ .icon,
+  .option-list label input[type="radio"   ]:not(:checked) ~ .icon {
+    border-radius: 50%;
+  }
+  */
   .option-list label input[type="radio"   ]:checked ~ .icon,
   .option-list label input[type="checkbox"]:checked ~ .icon {
     opacity: 1;
@@ -5474,7 +5502,7 @@
   .option-list label input[type="checkbox"]:focus ~ .icon {
     opacity: 1;
     color: transparent;
-    outline: 0.125em solid rgb(222, 222, 222); /* @silver */
+    border-color: rgb(222, 222, 222); /* @silver */
   }
   .option-list label input[type="radio"   ]:checked:hover ~ .icon,
   .option-list label input[type="radio"   ]:checked:focus ~ .icon,
@@ -5488,13 +5516,17 @@
   .option-list a[role="checkbox"] {
     background-image: none;
   }
+  .connect.option-list button,
   .option-list a[role="checkbox"][aria-checked="false"] {
     color: rgb(153, 153, 153); /* @nickel */
+  }
+  .option-list a[role="checkbox"][aria-checked="false"] {
     background-image: none;
   }
   .option-list a[role="checkbox"][aria-checked="false"] .icon {
     color: inherit;
   }
+  .connect.option-list .active button,
   .option-list a[role="checkbox"][aria-checked="true"] {
     color: rgb(5, 5, 5); /* @tungsten */
   }
