@@ -1212,6 +1212,7 @@
     display: inline-block;
     text-align: center;
     font-size: 14px;
+    line-height: 20px;
     font-weight: bold;
     width: 32%;
   }
