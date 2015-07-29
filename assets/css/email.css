@@ -47,8 +47,7 @@
     border-width: 0;
   }
 
-  .details h2,
-  .details h3 {
+  .message h3 {
     font-weight: inherit;
     color: rgb(31, 31, 31); /* @steel */
   }
@@ -83,35 +82,13 @@
   .headline h2 b {
     color: black;
   }
-  .details h2 {
-    font-size: 30px;
-    line-height: 40px;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  .details h3 {
+  .message h3 {
     font-size: inherit;
     color: inherit;
-    margin-top: 0;
-    margin-bottom: 20px;
   }
-  .details h3 strong {
+  .message h3 strong {
     font-weight: inherit;
     color: rgb(31, 31, 31); /* @steel */
-  }
-  .details p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .details p:first-child {
-    margin-top: 0;
-  }
-  .details p.note {
-    margin-top: 40px;
-    font-style: italic;
-    font-size: 14px;
-    color: rgb(153, 153, 153); /* @nickel */
   }
 
 
@@ -145,7 +122,6 @@
   /* Containers */
   .header,
   .headline,
-  .details,
   .article,
   .message,
   .steps,
@@ -157,7 +133,6 @@
     margin-right: auto;
   }
   .headline,
-  .details,
   .article,
   .message,
   .steps,
@@ -167,16 +142,11 @@
     background-color: white;
   }
   .headline,
-  .details,
   .message,
   .tip,
   .download,
   .feedback {
     max-width: 520px; /* 580px - (30px x 2) */
-  }
-  /* SHIM: Give details a little more padding at the bottom, for the mix notification */
-  .details {
-    padding: 25px 30px 30px;
   }
   .article {
     max-width: 600px;
@@ -231,7 +201,6 @@
   .download {
     margin-top: 10px;
   }
-  .details,
   .article,
   .message,
   .steps {
@@ -901,15 +870,6 @@
   .action.primary a:active,
   .action.primary a:focus {
     background-color: rgb(235, 29, 82); /* @raspberry */
-  }
-
-  /* For mix ready email */
-  .details .action {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .details .action:last-child {
-    margin-bottom: 0;
   }
 
 
