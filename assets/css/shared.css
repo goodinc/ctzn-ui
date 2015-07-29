@@ -3676,24 +3676,29 @@
     background: white;
     padding: 0;
   }
-  .post.page .details .post-item {
-    margin-bottom: 0;
+  .post.page .comments {
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
-  .page > div.comments {
-    margin-top: 1.5em;
-    padding-top: 0;
-    padding-bottom: 0;
+  .post.page .comments .post-list {
+    margin-top: 0;
+  }
+  .post.page .comments .post-item {
+    margin-bottom: 0;
   }
 
 
   /* =Post Editor
   ----------------------------------------------- */
-  .post.page .comments label,
+  .post.page label,
   .post.text label {
     padding: 0;
     border-radius: 0.125em;
   }
-  .post.page .comments textarea,
+  .post.page textarea,
   .post.text textarea {
     height: 6.75em; /* (@line-height x 4) + (0.375em x 2) */
     -webkit-box-sizing: border-box;
@@ -3702,7 +3707,7 @@
     border-radius: 0.125em;
   }
   @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-    .post.page .comments textarea,
+    .post.page textarea,
     .post.text textarea {
       height: 9.75em;
     }
@@ -5444,6 +5449,37 @@
     color: rgb(59, 89, 153); /* @facebook */
   }
 
+  /* Position the “fix settings” buttons in the upper right corner */
+  .connect.option-list li {
+    position: relative;
+  }
+  .connect.option-list li button.settings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5625em 0.75em;
+    width: auto;
+    background-color: transparent;
+    border-width: 0;
+    color: rgb(255, 49, 59); /* @watermelon */
+  }
+
+  /* SHIM: Override styles intended for the social network icon */
+  .connect.option-list li button.settings .icon {
+    color: inherit !important;
+  }
+
+  .hoverable .connect.option-list li button.settings:hover  .icon,
+             .connect.option-list li button.settings:active .icon,
+             .connect.option-list li button.settings:focus  .icon {
+    color: black !important;
+  }
+  .connect.option-list li button.settings .icon {
+    position: static;
+    margin: 0;
+    padding: 0;
+  }
+
   /* Hide the pseudo checkboxes by default */
   .option-list label input[type="radio"   ] ~ .icon,
   .option-list label input[type="checkbox"] ~ .icon {
@@ -5645,15 +5681,18 @@
   }
 
   .activity .more a,
+  .comments .post-item,
   .activity .post-item {
     padding-top    : 0.2857142857em; /* 4px / 14px */
     padding-bottom : 0.2857142857em;
     padding-left   : 2.8571428571em; /* 40px / 14px */
   }
+  .comments .post-item header .avatar,
   .activity .post-item header .avatar {
     top: 0.1428571429em; /* 2px / 14px */
     left: 1.25em;
   }
+  .comments .post-item .body p,
   .activity .post-item .body p {
     color: rgb(102, 102, 102); /* @tin */
   }
