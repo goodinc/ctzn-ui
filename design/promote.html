@@ -47,14 +47,11 @@
       height: auto;
     }
 
-    /*
     iframe,
     video {
       max-width: 100%;
-      height: auto;
-      min-height: 50vh;
-      display: block;
     }
+    /*
     .video-fallback {
       font-size: 0.75em;
       opacity: 0.5;
@@ -156,6 +153,7 @@
       line-height: 1.25;
       min-height: 1.25em;
       width: 100%;
+      max-width: 25em;
       -webkit-box-sizing: border-box;
          -moz-box-sizing: border-box;
               box-sizing: border-box;
@@ -172,13 +170,14 @@
       background: white;
     }
     label {
+      font-weight: bold;
       text-transform: lowercase;
     }
 
     .strawberry form {
       margin-top: 2.5em;
     }
-    @media (min-width: 50em) {
+    @media (min-width: 40em) {
       .strawberry form {
         font-size: 1.25em;
       }
@@ -298,16 +297,39 @@
     }
     section h2 {
       font-size: 40px;
-      line-height: 40px;
+      line-height: 1;
+    }
+
+    @media (min-width: 25em) {
+      body > section {
+        padding: 40px;
+      }
+      section h2 {
+        font-size: 50px;
+      }
+    }
+
+    @media (min-width: 30em) {
+      body > section {
+        padding: 50px;
+      }
+      section h2 {
+        font-size: 60px;
+      }
+    }
+
+    @media (min-width: 40em) {
+      body > section {
+        padding: 60px;
+      }
+      section h2 {
+        font-size: 80px;
+      }
     }
 
     @media (min-width: 50em) {
       body > section {
         padding: 80px;
-      }
-      section h2 {
-        font-size: 80px;
-        line-height: 85px;
       }
     }
 
@@ -332,7 +354,7 @@
       vertical-align: top;
       margin-top: 20px;
     }
-    @media (min-width: 50em) {
+    @media (min-width: 40em) {
       .apple section {
         margin-top: 60px;
       }
@@ -415,8 +437,7 @@
 
     @media (min-width: 50em) {
       .blueberry,
-      .tangerine,
-      .plumb {
+      .tangerine {
         min-height: 100vh;
 
         -webkit-box-sizing: border-box;
@@ -450,7 +471,8 @@
       .apple,
       .boysenberry,
       .orange,
-      .strawberry {
+      .strawberry,
+      .plumb {
         min-height: 100vh;
 
         -webkit-box-sizing: border-box;
@@ -477,7 +499,10 @@
         max-width: 400px;
       }
 
-      .plumb     figure,
+      .plumb     figure {
+        margin-top: 0;
+        margin-left: 50px;
+      }
       .blueberry figure,
       .tangerine figure {
         margin-top: 0;
@@ -485,11 +510,6 @@
       }
     }
 
-
-    .tangerine figure {
-      margin-top: 40px;
-      margin-bottom: 30px;
-    }
 
     h2 b {
       color: white;
@@ -517,13 +537,21 @@
       }
     }
 
-
-    figure[style] {
-      display: inline-block;
-      background-size: contain;
+    .tangerine figure {
+      padding-bottom: 30px;
+      margin-bottom: 0;
     }
-    figure iframe {
-      padding: 60px 22px 90px;
+    @media (min-width: 30em) {
+      .tangerine figure {
+        display: inline-block;
+        background-image: url(screenshot.png);
+        background-size: contain;
+        margin-top: 40px;
+        margin-bottom: 30px;
+      }
+      .tangerine figure iframe {
+        padding: 60px 22px 90px;
+      }
     }
 
 
@@ -561,7 +589,7 @@
 
     /* OPTIONAL: Make the header sticky
     ----------------------------------------------- */
-    @media (min-width: 20em) and (min-height: 20em) {
+    @media (min-width: 20em) and (min-height: 30em) {
       header {
         position: fixed;
         top: 0;
@@ -872,7 +900,7 @@
       <p>CTZN is currently invite-only. Don’t have an invite code? <a href="#contact">Get in touch</a></p>
     </div>
 
-    <figure style="background-image: url(screenshot.png)">
+    <figure>
       <iframe width="280" height="500" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
     </figure>
   </section>
@@ -994,10 +1022,10 @@
 
   <section class="boysenberry">
     <div class="icons">
-      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use></svg>
-      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg>
-      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use></svg>
-      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-envelope"></use></svg>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use></svg>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use></svg>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
     </div>
     <div class="text">
       <h2>Push from <b>anywhere.</b></h2>
