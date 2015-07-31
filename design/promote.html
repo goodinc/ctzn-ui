@@ -125,14 +125,37 @@
       padding: 0.375em 0.75em;
       line-height: 1.25;
       min-height: 1.25em;
+      width: 100%;
       -webkit-box-sizing: border-box;
          -moz-box-sizing: border-box;
               box-sizing: border-box;
       transition: border-color 0.2s;
       display: inline-block;
       background: white;
+      background: rgba(255, 255, 255, 0.9);
       border: 0.0625em solid rgb(222, 222, 222); /* @silver */
       margin-top: 0.25em;
+      border-radius: 0.25em;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      background: white;
+    }
+    label {
+      text-transform: lowercase;
+    }
+    .strawberry form {
+      margin-top: 2.5em;
+      font-size: 1.25em;
+    }
+    .strawberry form label {
+      color: white;
+    }
+    form p {
+      margin-top: 1.25em;
+    }
+    form p.submit {
+      margin-top: 2.5em;
     }
 
 
@@ -270,14 +293,29 @@
     }
     h3 ~ p {
       font-weight: bold;
-      max-width: 33em;
     }
     .apple section {
       display: inline-block;
-      margin-top: 60px;
-      margin-right: 60px;
       vertical-align: top;
-      max-width: 275px;
+      margin-top: 60px;
+    }
+    @media (min-width: 50em) {
+      .apple section:nth-of-type(1n) {
+        margin-right: 4%;
+        max-width: 47%;
+      }
+      .apple section:nth-of-type(2n) {
+        margin-right: 0;
+      }
+    }
+    @media (min-width: 60em) {
+      .apple section:nth-of-type(1n) {
+        margin-right: 4%;
+        max-width: 30%;
+      }
+      .apple section:nth-of-type(3n) {
+        margin-right: 0;
+      }
     }
     .apple section:last-child {
       display: block;
@@ -326,10 +364,23 @@
       color: rgba(255, 255, 255, 0.8);
     }
 
+    section .text {
+      max-width: 33em;
+    }
+    .apple .text {
+      max-width: 60em;
+    }
+
     @media (min-width: 50em) {
       .blueberry,
       .tangerine,
       .plumb {
+        min-height: 100vh;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
         display: -webkit-flex;
         display:         flex;
 
@@ -345,10 +396,43 @@
         -webkit-justify-content: center;
                 justify-content: center;
       }
-      .blueberry h2,
-      .tangerine h2,
-      .plumb     h2 {
+      .boysenberry h2,
+      .orange     h2,
+      .strawberry h2,
+      .blueberry  h2,
+      .tangerine  h2,
+      .plumb      h2 {
         margin-top: 0;
+      }
+
+      .apple,
+      .boysenberry,
+      .orange,
+      .strawberry {
+        min-height: 100vh;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+        display: -webkit-flex;
+        display:         flex;
+
+        -webkit-flex-direction: row;
+                flex-direction: row;
+
+        -webkit-align-items: center;
+                align-items: center;
+
+        -webkit-align-content: center;
+                align-content: center;
+
+        -webkit-justify-content: center;
+                justify-content: center;
+      }
+      .boysenberry .icons {
+        margin-right: 50px;
+        max-width: 400px;
       }
     }
 
@@ -715,78 +799,80 @@
   </section>
 
   <section class="apple">
-    <h2>Built for changemakers, <b>for free.</b></h2>
+    <div class="text">
+      <h2>Built for changemakers, <b>for free.</b></h2>
 
-    <section>
-      <h3>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use></svg>
-        Live channels
-      </h3>
-      <p>Live-updating streams featuring 
-      your key moments and progress — 
-      ready for you to project, display, 
-      or embed as a widget on your 
-      website. Build visibility and 
-      welcome the world to your push.</p>
-    </section>
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use></svg>
+          Live channels
+        </h3>
+        <p>Live-updating streams featuring 
+        your key moments and progress — 
+        ready for you to project, display, 
+        or embed as a widget on your 
+        website. Build visibility and 
+        welcome the world to your push.</p>
+      </section>
 
-    <section>
-      <h3>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
-        Video mixes
-      </h3>
-      <p>Easily turn your favorite moments 
-      and milestones into stunning visual 
-      recaps. Select your favorite photos, 
-      mix them in any order, and share 
-      them instantly to any of your other 
-      social media platforms.</p>
-    </section>
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
+          Video mixes
+        </h3>
+        <p>Easily turn your favorite moments 
+        and milestones into stunning visual 
+        recaps. Select your favorite photos, 
+        mix them in any order, and share 
+        them instantly to any of your other 
+        social media platforms.</p>
+      </section>
 
-    <section>
-      <h3>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
-        Email digests
-      </h3>
-      <p>Stay in touch with your group's 
-      latests activities — get automated, 
-      smart digests that let you comment, 
-      love, or even post straight from 
-      your inbox.</p>
-    </section>
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
+          Email digests
+        </h3>
+        <p>Stay in touch with your group's 
+        latests activities — get automated, 
+        smart digests that let you comment, 
+        love, or even post straight from 
+        your inbox.</p>
+      </section>
 
-    <section>
-      <h3>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg>
-        Private feeds
-      </h3>
-      <p>Dedicated spaces that you can 
-      shape to the needs and goals of your 
-      group. Invite those most engaged with 
-      your push to contribute and curate 
-      your collective story, together.</p>
-    </section>
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg>
+          Private feeds
+        </h3>
+        <p>Dedicated spaces that you can 
+        shape to the needs and goals of your 
+        group. Invite those most engaged with 
+        your push to contribute and curate 
+        your collective story, together.</p>
+      </section>
 
-    <section>
-      <h3>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use></svg>
-        Open integrations
-      </h3>
-      <p>Easily connect your social media to 
-      post from anywhere — via app, inbox, 
-      Instagram, Twitter, or Facebook. 
-      CTZN does the work to bring it all 
-      together in one&nbsp;feed.</p>
-    </section>
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use></svg>
+          Open integrations
+        </h3>
+        <p>Easily connect your social media to 
+        post from anywhere — via app, inbox, 
+        Instagram, Twitter, or Facebook. 
+        CTZN does the work to bring it all 
+        together in one&nbsp;feed.</p>
+      </section>
 
-    <section>
-      <h3>
-        <a href="">
-          Explore our features
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-right"></use></svg>
-        </a>
-      </h3>
-    </section>
+      <section>
+        <h3>
+          <a href="">
+            Explore our features
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-right"></use></svg>
+          </a>
+        </h3>
+      </section>
+    </div>
   </section>
 
   <section class="blueberry">
@@ -834,45 +920,50 @@
       <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use></svg>
       <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-envelope"></use></svg>
     </div>
-
-    <h2>Push from <b>anywhere.</b></h2>
-    <h3>Everyone can contribute.</h3>
-    <p>Free, cross-platform and multi-media support allows you to participate, however and wherever it is most accessible to you.</p>
-    <p>Our integrative technology offers 3 unique platform experiences— web, app, and inbox. And you can seamlessly connect and post any type of content— photos, tweets, Instagram videos, and Facebook posts.</p>
+    <div class="text">
+      <h2>Push from <b>anywhere.</b></h2>
+      <h3>Everyone can contribute.</h3>
+      <p>Free, cross-platform and multi-media support allows you to participate, however and wherever it is most accessible to you.</p>
+      <p>Our integrative technology offers 3 unique platform experiences— web, app, and inbox. And you can seamlessly connect and post any type of content— photos, tweets, Instagram videos, and Facebook posts.</p>
+    </div>
   </section>
 
   <section class="orange">
-    <h2>Raise the <b>collective voice.</b></h2>
-    <h3>Tell your story, from every perspective.</h3>
-    <p>Never miss a moment of your social impact journey. Bring your community and best content together, in one space. Our media creation technologies allow you to make instant, visually stunning videos that you can package for any moment, any community, or any goal.</p>
+    <div class="text">
+      <h2>Raise the <b>collective voice.</b></h2>
+      <h3>Tell your story, from every perspective.</h3>
+      <p>Never miss a moment of your social impact journey. Bring your community and best content together, in one space. Our media creation technologies allow you to make instant, visually stunning videos that you can package for any moment, any community, or any goal.</p>
+    </div>
   </section>
 
   <section class="strawberry" id="contact">
-    <h2>Connect <b>with us.</b></h2>
+    <div class="text">
+      <h2>Connect <b>with us.</b></h2>
 
-    <!-- Begin MailChimp Signup Form -->
-    <form action="//good.us2.list-manage.com/subscribe/post?u=5b63a0823e3b9c105434c46d7&amp;id=f9c7839dae" method="post" name="mc-embedded-subscribe-form">
-      <p class="text">
-        <label>
-          <span>Full name</span><br />
-          <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Full name" />
-        </label>
-      </p>
-      <p class="text">
-        <label>
-          <span>Email address</span><br />
-          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address" />
-        </label>
-      </p>
-      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-      <div style="position: absolute; left: -5000px;">
-        <input type="text" name="b_5b63a0823e3b9c105434c46d7_f9c7839dae" tabindex="-1" value="">
-      </div>
-      <p class="submit">
-        <button type="submit" value="Subscribe" name="subscribe">Submit</button>
-      </p>
-    </form>
-    <!--End mc_embed_signup-->
+      <!-- Begin MailChimp Signup Form -->
+      <form action="//good.us2.list-manage.com/subscribe/post?u=5b63a0823e3b9c105434c46d7&amp;id=f9c7839dae" method="post" name="mc-embedded-subscribe-form">
+        <p class="text">
+          <label>
+            <span>Full name</span><br />
+            <input type="text" value="" name="FNAME" class="" id="mce-FNAME" />
+          </label>
+        </p>
+        <p class="text">
+          <label>
+            <span>Email address</span><br />
+            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" />
+          </label>
+        </p>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;">
+          <input type="text" name="b_5b63a0823e3b9c105434c46d7_f9c7839dae" tabindex="-1" value="">
+        </div>
+        <p class="submit">
+          <button type="submit" value="Subscribe" name="subscribe">Submit</button>
+        </p>
+      </form>
+      <!--End mc_embed_signup-->
+    </div>
   </section>
 
   <footer class="primary">
