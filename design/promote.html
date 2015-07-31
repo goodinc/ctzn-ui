@@ -37,6 +37,36 @@
       color: black;
     }
 
+    a img {
+      border-width: 0;
+    }
+
+    /* Fit media to the available width */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /*
+    iframe,
+    video {
+      max-width: 100%;
+      height: auto;
+      min-height: 50vh;
+      display: block;
+    }
+    .video-fallback {
+      font-size: 0.75em;
+      opacity: 0.5;
+      font-style: italic;
+    }
+    */
+
+    /* Browsers sometimes render these as inline elements, by default */
+    main, header, footer, section, article, aside, nav {
+      display: block;
+    }
+
     figure {
       margin-left: 0;
       margin-right: 0;
@@ -144,10 +174,16 @@
     label {
       text-transform: lowercase;
     }
+
     .strawberry form {
       margin-top: 2.5em;
-      font-size: 1.25em;
     }
+    @media (min-width: 50em) {
+      .strawberry form {
+        font-size: 1.25em;
+      }
+    }
+
     .strawberry form label {
       color: white;
     }
@@ -220,25 +256,6 @@
       vertical-align: top;
     }
 
-    @media (min-width: 20em) and (min-height: 20em) {
-
-      /* OPTIONAL: Make the header sticky */
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
-                box-sizing: border-box;
-      }
-      /* Make space for the sticky header */
-      header + section {
-        padding-top: 80px;
-      }
-
-    }
-
 
     /* =Download
     ----------------------------------------------- */
@@ -269,22 +286,36 @@
 
     /* =Misc
     ----------------------------------------------- */
-    body > section {
-      padding: 80px;
-    }
 
     section h2 {
-      font-size: 80px;
-      line-height: 85px;
+      margin-top: 20px;
       text-transform: lowercase;
       margin-bottom: 10px;
+    }
+
+    body > section {
+      padding: 30px;
+    }
+    section h2 {
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+    @media (min-width: 50em) {
+      body > section {
+        padding: 80px;
+      }
+      section h2 {
+        font-size: 80px;
+        line-height: 85px;
+      }
     }
 
     h3 {
       margin-top: 10px;
       font-size: 24px;
       line-height: 30px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       color: rgba(0, 0, 0, 0.5);
       text-transform: lowercase;
     }
@@ -293,13 +324,18 @@
     }
     h3 ~ p {
       font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
     .apple section {
       display: inline-block;
       vertical-align: top;
-      margin-top: 60px;
+      margin-top: 20px;
     }
     @media (min-width: 50em) {
+      .apple section {
+        margin-top: 60px;
+      }
       .apple section:nth-of-type(1n) {
         margin-right: 4%;
         max-width: 47%;
@@ -371,6 +407,12 @@
       max-width: 60em;
     }
 
+    .plumb     figure,
+    .blueberry figure,
+    .tangerine figure {
+      margin-top: 30px;
+    }
+
     @media (min-width: 50em) {
       .blueberry,
       .tangerine,
@@ -434,13 +476,16 @@
         margin-right: 50px;
         max-width: 400px;
       }
+
+      .plumb     figure,
+      .blueberry figure,
+      .tangerine figure {
+        margin-top: 0;
+        margin-right: 50px;
+      }
     }
 
-    .plumb     figure,
-    .blueberry figure,
-    .tangerine figure {
-      margin-right: 50px;
-    }
+
     .tangerine figure {
       margin-top: 40px;
       margin-bottom: 30px;
@@ -452,11 +497,24 @@
     }
 
 
+    .icons {
+      margin-top: 20px;
+    }
     .icons .icon {
       color: white;
-      width: 120px;
-      height: 120px;
-      margin: 0 40px 40px 0;
+      width: 40px;
+      height: 40px;
+      margin: 0 15px 15px 0;
+    }
+    @media (min-width: 50em) {
+      .icons {
+        margin-top: 0;
+      }
+      .icons .icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 40px 40px 0;
+      }
     }
 
 
@@ -497,6 +555,27 @@
       color: rgb(102, 102, 102); /* @tin */
       font-size: 0.75em;
       line-height: 2em;
+    }
+
+
+
+    /* OPTIONAL: Make the header sticky
+    ----------------------------------------------- */
+    @media (min-width: 20em) and (min-height: 20em) {
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      /* Make space for the sticky header */
+      header + section {
+        padding-top: 110px;
+      }
+
     }
 
   </style>
