@@ -78,9 +78,11 @@
     font-size: 18px;
     color: rgb(102, 102, 102); /* @tin */
   }
+  .headline h1 a,
   .headline h1 b,
   .headline h2 b {
     color: black;
+    text-decoration: none;
   }
   .message h3 {
     font-size: inherit;
@@ -439,8 +441,10 @@
     color: rgba(255, 255, 255, 0.8);
     font-size: 24px;
   }
+  .weekly.headline h1 a,
   .weekly.headline h1 b {
     color: white;
+    text-decoration: none;
   }
   .daily.headline.lime,
   .weekly.headline.lime {
