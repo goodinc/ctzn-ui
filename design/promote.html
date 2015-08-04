@@ -38,22 +38,22 @@
     }
 
     /* OPTIONAL: Increase the font size on big screens. */
-    @media (min-width: 600px) and (min-height: 600px) {
+    @media (min-width: 800px) and (min-height: 800px) {
       body {
         font-size: 112.5%;
       }
     }
-    @media (min-width: 800px) and (min-height: 800px) {
+    @media (min-width: 1000px) and (min-height: 1000px) {
       body {
         font-size: 125%;
       }
     }
-    @media (min-width: 1000px) and (min-height: 1000px) {
+    @media (min-width: 1200px) and (min-height: 1200px) {
       body {
         font-size: 137.5%;
       }
     }
-    @media (min-width: 1200px) and (min-height: 1200px) {
+    @media (min-width: 1400px) and (min-height: 1400px) {
       body {
         font-size: 150%;
       }
@@ -73,6 +73,11 @@
     video {
       max-width: 100%;
     }
+
+    section .text video {
+      margin-top: 1.25em; /* @line-height */
+    }
+
     /*
     .video-fallback {
       font-size: 0.75em;
@@ -86,15 +91,6 @@
       display: block;
     }
 
-@media false {
-    figure p {
-      font-size: 0.875em;        /* 14px / @font-size */
-      line-height: 1.4285714286;  /* @line-height / 0.875em */
-      margin-top: 0.7142857143em; /* @line-height / 0.875em / 2 */
-      margin-bottom: 0;
-      text-align: center;
-    }
-}
 
     figure video[width="300"] + p {
       max-width: 300px;
@@ -133,8 +129,8 @@
 
       font-size: 1.3125em; /* 21px / @font-size */
       line-height: 1.1904761905; /* 25px / 21px */
-      margin-top   : 0.4761904762em; /* 10px / 21px */
-      margin-bottom: 0.4761904762em;
+      margin-top   : 0.9523809524em; /* 20px / 21px */
+      margin-bottom: 0.9523809524em;
     }
 
 
@@ -308,13 +304,19 @@
       max-width: none;
     }
     .channels iframe {
-      width: 50vw;
-      float: left;
+      display: block;
+      width: 100%;
     }
-    .channels:after {
-      content: "";
-      display: table;
-      clear: both;
+    @media (min-width: 50em) {
+      .channels iframe {
+        width: 50vw;
+        float: left;
+      }
+      .channels:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
     }
 
 
@@ -358,52 +360,26 @@
       padding: 3.75em 1.875em; /* @line-height x 3    @line-height x 1.5 */
     }
 
-    @media false and (min-width: 25em) {
-      body > section {
-        padding: 2.25em; /* 36px / @font-size */
-      }
-    }
-    @media (min-width: 25em) {
+    @media (min-width: 600px) {
       section h2 {
         font-size: 3em; /* 48px / @font-size */
         line-height: 1.0416666667; /* 50px / @font-size */
       }
     }
 
-    @media false and (min-width: 35em) {
-      body > section {
-        padding: 3em; /* 48px / @font-size */
-      }
-    }
-    @media (min-width: 35em) {
+    @media (min-width: 800px) {
       section h2 {
         font-size: 3.75em; /* 60px / @font-size */
         line-height: 1;
       }
     }
 
-    @media false and (min-width: 45em) {
-      body > section {
-        padding: 3.75em; /* 60px / @font-size */
-      }
-    }
-    @media (min-width: 45em) {
+    @media (min-width: 1000px) {
       section h2 {
         font-size: 4.5em; /* 72px / @font-size */
         line-height: 1.0416666667; /* 75px / 72px */
       }
     }
-
-    /*
-    @media (min-width: 55em) {
-      body > section {
-        padding: 72px;
-      }
-      section h2 {
-        font-size: 84px;
-      }
-    }
-    */
 
 
     section h3 {
@@ -481,10 +457,6 @@
       color: black;
     }
 
-    .apple h3 a {
-
-    }
-
     .tangerine h3,
     .tangerine p {
       color: rgba(0, 0, 0, 0.45);
@@ -512,11 +484,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-    @media false {
-      .apple .text {
-        max-width: 60em;
-      }
-    }
 
     .plumb     figure,
     .blueberry figure,
@@ -529,74 +496,19 @@
       position: relative;
       padding-right: 6em;
       padding-bottom: 3em;
+      max-width: 33em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .tangerine .figure figure {
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
     }
     .tangerine .figure figure + figure {
       position: absolute;
       top: 3em;
       left: 6em;
-    }
-
-    @media false and (min-width: 65em) {
-      .blueberry,
-      .tangerine,
-      .apple,
-      .boysenberry,
-      .orange,
-      .strawberry,
-      .plumb {
-        /*
-        min-height: 100vh;
-        */
-
-        -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
-                box-sizing: border-box;
-
-        display: -webkit-flex;
-        display:         flex;
-
-        -webkit-flex-direction: row;
-                flex-direction: row;
-
-        -webkit-align-items: center;
-                align-items: center;
-
-        -webkit-align-content: center;
-                align-content: center;
-
-        -webkit-justify-content: center;
-                justify-content: center;
-      }
-      .blueberry,
-      .tangerine {
-        -webkit-flex-direction: row-reverse;
-                flex-direction: row-reverse;
-      }
-
-
-      .boysenberry  h2,
-      .orange       h2,
-      .strawberry   h2,
-      .blueberry    h2,
-      .tangerine    h2,
-      .plumb        h2 {
-        margin-top: 0;
-      }
-
-      section .icons {
-        margin-right: 3em; /* 48px / @font-size */
-        max-width: 25em;
-      }
-
-      .plumb     figure {
-        margin-top: 0;
-        margin-left: 3em; /* 48px / @font-size */
-      }
-      .blueberry figure,
-      .tangerine figure {
-        margin-top: 0;
-        margin-right: 3em; /* 48px / @font-size */
-      }
     }
 
     h2 b {
@@ -654,14 +566,20 @@
       height: 41.6875em; /* 667px / @font-size */
       padding: 7.375em 2.5em 8.625em 2.6875em; /* 118px / @font-size   40px / @font-size   138px / @font-size   43px / @font-size */
     }
-    @media (max-width: 45em) {
+    @media (max-width: 699px) {
       figure[style] iframe {
-        font-size: 2vw;
+        font-size: 2.75vw;
+      }
+      .figure figure[style] iframe {
+        font-size: 2.5vw;
       }
     }
-    @media (min-width: 45em) {
+    @media (min-width: 700px) {
       figure[style] iframe {
-        font-size: 0.75em; /* This number is arbitrary, but happens to make the preview about the same size as an actual phone */
+        font-size: 1em; /* This number is arbitrary, but happens to make the preview about the same size as an actual phone */
+      }
+      .figure figure[style] iframe {
+        font-size: 0.875em;
       }
     }
 
@@ -721,7 +639,11 @@
 
     /* OPTIONAL: Use multiple columns
     ----------------------------------------------- */
-    @media (min-width: 60em) {
+    body > section.orange .text {
+      margin-bottom: 3.75em;
+    }
+
+    @media (min-width: 1200px) {
       body > section {
         min-height: 90vh;
         min-height: calc(100vh - 5em); /* viewport height minus header height */
@@ -752,7 +674,8 @@
       }
       body > section .icons,
       body > section > .text,
-      body > section figure {
+      body > section figure,
+      .tangerine .figure {
         margin-left: 0;
         margin-right: 0;
       }
@@ -768,7 +691,6 @@
         max-width: 33em;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 3.75em;
         min-height: 60vh;
 
         -webkit-box-sizing: border-box;
