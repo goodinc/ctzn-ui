@@ -421,7 +421,7 @@
     }
     @media (min-width: 40em) {
       .apple > .text {
-        max-width: none;
+        max-width: 80vw;
       }
       .apple section {
         display: inline-block;
@@ -607,7 +607,6 @@
 
     .icons div {
       margin-left: -0.625em; /* icon margin */
-      width: 7.5em; /* (icon width x 2) + (icon margin x 4) */
     }
     .icons div:after {
       content: "";
@@ -622,6 +621,12 @@
       margin: 0.625em; /* @line-height / 2 */
     }
 
+    @media (min-width: 60em) {
+      .icons div {
+        width: 7.5em; /* (icon width x 2) + (icon margin x 4) */
+      }
+    }
+
     @media (min-width: 25em) and (max-width: 65em) {
       .icons div {
         font-size: 4vw;
@@ -630,7 +635,7 @@
 
     @media (min-width: 65em) {
       .icons div {
-        font-size: 3em;
+        font-size: 2.5em;
       }
     }
 
@@ -718,7 +723,8 @@
     ----------------------------------------------- */
     @media (min-width: 60em) {
       body > section {
-        min-height: 100vh;
+        min-height: 90vh;
+        min-height: calc(100vh - 5em); /* viewport height minus header height */
 
         -webkit-box-sizing: border-box;
            -moz-box-sizing: border-box;
@@ -763,6 +769,28 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 3.75em;
+        min-height: 60vh;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+        display: -webkit-flex;
+        display:         flex;
+
+        -webkit-flex-direction: column;
+                flex-direction: column;
+
+        /*
+        -webkit-align-items: center;
+                align-items: center;
+
+        -webkit-align-content: center;
+                align-content: center;
+
+        */
+        -webkit-justify-content: center;
+                justify-content: center;
       }
 
     }
