@@ -88,9 +88,9 @@
 
 @media false {
     figure p {
-      font-size: 0.875em;        /* 14px ÷ @font-size */
-      line-height: 1.4285714286;  /* @line-height ÷ 0.875em */
-      margin-top: 0.7142857143em; /* @line-height ÷ 0.875em ÷ 2 */
+      font-size: 0.875em;        /* 14px / @font-size */
+      line-height: 1.4285714286;  /* @line-height / 0.875em */
+      margin-top: 0.7142857143em; /* @line-height / 0.875em / 2 */
       margin-bottom: 0;
       text-align: center;
     }
@@ -107,31 +107,31 @@
     /* =Type
     ----------------------------------------------- */
     h1, h2, h3, h4, h5, h6, p, ol, ul, dl {
-      margin-top    : 0.625em; /* @line-height ÷ 2 */
+      margin-top    : 0.625em; /* @line-height / 2 */
       margin-bottom : 0.625em;
     }
 
     h1 {
       margin-top   : 0.4166666667em;
       margin-bottom: 0.4166666667em;
-      font-size: 3em; /* 48px ÷ @font-size */
-      line-height: 1.25; /* 60px ÷ @font-size */
+      font-size: 3em; /* 48px / @font-size */
+      line-height: 1.25; /* 60px / @font-size */
     }
     h2 {
       margin-top   : 0.2777777778em;
       margin-bottom: 0.2777777778em;
-      font-size  : 2.25em; /* 36px ÷ @font-size */
-      line-height: 1.1666666667; /* 42px ÷ @font-size */
+      font-size  : 2.25em; /* 36px / @font-size */
+      line-height: 1.1666666667; /* 42px / @font-size */
     }
     h3 {
       margin-top   : 0.4166666667em;
       margin-bottom: 0.4166666667em;
-      font-size  : 1.5em;   /* 24px ÷ @font-size */
-      line-height: 1.25; /* 30px ÷ @font-size */
+      font-size  : 1.5em;   /* 24px / @font-size */
+      line-height: 1.25; /* 30px / @font-size */
 
 
 
-      font-size: 1.3125em; /* 21px ÷ @font-size */
+      font-size: 1.3125em; /* 21px / @font-size */
       line-height: 1.1904761905; /* 25px / 21px */
       margin-top   : 0.4761904762em; /* 10px / 21px */
       margin-bottom: 0.4761904762em;
@@ -270,15 +270,15 @@
 
     header a {
       display: block;
-      line-height: 1.875em; /* image height (30px) ÷ @font-size */
-      padding: 0 0.625em; /* 10px ÷ @font-size */
+      line-height: 1.875em; /* image height (30px) / @font-size */
+      padding: 0 0.625em; /* 10px / @font-size */
       color: white;
-      border: 0.125em solid white; /* 2px ÷ @font-size */
+      border: 0.125em solid white; /* 2px / @font-size */
       border-radius: 1.25em; /* line height + border width / 2 */
       text-decoration: none;
     }
     header p {
-      margin: 0.75em 0.125em; /* 12px ÷ @font-size       2px ÷ @font-size */
+      margin: 0.75em 0.125em; /* 12px / @font-size       2px / @font-size */
       float: right;
     }
 
@@ -287,14 +287,14 @@
       display: inline-block;
       border-radius: 50%;
       font-size: inherit;
-      width       : 3.75em; /* 60px ÷ @font-size */
+      width       : 3.75em; /* 60px / @font-size */
       line-height : 3.75em;
       text-align: center;
       background-color: rgb(150, 255, 108); /* @honeydew */
     }
     header h1 .icon {
-      width: 2.625em; /* 42px ÷ @font-size */
-      height: 3.75em; /* 60px ÷ @font-size */
+      width: 2.625em; /* 42px / @font-size */
+      height: 3.75em; /* 60px / @font-size */
       vertical-align: top;
     }
 
@@ -327,7 +327,7 @@
       padding-left: 0;
     }
     .download {
-      margin-top   : 1.25em; /* 20px ÷ @font-size */
+      margin-top   : 1.25em; /* 20px / @font-size */
       margin-bottom: 1.25em;
     }
     .download li {
@@ -342,7 +342,7 @@
 
     /* SHIM: Give the store buttons a uniform height. */
     ul.download li a img[height="40"] {
-      height: 2.5em; /* 40px ÷ @font-size */
+      height: 2.5em; /* 40px / @font-size */
     }
 
 
@@ -360,36 +360,36 @@
 
     @media false and (min-width: 25em) {
       body > section {
-        padding: 2.25em; /* 36px ÷ @font-size */
+        padding: 2.25em; /* 36px / @font-size */
       }
     }
     @media (min-width: 25em) {
       section h2 {
-        font-size: 3em; /* 48px ÷ @font-size */
+        font-size: 3em; /* 48px / @font-size */
         line-height: 1.0416666667; /* 50px / @font-size */
       }
     }
 
     @media false and (min-width: 35em) {
       body > section {
-        padding: 3em; /* 48px ÷ @font-size */
+        padding: 3em; /* 48px / @font-size */
       }
     }
     @media (min-width: 35em) {
       section h2 {
-        font-size: 3.75em; /* 60px ÷ @font-size */
+        font-size: 3.75em; /* 60px / @font-size */
         line-height: 1;
       }
     }
 
     @media false and (min-width: 45em) {
       body > section {
-        padding: 3.75em; /* 60px ÷ @font-size */
+        padding: 3.75em; /* 60px / @font-size */
       }
     }
     @media (min-width: 45em) {
       section h2 {
-        font-size: 4.5em; /* 72px ÷ @font-size */
+        font-size: 4.5em; /* 72px / @font-size */
         line-height: 1.0416666667; /* 75px / 72px */
       }
     }
@@ -419,11 +419,14 @@
     .apple section {
       margin-top: 2.5em; /* @line-height x 2 */
     }
-    @media false and (min-width: 40em) {
+    @media (min-width: 40em) {
+      .apple > .text {
+        max-width: none;
+      }
       .apple section {
         display: inline-block;
         vertical-align: top;
-        margin-top: 3.75em; /* 60px ÷ @font-size */
+        margin-top: 3.75em; /* 60px / @font-size */
       }
       .apple section:nth-of-type(1n) {
         margin-right: 4%;
@@ -433,7 +436,7 @@
         margin-right: 0;
       }
     }
-    @media false and (min-width: 60em) {
+    @media (min-width: 60em) {
       .apple section:nth-of-type(1n) {
         margin-right: 4%;
         max-width: 30%;
@@ -442,19 +445,19 @@
         margin-right: 0;
       }
     }
-    .apple section:last-child {
+    .apple section.more {
       display: block;
       max-width: none;
     }
     h3 .icon {
       color: white;
-      margin-right: 0.3125em; /* @line-height ÷ 4 */
+      margin-right: 0.3125em; /* @line-height / 4 */
     }
     @media false and (min-width: 50em) {
       h3 .icon {
-        width : 3em; /* 48px ÷ @font-size */
+        width : 3em; /* 48px / @font-size */
         height: 3em;
-        margin-right: 0.625em; /* 10px ÷ @font-size */
+        margin-right: 0.625em; /* 10px / @font-size */
       }
     }
     .apple h3 {
@@ -464,7 +467,7 @@
     @media false {
       .apple h3 a {
         padding-top: 1.9047619048em; /* 40px / 21px */
-        border-top: 0.3125em solid black; /* 5px ÷ @font-size */
+        border-top: 0.3125em solid black; /* 5px / @font-size */
       }
     }
 
@@ -518,7 +521,7 @@
     .plumb     figure,
     .blueberry figure,
     .tangerine figure {
-      margin-top: 1.875em; /* 30px ÷ @font-size */
+      margin-top: 1.875em; /* 30px / @font-size */
     }
 
 
@@ -581,18 +584,18 @@
       }
 
       section .icons {
-        margin-right: 3em; /* 48px ÷ @font-size */
+        margin-right: 3em; /* 48px / @font-size */
         max-width: 25em;
       }
 
       .plumb     figure {
         margin-top: 0;
-        margin-left: 3em; /* 48px ÷ @font-size */
+        margin-left: 3em; /* 48px / @font-size */
       }
       .blueberry figure,
       .tangerine figure {
         margin-top: 0;
-        margin-right: 3em; /* 48px ÷ @font-size */
+        margin-right: 3em; /* 48px / @font-size */
       }
     }
 
@@ -603,14 +606,20 @@
 
 
     .icons div {
-      margin-left: -0.625em; /* @line-height ÷ 2 */
-      margin-right: -0.625em;
+      margin-left: -0.625em; /* icon margin */
+      width: 7.5em; /* (icon width x 2) + (icon margin x 4) */
+    }
+    .icons div:after {
+      content: "";
+      display: table;
+      clear: both;
     }
     .icons .icon {
+      float: left;
       color: white;
-      width:  2.5em; /* 40px ÷ @font-size */
+      width:  2.5em; /* 40px / @font-size */
       height: 2.5em;
-      margin: 0.625em; /* @line-height ÷ 2 */
+      margin: 0.625em; /* @line-height / 2 */
     }
 
     @media (min-width: 25em) and (max-width: 65em) {
@@ -656,7 +665,7 @@
     ----------------------------------------------- */
     footer.primary .about,
     footer.primary .legal {
-      padding: 0.625em; /* @line-height ÷ 2 */
+      padding: 0.625em; /* @line-height / 2 */
       background: rgb(51, 51, 51);
       color: white;
       text-align: center;
@@ -1083,7 +1092,7 @@
 
   <section class="apple">
     <div class="text">
-      <h2>Built for changemakers, <b>for free.</b></h2>
+      <h2>Built for changemakers, <b>free to use.</b></h2>
 
       <section>
         <h3>
