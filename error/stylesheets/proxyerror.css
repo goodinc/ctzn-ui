@@ -1,0 +1,279 @@
+
+  /* =Fonts
+  ----------------------------------------------- */
+
+  /* Trade Gothic – This CSS resource incorporates links to font software which is the valuable copyrighted
+  property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+  redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+  Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com */
+  @font-face {
+    font-family: "Trade Gothic Bold Condensed";
+    src: url(../fonts/257c802f-349c-4b4d-aefa/546d5de15ec6.eot);
+    src: url(../fonts/257c802f-349c-4b4d-aefa/546d5de15ec6.eot?#iefix) format("eot"),
+         url(../fonts/5fdc935e-9e30-442a-bbe9/8d887b858471.woff)       format("woff"),
+         url(../fonts/616c4c87-a077-43f4-a9f4/f01267c13818.ttf)        format("truetype"),
+         url(../fonts/c901ad5f-a842-4549-a1f4/583a97f7e169.svg#c901ad5f-a842-4549-a1f4-583a97f7e169) format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+  /* =Animation
+  ----------------------------------------------- */
+  @-webkit-keyframes rotate-down {
+      from {
+        -webkit-transform: rotate(0deg);
+        top: 0;
+      }
+      to {
+        -webkit-transform: rotate(-15deg);
+        top: 0.1em;
+      }
+  }
+  @-moz-keyframes rotate-down {
+      from {
+        -moz-transform: rotate(0deg);
+        top: 0;
+      }
+      to {
+        -moz-transform: rotate(-15deg);
+        top: 0.1em;
+      }
+  }
+  @keyframes rotate-down {
+      from {
+        transform: rotate(0deg);
+        top: 0;
+      }
+      to {
+        transform: rotate(-15deg);
+        top: 0.1em;
+      }
+  }
+
+
+  /* =Elements
+  ----------------------------------------------- */
+  body {
+    font: 100%/1.75 "Helvetica Neue", Helvetica, Arial, sans-serif; /* @helvetica */
+    margin: 0;
+    padding: 0;
+    background: rgb(253, 253, 253);
+    color: rgb(35, 31, 32);
+    text-align: center;
+  }
+  @media (min-width: 60em) and (min-height: 45em) { /* @medium-screen */
+    .main {
+      font-size: 125%;
+    }
+  }
+  @media (min-width: 80em) and (min-height: 60em) { /* @huge-screen */
+    .main {
+      font-size: 150%;
+    }
+  }
+
+  a {
+    color: rgb(255, 49, 102); /* @pitaya */
+    text-decoration: none;
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    text-decoration: underline;
+  }
+
+  /* Older browsers sometimes render these inline */
+  header, footer {
+    display: block;
+  }
+
+
+  /* =Header
+  ----------------------------------------------- */
+  .main h1 {
+    font-family: "Trade Gothic Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @trade */
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 3.5em;
+    line-height: normal;
+    margin-bottom: 0.25em;
+    margin-top: 0;
+    letter-spacing: -0.05em;
+  }
+  .main h1 .last-letter {
+    display: inline-block;
+    position: relative;
+
+    /* http://cubic-bezier.com/#.53,3,.37,.08 */
+    -webkit-animation : rotate-down 0.5s 1.5s cubic-bezier(.53,3,.37,.08) forwards;
+       -moz-animation : rotate-down 0.5s 1.5s cubic-bezier(.53,3,.37,.08) forwards;
+            animation : rotate-down 0.5s 1.5s cubic-bezier(.53,3,.37,.08) forwards;
+  }
+  .main h2 {
+    font-size: 1.5em;
+    line-height: 1.1666666667em; /* @line-height / 1.5 */
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @media (min-width: 30em) {
+    .main h1 {
+      font-size: 7em;
+      margin-bottom: 0;
+    }
+  }
+
+
+  /* =Main
+  ----------------------------------------------- */
+  .main p {
+    color: rgb(102, 102, 102);
+    font-size: 0.875em; /* 14px / @font-size */
+  }
+  .main .action {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  .main .action a {
+    font-weight: bold;
+  }
+  .main ul,
+  .main ul li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .main ul li {
+    display: inline;
+  }
+  .main ul li:after {
+    content: " / ";
+    font-weight: 100;
+    color: rgb(153, 153, 153);
+  }
+  .main ul li:last-child:after {
+    content: "";
+  }
+
+
+  /* =Footer
+  ----------------------------------------------- */
+
+  /* Logotype */
+  footer h2 {
+    margin-top: 0;
+    font-size: inherit;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 3em;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  footer h2 a {
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    transition: color 0.2s;
+  }
+  footer h2 a:hover,
+  footer h2 a:active,
+  footer h2 a:focus {
+    color: rgb(235, 29, 82); /* @raspberry */
+  }
+  footer blockquote {
+    font-size: 0.875em; /* 14px / @font-size */
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Error Number */
+  footer .error-number {
+    margin-top: 0;
+    font-family: "Trade Gothic Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @trade */
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 2.75em;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin-bottom: 0;
+  }
+  footer .error-number a {
+    text-decoration: none;
+    color: rgb(204, 204, 204);
+    transition: color 0.2s;
+  }
+  footer .error-number a:hover,
+  footer .error-number a:active,
+  footer .error-number a:focus {
+    color: rgb(235, 29, 82); /* @raspberry */
+  }
+
+  /* OPTIONAL: Make the footer more compact on large screens */
+  @media (min-width: 50em) {
+    footer h2,
+    footer blockquote,
+    footer .error-number {
+      display: inline-block;
+      margin: 0 0.875em;
+      vertical-align: middle;
+    }
+    footer blockquote p {
+      margin: 0.75em 0 0;
+    }
+    footer h2 {
+      float: left;
+      margin-left: 0;
+    }
+    footer .error-number {
+      float: right;
+      margin-right: 0;
+    }
+  }
+
+
+  /* =Layout
+  ----------------------------------------------- */
+  .main > .container {
+    padding-top: 1.75em; /* @line-height */
+    padding-bottom: 1.75em;
+  }
+  footer {
+    background: white;
+  }
+  footer > .container {
+    border-top: 0.1em solid rgb(234, 234, 234);
+    padding-top    : 1.75em; /* @line-height */
+    padding-bottom : 1.75em;
+  }
+
+  .main  > .container,
+  footer > .container {
+    padding-left  : 1.75em; /* @line-height */
+    padding-right : 1.75em;
+  }
+
+  /* Fill the available vertical space, if the screen is tall */
+  html, body {
+    height: 100%;
+  }
+  body > .container {
+    display: table;
+    width : 100%;
+    height: 100%;
+  }
+  .main,
+  footer {
+    display: table-row;
+  }
+  .main  > .container,
+  footer > .container {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left  : 1.75em; /* @line-height */
+    padding-right : 1.75em;
+  }
+  footer > .container {
+    vertical-align: bottom;
+    height: 1px;
+  }
+
