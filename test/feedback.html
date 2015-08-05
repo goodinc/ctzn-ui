@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Edit Push / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,23 +19,14 @@
     })();
   </script>
 
-  <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/69a0da880569f7321da5707935b54e30a321adf2=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/e62eb390941ca7edf3bb675786c4e2f05627547a=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048);
-    }
-  </style>
+  <script src="../assets/js/placeholder.js"></script>
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -305,118 +295,30 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../design/">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section class="edit page">
+    <header>
+      <h1>Send feedback</h1>
 
-  <h1>Design</h1>
+      <a href="" class="back">
+        Cancel
+      </a>
+    </header>
 
-  <div class="pattern-list">
-    <section>
-      <h2>Feedback</h2>
-      <ul>
-        <li><a href="../test/switch.html">Switch</a></li>
-        <li><a href="../test/feedback.html">Form</a></li>
+    <form action="" method="post">
+      <ul class="text">
+        <li>
+          <label>
+            <span>Enter message</span><br />
+            <textarea placeholder="Enter message"></textarea>
+          </label>
+        </li>
       </ul>
-    </section>
-    <section>
-      <h2>Error</h2>
-      <ul>
-        <li><a href="../error/50x.html">500</a></li>
-        <li><a href="../error/403.html">403</a></li>
-        <li><a href="../error/404.html">404</a></li>
-        <li><a href="../error/413.html">413</a></li>
-        <li><a href="../error/418.html">418</a></li>
-        <li><a href="../error/429.html">429</a></li>
-        <li><a href="../error/520.html">520</a></li>
-        <li><a href="../test/dialog.html">Dialog</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Promote</h2>
-      <ul>
-        <li><a href="../design/promote.html">About</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>CTZN Channel</h2>
-      <ul>
-        <li><a href="../design/channel-ctzn.html">Slide 1</a></li>
-        <li><a href="../design/channel-south-la.html">Slide 2</a></li>
-        <li><a href="../design/channel-good.html">Slide 3</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Widget</h2>
-      <ul>
-        <li><a href="../test/settings.html">Settings</a></li>
-        <li><a href="../test/widget.html">Embed Code</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Switch</h2>
-      <ul>
-        <li><a href="../test/switch.html">Activity Indicators</a></li>
-        <li><a href="../test/switch-alt.html">New Layout</a></li>
-        <li><a href="../test/switch-reorder.html">Reorder</a></li>
-        <li><a href="../test/switch-reorder-alt.html">Reorder (Drag)</a></li>
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Digest</h2>
-      <ul>
-        <li><a href="../email/weekly.html">Weekly</a></li>
-        <li><a href="../email/daily.html">Daily</a></li>
-        <li><a href="../design/archive.html">Archive</a></li>
-        <li><a href="../test/settings-digest.html">Settings</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Join Push</h2>
-      <h6>(via getctzn.com/join)</h6>
-      <ul>
-        <li><a href="../design/join.html">Join</a></li>
-        <li><a href="../design/preview.html">Preview</a></li>
-        <li><a href="../design/join-logged-in.html">Join (logged in)</a></li>
-        <li><a href="../design/preview-logged-in.html">Preview (logged in)</a></li>
-      </ul>
-      <h6>(via the app)</h6>
-      <ul>
-        <li><a href="../design/join-app.html">Join</a></li>
-        <li><a href="../design/preview-app.html">Preview</a></li>
-      </ul>
-    </section>
-    -->
-    <section>
-      <h2>Push Color</h2>
-      <ul>
-        <li><a href="../test/push-new.html">New Push</a></li>
-        <li><a href="../test/push-edit.html">Edit Push</a></li>
-        <!--
-        <li><a href="../test/preview-mix.html">Live Channel</a></li>
-        <li><a href="../test/preview-share.html">Public Page</a></li>
-        <li><a href="http://kaboom.org/resources/playmaker_network">Widget</a></li>
-        -->
-      </ul>
-    </section>
-    <section>
-      <h2>Email</h2>
-      <ul>
-        <!--
-        <li><a href="../email/curator.html">Curator Tips</a></li>
-        -->
-        <li><a href="../email/reset.html">Reset Password</a></li>
-      </ul>
-    </section>
-  </div>
+      <p class="submit">
+        <button>Send</button>
+      </p>
+    </form>
+
+  </section>
 
 </body>
 </html>
