@@ -59,6 +59,11 @@
       }
     }
 
+    a {
+      color: rgb(255, 49, 102); /* @pitaya */
+      transition: color 0.2s;
+    }
+
     a img {
       border-width: 0;
     }
@@ -296,6 +301,7 @@
       padding: 0.625em 1.25em; /* 10px / @font-size */
     }
 
+@media false {
     header a {
       display: block;
       line-height: 1.875em; /* image height (30px) / @font-size */
@@ -308,6 +314,38 @@
     header p {
       margin: 0.75em 0.125em; /* 12px / @font-size       2px / @font-size */
       float: right;
+    }
+}
+
+    header ul,
+    header li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    header ul {
+      margin: 0.875em 0;
+      float: right;
+    }
+    header li {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 1.25em;
+    }
+    header li .icon {
+      vertical-align: top;
+      width: 2em;
+      height: 2em;
+    }
+    header ul a {
+      color: white;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+    }
+    header ul a:hover,
+    header ul a:active,
+    header ul a:focus {
+      color: white;
     }
 
     header h1 {
@@ -378,6 +416,9 @@
       display: inline;
       margin-left: 0.375em;
       margin-right: 0.375em;
+    }
+    .download li a {
+      text-decoration: none;
     }
     .download li a img {
       max-width: 100%;
@@ -1034,8 +1075,13 @@
         C9,12,9.5,12.2,10,12.2s1-0.2,1.4-0.6l0.7-0.7l4.6,4.6H3.3z M17.7,14.6L13,10l4.6-4.6V14.6z"/>
     </symbol>
     <symbol id="icon-padlock" viewBox="0 0 20 20">
-      <path d="M15 6.666c0-2.756-2.244-5-5-5s-5 2.244-5 5v1.666h-1.111v3.889c0 3.377 2.734 6.111 6.111 6.111s6.111-2.734 6.111-6.111v-3.889h-1.111v-1.666zM6.111 6.666c0-2.134 1.756-3.889 3.889-3.889s3.889 1.756 3.889 3.889v1.666h-1.111v-1.666c0-1.534-1.244-2.777-2.777-2.777s-2.779 1.244-2.779 2.777v1.666h-1.111v-1.666zM11.666 6.666v1.666h-3.334v-1.666c0-0.911 0.756-1.666 1.666-1.666s1.666 0.756 1.666 1.666zM15 12.223c0 2.756-2.244 5-5 5s-5-2.244-5-5v-2.777h10v2.777z"></path>
-      <path d="M9.444 14.356c0 0.023 0 0.066 0 0.089v0.555c0 0.311 0.244 0.556 0.556 0.556s0.556-0.244 0.556-0.556v-0.556c0-0.023 0-0.066 0-0.089 0.644-0.221 1.111-0.844 1.111-1.578 0-0.911-0.756-1.666-1.666-1.666s-1.666 0.756-1.666 1.666c0 0.734 0.466 1.356 1.111 1.579zM10 12.223c0.311 0 0.556 0.244 0.556 0.556s-0.245 0.555-0.556 0.555-0.556-0.244-0.556-0.556c0-0.311 0.245-0.555 0.556-0.555z"></path>
+      <path d="M16.1,7.8h-2.2V4.9C13.9,2.8,12.2,1,10,1S6.1,2.8,6.1,4.9v2.9H3.9C3.2,7.8,2.7,8.3,2.7,9v8.8c0,0.7,0.5,1.2,1.2,1.2h12.2
+        c0.7,0,1.2-0.5,1.2-1.2V9C17.3,8.3,16.8,7.8,16.1,7.8z M7.1,4.9C7.1,3.3,8.4,2,10,2s2.9,1.3,2.9,2.9v2.9H12V4.9c0-1.1-0.9-2-2-2
+        s-2,0.9-2,2v2.9H7.1V4.9z M10.9,7.8H9.1V4.9C9.1,4.4,9.5,4,10,4s0.9,0.4,0.9,0.9V7.8z M16.3,17.8c0,0.1-0.1,0.2-0.2,0.2H3.9
+        c-0.1,0-0.2-0.1-0.2-0.2V9c0-0.1,0.1-0.2,0.2-0.2h2.2h3h1.9h3h2.2c0.1,0,0.2,0.1,0.2,0.2V17.8z"/>
+      <path d="M10,10.3c-1.2,0-2.2,1-2.2,2.2c0,0.7,0.3,1.3,0.8,1.7v1.7c0,0.3,0.2,0.5,0.5,0.5h1.7c0.3,0,0.5-0.2,0.5-0.5v-1.7
+        c0.5-0.4,0.8-1.1,0.8-1.7C12.2,11.3,11.2,10.3,10,10.3z M10.6,13.6c-0.2,0.1-0.3,0.3-0.3,0.4v1.4H9.7V14c0-0.2-0.1-0.3-0.3-0.4
+        c-0.4-0.2-0.6-0.6-0.6-1c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2C11.2,13,11,13.4,10.6,13.6z"/>
     </symbol>
     <symbol id="icon-refresh" viewBox="0 0 20 20">
       <path d="M19.14 9.652l-2.416 2.418c-0.124 0.124-0.293 0.194-0.468 0.194s-0.341-0.069-0.467-0.194l-2.415-2.418c-0.258-0.258-0.258-0.676 0-0.935s0.676-0.258 0.935 0l1.286 1.289v-0.006c0-3.2-2.601-5.803-5.803-5.803s-5.804 2.602-5.804 5.803 2.604 5.802 5.804 5.802c1.55 0 3.006-0.604 4.104-1.699 0.257-0.258 0.676-0.258 0.934 0s0.257 0.676 0 0.934c-1.345 1.346-3.134 2.086-5.037 2.086-3.929 0-7.126-3.196-7.126-7.124s3.196-7.124 7.126-7.124 7.124 3.195 7.124 7.124v0.006l1.289-1.289c0.258-0.258 0.676-0.258 0.935 0s0.259 0.676 0.001 0.934z"></path>
@@ -1211,6 +1257,21 @@
     </symbol>
   </svg>
 
+  <svg display="none" width="0" height="0">
+    <symbol id="icon-apple-store" viewBox="0 0 20 20">
+      <path d="M17.7,14.2c-0.4,0.9-0.6,1.4-1.2,2.2c-0.8,1.2-1.8,2.6-3.2,2.6c-1.2,0-1.5-0.8-3.1-0.8c-1.6,0-1.9,0.8-3.1,0.8
+        c-1.3,0-2.3-1.3-3.1-2.5c-2.1-3.2-2.3-7-1-9C4,6.1,5.5,5.2,6.9,5.2C8.3,5.2,9.1,6,10.3,6c1.1,0,1.8-0.8,3.4-0.8
+        c1.2,0,2.5,0.7,3.5,1.8C14.2,8.7,14.7,13,17.7,14.2z"/>
+      <path d="M12.5,3.9c0.6-0.8,1-1.8,0.9-2.9c-1,0.1-2.1,0.7-2.8,1.5C10,3.2,9.6,4.3,9.7,5.3C10.8,5.4,11.9,4.7,12.5,3.9z"/>
+    </symbol>
+    <symbol id="icon-google-play" viewBox="0 0 20 20">
+      <path d="M14.3,12.6c2-1.1,3.5-1.9,3.6-2c0.4-0.2,0.8-0.8,0-1.2c-0.3-0.1-1.7-0.9-3.6-2L11.8,10L14.3,12.6z"/>
+      <path d="M10.7,10.7L2.5,19c0.2,0,0.4,0,0.7-0.2c0.5-0.3,6.3-3.4,10.2-5.6L10.7,10.7z"/>
+      <path d="M10.7,9.3l2.6-2.6c0,0-9.6-5.2-10.2-5.5C2.9,1,2.7,1,2.5,1L10.7,9.3z"/>
+      <path d="M10.4,10L2.2,1.7c-0.3,0.1-0.6,0.4-0.6,1c0,1,0,13.8,0,14.6c0,0.6,0.2,1,0.6,1L10.4,10z"/>
+    </symbol>
+  </svg>
+
   <header>
     <h1>
       <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use>
@@ -1219,23 +1280,47 @@
     </h1>
     <!--
     <ul>
-    <h1><a href="">CTZN</a></h1>
       <li><a href="">Features</a></li>
       <li><a href="">Principles</a></li>
       <li><a href="">Support</a></li>
     </ul>
     -->
-    <p><a href="#download">Download</a></p>
+    <ul>
+      <li>
+        <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+            <use xlink:href="#icon-apple-store"></use>
+            <foreignObject>Download on the App Store</foreignObject>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+            <use xlink:href="#icon-google-play"></use>
+            <foreignObject>Get it on Google Play</foreignObject>
+          </svg>
+        </a>
+      </li>
+    </ul>
   </header>
 
   <section class="tangerine">
-    <div class="text" id="download">
+    <div class="text">
       <h2>See progress <b>unfold.</b></h2>
       <h3>A new way to connect, capture, and broadcast your push for good.</h3>
 
       <ul class="download">
-        <li><a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8"><img src="../assets/images/logos/apple-store.svg" height="40" alt="Download on the App Store"></a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn"><img src="../assets/images/logos/google-play.svg" height="40" alt="Get it on Google Play"></a></li>
+        <li>
+          <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
+            <img src="../assets/images/logos/apple-store.svg" height="40" alt="Download on the App Store" />
+          </a>
+        </li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
+            <img src="../assets/images/logos/google-play.svg" height="40" alt="Get it on Google Play" />
+          </a>
+        </li>
       </ul>
 
       <p>CTZN is currently invite-only. Don’t have an invite code? <a href="#contact">Get in touch</a></p>
@@ -1250,18 +1335,6 @@
         <iframe width="375" height="667" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
       </figure>
     </div>
-
-    <!--
-    <div class="figure">
-      <figure style="background-image: url(phone-white.png)">
-        <iframe width="375" height="667" src="promote-switch.html" frameborder="0" allowfullscreen></iframe>
-      </figure>
-
-      <figure style="background-image: url(phone.png)">
-        <iframe width="375" height="667" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
-      </figure>
-    </div>
-    -->
   </section>
 
   <section class="apple">
@@ -1461,7 +1534,6 @@
     <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></svg></a> app</h2>
     <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
   </footer>
-
 
 </body>
 </html>
