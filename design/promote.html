@@ -615,37 +615,45 @@
     .tangerine figure {
       font-size: 0.75em;
     }
-    .tangerine figure:first-child {
+    .plumb     figure.preview,
+    .tangerine figure.preview:first-child {
       background-color: white;
     }
-    .tangerine figure:first-child:after {
+    .plumb     figure.preview:after,
+    .tangerine figure.preview:first-child:after {
       border-color: rgba(0, 0, 0, 0.1);
     }
-    .tangerine figure:last-child {
+    .tangerine figure.preview:last-child {
       display: block;
       position: absolute;
       top: 3.125em;
       left: 8.25em;
     }
 
-    .plumb     .figure,
-    .blueberry .figure {
-      height: 25em;
-      overflow-y: hidden;
-      margin-bottom: -3.125em;
+
+    @media (max-width: 60em) {
+      .plumb     .figure figure,
+      .blueberry .figure figure {
+        height: 25em;
+        overflow-y: hidden;
+        padding-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .plumb     .figure figure:after,
+      .blueberry .figure figure:after {
+        display: none;
+      }
+      .plumb     .figure,
+      .blueberry .figure {
+        margin-bottom: -3.125em;
+      }
     }
-    @media (min-width: 40em) {
+
+    @media (min-width: 40em) and (max-width: 60em) {
       .plumb     .figure,
       .blueberry .figure {
         margin-bottom: -6.25em;
-      }
-    }
-    @media (min-width: 60em) {
-      .plumb     .figure,
-      .blueberry .figure {
-        height: auto;
-        overflow-y: visible;
-        margin-bottom: 0;
       }
     }
 
@@ -707,6 +715,10 @@
       width : 23.4375em; /* 375px / @font-size */
       height: 41.6875em; /* 667px / @font-size */
       max-width: none;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
     }
     figure.preview:after {
       content: "";
@@ -724,7 +736,7 @@
 
     @media (max-width: 33em) {
       figure.preview {
-        font-size: 3vw;
+        font-size: 3.2vw;
       }
       .tangerine figure.preview {
         font-size: 2.5vw;
