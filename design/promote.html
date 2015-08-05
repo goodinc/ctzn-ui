@@ -1,4 +1,4 @@
-<!doctype html>
+.<!doctype html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
@@ -563,13 +563,28 @@
 
     .tangerine .figure {
       position: relative;
-      padding-right: 3.75em;
-      padding-bottom: 1.25em;
+      border-color: transparent;
+      border-style: solid;
+      border-bottom-width: 3.125em;
+      border-right-width: 5.625em;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
     }
-    .tangerine .figure figure + figure {
+    .tangerine figure {
+      font-size: 0.75em;
+    }
+    .tangerine figure:first-child {
+      background-color: white;
+    }
+    .tangerine figure:first-child:after {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+    .tangerine figure:last-child {
+      display: block;
       position: absolute;
-      top: 1.25em;
-      left: 3.75em;
+      top: 3.125em;
+      left: 5.625em;
     }
 
     .plumb     .figure,
@@ -633,13 +648,75 @@
       }
     }
 
+
+    figure.preview {
+      background-image: none !important;
+      background-color: black;
+      padding: 6.25em 1.25em 6.875em;
+      border-style: solid;
+      border-color: black;
+      border-color: rgba(0, 0, 0, 0.5);
+      border-color: transparent;
+      border-radius: 4em;
+      display: inline-block;
+      position: relative;
+      box-shadow: 0 -0.1em 0.75em rgba(0, 0, 0, 0.15);
+    }
+    figure.preview iframe {
+      width : 23.4375em; /* 375px / @font-size */
+      height: 41.6875em; /* 667px / @font-size */
+      max-width: none;
+    }
+    figure.preview:after {
+      content: "";
+      width: 3.75em;
+      height: 3.75em;
+      border: 0.3125em solid white;
+      border-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 1em;
+      margin-left: -1.875em;
+    }
+
+    @media (max-width: 33em) {
+      figure.preview {
+        font-size: 3vw;
+      }
+      .tangerine figure.preview {
+        font-size: 2.5vw;
+      }
+    }
+
+    /*
+    figure[style]:before {
+      content: "";
+      display: block;
+      background-image: url(phone.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: -2.3%;
+      left: -6.25%;
+      width: 112.5%;
+      height: 112.5%;
+      opacity: 0.5;
+    }
+    */
+
+
+@media false {
     figure[style] {
       background-repeat: no-repeat;
       background-size: contain;
       margin-bottom: 0;
       border: 1px solid transparent;
       max-width: none;
+      background-image: none !important;
     }
+
     figure[style] iframe {
       font-size: 0.5em;
       max-width: none;
@@ -649,7 +726,22 @@
       width : 23.4375em; /* 375px / @font-size */
       height: 41.6875em; /* 667px / @font-size */
       margin: 7.375em 2.5em 8.625em 2.6875em; /* 118px / @font-size   40px / @font-size   138px / @font-size   43px / @font-size */
+      border-width: 7.375em 2.5em 8.625em 2.6875em;
+      border-style: solid;
+      border-color: red;
+      border-radius: 4em;
+      border-color: transparent;
       box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.5);
+    }
+    figure[style]:after {
+      content: "";
+      width: 3em;
+      height: 3em;
+      border: 0.25em solid blue;
+      border-radius: 50%;
+      display: block;
+      position: relative;
+      z-index: 1;
     }
 
     figure[style] iframe {
@@ -684,6 +776,7 @@
       }
     }
     */
+}
 
 
     /* =Footer
@@ -1149,11 +1242,11 @@
     </div>
 
     <div class="figure">
-      <figure style="background-image: url(phone-white.png);">
+      <figure class="preview">
         <iframe width="375" height="667" src="promote-switch.html" frameborder="0" allowfullscreen></iframe>
       </figure>
 
-      <figure style="background-image: url(phone.png);">
+      <figure class="preview">
         <iframe width="375" height="667" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
       </figure>
     </div>
@@ -1283,7 +1376,7 @@
       </div>
     </div>
     <div class="figure">
-      <figure style="background-image: url(phone.png)">
+      <figure class="preview">
         <iframe width="375" height="667" src="promote-mix.html" frameborder="0" allowfullscreen></iframe>
       </figure>
     </div>
@@ -1298,7 +1391,7 @@
       <p>Selectively invite your community, connect your preferred platforms, employ your hashtags strategically, and choose when to receive notifications and Digests — daily or weekly. CTZN provides the customization &amp; tools you need to create social impact, with less of the social media noise. </p>
     </div>
     <div class="figure">
-      <figure style="background-image: url(phone-white.png)">
+      <figure class="preview">
         <iframe width="375" height="667" src="promote-push.html" frameborder="0" allowfullscreen></iframe>
       </figure>
     </div>
