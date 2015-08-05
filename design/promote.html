@@ -78,6 +78,9 @@
     video {
       max-width: 100%;
     }
+    video {
+      background: black;
+    }
 
     section .text .video {
       margin-top: 1.25em; /* @line-height */
@@ -410,13 +413,21 @@
     }
     .download {
       margin-top   : 1.25em; /* 20px / @font-size */
-      margin-bottom: 1.25em;
+      margin-bottom: 0.9375em;
     }
     .download li {
-      display: inline;
-      margin-left: 0.375em;
-      margin-right: 0.375em;
+      display: inline-block;
+      margin-bottom: 0.3125em;
+      vertical-align: top;
     }
+
+    /* TRICKY: Space the buttons out, but attempt to keep them on one line */
+    @media (min-width: 21em) {
+      .download li {
+        margin-right: 0.3125em;
+      }
+    }
+
     .download li a {
       text-decoration: none;
     }
@@ -616,9 +627,6 @@
          -moz-box-sizing: border-box;
               box-sizing: border-box;
     }
-    .tangerine figure {
-      font-size: 0.75em;
-    }
     .plumb     figure.preview,
     .tangerine figure.preview:first-child {
       background-color: white;
@@ -714,6 +722,8 @@
       display: inline-block;
       position: relative;
       box-shadow: 0 -0.1em 0.75em rgba(0, 0, 0, 0.15);
+      font-size: 1em;
+      vertical-align: top;
     }
     figure.preview iframe {
       width : 23.4375em; /* 375px / @font-size */
@@ -738,12 +748,24 @@
       margin-left: -1.875em;
     }
 
+    .tangerine figure.preview {
+      font-size: 0.625em;
+    }
+
     @media (max-width: 33em) {
       figure.preview {
         font-size: 3.2vw;
       }
       .tangerine figure.preview {
         font-size: 2.5vw;
+      }
+    }
+    @media (min-width: 60em) {
+      figure.preview {
+        font-size: 0.75em;
+      }
+      .tangerine figure.preview {
+        font-size: 0.675em;
       }
     }
 
@@ -934,8 +956,8 @@
         margin-right: 0;
       }
       body > section > .text {
-        margin-left: 2.5em;
-        margin-right: 2.5em;
+        margin-left: 3.125em;
+        margin-right: 3.125em;
       }
 
       body > section.apple {
