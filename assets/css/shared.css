@@ -5847,7 +5847,7 @@
     position: relative;
     z-index: 1;
   }
-  .switch li > a:before {
+  .switch li > a span.name:after {
     content: "";
     position: absolute;
     top: 0;
@@ -5857,9 +5857,9 @@
     z-index: -1;
     transition: background-color 0.2s;
   }
-  .hoverable .switch li a:hover:before,
-             .switch li a:active:before,
-             .switch li a:focus:before {
+  .hoverable .switch li a:hover  span.name:after,
+             .switch li a:active span.name:after,
+             .switch li a:focus  span.name:after {
     background: rgba(0, 0, 0, 0.1);
   }
 
