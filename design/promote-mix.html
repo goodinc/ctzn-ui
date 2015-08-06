@@ -537,6 +537,14 @@
 
   </section>
 
+  <script>
+    document.body.addEventListener('click', function(e){
+      if (e && e.preventDefault) {
+        e.preventDefault();
+      }
+    }, false);
+  </script>
+
 </body>
 </html>
 
