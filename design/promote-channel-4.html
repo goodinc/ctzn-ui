@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
-  <link rel="stylesheet" href="../assets/css/shared.css" />
 
   <script>
     // fonts.com tracking
@@ -19,28 +18,73 @@
     })();
   </script>
 
-  <script src="../assets/js/placeholder.js"></script>
-
-  <!--[if lte IE 8]>
-    <script src="../assets/js/html5.js"></script>
-  <![endif]-->
-
+  <!-- OPTIONAL: Attempt to get emoji to appear on devices that don’t have an emoji font. -->
   <style>
-    body > section {
-      height: 100%;
-      overflow: scroll;
-      position: relative;
-
-      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
-      -webkit-overflow-scrolling: touch;
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: normal;
+      font-style: normal;
     }
-    .page > header {
-      padding-top: 0.75em;
+
+    /* SHIM: Add the same font files with bold weight, so the browser won’t render “faux bold” emoji characters. */
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    /* SHIM: Always use an emoji webfont in mixable mode (since Chrome has trouble rendering native emoji)
+             https://code.google.com/p/chromium/issues/detail?id=468765 */
+    .mixable .post-item .body,
+    .no-emoji-support .post-item .body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Android Emoji";
     }
   </style>
+  <script>
+    (function() {
+      function supportsCanvas() {
+        return !!document.createElement('canvas').getContext;
+      }
+      function supportsEmoji() {
+        if (supportsCanvas()) {
+          var node = document.createElement('canvas'),
+          ctx = node.getContext('2d');
+          ctx.fillStyle = '#f00';
+          ctx.textBaseline = 'top';
+          ctx.font = '32px Arial';
+          ctx.fillText('\ud83d\udc28', 0, 0); // U+1F428 KOALA
+          console.log('ctx.getImageData(16, 16, 1, 1).data[0]: ' + ctx.getImageData(16, 16, 1, 1).data[0]);
+          return ctx.getImageData(16, 16, 1, 1).data[0] !== 0;
+        }
+      }
+      if (!supportsEmoji()) {
+        document.getElementsByTagName('html')[0].className += ' no-emoji-support';
+      }
+    })();
+  </script>
+  <!-- /OPTIONAL -->
+
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <!--
+  <style>
+    .hide-until-initialized { display: none }
+  </style>
+  -->
 
 </head>
-<body>
+
+<!-- Add a class name of “mixable” to make individual posts fill the viewport. -->
+<body class="mixable">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -314,242 +358,431 @@
     </symbol>
   </svg>
 
-<section class="mix-editor page"><header><h1>Create Mix</h1>
+  <main class="plumb push-card page">
 
-      <a href="" class="back">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></svg></a>
+    <header class="powered-by">
+      <h1>
+        <a href="http://getctzn.com" target="_blank"><!-- TRICKY: Open a new window, since this page is sometimes included in an iframe. -->
+          <span>Powered by</span> <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg>
+        </a>
+      </h1>
     </header>
 
-    
-    <form action="" method="get">
-      <div class="selected-images">
-        <h2 style="display: none;">Select images</h2>
+    <div class="details">
+      <h1 class="name">KaBOOM!</h1>
+      <p class="about">The national non-profit dedicated to bringing balanced and active play into the daily lives of all kids, particularly those growing up in poverty in America. </p>
+        <p class="action">
+          <a href="http://kaboom.org">kaboom.org</a>
+        </p>
+    </div>
 
-<ol id="selectedImageList"  style="">
-          
-          <li role="button" tabindex="0" >
-            <img  src="https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c128x128" alt="Selected Image 1">
-          </li>
-          
-          <li role="button" tabindex="0" >
-            <img  src="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c128x128" alt="Selected Image 2">
-          </li>
-          
-          <li role="button" tabindex="0" >
-            <img  src="https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c128x128" alt="Selected Image 3">
-          </li>
-          
-          <li role="button" tabindex="0" >
-            <img  src="https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c128x128" alt="Selected Image 4">
-          </li>
-          
-        </ol>
+    <p class="action">
+      <a href="http://www.ctznapp.com/push/C50609F6/kaboom" target="_blank">
+        <span>KaBOOM!</span>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-info-circle"></use><foreignObject>Information</foreignObject></svg>
+      </a>
+    </p>
+
+    <p class="toggle-mixable">
+      <button type="button">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use><foreignobject>Fullscreen</foreignobject></svg>
+      </button>
+    </p>
+
+<ol class="post-list " >
+<li  class="active">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/febc529a6ba3c2327d6ea4b8b32f49da12d81ec4=c100x100">
+              </span>
+              @<span >danawickertaylor</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-14T13:08:50.000+00:00">8 weeks ago</time></p>
+          </header>
+          <div class="body">
+            
+            <p >#playmatters - so excited to join this site; I am a parent of three girls attending Warner Elementary and I also happen to be the occupational therapist who serves this school.  Our school is undergoing a total renovation this year.  The PTO (which I am a part of) is working to update our playground.  We are trying to add a variety of equipment and activities that will develop children's motor skills to provide a foundation for learning.  Our ideas will be accessible for students of all ability levels.  We have a high percentage of free/reduced lunch families.  We are working to raise money right now.  Would love to get input from others for any neat play ideas.</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean"  data-content="j"></span>
+                
+              </span>
+              @<span >jgsiegal</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-15T14:13:05.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/6678a2d37b0797f37433dc02207408429ef5fc7b=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/6678a2d37b0797f37433dc02207408429ef5fc7b=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/6678a2d37b0797f37433dc02207408429ef5fc7b=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/6678a2d37b0797f37433dc02207408429ef5fc7b=c384x384" alt="Image 1"></figure>
 </div>
-
-      
-
-      <ul id="unselectedImageList" class="image-list">
-        
-        
-        
-        
-        <li role="checkbox" tabindex="0"  aria-checked="true" class="selected">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c480x480 3x, https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c320x320 2x, https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c160x160" alt="Image 74">
-          <span class="number" ><span >1</span></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c480x480 3x, https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c320x320 2x, https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c160x160" alt="Image 75">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="true" class="selected">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c480x480 3x, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c320x320 2x, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c160x160" alt="Image 76">
-          <span class="number" ><span >2</span></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c480x480 3x, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c320x320 2x, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c160x160" alt="Image 77">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="true" class="selected">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c480x480 3x, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c320x320 2x, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c160x160" alt="Image 78">
-          <span class="number" ><span >3</span></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c480x480 3x, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c320x320 2x, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c160x160" alt="Image 79">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false" class="">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c480x480 3x, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c320x320 2x, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c160x160" alt="Image 80">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="true" class="selected">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c480x480 3x, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c320x320 2x, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c160x160" alt="Image 81">
-          <span class="number" ><span >4</span></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c480x480 3x, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c320x320 2x, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c160x160" alt="Image 82">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false" class="">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c480x480 3x, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c320x320 2x, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c160x160" alt="Image 83">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false" class="">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c480x480 3x, https://m.ctznapp.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c320x320 2x, https://m.ctznapp.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c160x160" alt="Image 84">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c480x480 3x, https://m.ctznapp.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c320x320 2x, https://m.ctznapp.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c160x160" alt="Image 85">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c480x480 3x, https://m.ctznapp.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c320x320 2x, https://m.ctznapp.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c160x160" alt="Image 86">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c480x480 3x, https://m.ctznapp.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c320x320 2x, https://m.ctznapp.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c160x160" alt="Image 87">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c480x480 3x, https://m.ctznapp.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c320x320 2x, https://m.ctznapp.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c160x160" alt="Image 88">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c480x480 3x, https://m.ctznapp.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c320x320 2x, https://m.ctznapp.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c160x160" alt="Image 89">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c480x480 3x, https://m.ctznapp.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c320x320 2x, https://m.ctznapp.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c160x160" alt="Image 90">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c480x480 3x, https://m.ctznapp.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c320x320 2x, https://m.ctznapp.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c160x160" alt="Image 91">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c480x480 3x, https://m.ctznapp.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c320x320 2x, https://m.ctznapp.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c160x160" alt="Image 92">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c480x480 3x, https://m.ctznapp.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c320x320 2x, https://m.ctznapp.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c160x160" alt="Image 93">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c480x480 3x, https://m.ctznapp.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c320x320 2x, https://m.ctznapp.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c160x160" alt="Image 94">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c480x480 3x, https://m.ctznapp.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c320x320 2x, https://m.ctznapp.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c160x160" alt="Image 95">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c480x480 3x, https://m.ctznapp.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c320x320 2x, https://m.ctznapp.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c160x160" alt="Image 96">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c480x480 3x, https://m.ctznapp.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c320x320 2x, https://m.ctznapp.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c160x160" alt="Image 97">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c480x480 3x, https://m.ctznapp.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c320x320 2x, https://m.ctznapp.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c160x160" alt="Image 98">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c480x480 3x, https://m.ctznapp.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c320x320 2x, https://m.ctznapp.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c160x160" alt="Image 99">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c480x480 3x, https://m.ctznapp.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c320x320 2x, https://m.ctznapp.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c160x160" alt="Image 100">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c480x480 3x, https://m.ctznapp.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c320x320 2x, https://m.ctznapp.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c160x160" alt="Image 101">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c480x480 3x, https://m.ctznapp.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c320x320 2x, https://m.ctznapp.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c160x160" alt="Image 102">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c480x480 3x, https://m.ctznapp.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c320x320 2x, https://m.ctznapp.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c160x160" alt="Image 103">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c480x480 3x, https://m.ctznapp.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c320x320 2x, https://m.ctznapp.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c160x160" alt="Image 104">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c480x480 3x, https://m.ctznapp.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c320x320 2x, https://m.ctznapp.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c160x160" alt="Image 105">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c480x480 3x, https://m.ctznapp.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c320x320 2x, https://m.ctznapp.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c160x160" alt="Image 106">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c480x480 3x, https://m.ctznapp.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c320x320 2x, https://m.ctznapp.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c160x160" alt="Image 107">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c480x480 3x, https://m.ctznapp.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c320x320 2x, https://m.ctznapp.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c160x160" alt="Image 108">
-          <span class="number" ></span>
-        </li>
-        
-        <li role="checkbox" tabindex="0"  aria-checked="false">
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c480x480 3x, https://m.ctznapp.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c320x320 2x, https://m.ctznapp.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c160x160" alt="Image 109">
-          <span class="number" ></span>
-        </li>
-      </ul>
-      <p class="submit">
-        <button>Next</button>
-      </p>
-
-    </form>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >RT @bbannon: Play is a critical early learning skills so we have it in branches around the city #playability @chipublib http://t.co/Yx6IK12vR1</p>
+          </div>
+        </article>
+</li>
     
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/87d1308471f1b43983d939f945f8f4e00d26540b=c100x100">
+              </span>
+              @<span >aishathinker</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-16T15:56:47.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/49ed798d768606bda6f0c94ef8c5212b9f4f27a7=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/49ed798d768606bda6f0c94ef8c5212b9f4f27a7=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/49ed798d768606bda6f0c94ef8c5212b9f4f27a7=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/49ed798d768606bda6f0c94ef8c5212b9f4f27a7=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >What happens if cities make way for play? @plazamidwoodorg's BikeFest is a great example! #playability #bikeability http://t.co/gmg5vpxqll</p>
+          </div>
+        </article>
+</li>
 
-  </section>
+<!--
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 ocean"  data-content="j"></span>
+                
+              </span>
+              @<span >jgsiegal</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-16T21:58:14.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/138d5b1496363b00ffbaf61e42105ecba425f341=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/138d5b1496363b00ffbaf61e42105ecba425f341=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/138d5b1496363b00ffbaf61e42105ecba425f341=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/138d5b1496363b00ffbaf61e42105ecba425f341=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >RT @bbannon: @chipublib is at play while kicking off Rahms Readers summer learning challenge #playability @RahmEmanuel http://t.co/WWdAx5Y4xI</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/934907b5109f3388a79ac8515847de7b8dd660c0=c100x100">
+              </span>
+              @<span >playworkstexas</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-17T20:31:10.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/1d6b88faa2553437d2eaffdcbf02e58dc357bfc8=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/1d6b88faa2553437d2eaffdcbf02e58dc357bfc8=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/1d6b88faa2553437d2eaffdcbf02e58dc357bfc8=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/1d6b88faa2553437d2eaffdcbf02e58dc357bfc8=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >Today we kicked off our summer program at Precious Moments Learning Center! Let the summer play begin! #playmatters</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/9e17d74bb0a8fe90a3d7301ffa5680002a4ca27d=c100x100">
+              </span>
+              @<span >davidflanigan</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-19T11:37:08.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/b639e21e89043ede95d7d3690461be6e8da95ce9=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/b639e21e89043ede95d7d3690461be6e8da95ce9=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/b639e21e89043ede95d7d3690461be6e8da95ce9=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/b639e21e89043ede95d7d3690461be6e8da95ce9=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >RT @KimberlyEHart: From @kaboom's website. This quote is the essence of why #playmatters! http://t.co/5qv9y6dxIA</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/00c1bc585524bc409b431df4b5bf328e93765d89=c100x100">
+              </span>
+              @<span >bringonplay</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-19T15:53:21.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/37b4d362d4b6e2be3cf69c24b5812c58d16fa488=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/37b4d362d4b6e2be3cf69c24b5812c58d16fa488=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/37b4d362d4b6e2be3cf69c24b5812c58d16fa488=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/37b4d362d4b6e2be3cf69c24b5812c58d16fa488=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >Check out this mural by Paige Smeltzer at Penn Market! #DayOfAction #playability #PlayInYork #playmatters http://t.co/CCDVElAgeK</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="active">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 amethyst"  data-content="e"></span>
+                
+              </span>
+              @<span >eatplaybreatheyork</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-19T15:56:32.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/7d11458d072e3a63b4432be8db68a803c832b9e3=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/7d11458d072e3a63b4432be8db68a803c832b9e3=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/7d11458d072e3a63b4432be8db68a803c832b9e3=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/7d11458d072e3a63b4432be8db68a803c832b9e3=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >RT @cstrathmeyer: Our first #PlayfulSidewalk mural is complete! #pennmarket #PlayInYork #playmatters @smeltzerpaige #dayofaction http://t.co/a4U7VFlBne</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/164ab448c69457d0964aa6f6eb468ae37138b1bd=c100x100">
+              </span>
+              @<span >coristrathmeyer</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-19T20:53:15.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/bc3b034d72926f139bfa8e9f6909ba4250f240aa=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/bc3b034d72926f139bfa8e9f6909ba4250f240aa=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/bc3b034d72926f139bfa8e9f6909ba4250f240aa=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/bc3b034d72926f139bfa8e9f6909ba4250f240aa=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
+            
+            <p >Check out one of the new Playful Sidewalk murals painted by youth artists in the City of York! #playmatters in #iloveyorkcity!</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 amethyst"  data-content="e"></span>
+                
+              </span>
+              @<span >eatplaybreatheyork</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-20T04:56:55.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/ba908bf5c3cec6752ee3b461675d6fed2d188b74=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/ba908bf5c3cec6752ee3b461675d6fed2d188b74=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/ba908bf5c3cec6752ee3b461675d6fed2d188b74=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/ba908bf5c3cec6752ee3b461675d6fed2d188b74=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >RT @cstrathmeyer: #PlayfulSidewalk Don't step on the lava! #dayofaction #playmatters @BringOnPlay #PlayInYork #iloveyorkcity http://t.co/K5lPRrIcNI</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 amethyst"  data-content="e"></span>
+                
+              </span>
+              @<span >eatplaybreatheyork</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-20T04:57:12.000+00:00">7 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/65f3574415d5cf9c63fe539ee70c0a04d32bdceb=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/65f3574415d5cf9c63fe539ee70c0a04d32bdceb=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/65f3574415d5cf9c63fe539ee70c0a04d32bdceb=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/65f3574415d5cf9c63fe539ee70c0a04d32bdceb=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >RT @cstrathmeyer: #PlayfulSidewalk @CentralMktYork  #iloveyorkcity Thanks Lisa and @WellSpan volunteers! #dayofaction #playmatters http://t.co/inO7P3QU6u</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 clover"  data-content="k"></span>
+                
+              </span>
+              @<span >kimberlyehart</span>
+            </h3>
+            <p>
+              <time  datetime="2015-06-30T20:02:53.000+00:00">5 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/f9ddb7d40c5020d196b2fad0f04fdfe67e0deba7=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/f9ddb7d40c5020d196b2fad0f04fdfe67e0deba7=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/f9ddb7d40c5020d196b2fad0f04fdfe67e0deba7=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/f9ddb7d40c5020d196b2fad0f04fdfe67e0deba7=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >So cute! Witness your child's expression as you swing together! http://t.co/ICEtFTRopN via @pgp_news #playmatters http://t.co/bTAPQEgyYy</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 clover"  data-content="k"></span>
+                
+              </span>
+              @<span >kimberlyehart</span>
+            </h3>
+            <p>
+              <time  datetime="2015-07-01T19:57:13.000+00:00">5 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/91fbc04f5904fd4c637b0dcbbeaa264dc2c3448e=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/91fbc04f5904fd4c637b0dcbbeaa264dc2c3448e=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/91fbc04f5904fd4c637b0dcbbeaa264dc2c3448e=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/91fbc04f5904fd4c637b0dcbbeaa264dc2c3448e=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >RT @procm2: Girls love #tonkatrucks too! #playmatters http://t.co/RnYGbuY4SH</p>
+          </div>
+        </article>
+</li>
+    
+<li  class="inactive">
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 clover"  data-content="e"></span>
+                
+              </span>
+              @<span >ericaliberman</span>
+            </h3>
+            <p>
+              <time  datetime="2015-07-01T21:37:58.000+00:00">5 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/6382ba54cba7051ce4ad90b40fb9c5edf5dfb687=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/6382ba54cba7051ce4ad90b40fb9c5edf5dfb687=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/6382ba54cba7051ce4ad90b40fb9c5edf5dfb687=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/6382ba54cba7051ce4ad90b40fb9c5edf5dfb687=c384x384" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use><foreignObject>via twitter</foreignObject></svg></p>
+            
+            <p >RT @BCBSNC: "...why not give us children a good playground that we ALL deserve?  http://t.co/AhTWqgxZtF #playmatters #kaboom http://t.co/jyepwoWKoo</p>
+          </div>
+        </article>
+</li>
+-->
+    </ol>
+  </main>
+
+  <footer class="primary">
+    <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></svg></a> app</h2>
+    <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
+  </footer>
+
 
   <script>
-    document.body.addEventListener('click', function(e){
-      if (e && e.preventDefault) {
-        e.preventDefault();
+  (function() {
+
+    function showFullScreen() {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
       }
-    }, false);
+    }
+
+    function exitFullScreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+
+    var fullScreen = false;
+    var button = document.querySelector('.toggle-mixable a');
+    if (button) {
+      button.addEventListener('click', function(e) {
+        if (fullScreen) {
+          exitFullScreen();
+          button.innerHTML = '<svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use><foreignobject>Fullscreen</foreignobject></svg>';
+          fullScreen = false;
+        } else {
+          showFullScreen();
+          button.innerHTML = '<svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-shrink"></use><foreignobject>Exit Fullscreen</foreignobject></svg>';
+          fullScreen = true;
+        }
+        e.preventDefault();
+      }, false);
+    }
+  })();
   </script>
 
 </body>
 </html>
-
