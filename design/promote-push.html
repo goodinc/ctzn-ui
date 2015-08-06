@@ -25,17 +25,6 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
-  <style>
-    body > section {
-      height: 100%;
-      overflow: scroll;
-      position: relative;
-
-      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
-      -webkit-overflow-scrolling: touch;
-    }
-  </style>
-
 </head>
 <body>
 
@@ -328,126 +317,7 @@
 
   <section class="push">
 
-    <!--
-    <p class="update-indicator action">
-      <a href="">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-sync"></use></svg>
-        Update
-      </a>
-    </p>
-    -->
-
-    <!--
-    <header class="header push-card plumb" >
-
-      <h2 class="name" >GOOD</h2>
-      <h3 class="about" >Pushing the world forward</h3>
-      
-
-      <div class="meta">
-
-        
-        <p>
-          <span class="count" >625</span>
-          <span class="label">Posts</span>
-        </p>
-        
-
-        <p>
-          <a href="" >
-            <span class="count" >69</span>
-            <span class="label">People</span>
-          </a>
-        </p>
-
-        
-
-        <p class="settings">
-          <a href="" >
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use><foreignObject>My Settings</foreignObject></svg>
-          </a>
-        </p>
-      </div>
-    </header>
-    -->
-
-<script type="text/template">
-    <section class="upload-message error" role="status">
-      <h1>
-        <!-- @placeholder-image -->
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXh4eGfMpcOAAAAEklEQVR4XgXAgQgAAAAAoP2pjwACAAF0O1JHAAAAAElFTkSuQmCC" width="30" height="30" alt="">
-        Something went wrong while sending your post.
-      </h1>
-      <p>Signature expired: 20150513T224300Z is now earlier than 20150514T004721Z (20150514T010221Z - 15 min.)</p>
-      <ul>
-        
-        <li>
-          <button >
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignObject>Try again</foreignObject></svg>
-          </button>
-        </li>
-        
-        <li>
-          <button >
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignObject>Cancel</foreignObject></svg>
-          </button>
-        </li>
-      </ul>
-    </section>
-  </script>
-
-<!--
-    <ul class="create">
-      <li>
-        <a href="">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-switch"></use></svg>
-          Switch Push
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-note"></use></svg>
-          New Post
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
-          New Mix
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mixes"></use></svg>
-          My Mixes
-        </a>
-      </li>
-    </ul>
--->
-
-<!--
-    <div class="option-list">
-      <ul>
-        <li>
-          <a href="">
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
-            Invite more people via email
-          </a>
-        </li>
-      </ul>
-    </div>
--->
-
 <ol class="post-list">
-
-<!--
-<li class="previous action">
-  <a href="" >
-    <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-up"></use></svg>
-    Recent posts
-  </a>
-</li>
--->
 
 <li  id="post-12486">
         
@@ -488,9 +358,6 @@ Loving us some Los Angeles Soup at @goodhq #LACTZN #GOODHQ #goodcorps @losangele
 
 
           <footer class="activity">
-          <!-- ko if: pending_approval && good.currentPush().currentUserIsOwner-->
-
-          <!-- ko ifnot: pending_approval && good.currentPush().currentUserIsOwner-->
           <ul class="action">
             <li>
               <button  role="checkbox" aria-checked="true">
@@ -703,9 +570,6 @@ Loving us some Los Angeles Soup at @goodhq #LACTZN #GOODHQ #goodcorps @losangele
 
 
           <footer class="activity">
-          <!-- ko if: pending_approval && good.currentPush().currentUserIsOwner-->
-
-          <!-- ko ifnot: pending_approval && good.currentPush().currentUserIsOwner-->
           <ul class="action">
             <li>
               <button  role="checkbox" aria-checked="true">

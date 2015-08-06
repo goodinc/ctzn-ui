@@ -657,15 +657,28 @@
       left: 8.25em;
     }
 
+    /* Prevent iframes from appearing too tall in iOS Safari */
+    .figure figure.preview div {
+      /* http://stackoverflow.com/questions/26046373/iframe-scrolling-ios-8#answer-26189171 */
+      overflow-y: auto;
+
+      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+      -webkit-overflow-scrolling: touch;
+    }
+    .figure figure.preview div iframe {
+      display: block;
+    }
 
     @media (max-width: 60em) {
       .plumb     .figure figure,
       .blueberry .figure figure {
-        height: 25em;
-        overflow-y: hidden;
         padding-bottom: 0;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+      }
+      .plumb     .figure figure.preview div,
+      .blueberry .figure figure.preview div {
+        height: 25em;
       }
       .plumb     .figure figure:after,
       .blueberry .figure figure:after {
@@ -1393,14 +1406,18 @@
 
     <div class="figure">
       <figure class="preview">
-        <iframe width="375" height="667" src="promote-switch.html" frameborder="0" allowfullscreen></iframe>
+        <div>
+          <iframe width="375" height="667" src="promote-switch.html" frameborder="0" allowfullscreen></iframe>
+        </div>
       </figure>
 
       <figure class="preview">
-        <iframe width="375" height="667" src="promote-channel-1.html" frameborder="0" allowfullscreen></iframe>
-        <!--
-        <iframe width="375" height="667" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
-        -->
+        <div>
+          <iframe width="375" height="667" src="promote-channel-1.html" frameborder="0" allowfullscreen></iframe>
+          <!--
+          <iframe width="375" height="667" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
+          -->
+        </div>
       </figure>
     </div>
   </section>
@@ -1508,7 +1525,7 @@
           </div>
         </video>
 
-        <video width="150" height="150" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/1c71264d1f97f40b3ec68a6e26492b07648ce6d2.jpg=c300x300" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/1c71264d1f97f40b3ec68a6e26492b07648ce6d2.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/1c71264d1f97f40b3ec68a6e26492b07648ce6d2.webm" type="video/webm"><div class="message">
+        <video width="150" height="150" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.jpg=c300x300" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.webm" type="video/webm"><div class="message">
             <h1>Aw, shucks.</h1>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
           </div>
@@ -1517,7 +1534,9 @@
     </div>
     <div class="figure">
       <figure class="preview">
-        <iframe width="375" height="667" src="promote-mix.html" frameborder="0" allowfullscreen></iframe>
+        <div>
+          <iframe width="375" height="667" src="promote-mix.html" frameborder="0" allowfullscreen></iframe>
+        </div>
       </figure>
     </div>
   </section>
@@ -1532,7 +1551,9 @@
     </div>
     <div class="figure">
       <figure class="preview">
-        <iframe width="375" height="667" src="promote-push.html" frameborder="0" allowfullscreen></iframe>
+        <div>
+          <iframe width="375" height="667" src="promote-push.html" frameborder="0" allowfullscreen></iframe>
+        </div>
       </figure>
     </div>
   </section>
