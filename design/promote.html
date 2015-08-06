@@ -308,21 +308,6 @@
       padding: 0.625em 1.25em; /* 10px / @font-size */
     }
 
-@media false {
-    header a {
-      display: block;
-      line-height: 1.875em; /* image height (30px) / @font-size */
-      padding: 0 0.625em; /* 10px / @font-size */
-      color: white;
-      border: 0.125em solid white; /* 2px / @font-size */
-      border-radius: 1.25em; /* line height + border width / 2 */
-      text-decoration: none;
-    }
-    header p {
-      margin: 0.75em 0.125em; /* 12px / @font-size       2px / @font-size */
-      float: right;
-    }
-}
 
     header ul,
     header li {
@@ -485,16 +470,15 @@
       margin-bottom: 3.125em;
     }
 
-    @media false {
+    @media (min-width: 21em) {
       section h2 {
-        font-size: 3em; /* 48px / @font-size */
-        line-height: 1.0416666667; /* 50px / @font-size */
+        font-size: 2.75em; /* 44px / @font-size */
+        line-height: 1.1363636364; /* 50px / @font-size */
       }
     }
-
     @media (min-width: 30em) {
       section h2 {
-        font-size: 3.75em; /* 60px / @font-size */
+        font-size: 4em; /* 64px / @font-size */
         line-height: 1;
       }
     }
@@ -510,8 +494,8 @@
 
     @media (min-width: 40em) {
       section h2 {
-        font-size: 4.5em; /* 72px / @font-size */
-        line-height: 1.0416666667; /* 75px / 72px */
+        font-size: 5em; /* 80px / @font-size */
+        line-height: 1;
       }
     }
 
@@ -940,7 +924,7 @@
 
     /* OPTIONAL: Make the header sticky
     ----------------------------------------------- */
-    @media (min-width: 20em) and (min-height: 30em) {
+    @media (min-width: 20em) and (min-height: 20em) {
       header {
         position: fixed;
         top: 0;
