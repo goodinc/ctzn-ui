@@ -397,7 +397,7 @@
     }
     @media (min-width: 60em) {
       .channels iframe {
-        width: 33.333vw;
+        width: 33%;
         float: left;
         border: 2em solid transparent;
       }
@@ -441,13 +441,19 @@
       text-decoration: none;
     }
     .download li a img {
-      max-width: 100%;
+      max-width: none;
       vertical-align: top;
     }
 
     /* SHIM: Give the store buttons a uniform height. */
     ul.download li a img[height="40"] {
       height: 2.5em; /* 40px / @font-size */
+    }
+    ul.download li a img[width="116"] {
+      width: 7.25em; /* 116px / @font-size */
+    }
+    ul.download li a img[width="135"] {
+      width: 8.4375em; /* 135px / @font-size */
     }
 
 
@@ -1372,12 +1378,12 @@
       <ul class="download">
         <li>
           <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
-            <img src="../assets/images/logos/apple-store.svg" height="40" alt="Download on the App Store" />
+            <img src="../assets/images/logos/apple-store.svg" width="135" height="40" alt="Download on the App Store" />
           </a>
         </li>
         <li>
           <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
-            <img src="../assets/images/logos/google-play.svg" height="40" alt="Get it on Google Play" />
+            <img src="../assets/images/logos/google-play.svg" width="116" height="40" alt="Get it on Google Play" />
           </a>
         </li>
       </ul>
