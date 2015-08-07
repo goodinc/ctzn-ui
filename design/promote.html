@@ -1578,7 +1578,6 @@
       <h3>Tell your story, from every perspective.</h3>
       <p>Never miss a moment of your social impact journey. Bring your community and best content together, in one space. Our media creation technologies allow you to make instant, visually stunning videos that you can package for any moment, any community, or any goal.</p>
     </div>
-    <!--
     <noscript>
       <figure class="channels">
         <iframe width="640" height="480" src="promote-channel-2.html" frameborder="0" allowfullscreen></iframe>
@@ -1586,7 +1585,6 @@
         <iframe width="640" height="480" src="promote-channel-4.html" frameborder="0" allowfullscreen></iframe>
       </figure>
     </noscript>
-    -->
     <script type="text/template" id="channels-template">
       <figure class="channels">
         <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
@@ -1596,18 +1594,38 @@
     </script>
     <script>
     (function() {
+      // Lazy load the channels…
       var template = document.getElementById('channels-template');
-      if (template) {
+      if (template){
         var div = document.createElement('div');
         div.innerHTML = template.innerHTML;
-        template.parentNode.insertBefore(div, template);
-        /*
-        document.body.addEventListener('scroll', function() {
-          if (window.scrollTop >= absolutePosition(template)) {
+
+        var target;
+
+        function absolutePosition(element) {
+          if (element.parentNode && element.parentNode.offsetTop) {
+            return element.offsetTop + absolutePosition(element.parentNode);
+          } else {
+            return element.offsetTop;
+          }
+        }
+
+        var throttle;
+        function update() {
+          target = absolutePosition(template);
+        }
+        update();
+
+        window.addEventListener('resize', function(){
+          if (throttle) clearTimeout(throttle);
+          throttle = setTimeout(update, 100);
+        }, false);
+
+        window.addEventListener('scroll', function(){
+          if (window.scrollY >= target - 800) {
             template.parentNode.insertBefore(div, template);
           }
         }, false);
-        */
       }
     })();
     </script>
