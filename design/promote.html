@@ -1470,9 +1470,9 @@
     </div>
     <noscript>
       <figure class="channels">
-        <iframe width="640" height="480" src="promote-channel-2.html" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="promote-channel-3.html" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="promote-channel-4.html" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
       </figure>
     </noscript>
     <script type="text/template" id="channels-template">
@@ -1484,7 +1484,9 @@
     </script>
     <script>
     (function() {
-      // Lazy load the channels…
+      // SHIM: Lazy load the channels…
+      // (A better solution might be to add a “pause/play” feature to the
+      // channels, so they can be paused when they’re out of view)
       var template = document.getElementById('channels-template');
       if (template){
         var div = document.createElement('div');
@@ -1500,21 +1502,41 @@
           }
         }
 
-        var throttle;
-        function update() {
+        function updateTargetPosition() {
           target = absolutePosition(template);
         }
-        update();
+        updateTargetPosition();
 
-        window.addEventListener('resize', function(){
-          if (throttle) clearTimeout(throttle);
-          throttle = setTimeout(update, 100);
-        }, false);
-
-        window.addEventListener('scroll', function(){
-          if (window.scrollY >= target - 800) {
+        var targetUpdated = false;
+        function updateTargetContent() {
+          if (!targetUpdated) {
+            targetUpdated = true;
             template.parentNode.insertBefore(div, template);
           }
+        }
+        updateTargetContent();
+
+        // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
+        function getScrollY() {
+          var supportPageOffset = window.pageXOffset !== undefined;
+          var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+          return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+        }
+
+        function checkScrollPosition() {
+          if (getScrollY() >= target - 800) {
+            updateTargetContent();
+          }
+        }
+
+        window.addEventListener('load', checkScrollPosition, false);
+
+        window.addEventListener('scroll', checkScrollPosition, false);
+
+        var throttle;
+        window.addEventListener('resize', function(){
+          if (throttle) clearTimeout(throttle);
+          throttle = setTimeout(updateTargetPosition, 100);
         }, false);
       }
     })();
