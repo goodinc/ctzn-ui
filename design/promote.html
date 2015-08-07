@@ -86,29 +86,6 @@
       margin-top: 1.25em; /* @line-height */
     }
 
-    /*
-    @media false (max-width: 60em) {
-      section .text .video:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      section .text video {
-        float: left;
-        width: 33.3333%;
-        height: calc(33.3333vw - 1.25em);
-      }
-    }
-    */
-
-    /*
-    @media (max-width: 60em) {
-      section .text video {
-        width: 30%;
-      }
-    }
-    */
-
     @media (max-width: 25em) {
       section .text .video {
         margin-left: -1.875em;
@@ -653,10 +630,11 @@
       left: 8.25em;
     }
 
-    /* Prevent iframes from appearing too tall in iOS Safari */
+    /* Prevent iframes from stretching to fit their content, in iOS Safari */
     .figure figure.preview div {
       /* http://stackoverflow.com/questions/26046373/iframe-scrolling-ios-8#answer-26189171 */
       overflow-y: auto;
+      height: 41.6875em; /* 667px / @font-size */
 
       /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
       -webkit-overflow-scrolling: touch;
@@ -802,94 +780,6 @@
         font-size: 0.675em;
       }
     }
-
-    /*
-    figure[style]:before {
-      content: "";
-      display: block;
-      background-image: url(phone.png);
-      background-repeat: no-repeat;
-      background-size: contain;
-      position: absolute;
-      top: -2.3%;
-      left: -6.25%;
-      width: 112.5%;
-      height: 112.5%;
-      opacity: 0.5;
-    }
-    */
-
-
-@media false {
-    figure[style] {
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-bottom: 0;
-      border: 1px solid transparent;
-      max-width: none;
-      background-image: none !important;
-    }
-
-    figure[style] iframe {
-      font-size: 0.5em;
-      max-width: none;
-      padding: 3.75em 1.25em 5.625em; /* @line-height x 3       @line-height      @line-height x 4.5  */
-      padding: 0;
-      display: block;
-      width : 23.4375em; /* 375px / @font-size */
-      height: 41.6875em; /* 667px / @font-size */
-      margin: 7.375em 2.5em 8.625em 2.6875em; /* 118px / @font-size   40px / @font-size   138px / @font-size   43px / @font-size */
-      border-width: 7.375em 2.5em 8.625em 2.6875em;
-      border-style: solid;
-      border-color: red;
-      border-radius: 4em;
-      border-color: transparent;
-      box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.5);
-    }
-    figure[style]:after {
-      content: "";
-      width: 3em;
-      height: 3em;
-      border: 0.25em solid blue;
-      border-radius: 50%;
-      display: block;
-      position: relative;
-      z-index: 1;
-    }
-
-    figure[style] iframe {
-      font-size: 0.875em;
-    }
-    .tangerine figure[style] iframe {
-      font-size: 0.625em;
-    }
-    /*
-    @media (min-width: 45em) {
-      figure[style] iframe {
-        font-size: 1em;
-      }
-      .figure figure[style] iframe {
-        font-size: 0.875em;
-      }
-    }
-    @media (min-width: 60em) {
-      figure[style] iframe {
-        font-size: 0.75em;
-      }
-      .figure figure[style] iframe {
-        font-size: 0.5em;
-      }
-    }
-    @media (min-width: 75em) {
-      figure[style] iframe {
-        font-size: 1em;
-      }
-      .figure figure[style] iframe {
-        font-size: 0.5em;
-      }
-    }
-    */
-}
 
 
     /* =Footer
