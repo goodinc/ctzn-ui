@@ -494,6 +494,7 @@
     }
     @media (min-width: 40em) {
       .apple {
+        padding: 3.75em;
         padding: 10vw;
       }
       .apple > .text {
@@ -843,7 +844,32 @@
 
     /* OPTIONAL: Use multiple columns
     ----------------------------------------------- */
+
     @media (min-width: 60em) {
+
+    body > section {
+      text-align: center;
+    }
+    body > section > .icons,
+    body > section > .text,
+    body > section > .figure {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    body > section > .text {
+      text-align: left;
+      margin-left: 3.125em;
+      margin-right: 3.125em;
+    }
+    body > .apple > .text {
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+
+
+
       body > section {
         min-height: 90vh;
         min-height: calc(100vh - 5em); /* viewport height minus header height */
@@ -866,6 +892,9 @@
 
         -webkit-justify-content: center;
                 justify-content: center;
+
+        -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
       }
       body > section.blueberry,
       body > section.tangerine {
