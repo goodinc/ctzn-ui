@@ -1412,6 +1412,7 @@
   .post-item header p a {
     color: inherit;
     text-decoration: none;
+    display: inline-block; /* Attempt to keep the date on one line */
   }
   .hoverable .post-item header p a:hover,
              .post-item header p a:active,

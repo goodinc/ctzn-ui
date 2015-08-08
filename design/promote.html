@@ -617,15 +617,32 @@
       margin-bottom: 0.625em; /* @line-height / 2 */
     }
 
-    .plumb     figure,
-    .blueberry figure,
-    .tangerine figure {
-      margin-top: 1.875em; /* 30px / @font-size */
+    /* OPTIONAL: Add more space between the text and the preview on big screens. */
+    .figure {
+      margin-top: 1.875em; /* @line-height x 3/2 */
+    }
+    @media (min-width: 33em) {
+      .tangerine .text,
+      .plumb     .text,
+      .blueberry .text {
+        margin-bottom: 5em;
+      }
+      .tangerine .figure,
+      .plumb     .figure,
+      .blueberry .figure {
+        margin-top: 0;
+      }
+    }
+    /* SHIM: Balance the text vertically when the layout is horizontal */
+    @media (min-width: 60em) {
+      .tangerine .text,
+      .plumb     .text,
+      .blueberry .text {
+        margin-top: 5em;
+      }
     }
 
-
     .figure {
-      margin-top: 1.875em;
       max-width: 33em;
       margin-left: auto;
       margin-right: auto;
@@ -637,13 +654,8 @@
 
     .tangerine .figure {
       position: relative;
-      border-color: transparent;
-      border-style: solid;
-      border-bottom-width: 3.125em;
-      border-right-width: 8.25em;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
+      padding-bottom: 3.125em;
+      padding-right: 7.5em;
     }
     .plumb     figure.preview,
     .tangerine figure.preview:first-child {
@@ -657,13 +669,14 @@
       display: block;
       position: absolute;
       top: 3.125em;
-      left: 8.25em;
+      left: 7.5em;
     }
 
     /* Prevent iframes from stretching to fit their content, in iOS Safari */
     .figure figure.preview div {
       /* http://stackoverflow.com/questions/26046373/iframe-scrolling-ios-8#answer-26189171 */
       overflow-y: auto;
+      min-width : 23.4375em; /* 375px / @font-size */
       height: 41.6875em; /* 667px / @font-size */
 
       /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
@@ -671,6 +684,16 @@
     }
     .figure figure.preview div iframe {
       display: block;
+    }
+
+    @media (min-width: 33em) and (max-width: 60em) {
+      .tangerine .figure,
+      .plumb     .figure,
+      .blueberry .figure {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     @media (max-width: 60em) {
@@ -743,13 +766,8 @@
 
 
     figure.preview {
-      background-image: none !important;
       background-color: black;
       padding: 6.25em 1.25em 6.875em;
-      border-style: solid;
-      border-color: black;
-      border-color: rgba(0, 0, 0, 0.5);
-      border-color: transparent;
       border-radius: 4em;
       display: inline-block;
       position: relative;
@@ -786,17 +804,46 @@
 
 
     @media (max-width: 33em) {
+      /* TODO: Consider applying this to “.figure” instead (so these selectors will be consistent). */
       figure.preview {
         font-size: 0.625em;
         font-size: 3.2vw;
+        margin-bottom: 0;
       }
-      .tangerine figure.preview {
-        margin-left: -1.25em;
-        margin-right: -1.25em;
+      .tangerine .figure {
         font-size: 0.5em;
         font-size: 2.5vw;
       }
+      .tangerine .figure figure.preview {
+        font-size: inherit;
+      }
     }
+
+    /* OPTIONAL: Increase the size of the preview, to give a more accurate preview
+    http://stackoverflow.com/questions/2630308/possible-to-shrink-contents-of-iframe#answer-10714595 */
+    @media (max-width: 33em) {
+      .tangerine .figure {
+
+        /* Increase the size of the preview */
+        font-size: 4vw;
+
+        /* Scale the preview so it will still fit on the screen */
+        -webkit-transform: scale(0.625, 0.625); 
+           -moz-transform: scale(0.625, 0.625); 
+            -ms-transform: scale(0.625, 0.625); 
+             -o-transform: scale(0.625, 0.625); 
+                transform: scale(0.625, 0.625);
+        -webkit-transform-origin: top left;
+           -moz-transform-origin: top left;
+            -ms-transform-origin: top left;
+             -o-transform-origin: top left;
+                transform-origin: top left;
+
+        /* Remove the extra space reserved for the larger preview (since “transform” doesn’t change the layout) */
+        margin-bottom: -80vw;
+      }
+    }
+    /*
     @media (max-width: 21em) {
       .tangerine figure.preview {
         margin-left: -3em;
@@ -805,12 +852,16 @@
         font-size: 2.875vw;
       }
     }
+    */
     @media (min-width: 60em) {
       figure.preview {
         font-size: 0.75em;
       }
-      .tangerine figure.preview {
+      .tangerine .figure {
         font-size: 0.675em;
+      }
+      .tangerine .figure figure.preview {
+        font-size: inherit;
       }
     }
 
@@ -1622,9 +1673,9 @@
         <div>
           <!--
           <iframe width="375" height="667" src="promote-channel-1.html" frameborder="0" allowfullscreen></iframe>
-          <iframe width="375" height="667" src="http://www.ctznapp.qa2.goodalpaca.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
-          -->
           <iframe width="375" height="667" src="http://www.ctznapp.qa2.goodalpaca.com/live_channel/1582E0C6" frameborder="0" allowfullscreen></iframe>
+          -->
+          <iframe width="375" height="667" src="http://www.ctznapp.qa2.goodalpaca.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
         </div>
       </figure>
     </div>
