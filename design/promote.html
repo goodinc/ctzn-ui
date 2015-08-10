@@ -78,28 +78,42 @@
     video {
       max-width: 100%;
     }
-    video {
-      background: black;
-    }
 
     section .text .video {
       margin-top: 1.25em; /* @line-height */
     }
     section .text .video video {
       margin-right  : 0.3125em;
-      margin-bottom : 0.3125em;
+      margin-bottom : 1.25em;
     }
 
-    @media (max-width: 25em) {
+    @media (max-width: 33em) {
+      section .text .video {
+        margin: 2.5em -1.875em;
+      }
+      section .text .video video {
+        display: block;
+        width: 100vw;
+        height: 100vw;
+        margin: 0;
+      }
+    }
+    @media false and (min-width: 25em) and (max-width: 33em) {
       section .text .video {
         margin-left: -1.875em;
         margin-right: -1.875em;
       }
-      section .text video {
-        background: black;
+      section .text .video:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      section .text .video video {
         display: block;
-        width: 100%;
-        height: 100vw;
+        float: left;
+        width: 33.333vw;
+        height: 33.333vw;
+        margin: 0;
       }
     }
 
@@ -368,6 +382,21 @@
     header h1 a:active,
     header h1 a:focus {
       background-color: white;
+    }
+
+    header p {
+      display: inline;
+      margin: 0.75em 0.0625em;
+      float: right;
+    }
+    header p a {
+      display: block;
+      line-height: 1.875em; /* 30px / @font-size */
+      padding: 0 0.625em;
+      color: white;
+      border: 0.125em solid white;
+      border-radius: 1.9375em; /* line height (30px) + border width (2px) / 2 */
+      text-decoration: none;
     }
 
 
@@ -1614,7 +1643,6 @@
       <li><a href="">Principles</a></li>
       <li><a href="">Support</a></li>
     </ul>
-    -->
     <ul>
       <li>
         <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
@@ -1633,6 +1661,8 @@
         </a>
       </li>
     </ul>
+    -->
+    <p><a href="#about">Download</a></p>
   </header>
 
   <section class="tangerine" id="about">
@@ -1659,7 +1689,7 @@
         </li>
       </ul>
 
-      <p>CTZN is currently invite-only. Don’t have an invite code? <a href="#contact">Get in touch</a></p>
+      <p>CTZN is currently invite-only. Don’t have an invite code? <a href="mailto:ctzn@goodinc.com">Get in touch</a></p>
     </div>
 
     <div class="figure">
@@ -1772,21 +1802,21 @@
       where they can exchange &amp; broadcast their key moments.</p>
 
       <div class="video">
-        <video width="150" height="150" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.jpg=c300x300" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.webm" type="video/webm">
+        <video width="150" height="150" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
           </div>
         </video>
 
-        <video width="150" height="150" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.jpg=c300x300" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.webm" type="video/webm">
+        <video width="150" height="150" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
           </div>
         </video>
 
-        <video width="150" height="150" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.jpg=c300x300" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.webm" type="video/webm">
+        <video width="150" height="150" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
