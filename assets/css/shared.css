@@ -4976,6 +4976,23 @@
     margin-bottom: 0;
   }
 
+  /* For the “Don’t have an invite code?” message */
+  .start.page .details + aside {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-top: 0.375em;
+    padding-bottom: 0.375em;
+  }
+  .start.page .details + aside p {
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+    text-transform: lowercase;
+  }
+  .start.page .details + aside p a {
+    color: white;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+
 
   /* =Log In & Sign Up
   ----------------------------------------------- */
