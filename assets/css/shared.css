@@ -3677,6 +3677,8 @@
     background: white;
     padding: 0;
   }
+
+  /* Comments page */
   .post.page .comments {
     background: white;
     margin-left: auto;
@@ -3686,11 +3688,21 @@
   }
   .post.page .comments .post-list {
     margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
   }
   .post.page .comments .post-item {
     margin-bottom: 0;
+  }
+
+  /* SHIM: Remove the usual margin on the comments page */
+  .post.page .comments .post-list {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* SHIM: Add the margin back on the post details page */
+  .post.page .post-item .comments .post-list {
+    margin-left: -1.25em;
+    margin-right: -1.25em;
   }
 
 
