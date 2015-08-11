@@ -4667,19 +4667,20 @@
 
   /* OPTIONAL: Scale the images to the available horizontal space, while keeping the image close to its native size (100px) */
   .mix-editor .image-list li {
-    width  : 33.333333333%;
-    height : 33.333333333vw;
+    width: 33.333333333%;
+    padding-bottom: 33.333333333%;
   }
   .mix-editor .image-list li img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    height: 33.333333333vw;
+    height: 100%;
     border: 1px solid black;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    position: relative;
-    z-index: 1;
   }
   .mix-editor .empty-images {
     text-align: center;

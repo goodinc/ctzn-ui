@@ -714,8 +714,9 @@
     .figure figure.preview div {
       /* http://stackoverflow.com/questions/26046373/iframe-scrolling-ios-8#answer-26189171 */
       overflow-y: auto;
-      min-width : 23.4375em; /* 375px / @font-size */
+      overflow-x: hidden;
       height: 41.6875em; /* 667px / @font-size */
+      min-width : 23.4375em; /* 375px / @font-size */
 
       /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
       -webkit-overflow-scrolling: touch;
@@ -968,28 +969,25 @@
 
     @media (min-width: 60em) {
 
-    body > section {
-      text-align: center;
-    }
-    body > section > .icons,
-    body > section > .text,
-    body > section > .figure {
-      display: inline-block;
-      vertical-align: middle;
-    }
-    body > section > .text {
-      text-align: left;
-      margin-left: 3.125em;
-      margin-right: 3.125em;
-    }
-    body > .apple > .text {
-      display: block;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-
-
+      body > section {
+        text-align: center;
+      }
+      body > section > .icons,
+      body > section > .text,
+      body > section > .figure {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      body > section > .text {
+        text-align: left;
+        margin-left: 3.125em;
+        margin-right: 3.125em;
+      }
+      body > .apple > .text {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+      }
 
       body > section {
         min-height: 90vh;
@@ -1682,9 +1680,9 @@
         <div>
           <!--
           <iframe width="375" height="667" src="http://www.ctznapp.qa2.goodalpaca.com/live_channel/1582E0C6" frameborder="0" allowfullscreen></iframe>
-          <iframe width="375" height="667" src="promote-channel-1.html" frameborder="0" allowfullscreen></iframe>
+          <iframe width="375" height="667" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
           -->
-          <iframe width="375" height="667" src="http://www.ctznapp.qa2.goodalpaca.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
+          <iframe width="375" height="667" src="promote-channel-1.html" frameborder="0" allowfullscreen></iframe>
         </div>
       </figure>
     </div>
@@ -1851,26 +1849,25 @@
       <p>Never miss a moment of your social impact journey. Bring your community and best content together, in one space. Our media creation technologies allow you to make instant, visually stunning videos that you can package for any moment, any community, or any goal.</p>
     </div>
 
-    <!--
     <figure class="channels">
       <iframe width="640" height="480" src="promote-channel-2.html" frameborder="0" allowfullscreen></iframe>
       <iframe width="640" height="480" src="promote-channel-3.html" frameborder="0" allowfullscreen></iframe>
       <iframe width="640" height="480" src="promote-channel-4.html" frameborder="0" allowfullscreen></iframe>
     </figure>
-    -->
 
+    <!--
     <noscript>
       <figure class="channels">
-        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
       </figure>
     </noscript>
     <script type="text/template" id="channels-template">
       <figure class="channels">
-        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="http://www.ctznapp.qa2.goodalpaca.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
       </figure>
     </script>
     <script>
@@ -1932,6 +1929,7 @@
       }
     })();
     </script>
+    -->
   </section>
 
   <section class="strawberry" id="contact">
