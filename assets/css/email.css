@@ -906,6 +906,20 @@
     float: right;
   }
 
+  /* There’s no text to the right of the heart icon */
+  .action .heart svg.icon {
+    margin-right: 0;
+  }
+
+  /* Active state */
+  .action .heart.active {
+    background: rgb(238, 238, 238); /* @seashell */
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+  .action .heart.active svg {
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+
 
   /* =Steps
   ----------------------------------------------- */
