@@ -852,6 +852,7 @@
   }
 
 
+
   /* =Loading/Error Message
   -----------------------------------------------
   (for “in situ” messages that we show when content hasn’t loaded yet, or has failed to load)
@@ -871,6 +872,7 @@
   .error-message a {
     color: inherit;
   }
+
 
 
   /* =Upload Message
@@ -4982,14 +4984,29 @@
     padding-top: 0.375em;
     padding-bottom: 0.375em;
   }
+   .join.page .details + aside p,
   .start.page .details + aside p {
     color: black;
     color: rgba(0, 0, 0, 0.95);
     text-transform: lowercase;
   }
+  .join.page .details + aside p a {
+    color: black;
+    color: rgba(0, 0, 0, 0.8);
+  }
   .start.page .details + aside p a {
     color: white;
     color: rgba(255, 255, 255, 0.8);
+  }
+  .join.page .details + aside p a:hover,
+  .join.page .details + aside p a:active,
+  .join.page .details + aside p a:focus {
+    color: black;
+  }
+  .start.page .details + aside p a:hover,
+  .start.page .details + aside p a:active,
+  .start.page .details + aside p a:focus {
+    color: white;
   }
 
 
