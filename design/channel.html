@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -81,9 +81,19 @@
   </style>
   -->
 
+  <style>
+    .mixable .push-card.inactive,
+    .mixable .post-list.inactive {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  </style>
+
 </head>
 
 <!-- Add a class name of “mixable” to make individual posts fill the viewport. -->
+<!-- Add a class name of “title-only” to hide everything except for the name of the push. -->
 <body class="mixable">
 
   <!-- images/icons.svg -->
@@ -358,529 +368,54 @@
     </symbol>
   </svg>
 
-  <main class="cucumber push-card page">
-
-    <header class="powered-by">
-      <h1>
-        <a href="http://getctzn.com" target="_blank"><!-- TRICKY: Open a new window, since this page is sometimes included in an iframe. -->
-          <span>Powered by</span> <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg>
-        </a>
-      </h1>
-    </header>
-
-    <div class="details">
-      <h1 class="name">Community Services Unlimited</h1>
+  <header class="honeydew push-card inactive">
+    <div>
+      <h1><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg></h1>
+      <h2>Live</h2>
     </div>
+  </header>
 
-    <p class="action">
-      <a href="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited" target="_blank">
-        <span>Community Services Unlimited</span>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-info-circle"></use><foreignObject>Information</foreignObject></svg>
-      </a>
-    </p>
 
-    <!--
-    <p class="toggle-mixable">
-      <button type="button">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use><foreignobject>Fullscreen</foreignobject></svg>
-      </button>
-    </p>
-    -->
+  <main class="orange push-card page"><header class="powered-by"><h1>
+      <a href="http://getctzn.com" target="_blank">
+        <span>Powered by</span> <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></a>
+    </h1>
 
-<ol class="post-list " >
-<li  class="active">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-04-13T00:08:20.000+00:00">17 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/3f913ce621f626dbdb2b567793c6cb508f7513c5=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/3f913ce621f626dbdb2b567793c6cb508f7513c5=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/3f913ce621f626dbdb2b567793c6cb508f7513c5=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/3f913ce621f626dbdb2b567793c6cb508f7513c5=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Untying the plastic bag these poor little things get sold &amp; transported in; felt really great to let them into the #expofarm #aquaponics system tank. #lovelife #goldfish #csuinc #wrigleyscienceinstitute</p>
-          </div>
-        </article>
-</li>
     
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-04-13T00:25:27.000+00:00">17 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/251d424fe2a773e3fd2ae165f10a2e5a947ce014=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/251d424fe2a773e3fd2ae165f10a2e5a947ce014=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/251d424fe2a773e3fd2ae165f10a2e5a947ce014=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/251d424fe2a773e3fd2ae165f10a2e5a947ce014=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Coming soon #aquaponicpesto from the #expofarm #csuinc #vmp #growwaterwise</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c100x100">
-              </span>
-              @<span >fgufromthegroundupfgualumni</span>
-            </h3>
-            <p>
-              <time  datetime="2015-04-25T18:20:22.000+00:00">15 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/ab93fdcce716181134d10989506fdb3f24cfbb3b=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/ab93fdcce716181134d10989506fdb3f24cfbb3b=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/ab93fdcce716181134d10989506fdb3f24cfbb3b=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/ab93fdcce716181134d10989506fdb3f24cfbb3b=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#fgu interns demonstrating how to make savory greens 
-#championsforchange
-#EarthDayEveryDay
-#SustainableSolutions
-#OurSouthLA</p>
-          </div>
-        </article>
-</li>
-    
-<!--
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c100x100">
-              </span>
-              @<span >fgufromthegroundupfgualumni</span>
-            </h3>
-            <p>
-              <time  datetime="2015-04-25T19:01:12.000+00:00">15 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/051e9e5cf6ab2cb940471039050fee5d7c20cbe8=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/051e9e5cf6ab2cb940471039050fee5d7c20cbe8=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/051e9e5cf6ab2cb940471039050fee5d7c20cbe8=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/051e9e5cf6ab2cb940471039050fee5d7c20cbe8=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >A healthy change never looked so cool!!
-#championsforchange
-#EarthDayEveryDay
-#SustainableSolutions
-#OurSouthLA
-#fgu</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-04-27T05:09:28.000+00:00">15 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/0e1dbf583c8dd2e5dc4dcfdf514f935c51761b3a=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/0e1dbf583c8dd2e5dc4dcfdf514f935c51761b3a=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/0e1dbf583c8dd2e5dc4dcfdf514f935c51761b3a=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/0e1dbf583c8dd2e5dc4dcfdf514f935c51761b3a=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#healthycookingdemo #USCEnvironmentalGroup #vmp #csuinc #beyondorganic #local #delicious</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-04-29T18:15:04.000+00:00">14 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/e5d8a8ff896e9e9455f3276e304f450ffcfce207=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/e5d8a8ff896e9e9455f3276e304f450ffcfce207=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/e5d8a8ff896e9e9455f3276e304f450ffcfce207=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/e5d8a8ff896e9e9455f3276e304f450ffcfce207=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Hooking up south LA families with #babychicks #gardengateway #growourown #urbanfarming #csuinc #expofarm</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-12T18:55:59.000+00:00">12 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/01c30c565ce682d5d01763d8d32b2c5cbd3fb76d=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/01c30c565ce682d5d01763d8d32b2c5cbd3fb76d=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/01c30c565ce682d5d01763d8d32b2c5cbd3fb76d=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/01c30c565ce682d5d01763d8d32b2c5cbd3fb76d=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >@sheldonbotler at the #expofarm "these are the best blackberries I've ever tasted &amp; their a native variety" #vmp #csuinc #csufamily</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-21T00:04:33.000+00:00">11 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/340d49fd8b524a0e0b7a72ca631068bd449a74f9=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/340d49fd8b524a0e0b7a72ca631068bd449a74f9=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/340d49fd8b524a0e0b7a72ca631068bd449a74f9=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/340d49fd8b524a0e0b7a72ca631068bd449a74f9=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Son &amp; sunflower #earthdayeveryday #csuinc #csufamily #vmp</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c100x100">
-              </span>
-              @<span >eddy</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-27T23:05:57.000+00:00">10 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/bb99279e73c8ccfb4a47a9f93e2c531e836e529a=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/bb99279e73c8ccfb4a47a9f93e2c531e836e529a=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/bb99279e73c8ccfb4a47a9f93e2c531e836e529a=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/bb99279e73c8ccfb4a47a9f93e2c531e836e529a=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >#csu</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-30T02:41:59.000+00:00">10 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/264e52ccf3a23e1496aeabe3c5bdfefd773659c1=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/264e52ccf3a23e1496aeabe3c5bdfefd773659c1=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/264e52ccf3a23e1496aeabe3c5bdfefd773659c1=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/264e52ccf3a23e1496aeabe3c5bdfefd773659c1=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#videoshoot #aloeblac #owningourown #organic #csuinc #community #vmp #southla #donate http://owl.li/MSM0q</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-30T16:39:19.000+00:00">10 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/c4ecefbf04036070a2c839b9c7170609b9a04d12=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/c4ecefbf04036070a2c839b9c7170609b9a04d12=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/c4ecefbf04036070a2c839b9c7170609b9a04d12=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/c4ecefbf04036070a2c839b9c7170609b9a04d12=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Giant #sunflowers at the #expofarm #csuinc #sajla #workday #volunteer</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-30T17:35:16.000+00:00">10 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/a1bab3831730466fb4942c0dd45ae5d6a6b942f6=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/a1bab3831730466fb4942c0dd45ae5d6a6b942f6=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/a1bab3831730466fb4942c0dd45ae5d6a6b942f6=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/a1bab3831730466fb4942c0dd45ae5d6a6b942f6=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#sajla #expofarm #workday #compost #csuinc</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-30T17:40:07.000+00:00">10 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/dcd9f6110da2ad78c7cb5e66347e34ed35346970=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/dcd9f6110da2ad78c7cb5e66347e34ed35346970=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/dcd9f6110da2ad78c7cb5e66347e34ed35346970=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/dcd9f6110da2ad78c7cb5e66347e34ed35346970=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#sajla #workday #expofarm #compost #corn #csuinc</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 ocean"  data-content="a"></span>
-                
-              </span>
-              @<span >adamvine</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-31T00:50:23.000+00:00">10 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/86a6197d0766247d60de210080cd060b55905dee=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/86a6197d0766247d60de210080cd060b55905dee=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/86a6197d0766247d60de210080cd060b55905dee=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/86a6197d0766247d60de210080cd060b55905dee=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >#whatsreallygood in south la. Thanks #csuinc</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="active">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/f9cb0230987b97db1af53328bbf2542e279d1a94=c100x100">
-              </span>
-              @<span >mindyvnguyen</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-31T01:14:51.000+00:00">10 weeks ago</time></p>
-          </header><div class="images n-odd" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/0e199e2b96e90d9d7a52bc429c60fc472bf98adb=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/0e199e2b96e90d9d7a52bc429c60fc472bf98adb=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/0e199e2b96e90d9d7a52bc429c60fc472bf98adb=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/0e199e2b96e90d9d7a52bc429c60fc472bf98adb=c384x384" alt="Image 1"></figure>
+  </header><div class="details">
+    <h1 class="name">South LA Organizers</h1>
+    <p class="about">A behind the scenes look at Team CTZN's journey to launch an app and platform built for the movers and shakers who are pushing to better their communities and the world</p>
+      <p class="action">
+        <a href="http://getctzn.com">getctzn.com</a>
+      </p>
+  </div>
 
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/d4a8ba590b5a3db3841a093fe7190835ce153ffa=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/d4a8ba590b5a3db3841a093fe7190835ce153ffa=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/d4a8ba590b5a3db3841a093fe7190835ce153ffa=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/d4a8ba590b5a3db3841a093fe7190835ce153ffa=c384x384" alt="Image 2"></figure>
+  
+  <p class="action ">
+    <a href="/push/1582E0C6/the-making-of-ctzn" target="_blank">
+      <span>The Making of CTZN</span>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info-circle"></use><foreignObject>Information</foreignObject></svg></a>
+  </p>
+  <p class="toggle-mixable ">
+    <button type="button" >
+      
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-expand"></use><foreignObject>Fullscreen</foreignObject></svg></button>
+  </p>
+  
 
-            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/293f4bbb86db7425edebfb6e0e1a6252156b09ad=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/293f4bbb86db7425edebfb6e0e1a6252156b09ad=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/293f4bbb86db7425edebfb6e0e1a6252156b09ad=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/293f4bbb86db7425edebfb6e0e1a6252156b09ad=c832x832" alt="Image 3"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >So many good vibes ☀️🌱🎶 #whatsreallygood @eddy</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
+    <ol class="post-list " >
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/483f040594b1eb14680672f852575edc1112090c=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
               </span>
-              @<span >juanarosa</span>
+              @<span >cogg</span>
             </h3>
             <p>
-              <time  datetime="2015-05-31T01:19:03.000+00:00">10 weeks ago</time></p>
+              <time  datetime="2014-08-29T18:50:47.000+00:00">47 weeks ago</time></p>
           </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/bbbdcada9d9b222d71a181dbfa3e9869de13c1e1=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/bbbdcada9d9b222d71a181dbfa3e9869de13c1e1=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/bbbdcada9d9b222d71a181dbfa3e9869de13c1e1=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/bbbdcada9d9b222d71a181dbfa3e9869de13c1e1=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Yucasoul supporting Community Services Unlimited in raising funds for the first organic market in South LA.</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/f9cb0230987b97db1af53328bbf2542e279d1a94=c100x100">
-              </span>
-              @<span >mindyvnguyen</span>
-            </h3>
-            <p>
-              <time  datetime="2015-05-31T01:37:01.000+00:00">10 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/9e9f6b2cb65a4804620fcb4a895d94ad4926a5cc=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/9e9f6b2cb65a4804620fcb4a895d94ad4926a5cc=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/9e9f6b2cb65a4804620fcb4a895d94ad4926a5cc=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/9e9f6b2cb65a4804620fcb4a895d94ad4926a5cc=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Jamming out to Tutu Sweeney and the Brothers Band 🎶👯 #beyondorganic</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c100x100">
-              </span>
-              @<span >sentermcginestiv</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-13T22:59:24.000+00:00">8 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/f625bb90bbf2b02c0c96c0bf8d0e3c4e4d2ea9ec=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/f625bb90bbf2b02c0c96c0bf8d0e3c4e4d2ea9ec=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/f625bb90bbf2b02c0c96c0bf8d0e3c4e4d2ea9ec=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/f625bb90bbf2b02c0c96c0bf8d0e3c4e4d2ea9ec=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Leimert Park vibes . 
-#SoLA food co-op is hosting a local healthy event today partnered with #Csu's Village Market Place. Food, music, and activities for all. #SupportLocal #Organic</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c100x100">
-              </span>
-              @<span >sentermcginestiv</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-25T18:05:41.000+00:00">6 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/53e65610f0470e0d915a9e05d37def3ebe954982=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/53e65610f0470e0d915a9e05d37def3ebe954982=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/53e65610f0470e0d915a9e05d37def3ebe954982=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/53e65610f0470e0d915a9e05d37def3ebe954982=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Top of the am! 🍉🌽🍅🍌🍎🍋🍓
-Making access to clean organic fruits and veggies possible with #Csu Village Market Place. #SupportLocal #Vmp</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-06-27T19:28:22.000+00:00">6 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/7f6f1d6801c624bdaa2acb02cce0462c6657f9c3=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/7f6f1d6801c624bdaa2acb02cce0462c6657f9c3=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/7f6f1d6801c624bdaa2acb02cce0462c6657f9c3=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/7f6f1d6801c624bdaa2acb02cce0462c6657f9c3=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#communitymapping What is here now? What do we want to see? #fgu #paulrobesoncenter #csuinc</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c100x100">
-              </span>
-              @<span >jackie318</span>
-            </h3>
-            <p>
-              <time  datetime="2015-07-02T21:57:24.000+00:00">5 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/d91d69fd3cffbc4d95583e6f59ba29fcb924d0bc=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/d91d69fd3cffbc4d95583e6f59ba29fcb924d0bc=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/d91d69fd3cffbc4d95583e6f59ba29fcb924d0bc=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/d91d69fd3cffbc4d95583e6f59ba29fcb924d0bc=c384x384" alt="Image 1"></figure>
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/6521c01a76bebc9dbfdf0fd2b55a87fd26a65e8d=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/6521c01a76bebc9dbfdf0fd2b55a87fd26a65e8d=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/6521c01a76bebc9dbfdf0fd2b55a87fd26a65e8d=c1077x690" sizes="" alt="Image 1"></figure>
 </div>
           
           <div class="body">
@@ -888,44 +423,517 @@ Making access to clean organic fruits and veggies possible with #Csu Village Mar
             <p class="source">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
             
-            <p >A typical Thursday at the LA USC County hospital ^_^ Making real, organic food accessible to folks in the community (: My heart is happy &lt;3 ^_^ &lt;3 #foodjustice #sustainablecommunities #csuinc #CalFresh</p>
+            <p >Tools for a day hanging out with GOOD peeps at #IndieDesk. #oldschooltools #ctzn</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/8c0e36bea625af7f6bd59765dbb13458f922d9b7=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
               </span>
-              @<span >csuincla</span>
+              @<span >aldo</span>
             </h3>
             <p>
-              <time  datetime="2015-07-07T23:54:13.000+00:00">4 weeks ago</time></p>
+              <time  datetime="2014-09-30T22:24:54.000+00:00">42 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/1c1b990088586dbab026ae9f790754272041a6ab=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/1c1b990088586dbab026ae9f790754272041a6ab=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/1c1b990088586dbab026ae9f790754272041a6ab=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >This is real! It's happening!!</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+              </span>
+              @<span >jim</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-02T03:27:14.000+00:00">42 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/fc4b4390b0d657c923f9a97a5769295c0300372e=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/fc4b4390b0d657c923f9a97a5769295c0300372e=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/fc4b4390b0d657c923f9a97a5769295c0300372e=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >Aldo and I made a new UI, with Polymer!
+
+[http://jimthoburn.github.io/polymer/examples/alpha/](http://jimthoburn.github.io/polymer/examples/alpha/)</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
+              </span>
+              @<span >cogg</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-02T04:19:52.000+00:00">42 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/db6b82559d73cdbf183b183c44773d60b502b8a3=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/db6b82559d73cdbf183b183c44773d60b502b8a3=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/db6b82559d73cdbf183b183c44773d60b502b8a3=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >For the future record, here is what an early version of the prototype looks like.</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-02T23:21:02.000+00:00">42 weeks ago</time></p>
+          </header><div class="images n2" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/156b4c1d54c3d922ddf6ada5afabe487dc04b10b=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/156b4c1d54c3d922ddf6ada5afabe487dc04b10b=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/156b4c1d54c3d922ddf6ada5afabe487dc04b10b=c1077x690" sizes="" alt="Image 1"></figure>
+
+            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/5f3aac8fb35e4f1b3e70c41a9e30c52c231ae135=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/5f3aac8fb35e4f1b3e70c41a9e30c52c231ae135=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/5f3aac8fb35e4f1b3e70c41a9e30c52c231ae135=c1077x690" sizes="" alt="Image 2"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >Two photos by Damon Turner (@Iamreal8 on Instagram) from our meeting of the minds this morning. Thought it was cool to see that he chose to photograph my personal favorite piece of paper from the prod room :)
+
+Exciting collaboration afoot with Damon and the Mercado La Paloma as well as Jorgé Nuño -- we locked in a space for an October 22 Citizen happy hour at The Big House, a location Jorgé makes available for selected events within his network.</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c100x100">
+              </span>
+              @<span >caseycaplowe</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-04T04:08:30.000+00:00">42 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/4b1bcba7784ebf626c2c507f8ebbf1478150cd28=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/4b1bcba7784ebf626c2c507f8ebbf1478150cd28=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/4b1bcba7784ebf626c2c507f8ebbf1478150cd28=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >Hmmmmm, i'm here, and this seems to be working. 
+
+:)</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="d"></span>
+                
+              </span>
+              @<span >dan</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-08T18:08:04.000+00:00">41 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/e2a21d01453b83844678159aabcf5eff2e8fdea7=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/e2a21d01453b83844678159aabcf5eff2e8fdea7=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/e2a21d01453b83844678159aabcf5eff2e8fdea7=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p ></p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
+              </span>
+              @<span >aldo</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-11T00:52:39.000+00:00">41 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/b55640bd0c14fe63efc3718d63ded3ec13bcfe38=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/b55640bd0c14fe63efc3718d63ded3ec13bcfe38=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/b55640bd0c14fe63efc3718d63ded3ec13bcfe38=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >Here's a sketch for the start screen.</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-17T05:13:09.000+00:00">40 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/0604e48124f5307806d521d7512cf1905189dbb4=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/0604e48124f5307806d521d7512cf1905189dbb4=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/0604e48124f5307806d521d7512cf1905189dbb4=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >Important things. #CTZN</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-17T18:54:27.000+00:00">40 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/881eabdbb1d9a9dbbb1c1a78f95ad985fb4ee0b7=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/881eabdbb1d9a9dbbb1c1a78f95ad985fb4ee0b7=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/881eabdbb1d9a9dbbb1c1a78f95ad985fb4ee0b7=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >We just got our very first cards! #CTZN #startuplife #building</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-20T18:00:33.000+00:00">39 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/6d92038f0ecbe984181e4fc83553e2e3f55f22da=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/6d92038f0ecbe984181e4fc83553e2e3f55f22da=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/6d92038f0ecbe984181e4fc83553e2e3f55f22da=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >Stamp!</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-21T19:08:12.000+00:00">39 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/e59c13bf0a20758767592f73368237daa4ed5818=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/e59c13bf0a20758767592f73368237daa4ed5818=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/e59c13bf0a20758767592f73368237daa4ed5818=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >Sneak peek. Are you joining us Wednesday for #CTZNkickback? #CTZN #greedycity #nuevosouth</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+              </span>
+              @<span >jim</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-22T05:49:34.000+00:00">39 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/0afeedd941932e001f0bf0803c43ba11975f82ec=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/0afeedd941932e001f0bf0803c43ba11975f82ec=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/0afeedd941932e001f0bf0803c43ba11975f82ec=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >We have official-looking notebooks for tomorrow’s event! (Courtesy of @jelena and @aldo)</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+              </span>
+              @<span >jim</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-23T23:59:02.000+00:00">39 weeks ago</time></p>
+          </header><div class="images n-odd" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/db496e6df03423d6e7baeb605b6658140cbc27d7=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/db496e6df03423d6e7baeb605b6658140cbc27d7=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/db496e6df03423d6e7baeb605b6658140cbc27d7=c1077x690" sizes="" alt="Image 1"></figure>
+
+            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/c2d4e29834d1c3b5141c1cf8fb4dd4ac8cc782db=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/c2d4e29834d1c3b5141c1cf8fb4dd4ac8cc782db=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/c2d4e29834d1c3b5141c1cf8fb4dd4ac8cc782db=c1077x690" sizes="" alt="Image 2"></figure>
+
+            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/1f995e834720d0f7ca3996de20cef93b14b20cca=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/1f995e834720d0f7ca3996de20cef93b14b20cca=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/1f995e834720d0f7ca3996de20cef93b14b20cca=c2048x1312" sizes="" alt="Image 3"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >Here are some photos from yesterday’s event at the big house!</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-10-24T00:30:09.000+00:00">39 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/d6f500e75957708c103954f8d7c915e05f56b2d2=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/d6f500e75957708c103954f8d7c915e05f56b2d2=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/d6f500e75957708c103954f8d7c915e05f56b2d2=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >#CTZNkickback was packed! #latergram #CTZN #NuevoSouth #greedycity</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
+              </span>
+              @<span >aldo</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-02T02:03:10.000+00:00">37 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/de351704cdc7ae3e8009157e26b55ca217e7fb23=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/de351704cdc7ae3e8009157e26b55ca217e7fb23=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/de351704cdc7ae3e8009157e26b55ca217e7fb23=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >It's gettin realsies up in here!! Niiiiiiiiiiiice</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-04T04:06:42.000+00:00">37 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/370b16aeac2078ae53e8bf1a5e2ab401d70de810=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/370b16aeac2078ae53e8bf1a5e2ab401d70de810=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/370b16aeac2078ae53e8bf1a5e2ab401d70de810=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >I saw Aldo's ctznlovebot sign off in the automated emails and drew a few silly lovebots. 
+
+PS. When the pink bar looks complete I feel like I can post, but if I hit post it publishes without my image.</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-05T01:39:43.000+00:00">37 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/a2fe177f4ecf6f0d1753d60afe1d0210daa678c1=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >Meeting of the minds at #CTZN HQ as the launch of CTZN draws ever nearer...</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-06T03:14:25.000+00:00">37 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/2e3bc08ed2a4182a79251a9200a3ebe22edf4a9f=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/2e3bc08ed2a4182a79251a9200a3ebe22edf4a9f=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/2e3bc08ed2a4182a79251a9200a3ebe22edf4a9f=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >Hmmmm #CTZN</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c100x100">
+              </span>
+              @<span >eshah</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-06T19:36:09.000+00:00">37 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/235870662b2330a9717afbdc5a7cf9be1d881df8=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >#ctzn</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
+              </span>
+              @<span >aldo</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-14T00:31:39.000+00:00">36 weeks ago</time></p>
           </header>
           <div class="body">
             
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >If you haven't signed it yet, please sign the petition to Save the Farm! The CSU/EXPO urban mini farm is under threat of being destroyed to create parking. Please read the details and join us in signing this petition (and sending a letter) to keep this community green space in South Central LA intact. #csuinc</p>
+            <p >And we're up!!</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky"  data-content="a"></span>
+                
+              </span>
+              @<span >anton</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-14T18:06:24.000+00:00">36 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/47cac9578d3b400ff26af8f47ab09b70386241f5=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/47cac9578d3b400ff26af8f47ab09b70386241f5=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/47cac9578d3b400ff26af8f47ab09b70386241f5=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >First all hands since launch.</p>
+          </div>
+        </article>
+</li>
+    
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
               </span>
-              @<span >jackie318</span>
+              @<span >aldo</span>
             </h3>
             <p>
-              <time  datetime="2015-07-08T04:54:25.000+00:00">4 weeks ago</time></p>
+              <time  datetime="2014-11-21T01:17:59.000+00:00">35 weeks ago</time></p>
           </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/14cf25ead6058ffecdf308388e48c767c92d24e8=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/14cf25ead6058ffecdf308388e48c767c92d24e8=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/14cf25ead6058ffecdf308388e48c767c92d24e8=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/14cf25ead6058ffecdf308388e48c767c92d24e8=c384x384" alt="Image 1"></figure>
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/143d748817336a185ab4e0f697bf9eab1eb95d6d=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/143d748817336a185ab4e0f697bf9eab1eb95d6d=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/143d748817336a185ab4e0f697bf9eab1eb95d6d=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p ></p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-21T18:57:13.000+00:00">35 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/7c97cf0ab49cb14aa27a7b3672c4b14611e4fdbe=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/7c97cf0ab49cb14aa27a7b3672c4b14611e4fdbe=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/7c97cf0ab49cb14aa27a7b3672c4b14611e4fdbe=c1077x690" sizes="" alt="Image 1"></figure>
 </div>
           
           <div class="body">
@@ -933,47 +941,23 @@ Making access to clean organic fruits and veggies possible with #Csu Village Mar
             <p class="source">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
             
-            <p >The beautiful aquaponics system at CSU's mini urban farm in South LA😊 There are cute little gold fishies in the tank doing their job, ensuring there's a symbiotic relationship with the plants being grown &lt;3  #growyourownfood #sustainablecommunities #csuinc #foodjustice</p>
+            <p >@goodhq head of media Will Tacy listening intently as #CTZN head @cogggram speaks about Project Citizen.</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c100x100">
               </span>
-              @<span >sentermcginestiv</span>
+              @<span >jelena</span>
             </h3>
             <p>
-              <time  datetime="2015-07-09T20:41:16.000+00:00">4 weeks ago</time></p>
+              <time  datetime="2014-11-21T19:49:38.000+00:00">35 weeks ago</time></p>
           </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/17df5a438319aaef0365afec32b0c03b1335c392=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/17df5a438319aaef0365afec32b0c03b1335c392=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/17df5a438319aaef0365afec32b0c03b1335c392=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/17df5a438319aaef0365afec32b0c03b1335c392=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Steeezy little squash, the first of its kind that I've seen thanks to #Csu Mini Urban Farm. #SupportLocal #UrbanFarmers 🌳</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/062ca5a3993f6e7094b819bce0d40eeb5aaa98e4=c100x100">
-              </span>
-              @<span >daisy</span>
-            </h3>
-            <p>
-              <time  datetime="2015-07-10T18:09:57.000+00:00">4 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/c0a4407ce6a6ff9b62372ce9ca037cd3c49a514f=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/c0a4407ce6a6ff9b62372ce9ca037cd3c49a514f=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/c0a4407ce6a6ff9b62372ce9ca037cd3c49a514f=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/c0a4407ce6a6ff9b62372ce9ca037cd3c49a514f=c384x384" alt="Image 1"></figure>
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/4543b955ebd73c1a1817d8cb6f70a3d9065f2f69=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/4543b955ebd73c1a1817d8cb6f70a3d9065f2f69=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/4543b955ebd73c1a1817d8cb6f70a3d9065f2f69=c1077x690" sizes="" alt="Image 1"></figure>
 </div>
           
           <div class="body">
@@ -981,300 +965,492 @@ Making access to clean organic fruits and veggies possible with #Csu Village Mar
             <p class="source">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
             
-            <p >Look for the comeback of the CSU Veggie Bus coming soon!
+            <p >Important. #CTZN</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-21T22:08:50.000+00:00">35 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/7e3921ec622aad539e8e0be19c98c96efa9dc0a2=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/7e3921ec622aad539e8e0be19c98c96efa9dc0a2=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/7e3921ec622aad539e8e0be19c98c96efa9dc0a2=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >Sneak peek... #CTZN #CTZNmixer</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c100x100">
+              </span>
+              @<span >vogg</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-23T00:40:13.000+00:00">34 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/08c5c0f9fd16c8186c2a700b06e925d8812a8698=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >#ctzn #ctznmixer</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-23T01:02:43.000+00:00">34 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/3adac066bd531a1665818d6e1f057c03ffc4681f=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/3adac066bd531a1665818d6e1f057c03ffc4681f=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/3adac066bd531a1665818d6e1f057c03ffc4681f=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >Come on in! #CTZN #CTZNmixer</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c100x100">
+              </span>
+              @<span >vogg</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-23T02:13:43.000+00:00">34 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/260cfa866273f3207ff8689419bec20d069124fd=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/260cfa866273f3207ff8689419bec20d069124fd=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/260cfa866273f3207ff8689419bec20d069124fd=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >#ctzn #ctznmixer</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 grape"  data-content="j"></span>
+                
+              </span>
+              @<span >jelena</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-23T18:28:09.000+00:00">34 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/560e0ee5093e48b0cea0deda66392d76dd62a1fc=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >#CTZN everyone creative in this city is gonna be rocking one of these moleskine notebooks before we're done @nobudgetfilmfestival</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky"  data-content="m"></span>
+                
+              </span>
+              @<span >mixwell</span>
+            </h3>
+            <p>
+              <time  datetime="2014-11-23T20:32:04.000+00:00">34 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/5e545b953cfb171d5d7af1d96d08e18bbd39c476=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/5e545b953cfb171d5d7af1d96d08e18bbd39c476=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/5e545b953cfb171d5d7af1d96d08e18bbd39c476=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p class="source">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
+            
+            <p >Overhead crowd shot at the @goodhq #ctzn app launch party at @generalassembly LA space #ctznmixer</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/22992f06d89d6683946232ec613bb36091f38de2=c100x100">
+              </span>
+              @<span >eshah</span>
+            </h3>
+            <p>
+              <time  datetime="2014-12-18T03:08:48.000+00:00">31 weeks ago</time></p>
+          </header>
+          <div class="body">
+            
+            <p >We are launched!!! Celebrating with some Beers and Happy Dance!!</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+              </span>
+              @<span >jim</span>
+            </h3>
+            <p>
+              <time  datetime="2014-12-18T03:10:28.000+00:00">31 weeks ago</time></p>
+          </header>
+          <div class="body">
+            
+            <p >A shiny new version of our app just went up. Hooray!</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+              </span>
+              @<span >jim</span>
+            </h3>
+            <p>
+              <time  datetime="2014-12-19T01:49:01.000+00:00">31 weeks ago</time></p>
+          </header>
+          <div class="body">
+            
+            <p >I created a mix with sixty images, using the app on a 3G connection. The rendering went quickly, and download time was decent too (less than a minute for a 2.1 megabyte video file).
 
-#paulrobesoncenter #csuinc #veggiebus #greenhouse #seedstarting #southLA #outdoorclassroom</p>
+http://www.ctznapp.com/mix/84C0E923</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
               </span>
-              @<span >neelam</span>
+              @<span >cogg</span>
             </h3>
             <p>
-              <time  datetime="2015-07-11T01:18:25.000+00:00">4 weeks ago</time></p>
+              <time  datetime="2015-01-14T18:50:19.000+00:00">27 weeks ago</time></p>
+          </header>
+          <div class="body">
+            
+            <p >Kiva will be using ctzn as part of the next class of fellows at the end of this month. Looking for a tool to help the Kiva Fellows feel connected and to better tell their aggregated stories. The stories will be used to inspire people to become Fellows.
+
+They would like to make sure people can participate in places where there aren't smart phones or they are cost prohibitive data plan-wise. To address this we are going to accelerate the ability to participate via email.
+
+In brainstorming about how to get feedback, we are thinking of pairing every push with a feedback push that has fewer features.
+
+So exciting!</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c100x100">
+              </span>
+              @<span >vogg</span>
+            </h3>
+            <p>
+              <time  datetime="2015-01-30T01:59:45.000+00:00">25 weeks ago</time></p>
           </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/f1cfbe4b6cd8683159b272137407ac60b4cff96c=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/f1cfbe4b6cd8683159b272137407ac60b4cff96c=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/f1cfbe4b6cd8683159b272137407ac60b4cff96c=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/f1cfbe4b6cd8683159b272137407ac60b4cff96c=c384x384" alt="Image 1"></figure>
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/b00ab023ec7f745d7a9c70a0b8cb37ba04ce1b37=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/b00ab023ec7f745d7a9c70a0b8cb37ba04ce1b37=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/b00ab023ec7f745d7a9c70a0b8cb37ba04ce1b37=c1077x690" sizes="" alt="Image 1"></figure>
 </div>
           
           <div class="body">
             
             <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
             
-            <p >@STICRGB in conversation with Carlos &amp; Janae from #FGU for a web based series coming soon: stay tuned for more news. #csuinc #sticman #expofarm</p>
+            <p >Helping the Mister set up for #artizen. #ctzn #musiccenter</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c100x100">
               </span>
-              @<span >neelam</span>
+              @<span >vogg</span>
             </h3>
             <p>
-              <time  datetime="2015-07-11T01:34:01.000+00:00">4 weeks ago</time></p>
+              <time  datetime="2015-01-30T02:10:40.000+00:00">25 weeks ago</time></p>
           </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/9c5d3ed365449d878b826b2d839a4c112914bd0a=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/9c5d3ed365449d878b826b2d839a4c112914bd0a=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/9c5d3ed365449d878b826b2d839a4c112914bd0a=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/9c5d3ed365449d878b826b2d839a4c112914bd0a=c384x384" alt="Image 1"></figure>
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/401275824d1d910b6658b57870d23dd45c41a1a1=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/401275824d1d910b6658b57870d23dd45c41a1a1=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/401275824d1d910b6658b57870d23dd45c41a1a1=c1077x690" sizes="" alt="Image 1"></figure>
 </div>
           
           <div class="body">
             
             <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
             
-            <p >Rosalie, an old freind &amp; regular of the #expofarm dropped by today: it was so good to see her. This lady is just too cool, love her hat &amp; her dope bracelets. She told me how happy she is every time she walks by the farm &amp; looks in to see how everything is doing. #community #csuinc #love</p>
+            <p >Booth babes at #artizenlab. #ctzn</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
               </span>
-              @<span >neelam</span>
+              @<span >cogg</span>
             </h3>
             <p>
-              <time  datetime="2015-07-11T01:42:36.000+00:00">4 weeks ago</time></p>
+              <time  datetime="2015-02-05T01:51:42.000+00:00">24 weeks ago</time></p>
+          </header>
+          <div class="body">
+            
+            <p >Great meeting with Proyecto Jardin, they will be using ctzn to help capture the collective voice of their supporters.</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                <span class="size30 sky"  data-content="a"></span>
+                
+              </span>
+              @<span >anton</span>
+            </h3>
+            <p>
+              <time  datetime="2015-02-06T18:46:04.000+00:00">24 weeks ago</time></p>
           </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/84e621769624d520365de40ade05ff4e7a45b00d=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/84e621769624d520365de40ade05ff4e7a45b00d=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/84e621769624d520365de40ade05ff4e7a45b00d=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/84e621769624d520365de40ade05ff4e7a45b00d=c384x384" alt="Image 1"></figure>
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/ba89223608f33a3eee87e530e1401584a1cd4a38=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/ba89223608f33a3eee87e530e1401584a1cd4a38=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/ba89223608f33a3eee87e530e1401584a1cd4a38=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >@cogg onboards good inc!</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/c0029f5f4fffcb0ef4060d44f8d9a97cc1c83f17=c100x100">
+              </span>
+              @<span >vogg</span>
+            </h3>
+            <p>
+              <time  datetime="2015-02-08T23:38:46.000+00:00">23 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/61f1f0edda6ccd9ae6597ebc189ece1d95b8f94f=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/61f1f0edda6ccd9ae6597ebc189ece1d95b8f94f=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/61f1f0edda6ccd9ae6597ebc189ece1d95b8f94f=c1077x690" sizes="" alt="Image 1"></figure>
 </div>
           
           <div class="body">
             
             <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
             
-            <p >The #csuinc #veggiebus bout to make a come back! #joy #abouttime #repurpose #csuinc #sustainableliving</p>
+            <p >Sweet thing. #goodhq #GOODBBQ #ctzn</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
               </span>
-              @<span >sentermcginestiv</span>
+              @<span >cogg</span>
             </h3>
             <p>
-              <time  datetime="2015-07-15T06:27:48.000+00:00">3 weeks ago</time></p>
+              <time  datetime="2015-02-13T18:07:46.000+00:00">23 weeks ago</time></p>
+          </header>
+          <div class="body">
+            
+            <p >Had a great call with Rockefeller Foundation about promoting CTZN on Hatch. They may also be up for promoting Neighbor Day or another theme for pushing forward.</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+              </span>
+              @<span >jim</span>
+            </h3>
+            <p>
+              <time  datetime="2015-02-21T00:44:18.000+00:00">22 weeks ago</time></p>
           </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/4a8a4ab3ce479e855a34c50a3c1b432311d611f0=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/4a8a4ab3ce479e855a34c50a3c1b432311d611f0=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/4a8a4ab3ce479e855a34c50a3c1b432311d611f0=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/4a8a4ab3ce479e855a34c50a3c1b432311d611f0=c384x384" alt="Image 1"></figure>
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/e0db6b4a01b82e867db4218b93a46431a6cb2e97=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/e0db6b4a01b82e867db4218b93a46431a6cb2e97=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/e0db6b4a01b82e867db4218b93a46431a6cb2e97=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >@aldoatgood, @cogg, @dan and I wrote down some ideas today about how featured posts might look…</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c100x100">
+              </span>
+              @<span >jim</span>
+            </h3>
+            <p>
+              <time  datetime="2015-02-25T07:12:54.000+00:00">21 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/ae79da83f10467533d3369c274fef6189f866e8b=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/ae79da83f10467533d3369c274fef6189f866e8b=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/ae79da83f10467533d3369c274fef6189f866e8b=c1077x690" sizes="" alt="Image 1"></figure>
+</div>
+          
+          <div class="body">
+            
+            <p >Another day, a few pages closer…</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c100x100">
+              </span>
+              @<span >iamreal8</span>
+            </h3>
+            <p>
+              <time  datetime="2015-03-04T21:50:34.000+00:00">20 weeks ago</time></p>
+          </header>
+          <div class="body">
+            
+            <p >Thank you @group for all of your hard work on bring this app to life! It is really a beautiful process to see and be apart of! #ctzn #good #greedycity</p>
+          </div>
+        </article>
+</li>
+    
+<li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c100x100">
+              </span>
+              @<span >iamreal8</span>
+            </h3>
+            <p>
+              <time  datetime="2015-03-18T20:27:48.000+00:00">18 weeks ago</time></p>
+          </header><div class="images n1" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/c98bc640b1aa55c0a7116e67422a631d6c99a47a=c1077x690" sizes="" alt="Image 1"></figure>
 </div>
           
           <div class="body">
             
             <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg></p>
             
-            <p >Thankful for tonight's exhibit and lecture, "To Live and Dine in LA" on food justice in South Central LA. @neelooks @ronfinleyhq 🌱 #Csu</p>
+            <p >A healthy org has healthy practice. Company bike helmets to accompany company bikes. Going to lunch? Grab a bike and a helmet. . .dope. #ctzn #good #greedycity</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100">
               </span>
-              @<span >jackie318</span>
+              @<span >cogg</span>
             </h3>
             <p>
-              <time  datetime="2015-07-16T06:24:37.000+00:00">3 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/6d9bcc5b82c208c94b77dcd1b4cd5c6f07337aba=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/6d9bcc5b82c208c94b77dcd1b4cd5c6f07337aba=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/6d9bcc5b82c208c94b77dcd1b4cd5c6f07337aba=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/6d9bcc5b82c208c94b77dcd1b4cd5c6f07337aba=c384x384" alt="Image 1"></figure>
-</div>
-          
+              <time  datetime="2015-03-28T00:30:47.000+00:00">17 weeks ago</time></p>
+          </header>
           <div class="body">
             
-            <p >There were so many people coming through today at the Adams/Vermont Farmers' Market! Also, CalFresh outreach went equally well as last week (:</p>
+            <p >Starting beta test of our native iOS and Android apps today! #happydance</p>
           </div>
         </article>
 </li>
     
-<li  class="inactive">
+<li>
         <article class="post-item"><header><h3>
               <span class="avatar">
                 
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c100x100">
+                <img height="30" width="30" alt=""  src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100">
               </span>
-              @<span >sentermcginestiv</span>
+              @<span >aldo</span>
             </h3>
             <p>
-              <time  datetime="2015-07-16T18:10:44.000+00:00">3 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/319a4a93cf9007072c376710f2895d8f1165c2cd=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/319a4a93cf9007072c376710f2895d8f1165c2cd=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/319a4a93cf9007072c376710f2895d8f1165c2cd=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/319a4a93cf9007072c376710f2895d8f1165c2cd=c384x384" alt="Image 1"></figure>
+              <time  datetime="2015-06-16T06:18:09.000+00:00">5 weeks ago</time></p>
+          </header><div class="images n-odd" >
+            <figure  class="active"><img  srcset="http://assets.goodstatic.com/s3/ctzn/6551a72fde3a9d3ad2ad48bd9e4a48164aa53349=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/6551a72fde3a9d3ad2ad48bd9e4a48164aa53349=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/6551a72fde3a9d3ad2ad48bd9e4a48164aa53349=c1077x690" sizes="" alt="Image 1"></figure>
+
+            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/69a0da880569f7321da5707935b54e30a321adf2=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/69a0da880569f7321da5707935b54e30a321adf2=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/69a0da880569f7321da5707935b54e30a321adf2=c1077x690" sizes="" alt="Image 2"></figure>
+
+            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/23a17ccb0d9e6052a4dd45ead3d861c90d1142fe=c2048x1312 2x, http://assets.goodstatic.com/s3/ctzn/23a17ccb0d9e6052a4dd45ead3d861c90d1142fe=c1077x690 1x" src="http://assets.goodstatic.com/s3/ctzn/23a17ccb0d9e6052a4dd45ead3d861c90d1142fe=c2048x1312" sizes="" alt="Image 3"></figure>
 </div>
           
           <div class="body">
             
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#Csu home made jams, packed with love from the #VillageMarketPlace team! 🍓🍯
-#SupportLocal #UrbanFarmers</p>
+            <p >postcard / zine</p>
           </div>
         </article>
 </li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c100x100">
-              </span>
-              @<span >fgufromthegroundupfgualumni</span>
-            </h3>
-            <p>
-              <time  datetime="2015-07-17T17:10:51.000+00:00">3 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/2548b390876e0f2ff25394b949145a2968253048=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/2548b390876e0f2ff25394b949145a2968253048=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/2548b390876e0f2ff25394b949145a2968253048=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/2548b390876e0f2ff25394b949145a2968253048=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#fgu #interns learning about the greens that grow in the #csuinc 's #expofarm .....
-@stephanie 's wondering if she could eat it already!</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c100x100">
-              </span>
-              @<span >fgufromthegroundupfgualumni</span>
-            </h3>
-            <p>
-              <time  datetime="2015-07-18T00:55:14.000+00:00">3 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/4166435c8595959acd11589d66990dccd07e0c3a=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/4166435c8595959acd11589d66990dccd07e0c3a=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/4166435c8595959acd11589d66990dccd07e0c3a=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/4166435c8595959acd11589d66990dccd07e0c3a=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#fgu #interns trying to find their dynamic duo!!!
-  after a hard days of work at the#csuinc #expofarm , #funandlaughter sounds good.</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c100x100">
-              </span>
-              @<span >neelam</span>
-            </h3>
-            <p>
-              <time  datetime="2015-07-21T06:20:15.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/71afcf6bb241054500580df78b21f7b3208f265e=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/71afcf6bb241054500580df78b21f7b3208f265e=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/71afcf6bb241054500580df78b21f7b3208f265e=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/71afcf6bb241054500580df78b21f7b3208f265e=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >Going back to the future. #milpa #csuinc native foods, native knowledge, current times</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c100x100">
-              </span>
-              @<span >fgufromthegroundupfgualumni</span>
-            </h3>
-            <p>
-              <time  datetime="2015-07-21T17:05:28.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/cbdeafcfd7af4abe6629fb3a98d2346eeadb5730=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/cbdeafcfd7af4abe6629fb3a98d2346eeadb5730=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/cbdeafcfd7af4abe6629fb3a98d2346eeadb5730=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/cbdeafcfd7af4abe6629fb3a98d2346eeadb5730=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >#fgu interns first time doing #outreach</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                <span class="size30 amethyst"  data-content="g"></span>
-                
-              </span>
-              @<span >garrick</span>
-            </h3>
-            <p>
-              <time  datetime="2015-07-22T03:59:47.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/754732835a238a6fb59feb41b841d8b4fa249ae1=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/754732835a238a6fb59feb41b841d8b4fa249ae1=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/754732835a238a6fb59feb41b841d8b4fa249ae1=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/754732835a238a6fb59feb41b841d8b4fa249ae1=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p >Study circle at the farm!</p>
-          </div>
-        </article>
-</li>
-    
-<li  class="inactive">
-        <article class="post-item"><header><h3>
-              <span class="avatar">
-                
-                <img height="30" width="30" alt=""  src="https://m.ctznapp.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c100x100">
-              </span>
-              @<span >fgufromthegroundupfgualumni</span>
-            </h3>
-            <p>
-              <time  datetime="2015-07-23T01:10:36.000+00:00">2 weeks ago</time></p>
-          </header><div class="images n1" >
-            <figure  class="inactive"><img  srcset="http://assets.goodstatic.com/s3/ctzn/1019447f606ff62b518a2810a5e163203889387f=c1216x1216 3x, http://assets.goodstatic.com/s3/ctzn/1019447f606ff62b518a2810a5e163203889387f=c832x832 2x, http://assets.goodstatic.com/s3/ctzn/1019447f606ff62b518a2810a5e163203889387f=c384x384 1x" src="http://assets.goodstatic.com/s3/ctzn/1019447f606ff62b518a2810a5e163203889387f=c384x384" alt="Image 1"></figure>
-</div>
-          
-          <div class="body">
-            
-            <p class="source">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></svg></p>
-            
-            <p >getting ready for a trust activity at the #expofarm !!</p>
-          </div>
-        </article>
-</li>
--->
-    </ol>
-  </main>
+    </ol></main>
+
 
   <footer class="primary">
     <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></svg></a> app</h2>
@@ -1326,6 +1502,93 @@ Making access to clean organic fruits and veggies possible with #Csu Village Mar
       }, false);
     }
   })();
+  </script>
+
+  <script>
+    (function() {
+
+      var header   = document.querySelector('header.push-card'); // CTZN Live
+      var push     = document.querySelector('main.push-card');
+      var postList = document.querySelector('.post-list');
+
+      if (!header || !push) return;
+
+      var headerShowing;
+      var pushNameShowing;
+      var pushShowing;
+
+      function showHeader() {
+        console.log("showHeader");
+        headerShowing   = true;
+        pushNameShowing = false;
+        pushShowing     = false;
+
+        document.body.className += ' title-only';
+        header.className = header.className.replace(/inactive/g, '');
+        push.className += ' inactive';
+        postList.className += ' inactive';
+      }
+
+      function showPushName() {
+        console.log("showPushName");
+        headerShowing   = false;
+        pushNameShowing = true;
+        pushShowing     = false;
+
+        document.body.className += ' title-only';
+        header.className += ' inactive';
+        push.className = push.className.replace(/inactive/g, '');
+        postList.className += ' inactive';
+      }
+
+      function showPush() {
+        console.log("showPush");
+        headerShowing   = false;
+        pushNameShowing = false;
+        pushShowing     = true;
+
+        document.body.className = document.body.className.replace(/title-only/g, '');
+        header.className += ' inactive';
+        push.className = push.className.replace(/inactive/g, '');
+        postList.className = postList.className.replace(/inactive/g, '');
+      }
+
+      var timer;
+      function doTheNextThing() {
+        console.log('doTheNextThing');
+        if (timer) clearTimeout(timer);
+
+        if (headerShowing) {
+
+          // Show the push title
+          showPushName();
+
+          // Wait five seconds
+          timer = setTimeout(doTheNextThing, 5 * 1000);
+
+        } else if (pushNameShowing) {
+
+          // Show the push
+          showPush();
+
+          // Wait two hundred and fifty seconds
+          timer = setTimeout(doTheNextThing, 20 * 1000);
+
+        } else {
+
+          // Show the CTZN title
+          showHeader();
+
+          // Wait five seconds
+          timer = setTimeout(doTheNextThing, 5 * 1000);
+
+        }
+
+      }
+
+      doTheNextThing();
+
+    })();
   </script>
 
 </body>
