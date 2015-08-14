@@ -2,18 +2,18 @@
   /* =Fonts
   ----------------------------------------------- */
 
-  /* Trade Gothic – This CSS resource incorporates links to font software which is the valuable copyrighted
+  /* This CSS resource incorporates links to font software which is the valuable copyrighted
   property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
   redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
   Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com */
-  @font-face {
-    font-family: "Trade Gothic Bold Condensed";
-    src: url(../fonts/257c802f-349c-4b4d-aefa/546d5de15ec6.eot);
-    src: url(../fonts/257c802f-349c-4b4d-aefa/546d5de15ec6.eot?#iefix) format("eot"),
-         url(../fonts/5fdc935e-9e30-442a-bbe9/8d887b858471.woff)       format("woff"),
-         url(../fonts/616c4c87-a077-43f4-a9f4/f01267c13818.ttf)        format("truetype"),
-         url(../fonts/c901ad5f-a842-4549-a1f4/583a97f7e169.svg#c901ad5f-a842-4549-a1f4-583a97f7e169) format("svg");
-    font-weight: normal;
+  @font-face{
+    font-family: "Proxima Nova";
+    src: url(../fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix);
+    src: url(../fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix) format("eot"),
+         url(../fonts/19dd5cf2-ac2d-48d5-901a-c432fd291ee2.woff) format("woff"),
+         url(../fonts/22cfbfa4-f607-4751-92eb-6fa194353e57.ttf) format("truetype"),
+         url(../fonts/3d6b6348-e05f-4123-b19a-3bfd02c7f361.svg#3d6b6348-e05f-4123-b19a-3bfd02c7f361) format("svg");
+    font-weight: 900; /* @extra-bold */
     font-style: normal;
   }
 
@@ -58,8 +58,8 @@
     font: 100%/1.75 "Helvetica Neue", Helvetica, Arial, sans-serif; /* @helvetica */
     margin: 0;
     padding: 0;
-    background: rgb(253, 253, 253);
-    color: rgb(35, 31, 32);
+    background: rgb(246, 246, 246); /* @casper */
+    color: rgb(5, 5, 5); /* @tungsten */
     text-align: center;
   }
   @media (min-width: 60em) and (min-height: 45em) { /* @medium-screen */
@@ -76,6 +76,7 @@
   a {
     color: rgb(255, 49, 102); /* @pitaya */
     text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
   }
   a:hover,
   a:active,
@@ -92,14 +93,12 @@
   /* =Header
   ----------------------------------------------- */
   .main h1 {
-    font-family: "Trade Gothic Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @trade */
-    text-transform: uppercase;
-    font-weight: normal;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima */
+    font-weight: 900;
     font-size: 3.5em;
-    line-height: normal;
+    line-height: 1.25;
     margin-bottom: 0.25em;
     margin-top: 0;
-    letter-spacing: -0.05em;
   }
   .main h1 .last-letter {
     display: inline-block;
@@ -116,6 +115,11 @@
     margin-top: 0;
     margin-bottom: 0;
   }
+  @media (min-width: 21em) {
+    .main h1 {
+      font-size: 4.5em;
+    }
+  }
   @media (min-width: 30em) {
     .main h1 {
       font-size: 7em;
@@ -127,15 +131,32 @@
   /* =Main
   ----------------------------------------------- */
   .main p {
-    color: rgb(102, 102, 102);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 0.875em; /* 14px / @font-size */
   }
   .main .action {
-    margin-top: 0;
-    font-size: 1.5em;
+    margin-top: 1.75em;
+  }
+  @media (min-width: 21em) {
+    .main .action {
+      font-size: 1.5em;
+    }
   }
   .main .action a {
+    display: inline-block;
+    line-height: 1.875em; /* 30px / @font-size */
+    padding: 0 0.625em;
+    color: white;
+    border: 0.125em solid white;
+    border-radius: 1.9375em; /* line height (30px) + border width (2px) / 2 */
+    text-decoration: none;
     font-weight: bold;
+  }
+  .main .action a:hover,
+  .main .action a:active,
+  .main .action a:focus {
+    background-color: white;
+    color: black;
   }
   .main ul,
   .main ul li {
@@ -145,15 +166,20 @@
   }
   .main ul li {
     display: inline;
+    margin-left: 0.375em;
+    margin-right: 0.375em;
   }
+  /*
   .main ul li:after {
     content: " / ";
     font-weight: 100;
-    color: rgb(153, 153, 153);
+    color: white;
+    color: rgba(255, 255, 255, 1);
   }
   .main ul li:last-child:after {
     content: "";
   }
+  */
 
 
   /* =Footer
@@ -170,13 +196,13 @@
   }
   footer h2 a {
     text-decoration: none;
-    color: rgb(48, 48, 48);
+    color: white;
     transition: color 0.2s;
   }
   footer h2 a:hover,
   footer h2 a:active,
   footer h2 a:focus {
-    color: rgb(235, 29, 82); /* @raspberry */
+    color: white;
   }
   footer blockquote {
     font-size: 0.875em; /* 14px / @font-size */
@@ -189,23 +215,21 @@
   /* Error Number */
   footer .error-number {
     margin-top: 0;
-    font-family: "Trade Gothic Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @trade */
-    text-transform: uppercase;
-    font-weight: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima */
+    font-weight: bold;
     font-size: 2.75em;
     line-height: 1;
-    letter-spacing: -0.05em;
     margin-bottom: 0;
   }
   footer .error-number a {
     text-decoration: none;
-    color: rgb(204, 204, 204);
+    color: inherit;
     transition: color 0.2s;
   }
   footer .error-number a:hover,
   footer .error-number a:active,
   footer .error-number a:focus {
-    color: rgb(235, 29, 82); /* @raspberry */
+    color: white;
   }
 
   /* OPTIONAL: Make the footer more compact on large screens */
@@ -238,10 +262,10 @@
     padding-bottom: 1.75em;
   }
   footer {
-    background: white;
+    background-color: rgb(51, 51, 51); /* @iron */
+    color: rgb(204, 204, 204); /* @aluminum */
   }
   footer > .container {
-    border-top: 0.1em solid rgb(234, 234, 234);
     padding-top    : 1.75em; /* @line-height */
     padding-bottom : 1.75em;
   }
@@ -276,4 +300,47 @@
     vertical-align: bottom;
     height: 1px;
   }
+
+  .lime {
+    background-color: rgb(176, 224, 0); /* @lime */
+  }
+  .cucumber {
+    background-color: rgb(60, 210, 0); /* @cucumber */
+  }
+  .blueberry {
+    background-color: rgb(0, 204, 204); /* @blueberry */
+  }
+  .boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .plumb {
+    background-color: rgb(181, 62, 194); /* @plumb */
+  }
+  .strawberry {
+    background-color: rgb(250, 44, 162); /* @strawberry */
+  }
+  .apple {
+    background-color: rgb(255, 0, 86); /* @apple */
+  }
+  .tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .orange {
+    background-color: rgb(255, 117, 9); /* @orange */
+  }
+
+
+  svg.icon {
+    fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
+  }
+
+
+  footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.75);
+  }
+
 
