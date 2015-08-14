@@ -84,9 +84,42 @@
     text-decoration: underline;
   }
 
-  /* Older browsers sometimes render these inline */
-  header, footer {
-    display: block;
+  svg.icon {
+    fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
+  }
+
+
+  /* =Colors
+  ----------------------------------------------- */
+  .lime {
+    background-color: rgb(176, 224, 0); /* @lime */
+  }
+  .cucumber {
+    background-color: rgb(60, 210, 0); /* @cucumber */
+  }
+  .blueberry {
+    background-color: rgb(0, 204, 204); /* @blueberry */
+  }
+  .boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .plumb {
+    background-color: rgb(181, 62, 194); /* @plumb */
+  }
+  .strawberry {
+    background-color: rgb(250, 44, 162); /* @strawberry */
+  }
+  .apple {
+    background-color: rgb(255, 0, 86); /* @apple */
+  }
+  .tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .orange {
+    background-color: rgb(255, 117, 9); /* @orange */
   }
 
 
@@ -96,7 +129,6 @@
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima */
     font-weight: 900;
     font-size: 3.5em;
-    line-height: 1.25;
     margin-bottom: 0.25em;
     margin-top: 0;
   }
@@ -186,7 +218,7 @@
   ----------------------------------------------- */
 
   /* Logotype */
-  footer h2 {
+  .footer h2 {
     margin-top: 0;
     font-size: inherit;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -194,17 +226,17 @@
     line-height: 1;
     margin-bottom: 0;
   }
-  footer h2 a {
+  .footer h2 a {
     text-decoration: none;
     color: white;
     transition: color 0.2s;
   }
-  footer h2 a:hover,
-  footer h2 a:active,
-  footer h2 a:focus {
+  .footer h2 a:hover,
+  .footer h2 a:active,
+  .footer h2 a:focus {
     color: white;
   }
-  footer blockquote {
+  .footer blockquote {
     font-size: 0.875em; /* 14px / @font-size */
     margin-left: 0;
     margin-right: 0;
@@ -213,7 +245,7 @@
   }
 
   /* Error Number */
-  footer .error-number {
+  .footer .error-number {
     margin-top: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima */
     font-weight: bold;
@@ -221,34 +253,34 @@
     line-height: 1;
     margin-bottom: 0;
   }
-  footer .error-number a {
+  .footer .error-number a {
     text-decoration: none;
     color: inherit;
     transition: color 0.2s;
   }
-  footer .error-number a:hover,
-  footer .error-number a:active,
-  footer .error-number a:focus {
+  .footer .error-number a:hover,
+  .footer .error-number a:active,
+  .footer .error-number a:focus {
     color: white;
   }
 
   /* OPTIONAL: Make the footer more compact on large screens */
   @media (min-width: 50em) {
-    footer h2,
-    footer blockquote,
-    footer .error-number {
+    .footer h2,
+    .footer blockquote,
+    .footer .error-number {
       display: inline-block;
       margin: 0 0.875em;
       vertical-align: middle;
     }
-    footer blockquote p {
+    .footer blockquote p {
       margin: 0.75em 0 0;
     }
-    footer h2 {
+    .footer h2 {
       float: left;
       margin-left: 0;
     }
-    footer .error-number {
+    .footer .error-number {
       float: right;
       margin-right: 0;
     }
@@ -261,17 +293,17 @@
     padding-top: 1.75em; /* @line-height */
     padding-bottom: 1.75em;
   }
-  footer {
-    background-color: rgb(51, 51, 51); /* @iron */
-    color: rgb(204, 204, 204); /* @aluminum */
+  .footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.75);
   }
-  footer > .container {
+  .footer > .container {
     padding-top    : 1.75em; /* @line-height */
     padding-bottom : 1.75em;
   }
 
   .main  > .container,
-  footer > .container {
+  .footer > .container {
     padding-left  : 1.75em; /* @line-height */
     padding-right : 1.75em;
   }
@@ -286,61 +318,17 @@
     height: 100%;
   }
   .main,
-  footer {
+  .footer {
     display: table-row;
   }
   .main  > .container,
-  footer > .container {
+  .footer > .container {
     display: table-cell;
     vertical-align: middle;
     padding-left  : 1.75em; /* @line-height */
     padding-right : 1.75em;
   }
-  footer > .container {
+  .footer > .container {
     vertical-align: bottom;
     height: 1px;
   }
-
-  .lime {
-    background-color: rgb(176, 224, 0); /* @lime */
-  }
-  .cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
-  }
-  .blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
-  }
-  .boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .periwinkle {
-    background-color: rgb(109, 90, 219); /* @periwinkle */
-  }
-  .plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
-  }
-  .strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
-  }
-  .apple {
-    background-color: rgb(255, 0, 86); /* @apple */
-  }
-  .tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .orange {
-    background-color: rgb(255, 117, 9); /* @orange */
-  }
-
-
-  svg.icon {
-    fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
-  }
-
-
-  footer {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: rgba(255, 255, 255, 0.75);
-  }
-
-
