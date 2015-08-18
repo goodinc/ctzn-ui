@@ -2,8 +2,11 @@
 /*
   Shared styles, for pages on getctzn.com and ctznapp.com
 
-  This style sheet has pseudo-variables prefixed
-  with an “@” symbol, to help with search and replace.
+  Sections are grouped under headings with a “=” symbol,
+  to make searching easier.
+
+  When a style is used more than once, it sometimes has a “@keyword”
+  in a comment next to it (to help with search and replace).
 
   For example…
 
@@ -11,16 +14,14 @@
   @line-height    : 24px;
   @page-max-width : 32em;
 
-  Sections are grouped under headings with a “=” symbol,
-  to make searching easier.
-
-
   Styles for :hover effects are prefixed with “hoverable” so they can be disabled on touch devices.
-  (This helps prevent “sticky” buttons in the app.)
+  (This helps prevent “sticky” buttons, when different screens are displayed within a single web page.)
 */
 
 
   /* =Elements
+  -----------------------------------------------
+  -----------------------------------------------
   ----------------------------------------------- */
   html, body {
     height: 100%;
@@ -48,13 +49,13 @@
     border-width: 0;
   }
 
-  /* Fit media to the available width */
+  /* Shrink images to fit the available space */
   img {
     max-width: 100%;
     height: auto;
   }
 
-  /* Browsers sometimes render these as inline elements, by default */
+  /* Make new HTML elements look nice in older browsers */
   main, header, footer, section, article, aside, nav {
     display: block;
   }
@@ -288,6 +289,41 @@
     vertical-align: middle;
   }
 
+  .avatar [data-content]:after {
+    display: block;
+    content: attr(data-content);
+    speak: none;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.75;
+  }
+
+  /* For the “my profile” link */
+  .avatar [data-content].has-icon:after {
+    opacity: 0;
+  }
+  .avatar [data-content].has-icon {
+    position: relative;
+  }
+  .avatar svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+  }
+
+  .avatar .size15 {
+    font-size: 0.625em; /* 2/3 x 15px / @font-size */
+  }
+  .avatar .size30 {
+    font-size: 1.25em; /* 2/3 x 30px / @font-size */
+  }
+  .avatar .size100 {
+    font-size: 4.1666666667em; /* 2/3 x 100px / @font-size */
+  }
+
   .avatar .clover {
     background-color: rgb(0, 235, 98); /* @clover */
   }
@@ -315,39 +351,6 @@
   .avatar .ocean {
     background-color: rgb(24, 57, 245); /* @ocean */
     color: white;
-  }
-
-  .avatar .size15 {
-    font-size: 0.625em; /* 2/3 x 15px / @font-size */
-  }
-  .avatar .size30 {
-    font-size: 1.25em; /* 2/3 x 30px / @font-size */
-  }
-  .avatar .size100 {
-    font-size: 4.1666666667em; /* 2/3 x 100px / @font-size */
-  }
-
-  .avatar [data-content]:after {
-    display: block;
-    content: attr(data-content);
-    speak: none;
-    font-weight: bold;
-    font-style: normal;
-    text-transform: uppercase;
-    text-align: center;
-    opacity: 0.75;
-  }
-  .avatar [data-content].has-icon:after {
-    opacity: 0;
-  }
-  .avatar [data-content].has-icon {
-    position: relative;
-  }
-  .avatar svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
   }
 
   /* OPTIONAL: Make the icon a little larger, so the shape will reach the edges */
