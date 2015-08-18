@@ -32,8 +32,10 @@
       padding: 0;
       padding-bottom: 100%;
       margin: 1.5em 0;
-      -webkit-transform: translate3d(0, 0, 0);
+
+      /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
       overflow: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
     }
     .post-item .body figure img {
       min-width: 0;
