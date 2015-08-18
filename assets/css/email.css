@@ -1,30 +1,44 @@
 
 /*
-  Styles for emails sent by the server (Welcome, Daily, Mention, Comment and Mix Ready)
+  Styles for emails sent by the server (Welcome, Daily, Mention, Comment, Mix Ready…)
+
+  Sections are grouped under headings with a “=” symbol,
+  to make searching easier.
+
+  When a style is used more than once, it sometimes has a “@keyword”
+  in a comment next to it (to help with search and replace).
+
+  For example…
+
+  @raspberry : rgb(235, 29, 82)
+  @seashell  : rgb(238, 238, 238)
 */
+
+
+  /* =Elements
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
 
   html, body {
     height: 100%;
   }
-  .container {
-    min-height: 100%;
-  }
-
   body {
     margin: 0;
     padding: 0;
   }
 
+  /* The “body” element isn’t present in some email clients, so apply some basic styles to a “.container” instead. */
   .container {
-    min-height: 100%;
     font: 16px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(83, 83, 83);
+    min-height: 100%;
     padding-bottom: 30px;
   }
   @media (min-width: 600px) {
     .container {
-      padding: 20px 0 60px !important;
+      padding: 20px 0 60px !important; /* This is “!important” to override the inlined CSS rules */
     }
   }
 
@@ -42,14 +56,8 @@
   a:focus {
     color: rgb(235, 29, 82); /* @raspberry */
   }
-
   a img {
     border-width: 0;
-  }
-
-  .message h3 {
-    font-weight: inherit;
-    color: rgb(31, 31, 31); /* @steel */
   }
 
   img.featured,
@@ -64,12 +72,281 @@
     margin-top: 0;
   }
 
+
+  /* =Action
+  ----------------------------------------------- */
+  .action a {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204); /* @aluminum */
+    background-color: white;
+    color: rgb(51, 51, 51); /* @iron */
+  }
+  .action a:hover,
+  .action a:active,
+  .action a:focus {
+    background: rgb(238, 238, 238); /* @seashell */
+  }
+
+  .action.primary a {
+    border-color: transparent;
+    background-color: rgb(255, 49, 102); /* @pitaya */
+    color: white;
+  }
+  .action.primary a:hover,
+  .action.primary a:active,
+  .action.primary a:focus {
+    background-color: rgb(235, 29, 82); /* @raspberry */
+  }
+
+
+  /* =Icon
+  ----------------------------------------------- */
+  svg.icon {
+    vertical-align: middle;
+    margin-right: 5px;
+    fill: currentColor;
+  }
+  div.heart {
+    max-height: 0;
+    margin-left: 5px;
+  }
+
+  /* Fallback content */
+  div.heart span {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 100%;
+    margin-left: 3px;
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+
+  .article p.source {
+    margin-top: 0;
+    color: rgb(193, 193, 193);
+    font-size: 14px;
+    float: right;
+  }
+
+  /* There’s no text to the right of the heart icon */
+  .action .heart svg.icon {
+    margin-right: 0;
+  }
+
+  /* Active state */
+  .action .heart.active {
+    background: rgb(238, 238, 238); /* @seashell */
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+  .action .heart.active svg {
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+
+
+  /* =Avatars
+  ----------------------------------------------- */
+
+  .avatar img {
+    border-radius: 100%;
+    vertical-align: middle;
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .avatar > span {
+    display: inline-block;
+    color: black;
+    width       : 1.25em; /* 20px / 16px */
+    line-height : 1.25em;
+    vertical-align: middle;
+  }
+
+  .avatar .letter {
+    display: block;
+    speak: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8em; /* 16px / 20px */
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .avatar .size30 {
+    font-size: 1.5em; /* 30px / 20px */
+    border-radius: 100%;
+  }
+  .avatar .size60 {
+    font-size: 48px; /* 60 / 1.25 */
+    border-radius: 100%;
+  }
+
+  .avatar .clover {
+    background-color: rgb(0, 235, 98); /* @clover */
+  }
+  .avatar .kiwi {
+    background-color: rgb(0, 255, 208); /* @kiwi */
+  }
+  .avatar .grape {
+    background-color: rgb(159, 104, 246); /* @grape */
+  }
+  .avatar .bluebird {
+    background-color: rgb(0, 206, 250); /* @bluebird */
+  }
+  .avatar .cantaloupe {
+    background-color: rgb(255, 203, 117); /* @cantaloupe */
+  }
+  .avatar .cranberry {
+    background-color: rgb(251, 59, 147); /* @cranberry */
+  }
+  .avatar .amethyst {
+    background-color: rgb(255, 152, 248); /* @amethyst */
+  }
+  .avatar .sky {
+    background-color: rgb(0, 255, 254); /* @sky */
+  }
+  .avatar .ocean {
+    background-color: rgb(24, 57, 245); /* @ocean */
+    color: white;
+  }
+
+
+
+  /* =Type
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+
+  /* =Message
+  ----------------------------------------------- */
+  .message h3 {
+    font-weight: inherit;
+    font-size: inherit;
+  }
+  .message h3 strong {
+    font-weight: inherit;
+    color: rgb(31, 31, 31); /* @steel */
+  }
+  .message b {
+    color: black;
+  }
+
+  /* Powered by CTZN */
+  .ctzn {
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0 6px;
+    font-size: 10px;
+    display: inline-block;
+  }
+
+
+  /* =Header
+  -----------------------------------------------
+  (“Reply above” and “View in browser”)
+  ----------------------------------------------- */
+  .header {
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  .header h2,
+  .header p {
+    margin: 0;
+    font-size: 12px;
+  }
+  .header h2 {
+    color: rgb(159, 165, 162); /* @barium */
+    text-align: center;
+  }
+  .header p {
+    text-align: right;
+    padding-right: 20px;
+  }
+  @media (min-width: 600px) {
+    .header p {
+      padding-right: 0;
+    }
+  }
+
+
+  /* =Footer
+  -----------------------------------------------
+  (unsubscribe links)
+  ----------------------------------------------- */
+  .footer {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .footer h2 {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .footer .unsubscribe {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .mute {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+  }
+  ul.mute,
+  ul.mute li {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  @media (min-width: 600px) {
+    .footer h2 {
+      float: left;
+    }
+    .footer .unsubscribe {
+      margin-bottom: 0 !important;
+      line-height: 30px;
+      float: right;
+    }
+  }
+
+
+
+  /* =Headlines
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
   .headline h1 {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 20px;
     line-height: 30px;
     color: rgb(102, 102, 102); /* @tin */
+  }
+  .headline.first h1 {
+    font-size: 24px;
+    line-height: 30px;
   }
   .headline h2 {
     font-weight: bold;
@@ -84,44 +361,128 @@
     color: black;
     text-decoration: none;
   }
-  .message h3 {
-    font-size: inherit;
-    color: inherit;
+
+  /* Push Colors */
+  .headline.lime {
+    border-top: 10px solid rgb(176, 224, 0); /* @lime */
   }
-  .message h3 strong {
-    font-weight: inherit;
-    color: rgb(31, 31, 31); /* @steel */
+  .headline.cucumber {
+    border-top: 10px solid rgb(60, 210, 0); /* @cucumber */
+  }
+  .headline.blueberry {
+    border-top: 10px solid rgb(0, 204, 204); /* @blueberry */
+  }
+  .headline.boysenberry {
+    border-top: 10px solid rgb(101, 152, 254); /* @boysenberry */
+  }
+  .headline.periwinkle {
+    border-top: 10px solid rgb(109, 90, 219); /* @periwinkle */
+  }
+  .headline.plumb {
+    border-top: 10px solid rgb(181, 62, 194); /* @plumb */
+  }
+  .headline.strawberry {
+    border-top: 10px solid rgb(250, 44, 162); /* @strawberry */
+  }
+  .headline.apple {
+    border-top: 10px solid rgb(255, 0, 86); /* @apple */
+  }
+  .headline.tangerine {
+    border-top: 10px solid rgb(255, 204, 0); /* @tangerine */
+  }
+  .headline.orange {
+    border-top: 10px solid rgb(255, 117, 9); /* @orange */
+  }
+
+  /* CTZN Color */
+  .headline.honeydew {
+    border-top: 10px solid rgb(150, 255, 108); /* @honeydew */
   }
 
 
-  /* “Reply above” header */
-  .header {
-    padding-top: 10px;
-    margin-bottom: 10px;
+  /* =Digest
+  ----------------------------------------------- */
+   .daily.headline,
+  .weekly.headline {
+    border-top-width: 0;
+    color: white;
   }
-  .header h2,
-  .header p {
-    margin: 0;
-    font-size: 12px;
+  .daily.headline + .headline {
+    margin-top: 0;
   }
-  .header h2 {
-    color: rgb(159, 165, 162); /* @barium */
-    text-align: center;
+  .daily.headline {
+    margin-top: 20px;
   }
-
-  /* “View in browser” header */
-  .header p {
-    text-align: right;
-    padding-right: 20px;
+  .daily.headline h1 {
+    color: white;
+    font-weight: normal;
   }
-  @media (min-width: 600px) {
-    .header p {
-      padding-right: 0;
-    }
+  .daily.headline h1 svg {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 3px;
+    border-radius: 50%;
+    margin-left: -15px; /* 10px + ((24px - 20px) / 2) + 5px      10px + icon.size - avatar.size */
   }
 
+  /* Push Colors */
+  .weekly.headline h1 {
+    color: white;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+  }
+  .weekly.headline h1 a,
+  .weekly.headline h1 b {
+    color: white;
+    text-decoration: none;
+  }
+   .daily.headline.lime,
+  .weekly.headline.lime {
+    background-color: rgb(176, 224, 0); /* @lime */
+  }
+   .daily.headline.cucumber,
+  .weekly.headline.cucumber {
+    background-color: rgb(60, 210, 0); /* @cucumber */
+  }
+   .daily.headline.blueberry,
+  .weekly.headline.blueberry {
+    background-color: rgb(0, 204, 204); /* @blueberry */
+  }
+   .daily.headline.boysenberry,
+  .weekly.headline.boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+   .daily.headline.periwinkle,
+  .weekly.headline.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+   .daily.headline.plumb,
+  .weekly.headline.plumb {
+    background-color: rgb(181, 62, 194); /* @plumb */
+  }
+   .daily.headline.strawberry,
+  .weekly.headline.strawberry {
+    background-color: rgb(250, 44, 162); /* @strawberry */
+  }
+   .daily.headline.apple,
+  .weekly.headline.apple {
+    background-color: rgb(255, 0, 86); /* @apple */
+  }
+   .daily.headline.tangerine,
+  .weekly.headline.tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+    .daily.headline.orange,
+  .weekly.headline.orange {
+    background-color: rgb(255, 117, 9); /* @orange */
+  }
 
-  /* Containers */
+
+
+  /* =Layout
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
   .header,
   .headline,
   .article,
@@ -164,26 +525,11 @@
     margin-top: 10px;
     padding: 20px 30px;
   }
+  /*
   .headline.first {
     margin-top: 0;
   }
-  .headline.first h1 {
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  .ctzn {
-    margin-top: 20px;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    background: black;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 0 6px;
-    font-size: 10px;
-    display: inline-block;
-  }
-
+  */
   .download {
     padding: 20px 30px;
   }
@@ -210,7 +556,138 @@
   }
 
 
+
+  /* =Introduction
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  .intro {
+    max-width: 520px; /* 580px - (30px x 2) */
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    background: white;
+    color: rgb(31, 31, 31); /* @steel */
+  }
+
+  .intro div {
+    border: 1px solid rgb(238, 238, 238); /* @seashell */
+    padding: 20px;
+    position: relative;
+  }
+  .push.intro div {
+    text-align: center;
+    background-color: rgb(204, 204, 204); /* @aluminum */
+    border-width: 0;
+  }
+  .push.intro div .action a {
+    color: white;
+    border-width: 0;
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .push.intro div .action a:hover,
+  .push.intro div .action a:active,
+  .push.intro div .action a:focus {
+    background-color: black;
+  }
+
+  .intro h2,
+  .intro .name {
+    display: inline-block;
+  }
+  .push.intro h2 {
+    color: white;  
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  }
+  .intro h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+  .intro .avatar {
+    margin-right: 10px;
+    float: left;
+  }
+  .intro .name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .intro .about {
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: rgb(102, 102, 102); /* @tin */
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+  }
+  .intro div .action {
+    clear: both;
+    padding-top: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .intro div .action a {
+    display: block;
+    text-align: center;
+  }
+
+  /* SHIM: Add space above buttons in the “Request to Join” email. */
+  .intro > .action {
+    margin-top: 37px;
+  }
+
+  /*
+  .intro .icon {
+    display: inline-block;
+    border: 3px solid white;
+    padding: 9px;
+    border-radius: 10px;
+    background: white;
+  }
+  */
+
+  /* Push Colors */
+  .push.intro.lime div {
+    background-color: rgb(176, 224, 0); /* @lime */
+  }
+  .push.intro.cucumber div {
+    background-color: rgb(60, 210, 0); /* @cucumber */
+  }
+  .push.intro.blueberry div {
+    background-color: rgb(0, 204, 204); /* @blueberry */
+  }
+  .push.intro.boysenberry div {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .push.intro.periwinkle div {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .push.intro.plumb div {
+    background-color: rgb(181, 62, 194); /* @plumb */
+  }
+  .push.intro.strawberry div {
+    background-color: rgb(250, 44, 162); /* @strawberry */
+  }
+  .push.intro.apple div {
+    background-color: rgb(255, 0, 86); /* @apple */
+  }
+  .push.intro.tangerine div {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .push.intro.orange div {
+    background-color: rgb(255, 117, 9); /* @orange */
+  }
+
+
   /* =Profile Preview
+  -----------------------------------------------
+  TBD: Can this combined with “.intro”
   ----------------------------------------------- */
   .profile {
     margin: 20px 0;
@@ -265,268 +742,224 @@
     margin: 0;
   }
 
-
-  /* =Avatars
-  ----------------------------------------------- */
-  .avatar img {
-    border-radius: 100%;
-    vertical-align: middle;
-
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    background-color: rgba(0, 0, 0, 0.25);
-  }
-
-  .avatar > span {
-    display: inline-block;
-    color: black;
-    width       : 1.25em; /* 20px / 16px */
-    line-height : 1.25em;
-    vertical-align: middle;
-  }
-  .avatar .letter {
-    display: block;
-    speak: none;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 0.8em; /* 16px / 20px */
-    font-style: normal;
-    font-weight: bold;
-  }
-
-
-  /* =Member Avatars
-  ----------------------------------------------- */
-  .avatar .size30 {
-    font-size: 1.5em; /* 30px / 20px */
-    border-radius: 100%;
-  }
-  .avatar .size60 {
-    font-size: 48px; /* 60 / 1.25 */
-    border-radius: 100%;
-  }
-
-  .avatar .clover {
-    background-color: rgb(0, 235, 98); /* @clover */
-  }
-  .avatar .kiwi {
-    background-color: rgb(0, 255, 208); /* @kiwi */
-  }
-  .avatar .grape {
-    background-color: rgb(159, 104, 246); /* @grape */
-  }
-  .avatar .bluebird {
-    background-color: rgb(0, 206, 250); /* @bluebird */
-  }
-  .avatar .cantaloupe {
-    background-color: rgb(255, 203, 117); /* @cantaloupe */
-  }
-  .avatar .cranberry {
-    background-color: rgb(251, 59, 147); /* @cranberry */
-  }
-  .avatar .amethyst {
-    background-color: rgb(255, 152, 248); /* @amethyst */
-  }
-  .avatar .sky {
-    background-color: rgb(0, 255, 254); /* @sky */
-  }
-  .avatar .ocean {
-    background-color: rgb(24, 57, 245); /* @ocean */
-    color: white;
-  }
-
-
-  /* =Push Colors
-  ----------------------------------------------- */
-  .push.intro.lime div,
+  /* Push Colors */
   .profile.lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .push.intro.cucumber div,
-  .profile.cucumber {
+  .profile.cucumberv {
     background-color: rgb(60, 210, 0); /* @cucumber */
   }
-  .push.intro.blueberry div,
   .profile.blueberry {
     background-color: rgb(0, 204, 204); /* @blueberry */
   }
-  .push.intro.boysenberry div,
   .profile.boysenberry {
     background-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .push.intro.periwinkle div,
   .profile.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .push.intro.plumb div,
   .profile.plumb {
     background-color: rgb(181, 62, 194); /* @plumb */
   }
-  .push.intro.strawberry div,
   .profile.strawberry {
     background-color: rgb(250, 44, 162); /* @strawberry */
   }
-  .push.intro.apple div,
   .profile.apple {
     background-color: rgb(255, 0, 86); /* @apple */
   }
-  .push.intro.tangerine div,
   .profile.tangerine {
     background-color: rgb(255, 204, 0); /* @tangerine */
   }
-  .push.intro.orange div,
   .profile.orange {
     background-color: rgb(255, 117, 9); /* @orange */
   }
 
-  /* Push Colors */
-  .headline.lime {
-    border-top: 10px solid rgb(176, 224, 0); /* @lime */
-  }
-  .headline.cucumber {
-    border-top: 10px solid rgb(60, 210, 0); /* @cucumber */
-  }
-  .headline.blueberry {
-    border-top: 10px solid rgb(0, 204, 204); /* @blueberry */
-  }
-  .headline.boysenberry {
-    border-top: 10px solid rgb(101, 152, 254); /* @boysenberry */
-  }
-  .headline.periwinkle {
-    border-top: 10px solid rgb(109, 90, 219); /* @periwinkle */
-  }
-  .headline.plumb {
-    border-top: 10px solid rgb(181, 62, 194); /* @plumb */
-  }
-  .headline.strawberry {
-    border-top: 10px solid rgb(250, 44, 162); /* @strawberry */
-  }
-  .headline.apple {
-    border-top: 10px solid rgb(255, 0, 86); /* @apple */
-  }
-  .headline.tangerine {
-    border-top: 10px solid rgb(255, 204, 0); /* @tangerine */
-  }
-  .headline.orange {
-    border-top: 10px solid rgb(255, 117, 9); /* @orange */
-  }
 
-  /* CTZN General */
-  .headline.honeydew {
-    border-top: 10px solid rgb(150, 255, 108); /* @honeydew */
+  /* =Steps
+  ----------------------------------------------- */
+  .steps ol {
+    margin: 0;
+    padding: 30px 0 30px 60px;
+    font-size: 28px;
+    font-weight: bold;
   }
-
-  .daily.headline,
-  .weekly.headline {
-    border-top-width: 0;
-    color: white;
+  .steps li {
+    padding-right: 20px;
   }
-  .daily.headline + .headline {
-    margin-top: 0;
-  }
-  .daily.headline {
-    margin-top: 20px;
-  }
-  .daily.headline h1 {
-    color: white;
+  .steps div {
+    font-size: 16px;
     font-weight: normal;
   }
-  .daily.headline h1 svg {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 3px;
-    border-radius: 50%;
-    margin-left: -15px; /* 10px + ((24px - 20px) / 2) + 5px      10px + icon.size - avatar.size */
+  .steps b {
+    color: black;
   }
-  .weekly.headline h1 {
-    color: white;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 24px;
+  .steps .not-first {
+    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+    margin-top: 30px;
+    padding-top: 30px;
+    position: relative;
   }
-  .weekly.headline h1 a,
-  .weekly.headline h1 b {
-    color: white;
+  .steps .not-first:before {
+    content: "";
+    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
+    position: absolute;
+    top: -1px;
+    left: -60px;
+    width: calc(100% + 60px);
+    height: 1px;
+  }
+  .steps .icon  svg,
+  .steps .icons svg {
+    width : 35px;
+    height: 35px;
+    vertical-align: middle;
+    fill: currentColor;
+  }
+  .steps .icons svg {
+    width : 25px;
+    height: 25px;
+  }
+  .steps .icon {
+    display: inline-block;
+    border: 3px solid rgb(238, 238, 238); /* @seashell */
+    padding: 9px;
+    border-radius: 10px;
+
+    float: right;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-left: 20px;
+  }
+  .steps .icon img {
+    display: block;
+  }
+  .steps .icons {
+    margin-top: 20px;
+  }
+  .steps .icons img,
+  .steps .icons svg {
+    margin-right: 25px;
+  }
+
+
+
+  /* =Push
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  .stats {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 560px; /* 580 - (10 x 2) */
+  }
+  .stats ul,
+  .stats li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .stats ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .stats li {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    width: 32%;
+  }
+  .stats b {
+    color: black;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+
+  /* =Members
+  ----------------------------------------------- */
+  .members ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  .members li {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 580px; /* 580px - (30px x 2) */
+    margin-top: 1px;
+  }
+  .members li a {
     text-decoration: none;
   }
-  .daily.headline.lime,
-  .weekly.headline.lime {
-    background-color: rgb(176, 224, 0); /* @lime */
+  .members li > a {
+    display: block;
+    padding: 20px 30px 20px 15px;
   }
-  .daily.headline.cucumber,
-  .weekly.headline.cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
+  .members li .avatar,
+  .members li a b {
+    margin-right: 5px;
   }
-  .daily.headline.blueberry,
-  .weekly.headline.blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
+  .members li h3 {
+    font-size: inherit;
+    margin: 0;
   }
-  .daily.headline.boysenberry,
-  .weekly.headline.boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
+  .members .also h3,
+  .members li .about,
+  .members li .role,
+  .members li .joined {
+    color: rgb(102, 102, 102); /* @tin */
   }
-  .daily.headline.periwinkle,
-  .weekly.headline.periwinkle {
-    background-color: rgb(109, 90, 219); /* @periwinkle */
+  .members li .name {
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+    color: rgb(153, 153, 153); /* @nickel */
   }
-  .daily.headline.plumb,
-  .weekly.headline.plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+  .members li .also {
+    display: block;
+    color: black;
+    padding: 20px 30px;
+    font-size: 12px;
   }
-  .daily.headline.strawberry,
-  .weekly.headline.strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
+  .members li .also h3 {
+    margin-bottom: 10px;
   }
-  .daily.headline.apple,
-  .weekly.headline.apple {
-    background-color: rgb(255, 0, 86); /* @apple */
+  .members li p {
+    padding-left: 42px;
   }
-  .daily.headline.tangerine,
-  .weekly.headline.tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .daily.headline.orange,
-  .weekly.headline.orange {
-    background-color: rgb(255, 117, 9); /* @orange */
+  .members li p.about {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-style: italic;
   }
 
+  .members .also h3,
+  .members .role,
+  .members .joined {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 0;
+    font-weight: inherit;
+  }
 
-  .article .join-summary.lime,
-  .article .summary.lime {
-    border-left: 5px solid rgb(176, 224, 0); /* @lime */
+  /* OPTIONAL: Present the joined and role data on one line. */
+  .members.with-joined .role {
+    float: left;
+    margin-right: 3px;
   }
-  .article .join-summary.cucumber,
-  .article .summary.cucumber {
-    border-left: 5px solid rgb(60, 210, 0); /* @cucumber */
-  }
-  .article .join-summary.blueberry,
-  .article .summary.blueberry {
-    border-left: 5px solid rgb(0, 204, 204); /* @blueberry */
-  }
-  .article .join-summary.boysenberry,
-  .article .summary.boysenberry {
-    border-left: 5px solid rgb(101, 152, 254); /* @boysenberry */
-  }
-  .article .join-summary.periwinkle,
-  .article .summary.periwinkle {
-    border-left: 5px solid rgb(109, 90, 219); /* @periwinkle */
-  }
-  .article .join-summary.plumb,
-  .article .summary.plumb {
-    border-left: 5px solid rgb(181, 62, 194); /* @plumb */
-  }
-  .article .join-summary.strawberry,
-  .article .summary.strawberry {
-    border-left: 5px solid rgb(250, 44, 162); /* @strawberry */
-  }
-  .article .join-summary.apple,
-  .article .summary.apple {
-    border-left: 5px solid rgb(255, 0, 86); /* @apple */
-  }
-  .article .join-summary.tangerine,
-  .article .summary.tangerine {
-    border-left: 5px solid rgb(255, 204, 0); /* @tangerine */
-  }
-  .article .join-summary.orange,
-  .article .summary.orange {
-    border-left: 5px solid rgb(255, 117, 9); /* @orange */
+  .members.with-joined .role:after {
+    content: " – ";
   }
 
 
@@ -636,6 +1069,48 @@
     color: inherit;
   }
 
+  /* Push Colors */
+  .article .join-summary.lime,
+  .article .summary.lime {
+    border-left: 5px solid rgb(176, 224, 0); /* @lime */
+  }
+  .article .join-summary.cucumber,
+  .article .summary.cucumber {
+    border-left: 5px solid rgb(60, 210, 0); /* @cucumber */
+  }
+  .article .join-summary.blueberry,
+  .article .summary.blueberry {
+    border-left: 5px solid rgb(0, 204, 204); /* @blueberry */
+  }
+  .article .join-summary.boysenberry,
+  .article .summary.boysenberry {
+    border-left: 5px solid rgb(101, 152, 254); /* @boysenberry */
+  }
+  .article .join-summary.periwinkle,
+  .article .summary.periwinkle {
+    border-left: 5px solid rgb(109, 90, 219); /* @periwinkle */
+  }
+  .article .join-summary.plumb,
+  .article .summary.plumb {
+    border-left: 5px solid rgb(181, 62, 194); /* @plumb */
+  }
+  .article .join-summary.strawberry,
+  .article .summary.strawberry {
+    border-left: 5px solid rgb(250, 44, 162); /* @strawberry */
+  }
+  .article .join-summary.apple,
+  .article .summary.apple {
+    border-left: 5px solid rgb(255, 0, 86); /* @apple */
+  }
+  .article .join-summary.tangerine,
+  .article .summary.tangerine {
+    border-left: 5px solid rgb(255, 204, 0); /* @tangerine */
+  }
+  .article .join-summary.orange,
+  .article .summary.orange {
+    border-left: 5px solid rgb(255, 117, 9); /* @orange */
+  }
+
 
   /* =Video
   ----------------------------------------------- */
@@ -681,329 +1156,97 @@
   }
 
 
-  /* =Intro
-  ----------------------------------------------- */
-  .intro {
-    max-width: 520px; /* 580px - (30px x 2) */
-    margin: 0 auto;
-    position: relative;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
-    background: white;
-    color: rgb(31, 31, 31); /* @steel */
-  }
-
-  .intro div {
-    border: 1px solid rgb(238, 238, 238); /* @seashell */
-    padding: 20px;
-    position: relative;
-  }
-  .push.intro div {
-    text-align: center;
-    background-color: rgb(204, 204, 204); /* @aluminum */
-    border-width: 0;
-  }
-  .push.intro div .action a {
-    color: white;
-    border-width: 0;
-    border-color: white;
-    background-color: rgba(0, 0, 0, 0.25);
-  }
-  .push.intro div .action a:hover,
-  .push.intro div .action a:active,
-  .push.intro div .action a:focus {
-    background-color: black;
-  }
-
-  .intro h2,
-  .intro .name {
-    display: inline-block;
-  }
-  .push.intro h2 {
-    color: white;  
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  }
-  .intro h2 {
-    margin-top: 10px;
-    margin-bottom: 0;
-    margin-right: 5px;
-  }
-  .intro .avatar {
-    margin-right: 10px;
-    float: left;
-  }
-  .intro .name {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 14px;
-    color: rgb(153, 153, 153); /* @nickel */
-  }
-  .intro .about {
-    font-style: italic;
-    margin-top: 10px;
-    margin-bottom: 0;
-    color: rgb(102, 102, 102); /* @tin */
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 14px;
-  }
-  .intro div .action {
-    clear: both;
-    padding-top: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .intro div .action a {
-    display: block;
-    text-align: center;
-  }
-
-  /* SHIM: Add space above buttons in the “Request to Join” email. */
-  .intro > .action {
-    margin-top: 37px;
-  }
-
-
-  /* =Members
-  ----------------------------------------------- */
-  .members ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-  }
-  .members li {
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 580px; /* 580px - (30px x 2) */
-    margin-top: 1px;
-  }
-  .members li a {
-    text-decoration: none;
-  }
-  .members li > a {
-    display: block;
-    padding: 20px 30px 20px 15px;
-  }
-  .members li .avatar,
-  .members li a b {
-    margin-right: 5px;
-  }
-  .members li h3 {
-    font-size: inherit;
-    margin: 0;
-  }
-  .members .also h3,
-  .members li .about,
-  .members li .role,
-  .members li .joined {
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .members li .name {
-    font-size: 14px;
-    font-weight: normal;
-    display: inline-block;
-    color: rgb(153, 153, 153); /* @nickel */
-  }
-  .members li .also {
-    display: block;
-    color: black;
-    padding: 20px 30px;
-    font-size: 12px;
-  }
-  .members li .also h3 {
-    margin-bottom: 10px;
-  }
-  .members li p {
-    padding-left: 42px;
-  }
-  .members li p.about {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-style: italic;
-  }
-
-  .members .also h3,
-  .members .role,
-  .members .joined {
-    margin-top: 0;
-    text-transform: uppercase;
-    font-size: 10px;
-    margin-bottom: 0;
-    font-weight: inherit;
-  }
-
-  /* OPTIONAL: Present the joined and role data on one line. */
-  .members.with-joined .role {
-    float: left;
-    margin-right: 3px;
-  }
-  .members.with-joined .role:after {
-    content: " – ";
-  }
-
-
-  /* =Action
-  ----------------------------------------------- */
-  .action a {
-    display: inline-block;
-    padding: 7px 15px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(204, 204, 204); /* @aluminum */
-    background-color: white;
-    color: rgb(51, 51, 51); /* @iron */
-  }
-  .action a:hover,
-  .action a:active,
-  .action a:focus {
-    background: rgb(238, 238, 238); /* @seashell */
-  }
-
-  .action.primary a {
-    border-color: transparent;
-    background-color: rgb(255, 49, 102); /* @pitaya */
-    color: white;
-  }
-  .action.primary a:hover,
-  .action.primary a:active,
-  .action.primary a:focus {
-    background-color: rgb(235, 29, 82); /* @raspberry */
-  }
-
-
-  /* =Icon
-  ----------------------------------------------- */
-  svg.icon {
-    vertical-align: middle;
-    margin-right: 5px;
-    fill: currentColor;
-  }
-  div.heart {
-    max-height: 0;
-    margin-left: 5px;
-  }
-
-  /* Fallback content */
-  div.heart span {
-    display: inline-block;
-    height: 12px;
-    width: 12px;
-    border-radius: 100%;
-    margin-left: 3px;
-    color: rgb(255, 49, 102); /* @pitaya */
-  }
-
-  .article p.source {
-    margin-top: 0;
-    color: rgb(193, 193, 193);
-    font-size: 14px;
-    float: right;
-  }
-
-  /* There’s no text to the right of the heart icon */
-  .action .heart svg.icon {
-    margin-right: 0;
-  }
-
-  /* Active state */
-  .action .heart.active {
-    background: rgb(238, 238, 238); /* @seashell */
-    color: rgb(255, 49, 102); /* @pitaya */
-  }
-  .action .heart.active svg {
-    color: rgb(255, 49, 102); /* @pitaya */
-  }
-
-
-  /* =Steps
-  ----------------------------------------------- */
-  .icon  svg,
-  .icons svg {
-    width : 35px;
-    height: 35px;
-    vertical-align: middle;
-    fill: currentColor;
-  }
-  .icons svg {
-    width : 25px;
-    height: 25px;
-  }
-
-  .steps ol {
-    margin: 0;
-    padding: 30px 0 30px 60px;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .steps li {
-    padding-right: 20px;
-  }
-  .steps div {
-    font-size: 16px;
-    font-weight: normal;
-  }
-  .steps   b,
-  .message b {
-    color: black;
-  }
-  .steps .not-first {
-    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
-    margin-top: 30px;
-    padding-top: 30px;
-    position: relative;
-  }
-  .steps .not-first:before {
-    content: "";
-    border-top: 1px solid rgb(238, 238, 238); /* @seashell */
-    position: absolute;
-    top: -1px;
-    left: -60px;
-    width: calc(100% + 60px);
-    height: 1px;
-  }
-  .intro .icon,
-  .steps .icon {
-    display: inline-block;
-    border: 3px solid rgb(238, 238, 238); /* @seashell */
-    padding: 9px;
-    border-radius: 10px;
-  }
-  .intro .icon {
-    background: white;
-    border-color: white;
-  }
-  .steps .icon {
-    margin-bottom: 20px;
-    float: right;
-    margin-top: -10px;
-    margin-left: 20px;
-  }
-  .steps .icon img {
-    display: block;
-  }
-  .steps .icons {
-    margin-top: 20px;
-  }
-  .steps .icons img,
-  .steps .icons svg {
-    margin-right: 25px;
-  }
-
 
   /* =Promotions
+  -----------------------------------------------
+  -----------------------------------------------
   ----------------------------------------------- */
+
+  .tip {
+    font-size: 14px;
+  }
+  .tip h2 {
+    font-size: inherit;
+    color: black;
+  }
+  .tip h2 {
+    margin-right: 5px;
+  }
+  .tip svg,
+  .tip img {
+    margin-right: 10px;
+  }
+  .tip h2,
+  .tip p {
+    display: inline-block;
+  }
+  .tip p {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .tip svg,
+  .tip img {
+    color: rgb(204, 204, 204); /* @aluminum */
+    vertical-align: middle;
+  }
+
+  .download,
+  .feedback {
+    border-width: 0;
+  }
   .download {
     background-color: rgb(176, 176, 176);
+  }
+  .download img {
+    vertical-align: top;
+  }
+  .download h2 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .download h2,
+  .download p {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .download p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .download p img {
+    margin: 5px;
   }
   .feedback {
     background-color: rgb(153, 153, 153); /* @nickel */
   }
+  .feedback {
+    font-size: 14px;
+    color: white;
+  }
+  .feedback a {
+    color: white;
+  }
+  .feedback a:hover,
+  .feedback a:active,
+  .feedback a:focus {
+    color: white;
+  }
+
+
+  /* CTZN Color */
+  .download.honeydew {
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    background-color: rgb(130, 235, 88); /* 4% darker */
+  }
+  .feedback.honeydew {
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    background-color: rgb(110, 215, 68); /* 8% darker */
+  }
+
 
   /* Push Colors */
   .download.lime {
@@ -1086,165 +1329,4 @@
   .feedback.orange {
     background-color: rgb(255, 117, 9); /* @orange */
     background-color: rgb(235, 97, 0); /* 4% darker */
-  }
-
-  /* CTZN General */
-  .download.honeydew {
-    background-color: rgb(150, 255, 108); /* @honeydew */
-    background-color: rgb(130, 235, 88); /* 4% darker */
-  }
-  .feedback.honeydew {
-    background-color: rgb(150, 255, 108); /* @honeydew */
-    background-color: rgb(110, 215, 68); /* 8% darker */
-  }
-
-
-  .tip {
-    font-size: 14px;
-  }
-  .tip h2 {
-    font-size: inherit;
-    color: black;
-  }
-  .tip h2 {
-    margin-right: 5px;
-  }
-  .tip svg,
-  .tip img {
-    margin-right: 10px;
-  }
-  .tip h2,
-  .tip p {
-    display: inline-block;
-  }
-  .tip p {
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .tip svg,
-  .tip img {
-    color: rgb(204, 204, 204); /* @aluminum */
-    vertical-align: middle;
-  }
-  .download img {
-    vertical-align: top;
-  }
-  .download,
-  .feedback {
-    border-width: 0;
-  }
-  .download h2 {
-    color: white;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  }
-  .download h2 {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 20px;
-    font-size: 24px;
-    line-height: 35px;
-  }
-  .download h2,
-  .download p {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .download p {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  .download p img {
-    margin: 5px;
-  }
-  .feedback {
-    font-size: 14px;
-    color: white;
-  }
-  .feedback a {
-    color: white;
-  }
-  .feedback a:hover,
-  .feedback a:active,
-  .feedback a:focus {
-    color: white;
-  }
-
-  .stats {
-    padding-left: 10px;
-    padding-right: 10px;
-    max-width: 560px; /* 580 - (10 x 2) */
-  }
-  .stats ul,
-  .stats li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .stats ul {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .stats li {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: bold;
-    width: 32%;
-  }
-  .stats b {
-    color: black;
-    font-size: 36px;
-    line-height: 36px;
-    margin-bottom: 10px;
-    display: block;
-  }
-
-
-  /* =Footer
-  ----------------------------------------------- */
-  .footer {
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .footer h2 {
-    margin-top: 20px;
-    margin-bottom: 0;
-  }
-  .footer .unsubscribe {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 12px;
-  }
-  .mute {
-    margin-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    text-align: center;
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 12px;
-  }
-  ul.mute,
-  ul.mute li {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  @media (min-width: 600px) {
-    .footer h2 {
-      float: left;
-    }
-    .footer .unsubscribe {
-      margin-bottom: 0 !important;
-      line-height: 30px;
-      float: right;
-    }
   }
