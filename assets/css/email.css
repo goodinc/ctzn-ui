@@ -239,19 +239,6 @@
     color: black;
   }
 
-  /* Powered by CTZN */
-  .ctzn {
-    margin-top: 20px;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    background: black;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 0 6px;
-    font-size: 10px;
-    display: inline-block;
-  }
-
 
   /* =Header
   -----------------------------------------------
@@ -399,9 +386,20 @@
     border-top: 10px solid rgb(150, 255, 108); /* @honeydew */
   }
 
+  /* Powered by CTZN */
+  .ctzn {
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0 6px;
+    font-size: 10px;
+    display: inline-block;
+  }
 
-  /* =Digest
-  ----------------------------------------------- */
+  /* Weekly Digest */
    .daily.headline,
   .weekly.headline {
     border-top-width: 0;
@@ -557,7 +555,7 @@
 
 
 
-  /* =Introduction
+  /* =Introduction (Welcome email)
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
@@ -1330,3 +1328,4 @@
     background-color: rgb(255, 117, 9); /* @orange */
     background-color: rgb(235, 97, 0); /* 4% darker */
   }
+
