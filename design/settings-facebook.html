@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,23 +19,14 @@
     })();
   </script>
 
-  <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/69a0da880569f7321da5707935b54e30a321adf2=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/e62eb390941ca7edf3bb675786c4e2f05627547a=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048);
-    }
-  </style>
+  <script src="../assets/js/placeholder.js"></script>
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -310,135 +300,209 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../design/">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section class="settings page">
+    <header>
+      <h1>My Settings</h1>
 
-  <h1>Design</h1>
+      <a href="" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-back"></use><foreignobject>←</foreignobject></svg>
+        <span>Go Back</span>
+      </a>
+
+      <p class="action">
+        <a href="">Done</a>
+      </p>
+    </header>
+
+    <div class="plumb push-card">
+      <h2 class="name">GOOD</h2>
+      <p class="action">
+        <a href="push-edit.html">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-edit"></use></svg>
+          Edit Push
+        </a>
+      </p>
+    </div>
+
+    <div class="tags option-list">
+      <h3>Pull These Hashtags</h3>
+      <ul>
+        <li>
+          <button>
+            <span>#freelotsangeles</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Delete</foreignobject></svg>
+          </button>
+        </li>
+        <li>
+          <button>
+            <span>#myla</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-close"></use><foreignobject>Delete</foreignobject></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="option-list">
+      <ul>
+        <li>
+          <a href="#add-hashtag">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <use xlink:href="#icon-add"></use>
+            </svg>
+            <span>add another hashtag</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="option-list">
+      <h3>From These Accounts</h3>
+      <ul>
+        <li class="instagram">
+          <a href="#instagram" role="checkbox" aria-checked="true">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use><foreignobject>Instagram</foreignobject></svg>
+            @<span>aldoatgood</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Connected</foreignobject></svg>
+          </a>
+        </li>
+        <li class="twitter">
+          <a href="#twitter-add" role="checkbox" aria-checked="false">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
+            <span>sync my twitter</span>
+          </a>
+        </li>
+        <li class="facebook">
+          <a href="#facebook-remove"  role="checkbox" aria-checked="true">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></svg>
+            <span class="username">aldoatgood</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Connected</foreignobject></svg>
+          </a>
+        </li>
+        <!--
+        <li class="facebook">
+          <a href="#facebook-remove"  role="checkbox" aria-checked="true">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></svg>
+            <span class="username">aldoatgood</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use><foreignObject>My Settings</foreignObject></svg>
+          </a>
+        </li>
+        <li class="facebook">
+          <a href="#facebook-add" role="checkbox" aria-checked="false">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignobject>sync my facebook</foreignobject></svg>
+            <span>sync my facebook</span>
+          </a>
+        </li>
+        -->
+      </ul>
+    </div>
 
 
-  <div class="pattern-list">
-    <section>
-      <h2>Reconnect Facebook</h2>
+    <div class="option-list">
+      <h3>Connect My Groups and Pages to this&nbsp;push</h3>
       <ul>
-        <li><a href="../design/dialog-facebook.html">Dialog</a></li>
-        <li><a href="../design/settings.html">Settings</a></li>
-        <li><a href="../design/settings-facebook.html">Settings (with groups and pages)</a></li>
+        <li class="facebook">
+          <a href="#facebook"  role="checkbox" aria-checked="false">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></svg>
+            <span class="username">Group Name</span>
+          </a>
+        </li>
+        <li class="facebook">
+          <a href="#facebook"  role="checkbox" aria-checked="false">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></svg>
+            <span class="username">Page Name</span>
+          </a>
+        </li>
       </ul>
-    </section>
-    <section>
-      <h2>Join via email</h2>
+    </div>
+
+    <div class="option-list">
+      <h3>Notifications</h3>
       <ul>
-        <li><a href="../email/join.html">Join</a></li>
-        <li><a href="../email/post.html">Post</a></li>
+        <li>
+          <a href="settings-digest.html">Email Digest</a>
+        </li>
+        <li>
+          <a href="settings-email.html">Email Notifications</a>
+        </li>
+        <li>
+          <a href="settings-push.html">Push Notifications</a>
+        </li>
       </ul>
-    </section>
-    <section>
-      <h2>*Heart* via email</h2>
-      <ul>
-        <li><a href="../email/daily.html">Daily Email</a></li>
-        <li><a href="../email/weekly.html">Weekly Email</a></li>
-      </ul>
-    </section>
+    </div>
+
     <!--
-    <section>
-      <h2>Request invite code</h2>
+    <div class="option-list">
+      <h3>Email Digest</h3>
       <ul>
-        <li><a href="../test/start.html">Start</a></li>
-        <li><a href="../test/join.html">Join</a></li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="true">
+            Daily
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Selected</foreignobject></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="checkbox" aria-checked="false">
+            Weekly
+          </a>
+        </li>
       </ul>
-    </section>
+    </div>
     -->
-    <section>
-      <h2>Feedback</h2>
+
+    <div class="option-list">
+      <h3>Share Push</h3>
       <ul>
-        <li><a href="../test/switch.html">Switch</a></li>
-        <li><a href="../test/feedback.html">Form</a></li>
+        <li>
+          <a href="http://www.ctznapp.com/push/0E4E704E/good" target="_blank">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-link"></use><foreignObject>Link</foreignObject></svg>
+            Public Page
+          </a>
+        </li>
+        <li>
+          <a href="http://www.ctznapp.com/push/0E4E704E/good?channel=1" target="_blank">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-link"></use><foreignObject>Link</foreignObject></svg>
+            Live Channel
+          </a>
+        </li>
+        <li>
+          <a href="widget.html">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use><foreignObject>Link</foreignObject></svg>
+            Live Channel Widget
+          </a>
+        </li>
       </ul>
-    </section>
-    <section>
-      <h2>Widget</h2>
+    </div>
+    <div class="option-list">
+      <h3>Invite Code</h3>
       <ul>
-        <li><a href="../test/settings.html">Settings</a></li>
-        <li><a href="../test/widget.html">Embed Code</a></li>
+        <li>
+          <span class="text">letsneighbor</span>
+        </li>
       </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Switch</h2>
+    </div>
+    <div class="option-list">
+      <h3>Invite Link</h3>
       <ul>
-        <li><a href="../test/switch.html">Activity Indicators</a></li>
-        <li><a href="../test/switch-alt.html">New Layout</a></li>
-        <li><a href="../test/switch-reorder.html">Reorder</a></li>
-        <li><a href="../test/switch-reorder-alt.html">Reorder (Drag)</a></li>
+        <li>
+          <a href="http://getctzn.com/join?p=abcdefg" target="_blank" class="disabled" onclick="event.preventDefault();">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-link"></use></svg>
+            getctzn.com/join?p=abcdefg
+          </a>
+        </li>
       </ul>
-    </section>
-    <section>
-      <h2>Digest</h2>
+      <p class="note">Press and hold (or right click) to copy URL</p>
+    </div>
+    <div class="option-list">
+      <h3>More Options</h3>
       <ul>
-        <li><a href="../email/weekly.html">Weekly</a></li>
-        <li><a href="../email/daily.html">Daily</a></li>
-        <li><a href="../design/archive.html">Archive</a></li>
-        <li><a href="../test/settings-digest.html">Settings</a></li>
+        <li>
+          <form action="" method="post">
+            <button>Leave Push</button>
+          </form>
+        </li>
       </ul>
-    </section>
-    <section>
-      <h2>Join Push</h2>
-      <h6>(via getctzn.com/join)</h6>
-      <ul>
-        <li><a href="../design/join.html">Join</a></li>
-        <li><a href="../design/preview.html">Preview</a></li>
-        <li><a href="../design/join-logged-in.html">Join (logged in)</a></li>
-        <li><a href="../design/preview-logged-in.html">Preview (logged in)</a></li>
-      </ul>
-      <h6>(via the app)</h6>
-      <ul>
-        <li><a href="../design/join-app.html">Join</a></li>
-        <li><a href="../design/preview-app.html">Preview</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Promote</h2>
-      <ul>
-        <li><a href="../design/promote.html">About</a></li>
-      </ul>
-    </section>
-    -->
-    <section>
-      <h2>Image loading</h2>
-      <ul>
-        <li><a href="../design/image-blur.html">Push</a></li>
-        <li><a href="../design/image-blur-loading.html">Push (loading)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Loading indicator</h2>
-      <ul>
-        <li><a href="../design/switch.html">Switch</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Error</h2>
-      <ul>
-        <li><a href="../error/app.html">Screen</a></li>
-        <li><a href="../error/startup.html">Startup</a></li>
-        <li><a href="../error/browser.html">Browser</a></li>
-        <li><a href="../error/50x.html">500</a></li>
-        <li><a href="../error/403.html">403</a></li>
-        <li><a href="../error/404.html">404</a></li>
-        <li><a href="../error/413.html">413</a></li>
-        <li><a href="../error/418.html">418</a></li>
-        <li><a href="../error/429.html">429</a></li>
-      </ul>
-    </section>
-  </div>
+    </div>
+  </section>
 
 </body>
 </html>
