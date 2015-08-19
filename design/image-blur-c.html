@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,23 +19,50 @@
     })();
   </script>
 
+  <script src="../assets/js/placeholder.js"></script>
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
+
   <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/69a0da880569f7321da5707935b54e30a321adf2=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/e62eb390941ca7edf3bb675786c4e2f05627547a=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048);
+
+    .post-item .body figure {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      padding: 0;
+      height: 0;
+      padding-bottom: 100%;
+      margin: 1.5em 0;
+
+      /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
+      overflow: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
     }
+    .post-item .body figure img {
+      min-width: 0;
+      min-height: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      background-color: transparent;
+    }
+    .post-item .body figure img.preview {
+      -webkit-filter: blur(1.5em);
+              filter: blur(1.5em);
+    }
+    .post-item .body figure img.primary {
+      display: none;
+    }
+
   </style>
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -310,135 +336,225 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../design/">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
+  <header class="primary">
+    <h2>
+      <a href=""><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></a>
+      <!--
+      <span class="network-indicator"><span class="sending icon"></span></span>
+      -->
+    </h2>
+
+    <a href="" class="notifications active"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-bell"></use><foreignObject>Notifications</foreignObject></svg></a>
+
+    <a href="" class="profile">
+      <span class="avatar"><img height="30" width="30" alt="Eshah" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100" /></span>
+    </a>
   </header>
 
-  <h1>Design</h1>
+  <section class="push">
 
+    <ol class="post-list">
 
-  <div class="pattern-list">
-    <section>
-      <h2>Reconnect Facebook</h2>
-      <ul>
-        <li><a href="../design/dialog-facebook.html">Dialog</a></li>
-        <li><a href="../design/settings.html">Settings</a></li>
-        <li><a href="../design/settings-facebook.html">Settings (with groups and pages)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Join via email</h2>
-      <ul>
-        <li><a href="../email/join.html">Join</a></li>
-        <li><a href="../email/post.html">Post</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>*Heart* via email</h2>
-      <ul>
-        <li><a href="../email/daily.html">Daily Email</a></li>
-        <li><a href="../email/weekly.html">Weekly Email</a></li>
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Request invite code</h2>
-      <ul>
-        <li><a href="../test/start.html">Start</a></li>
-        <li><a href="../test/join.html">Join</a></li>
-      </ul>
-    </section>
-    -->
-    <section>
-      <h2>Feedback</h2>
-      <ul>
-        <li><a href="../test/switch.html">Switch</a></li>
-        <li><a href="../test/feedback.html">Form</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Widget</h2>
-      <ul>
-        <li><a href="../test/settings.html">Settings</a></li>
-        <li><a href="../test/widget.html">Embed Code</a></li>
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Switch</h2>
-      <ul>
-        <li><a href="../test/switch.html">Activity Indicators</a></li>
-        <li><a href="../test/switch-alt.html">New Layout</a></li>
-        <li><a href="../test/switch-reorder.html">Reorder</a></li>
-        <li><a href="../test/switch-reorder-alt.html">Reorder (Drag)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Digest</h2>
-      <ul>
-        <li><a href="../email/weekly.html">Weekly</a></li>
-        <li><a href="../email/daily.html">Daily</a></li>
-        <li><a href="../design/archive.html">Archive</a></li>
-        <li><a href="../test/settings-digest.html">Settings</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Join Push</h2>
-      <h6>(via getctzn.com/join)</h6>
-      <ul>
-        <li><a href="../design/join.html">Join</a></li>
-        <li><a href="../design/preview.html">Preview</a></li>
-        <li><a href="../design/join-logged-in.html">Join (logged in)</a></li>
-        <li><a href="../design/preview-logged-in.html">Preview (logged in)</a></li>
-      </ul>
-      <h6>(via the app)</h6>
-      <ul>
-        <li><a href="../design/join-app.html">Join</a></li>
-        <li><a href="../design/preview-app.html">Preview</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Promote</h2>
-      <ul>
-        <li><a href="../design/promote.html">About</a></li>
-      </ul>
-    </section>
-    -->
-    <section>
-      <h2>Image loading</h2>
-      <ul>
-        <li><a href="../design/image-blur.html">Push</a></li>
-        <li><a href="../design/image-blur-c.html">Push (loading)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Loading indicator</h2>
-      <ul>
-        <li><a href="../design/switch.html">Switch</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Error</h2>
-      <ul>
-        <li><a href="../error/app.html">Screen</a></li>
-        <li><a href="../error/startup.html">Startup</a></li>
-        <li><a href="../error/browser.html">Browser</a></li>
-        <li><a href="../error/50x.html">500</a></li>
-        <li><a href="../error/403.html">403</a></li>
-        <li><a href="../error/404.html">404</a></li>
-        <li><a href="../error/413.html">413</a></li>
-        <li><a href="../error/418.html">418</a></li>
-        <li><a href="../error/429.html">429</a></li>
-      </ul>
-    </section>
-  </div>
+      <li  id="post-12486">
+        
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
+                </span>
+                <span class="avatar" ></span>
+                @<span >iamreal8</span>
+              </a>
+            </h3>
+            <p class="source" >
+              
+              
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              
+              
+            </p>
+            <p>
+              <a href="" >
+                
+                <time  datetime="2015-07-30T05:29:01+00:00">3 weeks ago</time>
+                
+              </a>
+            </p>
+          </header>
+
+          <div class="body" >
+            <figure style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAwEBAQEAAAAAAAAAAAAAAAIEAwEFBv/EACEQAAMAAgICAgMAAAAAAAAAAAABAgMRBCEFEjEyExQi/8QAGQEAAgMBAAAAAAAAAAAAAAAAAQMAAgUE/8QAGREAAwEBAQAAAAAAAAAAAAAAAAESAhFR/9oADAMBAAIRAxEAPwBHIjkociuDU6ZbZO5FclDg44D0FE7kDZwAGWTLXA2PBWWtI1ajXyh4cQ+mJewx6E+Mun9loavFuZb909G08uY0l8HcnMipa2KvYyMHm5+G8emnsCj88a/rsBi2yko+cWfK3tKhf3skv7NAAh6Z0Sjr8hbXdMI5l0+qYAVphlGq5NN69gAA2ySj/9k=)">
+              <a href="">
+                <!--
+                <img class="preview" src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=ps40x40" alt="" />
+                -->
+                <img class="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAwEBAQEAAAAAAAAAAAAAAAIEAwEFBv/EACEQAAMAAgICAgMAAAAAAAAAAAABAgMRBCEFEjEyExQi/8QAGQEAAgMBAAAAAAAAAAAAAAAAAQMAAgUE/8QAGREAAwEBAQAAAAAAAAAAAAAAAAESAhFR/9oADAMBAAIRAxEAPwBHIjkociuDU6ZbZO5FclDg44D0FE7kDZwAGWTLXA2PBWWtI1ajXyh4cQ+mJewx6E+Mun9loavFuZb909G08uY0l8HcnMipa2KvYyMHm5+G8emnsCj88a/rsBi2yko+cWfK3tKhf3skv7NAAh6Z0Sjr8hbXdMI5l0+qYAVphlGq5NN69gAA2ySj/9k=" alt="" />
+                <img class="primary" src="https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=s640x640" srcset="https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=s1920x1920 3x, https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=s1280x1280 2x, https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=s640x640 1x" alt="Uploaded image 1" />
+              </a>
+            </figure>
+            <p>Would love to hear... | #ctzn #greedycity #good</p>
+          </div>
+
+          <footer class="activity">
+            <ul class="action">
+              <li>
+                <button  role="checkbox" aria-checked="true">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-heart"></use><foreignObject>Heart</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="" >
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-reply"></use></svg>
+                  Comment
+                </a>
+              </li>
+              
+              <li>
+                <a href="" >
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              </li>
+            </ul>
+            <ul class="meta">
+              
+              
+              <li>
+                
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-heart"></use><foreignObject>Heart</foreignObject></svg>
+                  <ul>
+                    
+                      <li><a href="" >@eddy</a></li>
+                    
+                      <li><a href="" >@jeffdossett</a></li>
+                    
+                      <li><a href="" >@kaitlinmeek</a></li>
+                    
+                      <li><a href="" >@trice</a></li>
+                    
+                      <li><a href="" >@jim</a></li>
+                    
+                  </ul>
+                
+                
+              </li>
+              
+            </ul>
+          
+
+          
+
+          
+          </footer>
+        </article>
+      </li>
+
+      <li  id="post-12486">
+        
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c135x135 3x, https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c90x90 2x, https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c45x45">
+                </span>
+                <span class="avatar" ></span>
+                @<span >aaron</span>
+              </a>
+            </h3>
+            <p class="source" >
+              
+              
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></svg>
+              
+              
+            </p>
+            <p>
+              <a href="" >
+                
+                <time  datetime="2015-07-30T05:29:01+00:00">3 weeks ago</time>
+                
+              </a>
+            </p>
+          </header>
+
+          <div class="body" >
+            <figure style="padding-bottom: 134.73684211%; background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoAB4DARIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAwQFAAL/xAAhEAACAgICAwEBAQAAAAAAAAABAgADBBEFEhMhMVFBcf/EABgBAQADAQAAAAAAAAAAAAAAAAQBAgMF/8QAHhEBAAICAwEBAQAAAAAAAAAAAQACAxESITEiQQT/2gAMAwEAAhEDEQA/AHfFGMp68ZA1nwzpt6nrBlV8iwqJOgIvnZKlUai7q2/gmd85U2dy1cSunqHQKbfGx6tAWBKa67bWLt+gwmTNkr9D1EY6Y7br+xrxajFFtN9YdWA/2Kx/0UuTC+G1WQuYzzVb4iO3X3JHOXunLnfzWoSqJ9RPj1C4htzbXZFbR/JY4Q49FRdST67aleA+SeT+xSs2DtTarbHwGUKzfl3NeyAJ83K2CYGPV+QTqutWpQa1ofyFDFF6jUgKnkQtn2QebxjbmdiPU0qLvUhlPiglNfZ0B9amjWpqYcmPY2QpxXXWtn1NBtlidagGb3NIkz//2Q==)">
+              <a href="">
+                <!--
+                <img class="preview" src="https://m.ctznapp.qa2.goodalpaca.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=ps40x40" alt="" />
+                -->
+                <img class="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoAB4DARIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAwQFAAL/xAAhEAACAgICAwEBAQAAAAAAAAABAgADBBEFEhMhMVFBcf/EABgBAQADAQAAAAAAAAAAAAAAAAQBAgMF/8QAHhEBAAICAwEBAQAAAAAAAAAAAQACAxESITEiQQT/2gAMAwEAAhEDEQA/AHfFGMp68ZA1nwzpt6nrBlV8iwqJOgIvnZKlUai7q2/gmd85U2dy1cSunqHQKbfGx6tAWBKa67bWLt+gwmTNkr9D1EY6Y7br+xrxajFFtN9YdWA/2Kx/0UuTC+G1WQuYzzVb4iO3X3JHOXunLnfzWoSqJ9RPj1C4htzbXZFbR/JY4Q49FRdST67aleA+SeT+xSs2DtTarbHwGUKzfl3NeyAJ83K2CYGPV+QTqutWpQa1ofyFDFF6jUgKnkQtn2QebxjbmdiPU0qLvUhlPiglNfZ0B9amjWpqYcmPY2QpxXXWtn1NBtlidagGb3NIkz//2Q==" alt="" />
+                <img class="primary" src="https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s640x640" srcset="https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s1920x1920 3x, https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s1280x1280 2x, https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=s640x640 1x" alt="Uploaded image 1" />
+              </a>
+            </figure>
+            <p>Camp Tipsy is an "annual rotten boat building contest and camp-out held at East Park Reservoir in Colusa County, California" where my family spent the holiday weekend. The event hauls in broken parts from past years and sets up a wood shop on the shore. There were about 800 people there, who made roughly 50 boats.</p>
+
+            <p>Our terrible boat, called the "Oh My God Becky, Look at That Golf Boat, It Is so Big", was entered into the Least Comfortable category. As we demonstrated its functionality, it was described to the audience as "Made from the scratchiest astroturf available and offering no shade, this golf course offers the discerning golfer a choice of three holes while trying to stay balanced on a totally unstable platform."</p>
+
+            <p>We won! Our prize was an ugly trophy made out of scrap wood and dirty foam.</p>
+
+            <p>We also had a lot of fun.</p>
+
+            <p>More photos: <a href="https://goo.gl/MEZ3L2" target="_blank">goo.gl/MEZ3L2</a></p>
+
+          </div>
+
+          <footer class="activity">
+            <ul class="action">
+              <li>
+                <button  role="checkbox" aria-checked="true">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-heart"></use><foreignObject>Heart</foreignObject></svg>
+                </button>
+              </li>
+              <li>
+                <a href="" >
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-reply"></use></svg>
+                  Comment
+                </a>
+              </li>
+              
+              <li>
+                <a href="" >
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-more"></use><foreignObject>Options</foreignObject></svg>
+                </a>
+              </li>
+            </ul>
+            <ul class="meta">
+              
+              
+              <li>
+                
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-heart"></use><foreignObject>Heart</foreignObject></svg>
+                  <ul>
+                    
+                      <li><a href="" >@eddy</a></li>
+                    
+                      <li><a href="" >@jeffdossett</a></li>
+                    
+                      <li><a href="" >@kaitlinmeek</a></li>
+                    
+                      <li><a href="" >@trice</a></li>
+                    
+                      <li><a href="" >@jim</a></li>
+                    
+                  </ul>
+                
+                
+              </li>
+              
+            </ul>
+          
+
+          
+
+          
+          </footer>
+        </article>
+      </li>
+    </ol>
+  </section>
 
 </body>
 </html>
