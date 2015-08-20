@@ -26,12 +26,11 @@
   <![endif]-->
 
   <style>
+
   .reconnect {
-    margin-left: -1.25em;
-    margin-right: -1.25em;
     margin-top: -0.75em;
     background-color: #FFFF66;
-    padding: 0.75em 2.5em 0.7em 1.25em;
+    padding: 0.75em 3.5em 0.7em 1.25em;
     position: relative;
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
     background-color: black;
@@ -41,7 +40,36 @@
     margin: 0;
     font-size: 0.75em;
     line-height: 1.25;
+    position: relative;
   }
+  .reconnect button {
+    position: absolute;
+    top: 0;
+    right: -3.5em;
+    display: inline-block;
+    width: auto;
+    padding: 0.375em;
+    text-align: center;
+    border-radius: 0.25em;
+  }
+  .reconnect button .icon {
+    margin-right: 0 !important;
+  }
+
+  /* OPTIONAL: Make options stick to the sides at narrow window sizes. */
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .reconnect {
+      border-left-width: 0;
+      border-right-width: 0;
+      margin: 0 -1.25em; /* @page-padding */
+    }
+    .reconnect button {
+      right: -2.25em;
+    }
+  }
+
+
+
   .option-note:before {    
     content: "";
     position: absolute;
@@ -449,11 +477,10 @@
       </ul>
       <div class="reconnect">
         <p>
-          <button style="float: right; display: inline-block; width: auto; padding: 0.375em; text-align: center; border-radius: 0.25em">
-            <svg style="margin-right: 0" class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Refresh</foreignobject></svg>
-          </button>
           Reconnect Facebook to also post videos and content from Facebook Groups and Facebook Pages you&nbsp;manage.
-
+          <button>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Refresh</foreignobject></svg>
+          </button>
         </p>
       </div>
       <!--
