@@ -27,9 +27,11 @@
 
   <style>
   .reconnect {
+    margin-left: -1.25em;
+    margin-right: -1.25em;
     margin-top: -0.75em;
     background-color: #FFFF66;
-    padding: 0.75em 1.25em;
+    padding: 0.75em 2.5em 0.7em 1.25em;
     position: relative;
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
     background-color: black;
@@ -37,21 +39,41 @@
   }
   .reconnect p {
     margin: 0;
-    font-size: 0.875em;
+    font-size: 0.75em;
+    line-height: 1.25;
   }
-  .reconnect:before {    
+  .option-note:before {    
     content: "";
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 1.5em;
     width: 1em;
     height: 1em;
     margin-top: -0.5em;
     margin-left: -0.5em;
     -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
-    background-color: #FFFF66;
-    background-color: black;
+    background-color: rgb(238, 238, 238); /* @seashell */
+  }
+
+  .option-note {
+    position: relative;
+    margin-left: 3em;
+    margin-right: 3em;
+    font-size: 0.75em;
+    line-height: 1.25;
+    background-color: rgb(238, 238, 238); /* @seashell */
+    padding: 0.375em 0.75em;
+    border-radius: 0.125;
+    margin-bottom: 0;
+  }
+  .option-note + .icon {
+    top: 1.5em !important;
+  }
+  .option-note + .avatar {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
   }
   </style>
 
@@ -405,7 +427,8 @@
           <a href="#facebook-remove"  role="checkbox" aria-checked="true">
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></svg>
             <span class="username">aldoatgood</span>
-            <svg style="color: rgb(204, 204, 204); /* @aluminum */" class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignObject>Something went wrong. Fix my settings</foreignObject></svg>
+            <p class="option-note">Pulls in photos and status updates from your account.</p>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Connected</foreignobject></svg>
           </a>
         </li>
         <!--
@@ -425,7 +448,13 @@
         -->
       </ul>
       <div class="reconnect">
-        <p>Reconnect Facebook to post photos, videos, and status updates from your Facebook account, Facebook Groups, and Facebook Pages you&nbsp;manage.</p>
+        <p>
+          <button style="float: right; display: inline-block; width: auto; padding: 0.375em; text-align: center; border-radius: 0.25em">
+            <svg style="margin-right: 0" class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Refresh</foreignobject></svg>
+          </button>
+          Reconnect Facebook to also post videos and content from Facebook Groups and Facebook Pages you&nbsp;manage.
+
+        </p>
       </div>
       <!--
       <p class="note">Simply <span style="text-decoration: underline; color: rgb(255, 49, 102); /* @pitaya */">reconnect Facebook</span> to set it up.</p>
