@@ -25,87 +25,6 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
-  <style>
-
-  .reconnect {
-    margin-top: -0.75em;
-    background-color: #FFFF66;
-    padding: 0.75em 3.5em 0.7em 1.25em;
-    position: relative;
-    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
-    background-color: black;
-    color: white;
-  }
-  .reconnect p {
-    margin: 0;
-    font-size: 0.75em;
-    line-height: 1.25;
-    position: relative;
-  }
-  .reconnect button {
-    position: absolute;
-    top: 0;
-    right: -3.5em;
-    display: inline-block;
-    width: auto;
-    padding: 0.375em;
-    text-align: center;
-    border-radius: 0.25em;
-  }
-  .reconnect button .icon {
-    margin-right: 0 !important;
-  }
-
-  /* OPTIONAL: Make options stick to the sides at narrow window sizes. */
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .reconnect {
-      border-left-width: 0;
-      border-right-width: 0;
-      margin-left: -1.25em; /* @page-padding */
-      margin-right: -1.25em;
-    }
-    .reconnect button {
-      right: -2.25em;
-    }
-  }
-
-
-
-  .option-note:before {    
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1.5em;
-    width: 1em;
-    height: 1em;
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
-    background-color: rgb(238, 238, 238); /* @seashell */
-  }
-
-  .option-note {
-    position: relative;
-    margin-left: 3em;
-    margin-right: 3em;
-    font-size: 0.75em;
-    line-height: 1.25;
-    background-color: rgb(238, 238, 238); /* @seashell */
-    padding: 0.375em 0.75em;
-    border-radius: 0.125;
-    margin-bottom: 0;
-  }
-  .option-note + .icon {
-    top: 1.5em !important;
-  }
-  .option-note + .avatar {
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-  }
-  </style>
-
 </head>
 <body>
 
@@ -450,8 +369,8 @@
           <a href="#facebook-remove"  role="checkbox" aria-checked="true">
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></svg>
             <span class="username">Brian Nilsen</span>
-            <p class="option-note">Pulls in photos and status updates from your account.</p>
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>Connected</foreignobject></svg>
+            <p class="note">Pulls in photos and status updates from your account.</p>
           </a>
         </li>
         <!--
