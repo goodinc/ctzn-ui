@@ -4599,7 +4599,7 @@
   @media (min-width: 20em) and (min-height: 20em) {
     .mix-editor .selected-images {
       position: fixed;
-      z-index: 2;
+      z-index: 3; /* Just above the checkboxes */
       top: 3em;
       left: 0;
       width: 100%;
@@ -4649,16 +4649,17 @@
   .mix-editor .selected-images li {
     margin-top: 0;
     float: left;
+    background-color: rgba(255, 255, 255, 0.25);
   }
   .mix-editor .image-list      li img,
   .mix-editor .selected-images li img {
     display: block;
   }
-
-  .mix-editor .selected-images li,
-  .mix-editor .image-list li {
-    background-color: rgba(255, 255, 255, 0.25);
+  .mix-editor .selected-images li button {
+    padding: 0;
+    border-radius: 0;
   }
+
   .mix-editor .selected-images img {
     width  : 3.125em; /* 50px / @font-size */
     height : 3.125em;
@@ -4702,18 +4703,13 @@
   }
 
   /* Show selections */
-  .mix-editor .selected-images li {
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-  .hoverable .mix-editor .selected-images li:hover,
-             .mix-editor .selected-images li:active,
-             .mix-editor .selected-images li:focus {
+  .hoverable .mix-editor .selected-images li button:hover,
+             .mix-editor .selected-images li button:active,
+             .mix-editor .selected-images li button:focus {
     opacity: 0.8;
   }
   .mix-editor .image-list li {
     position: relative;
-    cursor: pointer;
   }
   .mix-editor .image-list li .number {
     background-color: rgb(255, 117, 9); /* @orange */
@@ -4721,6 +4717,7 @@
     text-align: center;
     color: white;
     font-size: 2.5em;
+    font-size: 10vw;
 
     position: absolute;
     width: 100%;
@@ -4742,12 +4739,8 @@
   .mix-editor .image-list li:focus {
     z-index: 1;
   }
-  .hoverable .mix-editor .image-list li:hover .number,
-  .mix-editor .image-list li:focus .number {
+  .hoverable .mix-editor .image-list li:hover .number {
     opacity: 0.25;
-  }
-  .mix-editor .image-list li.selected .number {
-    opacity: 0.75 !important;
   }
   .mix-editor .image-list li .number span {
     position: absolute;
@@ -4756,11 +4749,31 @@
     width: 100%;
     margin-top: -0.5em;
     line-height: 1;
+    opacity: 0;
   }
   .mix-editor .image-list li input {
     position: absolute;
-    z-index: 1;
+    z-index: 2; /* just above the image */
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked,
+  .mix-editor .image-list li input[type="checkbox"]:not(:checked) {
     opacity: 0;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number,
+  .mix-editor .image-list li input[type="checkbox"]:not(:checked) ~ .number {
+    cursor: pointer;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number span {
+    opacity: 1;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number {
+    opacity: 0.75 !important;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:focus ~ .number {
+    opacity: 0.25 !important;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked:focus ~ .number {
+    opacity: 1 !important;
   }
 
 

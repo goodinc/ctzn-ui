@@ -312,9 +312,11 @@
         <h2 style="display: none;">Select images</h2>
 
         <ol id="selectedImageList" style="">
-<li role="button" tabindex="0">
-            <img width="50" height="50" src="https://m.ctznapp.com/s3/ctzn/e21be1b7a4dc912883277ec5117283efe909b435=c100x100" alt="Selected Image 1">
-</li>
+          <li>
+            <button type="button">
+              <img width="50" height="50" src="https://m.ctznapp.com/s3/ctzn/e21be1b7a4dc912883277ec5117283efe909b435=c100x100" alt="Selected Image 1">
+            </button>
+          </li>
           <li role="button" tabindex="0">
             <img width="50" height="50" src="https://m.ctznapp.com/s3/ctzn/473060ff37c4cee6ff9fad1494e322fe1b119bbe=c100x100" alt="Selected Image 2">
 </li>
@@ -331,11 +333,19 @@
       
 
       <ul id="unselectedImageList" class="image-list">
-<li role="checkbox" tabindex="0" aria-checked="false" class="">
-          <img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/e97a160173e094a404d4198cf2db14bedb21a779=c640x640" alt="Image 1"><span class="number"></span>
+        <li>
+          <label>
+            <input type="checkbox" checked="checked" />
+            <img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/e97a160173e094a404d4198cf2db14bedb21a779=c640x640" alt="Image 1">
+            <span class="number"><span>1</span></span>
+          </label>
         </li>
-        <li role="checkbox" tabindex="0" aria-checked="false" class="">
-          <img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/35246eceb5faf6a63dfa10861c06080ee78ccc1a=c640x640" alt="Image 2"><span class="number"></span>
+        <li>
+          <label>
+            <input type="checkbox" checked="checked" />
+            <img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/35246eceb5faf6a63dfa10861c06080ee78ccc1a=c640x640" alt="Image 2">
+            <span class="number"><span>2</span></span>
+          </label>
         </li>
         <li role="checkbox" tabindex="0" aria-checked="false" class="">
           <img width="100" height="100" src="https://m.ctznapp.com/s3/ctzn/96bb9cf3dc146f460aeda6aa159e4af0e495d306=c640x640" alt="Image 3"><span class="number"></span>
