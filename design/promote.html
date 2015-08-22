@@ -551,6 +551,7 @@
     section h2 ~ h3 {
       max-width: 20em;
     }
+    section h2 ~ p,
     section h3 ~ p,
     section h3 ~ ul {
       font-weight: bold;
@@ -605,7 +606,7 @@
     }
     .more a {
       display: inline-block;
-      padding-top: 1.6666666667em; /* 25px / 21px */
+      padding-top: 0.7142857143em; /* 15px / 21px */
       border-top: 0.3125em solid black; /* 5px / @font-size */
     }
     .more a .icon {
@@ -622,11 +623,6 @@
     .periwinkle h2 a:active,
     .periwinkle h2 a:focus {
       color: white;
-    }
-    .periwinkle p {
-      color: white;
-      margin-top: 2.5em;
-      margin-bottom: 2.5em;
     }
 
     .periwinkle h3 a,
@@ -655,6 +651,11 @@
     .apple h3 {
       color: rgba(0, 0, 0, 0.6);
     }
+    .periwinkle p {
+      margin-top: 1.25em; /* @line-height */
+      margin-bottom: 2.5em;
+    }
+    .periwinkle  p,
     .apple       p,
     .blueberry   p,
     .plumb       p,
@@ -1096,6 +1097,20 @@
       }
 
     }
+
+
+    /*
+    .periwinkle h2 {
+      font-size: 1.5em;
+    }
+    @media (min-width: 60em) {
+      body > section.periwinkle {
+        min-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    */
 
   </style>
 
@@ -1737,7 +1752,7 @@
     <div class="figure">
       <figure>
         <a href="http://magazine.good.is">
-          <img src="push-for-good.png" alt="Push for good" />
+          <img src="push-for-good.png" width="500" alt="Push for good" style="margin: 1.25em;" />
         </a>
       </figure>
     </div>
