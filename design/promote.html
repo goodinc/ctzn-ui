@@ -1040,6 +1040,7 @@
         -webkit-flex-wrap: wrap;
                 flex-wrap: wrap;
       }
+      body > section.periwinkle,
       body > section.blueberry,
       body > section.tangerine {
         -webkit-flex-direction: row-reverse;
@@ -1099,18 +1100,14 @@
     }
 
 
-    /*
-    .periwinkle h2 {
-      font-size: 1.5em;
+    .periwinkle .figure {
+      padding-bottom: 2.5em;
     }
-    @media (min-width: 60em) {
-      body > section.periwinkle {
-        min-height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
+    @media (min-width: 88em) {
+      .periwinkle .figure {
+        padding: 0 2.5em;
       }
     }
-    */
 
   </style>
 
@@ -1738,6 +1735,13 @@
   </section>
 
   <section class="periwinkle">
+    <div class="figure">
+      <figure>
+        <a href="http://magazine.good.is">
+          <img src="push-for-good.png" width="500" alt="Push for good" />
+        </a>
+      </figure>
+    </div>
     <div class="text">
       <h2>Now featured on <a href="http://magazine.good.is">GOOD.IS</a></h2>
       <p>GOOD + CTZN have teamed up to spotlight impactful groups pushing to better their communities.</p>
@@ -1747,14 +1751,6 @@
           <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-right-circle"></use></svg>
         </a>
       </h3>
-    </div>
-
-    <div class="figure">
-      <figure>
-        <a href="http://magazine.good.is">
-          <img src="push-for-good.png" width="500" alt="Push for good" style="margin: 1.25em;" />
-        </a>
-      </figure>
     </div>
   </section>
 
