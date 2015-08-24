@@ -3244,23 +3244,18 @@
   }
 
   /* Make the content into a series of slides */
+  .mixable .push-card.page,
   .mixable .push-card.page .details,
-  .mixable .post-list > li {
-    height: 100vh;
+  .mixable .post-list > li,
+  .mixable .post-list > li .post-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    overflow: hidden;
-  }
-  .mixable .post-list > li {
-    position: relative;
-  }
-  .mixable .post-list > li .post-item {
-    height: 100vh;
-    /*
-    height: calc(100vh - 3.75em);
-    top: calc(0vh + 3.75em);
-    */
     overflow: hidden;
   }
   .mixable .post-list {
@@ -3487,7 +3482,7 @@
     border-width: 0 !important;
     float: none;
 
-    /* Preserve aspet ratio */
+    /* Preserve aspect ratio */
     min-width: 50%;
     min-height: 50%;
   }
