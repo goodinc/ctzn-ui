@@ -1,6 +1,6 @@
 
 /*
-  Shared styles, for pages on getctzn.com and ctznapp.com
+  Shared styles, for pages on ctznapp.com and secondary pages on getctzn.com
 
   Sections are grouped under headings with a “=” symbol,
   to make searching easier.
@@ -10,12 +10,12 @@
 
   For example…
 
-  @font-size      : 16px;
-  @line-height    : 24px;
-  @page-max-width : 32em;
+  16px  @font-size
+  24px  @line-height
+  32em  @page-max-width
 
   Styles for :hover effects are prefixed with “hoverable” so they can be disabled on touch devices.
-  (This helps prevent “sticky” buttons, when different screens are displayed within a single web page.)
+  (This helps prevent “sticky” buttons, when switching between different screens within a single web page.)
 */
 
 

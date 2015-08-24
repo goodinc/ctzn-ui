@@ -10,8 +10,8 @@
 
   For example…
 
-  @raspberry : rgb(235, 29, 82)
-  @seashell  : rgb(238, 238, 238)
+  rgb(235,  29,  82)  @raspberry
+  rgb(238, 238, 238)  @seashell
 */
 
 
@@ -28,7 +28,8 @@
     padding: 0;
   }
 
-  /* The “body” element isn’t present in some email clients, so apply some basic styles to a “.container” instead. */
+  /* The “body” element may not be present in email clients,
+     so apply some basic styles to a “.container” instead. */
   .container {
     font: 16px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: rgb(238, 238, 238); /* @seashell */
@@ -60,6 +61,8 @@
     border-width: 0;
   }
 
+  /* Make featured images for the weekly digest and screenshots
+     for the curator email span the full-width of the screen. */
   img.featured,
   img.screenshot {
     width: 580px;
@@ -74,6 +77,8 @@
 
 
   /* =Action
+  -----------------------------------------------
+  (a link that looks like a button)
   ----------------------------------------------- */
   .action a {
     display: inline-block;
@@ -110,15 +115,24 @@
   ----------------------------------------------- */
   svg.icon {
     vertical-align: middle;
-    margin-right: 5px;
     fill: currentColor;
   }
+
+  /* Social icons */
+  .article p.source {
+    margin-top: 0;
+    color: rgb(193, 193, 193);
+    font-size: 14px;
+    float: right;
+  }
+
+  /* For the “gave you some love” heading */
   div.heart {
-    max-height: 0;
+    height: 0; /* Some email clients generally don’t support floats, so we can achieve a similar effect by setting the height here to zero. */
     margin-left: 5px;
   }
 
-  /* Fallback content */
+  /* The heart icon contains a fallback character (for clients that don’t support SVG) */
   div.heart span {
     display: inline-block;
     height: 12px;
@@ -128,19 +142,16 @@
     color: rgb(255, 49, 102); /* @pitaya */
   }
 
-  .article p.source {
-    margin-top: 0;
-    color: rgb(193, 193, 193);
-    font-size: 14px;
-    float: right;
+  /* Most icons have text to the right */
+  svg.icon {
+    margin-right: 5px;
   }
-
-  /* There’s no text to the right of the heart icon */
+  /* …except for the icon in the heart button */
   .action .heart svg.icon {
     margin-right: 0;
   }
 
-  /* Active state */
+  /* Heart button, active state */
   .action .heart.active {
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(255, 49, 102); /* @pitaya */
@@ -311,7 +322,7 @@
       float: left;
     }
     .footer .unsubscribe {
-      margin-bottom: 0 !important;
+      margin-bottom: 0 !important; /* This is “!important” to override the inlined CSS rules */
       line-height: 30px;
       float: right;
     }
@@ -478,6 +489,10 @@
 
   /* =Layout
   -----------------------------------------------
+  The main column is 580 pixels wide.
+
+  It generally has 30 pixels of padding on the right and left.
+  -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
 
@@ -510,7 +525,6 @@
     max-width: 520px; /* 580px - (30px x 2) */
   }
   .article {
-    max-width: 600px;
     padding: 15px;
     max-width: 550px; /* 580px - (15px x 2) */
   }
@@ -685,6 +699,8 @@
 
   /* =Profile Preview
   -----------------------------------------------
+  (for the “Facebook connected” email)
+
   TBD: Can this combined with “.intro”
   ----------------------------------------------- */
   .profile {
@@ -774,6 +790,8 @@
 
 
   /* =Steps
+  -----------------------------------------------
+  (for the welcome email)
   ----------------------------------------------- */
   .steps ol {
     margin: 0;
@@ -846,6 +864,11 @@
   -----------------------------------------------
   ----------------------------------------------- */
 
+
+  /* =Statistics
+  -----------------------------------------------
+  (for the weekly digest)
+  ----------------------------------------------- */
   .stats {
     padding-left: 10px;
     padding-right: 10px;
@@ -962,6 +985,8 @@
 
 
   /* =Article
+  -----------------------------------------------
+  (an article is post on CTZN)
   ----------------------------------------------- */
   .article.summary-container {
     background: rgb(250, 250, 250); /* @casper */
@@ -995,6 +1020,9 @@
     display: block;
     height: 100px;
   }
+
+  /* An article summary is a smaller presentation of a post, intended for the post author 
+  (so they’ll a context when they’re looking at comments on their post). */
   .article .summary img.video-fallback {
     margin-bottom: 0;
   }
@@ -1111,6 +1139,10 @@
 
 
   /* =Video
+  -----------------------------------------------
+  (emails get a video preview in lieu of an actual video element)
+
+  TBD: At the time of this writing, this hasn’t been implemented.
   ----------------------------------------------- */
   .article a.video {
     background: rgb(44, 44, 44); /* @thorium */
@@ -1156,6 +1188,8 @@
 
 
   /* =Promotions
+  -----------------------------------------------
+  (for the email footer)
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
