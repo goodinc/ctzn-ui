@@ -3990,7 +3990,8 @@
   .mix-editor .selected-images li {
     margin-top: 0;
     float: left;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgb(204, 204, 204); /* @aluminum */
+    background-color: rgba(255, 255, 255, 0.2);
   }
   .mix-editor .image-list      li img,
   .mix-editor .selected-images li img {
@@ -3999,6 +4000,8 @@
   .mix-editor .selected-images li button {
     padding: 0;
     border-radius: 0;
+    background-color: rgb(204, 204, 204); /* @aluminum */
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
   .mix-editor .selected-images img {
