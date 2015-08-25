@@ -56,7 +56,7 @@
   }
 
   /* Make new HTML elements look nice in older browsers */
-  main, header, footer, section, article, aside, nav {
+  main, header, footer, section, article, aside, nav, figure {
     display: block;
   }
 
@@ -124,6 +124,34 @@
     }
   }
 
+  .login         h2,
+  .signup        h2,
+  .list          h2,
+  .notifications h2 {
+    margin-top: 2em; /* @line-height / 0.75em */
+
+    /* @tiny-headline */
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+
+
+  /* =Note
+  ----------------------------------------------- */
+  .option-list > p.note, /* For the “invite curator” form */
+  .signup.page .note,
+  form .note {
+    display: block;
+
+    /* @note */
+    font-style: italic;
+    font-size: 0.875em;
+    margin-top: 0.8571428571em; /* @line-height / 2 / 0.875em */
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+
+
 
   /* =Icons
   -----------------------------------------------
@@ -140,7 +168,6 @@
 
   /* =Loading Icon
   ----------------------------------------------- */
-
   @-webkit-keyframes spin {
     from {
       -webkit-transform: rotate(0deg);
@@ -201,7 +228,6 @@
 
   /* =Sending Icon
   ----------------------------------------------- */
-
   @-webkit-keyframes blink {
     0% {
       background-color: rgb(222, 222, 222); /* @silver */
@@ -274,11 +300,31 @@
   -----------------------------------------------
   ----------------------------------------------- */
 
+  /* Image */
   .avatar img {
     border-radius: 100%;
     vertical-align: middle;
   }
 
+  /* OPTIONAL: Make image avatars scale with the font size */
+  .avatar img[width="15"] {
+    width : 0.9375em; /* 15px / @font-size */
+    height: 0.9375em;
+  }
+  .avatar img[width="30"] {
+    width : 1.875em; /* 30px / @font-size */
+    height: 1.875em;
+  }
+  .avatar img[width="100"] {
+    width : 6.25em; /* 100px / @font-size */
+    height: 6.25em;
+  }
+  .avatar img {
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  /* Letter */
   .avatar > span {
     display: inline-block;
     background-color: rgb(204, 204, 204); /* @aluminum */
@@ -288,7 +334,6 @@
     border-radius: 100%;
     vertical-align: middle;
   }
-
   .avatar [data-content]:after {
     display: block;
     content: attr(data-content);
@@ -299,31 +344,13 @@
     text-align: center;
     opacity: 0.75;
   }
-
-  /* For the “my profile” link */
-  .avatar [data-content].has-icon:after {
-    opacity: 0;
-  }
-  .avatar [data-content].has-icon {
-    position: relative;
-  }
-  .avatar svg {
+  .avatar .name {
+    /* @hidden-accessible */
     position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
+    left: -9999px;
   }
 
-  .avatar .size15 {
-    font-size: 0.625em; /* 2/3 x 15px / @font-size */
-  }
-  .avatar .size30 {
-    font-size: 1.25em; /* 2/3 x 30px / @font-size */
-  }
-  .avatar .size100 {
-    font-size: 4.1666666667em; /* 2/3 x 100px / @font-size */
-  }
-
+  /* Colors */
   .avatar .clover {
     background-color: rgb(0, 235, 98); /* @clover */
   }
@@ -353,6 +380,31 @@
     color: white;
   }
 
+  /* Sizes */
+  .avatar .size15 {
+    font-size: 0.625em; /* 2/3 x 15px / @font-size */
+  }
+  .avatar .size30 {
+    font-size: 1.25em; /* 2/3 x 30px / @font-size */
+  }
+  .avatar .size100 {
+    font-size: 4.1666666667em; /* 2/3 x 100px / @font-size */
+  }
+
+  /* Icon (for links to “my profile”) */
+  .avatar [data-content].has-icon:after {
+    opacity: 0;
+  }
+  .avatar [data-content].has-icon {
+    position: relative;
+  }
+  .avatar svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+  }
+
   /* OPTIONAL: Make the icon a little larger, so the shape will reach the edges */
   .avatar .size30 svg {
     font-size: 1.1333333333em; /* 34px / 30px */
@@ -365,52 +417,29 @@
     margin-left: -0.06818181818em;
   }
 
-  .avatar .name {
-    /* @hidden-accessible */
-    position: absolute;
-    left: -9999px;
-  }
-
-  /* OPTIONAL: Make image avatars scale with the font size */
-  .avatar img[width="15"] {
-    width : 0.9375em; /* 15px / @font-size */
-    height: 0.9375em;
-  }
-  .avatar img[width="30"] {
-    width : 1.875em; /* 30px / @font-size */
-    height: 1.875em;
-  }
-  .avatar img[width="100"] {
-    width : 6.25em; /* 100px / @font-size */
-    height: 6.25em;
-  }
-  .avatar img {
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    background-color: rgba(0, 0, 0, 0.25);
-  }
-
-
 
   /* =Buttons
-  -----------------------------------------------
-  -----------------------------------------------
   ----------------------------------------------- */
   button,
   .action a,
   a .action {
+    margin: 0;
     border-width: 0;
-    font-family: inherit;
+
+    cursor: pointer;
     font-size: inherit;
+    font-family: inherit;
+
     font-weight: bold;
-    background-color: rgb(255, 49, 102); /* @pitaya */
-    color: white;
+    text-transform: lowercase;
+
     padding: 0.375em 1.125em;
     line-height: 1.5em;
     border-radius: 0.25em;
-    cursor: pointer;
+
     transition: background-color 0.2s, color 0.2s, opacity 0.2s;
-    text-transform: lowercase;
-    margin: 0;
+    background-color: rgb(255, 49, 102); /* @pitaya */
+    color: white;
   }
   .hoverable button:hover,
              button:active,
@@ -475,8 +504,7 @@
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
-
-  form p + p,
+  form p  + p,
   form li + li {
     margin-top: 0.75em;
   }
@@ -513,8 +541,8 @@
     opacity: 0.5;
   }
   .hoverable form ul.submit a:hover,
-  form ul.submit a:active,
-  form ul.submit a:focus {
+             form ul.submit a:active,
+             form ul.submit a:focus {
     opacity: 1;
   }
   form .submit button,
@@ -523,66 +551,15 @@
     font-weight: inherit;
   }
 
-  .option-list > p.note, /* For the “invite curator” form */
-  .signup.page .note,
-  form .note {
-    display: block;
-
-    /* @note */
-    font-style: italic;
-    font-size: 0.875em;
-    margin-top: 0.75em;
-    color: rgb(153, 153, 153); /* @nickel */
-  }
-
-  /* For the settings page */
-  .option-list li .note {
-    position: relative;
-    margin-left: 3em;
-    margin-right: 3em;
-    font-size: 0.75em;
-    line-height: 1.25;
-    background-color: rgb(238, 238, 238); /* @seashell */
-    padding: 0.375em 0.75em;
-    border-radius: 0.125;
-    margin-bottom: 0;
-  }
-  .option-list li .note:before {    
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1.5em;
-    width: 1em;
-    height: 1em;
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
-    background-color: rgb(238, 238, 238); /* @seashell */
-  }
-  .option-list li .note + .avatar {
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-  }
-
-  form .validation-message {
-    color: rgb(255, 49, 59); /* @watermelon */
-  }
-
-  .push-card .validation-message {
-    color: inherit;
-  }
-
 
   /* =Fields
   ----------------------------------------------- */
   .text-clone span,
-  input[type="text"],
-  input[type="url"],
-  input[type="email"],
+  input[type="text"    ],
+  input[type="url"     ],
+  input[type="email"   ],
   input[type="password"],
-  input[type="number"],
+  input[type="number"  ],
   textarea {
     font-family: inherit;
     font-size: inherit;
@@ -599,6 +576,7 @@
     border: 0.0625em solid rgb(222, 222, 222); /* @silver */
     margin-top: 0.25em;
   }
+  select,
   input[type="checkbox"] {
     font-size: inherit;
   }
@@ -615,35 +593,164 @@
     -webkit-text-fill-color: rgb(153, 153, 153); /* @nickel */
   }
   .supports-placeholder .text-clone span,
-  .supports-placeholder input[type="text"],
-  .supports-placeholder input[type="url"],
-  .supports-placeholder input[type="email"],
+  .supports-placeholder input[type="text"    ],
+  .supports-placeholder input[type="url"     ],
+  .supports-placeholder input[type="email"   ],
   .supports-placeholder input[type="password"],
-  .supports-placeholder input[type="number"],
+  .supports-placeholder input[type="number"  ],
   .supports-placeholder textarea {
     margin-top: 0;
     border-width: 0;
   }
 
 
-  /* =Settings
+  /* =Labels
   ----------------------------------------------- */
-  .settings select {
-    font-size: inherit;
+  label {
+    text-transform: lowercase;
   }
+  label br {
+    display: none;
+  }
+  .text   label,
+  .number label {
+    display: block;
+    padding-top: 0.1875em;
+    padding-bottom: 0.1875em;
+    position: relative;
+  }
+  p.text       label,
+  .number      label,
+  .placeholder label {
+    border-radius: 0.25em;
+  }
+  .code textarea,
+  .number input[type="number"] {
+    border-width: 0.0625em;
+  }
+  .code textarea {
+    height: 9em;
+  }
+  ul.number,
+  ul.number li,
+  ul.text,
+  ul.text li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  form .text li:first-of-type label {
+    border-top-left-radius     : 0.25em;
+    border-top-right-radius    : 0.25em;
+  }
+  form .text li:last-of-type label {
+    border-bottom-left-radius  : 0.25em;
+    border-bottom-right-radius : 0.25em;
+  }
+  .text .error label .icon:first-child,
+  .text.error  label .icon:first-child {
+    color: rgb(255, 49, 59); /* @watermelon */
+  }
+  .code   label span,
+  .number label span,
+  .text   label span {
+    color: rgb(153, 153, 153); /* @nickel */
+    padding: 0 0.75em;
+  }
+
+  /* Successfully validated */
+  .success label:after {
+    content: "";
+    position: absolute;
+    right: 0.5em;
+    top: 0.25em;
+    width: 1.5em;
+    height: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* @icon-checkmark */ /* @pear */
+    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg> */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDEwMiwgMjA0LCAwKSIgZD0iTTcuODU5IDE1LjUyMWwtNC42NTQtNC45MzZjLTAuNDc0LTAuNTAxLTAuNDUxLTEuMjk0IDAuMDUxLTEuNzY2czEuMjk1LTAuNDUgMS43NjcgMC4wNTFsMi44ODkgMy4wNjQgNy4wODktNy4wODljMC40ODktMC40ODkgMS4yNzktMC40ODkgMS43NjcgMHMwLjQ4OSAxLjI4IDAgMS43NjdsLTguOTEgOC45MXoiPjwvcGF0aD48L3N2Zz4=);
+  }
+
+  /* OPTIONAL: Hide the label in browsers that support placeholder */
+  .supports-placeholder .text label span {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  .supports-placeholder .text label {
+    background: white;
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
+
+    /* Make space for the success & error icons */
+    padding-right: 1.75em;
+  }
+  .supports-placeholder .success label:after {
+    top: 0;
+    height: 100%;
+  }
+  .supports-placeholder form .text li + li {
+    margin-top: 0;
+  }
+  .supports-placeholder form .text li + li label {
+    border-top-width: 0;
+  }
+
+/* TBD: Should the error message be outside of the item? */
+  .supports-placeholder form .text li.error + li label {
+    border-top-width: 0.0625em;
+  }
+
+
+  /* =Label Icons
+  ----------------------------------------------- */
+  .text label .icon:first-child {
+    margin-left: 0.25em;
+    /* @item-icon */
+    width: 1.75em;
+    height: 1.75em;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .disabled label .icon:first-child {
+    color: rgb(240, 240, 240);
+  }
+
+  /* OPTIONAL: Postion the icon above the field, in browsers that support placeholders */
+  .supports-placeholder form.has-icon .text label {
+    padding-left: 2.5em;
+  }
+  .supports-placeholder .text label .icon:first-child {
+    margin-left: 0;
+    position: absolute;
+    left: auto;
+    margin-left: -1.875em;
+    margin-top: 0.25em;
+  }
+
+
+  /* =Placeholders
+  ----------------------------------------------- */
+  ::-webkit-input-placeholder {
+    text-transform: lowercase;
+  }
+  ::-moz-placeholder {
+    text-transform: lowercase;
+  }
+  :-ms-input-placeholder {
+    text-transform: lowercase;
+  }
+
+
+  /* =Select (for email digest settings)
+  ----------------------------------------------- */
   .number li,
   .settings .datetime {
     margin-top: 0;
     display: inline-block;
     vertical-align: top;
   }
-  .number li label span {
-    display: block;
-  }
-  .number li input {
-    width: 5em;
-  }
-  ul.number li + li,
   .settings .datetime + .datetime {
     margin-left: 1.5em;
   }
@@ -673,165 +780,39 @@
   }
 
 
-  /* =Labels
+  /* =Number (for the widget embed code)
   ----------------------------------------------- */
-  label {
-    text-transform: lowercase;
+  .number li + li {
+    margin-left: 1.5em;
   }
-  label br {
-    display: none;
-  }
-  .number label,
-  .text label {
+  .number li label span {
     display: block;
-    padding-top: 0.1875em;
-    padding-bottom: 0.1875em;
-    position: relative;
   }
-  .supports-placeholder .text label {
-    background: white;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
-
-    /* Make space for the success & error icons */
-    padding-right: 1.75em;
-  }
-  .placeholder label,
-  .number label,
-  p.text label {
-    border-radius: 0.25em;
-  }
-  .code textarea,
-  .number input[type="number"] {
-    border-width: 0.0625em;
-  }
-  .code textarea {
-    height: 9em;
-  }
-  ul.number,
-  ul.number li,
-  ul.text,
-  ul.text li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .supports-placeholder form .text li + li {
-    margin-top: 0;
-  }
-  .supports-placeholder form .text li + li label {
-    border-top-width: 0;
-  }
-
-/* TBD: Should the error message be outside of the item? */
-  .supports-placeholder form .text li.error + li label {
-    border-top-width: 0.0625em;
-  }
-
-  form .text li:first-of-type label {
-    border-top-left-radius: 0.25em;
-    border-top-right-radius: 0.25em;
-  }
-  form .text li:last-of-type label {
-    border-bottom-left-radius: 0.25em;
-    border-bottom-right-radius: 0.25em;
-  }
-  .text .error label .icon:first-child,
-  .text.error  label .icon:first-child {
-    color: rgb(255, 49, 59); /* @watermelon */
-  }
-  .code   label span,
-  .number label span,
-  .text   label span {
-    color: rgb(153, 153, 153); /* @nickel */
-    padding: 0 0.75em;
-  }
-  .supports-placeholder .text label span {
-    /* @hidden-accessible */
-    position: absolute;
-    left: -9999px;
-  }
-  .success label:after {
-    content: "";
-    position: absolute;
-    right: 0.5em;
-    top: 0.25em;
-    width: 1.5em;
-    height: 1.5em;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .supports-placeholder .success label:after {
-    top: 0;
-    height: 100%;
-  }
-  .success label:after {
-    /* @icon-checkmark */ /* @pear */
-    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(102, 204, 0)" d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></svg> */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDEwMiwgMjA0LCAwKSIgZD0iTTcuODU5IDE1LjUyMWwtNC42NTQtNC45MzZjLTAuNDc0LTAuNTAxLTAuNDUxLTEuMjk0IDAuMDUxLTEuNzY2czEuMjk1LTAuNDUgMS43NjcgMC4wNTFsMi44ODkgMy4wNjQgNy4wODktNy4wODljMC40ODktMC40ODkgMS4yNzktMC40ODkgMS43NjcgMHMwLjQ4OSAxLjI4IDAgMS43NjdsLTguOTEgOC45MXoiPjwvcGF0aD48L3N2Zz4=), none;
-  }
-
-
-  /* =Label Icons
-  ----------------------------------------------- */
-  .text label .icon:first-child {
-    margin-left: 0.25em;
-    /* @item-icon */
-    width: 1.75em;
-    height: 1.75em;
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .disabled label .icon:first-child {
-    color: rgb(240, 240, 240);
-  }
-
-  .supports-placeholder form.has-icon .text label {
-    padding-left: 2.5em;
-  }
-  .supports-placeholder .text label .icon:first-child {
-    margin-left: 0;
-    position: absolute;
-    left: auto;
-    margin-left: -1.875em;
-    margin-top: 0.25em;
-  }
-
-
-  /* =Placeholders
-  ----------------------------------------------- */
-  ::-webkit-input-placeholder {
-    text-transform: lowercase;
-  }
-  ::-moz-placeholder {
-    text-transform: lowercase;
-  }
-  :-ms-input-placeholder {
-    text-transform: lowercase;
+  .number li input {
+    width: 5em;
   }
 
 
   /* =Image Upload Preview
+  -----------------------------------------------
+  Before uploading an image we show a preview (which sometimes needs to be rotated or flipped).
   ----------------------------------------------- */
-
   .img-preview-rotate-90 {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
   }
-
   .img-preview-rotate-180 {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
   }
-
   .img-preview-rotate-270 {
     -webkit-transform: rotate(270deg);
             transform: rotate(270deg);
   }
-
   .img-preview-flip-horizontal {
     -webkit-transform: scale(-1, 1);
             transform: scale(-1, 1);
   }
-
   .img-preview-flip-vertical {
     -webkit-transform: scale(1, -1);
             transform: scale(1, -1);
@@ -843,6 +824,17 @@
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
+
+  /* Update Indicator */
+  .update-indicator {
+    position: fixed;
+    top: 4em;
+    left: 50%;
+    min-width: 10em;
+    margin: 0 0 0 -5em;
+    text-align: center;
+    z-index: 9999; /* @infinity */
+  }
 
 
   /* =Message (pop-up at the bottom of the screen)
@@ -888,7 +880,7 @@
 
   /* =Loading/Error Message
   -----------------------------------------------
-  (for “in situ” messages that we show when content hasn’t loaded yet, or has failed to load)
+  for “in situ” messages that we show when content hasn’t loaded yet, or has failed to load
   ----------------------------------------------- */
   .error-message,
   .loading-message {
@@ -907,10 +899,22 @@
   }
 
 
+  /* =Validation Message
+  -----------------------------------------------
+  for error messages that appear next to a form field
+  ----------------------------------------------- */
+
+  form .validation-message {
+    color: rgb(255, 49, 59); /* @watermelon */
+  }
+  .push-card .validation-message {
+    color: inherit;
+  }
+
 
   /* =Upload Message
   -----------------------------------------------
-  (for sending form data, and downloading a video file to the device)
+  for sending form data, and downloading a video file to the device
   ----------------------------------------------- */
   section.update-countdown,
   section.upload-message {
@@ -994,7 +998,7 @@
 
   /* =Reconnect Message
   -----------------------------------------------
-  For the Facebook options on the settings page
+  for the Facebook options on the settings page
   ----------------------------------------------- */
   .option-list .reconnect {
     margin-top: -0.75em;
@@ -1041,7 +1045,7 @@
 
   /* =Empty Message
   -----------------------------------------------
-  (for the push screen, when there are no posts yet)
+  for the push screen, when there are no posts yet
   ----------------------------------------------- */
   .empty-message {
     text-align: center;
@@ -1067,32 +1071,9 @@
   }
 
 
-  /* =Confirmation Message
-  -----------------------------------------------
-  (for the password reset screen)
-  ----------------------------------------------- */
-  section.confirmation-message {
-    padding: 1.5em;
-  }
-  section.confirmation-message h1 {
-    font-size: inherit;
-    display: inline;
-  }
-  section.confirmation-message h1 + p:before {
-    content: " — ";
-  }
-  section.confirmation-message p {
-    display: inline;
-  }
-  section.confirmation-message .action {
-    display: block;
-    margin-top: 1.5em;
-  }
-
-
   /* =Confirmation
   -----------------------------------------------
-  (for the “mute conversation” and “unsubscribe” pages)
+  for the “mute conversation”, “unsubscribe”, and “password reset” pages
   ----------------------------------------------- */
   .confirmation.push-card.page {
     text-align: left;
@@ -1140,6 +1121,40 @@
     .confirmation.page > div svg.icon {
       font-size: 1.25em;
     }
+  }
+
+
+  /* =Loading Message (full screen)
+  ----------------------------------------------- */
+  section.loading {
+    color: rgb(246, 246, 246); /* @casper */
+    background-color: rgb(5, 5, 5); /* @tungsten */
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+  section.loading > div {
+    display: table-row;
+  }
+  section.loading > div > div {
+    display: table-cell;
+    padding: 3em 1.5em;
+    vertical-align: middle;
+    text-align: center;
+  }
+  section.loading h1 {
+    margin-top: 0;
+    font-size: inherit;
+  }
+  section.loading .loading-icon {
+    margin-left: 0.375em;
+    margin-right: 0.375em;
+  }
+  section.loading h1 svg {
+    display: block;
+    margin: 0 auto 1.25em;
+    height: 1.75em;
+    width: auto;
   }
 
 
@@ -1236,6 +1251,210 @@
   }
 
 
+  /* =Option List
+  ----------------------------------------------- */
+  .option-list h3 {
+    /* @tiny-headline */
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+  ul.option-list,
+  .option-list ul,
+  .option-list li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .option-list ul + ul {
+    margin-top: 0.75em;
+  }
+  .option-list li + li {
+    margin-top: 0;
+  }
+  .option-list a      > .icon:first-child,
+  .option-list button > .icon:first-child {
+    margin-right: 0.5em; /* SHIM: 0.75em - one whitespace character */
+
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .option-list .text, /* For the settings page */
+  .option-list a,
+  .option-list button,
+  .option-list label {
+    display: block;
+    text-align: left;
+    padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
+    text-decoration: none;
+    text-transform: lowercase;
+    font-weight: normal;
+    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
+    background: white;
+    color: rgb(5, 5, 5); /* @tungsten */
+    position: relative;
+    border-radius: 0;
+  }
+  .option-list a,
+  .option-list button {
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+
+  /* TRICKY: Buttons don’t fill the full width of the screen (even with “display” set to “block”).
+  http://stackoverflow.com/questions/27605390/why-doesnt-display-block-width-auto-stretch-a-button-to-fill-the-contai#answer-27605483 */
+  .option-list button {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  /* TRICKY: Allow uppercase in usernames from social networks on the settings page */
+  .option-list .username {
+    text-transform: none;
+  }
+
+  /* OPTIONAL: Make options stick to the sides at narrow window sizes. */
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .option-list .text,
+    .option-list a,
+    .option-list button,
+    .option-list label {
+      border-left-width: 0;
+      border-right-width: 0;
+      margin: 0 -1.25em; /* @page-padding */
+    }
+    .option-list button {
+      width: calc(100% + 2.5em);
+    }
+  }
+
+  .option-list button {
+    text-align: center;
+  }
+  .option-list a {
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+
+    /* @background-icon */
+    background-size: 1.5em auto;
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    background-position: calc(100% - 0.75em) 50%;
+
+    /* @icon-right */ /* @aluminum */
+    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
+  }
+  /* For the “invite curator” form */
+  .option-list a.disabled {
+    background-color: white !important; /* override the hover states */
+    background-image: none;
+  }
+
+  .option-list li + li a,
+  .option-list li + li button,
+  .option-list li + li label {
+    border-top-width: 0;
+  }
+     .tags.option-list button,
+  .connect.option-list button {
+    text-align: left;
+    color: rgb(5, 5, 5); /* @tungsten */
+  }
+  .tags.option-list button {
+    padding-right: 3em;
+  }
+     .tags.option-list li .icon:last-child,
+  .connect.option-list li .icon:last-child,
+  .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
+    margin-top: -0.75em;
+    position: absolute;
+    top: 1.375em !important;
+    right: 0.75em;
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .connect.option-list button .icon:last-child,
+  .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
+    color: rgb(102, 204, 0); /* @pear */
+  }
+
+  .hoverable .option-list a:hover,
+             .option-list a:active,
+             .option-list a:focus,
+  .hoverable .option-list button:hover,
+             .option-list button:active,
+             .option-list button:focus {
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+  .hoverable .option-list button:hover,
+             .option-list button:active,
+             .option-list button:focus {
+    color: rgb(235, 29, 82); /* @raspberry */
+  }
+  .option-list,
+  .option-list ul:first-child,
+  .option-list ul li:first-child {
+    margin-top: 0;
+  }
+  .option-list ul + ul {
+    margin-top: 3em;
+  }
+
+  /* For the settings page */
+  .option-list li .note {
+    position: relative;
+    margin-left: 3em;
+    margin-right: 3em;
+    font-size: 0.75em;
+    line-height: 1.25;
+    background-color: rgb(238, 238, 238); /* @seashell */
+    padding: 0.375em 0.75em;
+    border-radius: 0.125;
+    margin-bottom: 0;
+  }
+  .option-list li .note:before {    
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1.5em;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+    background-color: rgb(238, 238, 238); /* @seashell */
+  }
+  .option-list li .note + .avatar {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+  }
+
+  /* SHIM: Make options look nice on the push screen, which doesn’t have @page-padding */
+  section.push > .option-list li a {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-image: none;
+  }
+  section.push > .option-list li:first-child a {
+    border-top-width: 0;
+  }
+  
+  @media (min-width: 40em) {
+    section.push > .option-list li a {
+      text-align: center;
+    }
+  }
+
+
 
   /* =Lists
   -----------------------------------------------
@@ -1278,18 +1497,6 @@
     /* Center vertically. Assume the item is 48 pixels tall and the avatar is 30 pixels tall. (48px - 30px) / 2 = 9px */
     top: 0.5625em; /* 9px / @font-size */
   }
-  /*
-  .list li a .name {
-    display: table;
-  }
-  .list li a .name > span {
-    display: table-row;
-  }
-  .list li a .name > span > span {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  */
   .list ul h3,
   .list ul p {
     margin: 0;
@@ -1356,23 +1563,9 @@
     list-style: none;
     padding-left: 0;
   }
-
-  /* OPTIONAL: Remove whitespace above the list on the push page. */
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .post-list {
-      margin-top: 0;
-    }
-  }
-
   .post-list {
     padding-bottom: 3em;
   }
-
-  /* For the profile page */
-  .post-list:last-child {
-    margin-bottom: 0;
-  }
-
   .post-list > li {
     margin: 0 auto;
     max-width: 32em; /* image width / @font-size (512px / 16px) */
@@ -1380,6 +1573,8 @@
   .post-list > li:last-child {
     border-bottom-width: 0;
   }
+
+  /* Navigation */
   .post-list .next,
   .post-list .previous {
     text-align: center;
@@ -1400,6 +1595,18 @@
     border-top: 0.0625em solid rgb(222, 222, 222); /* @silver */
   }
 
+  /* For the profile page */
+  .post-list:last-child {
+    margin-bottom: 0;
+  }
+
+  /* OPTIONAL: Remove whitespace above the list on the push page. */
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .post-list {
+      margin-top: 0;
+    }
+  }
+
 
   /* =Post Item
   ----------------------------------------------- */
@@ -1413,39 +1620,10 @@
     z-index: 1;
   }
 
-  .post-list .moderated {
-    margin: 0;
-    display: block;
-    text-align: center;
-    background: rgb(51, 51, 51);
-    color: white;
-    font-size: 0.75em;
-    line-height: 2;
-    text-transform: uppercase;
+  /* Header */
+  .post-item header {
+    padding-left: 2em; /* 32px / @font-soze */
   }
-  .moderated + .post-item {
-    background-color: rgb(222, 222, 222); /* @silver */
-  }
-  .moderated + .post-item .avatar span[data-content] {
-    background-color: rgb(153, 153, 153); /* @nickel */
-  }
-  .moderated + .post-item img {
-    -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-  }
-  .moderated + .post-item footer .action button {
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.75);
-    border-color: transparent;
-    color: white;
-  }
-  .hoverable .moderated + .post-item footer .action button:hover,
-             .moderated + .post-item footer .action button:active,
-             .moderated + .post-item footer .action button:focus {
-    background-color: black;
-    color: white;
-  }
-
   .post-item header h3,
   .post-item header p {
     float: none;
@@ -1469,11 +1647,6 @@
              .post-item header h3 a:focus {
     color: rgb(235, 29, 82); /* @raspberry */
   }
-
-  .post-item header {
-    padding-left: 2em; /* 32px / @font-soze */
-  }
-
   .post-item header .avatar {
     position: absolute;
     left: 0.75em; /* 12px / @font-size */
@@ -1482,7 +1655,6 @@
     top: 0.5625em; /* 9px / @font-size */
     top: 1.0625em; /* 20px - 3px = 17px    …     17px / @font-size = 1.0625em */
   }
-
   .post-item header p {
     color: rgb(193, 193, 193);
     color: rgba(0, 0, 0, 0.25);
@@ -1501,14 +1673,12 @@
              .post-item header p a:focus {
     color: black;
   }
-  .post-item a.body {
-    text-decoration: none;
-    color: inherit;
-  }
-  .hoverable .post-item a.body:hover,
-             .post-item a.body:active,
-             .post-item a.body:focus {
-    background-color: rgba(0, 0, 0, 0.25);
+
+  /* Body */
+  .post-item .body {
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   .post-item .body img,
   .post-item .body video {
@@ -1517,42 +1687,8 @@
     height: auto;
     display: block;
   }
-  .post-item .body img.video-fallback {
-    margin-bottom: 0;
-  }
-  .post-item .body span.video-fallback {
-    font-size: 0.75em;
-    opacity: 0.5;
-    font-style: italic;
-  }
   .post-item .body img {
     border-radius: 0.125em;
-
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    background-color: rgba(0, 0, 0, 0.25);
-    min-width: 9em;
-    min-height: 9em;
-  }
-
-  /* TRICKY: Remove the minimum width and height, once the image has loaded
-            (panoramic images are sometimes shorter than the minimum height). */
-  .post-item .body img.loaded {
-    min-width: 0;
-    min-height: 0;
-  }
-
-  .post-item .body img[onclick] {
-    transition: opacity 0.2s;
-  }
-  .hoverable .post-item .body img[onclick]:hover,
-             .post-item .body img[onclick]:active,
-             .post-item .body img[onclick]:focus {
-    opacity: 0.8;
-  }
-  .post-item .body {
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
   }
   .post-item .body p {
     margin-top    : 0.6666666667em; /* 1.33em / 2 */
@@ -1563,9 +1699,62 @@
   .post-item .body p:last-child {
     margin-bottom: 0;
   }
+
+  /* OPTIONAL: Use the top-level list style for posts within a post-list/ */
   .post-item .body ul {
     list-style-type: disc;
   }
+
+  /* TBD: Are both of these in use? */
+  .post-item .body img.video-fallback {
+    margin-bottom: 0;
+  }
+  .post-item .body span.video-fallback {
+    font-size: 0.75em;
+    opacity: 0.5;
+    font-style: italic;
+  }
+
+  /*
+  .post-item a.body {
+    text-decoration: none;
+    color: inherit;
+  }
+  .hoverable .post-item a.body:hover,
+             .post-item a.body:active,
+             .post-item a.body:focus {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  */
+
+  /* SHIM: Images in the body behave like links. */
+  .post-item .body img[role="link"] {
+    transition: opacity 0.2s;
+  }
+  .hoverable .post-item .body img[role="link"]:hover,
+             .post-item .body img[role="link"]:active,
+             .post-item .body img[role="link"]:focus {
+    opacity: 0.8;
+  }
+
+  /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+  .post-item .body img {
+    background-color: rgba(0, 0, 0, 0.25);
+    min-width: 9em;
+    min-height: 9em;
+  }
+  /* TRICKY: Remove the minimum width and height, once the image has loaded
+            (panoramic images are sometimes shorter than the minimum height). */
+  .post-item .body img.loaded {
+    min-width: 0;
+    min-height: 0;
+  }
+
+
+  /* =Post Profile
+  -----------------------------------------------
+  when a new member joins a push, a profile post is generated
+  ----------------------------------------------- */
   .post-item .profile {
     margin-top: 1.25em;
     margin-bottom: 1.25em;
@@ -1628,6 +1817,10 @@
     display: block;
     padding: 0.75em;
   }
+
+
+  /* =Post Footer
+  ----------------------------------------------- */
   .post-item footer {
     margin-top: 1.25em;
   }
@@ -1718,7 +1911,6 @@
   .post-item footer .action li:first-child:last-child {
     float: none;
   }
-
   .post-item footer .meta {
     font-size: 0.6875em; /* 11px / @font-size */
     line-height: 1.6363636364em; /* @line-height / 0.6875em x 3/2 */
@@ -1772,7 +1964,6 @@
     color: rgb(235, 29, 82); /* @raspberry */
   }
 
-
   .post-item footer .meta > li > svg {
     font-size: 0.9090909091em; /* 10px / 11px */
   }
@@ -1793,11 +1984,556 @@
   }
 
 
+  /* =Moderated
+  ----------------------------------------------- */
 
-  /* =Push
+  /* Message */
+  .post-list .moderated {
+    margin: 0;
+    display: block;
+    text-align: center;
+    background: rgb(51, 51, 51);
+    color: white;
+    font-size: 0.75em;
+    line-height: 2;
+    text-transform: uppercase;
+  }
+
+  /* Moderated posts get special colors */
+  .moderated + .post-item {
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+  .moderated + .post-item .avatar span[data-content] {
+    background-color: rgb(153, 153, 153); /* @nickel */
+  }
+  .moderated + .post-item img {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  .moderated + .post-item footer .action button {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-color: transparent;
+    color: white;
+  }
+  .hoverable .moderated + .post-item footer .action button:hover,
+             .moderated + .post-item footer .action button:active,
+             .moderated + .post-item footer .action button:focus {
+    background-color: black;
+    color: white;
+  }
+
+
+  /* =Comments
+  ----------------------------------------------- */
+  .comments      .post-list,
+  .notifications .post-list {
+    margin-left : -1.25em; /* @page-padding */
+    margin-right: -1.25em; /* @page-padding */
+    padding-bottom: 0;
+  }
+  .comments      .post-item,
+  .notifications .post-item {
+    margin-bottom: 0.07142857143em;
+    position: relative;
+    padding: 1.1428571429em 0.8571428571em; /* 16px / 14px */  /* 12px / 14px */
+    padding-left: 3.5714285714em; /* 50px / 14px */
+    font-size: 0.875em; /* 14px / @font-size */
+    line-height: 1.2857142857; /* @line-height / 0.875 x 3/4 */
+  }
+  .comments      .post-item {
+    background: transparent;
+  }
+  .comments      .post-item header,
+  .notifications .post-item header {
+    padding-left: 0;
+  }
+  .comments      .post-item header .avatar,
+  .notifications .post-item header .avatar {
+    position: absolute;
+    font-size: 1.1428571429em; /* 1 / 0.875 */
+
+    top: 0.625em; /* 10px / 16px */
+    left: 0.625em; /* 10px / 16px */
+  }
+  .comments      .post-item .time,
+  .notifications .post-item .time {
+    margin: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: rgb(193, 193, 193);
+    font-size: 0.6666666667em;
+    text-transform: uppercase;
+  }
+
+  .post-item footer .more a,
+  .comments .post-item {
+    padding-top    : 0.2857142857em; /* 4px / 14px */
+    padding-bottom : 0.2857142857em;
+    padding-left   : 2.8571428571em; /* 40px / 14px */
+  }
+  .comments .post-item header .avatar {
+    top: 0.1428571429em; /* 2px / 14px */
+    left: 1.25em;
+  }
+  .comments .post-item .body p {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+
+  /* Post footer */
+  .post-item footer .action {
+    margin-top: 1.25em;
+    margin-bottom: 0;
+  }
+  .post-item footer .action:first-child {
+    margin-top: 0;
+  }
+  .post-item footer .comments {
+    margin-top: 0.25em; /* 4px / @font-size */
+  }
+  .post-item footer .comments .post-list {
+    margin-top: 0;
+  }
+  .post-item footer .more {
+    margin-bottom: 0.25em;
+  }
+  .post-item footer .more a {
+    color: rgb(153, 153, 153); /* @nickel */
+    text-decoration: none;
+    font-size: 0.875em; /* 14px / @font-size */
+    font-weight: bold;
+  }
+  .hoverable .post-item footer .more a:hover,
+             .post-item footer .more a:active,
+             .post-item footer .more a:focus {
+    color: rgb(235, 29, 82); /* @raspberry */
+  }
+
+  /* Make comments more compact */
+  .comments      .post-item header,
+  .comments      .post-item header h3,
+  .comments      .post-item .body,
+  .comments      .post-item .body p:first-child,
+  .comments      .post-item .text label,
+  .notifications .post-item header,
+  .notifications .post-item header h3,
+  .notifications .post-item .body,
+  .notifications .post-item .body p {
+    float: none;
+    display: inline;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .comments      .post-item .body,
+  .notifications .post-item .body {
+    margin-right: 0.375em;
+  }
+
+  /* TBD: Is this in use? */
+  .comments h2 {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+
+
+  /* =Edit Comment Form
+  -----------------------------------------------
+  TBD: This hasn’t been implemented yet.
+  ----------------------------------------------- */
+  .comments .post-item form {
+    margin-top: -15px;
+  }
+  .comments .post-item label {
+    border-width: 0;
+  }
+  .comments .post-item textarea {
+    border: 1px solid rgb(222, 222, 222); /* @silver */
+    border-radius: 0.25em;
+  }
+
+
+  /* =Notifications
+  ----------------------------------------------- */
+  .notifications.page > div {
+    padding-top: 0;
+  }
+  .notifications .post-item {
+    min-height: 3.4285714286em; /* 48px / 14px */
+    padding-right: 5.7142857143em; /* 80px / 14px */
+  }
+  .notifications .post-item header .icon {
+    position: absolute;
+    font-size: 1.1428571429em; /* 1 / 0.875 */
+
+    /* SHIM: These numbers are arbitrary, but seem to work well. */
+    top: 1em;
+    left: 0.75em;
+  }
+  .notifications .post-item .body img {
+    margin: 0;
+    width  : 4.2857142857em; /* target image size / font size (60px / 14px) */
+    height : 4.2857142857em;
+    min-width: 1px;
+    min-height: 1px;
+    position: absolute;
+    top  : 0.7142857143em; /* 10px / 14px */
+    right: 0.7142857143em;
+  }
+  .notifications .post-list .post-item footer {
+    font-size: 1.1428571429em; /* 1 / 0.875em */
+  }
+
+
+
+  /* =Page
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
+
+  /* SHIM: Make screens fill the viewport. */
+  body > #loading-screen,
+  body > #screen,
+  body > #screen > div[data-screen] {
+    display: inline;
+  }
+
+
+  /* =Push
+  ----------------------------------------------- */
+  section.push {
+    background-color: rgb(246, 246, 246); /* @casper */
+    color: rgb(5, 5, 5); /* @tungsten */
+
+    min-height: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+    /* Make space for “.create” */
+    padding-bottom: 6em;
+  }
+
+
+  /* =Page
+  ----------------------------------------------- */
+     main.page,
+  section.page {
+    background-color: rgb(246, 246, 246); /* @casper */
+    color: rgb(5, 5, 5); /* @tungsten */
+
+    min-height: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+     main.text.page,
+  section.text.page {
+    background-color: white;
+  }
+
+  .page > article,
+  .page > div,
+  .page > form,
+  .page > aside {
+    padding: 1.25em; /* @page-padding */
+    max-width: 32em; /* image width / font-size (512px / 16px) */
+    margin: 0 auto;
+  }
+
+  .page > article:last-child,
+  .page >     div:last-child,
+  .page >    form:last-child,
+  .page >   aside:last-child {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
+
+  /* OPTIONAL: Space things out a bit, if the screen is tall. */
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    header.primary ~ .page > div,
+    .join.page > div,
+    .start.page > div,
+    .page > header + article,
+    .page > header + div,
+    .page > header + form {
+      margin-top: 3em;
+    }
+
+    /* SHIM: Handle the case where a hidden status message appears before the content */
+    .page > header ~ *[style*="display: none"] + div,
+    .page > header ~ *[style*="display: none"] + form {
+      margin-top: 3em;
+    }
+
+    /* Don’t add space above a push-card (since it spans the full-width of the screen). */
+    .page > div.push-card,
+    .page > div.preview {
+      margin-top: 0;
+    }
+  }
+
+  /* For the editor, preview and dialog pages */
+  .page > a {
+    padding: 0.75em 1em; /* @line-height / 2 */ /* @font-size */
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .page > a svg {
+    margin-left: -0.25em; /* @header-padding - 0.75em */
+    margin-right: -0.25em;
+    display: block;
+  }
+
+  /* For the settings pages during onboarding? */
+  .page > aside {
+    padding-top: 0;
+  }
+  .page aside {
+    margin-top: 1.5em;
+  }
+  .submit + aside {
+    margin-top: 3em;
+  }
+  .page > form > .text:first-child {
+    margin-top: 0;
+  }
+
+
+  /* =Page Header
+  ----------------------------------------------- */
+  .page > header {
+    text-align: center;
+    padding: 3em 0.75em 0.75em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: rgb(51, 51, 51); /* @iron */
+    color: white;
+    border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+  }
+  .page > header h1 {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    text-transform: lowercase;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+
+  /* TRICKY: Allow uppercase for the name of the push on the preview page */
+  .page > header h1.name {
+    text-transform: inherit;
+  }
+
+  .page > header a {
+    color: rgb(204, 204, 204); /* @aluminum */
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .hoverable .page > header a:hover,
+             .page > header a:active,
+             .page > header a:focus {
+    color: white;
+  }
+  .page > header .action,
+  .page > header .next,
+  .page > header .back {
+    position: absolute;
+    top: 0;
+    padding: 0.75em 1em; /* @line-height */ /* @header-padding */
+    border: 0 solid rgb(44, 44, 44); /* @thorium */
+  }
+  .page > header .next svg,
+  .page > header .back svg {
+    display: block;
+    margin-left: -0.25em; /* @header-padding - 0.75em */
+    margin-right: -0.25em;
+  }
+  .page > header .action,
+  .page > header .next {
+    right: 0;
+    border-left-width: 0.0625em;
+  }
+  .page > header .action {
+    margin-top: 0;
+    padding: 0.375em;
+  }
+  .page > header .action a {
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .page > header .back {
+    left: 0;
+    border-right-width: 0.0625em;
+  }
+  .page > header .next,
+  .page > header .back {
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  /* Back buttons sometimes have both an icon and a label */
+  .page > header .next svg.icon {
+    display: inline;
+    margin-left: 0.5em;
+    vertical-align: top;
+  }
+  .page > header .back svg.icon {
+    display: inline;
+    margin-right: 0.5em;
+    vertical-align: top;
+  }
+  .page > header .next svg.icon:first-child {
+    margin-left: 0;
+  }
+  .page > header .back svg.icon:last-child {
+    margin-right: 0;
+  }
+
+  /* OPTIONAL: Hide the button labels on small screens */
+  @media (max-width: 60em) {
+    .page > header .next svg.icon {
+      margin-left: 0;
+      display: block;
+    }
+    .page > header .back svg.icon {
+      margin-right: 0;
+      display: block;
+    }
+    .page > header .back svg.icon + span {
+      position: absolute;
+      left: -9999px;
+    }
+    .page > header .next span {
+      position: absolute;
+      left: -9999px;
+    }
+    .page > header .next span:first-child:last-child {
+      position: static;
+    }
+  }
+
+  /* OPTIONAL: Give edit and detail pages a white header. */
+  .mix.page          > header,
+  .mixes.page        > header,
+  .mix-editor.page   > header,
+  .post.page         > header,
+  .edit.page         > header,
+  .edit-push.page    > header,
+  .edit-profile.page > header {
+    background-color: white;
+    color: black;
+    border-bottom-color: rgb(222, 222, 222); /* @silver */
+  }
+  .mix.page          > header a,
+  .mixes.page        > header a,
+  .mix-editor.page   > header a,
+  .post.page         > header a,
+  .edit.page         > header a,
+  .edit-push.page    > header a,
+  .edit-profile.page > header a {
+    border-color: transparent !important;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .hoverable .mix.page          > header a:hover,
+             .mix.page          > header a:active,
+             .mix.page          > header a:focus,
+  .hoverable .mixes.page        > header a:hover,
+             .mixes.page        > header a:active,
+             .mixes.page        > header a:focus,
+  .hoverable .mix-editor.page   > header a:hover,
+             .mix-editor.page   > header a:active,
+             .mix-editor.page   > header a:focus,
+  .hoverable .post.page         > header a:hover,
+             .post.page         > header a:active,
+             .post.page         > header a:focus,
+  .hoverable .edit.page         > header a:hover,
+             .edit.page         > header a:active,
+             .edit.page         > header a:focus,
+  .hoverable .edit-push.page    > header a:hover,
+             .edit-push.page    > header a:active,
+             .edit-push.page    > header a:focus,
+  .hoverable .edit-profile.page > header a:hover,
+             .edit-profile.page > header a:active,
+             .edit-profile.page > header a:focus {
+    color: black;
+  }
+
+  /* OPTIONAL: Position the submit button in the header */
+  .edit-push.page    > header ~ form ul.text,
+  .edit-profile.page > header ~ form ul.text {
+    margin-bottom: 0;
+  }
+  .edit-push.page    > header ~ form .submit,
+  .edit-profile.page > header ~ form .submit,
+  .post-editor.page  > header ~ form .submit,
+  .mix-editor.page   > header ~ form .submit {
+    position: absolute;
+    z-index: 2;
+    top: 0.375em;
+    right: 0.375em;
+    margin: 0;
+  }
+  .edit-push.page    > header ~ form .submit button,
+  .edit-profile.page > header ~ form .submit button,
+  .post-editor.page  > header ~ form .submit button,
+  .mix-editor.page   > header ~ form .submit button {
+    font-size: inherit;
+    font-weight: bold;
+  }
+
+  @media (min-width: 20em) {
+    .page > header {
+      padding-top: 0.75em;
+    }
+  }
+  @media (min-width: 20em) and (min-height: 20em) {
+
+    /* OPTIONAL: Make the header sticky */
+       main.page,
+    section.page {
+      padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
+    }
+    .page > header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 0.75em 6em; /* The right/left padding numbers here are arbitrary, but ideally large
+                              enough to prevent the title from overlapping with the back/next buttons. */
+    }
+    .edit-push.page    > header ~ form .submit,
+    .edit-profile.page > header ~ form .submit,
+    .post-editor.page  > header ~ form .submit,
+    .mix-editor.page   > header ~ form .submit {
+      position: fixed; /* Position the submit button in the header */
+    }
+
+    /* OPTIONAL: Limit the headline to a single line. */
+    .page > header h1 {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      white-space: nowrap;
+      word-wrap     : inherit;
+      overflow-wrap : inherit;
+    }
+  }
+
 
   /* =Header (ctzn logo)
   ----------------------------------------------- */
@@ -1959,6 +2695,24 @@
     }
   }
 
+  /* OPTIONAL: Make the header sticky */
+  @media (min-width: 20em) and (min-height: 20em) {
+    header.primary {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    /* Make space for the sticky header */
+    header.primary ~ section.push {
+      padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
+    }
+  }
+
+
+  /* =Footer
+  ----------------------------------------------- */
   footer.primary .about,
   footer.primary .legal {
     padding: 0.75em;
@@ -1985,51 +2739,6 @@
     color: rgb(102, 102, 102); /* @tin */
     font-size: 0.75em;
     line-height: 2em;
-  }
-
-
-  /* =Push
-  ----------------------------------------------- */
-  section.push {
-    background-color: rgb(246, 246, 246); /* @casper */
-    color: rgb(5, 5, 5); /* @tungsten */
-
-    min-height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-
-    /* Make space for “.create” */
-    padding-bottom: 6em;
-  }
-
-  /* Update Indicator */
-  .update-indicator {
-    position: fixed;
-    top: 4em;
-    left: 50%;
-    min-width: 10em;
-    margin: 0 0 0 -5em;
-    text-align: center;
-    z-index: 9999; /* @infinity */
-  }
-
-
-  @media (min-width: 20em) and (min-height: 20em) {
-
-    /* OPTIONAL: Make the header sticky */
-    header.primary {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-    /* Make space for the sticky header */
-    header.primary ~ section.push,
-    header.primary ~ main.about {
-      padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
-    }
-
   }
 
 
@@ -2111,516 +2820,16 @@
 
 
 
-  /* =Page
+  /* =Push
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
-
-     main.page,
-  section.page {
-    background-color: rgb(246, 246, 246); /* @casper */
-    color: rgb(5, 5, 5); /* @tungsten */
-
-    min-height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-     main.text.page,
-  section.text.page {
-    background-color: white;
-  }
-
-  .page > article,
-  .page > div,
-  .page > form,
-  .page > aside {
-    padding: 1.25em; /* @page-padding */
-    max-width: 32em; /* image width / font-size (512px / 16px) */
-    margin: 0 auto;
-  }
-
-  .page > article:last-child,
-  .page >     div:last-child,
-  .page >    form:last-child,
-  .page >   aside:last-child {
-    padding-bottom: 4.5em; /* @page-bottom-padding */
-  }
-
-  /* OPTIONAL: Space things out a bit, if the screen is tall. */
-  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-    header.primary ~ .page > div,
-    .join.page > div,
-    .start.page > div,
-    .page > header + article,
-    .page > header + div,
-    .page > header + form {
-      margin-top: 3em;
-    }
-
-    /* SHIM: Handle the case where a hidden status message appears before the content */
-    .page > header ~ *[style*="display: none"] + div,
-    .page > header ~ *[style*="display: none"] + form {
-      margin-top: 3em;
-    }
-
-    /* Don’t add space above a push-card (since it spans the full-width of the screen). */
-    .page > div.push-card,
-    .page > div.preview {
-      margin-top: 0;
-    }
-  }
-
-  /* SHIM: Add extra padding to the bottom of pages with forms, to prevent the virtual keyboard
-           from obscuring the fields and buttons on Android (in standalone webview mode). */
-  /*
-  .page >         form:last-child,
-  .page > form ~ aside:last-child,
-  .start.page >    div:last-child,
-  .post.page >     div:last-child {
-    padding-bottom: 17.5em;
-  }
-  */
-
-  /* For the editor, preview and dialog pages */
-  .page > a {
-    padding: 0.75em 1em; /* @line-height / 2 */ /* @font-size */
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .page > a svg {
-    margin-left: -0.25em; /* @header-padding - 0.75em */
-    margin-right: -0.25em;
-    display: block;
-  }
-
-  /* For the settings pages during onboarding? */
-  .page > aside {
-    padding-top: 0;
-  }
-  .page aside {
-    margin-top: 1.5em;
-  }
-  .submit + aside {
-    margin-top: 3em;
-  }
-  .page > form > .text:first-child {
-    margin-top: 0;
-  }
-
-
-  /* =Page Header
-  ----------------------------------------------- */
-  .page > header {
-    text-align: center;
-    padding: 3em 0.75em 0.75em;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    background-color: rgb(51, 51, 51); /* @iron */
-    color: white;
-    border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
-  }
-  .page > header h1 {
-    margin: 0;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-    text-transform: lowercase;
-
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-  }
-
-  /* TRICKY: Allow uppercase for the name of the push on the preview page */
-  .page > header h1.name {
-    text-transform: inherit;
-  }
-
-  .page > header a {
-    color: rgb(204, 204, 204); /* @aluminum */
-    color: rgba(255, 255, 255, 0.8);
-  }
-  .hoverable .page > header a:hover,
-             .page > header a:active,
-             .page > header a:focus {
-    color: white;
-  }
-  .page > header .action,
-  .page > header .next,
-  .page > header .back {
-    position: absolute;
-    top: 0;
-    padding: 0.75em 1em; /* @line-height */ /* @header-padding */
-    border: 0 solid rgb(44, 44, 44); /* @thorium */
-  }
-
-  .page > header .next svg,
-  .page > header .back svg {
-    display: block;
-    margin-left: -0.25em; /* @header-padding - 0.75em */
-    margin-right: -0.25em;
-  }
-
-  .page > header .action,
-  .page > header .next {
-    right: 0;
-    border-left-width: 0.0625em;
-  }
-  .page > header .action {
-    margin-top: 0;
-    padding: 0.375em;
-  }
-  .page > header .action a {
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
-  }
-  .page > header .back {
-    left: 0;
-    border-right-width: 0.0625em;
-  }
-  .page > header .next,
-  .page > header .back {
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-
-  /* Back buttons sometimes have both an icon and a label */
-  .page > header .next svg.icon {
-    display: inline;
-    margin-left: 0.5em;
-    vertical-align: top;
-  }
-  .page > header .back svg.icon {
-    display: inline;
-    margin-right: 0.5em;
-    vertical-align: top;
-  }
-  .page > header .next svg.icon:first-child {
-    margin-left: 0;
-  }
-  .page > header .back svg.icon:last-child {
-    margin-right: 0;
-  }
-
-  /* OPTIONAL: Hide the button labels on small screens */
-  @media (max-width: 60em) {
-    .page > header .next svg.icon {
-      margin-left: 0;
-      display: block;
-    }
-    .page > header .back svg.icon {
-      margin-right: 0;
-      display: block;
-    }
-    .page > header .back svg.icon + span {
-      position: absolute;
-      left: -9999px;
-    }
-    .page > header .next span {
-      position: absolute;
-      left: -9999px;
-    }
-    .page > header .next span:first-child:last-child {
-      position: static;
-    }
-  }
-
-  /* OPTIONAL: Give edit and detail pages a white header. */
-  .mix.page          > header,
-  .mixes.page        > header,
-  .mix-editor.page   > header,
-  .post.page         > header,
-  .edit.page         > header,
-  .edit-push.page    > header,
-  .edit-profile.page > header {
-    background-color: white;
-    color: black;
-    border-bottom-color: rgb(222, 222, 222); /* @silver */
-  }
-  .mix.page          > header a,
-  .mixes.page        > header a,
-  .mix-editor.page   > header a,
-  .post.page         > header a,
-  .edit.page         > header a,
-  .edit-push.page    > header a,
-  .edit-profile.page > header a {
-    border-color: transparent !important;
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .hoverable .mix.page          > header a:hover,
-             .mix.page          > header a:active,
-             .mix.page          > header a:focus,
-  .hoverable .mixes.page        > header a:hover,
-             .mixes.page        > header a:active,
-             .mixes.page        > header a:focus,
-  .hoverable .mix-editor.page   > header a:hover,
-             .mix-editor.page   > header a:active,
-             .mix-editor.page   > header a:focus,
-  .hoverable .post.page         > header a:hover,
-             .post.page         > header a:active,
-             .post.page         > header a:focus,
-  .hoverable .edit.page         > header a:hover,
-             .edit.page         > header a:active,
-             .edit.page         > header a:focus,
-  .hoverable .edit-push.page    > header a:hover,
-             .edit-push.page    > header a:active,
-             .edit-push.page    > header a:focus,
-  .hoverable .edit-profile.page > header a:hover,
-             .edit-profile.page > header a:active,
-             .edit-profile.page > header a:focus {
-    color: black;
-  }
-
-  /* OPTIONAL: Position the submit button in the header */
-  .edit-push.page    > header ~ form ul.text,
-  .edit-profile.page > header ~ form ul.text {
-    margin-bottom: 0;
-  }
-  .edit-push.page    > header ~ form .submit,
-  .edit-profile.page > header ~ form .submit,
-  .post-editor.page  > header ~ form .submit,
-  .mix-editor.page   > header ~ form .submit {
-    position: absolute;
-    z-index: 2;
-    top: 0.375em;
-    right: 0.375em;
-    margin: 0;
-  }
-  .edit-push.page    > header ~ form .submit button,
-  .edit-profile.page > header ~ form .submit button,
-  .post-editor.page  > header ~ form .submit button,
-  .mix-editor.page   > header ~ form .submit button {
-    font-size: inherit;
-    font-weight: bold;
-  }
-
-  @media (min-width: 20em) {
-    .page > header {
-      padding-top: 0.75em;
-    }
-  }
-  @media (min-width: 20em) and (min-height: 20em) {
-
-    /* OPTIONAL: Make the header sticky */
-       main.page,
-    section.page {
-      padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
-    }
-    .page > header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-      padding: 0.75em 6em; /* The right/left padding numbers here are arbitrary, but ideally large
-                              enough to prevent the title from overlapping with the back/next buttons. */
-    }
-    .edit-push.page > header ~ form .submit,
-    .edit-profile.page > header ~ form .submit,
-    .post-editor.page  > header ~ form .submit,
-    .mix-editor.page   > header ~ form .submit {
-      position: fixed; /* Position the submit button in the header */
-    }
-
-    /* OPTIONAL: Limit the headline to a single line. */
-    .page > header h1 {
-      width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      white-space: nowrap;
-      word-wrap     : inherit;
-      overflow-wrap : inherit;
-    }
-  }
-
-
-  /* =Option List
-  ----------------------------------------------- */
-  .option-list h3 {
-    /* @tiny-headline */
-    font-size: 0.75em;
-    text-transform: uppercase;
-    color: rgb(159, 165, 162); /* @barium */
-  }
-  ul.option-list,
-  .option-list ul,
-  .option-list li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .option-list ul + ul {
-    margin-top: 0.75em;
-  }
-  .option-list li + li {
-    margin-top: 0;
-  }
-  .option-list a      > .icon:first-child,
-  .option-list button > .icon:first-child {
-    margin-right: 0.5em; /* SHIM: 0.75em - one whitespace character */
-
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .option-list .text, /* For the settings page */
-  .option-list a,
-  .option-list button,
-  .option-list label {
-    display: block;
-    text-align: left;
-    padding: 0.5625em 1.25em; /* @item-padding */ /* @page-padding */
-    text-decoration: none;
-    text-transform: lowercase;
-    font-weight: normal;
-    border: 0.0625em solid rgb(222, 222, 222); /* @silver */
-    background: white;
-    color: rgb(5, 5, 5); /* @tungsten */
-    position: relative;
-    border-radius: 0;
-  }
-  .option-list a,
-  .option-list button {
-    color: rgb(255, 49, 102); /* @pitaya */
-  }
-
-  /* TRICKY: Buttons don’t fill the full width of the screen (even with “display” set to “block”).
-  http://stackoverflow.com/questions/27605390/why-doesnt-display-block-width-auto-stretch-a-button-to-fill-the-contai#answer-27605483 */
-  .option-list button {
-    width: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-
-  /* TRICKY: Allow uppercase in usernames from social networks on the settings page */
-  .option-list .username {
-    text-transform: none;
-  }
-
-  /* OPTIONAL: Make options stick to the sides at narrow window sizes. */
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .option-list .text,
-    .option-list a,
-    .option-list button,
-    .option-list label {
-      border-left-width: 0;
-      border-right-width: 0;
-      margin: 0 -1.25em; /* @page-padding */
-    }
-    .option-list button {
-      width: calc(100% + 2.5em);
-    }
-  }
-
-  .option-list button {
-    text-align: center;
-  }
-  .option-list a {
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-
-    /* @background-icon */
-    background-size: 1.5em auto;
-    background-repeat: no-repeat;
-    background-position: 97% 50%;
-    background-position: calc(100% - 0.75em) 50%;
-
-    /* @icon-right */ /* @aluminum */
-    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
-  }
-  /* For the “invite curator” form */
-  .option-list a.disabled {
-    background-color: white !important; /* override the hover states */
-    background-image: none;
-  }
-
-  .option-list li + li a,
-  .option-list li + li button,
-  .option-list li + li label {
-    border-top-width: 0;
-  }
-     .tags.option-list button,
-  .connect.option-list button {
-    text-align: left;
-    color: rgb(5, 5, 5); /* @tungsten */
-  }
-  .tags.option-list button {
-    padding-right: 3em;
-  }
-     .tags.option-list li .icon:last-child,
-  .connect.option-list li .icon:last-child,
-  .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
-    margin-top: -0.75em;
-    position: absolute;
-    top: 1.375em !important;
-    right: 0.75em;
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-  .connect.option-list button .icon:last-child,
-  .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
-    color: rgb(102, 204, 0); /* @pear */
-  }
-
-  .hoverable .option-list a:hover,
-             .option-list a:active,
-             .option-list a:focus,
-  .hoverable .option-list button:hover,
-             .option-list button:active,
-             .option-list button:focus {
-    background-color: rgb(222, 222, 222); /* @silver */
-  }
-  .hoverable .option-list button:hover,
-             .option-list button:active,
-             .option-list button:focus {
-    color: rgb(235, 29, 82); /* @raspberry */
-  }
-  .option-list,
-  .option-list ul:first-child,
-  .option-list ul li:first-child {
-    margin-top: 0;
-  }
-  .option-list ul + ul {
-    margin-top: 3em;
-  }
-
-  /* SHIM: Make options look nice on the push screen, which doesn’t have @page-padding */
-  section.push > .option-list li a {
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0;
-    border-left-width: 0;
-    border-right-width: 0;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    background-image: none;
-  }
-  section.push > .option-list li:first-child a {
-    border-top-width: 0;
-  }
-  
-  @media (min-width: 40em) {
-    section.push > .option-list li a {
-      text-align: center;
-    }
-  }
 
 
   /* =Push Card
   -----------------------------------------------
-  A themed header, preview, or form for a push
+  for elements that represent a push (or are styled similarly… for instance a member profile)
   ----------------------------------------------- */
-
   .push-card {
     text-align: center;
   }
@@ -2633,10 +2842,14 @@
     color: rgba(0, 0, 0, 0.95);
   }
 
-  /* Sometimes the push card is a link. */
-  .hoverable .push-card:hover,
-             .push-card:active,
-             .push-card:focus {
+  /* Sometimes the push-card is a link */
+  a.push-card {
+    display: block;
+    text-decoration: none;
+  }
+  .hoverable a.push-card:hover,
+             a.push-card:active,
+             a.push-card:focus {
     color: black;
     color: rgba(0, 0, 0, 0.95);
   }
@@ -2644,6 +2857,8 @@
   .switch .push-card .name {
     font-size: 1.5em; /* 24px / @font-size */
   }
+
+  /* The start and confirmation screens have a animated background with push colors. */
   .push-card.animated {
     transition: background-color 0.4s;
   }
@@ -2696,12 +2911,7 @@
     background-color: rgb(150, 255, 108); /* @honeydew */
   }
 
-  /* Sometimes the push-card is a link */
-  a.push-card {
-    display: block;
-    text-decoration: none;
-  }
-
+  /* Header */
   .push-card        > .name,
   .push-card .details .name {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2718,7 +2928,6 @@
     word-wrap     : break-word;
     overflow-wrap : break-word;
   }
-
   .push-card        > .about,
   .push-card .details .about {
     margin-top: 0.375em;
@@ -2730,7 +2939,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   .push-card .name + p.action {
     margin-top: 1.25em;
   }
@@ -2847,7 +3055,6 @@
   .dialog.page    .action  a,
   .dialog.page    .action  button,
   .dialog.page    .details button,
-  main.about            button,
   .push-card.page .details .action a,
   .push-card      .details button {
     background: black;
@@ -2899,9 +3106,6 @@
   .hoverable .push-card   .details .action a:hover,
              .push-card   .details .action a:active,
              .push-card   .details .action a:focus,
-  .hoverable  main.about        button:hover,
-              main.about        button:active,
-              main.about        button:focus,
   .hoverable .push-card   .details button:hover,
              .push-card   .details button:active,
              .push-card   .details button:focus {
@@ -3019,7 +3223,2288 @@
   }
 
 
-  /* =Push Preview
+  /* =Switch Push
+  ----------------------------------------------- */
+  .pushes.page {
+    background: rgb(51, 51, 51); /* @iron */
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .pushes.page h1,
+  .pushes.page .option-list h3 {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  .pushes.page .option-list ul {
+    margin-top: 0;
+  }
+
+  /* OPTIONAL: Give option lists a dark background */
+  .pushes.page .option-list li + li {
+    margin-top: 0.0625em;
+  }
+  .pushes.page .option-list a {
+    border-color: black;
+    background-color: black;
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .hoverable .pushes.page .option-list a:hover,
+             .pushes.page .option-list a:active,
+             .pushes.page .option-list a:focus {
+    color: white;
+  }
+
+
+  /* Push List */
+  .switch ul,
+  .switch li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .switch ul {
+    margin-top: 0;
+  }
+  .switch li {
+    margin-bottom: 0.0625em; /* 1px */
+  }
+  .switch li a.push-card {
+    padding: 1.25em;
+    text-align: left;
+  }
+  .switch li a.push-card .name {
+    line-height: 1.5333333333;
+    margin-left: 0;
+    margin-right: 0;
+    text-shadow: 0 0 2.5em rgba(0, 0, 0, 0.3);
+  }
+  .switch li a .action {
+    margin-left: 1.5em;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s;
+  }
+  .hoverable .switch li a:hover  .action,
+             .switch li a:active .action,
+             .switch li a:focus  .action {
+    background-color: black;
+  }
+
+  /* Activity indicators */
+  .switch li a.push-card .name {
+    padding-left: 0.375em;
+  }
+  .switch li a.push-card.active .name:before {
+    content: "";
+    display: inline-block;
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    width: 0.375em;
+    height: 0.375em;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 0.375em;
+    margin-left: -0.75em;
+  }
+
+  /* OPTIONAL: Make links darker when active */
+  .switch li > a {
+    position: relative;
+    z-index: 1;
+  }
+  .switch li > a span.name:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: background-color 0.2s;
+  }
+  .hoverable .switch li a:hover  span.name:after,
+             .switch li a:active span.name:after,
+             .switch li a:focus  span.name:after {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  /* OPTIONAL: Position the action on the right */
+  .switch li:after {
+    /* @clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .switch li a .action {
+    float: right;
+  }
+  .switch li a.push-card {
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: row;
+            flex-direction: row;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+  }
+
+
+
+  /* =Post
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  /* =Post Details
+  ----------------------------------------------- */
+  .post.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
+  .post.page .details {
+    background: white;
+    padding: 0;
+  }
+
+  /* Comments page */
+  .post.page .comments {
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .post.page .comments .post-list {
+    margin-top: 0;
+  }
+  .post.page .comments .post-item {
+    margin-bottom: 0;
+  }
+
+  /* SHIM: Remove the usual margin on the comments page */
+  .post.page .comments .post-list {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* SHIM: Add the margin back on the post details page */
+  .post.page .post-item .comments .post-list {
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+  }
+
+
+  /* =Image Viewer
+  ----------------------------------------------- */
+  .image-viewer {
+    color: rgb(246, 246, 246); /* @casper */
+    background-color: rgb(5, 5, 5); /* @tungsten */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  .image-viewer .image {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+  .image-viewer .image p {
+    margin: 0;
+    display: block;
+
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+
+    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+    -webkit-overflow-scrolling: touch;
+  }
+  .image-viewer .empty-images {
+    width: 100%;
+    min-height: 100vh;
+
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+  .image-viewer img {
+
+    /* http://stackoverflow.com/questions/7774814/remove-white-space-below-image#answer-13876119 */
+    vertical-align: top;
+
+    max-width: none;
+    width: auto;
+    height: auto;
+  }
+  .image-viewer button,
+  .image-viewer .action a {
+    background-color: black;
+    background: rgba(0, 0, 0, 0.5);
+    border: 0.125em solid white;
+  }
+  .hoverable .image-viewer button:hover,
+             .image-viewer button:active,
+             .image-viewer button:focus,
+  .hoverable .image-viewer .action a:hover,
+             .image-viewer .action a:active,
+             .image-viewer .action a:focus {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .image-viewer button {
+    border-radius: 50%;
+    padding: 0.375em 0.5em;
+  }
+  .image-viewer .action {
+    position: fixed;
+    z-index: 1;
+    top: 0.375em;
+    right: 0.375em;
+    margin: 0;
+  }
+  .image-viewer .image-options {
+    position: fixed;
+    z-index: 1;
+    bottom: 0.75em;
+    left: 0.75em;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+  .image-viewer .image-options ul,
+  .image-viewer .image-options li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .image-viewer .image-options ul {
+    margin: 0;
+  }
+  .image-viewer .image-options li {
+    display: inline;
+    margin-right: 0.375em;
+  }
+
+
+  /* =Post Editor
+  ----------------------------------------------- */
+  .post.page label,
+  .post.text label {
+    padding: 0;
+    border-radius: 0.125em;
+  }
+  .post.page textarea,
+  .post.text textarea {
+    height: 6.75em; /* (@line-height x 4) + (0.375em x 2) */
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 0.125em;
+  }
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    .post.page textarea,
+    .post.text textarea {
+      height: 9.75em;
+    }
+  }
+
+  .file label,
+  .file button {
+    display: inline-block;
+    padding: 0.375em; /* @line-height / 4 */
+    background: transparent;
+    color: rgb(102, 102, 102); /* @tin */
+    cursor: pointer;
+  }
+  .file input[type="file"] {
+    position: absolute;
+    left: -9999px;
+  }
+  .file input[type="file"] ~ span {
+    margin-left: 0.125em;
+  }
+  .hoverable .file button:hover,
+             .file button:active,
+             .file button:focus,
+  .hoverable .file input[type="file"]:hover  ~ .icon,
+             .file input[type="file"]:active ~ .icon,
+             .file input[type="file"]:focus  ~ .icon,
+  .hoverable .file input[type="file"]:hover   ~ span,
+             .file input[type="file"]:active  ~ span,
+             .file input[type="file"]:focus   ~ span {
+    color: black;
+  }
+  form .images {
+    padding-bottom: 0.75em;
+    margin-bottom: 0;
+  }
+  form ol.images,
+  form .images li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  form .images li {
+    margin-top: 0;
+    vertical-align: top;
+    display: inline-block;
+  }
+  form .images li button {
+    background: white;
+    color: black;
+    padding: 0;
+    min-width: 3em;
+    height: 6.25em;
+    position: relative;
+    border-radius: 0.125em
+  }
+  @media (max-width: 33.75em) {  
+    form ol.images {
+      margin-left: -1.25em; /* @page-padding */
+      margin-right: -1.25em;
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+      white-space: nowrap;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      line-height: 1;
+
+      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  form .images li img {
+    width: auto;
+    height: 100%;
+  }
+  form .images li span {
+    position: absolute;
+    top  : 0.375em; /* @line-height / 4 */
+    right: 0.375em;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    font-size: 0.75em;
+  }
+  form .images li .icon {
+    position: absolute;
+    top: 0.25em;
+    left: 0.25em;
+    width: 1em;
+    height: 1em;
+  }
+  .hoverable form .images li button:hover  span,
+             form .images li button:active span,
+             form .images li button:focus  span {
+    opacity: 1;
+  }
+  form .images + p {
+    margin-top: 0;
+    border-width: 0.0625em 0 0;
+    border-style: solid;
+    border-color: rgb(222, 222, 222); /* @silver */
+    padding-top: 0.375em;
+  }
+
+
+
+  /* =Mix
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+  .mixes.page {
+    background: rgb(51, 51, 51); /* @iron */
+    color: white;
+    min-height: 100%;
+  }
+  .mixes.page > div {
+    max-width: none;
+    padding: 0;
+  }
+
+
+  /* =Mix List
+  ----------------------------------------------- */
+  .mix-list,
+  .mix-list li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .mix-list:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .mix-list {
+    margin: 0;
+    padding: 0.0625em 0 0 0.0625em;
+  }
+  .mix-list li {
+    float: left;
+    margin: 0 0.0625em 0.0625em 0;
+  }
+  .mix-list a {
+    display: block;
+    width: 7.8125em; /* image size / @font-size (125px / 16px) */
+    height: 7.8125em;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  .mix-list a img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.2s;
+  }
+  .hoverable .mix-list a:hover  img,
+             .mix-list a:active img,
+             .mix-list a:focus  img {
+    opacity: 0.75;
+  }
+  .mix-list .add a {
+    display: block;
+    background-color: rgb(255, 49, 102); /* @pitaya */
+    color: white;
+    width: 80%; /* image size / @font-size (125px / 16px) */
+    height: 80%;
+    border-radius: 0.25em;
+    margin: 10%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+    padding: 0.75em 0.5em;
+
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+  .hoverable .mix-list .add a:hover,
+             .mix-list .add a:active,
+             .mix-list .add a:focus {
+    background-color: rgba(255, 49, 102, 0.85); /* @pitaya */
+  }
+  .mix-list li {
+    width: 32.5%;
+    min-height: 100px;
+  }
+  .mix-list li {
+    width: 32.5vw;
+    height: 32.5vw;
+  }
+  .mix-list li {
+    width: calc(33.333333333vw - 0.1333333333em); /* three per row (image size (100px) / 3) - padding (0.0625em) */
+    height: calc(33.333333333vw - 0.1333333333em);
+  }
+  .mix-list li a {
+    width: 95%; /* image size / @font-size (125px / 16px) */
+    height: 95%;
+    margin: 2.5%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+  }
+
+
+  /* =Loading/Error Indicators
+  ----------------------------------------------- */
+  .mix-list .mix-error   > span,
+  .mix-list .mix-loading > span {
+    display: block;
+    position: relative;
+    background: black;
+    color: white;
+    width: 95%; /* image size / @font-size (125px / 16px) */
+    height: 95%;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 2.5%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .mix-list .mix-error > span {
+    background: rgb(255, 49, 59); /* @watermelon */
+    padding: 0.375em 0.75em;
+  }
+  .mix-list .mix-loading .loading-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.875em;
+    margin-left: -0.875em;
+  }
+  .mix-list .mix-loading .text {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+
+
+  /* =Mix
+  ----------------------------------------------- */
+  .mix .preview {
+    padding: 1.5em;
+    max-width: none;
+    background-color: rgb(176, 224, 0); /* @lime */
+  }
+
+  .mix .lime {
+    background-color: rgb(176, 224, 0); /* @lime */
+  }
+  .mix .cucumber {
+    background-color: rgb(60, 210, 0); /* @cucumber */
+  }
+  .mix .blueberry {
+    background-color: rgb(0, 204, 204); /* @blueberry */
+  }
+  .mix .boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .mix .periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .mix .plumb {
+    background-color: rgb(181, 62, 194); /* @plumb */
+  }
+  .mix .strawberry {
+    background-color: rgb(250, 44, 162); /* @strawberry */
+  }
+  .mix .apple {
+    background-color: rgb(255, 0, 86); /* @apple */
+  }
+  .mix .tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .mix .orange {
+    background-color: rgb(255, 117, 9); /* @orange */
+  }
+
+  .widget .preview div,
+  .mix .preview div {
+    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
+    background: black;
+    color: white;
+    margin: 0 auto;
+    display: table;
+  }
+  .mix .preview div h1,
+  .mix .preview div p {
+    margin: 1.5em;
+    font-size: inherit;
+    max-width: 31.5em;
+  }
+  .widget .preview iframe,
+  .mix .preview div video,
+  .mix .preview div img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+  .mix footer {
+    margin-top: 0.75em;
+  }
+  .mix footer p {
+    margin: 0;
+    display: inline;
+  }
+  .mix footer p + p {
+    margin-left: 0.75em;
+  }
+  .mix footer p a {
+    color: rgb(204, 204, 204); /* @aluminum */
+    text-decoration: none;
+  }
+  .mix footer .attaboyed {
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+  .hoverable .mix footer p a:hover,
+             .mix footer p a:active,
+             .mix footer p a:focus {
+    color: rgb(235, 29, 82); /* @raspberry */
+  }
+  .mix footer .count {
+    font-size: 0.75em;
+  }
+  .mix .share h2 {
+    font-size: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .mix .share p {
+    margin-top: 0.375em;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+
+
+  /* =Mix Editor
+  ----------------------------------------------- */
+  .mix-editor.page {
+    background: rgb(31, 31, 31); /* @steel */
+    color: white;
+  }
+  .mix-editor.page > div,
+  .mix-editor.page > form {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+
+
+  /* =Mix Editor Images
+  ----------------------------------------------- */
+  .mix-editor .selected-images h2 {
+    position: relative;
+    color: rgb(222, 222, 222); /* @silver */
+    padding: 0 1.5em;
+    text-align: center;
+    border-width: 0.0625em 0;
+    border-style: solid;
+    border-color: black;
+    margin: 0;
+    font-size: inherit;
+    font-weight: normal;
+    line-height: 3.325; /* image size + padding / font size ((50px / 16px) + 0.2em) */
+    text-transform: lowercase;
+  }
+  .mix-editor .selected-images h2:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.0625em;
+    left: 0.0625em;
+    width: 3.125em;
+    height: 3.125em;
+    background: white;
+    opacity: 0.2;
+  }
+
+  /* OPTIONAL: Make selected images sticky */
+  @media (min-width: 20em) and (min-height: 20em) {
+    .mix-editor .selected-images {
+      position: fixed;
+      z-index: 3; /* Just above the checkboxes */
+      top: 3em;
+      left: 0;
+      width: 100%;
+      background: black;
+      border-bottom: 0.0625em solid black;
+      box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+    }
+    .mix-editor .selected-images ol {
+      padding-top: 0.0625em;
+      white-space: nowrap;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      line-height: 1;
+
+      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+      -webkit-overflow-scrolling: touch;
+    }
+    .mix-editor .selected-images ol li {
+      float: none;
+      display: inline-block;
+    }
+    .mix-editor .empty-images,
+    .mix-editor ul.image-list {
+      margin-top: 3.4em; /* @line-height x 2 / image padding */
+    }
+  }
+
+  .mix-editor .image-list,
+  .mix-editor .selected-images ol {
+    margin: 0;
+  }
+  .mix-editor .image-list:after,
+  .mix-editor .selected-images ol:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .mix-editor .image-list,
+  .mix-editor .image-list li,
+  .mix-editor .selected-images ol,
+  .mix-editor .selected-images li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .mix-editor .image-list      li,
+  .mix-editor .selected-images li {
+    margin-top: 0;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  .mix-editor .image-list      li img,
+  .mix-editor .selected-images li img {
+    display: block;
+  }
+  .mix-editor .selected-images li button {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .mix-editor .selected-images img {
+    width  : 3.125em; /* 50px / @font-size */
+    height : 3.125em;
+  }
+  .mix-editor .image-list img {
+    width  : 6.25em; /* 100px / @font-size */
+    height : 6.25em;
+  }
+
+  /* OPTIONAL: Scale the images to the available horizontal space. */
+  .mix-editor .image-list li {
+    width: 33.333333333%;
+    padding-bottom: 33.333333333%;
+  }
+  .mix-editor .image-list li img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .mix-editor .empty-images {
+    text-align: center;
+    padding: 1.5em;
+  }
+  .mix-editor.page > div.no-images {
+    margin-top: 1.5em;
+    text-align: center;
+    padding: 1.5em;
+  }
+  .mix-editor .empty-images + .image-list li {
+    background-color: transparent;
+  }
+  .mix-editor .empty-images + .image-list li img {
+    border-color: transparent;
+  }
+
+  /* Show selections */
+  .hoverable .mix-editor .selected-images li button:hover,
+             .mix-editor .selected-images li button:active,
+             .mix-editor .selected-images li button:focus {
+    opacity: 0.8;
+  }
+  .mix-editor .image-list li {
+    position: relative;
+  }
+  .mix-editor .image-list li .number {
+    background-color: rgb(255, 117, 9); /* @orange */
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    font-size: 10vw;
+
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    border: 1px solid black;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    top: 0;
+    left: 0;
+
+    /* TRICKY: This causes performance problems on an iPhone 5 (slow scrolling and response).
+    transition: opacity 0.2s;
+    */
+    opacity: 0;
+    z-index: 1;
+  }
+  .hoverable .mix-editor .image-list li:hover,
+  .mix-editor .image-list li:focus {
+    z-index: 1;
+  }
+  .hoverable .mix-editor .image-list li:hover .number {
+    opacity: 0.25;
+  }
+  .mix-editor .image-list li .number span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -0.5em;
+    line-height: 1;
+    opacity: 0;
+  }
+  .mix-editor .image-list li input {
+    position: absolute;
+    z-index: 2; /* just above the image */
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked,
+  .mix-editor .image-list li input[type="checkbox"]:not(:checked) {
+    opacity: 0;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number,
+  .mix-editor .image-list li input[type="checkbox"]:not(:checked) ~ .number {
+    cursor: pointer;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number span {
+    opacity: 1;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number {
+    opacity: 0.75 !important;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:focus ~ .number {
+    opacity: 0.25 !important;
+  }
+  .mix-editor .image-list li input[type="checkbox"]:checked:focus ~ .number {
+    opacity: 1 !important;
+  }
+
+
+  /* =Preview
+  ----------------------------------------------- */
+  .mix-editor form {
+    margin: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.75em;
+  }
+  .mix-editor p.text {
+    text-align: center;
+  }
+  .mix-editor p.text label {
+    background-color: transparent;
+    border-width: 0;
+    padding: 0;
+  }
+  .mix-editor .preview {
+    position: relative;
+  }
+  .mix-editor .preview p.text {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .mix-editor .preview .text-clone,
+  .mix-editor .preview p.text label {
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+  .mix-editor .preview .note {
+    color: black;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  .mix-editor .preview p.text label ::-webkit-input-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .mix-editor .preview p.text label ::-moz-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .mix-editor .preview p.text label :-ms-input-placeholder {
+    color: rgb(204, 204, 204); /* @aluminum */
+  }
+  .mix-editor .preview .text-clone span,
+  .mix-editor textarea,
+  .mix-editor input[type="text"] {
+    background: transparent;
+    color: inherit;
+    text-align: inherit;
+    border-width: 0;
+    border-radius: 0;
+  }
+  .mix-editor .preview textarea {
+    border: 1px solid white;
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  .mix-editor .preview .text-clone span,
+  .mix-editor .preview textarea {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .mix-editor .preview .title .text-clone span,
+  .mix-editor .preview .title textarea,
+  .mix-editor input[type="text"] {
+    font-weight: bold;
+    font-size: 2.25em; /* 36px / @font-size */
+    line-height: 1.3333333333; /* 48px / 2.25em */
+    min-height: 1.3333333333em;
+    padding: 0.6666666667em 0;
+  }
+  .mix-editor .preview .text label {
+    padding: 0 0.75em;
+  }
+  .mix-editor .preview .title label {
+    padding: 0 0.6666666667em;
+  }
+
+  /* OPTIONAL: Mimic the type size used in the generated mix. */
+  @media (min-width: 600px) {
+    .mix-editor .preview .text-clone,
+    .mix-editor p.text label {
+      font-size: 2.666666667vw;
+    }
+  }
+  .mix-editor .preview .text-clone span,
+  .mix-editor textarea {
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  .mix-editor .preview .text textarea {
+    height: 3.75em; /* @line-height x 2.5 */
+  }
+  .mix-editor .preview .text .title textarea {
+    height: 2.6666666666em;
+  }
+  .mix-editor .preview .text-clone span {
+    height: auto;
+  }
+  .mix-editor .preview .text-clone {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .mix-editor .preview .text .title textarea,
+  .mix-editor .preview .text-clone span {
+    height: auto;
+  }
+  .mix-editor .preview {
+    background: rgb(176, 224, 0); /* @lime */
+
+    text-align: center;
+    padding: 1.5em;
+  }
+  .mix-editor .preview img {
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
+
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+    min-width: 9em;
+    min-height: 9em;
+  }
+  .mix-editor .preview.lime {
+    background-color: rgb(176, 224, 0); /* @lime */
+  }
+  .mix-editor .preview.cucumber {
+    background-color: rgb(60, 210, 0); /* @cucumber */
+  }
+  .mix-editor .preview.blueberry {
+    background-color: rgb(0, 204, 204); /* @blueberry */
+  }
+  .mix-editor .preview.boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .mix-editor .preview.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .mix-editor .preview.plumb {
+    background-color: rgb(181, 62, 194); /* @plumb */
+  }
+  .mix-editor .preview.strawberry {
+    background-color: rgb(250, 44, 162); /* @strawberry */
+  }
+  .mix-editor .preview.apple {
+    background-color: rgb(255, 0, 86); /* @apple */
+  }
+  .mix-editor .preview.tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .mix-editor .preview.orange {
+    background-color: rgb(255, 117, 9); /* @orange */
+  }
+  .mix-editor .preview div {
+    background-size: cover;
+    background-position: center;
+  }
+
+
+
+  /* =Onboarding
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  /* For the header on the preview page */
+  .powered-by h1 svg.icon {
+    vertical-align: top;
+    width: 2em;
+  }
+  .powered-by h1 a {
+    text-decoration: none;
+  }
+
+
+  /* =Start
+  ----------------------------------------------- */
+  .start.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
+  .start.page h1 {
+    font-size: 1.875em;
+    line-height: 1.2; /* @line-height x 1.5 / 1.875 */
+    font-weight: normal;
+    text-transform: lowercase;
+    margin-bottom: 0;
+  }
+  .start.page h1 svg {
+    display: block;
+    margin: 0.5em auto 0;
+    height: 3em;
+    width: 100%;
+  }
+  .start.page .details .action,
+  .start.page .details aside {
+    margin-top: 3em;
+  }
+  .start.page .details aside p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* For the “Don’t have an invite code?” message */
+  .start.page .details + aside {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-top: 0.375em;
+    padding-bottom: 0.375em;
+  }
+   .join.page .details + aside p,
+  .start.page .details + aside p {
+    color: black;
+    color: rgba(0, 0, 0, 0.95);
+    text-transform: lowercase;
+  }
+  .join.page .details + aside p a {
+    color: black;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .start.page .details + aside p a {
+    color: white;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .join.page .details + aside p a:hover,
+  .join.page .details + aside p a:active,
+  .join.page .details + aside p a:focus {
+    color: black;
+  }
+  .start.page .details + aside p a:hover,
+  .start.page .details + aside p a:active,
+  .start.page .details + aside p a:focus {
+    color: white;
+  }
+
+
+  /* =Join (invite code)
+  ----------------------------------------------- */
+  .join.page > div h1 {
+    font-weight: inherit;
+    font-size: 1.5em;
+    line-height: inherit;
+    padding: 0.375em 1.5em;
+    margin: 0;
+    text-transform: lowercase;
+    text-align: center;
+  }
+  @media (min-width: 40em) {
+    .join.page > div h1 {
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
+    }
+  }
+  .join.page > .header {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    margin: 0;
+    max-width: none;
+  }
+
+  .join.page > .details {
+    background-color: transparent;
+    padding-bottom: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .join.page > .details form {
+    margin-top: 0.75em;
+  }
+
+  /* For the “logged in as @username” indicator */
+  .logged-in {
+    text-transform: lowercase;
+    background: black;
+    color: rgb(153, 153, 153); /* @nickel */
+    font-size: 0.875em;
+    line-height: 1.7142857143em; /* @line-height / 0.875em */
+    padding: 0.4285714286em 1.2857142858em; /* 0.375em / 0.875em         0.375em x 3 / 0.875em */
+  }
+  .logged-in h2 {
+    margin-top: 0.6em;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+  .logged-in h2 strong {
+    font-weight: inherit;
+    color: white;
+  }
+  @media (min-width: 30em) {
+    .logged-in h2,
+    .logged-in p {
+      display: inline;
+    }
+    .logged-in p:before {
+      margin-left: 0.3em;
+      margin-right: 0.6em;
+      content: "|";
+      opacity: 0.5;
+    }
+  }
+
+
+  /* =Log In / Sign Up
+  ----------------------------------------------- */
+  .login.page  h2.or,
+  .signup.page h2.or {
+    text-align: center;
+
+    /* @divider */
+    margin-top: 2em;
+    border-top: 0.08333333333em solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.4em; /* top margin (2em) - line height (1.2) / 2   */
+  }
+  .login.page  h2.or span,
+  .signup.page h2.or span {
+    display: inline-block;
+    background-color: rgb(246, 246, 246); /* @casper */
+    position: relative;
+    top: -0.6em; /* line height (1.2) / 2 */
+    padding: 0 0.375em;
+  }
+  .login.page > form + div {
+    margin-top: -2.25em;
+    padding-top: 0;
+  }
+  .login.page  > div,
+  .signup.page > div,
+  .signup.page > aside {
+    text-align: center;
+  }
+  .signup.page .note a,
+  .login.page  .note a {
+    text-transform: lowercase;
+    text-decoration: none;
+  }
+  .login.page  > div .action,
+  .signup.page > div .action {
+    max-width: 22.5em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .login  > div .action a,
+  .signup > div .action a {
+    position: relative;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
+  .login  .action a span,
+  .signup .action a span {
+    display: block;
+    font-size: 0.6666666667em; /* 16px / 24px */
+    line-height: 1.5;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  .login  .action.facebook a,
+  .signup .action.facebook a {
+    padding-left: 2.1666666667em;
+    padding-right: 2.1666666667em;
+  }
+  .login  .action.facebook a .icon,
+  .signup .action.facebook a .icon {
+    position: absolute;
+    top: 0.3333333333em; /* 8px / 24px    (button.height - icon.height / 2 / font size) */
+    left: 0.3333333333em;
+  }
+  .signup.page .note {
+    text-align: inherit;
+    font-style: normal;
+  }
+
+
+  /* =Sign Up (choose)
+  ----------------------------------------------- */
+  .signup.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
+  .signup.page > div,
+  .signup.page > div + aside {
+    background: white;
+  }
+  .signup.page h2.or span {
+    background: white;
+  }
+  .signup.page > div {
+    margin-bottom: 0;
+  }
+  .signup.page aside {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .signup.page aside a {
+    display: block;
+    font-size: inherit;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+    color: rgb(153, 153, 153); /* @nickel */
+    text-decoration: inherit;
+  }
+  .signup.page aside a strong {
+    font-weight: normal;
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+  .hoverable .signup.page aside a:hover  strong,
+             .signup.page aside a:active strong,
+             .signup.page aside a:focus  strong {
+    color: rgb(235, 29, 82); /* @raspberry */
+  }
+  .signup.page .note:first-child {
+    margin-top: 0;
+  }
+  .signup.page .note:last-child {
+    margin-bottom: 0;
+  }
+  .signup.page .checkbox label {
+    text-transform: none;
+  }
+  .signup.page .checkbox label a {
+    display: inline-block;
+    text-transform: inherit;
+  }
+
+
+  /* =Email
+  ----------------------------------------------- */
+  .email.page > div {
+    text-align: center;
+  }
+  .email.page h1 {
+    /* @h2 */
+    font-size: 1.5em; /* 24px / @font-size */
+    line-height: inherit;
+  }
+  .email.page h1 .icon {
+    color: rgb(102, 102, 102); /* @tin */
+    margin-bottom: 0.25em;
+    font-size: 1.5em;
+  }
+  .email.page ul,
+  .email.page li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .email.page li {
+    margin-top: 1.5em;
+    padding: 1.5em;
+    background: white;
+  }
+  .email.page li h3 {
+    margin-top: 0;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .email.page li p {
+    color: rgb(102, 102, 102); /* @tin */
+  }
+
+
+  /* =Ready (ways to use CTZN)
+  ----------------------------------------------- */
+  .ready.page {
+    padding-bottom: 4.5em; /* @page-bottom-padding */
+  }
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    .ready.page > div {
+      margin-top: 3em;
+    }
+  }
+  .ready.page h1 {
+    margin-bottom: 0;
+    text-align: center;
+
+    /* @h2 */
+    font-size: 1.5em;     /* 24px / @font-size */
+    line-height: inherit;
+  }
+  .ready.page ul {
+    margin-top: 1.875em;
+    margin-bottom: 0;
+  }
+  .ready.page ul,
+  .ready.page li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .ready.page li {
+    margin-top: 0.375em;
+  }
+  .ready.page aside {
+    display: block;
+    color: rgb(102, 102, 102);
+    padding: 1.5em 3em 1.5em 1.5em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: white;
+    position: relative;
+  }
+  .ready.page aside p {
+    margin: 0;
+  }
+  .ready.page li > a {
+    display: block;
+    color: rgb(102, 102, 102);
+    padding: 1.5em 3em 1.5em 1.5em;
+    background-color: white;
+    text-decoration: none;
+    position: relative;
+
+    /* @background-icon */
+    background-size: 1.5em auto;
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    background-position: calc(100% - 0.75em) 50%;
+
+    /* @icon-right */ /* @aluminum */
+    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
+  }
+  .hoverable .ready.page li a:hover,
+  .ready.page li > a:active,
+  .ready.page li > a:focus {
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+
+  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
+    .ready.page ul li > a {
+      margin-left: -1.25em;
+      margin-right: -1.25em;
+    }
+  }
+
+  .ready.page li a > div img {
+    vertical-align: middle;
+    margin: 0 0.25em;
+  }
+
+  /* SHIM: Give the store and browser buttons a uniform height. */
+  .ready.page li a > div img[height="35"] {
+    height: 2.1875em; /* 35px / 16px */
+  }
+  .ready.page li a  > div img[height="50"],
+  .ready.page aside > div img[height="50"] {
+    height: 3.125em; /* 50px / 16px */
+  }
+  .ready.page li a > div {
+    margin-bottom: 0.75em;    
+  }
+  .ready.page li a > div .icon {
+    width: 3em;
+    height: 3em;
+  }
+  .ready.page aside > div img,
+  .ready.page li a > div img,
+  .ready.page li a > div .icon {
+    margin: 0.75em 0.25em;
+  }
+  @media (min-width: 20em) {
+    .ready.page aside,
+    .ready.page li > a {
+      padding-left: 10em;
+    }
+    .ready.page aside > div,
+    .ready.page li > a > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      text-align: center;
+      width: 10em; /* item left padding */
+      margin-bottom: 0;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+    }
+  }
+
+
+
+  /* =Profile
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+  .profile.page .image {
+    max-width: none;
+    text-align: center;
+    padding: 1.25em; /* @page-padding */
+    margin: -1.5em -1.25em 0; /* @page-padding */
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .profile.page .image .avatar {
+    display: inline-block;
+  }
+  .profile.page .image img {
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .profile.page .push-card .details {
+    margin-top: 1.5em;
+  }
+  .profile.page .joined {
+    font-size: 0.75em;
+    line-height: 2;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin: 0;
+  }
+  .page .switch,
+  .profile.page .post-list-header {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 29.5em;
+  }
+  .profile.page .switch h2,
+  .profile.page .post-list-header h2 {
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    line-height: 1.5;
+
+    /* @tiny-headline */
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+  .page .switch ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+  }
+  .profile.page .post-list-header + .post-list {
+    margin-top: 0;
+  }
+
+  .page > .option-list:first-child {
+    padding-top: 0;
+  }
+
+  /* OPTIONAL: Space things out a bit, if the screen is tall. */
+  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
+    .page > .option-list:first-child {
+      margin-top: 1.5em;
+    }
+    .page .switch,
+    .profile.page .post-list-header {
+      margin-top: 1.5em;
+    }
+  }
+
+
+  /* =Edit Profile
+  ----------------------------------------------- */
+  .edit-profile > form > p:first-child {
+    margin-top: 0;
+  }
+  .edit-profile .full-name input[type="text"] {
+    font-weight: bold;
+  }
+  .edit-profile .file {
+    text-align: center;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .edit-profile .file .loading-image,
+  .edit-profile .file .avatar {
+    display: block;
+    margin: 0 auto 0.75em;
+  }
+  .edit-profile .file .loading-image {
+    width: 100px; /* profile image size */
+    height: 100px;
+    background-color: rgb(51, 51, 51); /* @iron */
+    border-radius: 50%;
+    position: relative;
+  }
+  .edit-profile .file .loading-image .sending.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.25em;
+    margin-top: -0.25em;
+  }
+  .edit-profile .file .sending-icon {
+    display: block;
+  }
+  .edit-profile .file label,
+  .edit-profile .file label > span {
+    display: block;
+  }
+  .edit-profile .file label {
+    padding-top: 0;
+  }
+  .edit-profile .file img {
+    display: block;
+    margin: -0.125em auto 0.375em;
+    border-radius: 100%;
+    border: 0.125em solid transparent;
+  }
+  .edit-profile input[type="file"] {
+    position: absolute;
+    left: -9999px;
+  }
+  .edit-profile input[type="file"]:focus ~ span span {
+    color: rgb(51, 51, 51); /* @iron */
+  }
+  .edit-profile input[type="file"]:focus ~ span img {
+    border-color: rgb(102, 102, 102); /* @tin */
+  }
+
+
+
+  /* =Settings
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+  .settings h3 {
+    margin-top: 1em; /* @line-height / 2 / 0.75em */
+
+    /* @tiny-headline */
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: rgb(159, 165, 162); /* @barium */
+  }
+  .settings .introduction {
+    margin-bottom: 3em;
+  }
+  .settings .introduction svg.icon {
+    display: block;
+    width: 4.5em;
+    height: 4.5em;
+    margin: -0.375em auto;
+    opacity: 0.15;
+  }
+  .settings .introduction h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.125em; /* 18px / @font-size */
+    line-height: 1.3333333333em;
+    margin-top: 1.3333333333em;
+    color: rgb(102, 102, 102); /* @tin */
+  }
+  .settings .introduction h2 strong {
+    font-size: 1.3333333333em; /* 24px / 18px */
+    color: black;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900; /* @extra-bold */
+  }
+  .settings .introduction p {
+    text-align: center;
+
+    /* @note */
+    font-size: 0.875em;
+    margin-top: 1.5em;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+
+  /* SHIM: Reduce the vertical space between sections, during onboarding */
+  .settings .introduction {
+    padding-top: 1.5em;
+    padding-bottom: 0;
+  }
+  .settings .introduction + form,
+  .settings .introduction + .option-list {
+    padding-top: 0;
+  }
+  .option-list + .option-list {
+    padding-top: 0;
+  }
+  .option-list ul:last-child {
+    margin-bottom: 0;
+  }
+
+  .settings aside h3,
+  .settings aside p {
+    text-align: center;
+    font-style: italic;
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .settings aside h3 {
+    text-transform: lowercase;
+    font-size: inherit;
+    margin-bottom: 0;
+  }
+  .settings aside p {
+    margin-top: 0;
+  }
+  .settings aside p:first-letter {
+    text-transform: lowercase;
+  }
+
+  .option-list .instagram .icon:first-child {
+    color: rgb(40, 81, 127);
+  }
+  .option-list .twitter .icon:first-child {
+    color: rgb(94, 171, 244);
+  }
+  .option-list .facebook .icon:first-child {
+    color: rgb(59, 89, 153); /* @facebook */
+  }
+
+  .connect.option-list button .icon:first-child {
+    color: inherit;
+  }
+  .connect.option-list .active.instagram button .icon:first-child {
+    color: rgb(40, 81, 127);
+  }
+  .connect.option-list .active.twitter button .icon:first-child {
+    color: rgb(94, 171, 244);
+  }
+  .connect.option-list .active.facebook button .icon:first-child {
+    color: rgb(59, 89, 153); /* @facebook */
+  }
+
+  /* Position the “fix settings” buttons in the upper right corner */
+  .connect.option-list li {
+    position: relative;
+  }
+  .connect.option-list li button.settings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5625em 0.75em;
+    width: auto;
+    background-color: transparent;
+    border-width: 0;
+    color: rgb(255, 49, 59); /* @watermelon */
+  }
+
+  /* SHIM: Override styles intended for the social network icon */
+  .connect.option-list li button.settings .icon {
+    color: inherit !important;
+  }
+
+  .hoverable .connect.option-list li button.settings:hover  .icon,
+             .connect.option-list li button.settings:active .icon,
+             .connect.option-list li button.settings:focus  .icon {
+    color: black !important;
+  }
+  .connect.option-list li button.settings .icon {
+    position: static;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide the pseudo checkboxes by default */
+  .option-list label input[type="radio"   ] ~ .icon,
+  .option-list label input[type="checkbox"] ~ .icon {
+    color: inherit;
+    display: none;
+  }
+
+  /* OPTIONAL: Make the checkbox label darker if the checkbox is checked  */
+  .option-list label input[type="radio"   ] + span,
+  .option-list label input[type="checkbox"] + span {
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .option-list label input[type="radio"   ]:checked + span,
+  .option-list label input[type="checkbox"]:checked + span {
+    color: rgb(5, 5, 5); /* @tungsten */
+  }
+
+  /* OPTIONAL: Position the checkboxes on the right */
+  .option-list label input[type="radio"   ],
+  .option-list label input[type="checkbox"] {
+    float: right;
+    margin-left: 0.375em;
+  }
+
+  /* OPTIONAL: Replace the usual checkbox with a pseudo checkbox */
+  .option-list label input[type="radio"   ]:checked,
+  .option-list label input[type="radio"   ]:not(:checked),
+  .option-list label input[type="checkbox"]:checked,
+  .option-list label input[type="checkbox"]:not(:checked) {
+    opacity: 0;
+  }
+  .option-list label input[type="radio"   ]:checked       ~ .icon,
+  .option-list label input[type="radio"   ]:not(:checked) ~ .icon,
+  .option-list label input[type="checkbox"]:checked       ~ .icon,
+  .option-list label input[type="checkbox"]:not(:checked) ~ .icon {
+    margin-top: -0.75em;
+    position: absolute;
+    top: 50%;
+    right: 0.75em;
+    color: rgb(102, 204, 0); /* @pear */
+    opacity: 0;
+    display: block;
+    border: 0.125em solid transparent;
+  }
+  /*
+  .option-list label input[type="radio"   ]:checked       ~ .icon,
+  .option-list label input[type="radio"   ]:not(:checked) ~ .icon {
+    border-radius: 50%;
+  }
+  */
+  .option-list label input[type="radio"   ]:checked ~ .icon,
+  .option-list label input[type="checkbox"]:checked ~ .icon {
+    opacity: 1;
+  }
+  .option-list label input[type="radio"   ]:focus ~ .icon,
+  .option-list label input[type="checkbox"]:focus ~ .icon {
+    opacity: 1;
+    color: transparent;
+    border-color: rgb(222, 222, 222); /* @silver */
+  }
+  .option-list label input[type="radio"   ]:checked:hover ~ .icon,
+  .option-list label input[type="radio"   ]:checked:focus ~ .icon,
+  .option-list label input[type="checkbox"]:checked:hover ~ .icon,
+  .option-list label input[type="checkbox"]:checked:focus ~ .icon {
+    color: rgb(102, 204, 0); /* @pear */
+  }
+
+
+  /* Deprecated (consider using an input checkbox instead) */
+  .option-list a[role="checkbox"] {
+    background-image: none;
+  }
+  .connect.option-list button,
+  .option-list a[role="checkbox"][aria-checked="false"] {
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+  .option-list a[role="checkbox"][aria-checked="false"] {
+    background-image: none;
+  }
+  .option-list a[role="checkbox"][aria-checked="false"] .icon {
+    color: inherit;
+  }
+  .connect.option-list .active button,
+  .option-list a[role="checkbox"][aria-checked="true"] {
+    color: rgb(5, 5, 5); /* @tungsten */
+  }
+
+
+  /* =Edit Push
+  ----------------------------------------------- */
+  .settings.page form h1 {
+    font-size: 1.3333333333em;
+    color: rgb(0, 0, 0);
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+  .settings.page form h3 {
+    margin-top: 2.25em;
+  }
+  .settings.page form h1 + h3 {
+    margin-top: 0;
+  }
+  .settings p.select label span.push-card {
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.75em;
+    height: 1.75em;
+    padding: 0;
+    border-radius: 0.125em;
+    margin-left: 0.375em;
+  }
+  label abbr {
+    font-size: 0.875em;
+    margin-left: 0.25em;
+    text-transform: none;
+  }
+
+
+  /* =Dialog
+  ----------------------------------------------- */
+  .dialog.page {
+    text-align: center;
+
+    /* Dialogs appear above other pages */
+    position: fixed;
+    z-index: 9999; /* @infinity */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+    -webkit-overflow-scrolling: touch;
+  }
+  .dialog.page > div > .icon:first-child {
+    font-size: 2em;
+    margin-bottom: 0.375em;
+  }
+  .dialog.page h1 {
+    margin-top: 0;
+
+    /* @h2 */
+    font-size: 1.5em;     /* 24px / @font-size */
+    line-height: inherit;
+  }
+  .dialog.page .action a.reinstall,
+  .dialog.page    button.reinstall {
+    background-color: rgb(255, 49, 59); /* @watermelon */
+  }
+  .dialog.page .action a.restart,
+  .dialog.page    button.restart {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .hoverable .dialog.page .action a.reinstall:hover,
+             .dialog.page .action a.reinstall:active,
+             .dialog.page .action a.reinstall:focus,
+  .hoverable .dialog.page    button.reinstall:hover,
+             .dialog.page    button.reinstall:active,
+             .dialog.page    button.reinstall:focus {
+    background-color: rgb(255, 49, 59); /* @watermelon */
+    background-color: rgb(235, 29, 39); /* 4% darker */
+  }
+  .hoverable .dialog.page .action a.restart:hover,
+             .dialog.page .action a.restart:active,
+             .dialog.page .action a.restart:focus,
+  .hoverable .dialog.page    button.restart:hover,
+             .dialog.page    button.restart:active,
+             .dialog.page    button.restart:focus {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+    background-color: rgb(81, 132, 234); /* 4% darker */
+  }
+  .dialog.page .action {
+    margin-top: 1.5em;
+  }
+  .dialog.page .details {
+    margin-top: 3em;
+  }
+  .dialog.page .details ul {
+    text-align: left;
+  }
+
+  /* SHIM: Don’t position the instructions dialog (since it may interfere with scrolling). */
+  #loading-screen .dialog.page.instructions {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .dialog.page.instructions h1 {
+    max-width: none;
+  }
+  .dialog.page.instructions ul + p,
+  .dialog.page.instructions p + p {
+    margin-top: 3em;
+  }
+  .dialog.page ul.logos,
+  .dialog.page ul.logos li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .dialog.page ul.logos li {
+    display: inline;
+    margin-left: 0.375em;
+    margin-right: 0.375em;
+  }
+  .dialog.page ul.logos li a img {
+    max-width: 100%;
+  }
+
+  /* SHIM: Give the store buttons a uniform height. */
+  .dialog.page ul.logos li a img[height="50"] {
+    height: 3.125em; /* 50px / 16px */
+  }
+
+  /* OPTIONAL: Make the browsers buttons scale with the font size */
+  .dialog.page ul.logos li a img[width="70"] {
+    width: 4.375em; /* 70px / 16px */
+  }
+
+
+  /* =Developer Tools
+  ----------------------------------------------- */
+
+  /* TRICKY: Don’t use overflow scroll on the developer page, since it may run long. */
+  .developer.dialog.page {
+    position: absolute;
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+  }
+
+  .developer.dialog.page > div {
+    max-width: none;
+  }
+  .dialog.page dl,
+  .dialog.page .logs,
+  .dialog.page form {
+    /* @divider */
+    margin-top: 3em;
+    border-top: 0.0625em solid rgba(0, 0, 0, 0.1);
+    padding-top: 1.5em;
+    text-align: left;
+  }
+  .dialog.page dl {
+    padding-top: 3em;
+  }
+  .dialog.page h2 {
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .dialog.page dt {
+    font-weight: bold;
+  }
+  .dialog.page dt:after {
+    content: ":";
+  }
+  .dialog.page dd {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .dialog.page dd + dt {
+    margin-top: 0.75em; /* @line-height / 2 */
+  }
+  .dialog.page label br {
+    display: block;
+  }
+  .dialog.page input[type="number"] {
+    width: 10em;
+  }
+  .dialog.page select {
+    font-size: inherit;
+  }
+  .dialog.page ul.action {
+    margin-top: 1.5em;
+  }
+  .push-card.page ul.action,
+  .push-card.page ul.action li,
+  .dialog.page    ul.action,
+  .dialog.page    ul.action li,
+  .dialog.page .logs ul,
+  .dialog.page .logs li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .push-card.page ul.action li + li,
+  .dialog.page    ul.action li + li {
+    margin-top: 0.75em;
+  }
+  .dialog.page .logs   li + li {
+    margin-top: 1.5em;
+  }
+  .dialog.page pre,
+  .dialog.page .logs ul {
+    text-align: left;
+    background: white;
+    color: black;
+    margin-left: -1.25em; /* @page-padding */
+    margin-right: -1.25em; /* @page-padding */
+    padding: 1em; /* @page-padding */
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+  .dialog.page .logs time {
+    opacity: 0.5;
+    display: block;
+  }
+
+
+
+  /* =Transitions
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+
+  /* =Slide Up
+  ----------------------------------------------- */
+  @-webkit-keyframes slide-up {
+    0% {
+      -webkit-transform: translateY(40em);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+    }
+  }
+  @keyframes slide-up {
+    0% {
+              transform: translateY(40em);
+    }
+    100% {
+              transform: translateY(0);
+    }
+  }
+
+
+  /* =Slide Down
+  ----------------------------------------------- */
+  @-webkit-keyframes slide-down {
+    0% {
+      -webkit-transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(40em);
+    }
+  }
+  @keyframes slide-down {
+    0% {
+              transform: translateY(0);
+    }
+    100% {
+              transform: translateY(40em);
+    }
+  }
+
+
+  /* =Edit Post (intro & outro)
+  ----------------------------------------------- */
+  section.edit.page.has-intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+  }
+  section.edit.page.intro {
+    position: fixed;
+    z-index: 9999; /* @infinity */
+    -webkit-animation: slide-up 0.3s both;
+            animation: slide-up 0.3s both;
+  }
+  section.edit.page.outro {
+    z-index: 9999; /* @infinity */
+    -webkit-animation: slide-down 0.3s both;
+            animation: slide-down 0.3s both;
+  }
+
+
+
+  /* =Standalone Pages
+  -----------------------------------------------
+  TBD: Consider moving these styles into separate files
+  and including them on the pages where they’re needed.
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+
+  /* =Archive
+  -----------------------------------------------
+  The email archive is a regular web page with an email loaded into an iframe.
+
+  Here’s an example…
+  http://goodinc.github.io/ctzn-ui/email/archive.html
+  ----------------------------------------------- */
+  .archive.page iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  /* Make space for the header */
+  .archive.page iframe {
+    border-top: 5.3125em solid transparent; /* (@line-height x 3.5) + (1px / @font-size) */
+  }
+  @media (min-height: 20em) and (min-width: 20em) {
+    .archive.page iframe {
+      border-top: 3.0625em solid transparent; /* (@line-height x 2) + (1px / @font-size) */
+    }
+  }
+
+
+  /* =Shareable Mix
+  ----------------------------------------------- */
+  .shareable-mix > div h1 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: left;
+    padding-left: 48px;
+    padding-bottom: 8px;
+  }
+  .shareable-mix h1 .avatar {
+    margin-left: -48px;
+    position: absolute;
+    margin-top: -8px;
+  }
+  .shareable-mix h1 span {
+    font-weight: bold;
+  }
+  .shareable-mix h1 strong {
+    color: black;
+  }
+  .shareable-mix.page .video {
+    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
+    background: black;
+    color: white;
+    margin: 0 auto;
+  }
+  .shareable-mix.page .video video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  /* Video not supported message */
+  .shareable-mix.page .video .message {
+    padding: 1.5em;
+  }
+  .shareable-mix.page .video .message h1,
+  .shareable-mix.page .video .message p {
+    margin: 1.5em;
+    font-size: inherit;
+    max-width: 31.5em;
+    text-align: left;
+    padding: 0;
+
+    /* SHIM: Override a style intended for the main headline */
+    color: inherit;
+  }
+  .shareable-mix.page .video .message h1 {
+    font-weight: bold;
+  }
+  .shareable-mix.page .video .message p a {
+    color: white;
+  }
+
+  .shareable-mix.page .about {
+    margin-top: 1.5em;
+  }
+  .shareable-mix.page .about a {
+    color: black;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+  }
+  .hoverable .shareable-mix.page .about a:hover,
+             .shareable-mix.page .about a:active,
+             .shareable-mix.page .about a:focus {
+    color: black;
+  }
+
+  .shareable-mix.page .action {
+    margin-top: 3em;
+  }
+  .shareable-mix.page .action a {
+    background: black;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+  }
+
+
+  /* =Featured (public page)
   ----------------------------------------------- */
   .push-card .post-list .post-item {
     background: rgba(0, 0, 0, 0.1);
@@ -3053,15 +5538,7 @@
   .push-card .post-list .post-item header time {
     color: rgb(204, 204, 204); /* @aluminum */
     color: rgba(255, 255, 255, 0.5);
-    /*
-    text-transform: uppercase;
-    */
   }
-  /*
-  .mixable .push-card .post-list .post-item header time {
-    font-size: 0.875em;
-  }
-  */
   .push-card .post-list .post-item header .source {
     position: absolute;
     margin-bottom: -3em;
@@ -3069,7 +5546,6 @@
     bottom: 100vh;
     left: 3em;
   }
-
   .push-card .post-list .post-item .body {
     padding: 1.5em 3em 0;
     color: rgb(204, 204, 204);
@@ -3573,19 +6049,6 @@
     }
   }
 
-  /* OPTIONAL: Add more margin around the screen (for televisions) */
-  /*
-  @media (min-width: 1920px) and (min-height: 1080px) {
-    .mixable .push-card.page .details + .action {
-      padding: 1.5em;
-    }
-    .toggle-mixable {
-      top: 1.5em;
-      right: 1.5em;
-    }
-  }
-  */
-
 
   /* =Mixable Title
   ----------------------------------------------- */
@@ -3735,2709 +6198,6 @@
     font-size: inherit;
     text-transform: lowercase;
     line-height: 1.2;
-  }
-
-
-
-  /* =Post
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-
-  /* =Post Details
-  ----------------------------------------------- */
-  .post.page {
-    padding-bottom: 4.5em; /* @page-bottom-padding */
-  }
-  .post.page .details {
-    background: white;
-    padding: 0;
-  }
-
-  /* Comments page */
-  .post.page .comments {
-    background: white;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .post.page .comments .post-list {
-    margin-top: 0;
-  }
-  .post.page .comments .post-item {
-    margin-bottom: 0;
-  }
-
-  /* SHIM: Remove the usual margin on the comments page */
-  .post.page .comments .post-list {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* SHIM: Add the margin back on the post details page */
-  .post.page .post-item .comments .post-list {
-    margin-left: -1.25em;
-    margin-right: -1.25em;
-  }
-
-
-  /* =Post Editor
-  ----------------------------------------------- */
-  .post.page label,
-  .post.text label {
-    padding: 0;
-    border-radius: 0.125em;
-  }
-  .post.page textarea,
-  .post.text textarea {
-    height: 6.75em; /* (@line-height x 4) + (0.375em x 2) */
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 0.125em;
-  }
-  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-    .post.page textarea,
-    .post.text textarea {
-      height: 9.75em;
-    }
-  }
-
-  .file label,
-  .file button {
-    display: inline-block;
-    padding: 0.375em; /* @line-height / 4 */
-    background: transparent;
-    color: rgb(102, 102, 102); /* @tin */
-    cursor: pointer;
-  }
-  .file input[type="file"] {
-    position: absolute;
-    left: -9999px;
-  }
-  .file input[type="file"] ~ span {
-    margin-left: 0.125em;
-  }
-  .hoverable .file button:hover,
-             .file button:active,
-             .file button:focus,
-  .hoverable .file input[type="file"]:hover  ~ .icon,
-             .file input[type="file"]:active ~ .icon,
-             .file input[type="file"]:focus  ~ .icon,
-  .hoverable .file input[type="file"]:hover   ~ span,
-             .file input[type="file"]:active  ~ span,
-             .file input[type="file"]:focus   ~ span {
-    color: black;
-  }
-
-  form .images {
-    padding-bottom: 0.75em;
-    margin-bottom: 0;
-  }
-  form ol.images,
-  form .images li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  form .images li {
-    margin-top: 0;
-    vertical-align: top;
-    display: inline-block;
-  }
-  form .images li button {
-    background: white;
-    color: black;
-    padding: 0;
-    min-width: 3em;
-    height: 6.25em;
-    position: relative;
-    border-radius: 0.125em
-  }
-  @media (max-width: 33.75em) {  
-    form ol.images {
-      margin-left: -1.25em; /* @page-padding */
-      margin-right: -1.25em;
-      padding-left: 1.25em;
-      padding-right: 1.25em;
-      white-space: nowrap;
-      overflow-y: hidden;
-      overflow-x: scroll;
-      line-height: 1;
-
-      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
-      -webkit-overflow-scrolling: touch;
-    }
-  }
-  form .images li img {
-    width: auto;
-    height: 100%;
-  }
-  form .images li span {
-    position: absolute;
-    top  : 0.375em; /* @line-height / 4 */
-    right: 0.375em;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-    border-radius: 50%;
-    width: 1.5em;
-    height: 1.5em;
-    line-height: 1.5em;
-    opacity: 0.5;
-    transition: opacity 0.2s;
-    font-size: 0.75em;
-  }
-  form .images li .icon {
-    position: absolute;
-    top: 0.25em;
-    left: 0.25em;
-    width: 1em;
-    height: 1em;
-  }
-  .hoverable form .images li button:hover  span,
-             form .images li button:active span,
-             form .images li button:focus  span {
-    opacity: 1;
-  }
-  form .images + p {
-    margin-top: 0;
-    border-width: 0.0625em 0 0;
-    border-style: solid;
-    border-color: rgb(222, 222, 222); /* @silver */
-    padding-top: 0.375em;
-  }
-
-
-  /* =Image Viewer
-  ----------------------------------------------- */
-  .image-viewer {
-    color: rgb(246, 246, 246); /* @casper */
-    background-color: rgb(5, 5, 5); /* @tungsten */
-    height: 100%;
-    width: 100%;
-    text-align: center;
-  }
-  .image-viewer .image {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-direction: column;
-            flex-direction: column;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-align-content: center;
-            align-content: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-  .image-viewer .image p {
-    margin: 0;
-    display: block;
-
-    max-width: 100%;
-    max-height: 100%;
-    overflow: auto;
-
-    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .image-viewer .empty-images {
-    width: 100%;
-    min-height: 100vh;
-
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-direction: column;
-            flex-direction: column;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-align-content: center;
-            align-content: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-
-  .image-viewer img {
-
-    /* http://stackoverflow.com/questions/7774814/remove-white-space-below-image#answer-13876119 */
-    vertical-align: top;
-
-    max-width: none;
-    width: auto;
-    height: auto;
-  }
-  .image-viewer button,
-  .image-viewer .action a {
-    background-color: black;
-    background: rgba(0, 0, 0, 0.5);
-    border: 0.125em solid white;
-  }
-  .hoverable .image-viewer button:hover,
-             .image-viewer button:active,
-             .image-viewer button:focus,
-  .hoverable .image-viewer .action a:hover,
-             .image-viewer .action a:active,
-             .image-viewer .action a:focus {
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.75);
-  }
-  .image-viewer button {
-    border-radius: 50%;
-    padding: 0.375em 0.5em;
-  }
-
-  .image-viewer .action {
-    position: fixed;
-    z-index: 1;
-    top: 0.375em;
-    right: 0.375em;
-    margin: 0;
-  }
-  .image-viewer .image-options {
-    position: fixed;
-    z-index: 1;
-    bottom: 0.75em;
-    left: 0.75em;
-    width: 100%;
-    margin: 0;
-    text-align: left;
-  }
-  .image-viewer .image-options ul,
-  .image-viewer .image-options li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .image-viewer .image-options ul {
-    margin: 0;
-  }
-  .image-viewer .image-options li {
-    display: inline;
-    margin-right: 0.375em;
-  }
-
-
-
-  /* =Profile
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-  .profile.page .image {
-    max-width: none;
-    text-align: center;
-    padding: 1.25em; /* @page-padding */
-    margin: -1.5em -1.25em 0; /* @page-padding */
-    background: rgba(255, 255, 255, 0.15);
-  }
-  .profile.page .image .avatar {
-    display: inline-block;
-  }
-  .profile.page .image img {
-    border-radius: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .profile.page .push-card .details {
-    margin-top: 1.5em;
-  }
-  .profile.page .joined {
-    font-size: 0.75em;
-    line-height: 2;
-    text-transform: uppercase;
-    opacity: 0.75;
-    margin: 0;
-  }
-
-  .page .switch,
-  .profile.page .post-list-header {
-    padding-top: 0;
-    padding-bottom: 0;
-    max-width: 29.5em;
-  }
-  .profile.page .switch h2,
-  .profile.page .post-list-header h2 {
-    margin: 0;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    line-height: 1.5;
-
-    /* @tiny-headline */
-    font-size: 0.75em;
-    text-transform: uppercase;
-    color: rgb(159, 165, 162); /* @barium */
-  }
-  .page .switch ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: -1.25em;
-    margin-right: -1.25em;
-  }
-  .profile.page .post-list-header + .post-list {
-    margin-top: 0;
-  }
-
-  .page > .option-list:first-child {
-    padding-top: 0;
-  }
-
-  /* OPTIONAL: Space things out a bit, if the screen is tall. */
-  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-    .page > .option-list:first-child {
-      margin-top: 1.5em;
-    }
-    .page .switch,
-    .profile.page .post-list-header {
-      margin-top: 1.5em;
-    }
-  }
-
-
-  /* =Edit Profile
-  ----------------------------------------------- */
-  .edit-profile > form > p:first-child {
-    margin-top: 0;
-  }
-  .edit-profile .full-name input[type="text"] {
-    font-weight: bold;
-  }
-  .edit-profile .file {
-    text-align: center;
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .edit-profile .file .loading-image,
-  .edit-profile .file .avatar {
-    display: block;
-    margin: 0 auto 0.75em;
-  }
-  .edit-profile .file .loading-image {
-    width: 100px; /* profile image size */
-    height: 100px;
-    background-color: rgb(51, 51, 51); /* @iron */
-    border-radius: 50%;
-    position: relative;
-  }
-  .edit-profile .file .loading-image .sending.icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -1.25em;
-    margin-top: -0.25em;
-  }
-  .edit-profile .file .sending-icon {
-    display: block;
-  }
-  .edit-profile .file label,
-  .edit-profile .file label > span {
-    display: block;
-  }
-  .edit-profile .file label {
-    padding-top: 0;
-  }
-  .edit-profile .file img {
-    display: block;
-    margin: -0.125em auto 0.375em;
-    border-radius: 100%;
-    border: 0.125em solid transparent;
-  }
-  .edit-profile input[type="file"] {
-    position: absolute;
-    left: -9999px;
-  }
-  .edit-profile input[type="file"]:focus ~ span span {
-    color: rgb(51, 51, 51); /* @iron */
-  }
-  .edit-profile input[type="file"]:focus ~ span img {
-    border-color: rgb(102, 102, 102); /* @tin */
-  }
-
-
-
-  /* =Mix
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-
-  /* =Mixes
-  ----------------------------------------------- */
-  .mixes.page {
-    background: rgb(51, 51, 51); /* @iron */
-    color: white;
-    min-height: 100%;
-  }
-  .mixes.page > div {
-    max-width: none;
-    padding: 0;
-  }
-
-
-  /* =Mix List
-  ----------------------------------------------- */
-  .mix-list,
-  .mix-list li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .mix-list:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .mix-list {
-    margin: 0;
-    padding: 0.0625em 0 0 0.0625em;
-  }
-  .mix-list li {
-    float: left;
-    margin: 0 0.0625em 0.0625em 0;
-  }
-  .mix-list a {
-    display: block;
-    width: 7.8125em; /* image size / @font-size (125px / 16px) */
-    height: 7.8125em;
-    background-color: black;
-    color: white;
-    text-align: center;
-  }
-  .mix-list a img {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: opacity 0.2s;
-  }
-  .hoverable .mix-list a:hover  img,
-             .mix-list a:active img,
-             .mix-list a:focus  img {
-    opacity: 0.75;
-  }
-  .mix-list .add a {
-    display: block;
-    background-color: rgb(255, 49, 102); /* @pitaya */
-    color: white;
-    width: 80%; /* image size / @font-size (125px / 16px) */
-    height: 80%;
-    border-radius: 0.25em;
-    margin: 10%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-    text-transform: lowercase;
-    padding: 0.75em 0.5em;
-
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-direction: column;
-            flex-direction: column;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-align-content: center;
-            align-content: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-  .hoverable .mix-list .add a:hover,
-             .mix-list .add a:active,
-             .mix-list .add a:focus {
-    background-color: rgba(255, 49, 102, 0.85); /* @pitaya */
-  }
-  .mix-list li {
-    width: 32.5%;
-    min-height: 100px;
-  }
-  .mix-list li {
-    width: 32.5vw;
-    height: 32.5vw;
-  }
-  .mix-list li {
-    width: calc(33.333333333vw - 0.1333333333em); /* three per row (image size (100px) / 3) - padding (0.0625em) */
-    height: calc(33.333333333vw - 0.1333333333em);
-  }
-  .mix-list li a {
-    width: 95%; /* image size / @font-size (125px / 16px) */
-    height: 95%;
-    margin: 2.5%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    text-decoration: none;
-  }
-
-
-  /* =Loading/Error Indicators
-  ----------------------------------------------- */
-  .mix-list .mix-error   > span,
-  .mix-list .mix-loading > span {
-    display: block;
-    position: relative;
-    background: black;
-    color: white;
-    width: 95%; /* image size / @font-size (125px / 16px) */
-    height: 95%;
-    min-width: 100px;
-    min-height: 100px;
-    margin: 2.5%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .mix-list .mix-error > span {
-    background: rgb(255, 49, 59); /* @watermelon */
-    padding: 0.375em 0.75em;
-  }
-  .mix-list .mix-loading .loading-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -0.875em;
-    margin-left: -0.875em;
-  }
-  .mix-list .mix-loading .text {
-    /* @hidden-accessible */
-    position: absolute;
-    left: -9999px;
-  }
-
-
-  /* =Mix
-  ----------------------------------------------- */
-  .mix .preview {
-    padding: 1.5em;
-    max-width: none;
-    background-color: rgb(176, 224, 0); /* @lime */
-  }
-
-  .mix .lime {
-    background-color: rgb(176, 224, 0); /* @lime */
-  }
-  .mix .cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
-  }
-  .mix .blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
-  }
-  .mix .boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .mix .periwinkle {
-    background-color: rgb(109, 90, 219); /* @periwinkle */
-  }
-  .mix .plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
-  }
-  .mix .strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
-  }
-  .mix .apple {
-    background-color: rgb(255, 0, 86); /* @apple */
-  }
-  .mix .tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .mix .orange {
-    background-color: rgb(255, 117, 9); /* @orange */
-  }
-
-  .widget .preview div,
-  .mix .preview div {
-    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
-    background: black;
-    color: white;
-    margin: 0 auto;
-    display: table;
-  }
-  .mix .preview div h1,
-  .mix .preview div p {
-    margin: 1.5em;
-    font-size: inherit;
-    max-width: 31.5em;
-  }
-  .widget .preview iframe,
-  .mix .preview div video,
-  .mix .preview div img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    min-height: 50vh;
-  }
-  .mix footer {
-    margin-top: 0.75em;
-  }
-  .mix footer p {
-    margin: 0;
-    display: inline;
-  }
-  .mix footer p + p {
-    margin-left: 0.75em;
-  }
-  .mix footer p a {
-    color: rgb(204, 204, 204); /* @aluminum */
-    text-decoration: none;
-  }
-  .mix footer .attaboyed {
-    color: rgb(255, 49, 102); /* @pitaya */
-  }
-  .hoverable .mix footer p a:hover,
-             .mix footer p a:active,
-             .mix footer p a:focus {
-    color: rgb(235, 29, 82); /* @raspberry */
-  }
-  .mix footer .count {
-    font-size: 0.75em;
-  }
-  .mix .share h2 {
-    font-size: inherit;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .mix .share p {
-    margin-top: 0.375em;
-
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-  }
-
-
-  /* =Shareable Mix
-  ----------------------------------------------- */
-  .shareable-mix > div h1 {
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    text-align: left;
-    padding-left: 48px;
-    padding-bottom: 8px;
-  }
-  .shareable-mix h1 .avatar {
-    margin-left: -48px;
-    position: absolute;
-    margin-top: -8px;
-  }
-  .shareable-mix h1 span {
-    font-weight: bold;
-  }
-  .shareable-mix h1 strong {
-    color: black;
-  }
-  .shareable-mix.page .video {
-    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
-    background: black;
-    color: white;
-    margin: 0 auto;
-  }
-  .shareable-mix.page .video video {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    min-height: 50vh;
-  }
-
-  /* Video not supported message */
-  .shareable-mix.page .video .message {
-    padding: 1.5em;
-  }
-  .shareable-mix.page .video .message h1,
-  .shareable-mix.page .video .message p {
-    margin: 1.5em;
-    font-size: inherit;
-    max-width: 31.5em;
-    text-align: left;
-    padding: 0;
-
-    /* SHIM: Override a style intended for the main headline */
-    color: inherit;
-  }
-  .shareable-mix.page .video .message h1 {
-    font-weight: bold;
-  }
-  .shareable-mix.page .video .message p a {
-    color: white;
-  }
-
-  .shareable-mix.page .about {
-    margin-top: 1.5em;
-  }
-  .shareable-mix.page .about a {
-    color: black;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
-  }
-  .hoverable .shareable-mix.page .about a:hover,
-             .shareable-mix.page .about a:active,
-             .shareable-mix.page .about a:focus {
-    color: black;
-  }
-
-  .shareable-mix.page .action {
-    margin-top: 3em;
-  }
-  .shareable-mix.page .action a {
-    background: black;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
-  }
-
-
-  /* =About
-  ----------------------------------------------- */
-  main.about {
-    background-color: rgb(51, 51, 51); /* @iron */
-    color: rgb(204, 204, 204); /* @aluminum */
-    text-align: center;
-  }
-  main.about .header {
-    padding: 2.5em 1.5em 3em;
-  }
-  main.about h1.logo {
-    font-size: 4em;
-    line-height: 1;
-    margin: 0.5em auto 0;
-    color: black;
-  }
-  main.about h1.logo svg.icon {
-    width : 2.6354166667em; /* 253px / 96px */
-    height: 1em;            /*  96px / 96px */
-  }
-  main.about h1.logo + h2 {
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
-    font-weight: bold;
-  }
-  main.about h2 strong {
-    color: white;
-    font-weight: inherit;
-  }
-  .about section {
-    display: block;
-    padding: 4em 1.5em 3em;
-  }
-  .about section:last-child {
-    padding-top: 4.5em;
-    padding-bottom: 4.5em;
-  }
-  .about section h3 {
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @proxima-bold */
-    font-weight: bold;
-  }
-
-  /* @h2 */
-  main.about section h3 {
-    margin-top: 0;
-    font-size: 1.5em;     /* 24px / @font-size */
-    line-height: inherit;
-  }
-
-  main.about .feature h3 strong {
-    color: white;
-    font-weight: inherit;
-  }
-  @media (min-width: 20em) {
-    main.about .feature h3 strong {
-      display: block;
-    }
-  }
-  main.about .feature .text svg.icon {
-    margin: 0 0.75em 0.75em;
-    width: 2em;
-    height: 2em;
-    color: white;
-  }
-  main.about .feature .text svg.icon:first-child {
-    font-size: 1.25em;
-  }
-
-  /* OPTIONAL: Add space below groups of icons, for easier reading */
-  main.about section .icons {
-    margin-bottom: 1.5em;
-  }
-
-  /* OPTIONAL: Position the icons on the left */
-  @media (min-width: 30em) {
-    main.about .feature h3 {
-      margin-bottom: 0;
-    }
-    main.about .feature p {
-      margin-top: 0.375em;
-      margin-bottom: 0;
-    }
-    main.about .feature .icons,
-    main.about .feature h3 {
-      display: inline-block;
-      vertical-align: top;
-      text-align: left;
-    }
-    main.about .feature .icons {
-      margin-right: 1.5em;
-    }
-  }
-
-  main.about .feature .text,
-  main.about .feature .text + p {
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 100%;
-  }
-  main.about .feature .text + p {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  main.about .feature .email-image img {
-    border: 1px solid rgba(0, 0, 0, 0.25);
-  }
-  @media (min-width: 30em) {
-    main.about .feature p.email-image {
-      margin: 3em;
-    }
-  }
-
-  main.about form {
-    max-width: 20em;
-    margin: 0 auto;
-  }
-
-
-  /* =Mix Editor
-  ----------------------------------------------- */
-  section.mix-editor.page {
-    background: rgb(31, 31, 31); /* @steel */
-    color: white;
-  }
-  .mix-editor.page > div,
-  .mix-editor.page > form {
-    padding: 0;
-    margin: 0;
-    max-width: none;
-  }
-
-
-  /* =Mix Editor Images
-  ----------------------------------------------- */
-  .mix-editor .selected-images h2 {
-    position: relative;
-    color: rgb(222, 222, 222); /* @silver */
-    padding: 0 1.5em;
-    text-align: center;
-    border-width: 0.0625em 0;
-    border-style: solid;
-    border-color: black;
-    margin: 0;
-    font-size: inherit;
-    font-weight: normal;
-    line-height: 3.325; /* image size + padding / font size ((50px / 16px) + 0.2em) */
-    text-transform: lowercase;
-  }
-  .mix-editor .selected-images h2:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0.0625em;
-    left: 0.0625em;
-    width: 3.125em;
-    height: 3.125em;
-    background: white;
-    opacity: 0.2;
-  }
-
-  /* OPTIONAL: Make selected images sticky */
-  @media (min-width: 20em) and (min-height: 20em) {
-    .mix-editor .selected-images {
-      position: fixed;
-      z-index: 3; /* Just above the checkboxes */
-      top: 3em;
-      left: 0;
-      width: 100%;
-      background: black;
-      border-bottom: 0.0625em solid black;
-      box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
-    }
-    .mix-editor .selected-images ol {
-      padding-top: 0.0625em;
-      white-space: nowrap;
-      overflow-y: hidden;
-      overflow-x: scroll;
-      line-height: 1;
-
-      /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
-      -webkit-overflow-scrolling: touch;
-    }
-    .mix-editor .selected-images ol li {
-      float: none;
-      display: inline-block;
-    }
-    .mix-editor .empty-images,
-    .mix-editor ul.image-list {
-      margin-top: 3.4em; /* @line-height x 2 / image padding */
-    }
-  }
-
-  .mix-editor .image-list,
-  .mix-editor .selected-images ol {
-    margin: 0;
-  }
-  .mix-editor .image-list:after,
-  .mix-editor .selected-images ol:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .mix-editor .image-list,
-  .mix-editor .image-list li,
-  .mix-editor .selected-images ol,
-  .mix-editor .selected-images li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .mix-editor .image-list      li,
-  .mix-editor .selected-images li {
-    margin-top: 0;
-    float: left;
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-  .mix-editor .image-list      li img,
-  .mix-editor .selected-images li img {
-    display: block;
-  }
-  .mix-editor .selected-images li button {
-    padding: 0;
-    border-radius: 0;
-  }
-
-  .mix-editor .selected-images img {
-    width  : 3.125em; /* 50px / @font-size */
-    height : 3.125em;
-  }
-  .mix-editor .image-list img {
-    width  : 6.25em; /* 100px / @font-size */
-    height : 6.25em;
-  }
-
-  /* OPTIONAL: Scale the images to the available horizontal space, while keeping the image close to its native size (100px) */
-  .mix-editor .image-list li {
-    width: 33.333333333%;
-    padding-bottom: 33.333333333%;
-  }
-  .mix-editor .image-list li img {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .mix-editor .empty-images {
-    text-align: center;
-    padding: 1.5em;
-  }
-  .mix-editor.page > div.no-images {
-    margin-top: 1.5em;
-    text-align: center;
-    padding: 1.5em;
-  }
-  .mix-editor .empty-images + .image-list li {
-    background-color: transparent;
-  }
-  .mix-editor .empty-images + .image-list li img {
-    border-color: transparent;
-  }
-
-  /* Show selections */
-  .hoverable .mix-editor .selected-images li button:hover,
-             .mix-editor .selected-images li button:active,
-             .mix-editor .selected-images li button:focus {
-    opacity: 0.8;
-  }
-  .mix-editor .image-list li {
-    position: relative;
-  }
-  .mix-editor .image-list li .number {
-    background-color: rgb(255, 117, 9); /* @orange */
-    display: block;
-    text-align: center;
-    color: white;
-    font-size: 2.5em;
-    font-size: 10vw;
-
-    position: absolute;
-    width: 100%;
-    min-height: 100%;
-    border: 1px solid black;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    top: 0;
-    left: 0;
-
-    /* TRICKY: This causes performance problems on an iPhone 5 (slow scrolling and response).
-    transition: opacity 0.2s;
-    */
-    opacity: 0;
-    z-index: 1;
-  }
-  .hoverable .mix-editor .image-list li:hover,
-  .mix-editor .image-list li:focus {
-    z-index: 1;
-  }
-  .hoverable .mix-editor .image-list li:hover .number {
-    opacity: 0.25;
-  }
-  .mix-editor .image-list li .number span {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    margin-top: -0.5em;
-    line-height: 1;
-    opacity: 0;
-  }
-  .mix-editor .image-list li input {
-    position: absolute;
-    z-index: 2; /* just above the image */
-  }
-  .mix-editor .image-list li input[type="checkbox"]:checked,
-  .mix-editor .image-list li input[type="checkbox"]:not(:checked) {
-    opacity: 0;
-  }
-  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number,
-  .mix-editor .image-list li input[type="checkbox"]:not(:checked) ~ .number {
-    cursor: pointer;
-  }
-  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number span {
-    opacity: 1;
-  }
-  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number {
-    opacity: 0.75 !important;
-  }
-  .mix-editor .image-list li input[type="checkbox"]:focus ~ .number {
-    opacity: 0.25 !important;
-  }
-  .mix-editor .image-list li input[type="checkbox"]:checked:focus ~ .number {
-    opacity: 1 !important;
-  }
-
-
-  /* =Preview
-  ----------------------------------------------- */
-  .mix-editor form {
-    margin: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 0.75em;
-  }
-  .mix-editor p.text {
-    text-align: center;
-  }
-  .mix-editor p.text label {
-    background-color: transparent;
-    border-width: 0;
-    padding: 0;
-  }
-
-  .mix-editor .preview {
-    position: relative;
-  }
-  .mix-editor .preview p.text {
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-  }
-  .mix-editor .preview .text-clone,
-  .mix-editor .preview p.text label {
-    border-radius: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.5);
-
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-direction: column;
-            flex-direction: column;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-align-content: center;
-            align-content: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-  .mix-editor .preview .note {
-    color: black;
-    color: rgba(0, 0, 0, 0.9);
-  }
-  .mix-editor .preview p.text label ::-webkit-input-placeholder {
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-  .mix-editor .preview p.text label ::-moz-placeholder {
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-  .mix-editor .preview p.text label :-ms-input-placeholder {
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-
-  .mix-editor .preview .text-clone span,
-  .mix-editor textarea,
-  .mix-editor input[type="text"] {
-    background: transparent;
-    color: inherit;
-    text-align: inherit;
-    border-width: 0;
-    border-radius: 0;
-  }
-  .mix-editor .preview textarea {
-    border: 1px solid white;
-    border-color: rgba(255, 255, 255, 0.25);
-  }
-  .mix-editor .preview .text-clone span,
-  .mix-editor .preview textarea {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .mix-editor .preview .title .text-clone span,
-  .mix-editor .preview .title textarea,
-  .mix-editor input[type="text"] {
-    font-weight: bold;
-    font-size: 2.25em; /* 36px / @font-size */
-    line-height: 1.3333333333; /* 48px / 2.25em */
-    min-height: 1.3333333333em;
-    padding: 0.6666666667em 0;
-  }
-  .mix-editor .preview .text label {
-    padding: 0 0.75em;
-  }
-  .mix-editor .preview .title label {
-    padding: 0 0.6666666667em;
-  }
-
-  /* OPTIONAL: Mimic the type size used in the generated mix. */
-  @media (min-width: 600px) {
-    .mix-editor .preview .text-clone,
-    .mix-editor p.text label {
-      font-size: 2.666666667vw;
-    }
-  }
-  .mix-editor .preview .text-clone span,
-  .mix-editor textarea {
-    font-weight: bold;
-    font-size: 1.25em;
-  }
-
-  .mix-editor .preview .text textarea {
-    height: 3.75em; /* @line-height x 2.5 */
-  }
-  .mix-editor .preview .text .title textarea {
-    height: 2.6666666666em;
-  }
-  .mix-editor .preview .text-clone span {
-    height: auto;
-  }
-
-  .mix-editor .preview .text-clone {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  .mix-editor .preview .text .title textarea,
-  .mix-editor .preview .text-clone span {
-    height: auto;
-  }
-
-  .mix-editor .preview {
-    background: rgb(176, 224, 0); /* @lime */
-
-    text-align: center;
-    padding: 1.5em;
-  }
-  .mix-editor .preview img {
-    vertical-align: top;
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); /* @heavy-shadow */
-
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    background-color: rgba(0, 0, 0, 0.25);
-    min-width: 9em;
-    min-height: 9em;
-  }
-  .mix-editor .preview.lime {
-    background-color: rgb(176, 224, 0); /* @lime */
-  }
-  .mix-editor .preview.cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
-  }
-  .mix-editor .preview.blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
-  }
-  .mix-editor .preview.boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .mix-editor .preview.periwinkle {
-    background-color: rgb(109, 90, 219); /* @periwinkle */
-  }
-  .mix-editor .preview.plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
-  }
-  .mix-editor .preview.strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
-  }
-  .mix-editor .preview.apple {
-    background-color: rgb(255, 0, 86); /* @apple */
-  }
-  .mix-editor .preview.tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .mix-editor .preview.orange {
-    background-color: rgb(255, 117, 9); /* @orange */
-  }
-  .mix-editor .preview div {
-    background-size: cover;
-    background-position: center;
-  }
-
-
-
-  /* =Start
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-  .start.page {
-    padding-bottom: 4.5em; /* @page-bottom-padding */
-  }
-  .start.page h1 {
-    font-size: 1.875em;
-    line-height: 1.2; /* @line-height x 1.5 / 1.875 */
-    font-weight: normal;
-    text-transform: lowercase;
-    margin-bottom: 0;
-  }
-  .start.page h1 svg {
-    display: block;
-    margin: 0.5em auto 0;
-    height: 3em;
-    width: 100%;
-  }
-  .start.page .details .action,
-  .start.page .details aside {
-    margin-top: 3em;
-  }
-  .start.page .details aside p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* For the “Don’t have an invite code?” message */
-  .start.page .details + aside {
-    background-color: rgba(0, 0, 0, 0.1);
-    padding-top: 0.375em;
-    padding-bottom: 0.375em;
-  }
-   .join.page .details + aside p,
-  .start.page .details + aside p {
-    color: black;
-    color: rgba(0, 0, 0, 0.95);
-    text-transform: lowercase;
-  }
-  .join.page .details + aside p a {
-    color: black;
-    color: rgba(0, 0, 0, 0.8);
-  }
-  .start.page .details + aside p a {
-    color: white;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  .join.page .details + aside p a:hover,
-  .join.page .details + aside p a:active,
-  .join.page .details + aside p a:focus {
-    color: black;
-  }
-  .start.page .details + aside p a:hover,
-  .start.page .details + aside p a:active,
-  .start.page .details + aside p a:focus {
-    color: white;
-  }
-
-
-
-  /* =Log In & Sign Up
-  ----------------------------------------------- */
-
-  .login.page  h2.or,
-  .signup.page h2.or {
-    text-align: center;
-
-    /* @divider */
-    margin-top: 2em;
-    border-top: 0.08333333333em solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.4em; /* top margin (2em) - line height (1.2) / 2   */
-  }
-  .login.page  h2.or span,
-  .signup.page h2.or span {
-    display: inline-block;
-    background-color: rgb(246, 246, 246); /* @casper */
-    position: relative;
-    top: -0.6em; /* line height (1.2) / 2 */
-    padding: 0 0.375em;
-  }
-
-  .login.page > form + div {
-    margin-top: -2.25em;
-    padding-top: 0;
-  }
-
-  .login.page  > div,
-  .signup.page > div,
-  .signup.page > aside {
-    text-align: center;
-  }
-  .signup.page .note a,
-  .login.page  .note a {
-    text-transform: lowercase;
-    text-decoration: none;
-  }
-  .login.page  > div .action,
-  .signup.page > div .action {
-    max-width: 22.5em;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .login  > div .action a,
-  .signup > div .action a {
-    position: relative;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-  }
-  .login  .action a span,
-  .signup .action a span {
-    display: block;
-    font-size: 0.6666666667em; /* 16px / 24px */
-    line-height: 1.5;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-  }
-  .login  .action.facebook a,
-  .signup .action.facebook a {
-    padding-left: 2.1666666667em;
-    padding-right: 2.1666666667em;
-  }
-  .login  .action.facebook a .icon,
-  .signup .action.facebook a .icon {
-    position: absolute;
-    top: 0.3333333333em; /* 8px / 24px    (button.height - icon.height / 2 / font size) */
-    left: 0.3333333333em;
-  }
-  .signup.page .note {
-    text-align: inherit;
-    font-style: normal;
-  }
-
-
-  /* =Onboarding
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-  /* For the header on the preview page */
-  .powered-by h1 svg.icon {
-    vertical-align: top;
-    width: 2em;
-  }
-  .powered-by h1 a {
-    text-decoration: none;
-  }
-
-
-  /* =Join
-  ----------------------------------------------- */
-  .join.page > div h1 {
-    font-weight: inherit;
-    font-size: 1.5em;
-    line-height: inherit;
-    padding: 0.375em 1.5em;
-    margin: 0;
-    text-transform: lowercase;
-    text-align: center;
-  }
-  @media (min-width: 40em) {
-    .join.page > div h1 {
-      padding-top: 0.75em;
-      padding-bottom: 0.75em;
-    }
-  }
-  .join.page > .header {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: white;
-    margin: 0;
-    max-width: none;
-  }
-
-  .join.page > .details {
-    background-color: transparent;
-    padding-bottom: 1.5em;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .join.page > .details form {
-    margin-top: 0.75em;
-  }
-
-
-  /* For the “logged in as @username” indicator */
-  .logged-in {
-    text-transform: lowercase;
-    background: black;
-    color: rgb(153, 153, 153); /* @nickel */
-    font-size: 0.875em;
-    line-height: 1.7142857143em; /* @line-height / 0.875em */
-    padding: 0.4285714286em 1.2857142858em; /* 0.375em / 0.875em         0.375em x 3 / 0.875em */
-  }
-  .logged-in h2 {
-    margin-top: 0.6em;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-  }
-  .logged-in h2 strong {
-    font-weight: inherit;
-    color: white;
-  }
-  @media (min-width: 30em) {
-    .logged-in h2,
-    .logged-in p {
-      display: inline;
-    }
-    .logged-in p:before {
-      margin-left: 0.3em;
-      margin-right: 0.6em;
-      content: "|";
-      opacity: 0.5;
-    }
-  }
-
-
-  /* =Sign Up (choose)
-  ----------------------------------------------- */
-  .signup.page {
-    padding-bottom: 4.5em; /* @page-bottom-padding */
-  }
-  .signup.page > div,
-  .signup.page > div + aside {
-    background: white;
-  }
-  .signup.page h2.or span {
-    background: white;
-  }
-  .signup.page > div {
-    margin-bottom: 0;
-  }
-  .signup.page aside {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .signup.page aside a {
-    display: block;
-    font-size: inherit;
-    padding-top: 1.25em;
-    padding-bottom: 1.25em;
-    color: rgb(153, 153, 153); /* @nickel */
-    text-decoration: inherit;
-  }
-  .signup.page aside a strong {
-    font-weight: normal;
-    color: rgb(255, 49, 102); /* @pitaya */
-  }
-  .hoverable .signup.page aside a:hover  strong,
-             .signup.page aside a:active strong,
-             .signup.page aside a:focus  strong {
-    color: rgb(235, 29, 82); /* @raspberry */
-  }
-  .signup.page .note:first-child {
-    margin-top: 0;
-  }
-  .signup.page .note:last-child {
-    margin-bottom: 0;
-  }
-  .signup.page .checkbox label {
-    text-transform: none;
-  }
-  .signup.page .checkbox label a {
-    display: inline-block;
-    text-transform: inherit;
-  }
-
-
-  /* =Ready (ways to use CTZN)
-  ----------------------------------------------- */
-  .ready.page {
-    padding-bottom: 4.5em; /* @page-bottom-padding */
-  }
-  @media (min-height: 40em) and (min-width: 45em) { /* @tall-screens */
-    .ready.page > div {
-      margin-top: 3em;
-    }
-  }
-  .ready.page h1 {
-    margin-bottom: 0;
-    text-align: center;
-
-    /* @h2 */
-    font-size: 1.5em;     /* 24px / @font-size */
-    line-height: inherit;
-  }
-  .ready.page ul {
-    margin-top: 1.875em;
-    margin-bottom: 0;
-  }
-  .ready.page ul,
-  .ready.page li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .ready.page li {
-    margin-top: 0.375em;
-  }
-
-  .ready.page aside {
-    display: block;
-    color: rgb(102, 102, 102);
-    padding: 1.5em 3em 1.5em 1.5em;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    background-color: white;
-    position: relative;
-  }
-  .ready.page aside p {
-    margin: 0;
-  }
-
-  .ready.page li > a {
-    display: block;
-    color: rgb(102, 102, 102);
-    padding: 1.5em 3em 1.5em 1.5em;
-    background-color: white;
-    text-decoration: none;
-    position: relative;
-
-    /* @background-icon */
-    background-size: 1.5em auto;
-    background-repeat: no-repeat;
-    background-position: 97% 50%;
-    background-position: calc(100% - 0.75em) 50%;
-
-    /* @icon-right */ /* @aluminum */
-    /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="rgb(204, 204, 204)" d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></svg> */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHBhdGggZmlsbD0icmdiKDIwNCwgMjA0LCAyMDQpIiBkPSJNNS41NDggMy45NzdsNi4wMjMgNi4wMjMtNi4wMjMgNi4wMjMgMS44MzIgMS44MzIgNy44NTYtNy44NTYtNy44NTYtNy44NTZ6Ij48L3BhdGg+PC9zdmc+Cg==);
-  }
-  .hoverable .ready.page li a:hover,
-  .ready.page li > a:active,
-  .ready.page li > a:focus {
-    background-color: rgb(222, 222, 222); /* @silver */
-  }
-  @media (max-width: 34.5em) { /* @page-max-width + @page-padding x 2 (32em + 2.5em) */
-    .ready.page ul li > a {
-      margin-left: -1.25em;
-      margin-right: -1.25em;
-    }
-  }
-
-  .ready.page li a > div img {
-    vertical-align: middle;
-    margin: 0 0.25em;
-  }
-
-  /* SHIM: Give the store and browser buttons a uniform height. */
-  .ready.page li a > div img[height="35"] {
-    height: 2.1875em; /* 35px / 16px */
-  }
-  .ready.page li a  > div img[height="50"],
-  .ready.page aside > div img[height="50"] {
-    height: 3.125em; /* 50px / 16px */
-  }
-
-
-  .ready.page li a > div .icon {
-    width: 3em;
-    height: 3em;
-  }
-
-  .ready.page li a > div {
-    margin-bottom: 0.75em;    
-  }
-  .ready.page aside > div img,
-  .ready.page li a > div img,
-  .ready.page li a > div .icon {
-    margin: 0.75em 0.25em;
-  }
-  @media (min-width: 20em) {
-    .ready.page aside,
-    .ready.page li > a {
-      padding-left: 10em;
-    }
-    .ready.page aside > div,
-    .ready.page li > a > div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      text-align: center;
-      width: 10em; /* item left padding */
-      margin-bottom: 0;
-
-      display: -webkit-flex;
-      display:         flex;
-
-      -webkit-flex-direction: row;
-              flex-direction: row;
-
-      -webkit-align-items: center;
-              align-items: center;
-
-      -webkit-align-content: center;
-              align-content: center;
-
-      -webkit-justify-content: center;
-              justify-content: center;
-    }
-  }
-
-
-  /* =Email
-  ----------------------------------------------- */
-  .email.page > div {
-    text-align: center;
-  }
-  .email.page h1 {
-    /* @h2 */
-    font-size: 1.5em; /* 24px / @font-size */
-    line-height: inherit;
-  }
-  .email.page h1 .icon {
-    color: rgb(102, 102, 102); /* @tin */
-    margin-bottom: 0.25em;
-    font-size: 1.5em;
-  }
-  .email.page ul,
-  .email.page li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .email.page li {
-    margin-top: 1.5em;
-    padding: 1.5em;
-    background: white;
-  }
-  .email.page li h3 {
-    margin-top: 0;
-    font-size: inherit;
-    line-height: inherit;
-  }
-  .email.page li p {
-    color: rgb(102, 102, 102); /* @tin */
-  }
-
-
-
-  /* =Account
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-  /* =Settings
-  ----------------------------------------------- */
-  .settings h3 {
-    margin-top: 1em; /* @line-height / 2 / 0.75em */
-
-    /* @tiny-headline */
-    font-size: 0.75em;
-    text-transform: uppercase;
-    color: rgb(159, 165, 162); /* @barium */
-  }
-  .settings .introduction {
-    margin-bottom: 3em;
-  }
-  .settings .introduction svg.icon {
-    display: block;
-    width: 4.5em;
-    height: 4.5em;
-    margin: -0.375em auto;
-    opacity: 0.15;
-  }
-  .settings .introduction h2 {
-    text-align: center;
-    font-weight: normal;
-    font-size: 1.125em; /* 18px / @font-size */
-    line-height: 1.3333333333em;
-    margin-top: 1.3333333333em;
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .settings .introduction h2 strong {
-    font-size: 1.3333333333em; /* 24px / 18px */
-    color: black;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 900; /* @extra-bold */
-  }
-  .settings .introduction p {
-    text-align: center;
-
-    /* @note */
-    font-size: 0.875em;
-    margin-top: 1.5em;
-    color: rgb(153, 153, 153); /* @nickel */
-  }
-
-  /* SHIM: Reduce the vertical space between sections, during onboarding */
-  .settings .introduction {
-    padding-top: 1.5em;
-    padding-bottom: 0;
-  }
-  .settings .introduction + form,
-  .settings .introduction + .option-list {
-    padding-top: 0;
-  }
-  .option-list + .option-list {
-    padding-top: 0;
-  }
-  .option-list ul:last-child {
-    margin-bottom: 0;
-  }
-
-  .settings aside h3,
-  .settings aside p {
-    text-align: center;
-    font-style: italic;
-    color: rgb(153, 153, 153); /* @nickel */
-  }
-  .settings aside h3 {
-    text-transform: lowercase;
-    font-size: inherit;
-    margin-bottom: 0;
-  }
-  .settings aside p {
-    margin-top: 0;
-  }
-  .settings aside p:first-letter {
-    text-transform: lowercase;
-  }
-
-  .option-list .instagram .icon:first-child {
-    color: rgb(40, 81, 127);
-  }
-  .option-list .twitter .icon:first-child {
-    color: rgb(94, 171, 244);
-  }
-  .option-list .facebook .icon:first-child {
-    color: rgb(59, 89, 153); /* @facebook */
-  }
-
-  .connect.option-list button .icon:first-child {
-    color: inherit;
-  }
-  .connect.option-list .active.instagram button .icon:first-child {
-    color: rgb(40, 81, 127);
-  }
-  .connect.option-list .active.twitter button .icon:first-child {
-    color: rgb(94, 171, 244);
-  }
-  .connect.option-list .active.facebook button .icon:first-child {
-    color: rgb(59, 89, 153); /* @facebook */
-  }
-
-  /* Position the “fix settings” buttons in the upper right corner */
-  .connect.option-list li {
-    position: relative;
-  }
-  .connect.option-list li button.settings {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.5625em 0.75em;
-    width: auto;
-    background-color: transparent;
-    border-width: 0;
-    color: rgb(255, 49, 59); /* @watermelon */
-  }
-
-  /* SHIM: Override styles intended for the social network icon */
-  .connect.option-list li button.settings .icon {
-    color: inherit !important;
-  }
-
-  .hoverable .connect.option-list li button.settings:hover  .icon,
-             .connect.option-list li button.settings:active .icon,
-             .connect.option-list li button.settings:focus  .icon {
-    color: black !important;
-  }
-  .connect.option-list li button.settings .icon {
-    position: static;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Hide the pseudo checkboxes by default */
-  .option-list label input[type="radio"   ] ~ .icon,
-  .option-list label input[type="checkbox"] ~ .icon {
-    color: inherit;
-    display: none;
-  }
-
-  /* OPTIONAL: Make the checkbox label darker if the checkbox is checked  */
-  .option-list label input[type="radio"   ] + span,
-  .option-list label input[type="checkbox"] + span {
-    color: rgb(153, 153, 153); /* @nickel */
-  }
-  .option-list label input[type="radio"   ]:checked + span,
-  .option-list label input[type="checkbox"]:checked + span {
-    color: rgb(5, 5, 5); /* @tungsten */
-  }
-
-  /* OPTIONAL: Position the checkboxes on the right */
-  .option-list label input[type="radio"   ],
-  .option-list label input[type="checkbox"] {
-    float: right;
-    margin-left: 0.375em;
-  }
-
-  /* OPTIONAL: Replace the usual checkbox with a pseudo checkbox */
-  .option-list label input[type="radio"   ]:checked,
-  .option-list label input[type="radio"   ]:not(:checked),
-  .option-list label input[type="checkbox"]:checked,
-  .option-list label input[type="checkbox"]:not(:checked) {
-    opacity: 0;
-  }
-  .option-list label input[type="radio"   ]:checked       ~ .icon,
-  .option-list label input[type="radio"   ]:not(:checked) ~ .icon,
-  .option-list label input[type="checkbox"]:checked       ~ .icon,
-  .option-list label input[type="checkbox"]:not(:checked) ~ .icon {
-    margin-top: -0.75em;
-    position: absolute;
-    top: 50%;
-    right: 0.75em;
-    color: rgb(102, 204, 0); /* @pear */
-    opacity: 0;
-    display: block;
-    border: 0.125em solid transparent;
-  }
-  /*
-  .option-list label input[type="radio"   ]:checked       ~ .icon,
-  .option-list label input[type="radio"   ]:not(:checked) ~ .icon {
-    border-radius: 50%;
-  }
-  */
-  .option-list label input[type="radio"   ]:checked ~ .icon,
-  .option-list label input[type="checkbox"]:checked ~ .icon {
-    opacity: 1;
-  }
-  .option-list label input[type="radio"   ]:focus ~ .icon,
-  .option-list label input[type="checkbox"]:focus ~ .icon {
-    opacity: 1;
-    color: transparent;
-    border-color: rgb(222, 222, 222); /* @silver */
-  }
-  .option-list label input[type="radio"   ]:checked:hover ~ .icon,
-  .option-list label input[type="radio"   ]:checked:focus ~ .icon,
-  .option-list label input[type="checkbox"]:checked:hover ~ .icon,
-  .option-list label input[type="checkbox"]:checked:focus ~ .icon {
-    color: rgb(102, 204, 0); /* @pear */
-  }
-
-
-  /* Deprecated (consider using an input checkbox instead) */
-  .option-list a[role="checkbox"] {
-    background-image: none;
-  }
-  .connect.option-list button,
-  .option-list a[role="checkbox"][aria-checked="false"] {
-    color: rgb(153, 153, 153); /* @nickel */
-  }
-  .option-list a[role="checkbox"][aria-checked="false"] {
-    background-image: none;
-  }
-  .option-list a[role="checkbox"][aria-checked="false"] .icon {
-    color: inherit;
-  }
-  .connect.option-list .active button,
-  .option-list a[role="checkbox"][aria-checked="true"] {
-    color: rgb(5, 5, 5); /* @tungsten */
-  }
-
-
-  /* =Edit Push
-  ----------------------------------------------- */
-  .settings.page form h1 {
-    font-size: 1.3333333333em;
-    color: rgb(0, 0, 0);
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 900;
-    text-align: center;
-  }
-  .settings.page form h3 {
-    margin-top: 2.25em;
-  }
-  .settings.page form h1 + h3 {
-    margin-top: 0;
-  }
-  .settings p.select label span.push-card {
-    position: static;
-    display: inline-block;
-    vertical-align: middle;
-    width: 1.75em;
-    height: 1.75em;
-    padding: 0;
-    border-radius: 0.125em;
-    margin-left: 0.375em;
-  }
-  label abbr {
-    font-size: 0.875em;
-    margin-left: 0.25em;
-    text-transform: none;
-  }
-
-
-  /* =Notifications
-  ----------------------------------------------- */
-
-  .notifications.page > div {
-    padding-top: 0;
-  }
-  .comments      .post-list,
-  .notifications .post-list {
-    margin-left : -1.25em; /* @page-padding */
-    margin-right: -1.25em; /* @page-padding */
-    padding-bottom: 0;
-  }
-  .comments      .post-list .time,
-  .notifications .post-list .time {
-    margin: 0;
-    display: inline-block;
-    white-space: nowrap;
-    color: rgb(193, 193, 193);
-    font-size: 0.6666666667em;
-    text-transform: uppercase;
-  }
-  .comments      .post-item,
-  .notifications .post-item {
-    margin-bottom: 0.07142857143em;
-    /*
-    border-bottom: 0.07142857143em solid rgb(232, 232, 232);
-    */
-  }
-  .notifications .post-list .post-item footer {
-    font-size: 1.1428571429em; /* 1 / 0.875em */
-  }
-
-  .login         h2,
-  .signup        h2,
-  .list          h2,
-  .notifications h2 {
-    margin-top: 2em; /* @line-height / 0.75em */
-
-    /* @tiny-headline */
-    font-size: 0.75em;
-    text-transform: uppercase;
-    color: rgb(159, 165, 162); /* @barium */
-  }
-
-  .comments      .post-item,
-  .notifications .post-item {
-    position: relative;
-    padding: 1.1428571429em 0.8571428571em; /* 16px / 14px */  /* 12px / 14px */
-    padding-left: 3.5714285714em; /* 50px / 14px */
-    font-size: 0.875em; /* 14px / @font-size */
-    line-height: 1.2857142857; /* @line-height / 0.875 x 3/4 */
-  }
-  .notifications .post-item {
-    min-height: 3.4285714286em; /* 48px / 14px */
-    padding-right: 5.7142857143em; /* 80px / 14px */
-  }
-  .comments      .post-item {
-    background: transparent;
-  }
-  .comments      .post-item header,
-  .notifications .post-item header {
-    padding-left: 0;
-  }
-  .comments      .post-item header .avatar,
-  .notifications .post-item header .avatar {
-    position: absolute;
-    font-size: 1.1428571429em; /* 1 / 0.875 */
-
-    top: 0.625em; /* 10px / 16px */
-    left: 0.625em; /* 10px / 16px */
-  }
-  .notifications .post-item header .icon {
-    position: absolute;
-    font-size: 1.1428571429em; /* 1 / 0.875 */
-
-    /* SHIM: These numbers are arbitrary, but seem to work well. */
-    top: 1em;
-    left: 0.75em;
-  }
-
-  .activity .more a,
-  .comments .post-item,
-  .activity .post-item {
-    padding-top    : 0.2857142857em; /* 4px / 14px */
-    padding-bottom : 0.2857142857em;
-    padding-left   : 2.8571428571em; /* 40px / 14px */
-  }
-  .comments .post-item header .avatar,
-  .activity .post-item header .avatar {
-    top: 0.1428571429em; /* 2px / 14px */
-    left: 1.25em;
-  }
-  .comments .post-item .body p,
-  .activity .post-item .body p {
-    color: rgb(102, 102, 102); /* @tin */
-  }
-  .activity .action {
-    margin-top: 1.25em;
-    margin-bottom: 0;
-  }
-  .activity .action:first-child {
-    margin-top: 0;
-  }
-  .activity .comments {
-    margin-top: 0.25em; /* 4px / @font-size */
-  }
-  .activity .comments .post-list {
-    margin-top: 0;
-  }
-  .activity .more {
-    margin-bottom: 0.25em;
-  }
-  .activity .more a {
-    color: rgb(153, 153, 153); /* @nickel */
-    text-decoration: none;
-    font-size: 0.875em; /* 14px / @font-size */
-    font-weight: bold;
-  }
-  .hoverable .activity .more a:hover,
-             .activity .more a:active,
-             .activity .more a:focus {
-    color: rgb(235, 29, 82); /* @raspberry */
-  }
-
-  .notifications .post-item .body img {
-    margin: 0;
-    width  : 4.2857142857em; /* target image size / font size (60px / 14px) */
-    height : 4.2857142857em;
-    min-width: 1px;
-    min-height: 1px;
-    position: absolute;
-    top  : 0.7142857143em; /* 10px / 14px */
-    right: 0.7142857143em;
-  }
-
-  .comments      .post-item header,
-  .comments      .post-item header h3,
-  .comments      .post-item .body,
-  .comments      .post-item .body p:first-child,
-  .comments      .post-item .text label,
-  .notifications .post-item header,
-  .notifications .post-item header h3,
-  .notifications .post-item .body,
-  .notifications .post-item .body p {
-    float: none;
-    display: inline;
-    font-size: inherit;
-    line-height: inherit;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-  }
-  .comments      .post-item .body,
-  .notifications .post-item .body {
-    margin-right: 0.375em;
-  }
-  .comments h2 {
-    /* @hidden-accessible */
-    position: absolute;
-    left: -9999px;
-  }
-  .comments .post-item form {
-    margin-top: -15px;
-  }
-  .comments .post-item label {
-    border-width: 0;
-  }
-  .comments .post-item textarea {
-    border: 1px solid rgb(222, 222, 222); /* @silver */
-    border-radius: 0.25em;
-  }
-
-
-  /* =Switch Push
-  ----------------------------------------------- */
-  .pushes.page {
-    background: rgb(51, 51, 51); /* @iron */
-    color: white;
-    color: rgba(255, 255, 255, 0.95);
-  }
-  .pushes h1,
-  .pushes .option-list h3 {
-    /* @hidden-accessible */
-    position: absolute;
-    left: -9999px;
-  }
-  .pushes .option-list ul {
-    margin-top: 0;
-  }
-
-  .switch ul,
-  .switch li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .switch ul {
-    margin-top: 0;
-  }
-  .switch li {
-    margin-bottom: 0.0625em; /* 1px */
-  }
-  .switch li a.push-card {
-    padding: 1.25em;
-    text-align: left;
-  }
-  .switch li a.push-card .name {
-    line-height: 1.5333333333;
-    margin-left: 0;
-    margin-right: 0;
-    text-shadow: 0 0 2.5em rgba(0, 0, 0, 0.3);
-  }
-  .switch li a .action {
-    margin-left: 1.5em;
-    background-color: rgba(0, 0, 0, 0.25);
-    transition: background-color 0.2s;
-  }
-  .hoverable .switch li a:hover  .action,
-             .switch li a:active .action,
-             .switch li a:focus  .action {
-    background-color: black;
-  }
-
-  /* Activity indicators */
-  .switch li a.push-card .name {
-    padding-left: 0.375em;
-  }
-  .switch li a.push-card.active .name:before {
-    content: "";
-    display: inline-block;
-    background-color: rgb(150, 255, 108); /* @honeydew */
-    width: 0.375em;
-    height: 0.375em;
-    border-radius: 100%;
-    vertical-align: middle;
-    margin-right: 0.375em;
-    margin-left: -0.75em;
-  }
-
-  /* OPTIONAL: Make links darker when active */
-  .switch li > a {
-    position: relative;
-    z-index: 1;
-  }
-  .switch li > a span.name:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transition: background-color 0.2s;
-  }
-  .hoverable .switch li a:hover  span.name:after,
-             .switch li a:active span.name:after,
-             .switch li a:focus  span.name:after {
-    background: rgba(0, 0, 0, 0.1);
-  }
-
-  /* OPTIONAL: Position the action on the right */
-  .switch li:after {
-    /* @clearfix */
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .switch li a .action {
-    float: right;
-  }
-  .switch li a.push-card {
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-direction: row;
-            flex-direction: row;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
-  }
-
-  /* OPTIONAL: Give option lists a dark background */
-  .pushes.page .option-list li + li {
-    margin-top: 0.0625em;
-  }
-  .pushes.page .option-list a {
-    border-color: black;
-    background-color: black;
-    color: rgb(204, 204, 204); /* @aluminum */
-  }
-  .hoverable .pushes.page .option-list a:hover,
-             .pushes.page .option-list a:active,
-             .pushes.page .option-list a:focus {
-    color: white;
-  }
-
-
-
-  /* =Archive
-  ----------------------------------------------- */
-  .archive.page iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-
-  /* Make space for the header */
-  .archive.page iframe {
-    border-top: 5.3125em solid transparent; /* (@line-height x 3.5) + (1px / @font-size) */
-  }
-  @media (min-height: 20em) and (min-width: 20em) {
-    .archive.page iframe {
-      border-top: 3.0625em solid transparent; /* (@line-height x 2) + (1px / @font-size) */
-    }
-  }
-
-
-
-  /* =Loading
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-  section.loading {
-    color: rgb(246, 246, 246); /* @casper */
-    background-color: rgb(5, 5, 5); /* @tungsten */
-    height: 100%;
-    width: 100%;
-    display: table;
-  }
-  section.loading > div {
-    display: table-row;
-  }
-  section.loading > div > div {
-    display: table-cell;
-    padding: 3em 1.5em;
-    vertical-align: middle;
-    text-align: center;
-  }
-  section.loading h1 {
-    margin-top: 0;
-    font-size: inherit;
-  }
-  section.loading .loading-icon {
-    margin-left: 0.375em;
-    margin-right: 0.375em;
-  }
-  section.loading h1 svg {
-    display: block;
-    margin: 0 auto 1.25em;
-    height: 1.75em;
-    width: auto;
-  }
-
-
-
-  /* =Dialog
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-  .dialog.page {
-    text-align: center;
-
-    /* Dialogs appear above other pages */
-    position: fixed;
-    z-index: 9999; /* @infinity */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-
-    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
-    -webkit-overflow-scrolling: touch;
-  }
-  .dialog.page > div > .icon:first-child {
-    font-size: 2em;
-    margin-bottom: 0.375em;
-  }
-  .dialog.page h1 {
-    margin-top: 0;
-
-    /* @h2 */
-    font-size: 1.5em;     /* 24px / @font-size */
-    line-height: inherit;
-  }
-  .dialog.page .action a.reinstall,
-  .dialog.page    button.reinstall {
-    background-color: rgb(255, 49, 59); /* @watermelon */
-  }
-  .dialog.page .action a.restart,
-  .dialog.page    button.restart {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .hoverable .dialog.page .action a.reinstall:hover,
-             .dialog.page .action a.reinstall:active,
-             .dialog.page .action a.reinstall:focus,
-  .hoverable .dialog.page    button.reinstall:hover,
-             .dialog.page    button.reinstall:active,
-             .dialog.page    button.reinstall:focus {
-    background-color: rgb(255, 49, 59); /* @watermelon */
-    background-color: rgb(235, 29, 39); /* 4% darker */
-  }
-  .hoverable .dialog.page .action a.restart:hover,
-             .dialog.page .action a.restart:active,
-             .dialog.page .action a.restart:focus,
-  .hoverable .dialog.page    button.restart:hover,
-             .dialog.page    button.restart:active,
-             .dialog.page    button.restart:focus {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-    background-color: rgb(81, 132, 234); /* 4% darker */
-  }
-  .dialog.page .action {
-    margin-top: 1.5em;
-  }
-  .dialog.page .details {
-    margin-top: 3em;
-  }
-  .dialog.page .details ul {
-    text-align: left;
-  }
-
-  /* SHIM: Don’t position the instructions dialog (since it may interfere with scrolling). */
-  #loading-screen .dialog.page.instructions {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-  }
-
-  .dialog.page.instructions h1 {
-    max-width: none;
-  }
-  .dialog.page.instructions ul + p,
-  .dialog.page.instructions p + p {
-    margin-top: 3em;
-  }
-  .dialog.page ul.logos,
-  .dialog.page ul.logos li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .dialog.page ul.logos li {
-    display: inline;
-    margin-left: 0.375em;
-    margin-right: 0.375em;
-  }
-  .dialog.page ul.logos li a img {
-    max-width: 100%;
-  }
-
-  /* SHIM: Give the store buttons a uniform height. */
-  .dialog.page ul.logos li a img[height="50"] {
-    height: 3.125em; /* 50px / 16px */
-  }
-
-  /* OPTIONAL: Make the browsers buttons scale with the font size */
-  .dialog.page ul.logos li a img[width="70"] {
-    width: 4.375em; /* 70px / 16px */
-  }
-
-
-  /* =Developer Tools
-  ----------------------------------------------- */
-
-  /* TRICKY: Don’t use overflow scroll on the developer page, since it may run long. */
-  .developer.dialog.page {
-    position: absolute;
-    height: auto;
-    min-height: 100%;
-    overflow: visible;
-  }
-
-  .developer.dialog.page > div {
-    max-width: none;
-  }
-  .dialog.page dl,
-  .dialog.page .logs,
-  .dialog.page form {
-    /* @divider */
-    margin-top: 3em;
-    border-top: 0.0625em solid rgba(0, 0, 0, 0.1);
-    padding-top: 1.5em;
-    text-align: left;
-  }
-  .dialog.page dl {
-    padding-top: 3em;
-  }
-  .dialog.page h2 {
-    font-size: inherit;
-    line-height: inherit;
-  }
-  .dialog.page dt {
-    font-weight: bold;
-  }
-  .dialog.page dt:after {
-    content: ":";
-  }
-  .dialog.page dd {
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .dialog.page dd + dt {
-    margin-top: 0.75em; /* @line-height / 2 */
-  }
-  .dialog.page label br {
-    display: block;
-  }
-  .dialog.page input[type="number"] {
-    width: 10em;
-  }
-  .dialog.page select {
-    font-size: inherit;
-  }
-  .dialog.page ul.action {
-    margin-top: 1.5em;
-  }
-  .push-card.page ul.action,
-  .push-card.page ul.action li,
-  .dialog.page    ul.action,
-  .dialog.page    ul.action li,
-  .dialog.page .logs ul,
-  .dialog.page .logs li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .push-card.page ul.action li + li,
-  .dialog.page    ul.action li + li {
-    margin-top: 0.75em;
-  }
-  .dialog.page .logs   li + li {
-    margin-top: 1.5em;
-  }
-  .dialog.page pre,
-  .dialog.page .logs ul {
-    text-align: left;
-    background: white;
-    color: black;
-    margin-left: -1.25em; /* @page-padding */
-    margin-right: -1.25em; /* @page-padding */
-    padding: 1em; /* @page-padding */
-    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-  }
-  .dialog.page .logs time {
-    opacity: 0.5;
-    display: block;
-  }
-
-
-
-  /* =Transitions
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-
-  /* =Slide Left
-  ----------------------------------------------- */
-  @-webkit-keyframes slide-left {
-    0% {
-      -webkit-transform: translateX(40em);
-    }
-    100% {
-      -webkit-transform: translateX(0);
-    }
-  }
-  @keyframes slide-left {
-    0% {
-              transform: translateX(40em);
-    }
-    100% {
-              transform: translateX(0);
-    }
-  }
-
-
-  /* =Slide Right
-  ----------------------------------------------- */
-  @-webkit-keyframes slide-right {
-    0% {
-      -webkit-transform: translateX(-40em);
-    }
-    100% {
-      -webkit-transform: translateX(0);
-    }
-  }
-  @keyframes slide-right {
-    0% {
-              transform: translateX(-40em);
-    }
-    100% {
-              transform: translateX(0);
-    }
-  }
-
-
-  /* =Slide Up
-  ----------------------------------------------- */
-  @-webkit-keyframes slide-up {
-    0% {
-      -webkit-transform: translateY(40em);
-    }
-    100% {
-      -webkit-transform: translateY(0);
-    }
-  }
-  @keyframes slide-up {
-    0% {
-              transform: translateY(40em);
-    }
-    100% {
-              transform: translateY(0);
-    }
-  }
-
-
-  /* =Slide Down
-  ----------------------------------------------- */
-  @-webkit-keyframes slide-down {
-    0% {
-      -webkit-transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(40em);
-    }
-  }
-  @keyframes slide-down {
-    0% {
-              transform: translateY(0);
-    }
-    100% {
-              transform: translateY(40em);
-    }
-  }
-
-
-  /* =Switch Push (intro)
-  ----------------------------------------------- */
-  /*
-  main.pushes .switch li:nth-child(2n+1) {
-    -webkit-animation: slide-left 0.2s both;
-            animation: slide-left 0.2s both;
-  }
-  main.pushes .switch li:nth-child(2n) {
-    -webkit-animation: slide-right 0.2s both;
-            animation: slide-right 0.2s both;
-  }
-  */
-
-
-  /* =Edit Post (intro & outro)
-  ----------------------------------------------- */
-  section.edit.page.has-intro {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-  }
-  section.edit.page.intro {
-    position: fixed;
-    z-index: 9999; /* @infinity */
-    -webkit-animation: slide-up 0.3s both;
-            animation: slide-up 0.3s both;
-  }
-  section.edit.page.outro {
-    z-index: 9999; /* @infinity */
-    -webkit-animation: slide-down 0.3s both;
-            animation: slide-down 0.3s both;
-  }
-
-
-
-  /* =Shims
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-
-  /* SHIM: Make screens fill the viewport. */
-  body > #loading-screen,
-  body > #screen,
-  body > #screen > div[data-screen] {
-    display: inline;
   }
 
 
