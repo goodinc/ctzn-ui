@@ -132,6 +132,7 @@
 
     /* @tiny-headline */
     font-size: 0.75em;
+    line-height: 2em;
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
@@ -943,13 +944,17 @@
   .upload-message a,
   .upload-message button {
     background-color: transparent;
-    color: rgb(255, 49, 102); /* @pitaya */
-  }
-  .upload-message a,
-  .upload-message button {
-    background-color: transparent;
     color: inherit;
     padding: 0.375em;
+  }
+  .upload-message a:hover,
+  .upload-message a:active,
+  .upload-message a:focus,
+  .upload-message button:hover,
+  .upload-message button:active,
+  .upload-message button:focus {
+    background-color: white;
+    color: rgb(255, 49, 59); /* @watermelon */
   }
   section.upload-message:last-child {
     border-bottom-width: 0;
@@ -1293,9 +1298,38 @@
     color: rgb(5, 5, 5); /* @tungsten */
     position: relative;
     border-radius: 0;
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  .hoverable
+  .option-list a:hover,
+  .option-list a:active,
+  .option-list a:focus,
+  .hoverable
+  .option-list button:hover,
+  .option-list button:active,
+  .option-list button:focus,
+  .hoverable
+  .option-list label:hover,
+  .option-list label:active  {
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+
+  .option-list a,
+  .option-list button,
+  .option-list label {
+    cursor: pointer;
   }
   .option-list a,
   .option-list button {
+    color: rgb(255, 49, 102); /* @pitaya */
+  }
+
+  /* SHIM: Override the default button hover color */
+  .hoverable
+  .option-list button:hover,
+  .option-list button:active,
+  .option-list button:focus {
     color: rgb(255, 49, 102); /* @pitaya */
   }
 
@@ -1379,19 +1413,6 @@
     color: rgb(102, 204, 0); /* @pear */
   }
 
-  .hoverable .option-list a:hover,
-             .option-list a:active,
-             .option-list a:focus,
-  .hoverable .option-list button:hover,
-             .option-list button:active,
-             .option-list button:focus {
-    background-color: rgb(222, 222, 222); /* @silver */
-  }
-  .hoverable .option-list button:hover,
-             .option-list button:active,
-             .option-list button:focus {
-    color: rgb(235, 29, 82); /* @raspberry */
-  }
   .option-list,
   .option-list ul:first-child,
   .option-list ul li:first-child {
@@ -1862,6 +1883,7 @@
   }
   .post-item footer .action li.dismiss button {
     border-width: 0;
+    border-radius: 0;
     padding: 1.25em;
   }
 
@@ -2654,9 +2676,7 @@
     color: white;
   }
   header.primary > a, /* For the push preview */
-  header.primary h2,
-  header.primary h3,
-  header.primary p {
+  header.primary h2 {
     display: inline-block;
     margin: 0;
     vertical-align: top;
@@ -2670,29 +2690,6 @@
   header.primary h2 {
     vertical-align: bottom;
     margin-right: 0.75em;
-  }
-
-
-  /* For the push preview */
-  header.primary h3 {
-    font-weight: inherit;
-    text-transform: lowercase;
-  }
-  header.primary h3,
-  header.primary p {
-    font-size: 0.875em;
-    line-height: 1.7142857143em; /* 1.5em / 0.875em */
-  }
-
-  /* OPTIONAL: Only show the about text on large screens (since it’s somewhat redundant information). */
-  header.primary p.about {
-    display: none;
-  }
-  @media (min-width: 40em) { /* This number is arbitrary. (It happens to be about the width of the header with all of the text showing.) */
-    header.primary p.about {
-      display: inline-block;
-      float: right;
-    }
   }
 
   /* OPTIONAL: Make the header sticky */
@@ -4311,6 +4308,9 @@
   ----------------------------------------------- */
 
   /* For the header on the preview page */
+  .powered-by h1 {
+    font-variant: small-caps;
+  }
   .powered-by h1 svg.icon {
     vertical-align: top;
     width: 2em;
@@ -4452,16 +4452,19 @@
     text-align: center;
 
     /* @divider */
-    margin-top: 2em;
+    margin-top: 3em;
     border-top: 0.08333333333em solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.4em; /* top margin (2em) - line height (1.2) / 2   */
+    margin-bottom: 0; /* top margin (2em) - line height (2em) / 2   */
+  }
+  .login.page  h2.or:first-child {
+    margin-top: 0;
   }
   .login.page  h2.or span,
   .signup.page h2.or span {
     display: inline-block;
     background-color: rgb(246, 246, 246); /* @casper */
     position: relative;
-    top: -0.6em; /* line height (1.2) / 2 */
+    top: -1em; /* 2em (line height) / 2 */
     padding: 0 0.375em;
   }
   .login.page > form + div {
@@ -5843,9 +5846,6 @@
     color: white;
     color: rgba(255, 255, 255, 0.5);
     box-shadow: none;
-  }
-  header.powered-by h1 a {
-    font-variant: small-caps;
   }
   .mixable .push-card.page > header.powered-by h1 a {
     background: black;
