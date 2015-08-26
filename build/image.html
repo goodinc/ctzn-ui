@@ -2,28 +2,39 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>CTZN</title>
+  <title>Prototype / CTZN</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <script src="../assets/js/placeholder.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
+
+  <!--
+  <style>
+    .image-viewer img {
+      transition: width 0.4s;
+    }
+  </style>
+  -->
 
   <script>
     // fonts.com tracking
-    var MTIProjectId = '10a9d239-187d-4d7f-856c-2687a38610fd';
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
     (function() {
-      var t = document.createElement('script'); t.type = 'text/javascript'; t.async = 'true';
-      t.src = '//fast.fonts.net/t/trackingCode.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
     })();
   </script>
 
+  <script src="../assets/js/placeholder.js"></script>
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
+
 </head>
-<body class="pattern">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -329,6 +340,104 @@
     </div>
 
   </section>
+
+  <script>
+    (function() {
+
+      var good = {
+        MAX_IMAGE_SIZE: 2048
+      }
+
+      // http://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window#answer-11744120
+      function getViewportSize() {
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            width  = w.innerWidth || e.clientWidth || g.clientWidth,
+            height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+        return { width: width, height: height };
+      }
+
+      var zoomIn  = document.getElementById('zoom-in');
+      var zoomOut = document.getElementById('zoom-out');
+      var container = document.querySelector('.image-viewer .image p');
+      var image = document.querySelector('.image-viewer img');
+
+      if (zoomIn && zoomOut && image) {
+
+        // This returns a percentage that represents how far the user has scrolled away from the top left corner.
+        function getPosition() {
+          var viewport = getViewportSize();
+
+          var centered = 0.5;
+
+          function topPosition() {
+            var range = image.offsetHeight - viewport.height;
+            return container.scrollTop / range;
+          }
+          function leftPosition() {
+            var range = image.offsetWidth - viewport.width;
+            return container.scrollLeft / range;
+          }
+
+          return {
+            top  : (image.offsetHeight > viewport.height) ? topPosition()  : centered,
+            left : (image.offsetWidth  > viewport.width)  ? leftPosition() : centered
+          };
+        }
+
+        // Start with a zoom level that fits our largest image size in the viewport
+        function getStartZoom() {
+          var viewport = getViewportSize();
+          return (viewport.height < viewport.width ? viewport.height : viewport.width) / good.MAX_IMAGE_SIZE;
+        }
+        var currentZoom = getStartZoom();
+
+        zoomIn.addEventListener('click', function(e) {
+          e.preventDefault();
+          currentZoom = currentZoom * 1.5;
+          update();
+        }, false);
+
+        zoomOut.addEventListener('click', function(e) {
+          e.preventDefault();
+          currentZoom = currentZoom / 1.5;
+          update();
+        }, false);
+
+        update = function() {
+          var position = getPosition();
+          var viewport = getViewportSize();
+          var value = (currentZoom * good.MAX_IMAGE_SIZE) + 'px';
+          if (viewport.height < viewport.width) {
+            image.style.height = value;
+            image.style.width = 'auto';
+          } else {
+            image.style.height = 'auto';
+            image.style.width = value;
+          }
+          recenter(position);
+        }
+
+        // Keep the image in the same place, as we scale
+        recenter = function(lastPosition) {
+          var viewport = getViewportSize();
+
+          if (image.offsetHeight > viewport.height) {
+            container.scrollTop = (image.offsetHeight - viewport.height) * lastPosition.top;
+          }
+
+          if (image.offsetWidth > viewport.width) {
+            container.scrollLeft = (image.offsetWidth - viewport.width) * lastPosition.left;
+          }
+
+        }
+        update();
+
+      }
+    })();
+  </script>
 
 </body>
 </html>

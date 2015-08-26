@@ -13,7 +13,7 @@ The patterns are published on GitHub:
 
 * Make the interface usable on any device.
 
-* Make the interface look good in modern browsers on any size screen.
+* Make the interface look good in modern browsers at any size screen.
 
 * Make the interface accessible for users with diverse input devices, like touchscreens and screen readers.
 

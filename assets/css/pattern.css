@@ -36,7 +36,8 @@
     text-shadow: 0 0 2.5em rgba(0, 0, 0, 0.25);
   }
 
-  body.pattern code {
+  body.pattern               > code,
+  body.pattern .example-colors code {
     background: rgba(255, 255, 255, 1);
     color: rgba(0, 0, 0, 0.95);
     padding: 0.75em;
@@ -190,8 +191,9 @@
 
 
   /* Override the fixed-position styles, for demonstration purposes. */
-   body.pattern section.push,
-   body.pattern section.page {
+  body.pattern main.page,
+  body.pattern section.push,
+  body.pattern section.page {
     margin-bottom: 3em;
   }
   body.pattern .page {
@@ -240,15 +242,17 @@
   }
 
   /* Buttons */
-  .update-indicator,
   .toggle-mixable,
   .image-viewer .action,
-  .image-viewer .image-options,
+  .image-viewer .image-options {
+    position: absolute;
+  }
+  .update-indicator,
   .edit-push.page    > header ~ form .submit,
   .edit-profile.page > header ~ form .submit,
   .post-editor.page  > header ~ form .submit,
   .mix-editor.page   > header ~ form .submit {
-    position: relative;
+    position: absolute;
   }
 
   body.pattern .developer.action {
