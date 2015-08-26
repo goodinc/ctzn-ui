@@ -319,7 +319,7 @@
     </h1>
   </section>
 
-  <h2>Fullscreen loading</h2>
+  <h2>Starting up (fullscreen)</h2>
 
   <section class="loading" role="status">
     <div><div>
@@ -333,13 +333,15 @@
     </div></div>
   </section>
 
+  <h2>Loading a new page (fullscreen)</h2>
+
   <section class="loading" role="status">
     <div><div>
       <h1><span class="loading-icon"></span> <span class="message">Loading images...</span></h1>
     </div></div>
   </section>
 
-  <h2>“in situ” loading</h2>
+  <h2>Loading part of a page</h2>
 
   <section class="loading-message" role="status">
     <h1><span class="loading-icon"></span> <span class="message">Loading...</span></h1>
@@ -351,6 +353,49 @@
     <h1 role="status">Well, this is embarrassing. Our server appears to be offline</p></h1>
     <p><button><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Try again</foreignobject></svg></button></p>
   </section>
+
+  <h2>Upgrade social connection</h2>
+
+  <div class="connect option-list">
+    <ul>
+      <li class="facebook active">
+        <form action="" method="post">
+          <button type="submit" title="Remove this account from CTZN">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></svg>
+            <span class="username">Brian Nilsen</span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use><foreignobject>is syncing</foreignobject></svg>
+            <p class="note">Pulls in photos and status updates from your account.</p>
+          </button>
+        </form>
+      </li>
+    </ul>
+    <div class="reconnect">
+      <p>
+        Reconnect Facebook to also post videos and content from Facebook Groups you&nbsp;manage.
+        <button>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-refresh"></use><foreignobject>Refresh</foreignobject></svg>
+        </button>
+      </p>
+    </div>
+  </div>
+
+  <h2>Social connection failed</h2>
+
+  <div class="connect option-list">
+    <ul>
+      <li class="twitter active">
+        <form action="" method="post">
+          <button type="submit" title="Remove this account from CTZN">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use><foreignobject>Twitter</foreignobject></svg>
+            <span>@brianatgood</span>
+          </button>
+          <button type="submit" class="settings" title="Please sign in to sync this account again">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-alert"></use><foreignObject>This account is not syncing</foreignObject></svg>
+          </button>
+        </form>
+      </li>
+    </ul>
+  </div>
 
   <h2>Form validation failed</h2>
 

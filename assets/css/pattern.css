@@ -36,6 +36,11 @@
     text-shadow: 0 0 2.5em rgba(0, 0, 0, 0.25);
   }
 
+  body.pattern > figure a,
+  body.pattern > p a {
+    color: inherit;
+  }
+
   body.pattern               > code,
   body.pattern .example-colors code {
     background: rgba(255, 255, 255, 1);
@@ -180,12 +185,12 @@
   .pattern-list   li a[href]:focus {
     background-color: black;
   }
-  body.pattern p + code {
+  body.pattern > p + code {
     margin-top: -0.5em;
     display: block;
   }
 
-  body.pattern figure {
+  body.pattern > figure {
     margin-bottom: 3em;
   }
 

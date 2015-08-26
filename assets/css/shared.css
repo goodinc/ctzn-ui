@@ -885,8 +885,8 @@
   ----------------------------------------------- */
   .error-message,
   .loading-message {
-    color: rgb(255, 255, 255); /* @snow */
-    background: rgb(0, 0, 0); /* @midnight */
+    color: rgb(246, 246, 246); /* @casper */
+    background-color: rgb(5, 5, 5); /* @tungsten */
     text-align: center;
     padding: 1.5em;
   }
@@ -1008,7 +1008,7 @@
   .option-list .reconnect {
     margin-top: -0.75em;
     background-color: #FFFF66;
-    padding: 0.75em 3.5em 0.7em 1.25em;
+    padding: 0.75em 3.5em 0.75em 1.25em;
     position: relative;
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
     background-color: black;
@@ -1022,13 +1022,15 @@
   }
   .option-list .reconnect button {
     position: absolute;
-    top: 0;
+    top: 50%;
+    margin-top: -1.125em;
     right: -3.5em;
-    display: inline-block;
+    display: block;
     width: auto;
     padding: 0.375em;
     text-align: center;
     border-radius: 0.25em;
+    border-width: 0 !important;
   }
   .option-list .reconnect button .icon {
     margin-right: 0 !important;
@@ -1149,8 +1151,10 @@
   }
   section.loading h1 {
     margin-top: 0;
+    margin-bottom: 0;
     font-size: inherit;
   }
+  section.loading-message .loading-icon,
   section.loading .loading-icon {
     margin-left: 0.375em;
     margin-right: 0.375em;
@@ -1401,6 +1405,7 @@
   }
      .tags.option-list li .icon:last-child,
   .connect.option-list li .icon:last-child,
+  .connect.option-list button .icon:last-of-type:not(:first-of-type),
   .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
     margin-top: -0.75em;
     position: absolute;
@@ -1408,7 +1413,7 @@
     right: 0.75em;
     color: rgb(204, 204, 204); /* @aluminum */
   }
-  .connect.option-list button .icon:last-child,
+  .connect.option-list button .icon:last-of-type:not(:first-of-type),
   .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
     color: rgb(102, 204, 0); /* @pear */
   }
@@ -1430,6 +1435,8 @@
     font-size: 0.75em;
     line-height: 1.25;
     background-color: rgb(238, 238, 238); /* @seashell */
+    color: inherit;
+    font-style: inherit;
     padding: 0.375em 0.75em;
     border-radius: 0.125;
     margin-bottom: 0;
@@ -5861,6 +5868,9 @@
   }
   .mixable .push-card.page > header.powered-by h1 a .icon {
     color: white;
+  }
+  .mixable .push-card.page .post-item header p {
+    font-weight: bold;
   }
 
   /* OPTIONAL: Hide the post date on small screens */
