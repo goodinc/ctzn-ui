@@ -1659,7 +1659,7 @@
 
   /* Header */
   .post-item header {
-    padding-left: 2em; /* 32px / @font-soze */
+    padding-left: 2em; /* 32px / @font-size */
   }
   .post-item header h3,
   .post-item header p {
