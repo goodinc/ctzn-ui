@@ -1102,15 +1102,17 @@
     font-weight: bold;
     color: rgba(0, 0, 0, 0.5);
   }
-  .confirmation.page > div p a {
+
+  /* Make links in the confiramtion message look nice. */
+  .confirmation.push-card.page > div p a {
     color: inherit;
-    text-decoration: none;
   }
-  .confirmation.page > div p a:hover,
-  .confirmation.page > div p a:active,
-  .confirmation.page > div p a:focus {
+  .confirmation.push-card.page > div p a:hover,
+  .confirmation.push-card.page > div p a:active,
+  .confirmation.push-card.page > div p a:focus {
     color: black;
   }
+
   .confirmation.page > div p.finish {
     margin-top: 1.125em;
     display: table;
@@ -1121,6 +1123,12 @@
   .confirmation.push-card.page > div p.finish a {
     color: inherit;
   }
+
+  /* SHIM: For the password reset confirmation page */
+  .confirmation.page > div p.finish.action a {
+    font-weight: normal;
+  }
+
   .confirmation.page > div p.finish:before {
     content: "";
     display: block;
