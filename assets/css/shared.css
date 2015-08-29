@@ -1103,7 +1103,7 @@
     color: rgba(0, 0, 0, 0.5);
   }
 
-  /* Make links in the confiramtion message look nice. */
+  /* For the #hashtag@ctznapp.com link on the join via email confirmation page. */
   .confirmation.push-card.page > div p a {
     color: inherit;
   }

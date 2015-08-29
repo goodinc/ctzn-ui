@@ -130,19 +130,19 @@
     </h2>
   </header>
 
-  <main class="lime push-channel">
+  <p class="toggle-fullscreen">
+    <button type="button">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use><foreignobject>Fullscreen</foreignobject></svg>
+    </button>
+  </p>
+
+  <main class="strawberry push-channel">
 
     <h1>
       <a href="preview-share.html" target="_blank">
         Projecto Jardin
       </a>
     </h1>
-
-    <p class="toggle">
-      <button type="button">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use><foreignobject>Fullscreen</foreignobject></svg>
-      </button>
-    </p>
 
     <ol>
       <!--
@@ -241,7 +241,7 @@
     }
 
     var fullScreen = false;
-    var button = document.querySelector('.toggle button');
+    var button = document.querySelector('.toggle-fullscreen button');
     if (button) {
       button.addEventListener('click', function(e) {
         if (fullScreen) {
