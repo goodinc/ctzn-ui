@@ -165,6 +165,10 @@
     fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
     transition: fill 0.2s;
   }
+  /* Hide the foreignObject from browsers that understand SVG (since it’s redundant). */
+  svg foreignobject {
+    opacity: 0;
+  }
 
 
   /* =Loading Icon
