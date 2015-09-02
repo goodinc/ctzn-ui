@@ -908,15 +908,14 @@
   .article .body img {
     display: block;
 
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    /*
-    TRICKY: This causes problems with especially wide images, like this one…
-    https://m.ctznapp.com/s3/ctzn/f7bdea5110e2a88990bd734fab99698d577c6c06=s1024x1024
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load).
 
-    min-width: 200px;
-    min-height: 200px;
-    background-color: rgba(0, 0, 0, 0.25);
+       TRICKY: The numbers here are small to avoid distorting especially tall or wide images, like this one…
+       https://m.ctznapp.com/s3/ctzn/f7bdea5110e2a88990bd734fab99698d577c6c06=s1024x1024
     */
+    min-width: 20px;
+    min-height: 20px;
+    background-color: rgba(0, 0, 0, 0.25);
   }
   .article .body {
     padding-left: 5px;
