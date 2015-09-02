@@ -165,13 +165,6 @@
     fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
     transition: fill 0.2s;
   }
-  /* Make the fallback text for icons invisible. */
-  /*
-  svg.icon use + foreignobject {
-    -webkit-transform: translateX(-9999px) translateY(-9999px);
-            transform: translateX(-9999px) translateY(-9999px);
-  }
-  */
 
 
   /* =Loading Icon
