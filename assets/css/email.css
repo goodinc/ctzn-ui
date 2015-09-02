@@ -117,10 +117,6 @@
     vertical-align: middle;
     fill: currentColor;
   }
-  /* Hide the foreignObject from browsers that understand SVG (since it’s redundant). */
-  svg foreignobject {
-    opacity: 0;
-  }
 
   /* Social icons */
   .article p.source {
