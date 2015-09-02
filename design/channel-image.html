@@ -125,14 +125,14 @@
     <h2>
       <!-- TRICKY: Open a new window, since this page is sometimes included in an iframe. -->
       <a href="http://getctzn.com" target="_blank">
-        <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></svg>
+        <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg>
       </a>
     </h2>
   </header>
 
   <p class="toggle-fullscreen">
     <button type="button">
-      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use><foreignobject>Fullscreen</foreignobject></svg>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-expand"></use><foreignObject>Fullscreen</foreignObject></switch></svg>
     </button>
   </p>
 
@@ -248,11 +248,11 @@
       button.addEventListener('click', function(e) {
         if (fullScreen) {
           exitFullScreen();
-          button.innerHTML = '<svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use><foreignobject>Fullscreen</foreignobject></svg>';
+          button.innerHTML = '<svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-expand"></use><foreignObject>Fullscreen</foreignObject></switch></svg>';
           fullScreen = false;
         } else {
           showFullScreen();
-          button.innerHTML = '<svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-shrink"></use><foreignobject>Exit Fullscreen</foreignobject></svg>';
+          button.innerHTML = '<svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-shrink"></use><foreignObject>Exit Fullscreen</foreignObject></switch></svg>';
           fullScreen = true;
         }
         e.preventDefault();
