@@ -123,15 +123,6 @@
     -webkit-animation-play-state: running;
     */
   }
-  @media (min-width: 30em) and (min-height: 30em) {
-    header.ctzn {
-      bottom: 1.25em;
-      right: 1.25em;
-    }
-    header.ctzn h2 {
-      font-size: 1.375em;
-    }
-  }
 
 
   /* Push Name */
@@ -199,7 +190,7 @@
   }
   .push-channel article header {
     position: relative;
-    z-index: 9999; /* @infinity */
+    z-index: 2; /* Just above the post body */
     margin: 0;
     padding: 1.25em 3.75em;
     width: 100%;

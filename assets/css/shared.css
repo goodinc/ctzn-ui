@@ -3098,6 +3098,15 @@
     word-wrap     : break-word;
     overflow-wrap : break-word;
   }
+
+  /* SHIM: Make website link on the public page and profile look the same. */
+  .push-card.page .details .action.website a {
+    background: rgb(51, 51, 51);
+    background: rgba(0, 0, 0, 0.25);
+    font-weight: normal;
+    font-size: inherit;
+  }
+
   .push-card.page ul.action a {
     font-weight: normal;
   }
