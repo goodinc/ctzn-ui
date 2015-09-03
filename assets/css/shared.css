@@ -5701,3 +5701,15 @@
     background-color: rgb(255, 117, 9); /* @orange */
   }
 
+  /* OPTIONAL: Hide the “powered by” text on small screens */
+  @media (max-width: 30em) {
+    .push-card.page > header.powered-by h1 a span {
+      /* @hidden-accessible */
+      position: absolute;
+      left: -9999px;
+    }
+    .push-card.page > header.powered-by h1 a svg {
+      width: 2.625em; /* 42px / @font-size */
+    }
+  }
+
