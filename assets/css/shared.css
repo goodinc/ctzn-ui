@@ -2706,11 +2706,6 @@
     vertical-align: top;
   }
 
-  /* SHIM: Allow the logo to be positioned on the push preview (“couch” mode) */
-  .mixable header.primary > a {
-    display: inline;
-  }
-
   header.primary h2 {
     vertical-align: bottom;
     margin-right: 0.75em;
@@ -3184,9 +3179,6 @@
     }
     .push-card .post-list {
       margin-top: 3em;
-    }
-    .mixable .push-card .post-list {
-      margin-top: 0;
     }
   }
 
@@ -5554,7 +5546,7 @@
     padding: 0 0 3.75em 0;
   }
   .push-card .post-list .post-item header {
-    color: white;
+    color: rgba(255, 255, 255, 1);
     padding: 1.5em;
     position: absolute;
     bottom: 0;
@@ -5567,15 +5559,11 @@
     margin-bottom: 0;
     font-size: 0.6875em; /* 12px / @font-size */
   }
-  .mixable .push-card .post-list .post-item header {
-    font-size: inherit;
-  }
   .push-card .post-list .post-item header .avatar {
     position: static;
     margin-right: 0.5em;
   }
   .push-card .post-list .post-item header time {
-    color: rgb(204, 204, 204); /* @aluminum */
     color: rgba(255, 255, 255, 0.5);
   }
   .push-card .post-list .post-item header .source {
@@ -5587,7 +5575,6 @@
   }
   .push-card .post-list .post-item .body {
     padding: 1.5em 3em 0;
-    color: rgb(204, 204, 204);
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
   }
@@ -5595,7 +5582,7 @@
     text-align: center;
     margin-top: 0;
     margin-bottom: 1.5em;
-    color: white;
+    color: rgba(255, 255, 255, 1);
   }
   .push-card .post-list .post-item .body p {
     color: inherit;
@@ -5605,7 +5592,7 @@
            (If we make it consistent with the normal preview page (the one outside the app),
            this rule can be removed) */
   .push-card .post-list .post-item > .source {
-    color: white;
+    color: rgba(255, 255, 255, 1);
     text-align: center;
     padding-top: 1.5em;
     margin-bottom: -0.75em;
@@ -5615,10 +5602,6 @@
   .push-card .post-list .post-item .images {
     max-width: 100%;
     overflow-x: hidden;
-  }
-  .mixable .push-card .post-list .post-item .images {
-    max-width: none;
-    overflow: visible;
   }
 
   /* OPTIONAL: Make images stick to the left and right edge of the post */
@@ -5686,10 +5669,6 @@
   .push-card .post-list .post-item .images + .body:after {
     background: rgba(0, 0, 0, 0.1); /* .post-item background-color */
   }
-  .mixable .push-card .post-list .post-item .images + .body:before,
-  .mixable .push-card .post-list .post-item .images + .body:after {
-    display: none;
-  }
 
   .push-card.lime .post-item .images + .body:before {
     background-color: rgb(176, 224, 0); /* @lime */
@@ -5721,522 +5700,4 @@
   .push-card.orange .post-item .images + .body:before {
     background-color: rgb(255, 117, 9); /* @orange */
   }
-
-
-  /* =Mixable (live channel)
-  ----------------------------------------------- */
-
-  /* TODO: Consider renaming this to “toggle-fullscreen” */
-  .toggle-mixable {
-    position: fixed;
-    top: 0.75em;
-    right: 0.75em;
-    z-index: 9999;
-    margin: 0;
-  }
-
-  .mixable .push-card.page .details + .action a,
-  .toggle-mixable button {
-    background-color: rgb(51, 51, 51); /* @iron */
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .toggle-mixable button {
-    padding-left: 0.375em;
-    padding-right: 0.375em;
-  }
-  .mixable .push-card.page .details + .action a .icon,
-  .toggle-mixable button .icon {
-    vertical-align: top;
-  }
-
-  .hoverable .mixable .push-card.page .details + .action a:hover,
-             .mixable .push-card.page .details + .action a:active,
-             .mixable .push-card.page .details + .action a:focus,
-  .hoverable .toggle-mixable button:hover,
-             .toggle-mixable button:active,
-             .toggle-mixable button:focus {
-    background-color: black;
-  }
-
-  /* Make the content into a series of slides */
-  .mixable .push-card.page,
-  .mixable .push-card.page .details,
-  .mixable .post-list > li,
-  .mixable .post-list > li .post-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    overflow: hidden;
-  }
-  .mixable .post-list {
-    margin-top: 0;
-    padding-bottom: 0;
-  }
-
-  /* Position the name of the push in the upper left */
-  .mixable .push-card.page .details + .action {
-    margin: 0;
-    position: fixed;
-    padding: 0.75em 4em 0.75em 0.75em;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    text-align: left;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .mixable .push-card.page .details + .action:before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.9;
-  }
-
-  .mixable .push-card.lime .details + .action:before {
-    background-color: rgb(176, 224, 0); /* @lime */
-  }
-  .mixable .push-card.cucumber .details + .action:before {
-    background-color: rgb(60, 210, 0); /* @cucumber */
-  }
-  .mixable .push-card.blueberry .details + .action:before {
-    background-color: rgb(0, 204, 204); /* @blueberry */
-  }
-  .mixable .push-card.boysenberry .details + .action:before {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .mixable .push-card.periwinkle .details + .action:before {
-    background-color: rgb(109, 90, 219); /* @periwinkle */
-  }
-  .mixable .push-card.plumb .details + .action:before {
-    background-color: rgb(181, 62, 194); /* @plumb */
-  }
-  .mixable .push-card.strawberry .details + .action:before {
-    background-color: rgb(250, 44, 162); /* @strawberry */
-  }
-  .mixable .push-card.apple .details + .action:before {
-    background-color: rgb(255, 0, 86); /* @apple */
-  }
-  .mixable .push-card.tangerine .details + .action:before {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .mixable .push-card.orange .details + .action:before {
-    background-color: rgb(255, 117, 9); /* @orange */
-  }
-
-  .mixable .push-card.page .details + .action a {
-    text-transform: none;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 900; /* @extra-bold */
-    position: relative;
-    z-index: 1;
-  }
-  .mixable .push-card.page .details + .action a span {
-    margin-right: 0.5em;
-  }
-
-  /* Position the logo in the lower right */
-  .mixable header.primary {
-    top: auto;
-    bottom: 0.1875em;
-    left: auto;
-    right: 0.1875em;
-    background: transparent;
-    color: white;
-    color: rgba(255, 255, 255, 0.5);
-    position: fixed;
-    border-width: 0;
-    font-size: 1.5em;
-    font-size: 2vmax;
-  }
-  .mixable header.primary h2 {
-    float: right;
-    color: white;
-    color: rgba(255, 255, 255, 0.5);
-    margin: 0;
-  }
-
-  .mixable .push-card.page > header {
-    padding: 0.75em 1.25em;
-    border-width: 0;
-    position: fixed;
-    top: auto;
-    bottom: 1.0625em;
-    left: auto;
-    right: 1em;
-    width: auto;
-    background: transparent;
-    color: white;
-    color: rgba(255, 255, 255, 0.5);
-    box-shadow: none;
-  }
-  .mixable .push-card.page > header.powered-by h1 a {
-    background: black;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0 0.5625em; /* @line-height x 3/8 */
-    display: block;
-    border-radius: 0.0625em;
-  }
-  .hoverable .mixable .push-card.page > header.powered-by h1 a:hover,
-             .mixable .push-card.page > header.powered-by h1 a:active,
-             .mixable .push-card.page > header.powered-by h1 a:focus {
-    background: black;
-  }
-  .mixable .push-card.page > header.powered-by h1 a .icon {
-    color: white;
-  }
-  .mixable .push-card.page .post-item header p {
-    font-weight: bold;
-  }
-
-  /* OPTIONAL: Hide the post date on small screens */
-  .mixable .push-card.page .post-item header p {
-    visibility: hidden;
-  }
-  @media (min-width: 30em) {
-    .mixable .push-card.page .post-item header p {
-      visibility: visible;
-    }
-  }
-
-  /* OPTIONAL: Hide the “powered by” text on small screens */
-  @media (max-width: 30em) {
-    .mixable .push-card.page > header.powered-by h1 a {
-      background-color: transparent;
-    }
-    .push-card.page > header.powered-by h1 a span {
-      /* @hidden-accessible */
-      position: absolute;
-      left: -9999px;
-    }
-    .push-card.page > header.powered-by h1 a svg {
-      width: 2.625em; /* 42px / @font-size */
-    }
-  }
-
-  /* Hide the rest of the header, the footer, and the push details */
-  .mixable footer.primary,
-  .mixable .push-card.page .details {
-    display: none;
-  }
-
-  /* Remove the space reserved for the fixed header */
-  .mixable .push-card.page {
-    padding-top: 0;
-  }
-
-  /* The “inactive” classname is added by JavaScript to all but one slide. */
-  .mixable li.inactive {
-    display: none;
-  }
-
-  /* Reset styles intended for normal mode */
-  .mixable .push-card .post-list .post-item {
-    background: transparent;
-    margin: 0;
-    padding: 0;
-    border-width: 0;
-  }
-  .mixable .post-list li {
-    max-width: none;
-  }
-
-  /* Make text easier to read (by darkening the background) */
-  .mixable .push-card.page .post-item:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient#Cross-browser_gradients */
-    background: rgba(0, 0, 0, 0.5);
-    background: -webkit-linear-gradient(top,       transparent, transparent 25%, rgba(0, 0, 0, 0.5));
-    background:    -moz-linear-gradient(top,       transparent, transparent 25%, rgba(0, 0, 0, 0.5));
-    background:      -o-linear-gradient(top,       transparent, transparent 25%, rgba(0, 0, 0, 0.5));
-    background:         linear-gradient(to bottom, transparent, transparent 25%, rgba(0, 0, 0, 0.5));
-  }
-
-  /* Show images one at a time, in the live channel */
-  .mixable .push-card .post-list .post-item figure.inactive {
-    display: none;
-  }
-
-  /* KUDOS: https://css-tricks.com/perfect-full-page-background-image */
-  .mixable .push-card .post-list .post-item .images figure {
-    position: absolute; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
-  }
-  .mixable .push-card .post-list .post-item .images figure img {
-    width: auto;
-    height: auto;
-    max-width: none;
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-
-    /* SHIM: These are !important to override styles intended for the public page (.images.n2, .images.n-even, .images.n-odd) */
-    margin: auto !important;  
-    border-width: 0 !important;
-    float: none;
-
-    /* Preserve aspect ratio */
-    min-width: 50%;
-    min-height: 50%;
-  }
-
-  /* SHIM: Don’t show the source on the live channel page */
-  .mixable .push-card.page .post-item .body .source {
-    display: none;
-  }
-
-  .mixable .push-card.page .post-item .body {
-    margin: 0;
-    overflow: hidden;
-    position: absolute;
-    bottom: 6em;
-    left: 0;
-    z-index: 1;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    border-left: 0.125em solid white;
-    padding: 0 1.5em;
-    margin: 0 1.5em;
-    color: white;
-    text-shadow: 0 0 0.75em rgba(0, 0, 0, 0.15);
-    max-height: 4.5em; /* 2.25 (@line-height x font size) x 2 */
-    max-width: 90%;
-    max-width: calc(100% - 3em); /* margin = 1.5 x 2 */
-
-    /* OPTIONAL: Show an ellipses if the text has been truncated
-    http://dropshado.ws/post/1015351370/webkit-line-clamp */
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-  .mixable .push-card.page .post-item .body p {
-    margin-top: 0;
-    margin-bottom: 1.5em;
-    max-width: 33em;
-  }
-  .mixable .push-card.page .post-item .body p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Increase the line height on tall screens */
-  @media (min-height: 20em) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 6.75em; /* 2.25 x 3 */
-      -webkit-line-clamp: 3;
-    }
-  }
-  @media (min-height: 30em) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 9em; /* 2.25 x 4 */
-      -webkit-line-clamp: 4;
-    }
-  }
-
-  /* Increase the line height even more on tall, thin screens */
-  @media (min-height: 40em) and (max-width: 30em) {
-    .mixable .push-card.page .post-item .body {
-      max-height: 11.25em; /* 2.25 x 5 */
-      -webkit-line-clamp: 5;
-    }
-  }
-
-  /* OPTIONAL: Make the text larger on big screens  */
-  @media (min-width: 500px) and (min-height: 500px) {
-    .mixable .push-card.page .details + .action,
-    .toggle-mixable,
-    .mixable .push-card.page .post-item header,
-    .mixable .push-card.page .post-item .body {
-      font-size: 1.125em;
-    }
-    .mixable .push-card.page .post-item .body p {
-      font-size: 1.25em;
-    }
-  }
-  @media (min-width: 1000px) and (min-height: 1000px) {
-    .mixable .push-card.page .details + .action,
-    .toggle-mixable,
-    .mixable .push-card.page .post-item header,
-    .mixable .push-card.page .post-item .body {
-      font-size: 1.25em;
-    }
-    .mixable .push-card.page .post-item .body p {
-      font-size: 1.5em;
-    }
-  }
-
-
-  /* =Mixable Title
-  ----------------------------------------------- */
-
-  /* Show the push title as an individual slide before the other slides appear (handled with JavaScript) */
-  .mixable.title-only .push-card.page .details {
-    display: block;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    max-width: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-  .mixable.title-only .push-card.page .details .about,
-  .mixable.title-only .push-card.page .details .action {
-    display: none;
-  }
-  .mixable.title-only .push-card.page .details .name {
-    margin: 0;
-    display: block;
-    max-width: none;
-    width: 100%;
-    padding: 0.75em;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-
-  /* Hide the link to the “Public” page, since it’s redundant with the title. */
-  .mixable.title-only .push-card.page .details + .action {
-    opacity: 0;
-  }
-
-  /*  Make the title larger on big screens */
-  @media (min-width: 30em) and (min-height: 30em) {
-    .mixable.title-only .push-card.page .details .name {
-      font-size: 10vmax;
-    }
-  }
-
-  /* Attempt to center the title */
-  @media (min-height: 10em) {
-    .mixable.title-only .push-card.page .details h1 {
-      margin-top: 0.75em;
-      margin-bottom: 0.75em;
-    }
-  }
-  @media (min-height: 15em) {
-    .mixable.title-only .push-card.page .details h1 {
-      margin-top: 1.5em;
-      margin-bottom: 1.5em;
-    }
-  }
-  @media (min-height: 20em) {
-    .mixable.title-only .push-card.page .details h1 {
-      margin-top: 2.25em;
-      margin-bottom: 2.25em;
-    }
-  }
-  @media (min-height: 30em) {
-    .mixable.title-only .push-card.page .details h1 {
-      margin-top: 3em;
-      margin-bottom: 3em;
-    }
-  }
-
-  .mixable.title-only .push-card.page .details {
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-direction: column;
-            flex-direction: column;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-align-content: center;
-            align-content: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-
-  /* For the CTZN title slide */
-  .mixable.title-only .honeydew.push-card {
-    min-height: 100%;
-
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-direction: column;
-            flex-direction: column;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-align-content: center;
-            align-content: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-  .mixable.title-only .honeydew.push-card > div {
-    display: table;
-  }
-  .mixable.title-only .honeydew.push-card h1 {
-    font-size: 1.5em;
-    margin: 0;
-  }
-  .mixable.title-only .honeydew.push-card h1 .icon {
-    width: 10em;
-    height: 4em;
-  }
-  @media (min-width: 30em) and (min-height: 30em) {
-    .mixable.title-only .honeydew.push-card div {
-      font-size: 1.5em;
-    }
-  }
-  @media (min-width: 40em) and (min-height: 40em) {
-    .mixable.title-only .honeydew.push-card div {
-      font-size: 2em;
-    }
-  }
-  @media (min-width: 50em) and (min-height: 50em) {
-    .mixable.title-only .honeydew.push-card div {
-      font-size: 2.5em;
-    }
-  }
-  @media (min-width: 60em) and (min-height: 60em) {
-    .mixable.title-only .honeydew.push-card div {
-      font-size: 3em;
-    }
-  }
-  .mixable.title-only .honeydew.push-card div {
-    font-size: 5vmin;
-  }
-  .mixable.title-only .honeydew.push-card h2 {
-    margin: 0.75em 0 0 0;
-    background: black;
-    color: white;
-    font-style: italic;
-    display: table;
-    margin-left: auto;
-    font-size: inherit;
-    text-transform: lowercase;
-    line-height: 1.2;
-  }
-
 

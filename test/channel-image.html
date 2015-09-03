@@ -20,7 +20,7 @@
     })();
   </script>
 
-  <!-- OPTIONAL: Attempt to get emoji to appear on devices that don’t have an emoji font. -->
+  <!-- OPTIONAL: Attempt to use simple emoji (since we’re positioning the text above a background image or color). -->
   <style>
     @font-face {
       font-family: "Android Emoji";
@@ -45,35 +45,12 @@
       font-style: normal;
     }
 
-    /* SHIM: Always use an emoji webfont in mixable mode (since Chrome has trouble rendering native emoji)
-             https://code.google.com/p/chromium/issues/detail?id=468765 */
-    .mixable .post-item .body,
-    .no-emoji-support .post-item .body {
+    /* This is our usual font stack with an emoji font at the end
+      (so it will catch any characters that aren’t available in the other fonts). */
+    body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Android Emoji";
     }
   </style>
-  <script>
-    (function() {
-      function supportsCanvas() {
-        return !!document.createElement('canvas').getContext;
-      }
-      function supportsEmoji() {
-        if (supportsCanvas()) {
-          var node = document.createElement('canvas'),
-          ctx = node.getContext('2d');
-          ctx.fillStyle = '#f00';
-          ctx.textBaseline = 'top';
-          ctx.font = '32px Arial';
-          ctx.fillText('\ud83d\udc28', 0, 0); // U+1F428 KOALA
-          console.log('ctx.getImageData(16, 16, 1, 1).data[0]: ' + ctx.getImageData(16, 16, 1, 1).data[0]);
-          return ctx.getImageData(16, 16, 1, 1).data[0] !== 0;
-        }
-      }
-      if (!supportsEmoji()) {
-        document.getElementsByTagName('html')[0].className += ' no-emoji-support';
-      }
-    })();
-  </script>
   <!-- /OPTIONAL -->
 
 </head>
@@ -81,7 +58,7 @@
   .ctzn-title-only
   .push-title-only
 -->
-<body class="ctzn-title-only">
+<body class="">
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -145,7 +122,6 @@
     </h1>
 
     <ol>
-      <!--
       <li>
         <article>
           <header>
@@ -160,12 +136,19 @@
           <div class="images n1">
             <figure class="active"><img srcset="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=c2048x1088 3x, http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=c2048x1088 2x, http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=c1664x896 1x" src="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=c1664x896" alt="Image 1"></figure>
           </div>
+          <!--
           <div class="body">
-            <p>Onboarding the interns! Stoked</p>
+            <div>
+              <div>
+                <p>Onboarding the interns! Stoked</p>
+              </div>
+            </div>
           </div>
+          -->
         </article>
       </li>
 
+      <!--
       <li>
         <article>
           <header>
@@ -185,7 +168,6 @@
           </div>
         </article>
       </li>
-      -->
 
 
       <li>
@@ -209,6 +191,7 @@
           </div>
         </article>
       </li>
+      -->
     </ol>
 
   </main>

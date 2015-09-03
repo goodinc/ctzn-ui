@@ -20,7 +20,7 @@
     })();
   </script>
 
-  <!-- OPTIONAL: Attempt to get emoji to appear on devices that don’t have an emoji font. -->
+  <!-- OPTIONAL: Attempt to use simple emoji (since we’re positioning the text above a background image or color). -->
   <style>
     @font-face {
       font-family: "Android Emoji";
@@ -45,35 +45,12 @@
       font-style: normal;
     }
 
-    /* SHIM: Always use an emoji webfont in mixable mode (since Chrome has trouble rendering native emoji)
-             https://code.google.com/p/chromium/issues/detail?id=468765 */
-    .mixable .post-item .body,
-    .no-emoji-support .post-item .body {
+    /* This is our usual font stack with an emoji font at the end
+      (so it will catch any characters that aren’t available in the other fonts). */
+    body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Android Emoji";
     }
   </style>
-  <script>
-    (function() {
-      function supportsCanvas() {
-        return !!document.createElement('canvas').getContext;
-      }
-      function supportsEmoji() {
-        if (supportsCanvas()) {
-          var node = document.createElement('canvas'),
-          ctx = node.getContext('2d');
-          ctx.fillStyle = '#f00';
-          ctx.textBaseline = 'top';
-          ctx.font = '32px Arial';
-          ctx.fillText('\ud83d\udc28', 0, 0); // U+1F428 KOALA
-          console.log('ctx.getImageData(16, 16, 1, 1).data[0]: ' + ctx.getImageData(16, 16, 1, 1).data[0]);
-          return ctx.getImageData(16, 16, 1, 1).data[0] !== 0;
-        }
-      }
-      if (!supportsEmoji()) {
-        document.getElementsByTagName('html')[0].className += ' no-emoji-support';
-      }
-    })();
-  </script>
   <!-- /OPTIONAL -->
 
 </head>
@@ -160,12 +137,16 @@
             <!--
             <p>Onboarding the interns! Stoked</p>
             -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div>
+              <div>
+                <p>🍜🍲Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
           </div>
         </article>
       </li>
