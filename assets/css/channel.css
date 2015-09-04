@@ -502,12 +502,7 @@
     top: 0; 
     left: 0; 
     right: 0; 
-    bottom: 0; 
-
-    /* SHIM: These are !important to override styles intended for the public page (.images.n2, .images.n-even, .images.n-odd) */
-    margin: auto !important;  
-    border-width: 0 !important;
-    float: none;
+    bottom: 0;
 
     /* Preserve aspect ratio */
     min-width: 50%;
