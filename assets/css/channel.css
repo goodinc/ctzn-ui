@@ -134,17 +134,24 @@
 
 
   /* Push Name */
-  .push-channel h1 {
+  .push-channel > header {
     position: absolute;
     z-index: 2; /* Just above the post */
     bottom: 1.25em;
     left: 1.25em;
+  }
+  .push-channel h1 {
     font-size: inherit;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
     line-height: 1;
     margin: 0;
     margin-right: 3.75em;
+    width: 100%;
+    max-width: 28em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 
     /* @wrap-long-words */
     word-wrap     : break-word;
@@ -155,6 +162,9 @@
     text-decoration: none;
     display: block;
     max-width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 0.25em 0.75em; /* @line-height / 2 */
     border-left: 0.3125em solid white;
     transition: color 0.2s, border-color 0.2s;
@@ -345,7 +355,7 @@
     -webkit-box-orient: vertical;
   }
 
-  /* OPTIONAL: Attempt to center the text */
+  /* OPTIONAL: Center the text vertically */
   .push-channel article .body {
     display: table;
     position: absolute;
@@ -503,6 +513,7 @@
     left: 0; 
     right: 0; 
     bottom: 0;
+    margin: auto;
 
     /* Preserve aspect ratio */
     min-width: 50%;
@@ -510,11 +521,14 @@
   }
 
 
+  /* =Title Slides
+  ----------------------------------------------- */
   .ctzn-title-only .push-channel,
   .push-title-only .push-channel ol {
     display: none;
   }
 
+  /* CTZN */
   .ctzn-title-only {
     background-color: rgb(150, 255, 108); /* @honeydew */
   }
@@ -534,29 +548,59 @@
     }
   }
 
+  /* Push */
   .push-title-only .push-channel > header {
-    position: absolute;
-    display: table;
-    width: 100%;
-    height: 100%;
-    margin: 0;
+    /* Reset */
+    position: static;
+    right: auto;
+    bottom: auto;
+    margin-right: 0;
   }
-  .push-title-only .push-channel > header > div {
-    display: table-row;
-    width: 100%;
-    height: 100%;
+  .push-title-only .push-channel h1,
+  .push-title-only .push-channel h1 a {
+    margin: 0 auto;
   }
   .push-title-only .push-channel h1 {
-    position: static;
-    display: table-cell;
-    width: 100%;
-    height: 100%;
-    vertical-align: middle;
     font-size: 3em;
     line-height: 1.25;
     text-align: center;
+  }
+  .push-title-only .push-channel h1 a {
+    /* Reset */
+    border-width: 0;
+  }
 
-    /*
+  /*  Make the title larger on big screens */
+  @media (min-width: 30em) and (min-height: 30em) {
+    .push-title-only .push-channel h1 {
+      font-size: 10vmax;
+    }
+  }
+
+  /* OPTIONAL: Center the text vertically */
+  .push-title-only .push-channel > header {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .push-title-only .push-channel > header > div {
+    display: table-row;
+  }
+  .push-title-only .push-channel h1 {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  /* OPTIONAL: Switch to flex box in browsers that support it (to support @wrap-long-words) */
+  .push-title-only .push-channel > header {
     display: -webkit-flex;
     display:         flex;
 
@@ -571,17 +615,17 @@
 
     -webkit-justify-content: center;
             justify-content: center;
-    */
-  }
-  .push-title-only .push-channel h1 a {
-    border-width: 0;
-  }
 
-  /*  Make the title larger on big screens */
-  @media (min-width: 30em) and (min-height: 30em) {
-    .push-title-only .push-channel h1 {
-      font-size: 10vmax;
-    }
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
-
+  .push-title-only .push-channel > header > div {
+    display: -webkit-flex;
+    display:         flex;
+    width: 100%;
+  }
+  .push-title-only .push-channel h1 {
+    display: -webkit-flex;
+    display:         flex;
+  }
 
