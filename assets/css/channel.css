@@ -129,9 +129,13 @@
   .push-channel > header {
     position: absolute;
     z-index: 2; /* Just above the post */
-    bottom: 1.25em;
-    left: 1.25em;
-    margin-right: 3.75em;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.25em 3.75em 1.25em 1.25em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .push-channel h1 {
     font-size: inherit;
@@ -201,7 +205,6 @@
     border-color: rgb(255, 117, 9); /* @orange */
   }
 
-
   /* Toggle Fullscreen */
   .toggle-fullscreen {
     position: absolute;
@@ -219,6 +222,44 @@
   .toggle-fullscreen button:active,
   .toggle-fullscreen button:focus {
     background-color: black;
+  }
+  .toggle-fullscreen button svg.icon {
+    vertical-align: top;
+  }
+
+  /* Toggle Playback */
+  .toggle-playback {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    font-size: 5em;
+    font-size: 50vmin;
+    opacity: 0.25;
+  }
+  .toggle-playback button {
+    padding: 0.125em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background: transparent;
+    border-radius: 0.125em
+  }
+  .toggle-playback button svg.icon {
+    vertical-align: top;
+  }
+  .toggle-playback button:hover,
+  .toggle-playback button:focus {
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .toggle-playback button:active {
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.75);
   }
 
   /* Posts */
@@ -303,6 +344,7 @@
     text-shadow: 0 0 1.25em rgba(0, 0, 0, 0.25);
     */
   }
+
   .push-channel article header p {
     display: inline-block;
   }
@@ -555,9 +597,8 @@
   .push-title-only .push-channel > header {
     /* Reset */
     position: static;
-    right: auto;
-    bottom: auto;
-    margin-right: 0;
+    z-index: auto;
+    padding: 1.25em;
   }
   .push-title-only .push-channel h1,
   .push-title-only .push-channel h1 a {
@@ -570,6 +611,7 @@
   }
   .push-title-only .push-channel h1 a {
     /* Reset */
+    padding: 0;
     border-width: 0;
   }
 
@@ -637,13 +679,95 @@
     display:         flex;
   }
 
-
   /* OPTIONAL: Make header and footer larger on big screens */
   @media (min-width: 50em) and (min-height: 50em) {
     header.ctzn,
     .push-channel > header,
     .push-channel article header {
       font-size: 1.25em;
+    }
+  }
+
+  /* OPTIONAL: Hide content on especially small screens (or small iframes) */
+
+  /* VERY short OR thin */
+  @media (max-height: 10em), (max-width: 15em) {
+
+    /* Hide the username */
+    .push-channel article header h3 {
+      display: block;
+      text-indent: -9999px;
+    }
+    .push-channel article header h3 .avatar {
+      text-indent: 0;
+      top: 0.25em;
+      left: 0.2em;
+    }
+
+    /* Hide the date */
+    .push-channel article header p {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .push-channel article .body > div > div {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+    }
+
+    /* Make the fullscreen button smaller */
+    .toggle-fullscreen {
+      top: 0.25em;
+      right: 0.25em;
+    }
+    .toggle-fullscreen button {
+      font-size: 0.75em;
+    }
+  }
+
+  /* Short OR thin */
+  @media (max-height: 15em), (max-width: 15em) {
+
+    /* Make the push name smaller */
+    .push-channel > header,
+    .push-title-only .push-channel > header {
+      padding: 0.25em;
+    }
+    .push-channel > header {
+      padding-right: 2em;
+    }
+    .push-title-only .push-channel > header h1 {
+      font-size: inherit;
+    }
+
+    /* Make the ctzn logo smaller */
+    header.ctzn {
+      right: 0.25em;
+      bottom: 0.25em;
+    }
+    header.ctzn h2 {
+      font-size: 0.5em;
+    }
+  }
+  @media (max-height: 6em), (max-width: 15em) {
+    .push-channel > header {
+      padding-right: 0.25em;
+    }
+
+    /* Hide the CTZN logo */
+    header.ctzn {
+      left: -9999px;
+      right: auto;
+    }
+  }
+
+  /* Short AND thin */
+  @media (max-height: 20em) and (max-width: 20em) {
+
+    /* Hide the date */
+    .push-channel article header p {
+      position: absolute;
+      left: -9999px;
     }
   }
 
