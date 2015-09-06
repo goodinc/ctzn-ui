@@ -1,4 +1,195 @@
 
+/*
+  Live Channel styles
+
+  Examples:
+  http://www.ctznapp.com/push/C50609F6/kaboom?channel=1
+  http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1
+
+  Sections are grouped under headings with a “=” symbol,
+  to make searching easier.
+
+  When a style is used more than once, it sometimes has a “@keyword”
+  in a comment next to it (to help with search and replace).
+
+  For example…
+
+  16px  @font-size
+  24px  @line-height
+*/
+
+
+  /* =Elements
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+  html, body {
+    height: 100%;
+  }
+  body {
+    font: 100%/1.5 "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+  }
+
+  /* OPTIONAL: Increase the font size on big screens */
+  @media (min-width: 800px) and (min-height: 800px) { /* @min-font-size (16px) * 100vmin / 2vmin = 16 * 50 = 800 */
+    body {
+      font-size: 2vmin;
+    }
+  }
+
+  a {
+    color: rgb(255, 49, 102); /* @pitaya */
+    transition: color 0.2s, background-color 0.2s, opacity 0.2s;
+  }
+
+  a img {
+    border-width: 0;
+  }
+
+  /* Fit media to the available width */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  button {
+    margin: 0;
+    border-width: 0;
+
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+
+    font-weight: bold;
+    text-transform: lowercase;
+
+    padding: 0.375em;
+    line-height: 1.5em;
+    border-radius: 0.25em;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+
+    transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+  }
+  button:hover,
+  button:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  button:active {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+
+  /* Browsers sometimes render these as inline elements, by default */
+  main, header, footer, section, article, aside, nav {
+    display: block;
+  }
+
+
+  /* =Icons
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+  svg.icon {
+    width : 1.5em; /* @line-height */
+    height: 1.5em;
+    vertical-align: middle;
+    fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
+    transition: fill 0.2s;
+  }
+
+
+  /* =Avatars
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  /* Image */
+  .avatar img {
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  /* OPTIONAL: Make image avatars scale with the font size */
+  .avatar img[width="30"] {
+    width : 1.875em; /* 30px / @font-size */
+    height: 1.875em;
+  }
+  .avatar img {
+    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  /* Letter */
+  .avatar > span {
+    display: inline-block;
+    background-color: rgb(204, 204, 204); /* @aluminum */
+    color: black;
+    width       : 1.5em;
+    line-height : 1.5em;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  .avatar [data-content]:after {
+    display: block;
+    content: attr(data-content);
+    speak: none;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.75;
+  }
+  .avatar .name {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+
+  /* Colors */
+  .avatar .clover {
+    background-color: rgb(0, 235, 98); /* @clover */
+  }
+  .avatar .kiwi {
+    background-color: rgb(0, 255, 208); /* @kiwi */
+  }
+  .avatar .grape {
+    background-color: rgb(159, 104, 246); /* @grape */
+  }
+  .avatar .bluebird {
+    background-color: rgb(0, 206,250); /* @bluebird */
+  }
+  .avatar .cantaloupe {
+    background-color: rgb(255, 203, 117); /* @cantaloupe */
+  }
+  .avatar .cranberry {
+    background-color: rgb(251, 59, 147); /* @cranberry */
+  }
+  .avatar .amethyst {
+    background-color: rgb(255, 152, 248); /* @amethyst */
+  }
+  .avatar .sky {
+    background-color: rgb(0, 255, 254); /* @sky */
+  }
+  .avatar .ocean {
+    background-color: rgb(24, 57, 245); /* @ocean */
+    color: white;
+  }
+
+  /* Sizes */
+  .avatar .size30 {
+    font-size: 1.25em; /* 2/3 x 30px / @font-size */
+  }
+
 
   /* =Channel
   ----------------------------------------------- */
@@ -87,11 +278,18 @@
     z-index: 3; /* Just above the push title */
     bottom: 0.75em;
     right: 0.75em;
+    font-size: 0.875em;
   }
   header.ctzn h2 {
     margin: 0;
+    font-size: inherit;
     display: inline-block;
-    font-size: 0.75em;
+  }
+  /* Make the logo smaller on tiny screens */
+  @media (max-width: 30em), (max-height: 30em) {
+    header.ctzn {
+      font-size: 0.75em;
+    }
   }
   header.ctzn h2 .icon {
     width: 2.625em; /* 42px / @font-size */
@@ -213,16 +411,6 @@
     right: 0.75em;
     margin: 0;
   }
-  .toggle-fullscreen button {
-    padding: 0.375em;
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .toggle-fullscreen button:hover,
-  .toggle-fullscreen button:active,
-  .toggle-fullscreen button:focus {
-    background-color: black;
-  }
   .toggle-fullscreen button svg.icon {
     vertical-align: top;
   }
@@ -241,13 +429,13 @@
     opacity: 0.25;
   }
   .toggle-playback button {
-    padding: 0.125em;
+    border-radius: 0;
+    padding: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     background: transparent;
-    border-radius: 0.125em
   }
   .toggle-playback button svg.icon {
     vertical-align: top;
@@ -392,6 +580,13 @@
     -webkit-box-orient: vertical;
   }
 
+
+  @media (min-width: 320px) and (min-height: 320px) { /* @min-font-size (16px) * 100vmin / 5vmin = 16 * 20 = 320 */
+    .push-channel article .body p {
+      font-size: 5vmin;
+    }
+  }
+
   /* OPTIONAL: Center the text vertically */
   .push-channel article .body {
     display: table;
@@ -502,22 +697,22 @@
   }
 
   /* OPTIONAL: Make the text larger on big screens  */
-  @media (min-width: 15em) and (min-height: 15em) {
+  @media false and (min-width: 15em) and (min-height: 15em) {
     .push-channel article .body {
       font-size: 1.25em; /* 20px / @font-size */
     }
   }
-  @media (min-width: 20em) and (min-height: 20em) {
+  @media false and (min-width: 20em) and (min-height: 20em) {
     .push-channel article .body {
       font-size: 1.5em; /* 24px / @font-size */
     }
   }
-  @media (min-width: 25em) and (min-height: 25em) {
+  @media false and (min-width: 25em) and (min-height: 25em) {
     .push-channel article .body {
       font-size: 1.875em; /* 30px / @font-size */
     }
   }
-  @media (min-width: 50em) and (min-height: 50em) {
+  @media false and (min-width: 50em) and (min-height: 50em) {
     .push-channel article .body {
       font-size: 2.5em; /* 40px / @font-size */
     }
@@ -574,9 +769,16 @@
     left: 50%;
     bottom: auto;
     right: auto;
-    margin-left : -1.40625em; /* logo.width  (3.75em x 0.75) / 2 */
-    margin-top  : -1.40625em; /* logo.height (3.75em x 0.75) / 2 */
+    margin-left : -1.875em; /* logo.width  (3.75em) / 2 */
+    margin-top  : -1.875em; /* logo.height (3.75em) / 2 */
   }
+  @media (max-width: 30em), (max-height: 30em) {
+    .ctzn-title-only header.ctzn {
+      font-size: 2em;
+    }
+  }
+
+  /* OPTIONAL: Make the logo larger on big screens */
   @media (min-width: 30em) and (min-height: 30em) {
     .ctzn-title-only header.ctzn {
       font-size: 4em;
@@ -584,28 +786,41 @@
   }
   @media (min-width: 40em) and (min-height: 40em) {
     .ctzn-title-only header.ctzn {
-      font-size: 5em;
+      font-size: 8em;
     }
   }
   @media (min-width: 50em) and (min-height: 50em) {
     .ctzn-title-only header.ctzn {
-      font-size: 6em;
+      font-size: 12em;
     }
+  }
+
+  /* OPTIONAL: Use viewport units in browsers that support it (for more possible sizes). */
+  .ctzn-title-only header.ctzn {
+    font-size: 20vmin;
   }
 
   /* Push */
   .push-title-only .push-channel > header {
+    font-size: 1.5em;
+
     /* Reset */
     position: static;
     z-index: auto;
     padding: 1.25em;
+  }
+  /* Make the title smaller on tiny screens */
+  @media (max-width: 20em), (max-height: 20em) {
+    .push-title-only .push-channel > header {
+      font-size: inherit;
+    }
   }
   .push-title-only .push-channel h1,
   .push-title-only .push-channel h1 a {
     margin: 0 auto;
   }
   .push-title-only .push-channel h1 {
-    font-size: 2em;
+    font-size: inherit;
     line-height: 1.25;
     text-align: center;
   }
@@ -615,15 +830,27 @@
     border-width: 0;
   }
 
-  /*  Make the title larger on big screens */
+  /*  OPTIONAL: Make the title larger on big screens. */
+  @media (min-width: 20em) and (min-height: 20em) {
+    .push-title-only .push-channel > header {
+      font-size: 2em;
+    }
+  }
   @media (min-width: 30em) and (min-height: 30em) {
-    .push-title-only .push-channel h1 {
+    .push-title-only .push-channel > header {
       font-size: 3em;
     }
   }
-  @media (min-width: 50em) and (min-height: 50em) {
-    .push-title-only .push-channel h1 {
+  @media (min-width: 40em) and (min-height: 40em) {
+    .push-title-only .push-channel > header {
       font-size: 4em;
+    }
+  }
+
+  /* OPTIONAL: Use viewport units in browsers that support it (for more possible sizes). */
+  @media (min-width: 160px) and (min-height: 160px) { /* @min-font-size (16px) * 100vmin / 10vmin = 16 * 10 = 160 */
+    .push-title-only .push-channel > header {
+      font-size: 10vmin;
     }
   }
 
@@ -680,11 +907,10 @@
   }
 
   /* OPTIONAL: Make header and footer larger on big screens */
-  @media (min-width: 50em) and (min-height: 50em) {
-    header.ctzn,
+  @media (min-width: 640px) and (min-height: 640px) { /* @min-font-size (16px) * 100vmin / 2.5vmin = 16 * 40 = 640 */
     .push-channel > header,
     .push-channel article header {
-      font-size: 1.25em;
+      font-size: 2.5vmin;
     }
   }
 
@@ -720,9 +946,11 @@
       top: 0.25em;
       right: 0.25em;
     }
+    /*
     .toggle-fullscreen button {
       font-size: 0.75em;
     }
+    */
   }
 
   /* Short OR thin */
@@ -736,18 +964,17 @@
     .push-channel > header {
       padding-right: 2em;
     }
-    .push-title-only .push-channel > header h1 {
-      font-size: inherit;
-    }
 
     /* Make the ctzn logo smaller */
     header.ctzn {
       right: 0.25em;
       bottom: 0.25em;
     }
+    /*
     header.ctzn h2 {
       font-size: 0.5em;
     }
+    */
   }
   @media (max-height: 6em), (max-width: 15em) {
     .push-channel > header {
