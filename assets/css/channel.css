@@ -580,7 +580,34 @@
     -webkit-box-orient: vertical;
   }
 
+  /*  OPTIONAL: Make the post text larger on big screens. */
+  @media (min-width: 25em) and (min-height: 25em) {
+    .push-channel article .body p {
+      font-size: 1.25em;
+    }
+  }
+  @media (min-width: 30em) and (min-height: 30em) {
+    .push-channel article .body p {
+      font-size: 1.5em;
+    }
+  }
+  @media (min-width: 35em) and (min-height: 35em) {
+    .push-channel article .body p {
+      font-size: 2em;
+    }
+  }
+  @media (min-width: 50em) and (min-height: 50em) {
+    .push-channel article .body p {
+      font-size: 3em;
+    }
+  }
+  @media (min-width: 60em) and (min-height: 60em) {
+    .push-channel article .body p {
+      font-size: 4em;
+    }
+  }
 
+  /* OPTIONAL: Use viewport units in browsers that support it (for more possible sizes). */
   @media (min-width: 320px) and (min-height: 320px) { /* @min-font-size (16px) * 100vmin / 5vmin = 16 * 20 = 320 */
     .push-channel article .body p {
       font-size: 5vmin;
