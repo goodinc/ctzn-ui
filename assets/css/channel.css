@@ -723,28 +723,6 @@
     }
   }
 
-  /* OPTIONAL: Make the text larger on big screens  */
-  @media false and (min-width: 15em) and (min-height: 15em) {
-    .push-channel article .body {
-      font-size: 1.25em; /* 20px / @font-size */
-    }
-  }
-  @media false and (min-width: 20em) and (min-height: 20em) {
-    .push-channel article .body {
-      font-size: 1.5em; /* 24px / @font-size */
-    }
-  }
-  @media false and (min-width: 25em) and (min-height: 25em) {
-    .push-channel article .body {
-      font-size: 1.875em; /* 30px / @font-size */
-    }
-  }
-  @media false and (min-width: 50em) and (min-height: 50em) {
-    .push-channel article .body {
-      font-size: 2.5em; /* 40px / @font-size */
-    }
-  }
-
 
   /* KUDOS: https://css-tricks.com/perfect-full-page-background-image */
   .push-channel article .images {
