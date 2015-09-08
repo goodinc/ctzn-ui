@@ -2969,6 +2969,11 @@
     background-color: black;
   }
 
+  /* For the “Join us on CTZN” link on the public page for a push */
+  .push-card.page .details a {
+    color: inherit;
+  }
+
   /* Meta */
   .push-card .meta {
     margin-top: 1.5em;     /* @line-height */
