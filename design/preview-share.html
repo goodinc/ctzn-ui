@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,23 +19,14 @@
     })();
   </script>
 
-  <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/69a0da880569f7321da5707935b54e30a321adf2=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/e62eb390941ca7edf3bb675786c4e2f05627547a=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048);
-    }
-  </style>
+  <script src="../assets/js/placeholder.js"></script>
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -310,108 +300,368 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../design/">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
-  </header>
+  <main class="tangerine push-card page">
+    <header class="powered-by">
+      <h1>
+        <a href="http://getctzn.com" target="_blank">
+          <span>Powered by</span> <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a>
+      </h1>
+      <p class="action">
+        <a href="/push/9C044CCA/bulletproof?channel=1">
+          Live Channel
+        </a>
+      </p>
 
-  <h1>Design</h1>
+      <form action="" method="post" style="position: absolute; top: 0; left: 0; margin: 0;">
+        <p style="margin: 0.375em;">
+          <button type="submit">Join</button>
+        </p>
+      </form>
+    </header>
+    <div class="details">
+      <h1 class="name">BULLETPROOF.</h1>
+      <p class="about">A statement that transcends race, social identity or class. http://www.wearegreedycity.com/</p>
+      <p class="website action">
+        <a href="http://bulletproof.good.is">bulletproof.good.is</a>
+      </p>
+    </div>
 
-  <div class="pattern-list">
-    <section>
-      <h2>Request to Join</h2>
-      <ul>
-        <li><a href="../design/preview-share.html">Public Page</a></li>
-        <li><a href="../design/preview-request.html">Preview</a></li>
-        <li><a href="../design/request-choose.html">Facebook or Email</a></li>
-        <li><a href="../design/request-form.html">Send Request</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Reconnect Facebook</h2>
-      <ul>
-        <li><a href="../design/dialog-facebook.html">Dialog</a></li>
-        <li><a href="../design/settings.html">Step 1</a></li>
-        <li><a href="../design/settings-step-2.html">Step 2</a></li>
-        <li><a href="../design/settings-step-2-curator.html">Step 2 (curator)</a></li>
-        <li><a href="../design/settings-finished.html">Step 3</a></li>
-        <li><a href="../design/settings-finished-curator.html">Step 3 (curator)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>*Heart* via email</h2>
-      <ul>
-        <li><a href="../email/daily.html">Daily Email</a></li>
-        <li><a href="../email/weekly.html">Weekly Email</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Feedback</h2>
-      <ul>
-        <li><a href="../test/switch.html">Switch</a></li>
-        <li><a href="../test/feedback.html">Form</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Widget</h2>
-      <ul>
-        <li><a href="../test/settings.html">Settings</a></li>
-        <li><a href="../test/widget.html">Embed Code</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Image loading</h2>
-      <ul>
-        <li><a href="../design/image-blur.html">Example</a></li>
-        <li><a href="../design/image-blur-loading.html">Example (loading state)</a></li>
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Loading indicator</h2>
-      <ul>
-        <li><a href="../design/switch.html">Switch</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Error</h2>
-      <ul>
-        <li><a href="../error/app.html">Screen</a></li>
-        <li><a href="../error/startup.html">Startup</a></li>
-        <li><a href="../error/browser.html">Browser</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Switch</h2>
-      <ul>
-        <li><a href="switch-alt.html">New Layout</a></li>
-        <li><a href="switch-reorder.html">Reorder</a></li>
-        <li><a href="switch-reorder-alt.html">Reorder (Drag)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Join Push</h2>
-      <h6>(via getctzn.com/join)</h6>
-      <ul>
-        <li><a href="../design/join.html">Join</a></li>
-        <li><a href="../design/preview.html">Preview</a></li>
-        <li><a href="../design/join-logged-in.html">Join (logged in)</a></li>
-        <li><a href="../design/preview-logged-in.html">Preview (logged in)</a></li>
-      </ul>
-      <h6>(via the app)</h6>
-      <ul>
-        <li><a href="../design/join-app.html">Join</a></li>
-        <li><a href="../design/preview-app.html">Preview</a></li>
-      </ul>
-    </section>
-    -->
-  </div>
+    <ol class="post-list">
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-09-06 15:28:02 +0000">September  6, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg></p>
+
+              <p>The lovely Alexandria Symone repping #BULLETPROOF. in Toronto! #greedycity #foremost #blacklivesmatter #blmtoronto</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c60x60" width="30" height="30" alt=""></span>
+              @cogg
+            </h3>
+            <p>
+              <time datetime="2015-09-04 21:28:22 +0000">September  4, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+
+              <p>When I first received the shirt I wondered if it was okay for me (a white man) to wear it. Bulletproof? Of course I am. Then the Charleston massacre happened and I understood wearing it offers me a way to show my support:  shit has to change. Now is the time.</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-23 02:14:04 +0000">August 23, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>Peace to the Queen @blackpuertoricanphd out there at #afropunk rocking her #bulletproof tee! #blacktranslivesmatter #greedycity  #newyork</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-21 00:15:56 +0000">August 21, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>That one time #Bulletproof made the front page of the #newyorktimes. S/o to #BLMBoston for their fearlessness. #blacklivesmatter #greedycity #foremost</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-20 20:04:39 +0000">August 20, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>@merci_house looking fly in her #BULLETPROOF. tee! Go to SHOP.GOOD.IS and grab yours for a limited time. Link is also in the bio. #blacklivesmatter #greedycity #azla #losangeles #ethiopia #foremost</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-20 08:33:26 +0000">August 20, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>S/o the homie @j.dmusic for the flick. Repping #bulletproof where ever I go. #blacklivesmatter #greedycity #foremost #losangeles</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-12 16:16:37 +0000">August 12, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>S/o the #BLMBoston family for their perseverance, making sure they got to Hillary. Thank you for repping your bulletproof spirits while wearing your #bulletproof t-shirts. #blacklivesmatter #holluphillary #hillary #hillaryclinton #hillary2016</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-11 20:01:53 +0000">August 11, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>That one time when the cofounders of #blacklivesmatter were keeping it 100 at the #betexperience and @love_cullors was rocking her #bulletproof shirt.</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-11 04:15:07 +0000">August 11, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>❤️ #bulletproof #blacklivesmatter #greedycity #foremost</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-07 16:30:36 +0000">August  7, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>@justnaymae always and forever representin' #blacklivesmatter in the #bulletproof tee. #art #greedycity #foremost #Ghana</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-07 16:24:17 +0000">August  7, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>Work by @4oremost + @tanyaluciabe #blacklivesmatter #collage #art #blackart #foremost #bulletproof</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-08-07 16:19:53 +0000">August  7, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>Revolutionary leader Sandy Noyo Hudson in Black + Gold #bulletproof tee. #blacklivesmatter #greedycity #foremost #wearetheeverything</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-07-31 16:28:16 +0000">July 31, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>@brownblaze  and @love_cullors are golden in their #Bulletproof Tees! #blacklivesmatter #greedycity #foremost  #bulletproofproper #blackart</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-07-31 16:16:57 +0000">July 31, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>@soundoflegacy rockin' the #bulletproof  black + gold tee. #MNTwinCities #bulletproofproper #blacklivesmatter #greedycity #foremost</p>
+          </div>
+        </article>
+</li>
+
+      <li>
+        <article class="post-item"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60" width="30" height="30" alt=""></span>
+              @iamdamonturner
+            </h3>
+            <p>
+              <time datetime="2015-07-31 16:08:06 +0000">July 31, 2015</time></p>
+          </header><div class="images n1">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=c768x768" srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=c1536x1536 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=c768x768 1x" alt="Uploaded image 1"></figure>
+</div>
+
+          <div class="body">
+
+              <p class="source">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg></p>
+
+              <p>#BLMTOShutItDown reppin' #blacklivesmatter all day every day. #bulletproof #bulletproofproper #BLMTO #greedycity #foremost</p>
+          </div>
+        </article>
+</li>
+
+    </ol>
+  </main>
+
+  <footer class="primary">
+    <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
+    <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
+  </footer>
 
 </body>
 </html>

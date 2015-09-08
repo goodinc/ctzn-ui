@@ -719,7 +719,7 @@
   }
 
   /* OPTIONAL: Postion the icon above the field, in browsers that support placeholders */
-  .supports-placeholder form.has-icon .text label {
+  .supports-placeholder .has-icon label {
     padding-left: 2.5em;
   }
   .supports-placeholder .text label .icon:first-child {
@@ -5711,5 +5711,39 @@
     .push-card.page > header.powered-by h1 a svg {
       width: 2.625em; /* 42px / @font-size */
     }
+  }
+
+  .push-card.page > aside {
+    padding-top: 1.5em; /* @line-height */
+    max-width: none;
+    background: rgb(153, 153, 153); /* @nickel */
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .push-card.page > aside h2 {
+    margin-top: 0;
+    font-size: inherit;
+  }
+  .push-card.page > aside h2 svg.icon {
+    width: 2.625em; /* 42px / @font-size */
+    height: 1.5em;
+  }
+  .push-card.page > aside h2 + p {
+    margin-top: 0;
+  }
+  .push-card.page > aside p {
+    font-size: 0.75em;
+    line-height: 1.25;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    text-transform: lowercase;
+  }
+  .push-card.page > aside a {
+    color: black;
+    text-decoration: underline;
+  }
+  .push-card.page > aside p {
+    max-width: 25em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
