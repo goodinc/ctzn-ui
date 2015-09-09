@@ -848,12 +848,10 @@
 
   /* =Title Slides
   ----------------------------------------------- */
-  /*
   .ctzn-title-only .push-channel,
   .push-title-only .push-channel ol {
-    display: none;
+    opacity: 0;
   }
-  */
 
   /* CTZN */
   .ctzn-title-only {
@@ -903,7 +901,6 @@
     /* Reset */
     position: static;
     z-index: auto;
-    padding: 1.25em;
   }
   /* Make the title smaller on tiny screens */
   @media (max-width: 20em), (max-height: 20em) {
@@ -919,11 +916,18 @@
     font-size: inherit;
     line-height: 1.25;
     text-align: center;
+
+    /* Reset */
+    padding: 1.25em;
   }
   .push-title-only .push-channel h1 a {
     /* Reset */
     padding: 0;
     border-width: 0;
+  }
+  .push-title-only .push-channel p {
+    position: absolute;
+    left: -9999px;
   }
 
   /*  OPTIONAL: Make the title larger on big screens. */
