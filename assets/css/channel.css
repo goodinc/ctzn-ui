@@ -371,34 +371,15 @@
   }
   .push-channel > header p {
     margin-bottom: 0;
-  }
-  .push-channel > header p a {
-    color: inherit;
-  }
-
-  /*
-  .push-channel ol {
-    position: relative;
-    height: calc(100vh - 0em);
-  }
-  .push-channel > footer {
-    padding: 0.75em 1.25em;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
-  }
-  .push-channel > footer p {
-    margin: 0;
     font-size: 0.75em;
     line-height: 1.25;
-    color: rgba(0, 0, 0, 0.6);
+    color: white;
+    color: rgba(255, 255, 255, 0.6);
     font-weight: bold;
   }
-  .push-channel > footer p a {
-    color: inherit;
+  .push-channel > header p a {
+    color: white;
   }
-  */
 
 
   /* Push Colors */
