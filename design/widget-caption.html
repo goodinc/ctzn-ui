@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en" dir="ltr" class="hoverable">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
-  <link rel="stylesheet" href="../assets/css/shared.css" />
+  <link rel="stylesheet" href="../assets/css/channel.css" />
 
   <script>
     // fonts.com tracking
@@ -19,49 +19,150 @@
     })();
   </script>
 
-  <script src="../assets/js/placeholder.js"></script>
+  <!-- OPTIONAL: Attempt to use simple emoji (since we’re positioning the text above a background image or color). -->
+  <style>
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* SHIM: Add the same font files with bold weight, so the browser won’t render “faux bold” emoji characters. */
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    /* This is our usual font stack with an emoji font at the end
+      (so it will catch any characters that aren’t available in the other fonts). */
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Android Emoji";
+    }
+  </style>
+  <!-- /OPTIONAL -->
 
   <!--[if lte IE 8]>
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
-  <style>
-    body {
-      background: white;
-      color: black;
-    }
-    .tangerine.caption {
-      background-color: rgb(255, 204, 0); /* @tangerine */
-      padding: 0.75em 1.25em;
-    }
-    .caption p {
-      margin: 0;
-      font-size: 0.75em;
-      line-height: 1.25;
-      color: rgba(0, 0, 0, 0.6);
-      font-weight: bold;
-    }
-    .caption p a {
-      color: inherit;
-    }
-    iframe {
-      display: block;
-      width: 100%;
-    }
-  </style>
-
 </head>
-<body>
-  <!--
+<!--
+  .ctzn-title-only
+  .push-title-only
+-->
+<body class="">
 
-This is just an example.
+  <!-- images/icons.svg -->
+  <svg display="none" width="0" height="0">
+    <symbol id="icon-ctzn" viewBox="0 0 100 37.818">
+      <path d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
+        c0-2.292,0.362-4.373,1.086-6.243c0.724-1.87,1.739-3.478,3.046-4.825s2.855-2.382,4.644-3.106c1.789-0.724,3.75-1.086,5.881-1.086
+        c2.573,0,4.735,0.432,6.484,1.297c1.749,0.864,3.026,1.759,3.83,2.684l-4.765,7.057c-0.523-0.603-1.136-1.096-1.84-1.478
+        c-0.704-0.382-1.518-0.573-2.443-0.573c-1.528,0-2.825,0.543-3.89,1.629c-1.066,1.086-1.598,2.634-1.598,4.644
+        c0,2.01,0.533,3.569,1.598,4.674c1.066,1.106,2.362,1.659,3.89,1.659c0.925,0,1.739-0.201,2.443-0.603
+        c0.704-0.402,1.317-0.905,1.84-1.508l4.765,7.117c-0.804,0.925-2.081,1.819-3.83,2.684c-1.749,0.864-3.91,1.297-6.484,1.297
+        C12.525,37.818,10.565,37.446,8.776,36.702z"/>
+      <path d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
+        v8.806h-4.584v9.59c0,0.764,0.161,1.367,0.482,1.809s0.784,0.663,1.387,0.663c0.362,0,0.714-0.05,1.056-0.151
+        c0.342-0.101,0.573-0.231,0.694-0.392l1.689,7.962c-0.563,0.442-1.397,0.814-2.503,1.116c-1.106,0.302-2.423,0.452-3.951,0.452
+        C35.344,37.818,33.052,37.084,31.604,35.616z"/>
+      <path d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"/>
+      <path d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
+        s-1.759,0.282-2.383,0.844c-0.623,0.563-1.116,1.126-1.478,1.689v18.336H72.798V7.962h10.133v3.378
+        c0.724-1.005,1.86-1.94,3.408-2.805c1.548-0.865,3.327-1.297,5.338-1.297c2.935,0,5.056,0.774,6.363,2.322
+        c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"/>
+    </symbol>
+    <symbol id="icon-expand" viewBox="0 0 20 20">
+      <path d="M17.9,2.4c-0.1-0.2-0.2-0.3-0.4-0.4C17.5,2,17.4,2,17.3,2h-5.8c-0.4,0-0.7,0.3-0.7,0.7s0.3,0.7,0.7,0.7h4.1
+        L10.9,8c-0.3,0.3-0.3,0.7,0,1c0.1,0.1,0.3,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2l4.6-4.6v4.1c0,0.4,0.3,0.7,0.7,0.7
+        c0.4,0,0.7-0.3,0.7-0.7V2.7C18,2.6,18,2.5,17.9,2.4z"/>
+      <path d="M9.1,10.9c-0.3-0.3-0.7-0.3-1,0l-4.6,4.6v-4.1c0-0.4-0.3-0.7-0.7-0.7S2,11.1,2,11.5v5.8
+        c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.2,0.3,0.4,0.4C2.5,18,2.6,18,2.7,18h5.8c0.4,0,0.7-0.3,0.7-0.7c0-0.4-0.3-0.7-0.7-0.7H4.5L9.1,12
+        C9.3,11.7,9.3,11.2,9.1,10.9z"/>
+    </symbol>
+    <symbol id="icon-shrink" viewBox="0 0 20 20">
+      <path d="M8.8,10.1C8.7,10,8.6,10,8.5,10H2.7C2.3,10,2,10.3,2,10.7c0,0.4,0.3,0.7,0.7,0.7h4.1L2.2,16
+        c-0.3,0.3-0.3,0.7,0,1c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2l4.6-4.6v4.1c0,0.4,0.3,0.7,0.7,0.7c0.4,0,0.7-0.3,0.7-0.7v-5.8
+        c0-0.1,0-0.2-0.1-0.3C9.1,10.3,9,10.1,8.8,10.1z"/>
+      <path d="M17.3,8.5h-4.1L17.8,4c0.3-0.3,0.3-0.7,0-1c-0.3-0.3-0.7-0.3-1,0l-4.6,4.6V3.5c0-0.4-0.3-0.7-0.7-0.7
+        c-0.4,0-0.7,0.3-0.7,0.7v5.8c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.2,0.3,0.4,0.4c0.1,0,0.2,0.1,0.3,0.1h5.8c0.4,0,0.7-0.3,0.7-0.7
+        C18,8.9,17.7,8.5,17.3,8.5z"/>
+    </symbol>
+  </svg>
 
-If this design wins, we should implement it without an iframe.
+  <header class="ctzn">
+    <div>
+      <h2>
+        <!-- TRICKY: Open a new window, since this page is sometimes included in an iframe. -->
+        <a href="http://getctzn.com" target="_blank">
+          <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg>
+        </a>
+      </h2>
+    </div>
+  </header>
 
-  -->
-  <iframe width="853" height="460" src="http://www.ctznapp.com/push/9C044CCA/bulletproof?channel=1" frameborder="0" scrolling="no" allowfullscreen></iframe>
-  <div class="tangerine caption">
-    <p>BULLETPROOF. A statement that transcends race, social identity or class. http://www.wearegreedycity.com/ <a href="">Join us on CTZN</a></p>
-  </div>
+  <p class="toggle-fullscreen">
+    <button type="button">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-expand"></use><foreignObject>Fullscreen</foreignObject></switch></svg>
+    </button>
+  </p>
+
+  <main class="blueberry push-channel">
+
+    <header>
+      <div>
+        <h1>
+          <a href="" target="_blank">
+            Milk+Bookies
+          </a>
+        </h1>
+        <p>
+          Milk+Bookies is a nationwide charitable organization that gets books into the hands of thousands of children who need them.
+          <a href="" target="_blank">Join us on CTZN</a><!-- TRICKY: This has a target="_blank" since the Live Channel is sometimes embedded in an iframe -->
+        </p>
+      </div>
+    </header>
+
+    <ol>
+      <li data-bind="css: ($root.currentSlide() == $index()) ? '' : 'inactive'" class="">
+        <article data-bind="if: slide_type === 'post'"><header><h3>
+              <span class="avatar">
+                <!-- ko if: profile_image -->
+                <img height="30" width="30" alt="" data-bind="attr: { src: sizedS3Image(profile_image, 100) }" src="https://m.ctznapp.com/s3/ctzn/010959343f338a3ef8ff319feb2f1ea8a624845c=c100x100"><!-- /ko --><!-- ko if: !profile_image --><!-- /ko -->
+              </span>
+              @<span data-bind="text: username">aleshadailey</span>
+            </h3>
+            <p>
+              <time data-bind="attr: { datetime: created_at }, text: $root.monthDayYear(created_at)" datetime="2015-08-08T23:52:30.000+00:00">August 8, 2015</time></p>
+          </header><!-- ko if: images.length > 0 --><div class="images n1" data-bind="foreach: images, css: 'n' + (images.length &lt; 3 ? images.length : images.length % 2 == 0 ? '-even' : '-odd')">
+            <figure data-bind="css: ($root.currentImage() == $index()) ? 'active' : 'inactive'" class="active"><img data-bind="attr: { srcset: $root.imageSourceSet($data, $index(), $parent.images.length), src: $root.imageSource()($data, $index(), $parent.images.length), alt: 'Image ' + ($index() + 1) }" srcset="http://assets.goodstatic.com/s3/ctzn/25f34f5988edd738cec97ff16c35296eb37141ab=c2048x1088 3x, http://assets.goodstatic.com/s3/ctzn/25f34f5988edd738cec97ff16c35296eb37141ab=c2048x1088 2x, http://assets.goodstatic.com/s3/ctzn/25f34f5988edd738cec97ff16c35296eb37141ab=c1600x896 1x" src="http://assets.goodstatic.com/s3/ctzn/25f34f5988edd738cec97ff16c35296eb37141ab=c1600x896" alt="Image 1"></figure>
+        </div>
+          <!-- /ko -->
+
+          <!-- ko if: text -->
+          <div class="body active" data-bind="css: ($root.textShowing()) ? 'active' : 'inactive'">
+            <div>
+              <div>
+                <p data-bind="text: text">Woohooo! We did it! We love our fantastic #MilkandBookies supporters so much for coming out today and riding with us at our Bike for Bookies event! 🚲 Thanks to their commitment, generosity, and sweat 💦--we raised $5000!!!! That's 5000 books going to students in Title 1 LAUSD schools!!! A big shoutout and thank you to our sponsor @bolthousefarms for hydrating us with their new line of cold, pressed juices @1915organic 💙💛💚! Couldn't have done it without ya! #readgivegrow</p>
+              </div>
+            </div>
+          </div>
+          <!-- /ko -->
+        </article>
+      </li>
+    </ol>
+
+  </main>
 </body>
 </html>
