@@ -296,6 +296,7 @@
 
     /* =Buttons
     ----------------------------------------------- */
+    a.action,
     button {
       display: inline-block;
       border-width: 0;
@@ -312,7 +313,16 @@
       transition: background-color 0.2s, color 0.2s, opacity 0.2s;
       text-transform: lowercase;
       margin: 0;
+      text-decoration: none;
     }
+    a.action {
+      font-size: 1.25em;
+      margin-top: 0.625em;
+      color: white !important;
+    }
+    a.action:hover,
+    a.action:active,
+    a.action:focus,
     button:hover,
     button:active,
     button:focus {
@@ -1682,7 +1692,7 @@
         </svg>
       </a>
     </h1>
-    <p><a href="#download">Download</a></p>
+    <p><a href="https://ctzn.typeform.com/to/iQXVbn">Get Started</a></p>
     <!--
     <ul>
       <li><a href="">Features</a></li>
@@ -1693,11 +1703,14 @@
   </header>
 
   <section class="tangerine">
-    <div class="text" id="download">
+    <div class="text">
       <h2>See progress <b>unfold.</b></h2>
       <h3>A new way to connect, capture, and broadcast your push for good.</h3>
 
-      <ul class="download">
+      <p>CTZN is currently invite-only. Don’t have an invite code?<br /><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Get Started</a></p>
+
+      <p style="margin-top: 2.5em;">Already on CTZN?</p>
+      <ul class="download" style="font-size: 0.875em">
         <li>
           <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
             <svg width="135" height="40" viewBox="0 0 135 40">
@@ -1720,7 +1733,6 @@
         </li>
       </ul>
 
-      <p>CTZN is currently invite-only. Don’t have an invite code? <a href="https://ctzn.typeform.com/to/iQXVbn">Get in touch</a></p>
     </div>
 
     <div class="figure">
@@ -2010,7 +2022,11 @@
   <section class="strawberry" id="contact">
     <div class="text">
       <h2>Connect <b>with us.</b></h2>
-      <h3>Stay up to date with all latest ctzn updates. Join our mailing list today!</h3>
+      <p><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Get Started</a></p>
+
+      <h3 style="margin-top: 3.75em">
+        Not quite ready? Stay up to date with all latest ctzn updates. Join our mailing list today!</a>
+      </h3>
 
       <!-- Begin MailChimp Signup Form -->
       <form action="//good.us2.list-manage.com/subscribe/post?u=5b63a0823e3b9c105434c46d7&amp;id=f9c7839dae" method="post" name="mc-embedded-subscribe-form">
