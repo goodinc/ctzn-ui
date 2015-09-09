@@ -274,6 +274,12 @@
       text-transform: lowercase;
     }
 
+    .mailing-list {
+      margin-top: 3.75em; /* @line-height x 3 */
+      padding-top: 0.7142857143em; /* 15px / 21px */
+      border-top: 0.3125em solid black; /* 5px / @font-size */
+    }
+
     .strawberry form {
       margin-top: 2.5em;
     }
@@ -304,19 +310,18 @@
       font-size: inherit;
       font-weight: bold;
       background: black;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.2);
       color: white;
       padding: 0.46875em 0.9375em; /* @line-height x 3/8     @line-height x 3/4 */
       line-height: inherit;
-      border-radius: 0.25em;
+      border-radius: 2.1875em;
       cursor: pointer;
       transition: background-color 0.2s, color 0.2s, opacity 0.2s;
-      text-transform: lowercase;
       margin: 0;
       text-decoration: none;
     }
     a.action {
-      font-size: 1.25em;
+      font-size: 2em;
       margin-top: 0.625em;
       color: white !important;
     }
@@ -661,6 +666,9 @@
     .tangerine p,
     .apple h3 {
       color: rgba(0, 0, 0, 0.6);
+    }
+    .tangerine p.already {
+      margin-top: 2.5em; /* @line-height x 2 */
     }
     .periwinkle p {
       margin-top: 1.25em; /* @line-height */
@@ -1709,8 +1717,8 @@
 
       <p>CTZN is currently invite-only. Don’t have an invite code?<br /><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Get Started</a></p>
 
-      <p style="margin-top: 2.5em;">Already on CTZN?</p>
-      <ul class="download" style="font-size: 0.875em">
+      <p class="already">Already on CTZN?</p>
+      <ul class="download">
         <li>
           <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
             <svg width="135" height="40" viewBox="0 0 135 40">
@@ -2024,8 +2032,9 @@
       <h2>Connect <b>with us.</b></h2>
       <h3>Ready to push your community forward on&nbsp;ctzn?</h3>
       <p><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Get Started</a></p>
-      <h3 style="margin-top: 3.75em">
-        Not quite ready yet? Stay up to date with all latest ctzn updates. Join our mailing list today!</a>
+
+      <h3 class="mailing-list">
+        Stay up to date with all latest ctzn updates. Join our mailing list today!</a>
       </h3>
 
       <!-- Begin MailChimp Signup Form -->
@@ -2047,7 +2056,7 @@
           <input type="text" name="b_5b63a0823e3b9c105434c46d7_f9c7839dae" tabindex="-1" value="">
         </div>
         <p class="submit">
-          <button type="submit" value="Subscribe" name="subscribe">Submit</button>
+          <button type="submit" value="Subscribe" name="subscribe">Join Mailing List</button>
         </p>
       </form>
       <!--End mc_embed_signup-->
