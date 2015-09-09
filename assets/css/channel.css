@@ -24,7 +24,7 @@
   -----------------------------------------------
   ----------------------------------------------- */
   html, body {
-    height: 100%;
+    min-height: 100%;
   }
   body {
     font: 100%/1.5 "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -90,7 +90,7 @@
 
 
   /* Browsers sometimes render these as inline elements, by default */
-  main, header, footer, section, article, aside, nav {
+  main, section, article, aside, nav, header, footer, figure, picture {
     display: block;
   }
 
@@ -274,7 +274,7 @@
 
   header.ctzn {
     display: block;
-    position: absolute;
+    position: fixed;
     z-index: 3; /* Just above the push title */
     bottom: 0.75em;
     right: 0.75em;
@@ -478,13 +478,17 @@
     position: absolute;
     z-index: 2;
     top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    left: -9999px;
     margin: 0;
     font-size: 5em;
     font-size: 50vmin;
     opacity: 0.25;
+  }
+  .paused ~ div .toggle-playback {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   .toggle-playback button {
     border-radius: 0;
@@ -508,6 +512,51 @@
     background-color: rgba(0, 0, 0, 0.75);
   }
 
+  /* Next/Previous */
+  nav,
+  nav ul,
+  nav li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    font-size: 2em;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    color: white;
+    width: 50%;
+    height: 100%;
+    opacity: 0.5;
+  }
+  .autoplaying ~ nav a {
+    opacity: 0;
+  }
+  nav a:focus {
+    opacity: 0.75;
+  }
+  nav a:active {
+    opacity: 1;
+  }
+  nav a svg.icon {
+    position: absolute;
+    top: 50%;
+  }
+  nav li.next a {
+    right: 0;
+  }
+  nav li.next a svg.icon {
+    right: 0.75em;
+  }
+  nav li.previous a {
+    left: 0;
+  }
+  nav li.previous a svg.icon {
+    left: 0.75em;
+  }
+
   /* Posts */
   .push-channel ol,
   .push-channel li {
@@ -518,11 +567,18 @@
   .push-channel ol {
     margin: 0;
   }
-  .push-channel article header {
+  .push-channel article {
     position: relative;
+    padding-bottom: 100%;
+    padding-bottom: 100vh;
+    padding-bottom: 0vh;
+    min-height: 100vh;
+  }
+  .push-channel article header {
+    position: absolute;
     z-index: 2; /* Just above the post body */
     margin: 0;
-    padding: 1.25em 3.75em;
+    padding: 1.25em;
     width: 100%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -532,11 +588,20 @@
     word-wrap     : break-word;
     overflow-wrap : break-word;
   }
+
+@media (false) {
+
+  /* OPTIONAL: Line the username and date up on smaller screens */
+  .push-channel article header {
+    padding-left: 3.75em;
+  }
   .push-channel article header .avatar {
     position: absolute;
     top: 1.125em;
     left: 1.125em;
   }
+
+}
 
   /* Make text easier to read (by darkening the background) */
   .push-channel article .images:before {
@@ -606,6 +671,10 @@
   .push-channel article .images img {
     display: block;
   }
+  .push-channel article .body {
+    position: absolute;
+    z-index: 1;
+  }
   .push-channel article .body > div > div {
     padding: 1.2em 1.2em;
     -webkit-box-sizing: border-box;
@@ -618,10 +687,8 @@
     line-height: 1.2; /* @line-height x 1.5 / 1.875em */
     text-align: center;
     margin: 0 auto;
-    max-height: 2.4em; /* line height x 2 */
     width: 100%;
     max-width: 28em;
-    overflow-y: hidden;
     /*
     text-shadow: 0 0 1.25em rgba(0, 0, 0, 0.25);
     */
@@ -629,6 +696,12 @@
     /* @wrap-long-words */
     word-wrap     : break-word;
     overflow-wrap : break-word;
+  }
+
+  /* OPTIONAL: Limit the height of the text */
+  .push-channel article .body p {
+    max-height: 2.4em; /* line height x 2 */
+    overflow-y: hidden;
 
     /* OPTIONAL: Show an ellipses if the text has been truncated
     http://dropshado.ws/post/1015351370/webkit-line-clamp */
@@ -672,15 +745,16 @@
     }
   }
 
+
   /* OPTIONAL: Center the text vertically */
   .push-channel article .body {
     display: table;
     position: absolute;
-    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    height: 100vh;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -730,6 +804,7 @@
             flex: 1 1 100%;
   }
   */
+
 
   /* OPTIONAL: Increase the line height on tall screens */
   @media (min-height: 15em) {
@@ -783,22 +858,24 @@
 
 
   /* KUDOS: https://css-tricks.com/perfect-full-page-background-image */
-  .push-channel article .images {
-    position: absolute;
+  .push-channel article .images figure {
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    padding-bottom: 100%;
+    padding-bottom: 0vh;
+    min-height: 100vh;
     overflow: hidden;
-  }
-  .push-channel article .images figure {
+  } 
+  .push-channel article .images picture {
     position: absolute; 
     top: -50%; 
     left: -50%; 
     width: 200%; 
     height: 200%;
   }
-  .push-channel article .images figure img {
+  .push-channel article .images picture img {
     width: auto;
     height: auto;
     max-width: none;
@@ -817,10 +894,12 @@
 
   /* =Title Slides
   ----------------------------------------------- */
+  /*
   .ctzn-title-only .push-channel,
   .push-title-only .push-channel ol {
     display: none;
   }
+  */
 
   /* CTZN */
   .ctzn-title-only {
@@ -917,6 +996,8 @@
     }
   }
 
+@media (false) {
+
   /* OPTIONAL: Center the text vertically */
   .push-title-only .push-channel > header {
     display: table;
@@ -969,6 +1050,8 @@
     display:         flex;
   }
 
+}
+
   /* OPTIONAL: Make header and footer larger on big screens */
   @media (min-width: 640px) and (min-height: 640px) { /* @min-font-size (16px) * 100vmin / 2.5vmin = 16 * 40 = 640 */
     .push-channel > header,
@@ -976,6 +1059,48 @@
       font-size: 2.5vmin;
     }
   }
+
+
+  /* The “inactive” classname is added by JavaScript (so that only one image or text element will be shown at a time). */
+  .push-channel li.inactive {
+    display: none;
+  }
+  .push-channel article .images figure.inactive,
+  .push-channel .body.inactive {
+    position: absolute;
+    left: -9999px;
+  }
+  /*
+  .push-channel figure.inactive,
+  .push-channel .body.inactive {
+    opacity: 0;
+  }
+  .push-channel figure,
+  .push-channel .body {
+    transition: opacity 0.1s;
+  }
+  */
+
+  /*
+  .positioned-slides .push-channel {
+    padding-bottom: 100%;
+    padding-bottom: 0vh;
+    height: 100vh;
+  }
+  .positioned-slides .push-channel ol:first-of-type li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  */
+
+
+
+
+@supports (false) {
 
   /* OPTIONAL: Hide content on especially small screens (or small iframes) */
 
@@ -1060,4 +1185,9 @@
       left: -9999px;
     }
   }
+
+
+}
+
+
 
