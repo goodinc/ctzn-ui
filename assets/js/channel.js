@@ -234,9 +234,6 @@
       for (var index = 0; index < toRemove.length; index++) {
         toRemove[index].parentNode.removeChild(toRemove[index]);
       }
-
-      // OPTIONAL: Run picturefill on the new images: https://github.com/scottjehl/picturefill
-      if (window.picturefill) window.picturefill();
     }
 
     function addItem(index) {
@@ -247,7 +244,7 @@
 
       var html = template.innerHTML;
 
-      // OPTIONAL: Remove the src and srcset attributes of the image, if running picturefill (to avoid a double download)
+      // OPTIONAL: Remove the src and srcset attributes of the <img> element, if running picturefill (to avoid a double download)
       if (window.picturefill) {
         html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+src="[^"]*"/g,    function(match, p1) { return p1; });
         html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+srcset="[^"]*"/g, function(match, p1) { return p1; });
@@ -264,6 +261,9 @@
       } else {
         document.querySelector('ol').appendChild(item);
       }
+
+      // OPTIONAL: Run picturefill on the new images: https://scottjehl.github.io/picturefill/#api
+      if (window.picturefill) window.picturefill({ elements: item.getElementsByTagName('img') });
     }
 
     function getItemNumber(item) {
