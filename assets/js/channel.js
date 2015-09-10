@@ -436,7 +436,5 @@
     })();
 
     startPlaying();
-
-    //document.querySelector('.push-channel').className += ' playable';
   }
 })();
