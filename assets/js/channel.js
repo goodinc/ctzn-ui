@@ -247,17 +247,11 @@
 
       var html = template.innerHTML;
 
-      console.log('before **************');
-      console.log(html);
-
       // OPTIONAL: Remove the src and srcset attributes of the image, if running picturefill (to avoid a double download)
       if (window.picturefill) {
         html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+src="[^"]*"/g,    function(match, p1) { return p1; });
         html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+srcset="[^"]*"/g, function(match, p1) { return p1; });
       }
-
-      console.log('after **************');
-      console.log(html);
 
       item.innerHTML = html;
       item.id = 'item-' + index;
