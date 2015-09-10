@@ -274,7 +274,7 @@
 
   header.ctzn {
     display: block;
-    position: fixed;
+    position: absolute;
     z-index: 3; /* Just above the push title */
     bottom: 0.75em;
     right: 0.75em;
@@ -330,6 +330,14 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1.25em 3.75em 1.25em 1.25em;
+  }
+  .push-channel > header > div {
+    border-left: 0.3125em solid white;
+    padding: 0.25em 0.75em;
   }
   .push-channel h1 {
     font-size: inherit;
@@ -339,7 +347,6 @@
     margin: 0;
     width: 100%;
     max-width: 28em;
-    padding: 1.25em 3.75em 1.25em 1.25em;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -356,8 +363,6 @@
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 0.25em 0.75em; /* @line-height / 2 */
-    border-left: 0.3125em solid white;
     transition: color 0.2s, border-color 0.2s;
   }
   .push-channel h1 a:hover,
@@ -367,13 +372,13 @@
     border-color: white !important;
   }
   .push-channel > header p {
-    margin: 0;
+    margin-bottom : 0;
     font-size: 0.75em;
     line-height: 1.25;
     color: white;
     color: rgba(255, 255, 255, 0.6);
     font-weight: bold;
-    padding: 0 5em 1em 1.6666666667em;
+    max-width: 33em;
 
     /* @wrap-long-words */
     word-wrap     : break-word;
@@ -386,34 +391,34 @@
 
 
   /* Push Colors */
-  .push-channel.lime h1 a {
+  .push-channel.lime > header > div {
     border-color: rgb(176, 224, 0); /* @lime */
   }
-  .push-channel.cucumber h1 a {
+  .push-channel.cucumber > header > div {
     border-color: rgb(60, 210, 0); /* @cucumber */
   }
-  .push-channel.blueberry h1 a {
+  .push-channel.blueberry > header > div {
     border-color: rgb(0, 204, 204); /* @blueberry */
   }
-  .push-channel.boysenberry h1 a {
+  .push-channel.boysenberry > header > div {
     border-color: rgb(101, 152, 254); /* @boysenberry */
   }
-  .push-channel.periwinkle h1 a {
+  .push-channel.periwinkle > header > div {
     border-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .push-channel.plumb h1 a {
+  .push-channel.plumb > header > div {
     border-color: rgb(181, 62, 194); /* @plumb */
   }
-  .push-channel.strawberry h1 a {
+  .push-channel.strawberry > header > div {
     border-color: rgb(250, 44, 162); /* @strawberry */
   }
-  .push-channel.apple h1 a {
+  .push-channel.apple > header > div {
     border-color: rgb(255, 0, 86); /* @apple */
   }
-  .push-channel.tangerine h1 a {
+  .push-channel.tangerine > header > div {
     border-color: rgb(255, 204, 0); /* @tangerine */
   }
-  .push-channel.orange h1 a {
+  .push-channel.orange > header > div {
     border-color: rgb(255, 117, 9); /* @orange */
   }
 
@@ -432,7 +437,7 @@
   /* Toggle Playback */
   .toggle-playback {
     position: absolute;
-    z-index: 2;
+    z-index: 3; /* Just above the CTZN slide */
     top: 0;
     left: -9999px;
     margin: 0;
@@ -499,6 +504,7 @@
   nav a svg.icon {
     position: absolute;
     top: 50%;
+    margin-top: -0.75em;
   }
   nav li.next a {
     right: 0;
@@ -901,6 +907,12 @@
     /* Reset */
     position: static;
     z-index: auto;
+    padding: 1.25em;
+  }
+  .push-title-only .push-channel > header > div {
+    /* Reset */
+    padding: 0;
+    border-width: 0;
   }
   /* Make the title smaller on tiny screens */
   @media (max-width: 20em), (max-height: 20em) {
@@ -916,14 +928,6 @@
     font-size: inherit;
     line-height: 1.25;
     text-align: center;
-
-    /* Reset */
-    padding: 1.25em;
-  }
-  .push-title-only .push-channel h1 a {
-    /* Reset */
-    padding: 0;
-    border-width: 0;
   }
   .push-title-only .push-channel p {
     position: absolute;
