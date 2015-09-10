@@ -570,7 +570,8 @@
 
 
   /* Make text easier to read (by darkening the background) */
-  .push-channel article .images:before {
+  .push-channel article   .images:before,
+  .push-channel article .pictures:before {
     content: "";
     position: absolute;
     z-index: 1;
@@ -602,7 +603,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
   }
-  .push-channel article .images + .body:before {
+  .push-channel article .images   + .body:before,
+  .push-channel article .pictures + .body:before {
     background-color: rgba(0, 0, 0, 0.5);
   }
 
@@ -634,7 +636,8 @@
     color: rgba(255, 255, 255, 0.7);
   }
 
-  .push-channel article .images img {
+  .push-channel article .images   img,
+  .push-channel article .pictures img {
     display: block;
   }
   .push-channel article .body {
@@ -824,7 +827,8 @@
 
 
   /* KUDOS: https://css-tricks.com/perfect-full-page-background-image */
-  .push-channel article .images figure {
+  .push-channel article .images,
+  .push-channel article .pictures figure {
     position: relative;
     top: 0;
     left: 0;
@@ -834,14 +838,16 @@
     min-height: 100vh;
     overflow: hidden;
   } 
-  .push-channel article .images picture {
+  .push-channel article .images figure,
+  .push-channel article .pictures picture {
     position: absolute; 
     top: -50%; 
     left: -50%; 
     width: 200%; 
     height: 200%;
   }
-  .push-channel article .images picture img {
+  .push-channel article .images   img,
+  .push-channel article .pictures img {
     width: auto;
     height: auto;
     max-width: none;
@@ -1029,7 +1035,8 @@
   .push-channel li.inactive {
     display: none;
   }
-  .push-channel article .images figure.inactive,
+  .push-channel article .images   figure.inactive
+  .push-channel article .pictures figure.inactive,
   .push-channel .body.inactive {
     position: absolute;
     left: -9999px;
