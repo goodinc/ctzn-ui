@@ -117,7 +117,7 @@
 
 
 (function() {
-  if (document.querySelector && document.addEventListener && document.cloneNode) {
+  if (document.querySelector && document.addEventListener) {
 
     var textShowing;
     var currentItem;
@@ -215,10 +215,11 @@
       }
     }
 
-    var numPosts = Number(document.querySelector('ol').getAttribute('data-post-count'));
     function preloadItems() {
-      for (var index = 0; index < numPosts; index++) {
-        if (nearCurrentSlide(index, numPosts)) {
+      if (!window.dataItemsCount) window.dataItemsCount = Number(document.querySelector('ol').getAttribute('data-post-count'));
+
+      for (var index = 0; index < window.dataItemsCount; index++) {
+        if (nearCurrentSlide(index, window.dataItemsCount)) {
           addItem(index);
         }
       }
@@ -227,7 +228,7 @@
       var posts = document.querySelectorAll('ol li');
       var toRemove = [];
       for (var index = 0; index < posts.length; index++) {
-        if (!nearCurrentSlide(getItemNumber(posts[index]), numPosts)) {
+        if (!nearCurrentSlide(getItemNumber(posts[index]), window.dataItemsCount)) {
           toRemove.push(posts[index]);
         }
       }
@@ -236,16 +237,24 @@
       }
     }
 
+    // KUDOS: http://stackoverflow.com/questions/10964966/detect-ie-version-prior-to-v9-in-javascript#answer-10965203
+    function isIE9() {
+      var div = document.createElement("div");
+      div.innerHTML = "<!--[if IE 9]><i></i><![endif]-->";
+      return div.getElementsByTagName("i").length === 1;
+    }
+
     function addItem(index) {
       if (document.getElementById('item-' + index)) return;
 
       var template = document.getElementById('item-' + index + '-template');
       var item = document.createElement('li');
 
-      var html = template.innerHTML;
+      var html = (window.dataItems && window.dataItems[index]) ? dataItems[index] : template.innerHTML;
 
       // OPTIONAL: Remove the src and srcset attributes of the <img> element, if running picturefill (to avoid a double download)
-      if (window.picturefill) {
+      // SHIM: IE9 needs a src or srcset on the <img>, due to a bug with <source> elements: http://scottjehl.github.io/picturefill/examples/demo-02.html
+      if (window.picturefill && !isIE9()) {
         html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+src="[^"]*"/g,    function(match, p1) { return p1; });
         html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+srcset="[^"]*"/g, function(match, p1) { return p1; });
       }
@@ -438,3 +447,42 @@
     startPlaying();
   }
 })();
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Periodically retrieve updated list of posts
+
+(function() {
+  var updateEvery = 5 * 60; // 5 minutes
+
+  function updateItemsData() {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', function() {
+
+      try {
+        var count = 0;
+        var items = {};
+        var regex = /<script type="text\/template" id="item-([0-9]+)-template">((.|\n)*?)<\/script>/g;
+        var matches;
+        while ((matches = regex.exec(xhr.responseText)) !== null) {
+          var id   = matches[1];
+          var html = matches[2];
+          items[id] = html;
+          count++;
+        }
+        window.dataItems = items;
+        window.dataItemsCount = count;
+      }
+      catch (e) {
+        // Fail silently and just let the current push data remain (don't want to interrupt the UX)
+        if (console && console.error) console.error('ERROR getting posts via XHR', e);
+      }
+    });
+    xhr.open('GET', window.location.href);
+    xhr.send();
+  }
+
+  setInterval(updateItemsData, updateEvery * 1000);
+
+  window.updateItemsData = updateItemsData;
+})();
+
