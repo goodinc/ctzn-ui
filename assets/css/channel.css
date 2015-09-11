@@ -1051,7 +1051,7 @@
   /* OPTIONAL: Hide content on especially small screens (or small iframes) */
 
   /* VERY short OR thin */
-  @media (max-height: 10em), (max-width: 15em) {
+  @media (max-height: 20em), (max-width: 20em) {
 
     /* Hide the username */
     .push-channel article header h3 {
@@ -1086,15 +1086,10 @@
       top: 0.25em;
       right: 0.25em;
     }
-    /*
-    .toggle-fullscreen button {
-      font-size: 0.75em;
-    }
-    */
   }
 
   /* Short OR thin */
-  @media (max-height: 15em), (max-width: 15em) {
+  @media (max-height: 20em), (max-width: 20em) {
 
     /* Make the push name smaller */
     .push-channel > header,
@@ -1110,12 +1105,6 @@
       right: 0.25em;
       bottom: 0.25em;
     }
-    /*
-    header.ctzn h2 {
-      font-size: 0.5em;
-    }
-    */
-
   }
   @media (max-height: 15em) {
     /* Hide the push details */
@@ -1129,6 +1118,11 @@
     .push-channel > header .details {
       position: absolute;
       left: -9999px;
+    }
+  }
+  @media (max-height: 20em), (max-width: 20em) {
+    header.ctzn {
+      font-size: 0.5em;
     }
   }
   @media (max-height: 6em), (max-width: 15em) {
