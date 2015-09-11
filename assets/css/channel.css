@@ -371,8 +371,8 @@
     color: white;
     border-color: white !important;
   }
-  .push-channel > header p {
-    margin-bottom : 0;
+  .push-channel > header .details {
+    margin-top: 0.625em; /* @line-height / 2 */
     font-size: 0.75em;
     line-height: 1.25;
     color: white;
@@ -384,9 +384,18 @@
     word-wrap     : break-word;
     overflow-wrap : break-word;
   }
-  .push-channel > header p a {
+  .push-channel > header .details p,
+  .push-channel > header .details form {
+    display: inline;
+  }
+  .push-channel > header .details a {
     color: white;
-    display: inline-block;
+  }
+  .push-channel > header .details form button {
+    background: transparent;
+    text-decoration: underline;
+    text-transform: none;
+    padding: 0;
   }
 
 
@@ -567,7 +576,6 @@
 
 
   /* Make text easier to read (by darkening the background) */
-  .push-channel article   .images:before,
   .push-channel article .pictures:before {
     content: "";
     position: absolute;
@@ -600,7 +608,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
   }
-  .push-channel article .images   + .body:before,
   .push-channel article .pictures + .body:before {
     background-color: rgba(0, 0, 0, 0.5);
   }
@@ -633,7 +640,6 @@
     color: rgba(255, 255, 255, 0.7);
   }
 
-  .push-channel article .images   img,
   .push-channel article .pictures img {
     display: block;
   }
@@ -824,7 +830,6 @@
 
 
   /* KUDOS: https://css-tricks.com/perfect-full-page-background-image */
-  .push-channel article .images,
   .push-channel article .pictures figure {
     position: relative;
     top: 0;
@@ -835,7 +840,6 @@
     min-height: 100vh;
     overflow: hidden;
   } 
-  .push-channel article .images figure,
   .push-channel article .pictures picture {
     position: absolute; 
     top: -50%; 
@@ -843,7 +847,6 @@
     width: 200%; 
     height: 200%;
   }
-  .push-channel article .images   img,
   .push-channel article .pictures img {
     width: auto;
     height: auto;
@@ -941,7 +944,7 @@
     line-height: 1.25;
     text-align: center;
   }
-  .push-title-only .push-channel p {
+  .push-title-only .push-channel > header .details {
     position: absolute;
     left: -9999px;
   }
@@ -1038,7 +1041,6 @@
   .push-channel li.inactive {
     display: none;
   }
-  .push-channel article .images   figure.inactive,
   .push-channel article .pictures figure.inactive,
   .push-channel .body.inactive {
     position: absolute;
@@ -1074,7 +1076,7 @@
     }
 
     /* Hide the push details */
-    .push-channel > header p {
+    .push-channel > header .details {
       position: absolute;
       left: -9999px;
     }
@@ -1096,7 +1098,7 @@
 
     /* Make the push name smaller */
     .push-channel > header h1,
-    .push-channel > header p,
+    .push-channel > header .details,
     .push-title-only .push-channel > header {
       padding: 0.25em;
     }
@@ -1117,7 +1119,7 @@
   }
   @media (max-height: 6em), (max-width: 15em) {
     .push-channel > header h1,
-    .push-channel > header p {
+    .push-channel > header .details {
       padding-right: 0.25em;
     }
 
