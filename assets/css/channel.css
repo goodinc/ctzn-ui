@@ -508,7 +508,7 @@
     opacity: 0;
   }
   nav a:focus {
-    opacity: 0.75;
+    opacity: 0.25;
   }
   nav a:active {
     opacity: 1;
@@ -1097,12 +1097,11 @@
   @media (max-height: 15em), (max-width: 15em) {
 
     /* Make the push name smaller */
-    .push-channel > header h1,
-    .push-channel > header .details,
+    .push-channel > header,
     .push-title-only .push-channel > header {
       padding: 0.25em;
     }
-    .push-channel > header h1 {
+    .push-channel > header {
       padding-right: 2em;
     }
 
@@ -1116,10 +1115,24 @@
       font-size: 0.5em;
     }
     */
+
+  }
+  @media (max-height: 15em) {
+    /* Hide the push details */
+    .push-channel > header .details {
+      position: absolute;
+      left: -9999px;
+    }
+  }
+  @media (max-height: 25em) and (max-width: 25em) {
+    /* Hide the push details */
+    .push-channel > header .details {
+      position: absolute;
+      left: -9999px;
+    }
   }
   @media (max-height: 6em), (max-width: 15em) {
-    .push-channel > header h1,
-    .push-channel > header .details {
+    .push-channel > header {
       padding-right: 0.25em;
     }
 
