@@ -1038,7 +1038,7 @@
   .push-channel li.inactive {
     display: none;
   }
-  .push-channel article .images   figure.inactive
+  .push-channel article .images   figure.inactive,
   .push-channel article .pictures figure.inactive,
   .push-channel .body.inactive {
     position: absolute;
