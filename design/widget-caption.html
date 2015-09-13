@@ -56,6 +56,96 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
+<script>
+  (function() {
+    function updateFigure(figure) {
+      var aspectRatio = figure.getAttribute('data-aspect-ratio');
+      var width = Number(figure.getAttribute('data-width'));
+      var height = Number(figure.getAttribute('data-height'));
+
+      if (!aspectRatio && width > 0 && height > 0 && window.innerWidth > 0 && window.innerHeight > 0) {
+        figure.className = figure.className.replace(/wider-aspect-than-viewport/g, '');
+        figure.className = figure.className.replace(/taller-aspect-than-viewport/g, '');
+        figure.className += ((width / height) > (window.innerWidth / window.innerHeight)) ? ' wider-aspect-than-viewport' : ' taller-aspect-than-viewport';
+      }
+    }
+    function handleUnknowns() {
+      var figures = document.getElementsByTagName('figure');
+      for (var index = 0; index < figures.length; index++) {
+        updateFigure(figures[index]);
+      }
+    }
+    window.setDataAspectRatio = function(image) {
+      if (Number(image.naturalWidth) <= 0 || Number(image.naturalHeight <= 0)) {
+        return;
+      }
+
+      var aspectRatio = Number(image.naturalWidth) / Number(image.naturalHeight);
+
+      var availableRatios = [
+        [32,9],
+        [2,1],
+        [13,7],
+        [32,18],
+        [5,3],
+        [25,16],
+        [3,2],
+        [10,7],
+        [4,3],
+        [5,4],
+        [6,5],
+        [1,1],
+        [5,6],
+        [4,5],
+        [3,4],
+        [7,10],
+        [2,3],
+        [16,25],
+        [3,5],
+        [18,32],
+        [7,13],
+        [1,2],
+        [9,32]
+      ];
+
+      var aspectRatioString;
+      for (var index = 0; index < availableRatios.length; index++) {
+        if (Math.abs((availableRatios[index][0]/availableRatios[index][1]) - aspectRatio) < 0.05) {
+          aspectRatioString = String(availableRatios[index][0]) + '/' + String(availableRatios[index][1]);
+          break;
+        }
+      }
+
+      var ancestor = image;
+      while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
+      if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
+        if (!ancestor.getAttribute('data-aspect-ratio')) {
+          ancestor.setAttribute('data-width', image.width);
+          ancestor.setAttribute('data-height', image.height);
+
+          if (aspectRatioString) {
+            ancestor.setAttribute('data-aspect-ratio', aspectRatioString);
+          } else {
+            updateFigure(ancestor);
+          }
+        }
+      }
+
+    }
+
+    var throttle;
+    window.addEventListener('resize', function() {
+      if (throttle) clearTimeout(throttle);
+      throttle = setTimeout(function() {
+        var figures = document.getElementsByTagName('figure');
+        for (var index = 0; index < figures.length; index++) {
+          updateFigure(figures[index]);
+        }
+      }, 100)
+    });
+  })();
+</script>
+
 </head>
 <!--
   .ctzn-title-only
@@ -100,12 +190,11 @@
         </h1>
 
         <div class="details">
-          <p>A statement that transcends race, social identity or class. http://www.wearegreedycity.com/</p>
-          <!-- You can use a link 
-          <a href="http://getctzn.com" target="_blank">Join us on CTZN</a>
-          -->
-          <!-- …or a form -->
-          <form action="http://getctzn.com" method="post" target="_blank"><button type="submit">Join us on CTZN</button></form>
+          <p></p>
+
+          
+          
+          <form action="" method="post" target="_blank"><button type="submit">Join us on CTZN</button></form>
         </div>
       </div>
     </header><ol data-post-count="17">
@@ -153,17 +242,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -203,17 +298,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -253,17 +354,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -303,17 +410,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -353,17 +466,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -403,17 +522,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -453,17 +578,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -503,17 +634,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -553,17 +690,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -603,17 +746,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -653,17 +802,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -703,17 +858,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -753,17 +914,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -803,17 +970,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -853,17 +1026,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -903,17 +1082,23 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <figure>
         <picture>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 2048w,
+                          http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s1792x2048 1792w,
                           http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s1536x2048 1536w,
+                          http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s1280x2048 1280w,
                           http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s1024x2048 1024w,
+                          http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s768x2048 768w,
                           http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s512x2048 512w,
                           http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s256x2048 256w" media="(min-aspect-ratio: 1/1)"></source>
 
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x1792 1x" media="(min-height: 1792px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x1536 1x" media="(min-height: 1536px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x1280 1x" media="(min-height: 1280px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x1024 1x" media="(min-height: 1024px)"></source>
+          <source srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x1536 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x768 1x" media="(min-height: 768px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x1024 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x512 1x" media="(min-height: 512px)"></source>
           <source srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x512 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x256 1x" media="(min-height: 256px)"></source>
 
-          <img src="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s512x512 1x" alt="Uploaded image 1">
+          <img src="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s512x512" srcset="http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s1024x1024 2x, http://assets.goodstatic.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s512x512 1x" alt="Uploaded image 1" onload="if (window.setDataAspectRatio) window.setDataAspectRatio(this)">
         </picture>
       </figure>
     </div>
@@ -952,7 +1137,7 @@ http://www.wearegreedycity.com/" data-push-url="/push/9C044CCA/bulletproof" data
       <svg class="icon" width="24" height="24" viewbox="0 0 24 24"><switch><use xlink:href="#icon-shrink"></use><foreignobject>Exit Fullscreen</foreignobject></switch></svg>
     </button>
   </p>
-  
+
 </script><script src="../assets/js/picturefill.js"></script><script src="../assets/js/channel.js"></script>
 </body>
 </html>

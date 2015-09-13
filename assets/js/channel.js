@@ -198,7 +198,7 @@
     function updatePushData(current, last) {
       var channel = document.querySelector('.push-channel');
       var link = document.querySelector('.push-channel h1 a');
-      var description = document.querySelector('.push-channel > header p span');
+      var description = document.querySelector('.push-channel > header .details p');
 
       link.innerHTML = current.name;
       link.href      = current.url;
@@ -430,8 +430,6 @@
       }
     }
 
-    startPlaying();
-
     (function() {
       var template = document.getElementById('play-template');
       var button = document.createElement('div');
@@ -443,6 +441,9 @@
         e.preventDefault();
       }, false);
     })();
+
+    // Tell the style sheet that the slideshow is running, so it can fit the content to the viewport.
+    document.querySelector('html').className += ' fit-viewport';
 
     startPlaying();
   }
@@ -485,4 +486,3 @@
 
   window.updateItemsData = updateItemsData;
 })();
-
