@@ -1829,7 +1829,7 @@
   }
 
   /* Short AND thin */
-  @media (max-height: 20em) and (max-width: 20em) {
+  @media (max-height: 15em) and (max-width: 25em) {
 
     /* Hide the date */
     .push-channel article header p {
