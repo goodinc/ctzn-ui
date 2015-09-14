@@ -237,13 +237,6 @@
       }
     }
 
-    // KUDOS: http://stackoverflow.com/questions/10964966/detect-ie-version-prior-to-v9-in-javascript#answer-10965203
-    function isIE9() {
-      var div = document.createElement("div");
-      div.innerHTML = "<!--[if IE 9]><i></i><![endif]-->";
-      return div.getElementsByTagName("i").length === 1;
-    }
-
     function addItem(index) {
       if (document.getElementById('item-' + index)) return;
 
@@ -252,11 +245,9 @@
 
       var html = (window.dataItems && window.dataItems[index]) ? dataItems[index] : template.innerHTML;
 
-      // OPTIONAL: Remove the src and srcset attributes of the <img> element, if running picturefill (to avoid a double download)
-      // SHIM: IE9 needs a src or srcset on the <img>, due to a bug with <source> elements: http://scottjehl.github.io/picturefill/examples/demo-02.html
-      if (window.picturefill && !isIE9()) {
-        html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+src="[^"]*"/g,    function(match, p1) { return p1; });
-        html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+srcset="[^"]*"/g, function(match, p1) { return p1; });
+      // OPTIONAL: Remove the src attribute of the <img> element, if running picturefill (to avoid a double download)
+      if (window.picturefill) {
+        html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+src="[^"]*"/g, function(match, p1) { return p1; });
       }
 
       item.innerHTML = html;
