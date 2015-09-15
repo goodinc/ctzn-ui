@@ -5740,36 +5740,36 @@
   }
 
   /* For the CTZN footer on the “Request to Join” page */
-  .push-card.page > .details ~ aside {
-    padding-top: 1.5em; /* @line-height */
+  /*
+  .push-card.page aside.ctzn {
+    padding-top: 1.5em;
     max-width: none;
-    /*
     background: rgba(0, 0, 0, 0.1);
-    */
   }
-  .push-card.page > .details ~ aside h2 {
+  */
+  .push-card.page aside.ctzn h2 {
     margin-top: 0;
     font-size: inherit;
   }
-  .push-card.page > .details ~ aside h2 svg.icon {
+  .push-card.page aside.ctzn h2 svg.icon {
     width: 2.625em; /* 42px / @font-size */
     height: 1.5em;
   }
-  .push-card.page > .details ~ aside h2 + p {
+  .push-card.page aside.ctzn h2 + p {
     margin-top: 0;
   }
-  .push-card.page > .details ~ aside p {
-    font-size: 0.75em;
+  .push-card.page aside.ctzn p {
     line-height: 1.25;
     color: rgba(0, 0, 0, 0.6);
     font-weight: bold;
     text-transform: lowercase;
+    font-size: 0.75em;
   }
-  .push-card.page > .details ~ aside a {
+  .push-card.page aside.ctzn a {
     color: black;
     text-decoration: underline;
   }
-  .push-card.page > .details ~ aside p {
+  .push-card.page aside.ctzn p {
     max-width: 25em;
     margin-left: auto;
     margin-right: auto;
