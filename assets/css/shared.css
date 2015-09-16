@@ -56,7 +56,7 @@
   }
 
   /* Make new HTML elements look nice in older browsers */
-  main, section, article, aside, nav, header, footer, figure, picture {
+  main, section, article, aside, nav, header, footer, figure {
     display: block;
   }
 
