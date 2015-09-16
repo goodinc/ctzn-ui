@@ -147,7 +147,7 @@
     }
 
     /* Browsers sometimes render these as inline elements, by default */
-    main, section, article, aside, nav, header, footer, figure, picture {
+    main, section, article, aside, nav, header, footer, figure {
       display: block;
     }
 
@@ -974,23 +974,25 @@
       margin-left: 0;
       padding-left: 0;
     }
-    footer.primary .legal p,
-    footer.primary .legal ul,
-    footer.primary .legal li {
-      margin: 0;
-      display: inline;
-    }
-    footer.primary .legal p,
-    footer.primary .legal li {
-      margin: 0 0.3125em; /* @line-height / 4 */
-    }
     footer.primary .legal a {
       color: inherit;
+      text-decoration: none;
     }
     footer.primary .legal a:hover,
     footer.primary .legal a:active,
     footer.primary .legal a:focus {
       color: white;
+    }
+
+    footer.primary .legal ul,
+    footer.primary .legal p,
+    footer.primary .legal li {
+      margin: 0;
+      display: inline-block;
+    }
+    footer.primary .legal p,
+    footer.primary .legal li {
+      margin: 0 0.3125em; /* @line-height / 4 */
     }
 
 
@@ -1805,7 +1807,7 @@
           <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
           Email digests
         </h3>
-        <p>Stay in touch with your group's 
+        <p>Stay in touch with your group’s 
         latests activities — get automated, 
         smart digests that let you comment, 
         love, or even post straight from 
@@ -1857,7 +1859,7 @@
 
       <h3>tell the story of your push—show the heart of your community.</h3>
 
-      <p>We believe in technology's potential to connect &amp; inspire, 
+      <p>We believe in technology’s potential to connect &amp; inspire, 
       to make a difference in our local &amp; global communities. 
       CTZN brings changemakers together in an intentional space 
       where they can exchange &amp; broadcast their key moments.</p>
