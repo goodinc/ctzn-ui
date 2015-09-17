@@ -4168,6 +4168,11 @@
     opacity: 1 !important;
   }
 
+  .mix-editor .more {
+    padding: 1.5em 1.25em 4.5em;
+    text-align: center;
+  }
+
 
   /* =Preview
   ----------------------------------------------- */

@@ -159,11 +159,22 @@
 
     function updatePage() {
       var items = document.querySelectorAll('main ol li');
-      for (var index = 0; index < items.length; index++) {
-        items[index].className = items[index].className.replace(/inactive/g, '');
-        items[index].className += ' inactive';
-      }
+
+      // Show the current item
+      currentItem.className = currentItem.className.replace(/transition-out/g, '');
       currentItem.className = currentItem.className.replace(/inactive/g, '');
+
+      // Hide the previously active item, after a short delay (so it can transition out)
+      if (lastItem) {
+        lastItem.className += ' transition-out';
+
+        setTimeout(function() {
+          if (lastItem) {
+            lastItem.className = lastItem.className.replace(/transition-out/g, '');
+            if (lastItem !== currentItem) lastItem.className += ' inactive';
+          }
+        }, 100);
+      }
 
       textShowing = false;
       currentImage = 0;
@@ -206,12 +217,15 @@
       channel.className = channel.className.replace(last.color, '');
       channel.className += ' ' + current.color;
 
-      document.body.className = document.body.className.replace(/push-title-only/g, '');
-      document.body.className = document.body.className.replace(/ctzn-title-only/g, '');
       if (current.type === 'ctzn') {
+        document.body.className = document.body.className.replace(/push-title-only/g, '');
         document.body.className += 'ctzn-title-only';
       } else if (current.type === 'push') {
+        document.body.className = document.body.className.replace(/ctzn-title-only/g, '');
         document.body.className += 'push-title-only';
+      } else {
+        document.body.className = document.body.className.replace(/push-title-only/g, '');
+        document.body.className = document.body.className.replace(/ctzn-title-only/g, '');
       }
     }
 
@@ -254,7 +268,7 @@
       item.id = 'item-' + index;
       item.className += ' inactive';
 
-      // Looking for the next number up from the item we’re adding (so it will appear in the correct order)
+      // Look for the next number up from the item we’re adding (so it will appear in the correct order)
       var target = closestToNumber(index, document.querySelectorAll('ol li'));
       if (target) {
         document.querySelector('ol').insertBefore(item, target);
@@ -296,6 +310,74 @@
       return (Math.abs(index - currentIndex) <= RANGE);
     }
 
+    function animateImage(image, duration) {
+      console.log('animateImage');
+
+      var width = image.naturalWidth;
+      var height = image.naturalHeight;
+
+      console.log('image.offsetWidth: ' + image.offsetWidth);
+      console.log('image.offsetHeight: ' + image.offsetHeight);
+      console.log('image.naturalWidth: ' + image.naturalWidth);
+      console.log('image.naturalHeight: ' + image.naturalHeight);
+      console.log('window.innerWidth: ' + window.innerWidth);
+      console.log('window.innerHeight: ' + window.innerHeight);
+
+      // Wider aspect than viewport
+      if ((width / height) > (window.innerWidth / window.innerHeight)) {
+        translateAxis = "translateX";
+        var availableImageWidth = window.innerHeight * (width / height);
+        console.log('availableImageWidth: ' + availableImageWidth);
+        translateValue = Math.round((availableImageWidth - window.innerWidth) / 2);
+
+        console.log('wider than viewport');
+        console.log('translateValue: ' + translateValue);
+
+      // Taller aspect than viewport
+      } else {
+        translateAxis = "translateY";
+        var availableImageHeight = window.innerWidth * (height / width);
+        console.log('availableImageHeight: ' + availableImageHeight);
+        translateValue = Math.round((availableImageHeight - window.innerHeight) / 2);
+
+        console.log('taller than viewport');
+        console.log('translateValue: ' + translateValue);
+      }
+
+      translateDestination = translateValue * -1;
+
+      image.style.transition = "";
+      image.style.webkitTransform = translateAxis + "(" + translateValue + "px)";
+      setTimeout(function() {
+        image.style.transition = "transform " + duration + "s linear";
+        image.style.webkitTransform = translateAxis + "(" + (translateValue * -1) + "px)";
+      }, 1);
+
+      /* TODO: Handle the case where the window gets smaller
+      var throttle;
+      window.addEventListener('resize', function() {
+        if (throttle) clearTimeout(throttle);
+        throttle = setTimeout(function() {
+          image.style.transition = "";
+        }, 100);
+      }, false);
+      */
+    }
+
+    function textDuration(text) {
+      var duration = Math.round(text.innerHTML.length / 30);
+      if (duration < 1.5) duration = 1.5;
+      if (duration > 10) duration = 10;
+      return duration;
+    }
+
+    function textImageDuration(text) {
+      var duration = Math.round(text.innerHTML.length / 60);
+      if (duration < 1.5) duration = 1.5;
+      if (duration > 3) duration = 3;
+      return duration;
+    }
+
     function next() {
       if (timer) window.clearTimeout(timer);
 
@@ -313,9 +395,7 @@
         if (images.length > 0) nextStep = next;
 
         // Show the text long enough to be readable
-        duration = Math.round(text.innerHTML.length / 30);
-        if (duration < 1.5) duration = 1.5;
-        if (duration > 10) duration = 10;
+        duration = textDuration(text);
 
       // …Or if the text is already showing, hide it.
       } else {
@@ -328,19 +408,36 @@
 
       // If there are images to show
       if (images.length > 0) {
+
+        // Hide all of the images, except the current one
+        // TBD: Make this more efficient, by only doing it on the first loop?
         for (var index = 0; index < images.length; index++) {
-          images[index].className = images[index].className.replace(/inactive/g, '');
-          images[index].className += ' inactive';
+          if (images[index] !== images[currentImage]) {
+            images[index].className = images[index].className.replace(/inactive/g, '');
+            images[index].className += ' inactive';
+          }
         }
+
+        // Show the current image
         images[currentImage].className = images[currentImage].className.replace(/inactive/g, '');
+
+        var animationDuration = duration;
+
+        // If this is the first image, and text is showing
+        if (currentImage === 0 && text && textShowing) {
+          animationDuration = textDuration(text) + textImageDuration(text);
+        }
+
+        if (currentImage === 0 && text && !textShowing) {
+        } else {
+          animateImage(images[currentImage].querySelector('img'), animationDuration);
+        }
 
         // If this image was shown under the text
         if (currentImage === 0 && text && !textShowing) {
 
           // If there was a lot of text, show the image for a longer amount of time
-          duration = Math.round(text.innerHTML.length / 60);
-          if (duration < 1.5) duration = 1.5;
-          if (duration > 3) duration = 3;
+          duration = textImageDuration(text);
         }
 
         // If there are more images to show
@@ -396,8 +493,6 @@
       }
     }, false);
 
-    currentItem = document.querySelector('main ol li');
-
     var paused;
     function startPlaying() {
       paused = false;
@@ -435,6 +530,22 @@
 
     // Tell the style sheet that the slideshow is running, so it can fit the content to the viewport.
     document.querySelector('html').className += ' fit-viewport';
+
+    (function() {
+
+      // Start with the first item
+      var items = document.querySelectorAll('main ol li');
+      currentItem = items[0];
+
+      // Hide all of the items
+      for (var index = 0; index < items.length; index++) {
+
+        // …except the active item
+        if (items[index] !== currentItem) {
+          items[index].className += ' inactive';
+        }
+      }
+    })();
 
     startPlaying();
   }
@@ -477,3 +588,4 @@
 
   window.updateItemsData = updateItemsData;
 })();
+
