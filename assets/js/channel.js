@@ -352,7 +352,7 @@
       image.style.msTransform     = translateAxis + "(" + translateValue + "px)";
       image.style.transform       = translateAxis + "(" + translateValue + "px)";
       setTimeout(function() {
-        image.style.transition = "transform " + duration + "s linear";
+        image.style.transition = "all " + duration + "s linear"; // TRICKY: Safari expects “-webkit-transition” or simply “all”
         image.style.webkitTransform = translateAxis + "(" + (translateValue * -1) + "px)";
         image.style.MozTransform    = translateAxis + "(" + (translateValue * -1) + "px)";
         image.style.msTransform     = translateAxis + "(" + (translateValue * -1) + "px)";
