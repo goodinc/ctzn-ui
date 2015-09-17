@@ -336,7 +336,7 @@
         console.log('translateMax: ' + translateMax);
 
         console.log('duration: ' + duration);
-        var translateValue = Math.round((duration / window.innerWidth) * 3333);
+        var translateValue = Math.round((duration / 161.80339887) * window.innerWidth);
         console.log('translateValue before: ' + translateValue);
 
         if (translateValue > translateMax) translateValue = translateMax;
@@ -354,7 +354,7 @@
         var translateMax = Math.round((availableImageHeight - window.innerHeight) / 2);
 
         console.log('duration: ' + duration);
-        var translateValue = Math.round((duration / window.innerHeight) * 3333);
+        var translateValue = Math.round((duration / 161.80339887) * window.innerHeight);
         console.log('translateValue before: ' + translateValue);
 
         if (translateValue > translateMax) translateValue = translateMax;
