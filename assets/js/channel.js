@@ -336,7 +336,7 @@
         console.log('translateMax: ' + translateMax);
 
         console.log('duration: ' + duration);
-        var translateValue = Math.round((duration / 161.80339887) * window.innerWidth);
+        var translateValue = Math.round((duration / 333) * window.innerWidth);
         console.log('translateValue before: ' + translateValue);
 
         if (translateValue > translateMax) translateValue = translateMax;
@@ -354,7 +354,7 @@
         var translateMax = Math.round((availableImageHeight - window.innerHeight) / 2);
 
         console.log('duration: ' + duration);
-        var translateValue = Math.round((duration / 161.80339887) * window.innerHeight);
+        var translateValue = Math.round((duration / 333) * window.innerHeight);
         console.log('translateValue before: ' + translateValue);
 
         if (translateValue > translateMax) translateValue = translateMax;
@@ -367,20 +367,24 @@
 
       // Choose a random direction (up or down, left or right)
       translateValue = translateValue * (getRandomInt(0, 2) ? 1 : -1);
+      var zoomIn = getRandomInt(0, 2);
 
       var translateDestination = translateValue * -1;
 
+      var backward = translateAxis + "(" + translateValue + "px) scale(" + (zoomIn ? 1.025 : 1) + ")";
+      var forward = translateAxis + "(" + (translateValue * -1) + "px) scale(" + (zoomIn ? 1 : 1.025) + ")";
+
       image.style.transition = "";
-      image.style.webkitTransform = translateAxis + "(" + translateValue + "px)";
-      image.style.MozTransform    = translateAxis + "(" + translateValue + "px)";
-      image.style.msTransform     = translateAxis + "(" + translateValue + "px)";
-      image.style.transform       = translateAxis + "(" + translateValue + "px)";
+      image.style.webkitTransform = backward;
+      image.style.MozTransform    = backward;
+      image.style.msTransform     = backward;
+      image.style.transform       = backward;
       setTimeout(function() {
         image.style.transition = "all " + duration + "s linear"; // TRICKY: Safari expects “-webkit-transition” or simply “all”
-        image.style.webkitTransform = translateAxis + "(" + (translateValue * -1) + "px)";
-        image.style.MozTransform    = translateAxis + "(" + (translateValue * -1) + "px)";
-        image.style.msTransform     = translateAxis + "(" + (translateValue * -1) + "px)";
-        image.style.transform       = translateAxis + "(" + (translateValue * -1) + "px)";
+        image.style.webkitTransform = forward;
+        image.style.MozTransform    = forward;
+        image.style.msTransform     = forward;
+        image.style.transform       = forward;
       }, 1);
 
       /* TODO: Handle the case where the window gets smaller
