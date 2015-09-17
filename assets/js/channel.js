@@ -359,11 +359,11 @@
 
       var width  = image.naturalWidth;
       var height = image.naturalHeight;
-      var animationSpeed = 3; // A larger number will show more of the image at a faster pace
-
+      var animationSpeed = 9; // A larger number will show more of the image at a faster pace
+      
       // Wider aspect than viewport
       if ((width / height) > (window.innerWidth / window.innerHeight)) {
-        translateAxis = "translateX";
+        var translateAxis = "translateX";
         var availableImageWidth = window.innerHeight * (width / height);
 
         // Find how far we can move the image while still covering the screen
@@ -377,7 +377,7 @@
 
       // Taller aspect than viewport
       } else {
-        translateAxis = "translateY";
+        var translateAxis = "translateY";
         var availableImageHeight = window.innerWidth * (height / width);
 
         // Find how far we can move the image while still covering the screen
