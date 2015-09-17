@@ -161,20 +161,27 @@
       var items = document.querySelectorAll('main ol li');
 
       // Show the current item
-      currentItem.className = currentItem.className.replace(/transition-out/g, '');
+      if (lastItem) lastItem.className += ' inactive';
+      //currentItem.className = currentItem.className.replace(/transition-out/g, '');
       currentItem.className = currentItem.className.replace(/inactive/g, '');
 
       // Hide the previously active item, after a short delay (so it can transition out)
+      /*
       if (lastItem) {
-        lastItem.className += ' transition-out';
+        if (currentItem.querySelector('figure')) {
+          lastItem.className += ' transition-out';
 
-        setTimeout(function() {
-          if (lastItem) {
-            lastItem.className = lastItem.className.replace(/transition-out/g, '');
-            if (lastItem !== currentItem) lastItem.className += ' inactive';
-          }
-        }, 100);
+          setTimeout(function() {
+            if (lastItem) {
+              lastItem.className = lastItem.className.replace(/transition-out/g, '');
+              if (lastItem !== currentItem) lastItem.className += ' inactive';
+            }
+          }, 100);
+        } else {
+          lastItem.className += ' inactive';
+        }
       }
+      */
 
       textShowing = false;
       currentImage = 0;
@@ -316,89 +323,102 @@
       return Math.floor(Math.random() * (max - min)) + min;
     }
 
+    function rewindTransition(image, style) {
+      image.style.transition = "";
+      image.style.webkitTransform = style;
+      image.style.MozTransform    = style;
+      image.style.msTransform     = style;
+      image.style.transform       = style;
+    }
+
+    function playTransition(image, style, duration) {
+      image.style.transition = "all " + duration + "s linear"; // TRICKY: Safari expects “-webkit-transition” or simply “all”
+      image.style.webkitTransform = style;
+      image.style.MozTransform    = style;
+      image.style.msTransform     = style;
+      image.style.transform       = style;
+    }
+
+    function stopTransition(image) {
+      image.style.transition = "";
+      image.style.webkitTransform = "";
+      image.style.MozTransform    = "";
+      image.style.msTransform     = "";
+      image.style.transform       = "";
+    }
+
     function animateImage(image, duration) {
-      //console.log('animateImage');
 
-      var width = image.naturalWidth;
+      // Only animate the image if it has finished loading
+      var ancestor = image;
+      while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
+      if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
+        // The data-width attribute is added by the image “onload” handler (setDataAspectRatio)
+        if (!ancestor.getAttribute('data-width')) return;
+      }
+
+      var width  = image.naturalWidth;
       var height = image.naturalHeight;
-
-      //console.log('image.naturalWidth: ' + image.naturalWidth);
-      //console.log('image.naturalHeight: ' + image.naturalHeight);
-      //console.log('window.innerWidth: ' + window.innerWidth);
-      //console.log('window.innerHeight: ' + window.innerHeight);
+      var animationSpeed = 3; // A larger number will show more of the image at a faster pace
 
       // Wider aspect than viewport
       if ((width / height) > (window.innerWidth / window.innerHeight)) {
         translateAxis = "translateX";
         var availableImageWidth = window.innerHeight * (width / height);
-        //console.log('availableImageWidth: ' + availableImageWidth);
-        var translateMax = Math.round((availableImageWidth - window.innerWidth) / 2);
-        //console.log('translateMax: ' + translateMax);
 
-        //console.log('duration: ' + duration);
-        var translateValue = Math.round((duration * window.innerWidth) / 165);
-        //console.log('translateValue before: ' + translateValue);
+        // Find how far we can move the image while still covering the screen
+        var translateMax = Math.round((availableImageWidth - window.innerWidth) / 2);
+
+        // Start with a value that gets larger the longer the duration and the wider the viewport
+        var translateValue = duration * window.innerWidth;
+        translateValue = Math.round(translateValue * (animationSpeed / 1000));
 
         if (translateValue > translateMax) translateValue = translateMax;
-
-        //if (translateValue > Math.round(window.innerWidth / 33)) translateValue = Math.round(window.innerWidth / 33);
-
-        console.log('wider than viewport');
-       // console.log('translateValue after: ' + translateValue);
 
       // Taller aspect than viewport
       } else {
         translateAxis = "translateY";
         var availableImageHeight = window.innerWidth * (height / width);
-        //console.log('availableImageHeight: ' + availableImageHeight);
+
+        // Find how far we can move the image while still covering the screen
         var translateMax = Math.round((availableImageHeight - window.innerHeight) / 2);
 
-        //console.log('duration: ' + duration);
-        var translateValue = Math.round((duration * window.innerHeight) / 165);
-        //console.log('translateValue before: ' + translateValue);
+        // Start with a value that gets larger the longer the duration and the taller the viewport
+        var translateValue = duration * window.innerHeight;
+        translateValue = Math.round(translateValue * (animationSpeed / 1000));
 
         if (translateValue > translateMax) translateValue = translateMax;
-
-        //if (translateValue > Math.round(window.innerHeight / 33)) translateValue = Math.round(window.innerHeight / 33);
-
-        console.log('taller than viewport');
-        //console.log('translateValue after: ' + translateValue);
       }
 
       // Choose a random direction (up or down, left or right)
-      translateValue = translateValue * (getRandomInt(0, 2) ? 1 : -1);
-      var zoomIn = getRandomInt(0, 2);
+      var translateDirection = getRandomInt(0, 2) ? 1 : -1;
+      translateValue = translateValue * translateDirection;
 
-      var translateDestination = translateValue * -1;
+      // Randomly decide to zoom in instead of out
+      var scaleDirection = getRandomInt(0, 2);
 
-      var backward = translateAxis + "(" + translateValue + "px) scale(" + (zoomIn ? 1.025 : 1) + ")";
-      var forward = translateAxis + "(" + (translateValue * -1) + "px) scale(" + (zoomIn ? 1 : 1.025) + ")";
+      // Move the image to the start position
+      rewindTransition(image, translateAxis + "(" + translateValue + "px) scale(" + (scaleDirection ? 1.025 : 1) + ")");
 
-      console.log("backward: " + backward);
-      console.log("forward: " + forward);
-
-      image.style.transition = "";
-      image.style.webkitTransform = backward;
-      image.style.MozTransform    = backward;
-      image.style.msTransform     = backward;
-      image.style.transform       = backward;
+      // And then move it to the final position
       setTimeout(function() {
-        image.style.transition = "all " + duration + "s linear"; // TRICKY: Safari expects “-webkit-transition” or simply “all”
-        image.style.webkitTransform = forward;
-        image.style.MozTransform    = forward;
-        image.style.msTransform     = forward;
-        image.style.transform       = forward;
+        playTransition(image, translateAxis + "(" + (translateValue * -1) + "px) scale(" + (scaleDirection ? 1 : 1.025) + ")", duration);
       }, 1);
 
-      /* TODO: Handle the case where the window gets smaller
+      // Stop the transition if the window changes size
       var throttle;
-      window.addEventListener('resize', function() {
+      function onWindowResize() {
         if (throttle) clearTimeout(throttle);
         throttle = setTimeout(function() {
-          image.style.transition = "";
+          stopTransition(image);
         }, 100);
-      }, false);
-      */
+      }
+      window.addEventListener('resize', onWindowResize, false);
+
+      // Clean up
+      setTimeout(function() {
+        window.removeEventListener('resize', onWindowResize, false);
+      }, duration * 1000);
     }
 
     function textDuration(text) {
