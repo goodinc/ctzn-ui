@@ -348,9 +348,15 @@
 
       image.style.transition = "";
       image.style.webkitTransform = translateAxis + "(" + translateValue + "px)";
+      image.style.MozTransform    = translateAxis + "(" + translateValue + "px)";
+      image.style.msTransform     = translateAxis + "(" + translateValue + "px)";
+      image.style.transform       = translateAxis + "(" + translateValue + "px)";
       setTimeout(function() {
         image.style.transition = "transform " + duration + "s linear";
         image.style.webkitTransform = translateAxis + "(" + (translateValue * -1) + "px)";
+        image.style.MozTransform    = translateAxis + "(" + (translateValue * -1) + "px)";
+        image.style.msTransform     = translateAxis + "(" + (translateValue * -1) + "px)";
+        image.style.transform       = translateAxis + "(" + (translateValue * -1) + "px)";
       }, 1);
 
       /* TODO: Handle the case where the window gets smaller
