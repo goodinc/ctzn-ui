@@ -310,14 +310,18 @@
       return (Math.abs(index - currentIndex) <= RANGE);
     }
 
+    // Returns a random integer between min (included) and max (excluded)
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
     function animateImage(image, duration) {
       console.log('animateImage');
 
       var width = image.naturalWidth;
       var height = image.naturalHeight;
 
-      console.log('image.offsetWidth: ' + image.offsetWidth);
-      console.log('image.offsetHeight: ' + image.offsetHeight);
       console.log('image.naturalWidth: ' + image.naturalWidth);
       console.log('image.naturalHeight: ' + image.naturalHeight);
       console.log('window.innerWidth: ' + window.innerWidth);
@@ -328,23 +332,43 @@
         translateAxis = "translateX";
         var availableImageWidth = window.innerHeight * (width / height);
         console.log('availableImageWidth: ' + availableImageWidth);
-        translateValue = Math.round((availableImageWidth - window.innerWidth) / 2);
+        var translateMax = Math.round((availableImageWidth - window.innerWidth) / 2);
+        console.log('translateMax: ' + translateMax);
+
+        console.log('duration: ' + duration);
+        var translateValue = Math.round((duration / window.innerWidth) * 3333);
+        console.log('translateValue before: ' + translateValue);
+
+        if (translateValue > translateMax) translateValue = translateMax;
+
+        //if (translateValue > Math.round(window.innerWidth / 33)) translateValue = Math.round(window.innerWidth / 33);
 
         console.log('wider than viewport');
-        console.log('translateValue: ' + translateValue);
+        console.log('translateValue after: ' + translateValue);
 
       // Taller aspect than viewport
       } else {
         translateAxis = "translateY";
         var availableImageHeight = window.innerWidth * (height / width);
         console.log('availableImageHeight: ' + availableImageHeight);
-        translateValue = Math.round((availableImageHeight - window.innerHeight) / 2);
+        var translateMax = Math.round((availableImageHeight - window.innerHeight) / 2);
+
+        console.log('duration: ' + duration);
+        var translateValue = Math.round((duration / window.innerHeight) * 3333);
+        console.log('translateValue before: ' + translateValue);
+
+        if (translateValue > translateMax) translateValue = translateMax;
+
+        //if (translateValue > Math.round(window.innerHeight / 33)) translateValue = Math.round(window.innerHeight / 33);
 
         console.log('taller than viewport');
-        console.log('translateValue: ' + translateValue);
+        console.log('translateValue after: ' + translateValue);
       }
 
-      translateDestination = translateValue * -1;
+      // Choose a random direction (up or down, left or right)
+      translateValue = translateValue * (getRandomInt(0, 2) ? 1 : -1);
+
+      var translateDestination = translateValue * -1;
 
       image.style.transition = "";
       image.style.webkitTransform = translateAxis + "(" + translateValue + "px)";

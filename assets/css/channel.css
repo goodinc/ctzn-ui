@@ -1740,6 +1740,9 @@
   .push-channel .body {
     transition: opacity 0.1s;
   }
+  .push-channel .body {
+    transition: opacity 0.2s;
+  }
   .push-channel li.inactive {
     display: none;
   }
