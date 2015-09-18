@@ -125,35 +125,45 @@
     var lastItem;
     var timer;
 
-    function nextPage() {
-      lastItem = currentItem;
-      if (currentItem.nextSibling) {
-        currentItem = currentItem.nextSibling;
+    function getNextItem() {
+      var candidate = currentItem;
+      if (candidate.nextSibling) {
+        candidate = candidate.nextSibling;
         do {
-          if (currentItem && currentItem.nodeType === 1) break;
-        } while (currentItem = currentItem.nextSibling)
+          if (candidate && candidate.nodeType === 1) break;
+        } while (candidate = candidate.nextSibling);
       } else {
-        currentItem = document.querySelector('main ol li');
+        candidate = document.querySelector('main ol li');
       }
 
-      if (!currentItem || currentItem.nodeType !== 1) currentItem = document.querySelector('main ol li');
+      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main ol li');
+      return candidate;
+    }
 
+    function getPreviousItem() {
+      var candidate = currentItem;
+      if (candidate.previousSibling) {
+        candidate = candidate.previousSibling;
+        do {
+          if (candidate && candidate.nodeType === 1) break;
+        } while (candidate = candidate.previousSibling);
+      } else {
+        candidate = document.querySelector('main ol li:last-child');
+      }
+
+      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main ol li:last-child');
+      return candidate;
+    }
+
+    function nextPage() {
+      lastItem = currentItem;
+      currentItem = getNextItem();
       updatePage();
     }
 
     function previousPage() {
       lastItem = currentItem;
-      if (currentItem.previousSibling) {
-        currentItem = currentItem.previousSibling;
-        do {
-          if (currentItem && currentItem.nodeType === 1) break;
-        } while (currentItem = currentItem.previousSibling)
-      } else {
-        currentItem = document.querySelector('main ol li:last-child');
-      }
-
-      if (!currentItem || currentItem.nodeType !== 1) currentItem = document.querySelector('main ol li:last-child');
-
+      currentItem = getPreviousItem();
       updatePage();
     }
 
@@ -162,26 +172,7 @@
 
       // Show the current item
       if (lastItem) lastItem.className += ' inactive';
-      //currentItem.className = currentItem.className.replace(/transition-out/g, '');
       currentItem.className = currentItem.className.replace(/inactive/g, '');
-
-      // Hide the previously active item, after a short delay (so it can transition out)
-      /*
-      if (lastItem) {
-        if (currentItem.querySelector('figure')) {
-          lastItem.className += ' transition-out';
-
-          setTimeout(function() {
-            if (lastItem) {
-              lastItem.className = lastItem.className.replace(/transition-out/g, '');
-              if (lastItem !== currentItem) lastItem.className += ' inactive';
-            }
-          }, 100);
-        } else {
-          lastItem.className += ' inactive';
-        }
-      }
-      */
 
       textShowing = false;
       currentImage = 0;
@@ -200,6 +191,8 @@
       }
 
       preloadItems();
+
+      updateNavigation();
     }
 
     function getPushData(item) {
@@ -234,6 +227,14 @@
         document.body.className = document.body.className.replace(/push-title-only/g, '');
         document.body.className = document.body.className.replace(/ctzn-title-only/g, '');
       }
+    }
+
+    function updateNavigation() {
+      var next = document.querySelector('nav .next a');
+      if (next) next.href = next.href.replace(/page=[0-9]+/, 'page=' + (getItemNumber(getNextItem()) + 1));
+
+      var previous = document.querySelector('nav .previous a');
+      if (previous) previous.href = previous.href.replace(/page=[0-9]+/, 'page=' + (getItemNumber(getPreviousItem()) + 1));
     }
 
     function preloadItems() {
@@ -353,8 +354,10 @@
       var ancestor = image;
       while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
       if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
-        // The data-width attribute is added by the image “onload” handler (setDataAspectRatio)
-        if (!ancestor.getAttribute('data-width')) return;
+
+        // An aspect ratio class name is added by the image “onload” handler (setDataAspectRatio)
+        if (!(ancestor.className.indexOf( 'wider-aspect-than-viewport') >= 0 ||
+              ancestor.className.indexOf('taller-aspect-than-viewport') >= 0)) return;
       }
 
       var width  = image.naturalWidth;

@@ -55,84 +55,39 @@
   <script>
     (function() {
       function updateFigure(figure) {
-        var aspectRatio = figure.getAttribute('data-aspect-ratio');
-        var width = Number(figure.getAttribute('data-width'));
-        var height = Number(figure.getAttribute('data-height'));
+        var image = figure.querySelector('img');
+        if (!image) return;
 
-        if (!aspectRatio && width > 0 && height > 0 && window.innerWidth > 0 && window.innerHeight > 0) {
-          figure.className = figure.className.replace(/wider-aspect-than-viewport/g, '');
-          figure.className = figure.className.replace(/taller-aspect-than-viewport/g, '');
+        figure.className += ' calculating-aspect'; // TRICKY: remove styles that may affect the width and height
+
+        var width = image.width;
+        var height = image.height;
+
+        console.log('updateFigure: ' + figure);
+        console.log('width: ' + width);
+        console.log('height: ' + height);
+
+        figure.className = figure.className.replace(/calculating-aspect/g, '');
+        figure.className = figure.className.replace(/wider-aspect-than-viewport/g, '');
+        figure.className = figure.className.replace(/taller-aspect-than-viewport/g, '');
+
+        if (width > 0 && height > 0 && window.innerWidth > 0 && window.innerHeight > 0) {
           figure.className += ((width / height) > (window.innerWidth / window.innerHeight)) ? ' wider-aspect-than-viewport' : ' taller-aspect-than-viewport';
         }
       }
-      function handleUnknowns() {
-        var figures = document.getElementsByTagName('figure');
-        for (var index = 0; index < figures.length; index++) {
-          updateFigure(figures[index]);
-        }
-      }
       window.setDataAspectRatio = function(image) {
-        if (Number(image.naturalWidth) <= 0 || Number(image.naturalHeight <= 0)) {
-          return;
-        }
-
-        var aspectRatio = Number(image.naturalWidth) / Number(image.naturalHeight);
-
-        var availableRatios = [
-          [32,9],
-          [2,1],
-          [13,7],
-          [32,18],
-          [5,3],
-          [25,16],
-          [3,2],
-          [10,7],
-          [4,3],
-          [5,4],
-          [6,5],
-          [1,1],
-          [5,6],
-          [4,5],
-          [3,4],
-          [7,10],
-          [2,3],
-          [16,25],
-          [3,5],
-          [18,32],
-          [7,13],
-          [1,2],
-          [9,32]
-        ];
-
-        var aspectRatioString;
-        for (var index = 0; index < availableRatios.length; index++) {
-          if (Math.abs((availableRatios[index][0]/availableRatios[index][1]) - aspectRatio) < 0.05) {
-            aspectRatioString = String(availableRatios[index][0]) + '/' + String(availableRatios[index][1]);
-            break;
-          }
-        }
-
         var ancestor = image;
         while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
         if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
-          if (!ancestor.getAttribute('data-aspect-ratio')) {
-            ancestor.setAttribute('data-width', image.width);
-            ancestor.setAttribute('data-height', image.height);
-
-            if (aspectRatioString) {
-              ancestor.setAttribute('data-aspect-ratio', aspectRatioString);
-            } else {
-              updateFigure(ancestor);
-            }
-          }
+          updateFigure(ancestor);
         }
-
       }
 
       var throttle;
       window.addEventListener('resize', function() {
         if (throttle) clearTimeout(throttle);
         throttle = setTimeout(function() {
+          console.log('resize');
           var figures = document.getElementsByTagName('figure');
           for (var index = 0; index < figures.length; index++) {
             updateFigure(figures[index]);
