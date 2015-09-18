@@ -836,20 +836,24 @@
     */
   }
 
-  .fit-viewport .push-channel article .pictures figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  /* OPTIONAL: Scale and crop the image to fit the viewport */
+  @supports (object-fit: cover) {
+    .fit-viewport .push-channel article .pictures figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
 
-  /* =Has Aspect Ratio (tall or wide, compared to the viewport)
-  -----------------------------------------------
+  /* OPTIONAL: Use flex box to crop the image instead of object-fit
+
   .has-aspect.tall & .has-aspect.wide are added by JavaScript.
 
-  They aren’t required, but will act as a fallback for browsers that
-  don’t support “object-fit”. (They also make the image animation possible,
-  since object-fit will crop the image.)
+  They signifiy whether an image has tall or wide aspect ratio, compared to the viewport
+
+  They act as a fallback for browsers that don’t support “object-fit” and they also make
+  the image animation possible (we can’t use object-fit while animating, since it crops the image).
   ----------------------------------------------- */
 
   /* If the aspect ratio was calculated */

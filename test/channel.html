@@ -56,6 +56,48 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
+  <script>
+    (function() {
+      function addAspectClassName(figure) {
+        var image = figure.querySelector('img');
+        if (!image) return;
+
+        figure.className = figure.className.replace(/has-aspect/g, '');
+        figure.className += ' has-aspect'; // TRICKY: Add this before calculating the width and height
+
+        var width = image.width;
+        var height = image.height;
+
+        figure.className = figure.className.replace(/has-aspect/g, '');
+        figure.className = figure.className.replace(/wide/g, '');
+        figure.className = figure.className.replace(/tall/g, '');
+
+        if (width > 0 && height > 0 && window.innerWidth > 0 && window.innerHeight > 0) {
+          figure.className += ' has-aspect' + ((width / height > window.innerWidth / window.innerHeight) ? ' wide' : ' tall');
+        }
+      }
+      window.onChannelImageLoad = function(image) {
+        var ancestor = image;
+        while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
+        if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
+          addAspectClassName(ancestor);
+        }
+      }
+
+      var throttle;
+      window.addEventListener('resize', function() {
+        if (throttle) clearTimeout(throttle);
+        throttle = setTimeout(function() {
+          console.log('resize');
+          var figures = document.getElementsByTagName('figure');
+          for (var index = 0; index < figures.length; index++) {
+            addAspectClassName(figures[index]);
+          }
+        }, 100)
+      });
+    })();
+  </script>
+
 </head>
 <!--
   .ctzn-title-only
@@ -157,9 +199,9 @@
             <p><time datetime="2015-06-09T19:43:05.000+00:00">May 22, 2015</time></p>
           </header>
           <div class="pictures">
-            <figure data-aspect-ratio="2/1">
+            <figure>
               <picture>
-                <img src="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=c2048x1024" alt="Uploaded Image 1" />
+                <img src="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=c2048x1024" alt="Uploaded Image 1" onload="if (window.onChannelImageLoad) window.onChannelImageLoad(this)" />
               </picture>
             </figure>
           </div>
