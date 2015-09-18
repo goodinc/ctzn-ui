@@ -54,6 +54,8 @@
 
   <script>
     (function() {
+      if (!document.addEventListener || !document.querySelector || !window.innerWidth || !window.innerHeight) return;
+
       function addAspectClassName(figure) {
         var image = figure.querySelector('img');
         if (!image) return;
@@ -145,11 +147,11 @@
     </ol></main><nav><ul>
 <li class="next">
         <a href="/push/0E4E704E/good?channel=1&amp;page=2">
-          <svg class="icon" width="24" height="24" viewbox="0 0 24 24"><switch><use xlink:href="#icon-right"></use><foreignobject>Next</foreignobject></switch></svg></a>
+          <span><svg class="icon" width="24" height="24" viewbox="0 0 24 24"><switch><use xlink:href="#icon-right"></use><foreignobject>Next</foreignobject></switch></svg></span></a>
       </li>
       <li class="previous">
         <a href="/push/0E4E704E/good?channel=1&amp;page=239">
-          <svg class="icon" width="24" height="24" viewbox="0 0 24 24"><switch><use xlink:href="#icon-left"></use><foreignobject>Previous</foreignobject></switch></svg></a>
+          <span><svg class="icon" width="24" height="24" viewbox="0 0 24 24"><switch><use xlink:href="#icon-left"></use><foreignobject>Previous</foreignobject></switch></svg></span></a>
       </li>
     </ul></nav><script type="text/template" id="item-0-template">
 
