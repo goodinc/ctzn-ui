@@ -350,14 +350,13 @@
 
     function animateImage(image, duration) {
 
-      // Only animate the image if it has finished loading
+      // Only animate the image if it has finished loading and has an aspect ratio class name (which will make the animation look sharp)
       var ancestor = image;
       while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
       if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
 
-        // An aspect ratio class name is added by the image “onload” handler (setDataAspectRatio)
-        if (!(ancestor.className.indexOf( 'wider-aspect-than-viewport') >= 0 ||
-              ancestor.className.indexOf('taller-aspect-than-viewport') >= 0)) return;
+        // This class name is added by “onChannelImageLoad”
+        if (ancestor.className.indexOf('has-aspect') < 0) return;
       }
 
       var width  = image.naturalWidth;
