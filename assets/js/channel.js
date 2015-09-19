@@ -1,7 +1,15 @@
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// OPTIONAL: Test layout before using animation (see note below about flexible box layout)
+
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
  * http://modernizr.com/download/#-flexbox !*/
 !function(e,n,t){function r(e,n){return typeof e===n}function o(){var e,n,t,o,i,s,l;for(var f in v){if(e=[],n=v[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(o=r(n.fn,"function")?n.fn():n.fn,i=0;i<e.length;i++)s=e[i],l=s.split("."),1===l.length?Modernizr[l[0]]=o:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=o),C.push((o?"":"no-")+l.join("-"))}}function i(e,n){return function(){return e.apply(n,arguments)}}function s(e,n,t){var o;for(var s in e)if(e[s]in n)return t===!1?e[s]:(o=n[e[s]],r(o,"function")?i(o,t||n):o);return!1}function l(e,n){return!!~(""+e).indexOf(n)}function f(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function u(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function a(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):b?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function d(){var e=n.body;return e||(e=a(b?"svg":"body"),e.fake=!0),e}function p(e,t,r,o){var i,s,l,f,u="modernizr",p=a("div"),c=d();if(parseInt(r,10))for(;r--;)l=a("div"),l.id=o?o[r]:u+(r+1),p.appendChild(l);return i=a("style"),i.type="text/css",i.id="s"+u,(c.fake?c:p).appendChild(i),c.appendChild(p),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(n.createTextNode(e)),p.id=u,c.fake&&(c.style.background="",c.style.overflow="hidden",f=_.style.overflow,_.style.overflow="hidden",_.appendChild(c)),s=t(p,e),c.fake?(c.parentNode.removeChild(c),_.style.overflow=f,_.offsetHeight):p.parentNode.removeChild(p),!!s}function c(n,r){var o=n.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(u(n[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var i=[];o--;)i.push("("+u(n[o])+":"+r+")");return i=i.join(" or "),p("@supports ("+i+") { #modernizr { position: absolute; } }",function(e){return"absolute"==getComputedStyle(e,null).position})}return t}function m(e,n,o,i){function s(){d&&(delete E.style,delete E.modElem)}if(i=r(i,"undefined")?!1:i,!r(o,"undefined")){var u=c(e,o);if(!r(u,"undefined"))return u}for(var d,p,m,h,y,v=["modernizr","tspan"];!E.style;)d=!0,E.modElem=a(v.shift()),E.style=E.modElem.style;for(m=e.length,p=0;m>p;p++)if(h=e[p],y=E.style[h],l(h,"-")&&(h=f(h)),E.style[h]!==t){if(i||r(o,"undefined"))return s(),"pfx"==n?h:!0;try{E.style[h]=o}catch(g){}if(E.style[h]!=y)return s(),"pfx"==n?h:!0}return s(),!1}function h(e,n,t,o,i){var l=e.charAt(0).toUpperCase()+e.slice(1),f=(e+" "+S.join(l+" ")+l).split(" ");return r(n,"string")||r(n,"undefined")?m(f,n,o,i):(f=(e+" "+x.join(l+" ")+l).split(" "),s(f,n,t))}function y(e,n,r){return h(e,t,t,n,r)}var v=[],g={_version:"3.0.0-alpha.4",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){v.push({name:e,fn:n,options:t})},addAsyncTest:function(e){v.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=g,Modernizr=new Modernizr;var C=[],w="Moz O ms Webkit",x=g._config.usePrefixes?w.toLowerCase().split(" "):[];g._domPrefixes=x;var S=g._config.usePrefixes?w.split(" "):[];g._cssomPrefixes=S;var _=n.documentElement,b="svg"===_.nodeName.toLowerCase(),z={elem:a("modernizr")};Modernizr._q.push(function(){delete z.elem});var E={style:z.elem.style};Modernizr._q.unshift(function(){delete E.style}),g.testAllProps=h,g.testAllProps=y,Modernizr.addTest("flexbox",y("flexBasis","1px",!0)),o(),delete g.addTest,delete g.addAsyncTest;for(var P=0;P<Modernizr._q.length;P++)Modernizr._q[P]();e.Modernizr=Modernizr}(window,document);
 
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Respond to a few special keys on the keyboard
 
 (function() {
   if (document.querySelector && document.addEventListener) {
@@ -35,6 +43,9 @@
   }
 })();
 
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Add a fullscreen button
 
 (function() {
 
@@ -119,6 +130,9 @@
 
 })();
 
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Turn the page into an autoplaying slideshow
 
 (function() {
   if (document.querySelector && document.addEventListener) {
@@ -494,6 +508,11 @@
 
         if (currentImage === 0 && text && !textShowing) {
         } else {
+
+          // TRICKY: WebKit seems to render the image in the wrong position, if it’s wider than the viewport.
+          // Adding the 'has-aspect' class name here rather than using “image.onload” appears to help.
+          if (window.onChannelImageLoad) window.onChannelImageLoad(images[currentImage].querySelector('img'));
+
           animateImage(images[currentImage].querySelector('img'), animationDuration);
         }
 
@@ -614,6 +633,7 @@
     startPlaying();
   }
 })();
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Periodically retrieve updated list of posts

@@ -1160,9 +1160,7 @@
   }
   */
   .push-channel li.inactive {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    display: none;
   }
   /*
   .push-channel li.transition-out article header,

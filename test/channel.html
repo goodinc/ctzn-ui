@@ -64,18 +64,23 @@
         var image = figure.querySelector('img');
         if (!image) return;
 
-        figure.className = figure.className.replace(/has-aspect/g, '');
-        figure.className += ' has-aspect'; // TRICKY: Add this before calculating the width and height
+        if (figure.className.indexOf('has-aspect') < 0) {
+          figure.className += ' has-aspect'; // TRICKY: Add this before calculating the width and height
+        }
 
-        var width = image.width;
-        var height = image.height;
-
-        figure.className = figure.className.replace(/has-aspect/g, '');
-        figure.className = figure.className.replace(/wide/g, '');
-        figure.className = figure.className.replace(/tall/g, '');
+        var width  = image.naturalWidth;
+        var height = image.naturalHeight;
 
         if (width > 0 && height > 0 && window.innerWidth > 0 && window.innerHeight > 0) {
-          figure.className += ' has-aspect' + ((width / height > window.innerWidth / window.innerHeight) ? ' wide' : ' tall');
+          if (figure.className.indexOf('wide') >= 0) {
+            figure.className = figure.className.replace(/wide/g, '');
+          }
+          if (figure.className.indexOf('tall') >= 0) {
+            figure.className = figure.className.replace(/tall/g, '');
+          }
+          figure.className += ((width / height > window.innerWidth / window.innerHeight) ? ' wide' : ' tall');
+        } else {
+          figure.className = figure.className.replace(/has-aspect/g, '');
         }
       }
       window.onChannelImageLoad = function(image) {
@@ -90,7 +95,6 @@
       window.addEventListener('resize', function() {
         if (throttle) clearTimeout(throttle);
         throttle = setTimeout(function() {
-          console.log('resize');
           var figures = document.getElementsByTagName('figure');
           for (var index = 0; index < figures.length; index++) {
             addAspectClassName(figures[index]);
