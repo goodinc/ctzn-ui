@@ -366,50 +366,44 @@
       image.style.transform       = "";
     }
 
+    function getFigure(image) {
+      var ancestor = image;
+      while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
+      if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
+        return ancestor;
+      }
+    }
+
     function animateImage(image, duration) {
       if (!Modernizr.flexbox) return; // The animation depends on the image being centered via flexible box layout.
 
       // Only animate the image if it has finished loading and has an aspect ratio class name (which will make the animation look sharp)
-      var ancestor = image;
-      while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
-      if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
+      var figure = getFigure(image);
 
-        // This class name is added by “onChannelImageLoad”
-        if (ancestor.className.indexOf('has-aspect') < 0) return;
-      }
+      // The 'data-aspect-ratio' attribute is added by “onChannelImageLoad”
+      if (!figure || !figure.getAttribute('data-aspect-ratio')) return;
 
       var width  = image.naturalWidth;
       var height = image.naturalHeight;
-      var animationSpeed = 9; // A larger number will show more of the image at a faster pace
-      
+      var animationSpeed = 1/4; // A larger number will show more of the image at a faster pace
+
+      var imageAspectRatio = width / height;
+      var viewportAspectRatio = window.innerWidth / window.innerHeight;
+      var availableDistance = (Math.abs(imageAspectRatio - viewportAspectRatio) / 2) * 100;
+
       // Wider aspect than viewport
-      if ((width / height) > (window.innerWidth / window.innerHeight)) {
+      if (imageAspectRatio > viewportAspectRatio) {
         var translateAxis = "translateX";
-        var availableImageWidth = window.innerHeight * (width / height);
-
-        // Find how far we can move the image while still covering the screen
-        var translateMax = Math.round((availableImageWidth - window.innerWidth) / 2);
-
-        // Start with a value that gets larger the longer the duration and the wider the viewport
-        var translateValue = duration * window.innerWidth;
-        translateValue = Math.round(translateValue * (animationSpeed / 1000));
-
-        if (translateValue > translateMax) translateValue = translateMax;
+        availableDistance = availableDistance / imageAspectRatio;
 
       // Taller aspect than viewport
       } else {
         var translateAxis = "translateY";
-        var availableImageHeight = window.innerWidth * (height / width);
-
-        // Find how far we can move the image while still covering the screen
-        var translateMax = Math.round((availableImageHeight - window.innerHeight) / 2);
-
-        // Start with a value that gets larger the longer the duration and the taller the viewport
-        var translateValue = duration * window.innerHeight;
-        translateValue = Math.round(translateValue * (animationSpeed / 1000));
-
-        if (translateValue > translateMax) translateValue = translateMax;
+        availableDistance = availableDistance / viewportAspectRatio;
       }
+
+      var translateValue = (duration > availableDistance) ? availableDistance : duration;
+      translateValue = translateValue * animationSpeed;
 
       // Choose a random direction (up or down, left or right)
       var translateDirection = getRandomInt(0, 2) ? 1 : -1;
@@ -419,12 +413,31 @@
       var scaleDirection = getRandomInt(0, 2);
 
       // Move the image to the start position
-      rewindTransition(image, translateAxis + "(" + translateValue + "px) scale(" + (scaleDirection ? 1.025 : 1) + ")");
+      var backward = translateAxis + "(" + translateValue + "%) scale(" + (scaleDirection ? 1.025 : 1) + ")";
+      rewindTransition(image, backward);
 
       // And then move it to the final position
+      var forward = translateAxis + "(" + (translateValue * -1) + "%) scale(" + (scaleDirection ? 1 : 1.025) + ")";
       setTimeout(function() {
-        playTransition(image, translateAxis + "(" + (translateValue * -1) + "px) scale(" + (scaleDirection ? 1 : 1.025) + ")", duration);
+        playTransition(image, forward, duration);
       }, 1);
+
+      /*
+      console.log('********************');
+      console.log('image.naturalWidth: ' + image.naturalWidth);
+      console.log('image.naturalHeight: ' + image.naturalHeight);
+      console.log('window.innerWidth: ' + window.innerWidth);
+      console.log('window.innerHeight: ' + window.innerHeight);
+      console.log('imageAspectRatio: ' + imageAspectRatio);
+      console.log('viewportAspectRatio: ' + viewportAspectRatio);
+      console.log('imageAspectRatio > viewportAspectRatio: ' + (imageAspectRatio > viewportAspectRatio));
+      console.log('translateAxis: ' + translateAxis);
+      console.log('availableDistance: ' + availableDistance);
+      console.log('duration: ' + duration);
+      console.log('translateValue: ' + translateValue);
+      console.log('backward: ' + backward);
+      console.log('forward: ' + forward);
+      */
 
       // Stop the transition if the window changes size
       var throttle;
@@ -506,13 +519,9 @@
           animationDuration = textDuration(text) + textImageDuration(text);
         }
 
-        if (currentImage === 0 && text && !textShowing) {
-        } else {
-
-          // TRICKY: WebKit seems to render the image in the wrong position, if it’s wider than the viewport.
-          // Adding the 'has-aspect' class name here rather than using “image.onload” appears to help.
-          if (window.onChannelImageLoad) window.onChannelImageLoad(images[currentImage].querySelector('img'));
-
+        // If we haven’t already started animating this image
+        // (If this is not the first image, or if there isn’t any text, or if the text is showing)
+        if (currentImage > 0 || !text || textShowing) {
           animateImage(images[currentImage].querySelector('img'), animationDuration);
         }
 
