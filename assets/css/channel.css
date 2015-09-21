@@ -5,6 +5,7 @@
   Examples:
   http://www.ctznapp.com/push/C50609F6/kaboom?channel=1
   http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1
+  http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1
 
   Sections are grouped under headings with a “=” symbol,
   to make searching easier.
@@ -1056,7 +1057,7 @@
   }
 
   .push-channel article .pictures figure {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -1075,7 +1076,8 @@
     -webkit-justify-content: center;
             justify-content: center;
   }
-  .push-channel article .pictures picture {
+  .push-channel.autoplaying article .pictures figure {
+    position: absolute;
   }
   .push-channel article .pictures figure img {
     margin: auto;
@@ -1083,42 +1085,12 @@
     min-width: 100%;
     min-height: 100%;
   }
-
   /*
-  .push-channel article .pictures figure {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-align-items: center;
-            align-items: center;
-
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-  .push-channel article .pictures figure picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  .push-channel article .pictures figure img {
-    display: block;
-    margin: auto;
-    max-width: none;
-    min-width: 100%;
-  }
-  */
-
-  /*
-  @supports (object-fit: cover) {
+  @supports(object-fit: cover) {
+    .push-channel article .pictures figure picture {
+      width: 100%;
+      height: 100%;
+    }
     .push-channel article .pictures figure img {
       width: 100%;
       height: 100%;
@@ -1126,29 +1098,6 @@
     }
   }
   */
-
-
-  /* OPTIONAL: Fit the image to the viewport (using flexible box layout)
-  -----------------------------------------------
-  The “.has-aspect.tall” and “.has-aspect.wide” classnames are added by
-  JavaScript. They signify whether an image has a tall or wide aspect ratio,
-  compared to the viewport.
-
-  These styles are a fallback for browsers that don’t support “object-fit”
-  and they also make it possible to animate the image. (We can’t animate
-  while using “object-fit”, since it crops the image element.)
-  ----------------------------------------------- */
-
-  /* If the aspect ratio was calculated */
-  .push-channel.autoplaying article .pictures figure[data-aspect-ratio] img {
-    min-width: 0;
-    min-height: 0;
-    width: auto;
-    height: auto;
-    /*
-    object-fit: inherit;
-    */
-  }
 
 
   /* =Inactive

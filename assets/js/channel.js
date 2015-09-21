@@ -385,7 +385,7 @@
 
       var width  = image.naturalWidth;
       var height = image.naturalHeight;
-      var animationSpeed = 1/4; // A larger number will show more of the image at a faster pace
+      var animationSpeed = 1/2; // A larger number will show more of the image at a faster pace
 
       var imageAspectRatio = width / height;
       var viewportAspectRatio = window.innerWidth / window.innerHeight;
@@ -421,23 +421,6 @@
       setTimeout(function() {
         playTransition(image, forward, duration);
       }, 1);
-
-      /*
-      console.log('********************');
-      console.log('image.naturalWidth: ' + image.naturalWidth);
-      console.log('image.naturalHeight: ' + image.naturalHeight);
-      console.log('window.innerWidth: ' + window.innerWidth);
-      console.log('window.innerHeight: ' + window.innerHeight);
-      console.log('imageAspectRatio: ' + imageAspectRatio);
-      console.log('viewportAspectRatio: ' + viewportAspectRatio);
-      console.log('imageAspectRatio > viewportAspectRatio: ' + (imageAspectRatio > viewportAspectRatio));
-      console.log('translateAxis: ' + translateAxis);
-      console.log('availableDistance: ' + availableDistance);
-      console.log('duration: ' + duration);
-      console.log('translateValue: ' + translateValue);
-      console.log('backward: ' + backward);
-      console.log('forward: ' + forward);
-      */
 
       // Stop the transition if the window changes size
       var throttle;
@@ -678,7 +661,5 @@
   }
 
   setInterval(updateItemsData, updateEvery * 1000);
-
-  window.updateItemsData = updateItemsData;
 })();
 
