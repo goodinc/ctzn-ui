@@ -56,19 +56,21 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
-  <style type="text/template" id="aspect-ratio-media-query">
+  <style type="text/template" id="aspect-ratio-media-queries">
 
     /* If the image is taller than the viewport */
     @media (min-aspect-ratio: {{aspect-ratio}}) { 
-      .push-channel.autoplaying article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] {
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] {
         -webkit-flex-direction: row;
                 flex-direction: row;
       }
-      .push-channel.autoplaying article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] picture {
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] picture {
         width: 100%;
         height: auto;
       }
-      .push-channel.autoplaying article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] img {
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] img {
+        min-width: 0;
+        min-height: 0;
         width: 100%;
         height: auto;
       }
@@ -76,15 +78,17 @@
 
     /* If the image is wider than the viewport */
     @media (max-aspect-ratio: {{aspect-ratio}}) {
-      .push-channel.autoplaying article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] {
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] {
         -webkit-flex-direction: column;
                 flex-direction: column;
       }
-      .push-channel.autoplaying article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] picture {
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] picture {
         width: auto;
         height: 100%;
       }
-      .push-channel.autoplaying article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] img {
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] img {
+        min-width: 0;
+        min-height: 0;
         width: auto;
         height: 100%;
       }
@@ -93,11 +97,25 @@
 
   <script>
   (function() {
-    var style;
+
     // KUDOS: http://stackoverflow.com/questions/1186414/whats-the-algorithm-to-calculate-aspect-ratio-i-need-an-output-like-43-169#answer-1186465
     function gcd(a, b) {
-      return (b == 0) ? a : gcd (b, a%b);
+      return (b === 0) ? a : gcd (b, a % b);
     }
+
+    // KUDOS: http://stackoverflow.com/questions/16080961/dynamic-media-queries#answer-16083458
+    var style;
+    function addMediaQueries(aspectRatio) {      
+      var template = document.getElementById('aspect-ratio-media-queries');
+      var rules = template.textContent.replace(/\{\{aspect-ratio\}\}/g, aspectRatio);
+
+      if (!style) {
+        style = document.createElement('style');
+        document.head.appendChild(style);
+      }
+      style.textContent += rules;
+    }
+
     function getFigure(image) {
       var ancestor = image;
       while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
@@ -105,85 +123,26 @@
         return ancestor;
       }
     }
-    window.onChannelImageLoad = function(image) {
-      console.log('onChannelImageLoad');
-      console.dir(image);
+
+    function addAspectRatio(image) {
       var width = image.naturalWidth;
       var height = image.naturalHeight;
-      if (width > 0 && height > 0) {
-        var commonDenominator = gcd(width, height);
-        var aspectRatio = (width / commonDenominator) + '/' + (height / commonDenominator);
 
-        console.log('width: ' + width);
-        console.log('height: ' + height);
-        console.log('aspect ratio: ' + aspectRatio);
+      if (width > 0 && height > 0) {
+        var greatestCommonDenominator = gcd(width, height);
+        var aspectRatio = (width / greatestCommonDenominator) + '/' + (height / greatestCommonDenominator);
 
         var figure = getFigure(image);
-        if (figure) figure.setAttribute('data-aspect-ratio', aspectRatio);
-
-        var template = document.getElementById('aspect-ratio-media-query');
-        var rules = template.textContent.replace(/\{\{aspect-ratio\}\}/g, aspectRatio);
-
-        // KUDOS: http://stackoverflow.com/questions/16080961/dynamic-media-queries#answer-16083458
-        if (!style) {
-          style = document.createElement('style');
-          document.head.appendChild(style);
+        if (figure) {
+          figure.setAttribute('data-aspect-ratio', aspectRatio);
+          addMediaQueries(aspectRatio);
         }
-        style.textContent += rules;
       }
     }
+
+    window.onChannelImageLoad = addAspectRatio;
   })();
   </script>
-
-  <!--
-  <script>
-    (function() {
-      if (!document.addEventListener || !document.querySelector || !window.innerWidth || !window.innerHeight) return;
-
-      function addAspectClassName(figure) {
-        var image = figure.querySelector('img');
-        if (!image) return;
-
-        if (figure.className.indexOf('has-aspect') < 0) {
-          figure.className += ' has-aspect'; // TRICKY: Add this before calculating the width and height
-        }
-
-        var width  = image.naturalWidth;
-        var height = image.naturalHeight;
-
-        if (width > 0 && height > 0 && window.innerWidth > 0 && window.innerHeight > 0) {
-          if (figure.className.indexOf('wide') >= 0) {
-            figure.className = figure.className.replace(/wide/g, '');
-          }
-          if (figure.className.indexOf('tall') >= 0) {
-            figure.className = figure.className.replace(/tall/g, '');
-          }
-          figure.className += ((width / height > window.innerWidth / window.innerHeight) ? ' wide' : ' tall');
-        } else {
-          figure.className = figure.className.replace(/has-aspect/g, '');
-        }
-      }
-      window.onChannelImageLoad = function(image) {
-        var ancestor = image;
-        while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
-        if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
-          addAspectClassName(ancestor);
-        }
-      }
-
-      var throttle;
-      window.addEventListener('resize', function() {
-        if (throttle) clearTimeout(throttle);
-        throttle = setTimeout(function() {
-          var figures = document.getElementsByTagName('figure');
-          for (var index = 0; index < figures.length; index++) {
-            addAspectClassName(figures[index]);
-          }
-        }, 100)
-      });
-    })();
-  </script>
-  -->
 
 </head>
 <!--

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr" class="fit-viewport">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <title>Prototype / CTZN</title>
@@ -55,6 +55,94 @@
   <!--[if lte IE 8]>
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
+
+  <style type="text/template" id="aspect-ratio-media-queries">
+
+    /* If the image is taller than the viewport */
+    @media (min-aspect-ratio: {{aspect-ratio}}) { 
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] {
+        -webkit-flex-direction: row;
+                flex-direction: row;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] picture {
+        width: 100%;
+        height: auto;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] img {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* If the image is wider than the viewport */
+    @media (max-aspect-ratio: {{aspect-ratio}}) {
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] {
+        -webkit-flex-direction: column;
+                flex-direction: column;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] picture {
+        width: auto;
+        height: 100%;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="{{aspect-ratio}}"] img {
+        min-width: 0;
+        min-height: 0;
+        width: auto;
+        height: 100%;
+      }
+    }
+  </style>
+
+  <script>
+  (function() {
+
+    // KUDOS: http://stackoverflow.com/questions/1186414/whats-the-algorithm-to-calculate-aspect-ratio-i-need-an-output-like-43-169#answer-1186465
+    function gcd(a, b) {
+      return (b === 0) ? a : gcd (b, a % b);
+    }
+
+    // KUDOS: http://stackoverflow.com/questions/16080961/dynamic-media-queries#answer-16083458
+    var style;
+    function addMediaQueries(aspectRatio) {      
+      var template = document.getElementById('aspect-ratio-media-queries');
+      var rules = template.textContent.replace(/\{\{aspect-ratio\}\}/g, aspectRatio);
+
+      if (!style) {
+        style = document.createElement('style');
+        document.head.appendChild(style);
+      }
+      style.textContent += rules;
+    }
+
+    function getFigure(image) {
+      var ancestor = image;
+      while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== 'figure');
+      if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === 'figure') {
+        return ancestor;
+      }
+    }
+
+    function addAspectRatio(image) {
+      var width = image.naturalWidth;
+      var height = image.naturalHeight;
+
+      if (width > 0 && height > 0) {
+        var greatestCommonDenominator = gcd(width, height);
+        var aspectRatio = (width / greatestCommonDenominator) + '/' + (height / greatestCommonDenominator);
+
+        var figure = getFigure(image);
+        if (figure) {
+          figure.setAttribute('data-aspect-ratio', aspectRatio);
+          addMediaQueries(aspectRatio);
+        }
+      }
+    }
+
+    window.onChannelImageLoad = addAspectRatio;
+  })();
+  </script>
 
 </head>
 <!--
@@ -132,7 +220,7 @@
     </button>
   </p>
 
-  <main class="strawberry push-channel">
+  <main class="strawberry push-channel autoplaying">
 
     <header>
       <div>
@@ -157,9 +245,9 @@
             <p><time datetime="2015-06-09T19:43:05.000+00:00">May 22, 2015</time></p>
           </header>
           <div class="pictures">
-            <figure data-aspect-ratio="2/1">
+            <figure>
               <picture>
-                <img src="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=c2048x1024" alt="Uploaded Image 1" />
+                <img src="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s2048x2048" alt="Uploaded Image 1" onload="if (window.onChannelImageLoad) window.onChannelImageLoad(this)" />
               </picture>
             </figure>
           </div>
@@ -173,12 +261,20 @@
     <ul>
       <li class="next">
         <a href="">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-right"></use><foreignObject>Next</foreignObject></switch></svg>
+          <span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <switch><use xlink:href="#icon-right"></use><foreignObject>Next</foreignObject></switch>
+            </svg>
+          </span>
         </a>
       </li>
       <li class="previous">
         <a href="">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-left"></use><foreignObject>Previous</foreignObject></switch></svg>
+          <span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <switch><use xlink:href="#icon-left"></use><foreignObject>Previous</foreignObject></switch>
+            </svg>
+          </span>
         </a>
       </li>
     </ul>
