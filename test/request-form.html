@@ -300,21 +300,39 @@
     </symbol>
   </svg>
 
-  <section class="edit page">
+  <section class="settings page">
     <header>
       <h1>Request to join</h1>
 
       <a href="" class="back">
-        Cancel
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>←</foreignObject></switch></svg>
+        <span>Go Back</span>
       </a>
     </header>
 
     <form action="" method="post">
+      <h3>Tell us about yourself</h3>
+      <ul class="text has-icon">
+        <li>
+          <label>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user-circle"></use></svg><span>Username</span><br />
+            <input type="text" placeholder="Username" name="username" autocapitalize="off" autocorrect="off" />
+          </label>
+        </li>
+        <li>
+          <label>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
+            <span>Email</span><br />
+            <input type="email" placeholder="Email" name="email" />
+          </label>
+        </li>
+      </ul>
+      <h3>Message</h3>
       <ul class="text">
         <li>
           <label>
             <span>enter message (optional)</span><br />
-            <textarea placeholder="enter message (optional)">Hello! I’d like to join your push for CicLAvia.</textarea>
+            <textarea placeholder="enter message (optional)">Hello! I’d like to join your push for BULLETPROOF.</textarea>
           </label>
         </li>
       </ul>
