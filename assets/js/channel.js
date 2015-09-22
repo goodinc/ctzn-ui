@@ -9,6 +9,71 @@
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Make it easier to edit strings that contain emoji characters:
+// https://mathiasbynens.be/notes/javascript-unicode
+
+/*! https://mths.be/at v0.2.0 by @mathias */
+if (!String.prototype.at) {
+  (function() {
+    'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
+    var defineProperty = (function() {
+      // IE 8 only supports `Object.defineProperty` on DOM elements.
+      try {
+        var object = {};
+        var $defineProperty = Object.defineProperty;
+        var result = $defineProperty(object, object, object) && $defineProperty;
+      } catch (exception) {}
+      return result;
+    }());
+    var at = function(position) {
+      if (this == null) {
+        throw TypeError();
+      }
+      var string = String(this);
+      var size = string.length;
+      // `ToInteger`
+      var index = position ? Number(position) : 0;
+      if (index != index) { // better `isNaN`
+        index = 0;
+      }
+      // Account for out-of-bounds indices
+      // The odd lower bound is because the ToInteger operation is
+      // going to round `n` to `0` for `-1 < n <= 0`.
+      if (index <= -1 || index >= size) {
+        return '';
+      }
+      // Second half of `ToInteger`
+      index = index | 0;
+      // Get the first code unit and code unit value
+      var cuFirst = string.charCodeAt(index);
+      var cuSecond;
+      var nextIndex = index + 1;
+      var len = 1;
+      if ( // Check if it’s the start of a surrogate pair.
+        cuFirst >= 0xD800 && cuFirst <= 0xDBFF && // high surrogate
+        size > nextIndex // there is a next code unit
+      ) {
+        cuSecond = string.charCodeAt(nextIndex);
+        if (cuSecond >= 0xDC00 && cuSecond <= 0xDFFF) { // low surrogate
+          len = 2;
+        }
+      }
+      return string.slice(index, index + len);
+    };
+    if (defineProperty) {
+      defineProperty(String.prototype, 'at', {
+        'value': at,
+        'configurable': true,
+        'writable': true
+      });
+    } else {
+      String.prototype.at = at;
+    }
+  }());
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Respond to a few special keys on the keyboard
 
 (function() {
@@ -143,6 +208,34 @@
     var lastItem;
     var timer;
 
+    function hasClassName(element, className) {
+      return element.className.indexOf(className) >= 0;
+    }
+
+    function addClassName(element, className) {
+      if (hasClassName(element, className)) return;
+      element.className += ' ' + className;
+    }
+
+    function removeClassName(element, className) {
+      var regex = eval('/' + className + '/g');
+      element.className = element.className.replace(regex, '');
+    }
+
+    function closest(element, nodeName) {
+
+      // Special case for SVG <use> elements.
+      if (element.nodeName === undefined && element.correspondingUseElement !== undefined) {
+        element = element.correspondingUseElement;
+      }
+
+      if (element.nodeName.toLowerCase() === nodeName) {
+        return element;
+      } else if (element.parentNode) {
+        return closest(element.parentNode, nodeName);
+      }
+    }
+
     function getNextItem() {
       var candidate = currentItem;
       if (candidate.nextSibling) {
@@ -189,8 +282,8 @@
       var items = document.querySelectorAll('main ol li');
 
       // Show the current item
-      if (lastItem) lastItem.className += ' inactive';
-      currentItem.className = currentItem.className.replace(/inactive/g, '');
+      if (lastItem) addClassName(lastItem, 'inactive');
+      removeClassName(currentItem, 'inactive');
 
       textShowing = false;
       currentImage = 0;
@@ -374,6 +467,9 @@
       }
     }
 
+    var ANIMATION_SPEED = 1/4; // A larger number will show more of the image at a faster pace
+    var SCALE_AMOUNT = 1.05;
+
     function animateImage(image, duration) {
       if (!Modernizr.flexbox) return; // The animation depends on the image being centered via flexible box layout.
 
@@ -385,7 +481,6 @@
 
       var width  = image.naturalWidth;
       var height = image.naturalHeight;
-      var animationSpeed = 1/2; // A larger number will show more of the image at a faster pace
 
       var imageAspectRatio = width / height;
       var viewportAspectRatio = window.innerWidth / window.innerHeight;
@@ -403,7 +498,7 @@
       }
 
       var translateValue = (duration > availableDistance) ? availableDistance : duration;
-      translateValue = translateValue * animationSpeed;
+      translateValue = translateValue * ANIMATION_SPEED;
 
       // Choose a random direction (up or down, left or right)
       var translateDirection = getRandomInt(0, 2) ? 1 : -1;
@@ -413,11 +508,11 @@
       var scaleDirection = getRandomInt(0, 2);
 
       // Move the image to the start position
-      var backward = translateAxis + "(" + translateValue + "%) scale(" + (scaleDirection ? 1.025 : 1) + ")";
+      var backward = translateAxis + "(" + translateValue + "%) scale(" + (scaleDirection ? SCALE_AMOUNT : 1) + ")";
       rewindTransition(image, backward);
 
       // And then move it to the final position
-      var forward = translateAxis + "(" + (translateValue * -1) + "%) scale(" + (scaleDirection ? 1 : 1.025) + ")";
+      var forward = translateAxis + "(" + (translateValue * -1) + "%) scale(" + (scaleDirection ? 1 : SCALE_AMOUNT) + ")";
       setTimeout(function() {
         playTransition(image, forward, duration);
       }, 1);
@@ -438,25 +533,29 @@
       }, duration * 1000);
     }
 
+    var SLIDE_DURATION = 3; // Slides will last this long, unless they have text
+    var READING_SPEED = 30; // The larger the number, the longer the text will last
+    var LETTER_SPEED = 5; // The smaller the number, the faster each letter in the text will appear 
+
     function textDuration(text) {
-      var duration = Math.round(text.innerHTML.length / 30);
-      if (duration < 1.5) duration = 1.5;
-      if (duration > 10) duration = 10;
+      var duration = Math.round(text.textContent.length / READING_SPEED); 
+      if (duration < (SLIDE_DURATION / 2)) duration = SLIDE_DURATION / 2;
+      if (duration > (SLIDE_DURATION * 3)) duration = SLIDE_DURATION * 3;
       return duration;
     }
 
     function textImageDuration(text) {
-      var duration = Math.round(text.innerHTML.length / 60);
-      if (duration < 1.5) duration = 1.5;
-      if (duration > 3) duration = 3;
+      var duration = Math.round(text.textContent.length / (READING_SPEED * 2));
+      if (duration < (SLIDE_DURATION / 2)) duration = SLIDE_DURATION / 2; // Half the usual time for an image behind the text
+      if (duration > SLIDE_DURATION) duration = SLIDE_DURATION;
       return duration;
     }
 
     function next() {
       if (timer) window.clearTimeout(timer);
 
-      var duration = 3;
       var nextStep = nextPage;
+      var duration = SLIDE_DURATION;
 
       var article = currentItem.querySelector('article');
       var text = currentItem.querySelector('.body');
@@ -464,6 +563,23 @@
 
       // If this is the first slide, show the text.
       if (text && !textShowing && currentImage === 0) {
+        (function() {
+          var content = text.querySelector('p');
+          var html = content.textContent;
+          var letters = [];
+          for (var index = 0; index < html.length; index++) {
+            letters.push('<span class="inactive">' + html.at(index) + '</span>');
+          }
+          content.innerHTML = letters.join('');
+
+          letters = content.querySelectorAll('span');
+          var cursor = 0;
+          function showLetter() {
+            letters[cursor].className = '';
+            if (++cursor < letters.length) setTimeout(showLetter, LETTER_SPEED);
+          }
+          if (cursor < letters.length) setTimeout(showLetter, LETTER_SPEED);
+        })();
         text.className = text.className.replace(/inactive/g, '');
         textShowing = true;
         if (images.length > 0) nextStep = next;
@@ -530,23 +646,13 @@
 
       if (!paused) {
         timer = setTimeout(nextStep, duration * 1000);
-        document.querySelector('.push-channel').className = document.querySelector('.push-channel').className.replace(/paused/g, '');
-        document.querySelector('.push-channel').className = document.querySelector('.push-channel').className.replace(/autoplaying/g, '');
-        document.querySelector('.push-channel').className += ' autoplaying';
-      }
-    }
+        //document.querySelector('.push-channel').className = document.querySelector('.push-channel').className.replace(/paused/g, '');
+        //document.querySelector('.push-channel').className = document.querySelector('.push-channel').className.replace(/autoplaying/g, '');
+        //document.querySelector('.push-channel').className += ' autoplaying';
 
-    function closest(element, nodeName) {
-
-      // Special case for SVG <use> elements.
-      if (element.nodeName === undefined && element.correspondingUseElement !== undefined) {
-        element = element.correspondingUseElement;
-      }
-
-      if (element.nodeName.toLowerCase() === nodeName) {
-        return element;
-      } else if (element.parentNode) {
-        return closest(element.parentNode, nodeName);
+        var channel = document.querySelector('.push-channel');
+        removeClassName(channel, 'paused');
+        addClassName(channel, 'autoplaying');
       }
     }
 
@@ -602,9 +708,6 @@
         e.preventDefault();
       }, false);
     })();
-
-    // Tell the style sheet that the slideshow is running, so it can fit the content to the viewport.
-    document.querySelector('html').className += ' fit-viewport';
 
     (function() {
 

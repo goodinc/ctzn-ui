@@ -1112,6 +1112,9 @@
   .push-channel .body {
     transition: opacity 0.1s;
   }
+  .push-channel .body {
+    transition: opacity 1s;
+  }
   /*
   .push-channel .body {
     transition: opacity 0.2s;
@@ -1128,6 +1131,14 @@
   */
   .push-channel article .pictures figure.inactive,
   .push-channel .body.inactive {
+    opacity: 0;
+  }
+
+  /* For animated letters */
+  .body p span {
+    transition: opacity 0.2s;
+  }
+  .body p span.inactive {
     opacity: 0;
   }
 
