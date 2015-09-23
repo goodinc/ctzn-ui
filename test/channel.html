@@ -95,7 +95,11 @@
 
     @-webkit-keyframes reveal {
       0% {
+        visibility: hidden;
         -webkit-clip-path: inset(0 100% 0 0);
+      }
+      1% {
+        visibility: visible;
       }
       100% {
         -webkit-clip-path: inset(0 0 0 0);
@@ -104,16 +108,29 @@
 
     @keyframes reveal {
       0% {
-        clip-path: inset(0 100% 0 0);
+      visibility: hidden;
+        -webkit-clip-path: inset(0 100% 0 0);
+                clip-path: inset(0 100% 0 0);
+      }
+      1% {
+        visibility: visible;
       }
       100% {
-        clip-path: inset(0 0 0 0);
+        -webkit-clip-path: inset(0 0 0 0);
+                clip-path: inset(0 0 0 0);
       }
     }
 
     .push-channel article .body p {
+
+      /* For Firefox */
+      clip-path: url(#rectangle-shape);
+
+      /* For Safari */
       -webkit-animation: reveal 1s linear both;
-              animation: reveal 1s linear both;
+
+      /* For everyone (someday) */
+      animation: reveal 1s linear both;
     }
 
   </style>
@@ -175,6 +192,22 @@
         c-4.2,0-7.7-3.5-7.7-7.7S5.8,2.3,10,2.3s7.7,3.5,7.7,7.7S14.2,17.7,10,17.7z"/>
       <polygon points="8.5,13.6 13.2,9.9 8.5,6.6 "/>
     </symbol>
+  </svg>
+
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="rectangle-shape">
+        <rect height="1000" width="0" y="0" x="0">
+          <animate
+            attributeName="width"
+            attributeType="XML"
+            from="0" to="1000"
+            begin="0s" dur="1s"
+            fill="freeze"
+            repeatCount="0" />
+        </rect>
+      </clipPath>
+    </defs>
   </svg>
 
   <header class="ctzn">
@@ -271,6 +304,7 @@
 
   <script>
   (function() {
+    return;
     var content = document.querySelector('article .body');
 
     setTimeout(function() {
