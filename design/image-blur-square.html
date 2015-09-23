@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,23 +19,64 @@
     })();
   </script>
 
+  <script src="../assets/js/placeholder.js"></script>
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
+
   <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/69a0da880569f7321da5707935b54e30a321adf2=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/e62eb390941ca7edf3bb675786c4e2f05627547a=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048);
+
+    .mix-editor .selected-images li,
+    .mix-editor .image-list      li {
+      position: relative;
+
+      /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
+      overflow: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
     }
+    .mix-editor .image-list      li img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      background-color: transparent;
+    }
+    .mix-editor .selected-images li .preview,
+    .mix-editor .image-list      li .preview {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      margin: calc(-3em);
+      width: calc(100% + 6em);
+      max-width: none;
+      -webkit-filter: blur(1.5em);
+              filter: blur(1.5em);
+    }
+    .mix-editor .selected-images li button {
+      vertical-align: top;
+    }
+    .mix-editor .selected-images li img {
+      display: block;
+    }
+    .mix-editor .selected-images li img,
+    .mix-editor .image-list    li img {
+      opacity: 0;
+    }
+
   </style>
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -310,88 +350,153 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="../design/">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
-  </header>
+<section class="mix-editor page"><header><h1>Create Mix</h1>
 
-  <h1>Design</h1>
+      <a href="#push" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></switch></svg></a>
+    </header>
 
-  <div class="pattern-list">
-    <section>
-      <h2>Widget</h2>
-      <ul>
-        <li><a href="../test/settings.html">Settings</a></li>
-        <li><a href="../test/widget.html">Embed Code</a></li>
+    
+    <form action="mix-title.html" method="get">
+      <div class="selected-images">
+        <h2  style="display: none;">Select images</h2>
+
+        <ol id="selectedImageList"  style="">
+          <!-- ko foreach: selectedImages -->
+          <li>
+            <div class="preview" style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAwEBAQEAAAAAAAAAAAAAAAIEAwEFBv/EACEQAAMAAgICAgMAAAAAAAAAAAABAgMRBCEFEjEyExQi/8QAGQEAAgMBAAAAAAAAAAAAAAAAAQMAAgUE/8QAGREAAwEBAQAAAAAAAAAAAAAAAAESAhFR/9oADAMBAAIRAxEAPwBHIjkociuDU6ZbZO5FclDg44D0FE7kDZwAGWTLXA2PBWWtI1ajXyh4cQ+mJewx6E+Mun9loavFuZb909G08uY0l8HcnMipa2KvYyMHm5+G8emnsCj88a/rsBi2yko+cWfK3tKhf3skv7NAAh6Z0Sjr8hbXdMI5l0+qYAVphlGq5NN69gAA2ySj/9k=)"></div>
+            <button type="button" >
+              <img  src="https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c128x128" alt="Selected Image 1">
+            </button>
+          </li>
+          
+          <li>
+            <div class="preview" style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoAB4DARIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAwQFAAL/xAAhEAACAgICAwEBAQAAAAAAAAABAgADBBEFEhMhMVFBcf/EABgBAQADAQAAAAAAAAAAAAAAAAQBAgMF/8QAHhEBAAICAwEBAQAAAAAAAAAAAQACAxESITEiQQT/2gAMAwEAAhEDEQA/AHfFGMp68ZA1nwzpt6nrBlV8iwqJOgIvnZKlUai7q2/gmd85U2dy1cSunqHQKbfGx6tAWBKa67bWLt+gwmTNkr9D1EY6Y7br+xrxajFFtN9YdWA/2Kx/0UuTC+G1WQuYzzVb4iO3X3JHOXunLnfzWoSqJ9RPj1C4htzbXZFbR/JY4Q49FRdST67aleA+SeT+xSs2DtTarbHwGUKzfl3NeyAJ83K2CYGPV+QTqutWpQa1ofyFDFF6jUgKnkQtn2QebxjbmdiPU0qLvUhlPiglNfZ0B9amjWpqYcmPY2QpxXXWtn1NBtlidagGb3NIkz//2Q==)"></div>
+            <button type="button" >
+              <img  src="https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c128x128" alt="Selected Image 2">
+            </button>
+          </li>
+          <!-- /ko -->
+        </ol>
+      </div>
+
+      
+
+      <ul id="unselectedImageList" class="image-list">
+        <!-- ko foreach: lazyImages -->
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <div class="preview" style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAwEBAQEAAAAAAAAAAAAAAAIEAwEFBv/EACEQAAMAAgICAgMAAAAAAAAAAAABAgMRBCEFEjEyExQi/8QAGQEAAgMBAAAAAAAAAAAAAAAAAQMAAgUE/8QAGREAAwEBAQAAAAAAAAAAAAAAAAESAhFR/9oADAMBAAIRAxEAPwBHIjkociuDU6ZbZO5FclDg44D0FE7kDZwAGWTLXA2PBWWtI1ajXyh4cQ+mJewx6E+Mun9loavFuZb909G08uY0l8HcnMipa2KvYyMHm5+G8emnsCj88a/rsBi2yko+cWfK3tKhf3skv7NAAh6Z0Sjr8hbXdMI5l0+qYAVphlGq5NN69gAA2ySj/9k=)"></div>
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c256x256 256w, https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c384x384 384w, https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c512x512 512w, https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c640x640 640w, https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c768x768 768w, https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c896x896 896w, https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=c256x256" alt="Image 46">
+            <span class="number"><span >1</span></span>
+          </label>
+        </li>
+        
+
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <div class="preview" style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoAB4DARIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAwQFAAL/xAAhEAACAgICAwEBAQAAAAAAAAABAgADBBEFEhMhMVFBcf/EABgBAQADAQAAAAAAAAAAAAAAAAQBAgMF/8QAHhEBAAICAwEBAQAAAAAAAAAAAQACAxESITEiQQT/2gAMAwEAAhEDEQA/AHfFGMp68ZA1nwzpt6nrBlV8iwqJOgIvnZKlUai7q2/gmd85U2dy1cSunqHQKbfGx6tAWBKa67bWLt+gwmTNkr9D1EY6Y7br+xrxajFFtN9YdWA/2Kx/0UuTC+G1WQuYzzVb4iO3X3JHOXunLnfzWoSqJ9RPj1C4htzbXZFbR/JY4Q49FRdST67aleA+SeT+xSs2DtTarbHwGUKzfl3NeyAJ83K2CYGPV+QTqutWpQa1ofyFDFF6jUgKnkQtn2QebxjbmdiPU0qLvUhlPiglNfZ0B9amjWpqYcmPY2QpxXXWtn1NBtlidagGb3NIkz//2Q==)"></div>
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c256x256 256w, https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c384x384 384w, https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c512x512 512w, https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c640x640 640w, https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c768x768 768w, https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c896x896 896w, https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/ec913bed4a77d7e2e4e112f7635f155827c4125e=c256x256" alt="Image 108">
+            <span class="number"><span >2</span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=c256x256 256w, https://m.ctznapp.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=c384x384 384w, https://m.ctznapp.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=c512x512 512w, https://m.ctznapp.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=c640x640 640w, https://m.ctznapp.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=c768x768 768w, https://m.ctznapp.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=c896x896 896w, https://m.ctznapp.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/c1cd54d1dafe015a5ade23879110f28b33147c16=c256x256" alt="Image 109">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c256x256 256w, https://m.ctznapp.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c384x384 384w, https://m.ctznapp.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c512x512 512w, https://m.ctznapp.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c640x640 640w, https://m.ctznapp.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c768x768 768w, https://m.ctznapp.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c896x896 896w, https://m.ctznapp.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/0fae66bb2c8590aeab9b2a824e11133cf3937702=c256x256" alt="Image 110">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c256x256 256w, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c384x384 384w, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c512x512 512w, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c640x640 640w, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c768x768 768w, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c896x896 896w, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c256x256" alt="Image 117">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c256x256 256w, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c384x384 384w, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c512x512 512w, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c640x640 640w, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c768x768 768w, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c896x896 896w, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c256x256" alt="Image 118">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c256x256 256w, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c384x384 384w, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c512x512 512w, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c640x640 640w, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c768x768 768w, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c896x896 896w, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c256x256" alt="Image 119">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c256x256 256w, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c384x384 384w, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c512x512 512w, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c640x640 640w, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c768x768 768w, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c896x896 896w, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c256x256" alt="Image 120">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c256x256 256w, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c384x384 384w, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c512x512 512w, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c640x640 640w, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c768x768 768w, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c896x896 896w, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c256x256" alt="Image 121">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c256x256 256w, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c384x384 384w, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c512x512 512w, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c640x640 640w, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c768x768 768w, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c896x896 896w, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c256x256" alt="Image 122">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c256x256 256w, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c384x384 384w, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c512x512 512w, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c640x640 640w, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c768x768 768w, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c896x896 896w, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c256x256" alt="Image 123">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        
+        <li>
+          <label>
+            <input type="checkbox"  value="[object Object]">
+            <img sizes="33vw"  srcset="https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c256x256 256w, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c384x384 384w, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c512x512 512w, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c640x640 640w, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c768x768 768w, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c896x896 896w, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c1024x1024 1024w" src="https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c256x256" alt="Image 124">
+            <span class="number"><span ></span></span>
+          </label>
+        </li>
+        <!-- /ko -->
       </ul>
-    </section>
-    <section>
-      <h2>Channel Animation</h2>
-      <ul>
-        <li><a href="channel-typing.html">Type text</a></li>
-        <li><a href="channel-reveal.html">Reveal text</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Image loading</h2>
-      <ul>
-        <li><a href="../design/image-blur.html">Example</a></li>
-        <li><a href="../design/image-blur-loading.html">Example (loading state)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>*Heart* via email</h2>
-      <ul>
-        <li><a href="../email/daily.html">Daily Email</a></li>
-        <li><a href="../email/weekly.html">Weekly Email</a></li>
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Loading indicator</h2>
-      <ul>
-        <li><a href="../design/switch.html">Switch</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Error</h2>
-      <ul>
-        <li><a href="../error/app.html">Screen</a></li>
-        <li><a href="../error/startup.html">Startup</a></li>
-        <li><a href="../error/browser.html">Browser</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Switch</h2>
-      <ul>
-        <li><a href="switch-alt.html">New Layout</a></li>
-        <li><a href="switch-reorder.html">Reorder</a></li>
-        <li><a href="switch-reorder-alt.html">Reorder (Drag)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Join Push</h2>
-      <h6>(via getctzn.com/join)</h6>
-      <ul>
-        <li><a href="../design/join.html">Join</a></li>
-        <li><a href="../design/preview.html">Preview</a></li>
-        <li><a href="../design/join-logged-in.html">Join (logged in)</a></li>
-        <li><a href="../design/preview-logged-in.html">Preview (logged in)</a></li>
-      </ul>
-      <h6>(via the app)</h6>
-      <ul>
-        <li><a href="../design/join-app.html">Join</a></li>
-        <li><a href="../design/preview-app.html">Preview</a></li>
-      </ul>
-    </section>
-    -->
-  </div>
+
+      
+
+      <p class="submit">
+        <button type="submit" >Next</button>
+      </p>
+
+    </form>
+    
+
+  </section>
 
 </body>
 </html>
+
