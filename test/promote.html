@@ -338,9 +338,14 @@
       background-color: rgb(109, 90, 219); /* @periwinkle */
       padding: 0.625em 1.25em; /* 10px / @font-size */
     }
+    header:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
     header h1 {
-      margin: 0;
+      margin: 0 1.25em 0 0; /* @line-height */
       display: inline-block;
       font-size: inherit;
     }
@@ -368,7 +373,6 @@
     header p {
       display: inline;
       margin: 0.75em 0.0625em;
-      margin-left: 1.875em; /* @line-height x 3/2 */
       float: right;
     }
     header p a {
@@ -395,13 +399,18 @@
       padding-left: 0;
     }
     header ul {
-      margin: 0.875em 0;
+      margin: 0.875em 0 0;
       float: right;
     }
     header li {
       display: inline-block;
       vertical-align: top;
-      margin-left: 1.875em; /* @line-height x 3/2 */
+      margin-right: 1.25em; /* @line-height */
+    }
+    @media (min-width: 40em) {
+      header li {
+        margin-right: 1.875em; /* @line-height x 3/2 */
+      }
     }
     header li .icon {
       vertical-align: top;
@@ -1719,13 +1728,13 @@
       </a>
     </h1>
     <p><a href="#download">Download</a></p>
-    <!--
     <ul>
+      <!--
       <li><a href="">Features</a></li>
       <li><a href="">Principles</a></li>
+      -->
       <li><a href="https://ctzn.zendesk.com">Support</a></li>
     </ul>
-    -->
   </header>
 
   <section class="tangerine">
