@@ -335,7 +335,7 @@
     border-radius: 100%;
     vertical-align: middle;
   }
-  .avatar [data-content]:after {
+  .avatar *[data-content]:after {
     display: block;
     content: attr(data-content);
     speak: none;
@@ -393,10 +393,10 @@
   }
 
   /* Icon (for links to “my profile”) */
-  .avatar [data-content].has-icon:after {
+  .avatar *[data-content].has-icon:after {
     opacity: 0;
   }
-  .avatar [data-content].has-icon {
+  .avatar *[data-content].has-icon {
     position: relative;
   }
   .avatar svg {
@@ -1945,7 +1945,7 @@
   }
   .header.push-card .meta button[aria-checked="true"],
   .list ul                button[aria-checked="true"],
-  .post-item footer     .action [aria-checked="true"] {
+  .post-item footer     .action *[aria-checked="true"] {
     background: rgb(238, 238, 238); /* @seashell */
     color: rgb(255, 49, 102) !important; /* @pitaya */
   }

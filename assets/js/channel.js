@@ -1,14 +1,5 @@
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// OPTIONAL: Make images look nice in browsers that don’t yet support the <picture> element.
-
-/*! Picturefill - v2.3.1 - 2015-04-09
-* http://scottjehl.github.io/picturefill
-* Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT */
-window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.styleMedia||window.media;if(!a){var b=document.createElement("style"),c=document.getElementsByTagName("script")[0],d=null;b.type="text/css",b.id="matchmediajs-test",c.parentNode.insertBefore(b,c),d="getComputedStyle"in window&&window.getComputedStyle(b,null)||b.currentStyle,a={matchMedium:function(a){var c="@media "+a+"{ #matchmediajs-test { width: 1px; } }";return b.styleSheet?b.styleSheet.cssText=c:b.textContent=c,"1px"===d.width}}}return function(b){return{matches:a.matchMedium(b||"all"),media:b||"all"}}}()),function(a,b,c){"use strict";function d(b){"object"==typeof module&&"object"==typeof module.exports?module.exports=b:"function"==typeof define&&define.amd&&define("picturefill",function(){return b}),"object"==typeof a&&(a.picturefill=b)}function e(a){var b,c,d,e,f,i=a||{};b=i.elements||g.getAllElements();for(var j=0,k=b.length;k>j;j++)if(c=b[j],d=c.parentNode,e=void 0,f=void 0,"IMG"===c.nodeName.toUpperCase()&&(c[g.ns]||(c[g.ns]={}),i.reevaluate||!c[g.ns].evaluated)){if(d&&"PICTURE"===d.nodeName.toUpperCase()){if(g.removeVideoShim(d),e=g.getMatch(c,d),e===!1)continue}else e=void 0;(d&&"PICTURE"===d.nodeName.toUpperCase()||!g.sizesSupported&&c.srcset&&h.test(c.srcset))&&g.dodgeSrcset(c),e?(f=g.processSourceSet(e),g.applyBestCandidate(f,c)):(f=g.processSourceSet(c),(void 0===c.srcset||c[g.ns].srcset)&&g.applyBestCandidate(f,c)),c[g.ns].evaluated=!0}}function f(){function c(){clearTimeout(d),d=setTimeout(h,60)}g.initTypeDetects(),e();var d,f=setInterval(function(){return e(),/^loaded|^i|^c/.test(b.readyState)?void clearInterval(f):void 0},250),h=function(){e({reevaluate:!0})};a.addEventListener?a.addEventListener("resize",c,!1):a.attachEvent&&a.attachEvent("onresize",c)}if(a.HTMLPictureElement)return void d(function(){});b.createElement("picture");var g=a.picturefill||{},h=/\s+\+?\d+(e\d+)?w/;g.ns="picturefill",function(){g.srcsetSupported="srcset"in c,g.sizesSupported="sizes"in c,g.curSrcSupported="currentSrc"in c}(),g.trim=function(a){return a.trim?a.trim():a.replace(/^\s+|\s+$/g,"")},g.makeUrl=function(){var a=b.createElement("a");return function(b){return a.href=b,a.href}}(),g.restrictsMixedContent=function(){return"https:"===a.location.protocol},g.matchesMedia=function(b){return a.matchMedia&&a.matchMedia(b).matches},g.getDpr=function(){return a.devicePixelRatio||1},g.getWidthFromLength=function(a){var c;if(!a||a.indexOf("%")>-1!=!1||!(parseFloat(a)>0||a.indexOf("calc(")>-1))return!1;a=a.replace("vw","%"),g.lengthEl||(g.lengthEl=b.createElement("div"),g.lengthEl.style.cssText="border:0;display:block;font-size:1em;left:0;margin:0;padding:0;position:absolute;visibility:hidden",g.lengthEl.className="helper-from-picturefill-js"),g.lengthEl.style.width="0px";try{g.lengthEl.style.width=a}catch(d){}return b.body.appendChild(g.lengthEl),c=g.lengthEl.offsetWidth,0>=c&&(c=!1),b.body.removeChild(g.lengthEl),c},g.detectTypeSupport=function(b,c){var d=new a.Image;return d.onerror=function(){g.types[b]=!1,e()},d.onload=function(){g.types[b]=1===d.width,e()},d.src=c,"pending"},g.types=g.types||{},g.initTypeDetects=function(){g.types["image/jpeg"]=!0,g.types["image/gif"]=!0,g.types["image/png"]=!0,g.types["image/svg+xml"]=b.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),g.types["image/webp"]=g.detectTypeSupport("image/webp","data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=")},g.verifyTypeSupport=function(a){var b=a.getAttribute("type");if(null===b||""===b)return!0;var c=g.types[b];return"string"==typeof c&&"pending"!==c?(g.types[b]=g.detectTypeSupport(b,c),"pending"):"function"==typeof c?(c(),"pending"):c},g.parseSize=function(a){var b=/(\([^)]+\))?\s*(.+)/g.exec(a);return{media:b&&b[1],length:b&&b[2]}},g.findWidthFromSourceSize=function(c){for(var d,e=g.trim(c).split(/\s*,\s*/),f=0,h=e.length;h>f;f++){var i=e[f],j=g.parseSize(i),k=j.length,l=j.media;if(k&&(!l||g.matchesMedia(l))&&(d=g.getWidthFromLength(k)))break}return d||Math.max(a.innerWidth||0,b.documentElement.clientWidth)},g.parseSrcset=function(a){for(var b=[];""!==a;){a=a.replace(/^\s+/g,"");var c,d=a.search(/\s/g),e=null;if(-1!==d){c=a.slice(0,d);var f=c.slice(-1);if((","===f||""===c)&&(c=c.replace(/,+$/,""),e=""),a=a.slice(d+1),null===e){var g=a.indexOf(",");-1!==g?(e=a.slice(0,g),a=a.slice(g+1)):(e=a,a="")}}else c=a,a="";(c||e)&&b.push({url:c,descriptor:e})}return b},g.parseDescriptor=function(a,b){var c,d=b||"100vw",e=a&&a.replace(/(^\s+|\s+$)/g,""),f=g.findWidthFromSourceSize(d);if(e)for(var h=e.split(" "),i=h.length-1;i>=0;i--){var j=h[i],k=j&&j.slice(j.length-1);if("h"!==k&&"w"!==k||g.sizesSupported){if("x"===k){var l=j&&parseFloat(j,10);c=l&&!isNaN(l)?l:1}}else c=parseFloat(parseInt(j,10)/f)}return c||1},g.getCandidatesFromSourceSet=function(a,b){for(var c=g.parseSrcset(a),d=[],e=0,f=c.length;f>e;e++){var h=c[e];d.push({url:h.url,resolution:g.parseDescriptor(h.descriptor,b)})}return d},g.dodgeSrcset=function(a){a.srcset&&(a[g.ns].srcset=a.srcset,a.srcset="",a.setAttribute("data-pfsrcset",a[g.ns].srcset))},g.processSourceSet=function(a){var b=a.getAttribute("srcset"),c=a.getAttribute("sizes"),d=[];return"IMG"===a.nodeName.toUpperCase()&&a[g.ns]&&a[g.ns].srcset&&(b=a[g.ns].srcset),b&&(d=g.getCandidatesFromSourceSet(b,c)),d},g.backfaceVisibilityFix=function(a){var b=a.style||{},c="webkitBackfaceVisibility"in b,d=b.zoom;c&&(b.zoom=".999",c=a.offsetWidth,b.zoom=d)},g.setIntrinsicSize=function(){var c={},d=function(a,b,c){b&&a.setAttribute("width",parseInt(b/c,10))};return function(e,f){var h;e[g.ns]&&!a.pfStopIntrinsicSize&&(void 0===e[g.ns].dims&&(e[g.ns].dims=e.getAttribute("width")||e.getAttribute("height")),e[g.ns].dims||(f.url in c?d(e,c[f.url],f.resolution):(h=b.createElement("img"),h.onload=function(){if(c[f.url]=h.width,!c[f.url])try{b.body.appendChild(h),c[f.url]=h.width||h.offsetWidth,b.body.removeChild(h)}catch(a){}e.src===f.url&&d(e,c[f.url],f.resolution),e=null,h.onload=null,h=null},h.src=f.url)))}}(),g.applyBestCandidate=function(a,b){var c,d,e;a.sort(g.ascendingSort),d=a.length,e=a[d-1];for(var f=0;d>f;f++)if(c=a[f],c.resolution>=g.getDpr()){e=c;break}e&&(e.url=g.makeUrl(e.url),b.src!==e.url&&(g.restrictsMixedContent()&&"http:"===e.url.substr(0,"http:".length).toLowerCase()?void 0!==window.console&&console.warn("Blocked mixed content image "+e.url):(b.src=e.url,g.curSrcSupported||(b.currentSrc=b.src),g.backfaceVisibilityFix(b))),g.setIntrinsicSize(b,e))},g.ascendingSort=function(a,b){return a.resolution-b.resolution},g.removeVideoShim=function(a){var b=a.getElementsByTagName("video");if(b.length){for(var c=b[0],d=c.getElementsByTagName("source");d.length;)a.insertBefore(d[0],c);c.parentNode.removeChild(c)}},g.getAllElements=function(){for(var a=[],c=b.getElementsByTagName("img"),d=0,e=c.length;e>d;d++){var f=c[d];("PICTURE"===f.parentNode.nodeName.toUpperCase()||null!==f.getAttribute("srcset")||f[g.ns]&&null!==f[g.ns].srcset)&&a.push(f)}return a},g.getMatch=function(a,b){for(var c,d=b.childNodes,e=0,f=d.length;f>e;e++){var h=d[e];if(1===h.nodeType){if(h===a)return c;if("SOURCE"===h.nodeName.toUpperCase()){null!==h.getAttribute("src")&&void 0!==typeof console&&console.warn("The `src` attribute is invalid on `picture` `source` element; instead, use `srcset`.");var i=h.getAttribute("media");if(h.getAttribute("srcset")&&(!i||g.matchesMedia(i))){var j=g.verifyTypeSupport(h);if(j===!0){c=h;break}if("pending"===j)return!1}}}}return c},f(),e._=g,d(e)}(window,window.document,new window.Image);
-
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // OPTIONAL: Test layout before using animation (see note below about flexible box layout)
 
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
@@ -100,7 +91,22 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
             document.webkitFullscreenElement);
   }
 
-  var template = document.getElementById('fullscreen-template');
+  function update() {
+    if (fullscreen) {
+      showFullscreen();
+      button.innerHTML = exitTemplate.innerHTML;
+    } else {
+      exitFullscreen();
+      button.innerHTML = template.innerHTML;
+    }
+  }
+
+  function toggle() {
+    fullscreen = !fullscreen;
+    update();
+  }
+
+  var template     = document.getElementById('fullscreen-template');
   var exitTemplate = document.getElementById('exit-fullscreen-template');
 
   // If we have all of the features we need…
@@ -112,21 +118,6 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
     template.parentNode.insertBefore(button, template);
 
     var fullscreen = false; //fullscreenActive();
-
-    function update() {
-      if (fullscreen) {
-        showFullscreen();
-        button.innerHTML = exitTemplate.innerHTML;
-      } else {
-        exitFullscreen();
-        button.innerHTML = template.innerHTML;
-      }
-    }
-
-    function toggle() {
-      fullscreen = !fullscreen;
-      update();
-    }
 
     update();
 
@@ -152,16 +143,19 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
     var timer;
 
     function hasClassName(element, className) {
+      if (!element || !className) return;
       return element.className.indexOf(className) >= 0;
     }
 
     function addClassName(element, className) {
+      if (!element || !className) return;
       if (hasClassName(element, className)) return;
       element.className += ' ' + className;
     }
 
     function removeClassName(element, className) {
-      var regex = eval('/' + className + '/g');
+      if (!element || !className) return;
+      var regex = eval('/[\s]*' + className + '/g');
       element.className = element.className.replace(regex, '');
     }
 
@@ -187,10 +181,10 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
           if (candidate && candidate.nodeType === 1) break;
         } while (candidate = candidate.nextSibling);
       } else {
-        candidate = document.querySelector('main ol li');
+        candidate = document.querySelector('main .list .item');
       }
 
-      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main ol li');
+      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main .list .item');
       return candidate;
     }
 
@@ -202,10 +196,10 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
           if (candidate && candidate.nodeType === 1) break;
         } while (candidate = candidate.previousSibling);
       } else {
-        candidate = document.querySelector('main ol li:last-child');
+        candidate = document.querySelector('main .list .item:last-child');
       }
 
-      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main ol li:last-child');
+      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main .list .item:last-child');
       return candidate;
     }
 
@@ -222,7 +216,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
     }
 
     function updatePage() {
-      var items = document.querySelectorAll('main ol li');
+      var items = document.querySelectorAll('main .list .item');
 
       // Show the current item
       if (lastItem) addClassName(lastItem, 'inactive');
@@ -250,36 +244,36 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
     }
 
     function getPushData(item) {
-      var article = item.querySelector('article');
+      var dataElement = item.querySelector('*[data-slide-type]');
       return {
-        name  : article.getAttribute('data-push-name'),
-        body  : article.getAttribute('data-push-body'),
-        url   : article.getAttribute('data-push-url'),
-        color : article.getAttribute('data-push-color'),
-        type  : article.getAttribute('data-slide-type')
+        name  : dataElement.getAttribute('data-push-name'),
+        body  : dataElement.getAttribute('data-push-body'),
+        url   : dataElement.getAttribute('data-push-url'),
+        color : dataElement.getAttribute('data-push-color'),
+        type  : dataElement.getAttribute('data-slide-type')
       };
     }
 
     function updatePushData(current, last) {
-      var channel = document.querySelector('.push-channel');
-      var link = document.querySelector('.push-channel h1 a');
+      var channel     = document.querySelector('.push-channel');
+      var link        = document.querySelector('.push-channel h1 a');
       var description = document.querySelector('.push-channel > header .details p');
 
       link.innerHTML = current.name;
       link.href      = current.url;
       if (description) description.innerHTML = current.body;
-      channel.className = channel.className.replace(last.color, '');
-      channel.className += ' ' + current.color;
+      removeClassName(channel, last.color);
+      addClassName(channel, current.color);
 
       if (current.type === 'ctzn') {
-        document.body.className = document.body.className.replace(/push-title-only/g, '');
-        document.body.className += 'ctzn-title-only';
+        removeClassName(document.body, 'push-title-only');
+           addClassName(document.body, 'ctzn-title-only');
       } else if (current.type === 'push') {
-        document.body.className = document.body.className.replace(/ctzn-title-only/g, '');
-        document.body.className += 'push-title-only';
+        removeClassName(document.body, 'ctzn-title-only');
+           addClassName(document.body, 'push-title-only');
       } else {
-        document.body.className = document.body.className.replace(/push-title-only/g, '');
-        document.body.className = document.body.className.replace(/ctzn-title-only/g, '');
+        removeClassName(document.body, 'push-title-only');
+        removeClassName(document.body, 'ctzn-title-only');
       }
     }
 
@@ -292,7 +286,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
     }
 
     function preloadItems() {
-      if (!window.dataItemsCount) window.dataItemsCount = Number(document.querySelector('ol').getAttribute('data-post-count'));
+      if (!window.dataItemsCount) window.dataItemsCount = Number(document.querySelector('.list').getAttribute('data-post-count'));
 
       for (var index = 0; index < window.dataItemsCount; index++) {
         if (nearCurrentSlide(index, window.dataItemsCount)) {
@@ -301,7 +295,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       }
 
       // OPTIONAL: Remove posts that aren’t near the current post, to save memory (and bandwidth when resizing the images/window)
-      var posts = document.querySelectorAll('ol li');
+      var posts = document.querySelectorAll('.list .item');
       var toRemove = [];
       for (var index = 0; index < posts.length; index++) {
         if (!nearCurrentSlide(getItemNumber(posts[index]), window.dataItemsCount)) {
@@ -313,29 +307,43 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       }
     }
 
+    // KUDOS: http://stackoverflow.com/questions/10964966/detect-ie-version-prior-to-v9-in-javascript#answer-10965203
+    function isIE9() {
+      var div = document.createElement("div");
+      div.innerHTML = "<!--[if IE 9]><i></i><![endif]-->";
+      return div.getElementsByTagName("i").length === 1;
+    }
+
     function addItem(index) {
       if (document.getElementById('item-' + index)) return;
 
       var template = document.getElementById('item-' + index + '-template');
-      var item = document.createElement('li');
 
-      var html = (window.dataItems && window.dataItems[index]) ? dataItems[index] : template.innerHTML;
+      var html = (window.dataItems && window.dataItems[index]) ? dataItems[index] : template ? template.innerHTML : null;
 
-      // OPTIONAL: Remove the src attribute of the <img> element, if running picturefill (to avoid a double download)
-      if (window.picturefill) {
-        html = html.replace(/(<\/source[^>]*>[\s]+<img)[\s]+src="[^"]*"/g, function(match, p1) { return p1; });
+      if (html == null) {
+        if (window.updateItemsData) window.updateItemsData();
+        return;
       }
 
+      var item = document.createElement('div');
+
+      // OPTIONAL: Remove the src attribute of the <img> element, if running picturefill (to avoid a double download)
+      // TRICKY: IE9 needs a src or srcset on the <img>, due to a bug with <source> elements: http://scottjehl.github.io/picturefill/examples/demo-02.html
+      if (window.picturefill && !isIE9()) {
+        html = html.replace(/(<img class="figure")[\s]+src="[^"]*"/g, function(match, p1) { return p1; });
+      }
+
+      item.className = 'item inactive';
       item.innerHTML = html;
       item.id = 'item-' + index;
-      item.className += ' inactive';
 
       // Look for the next number up from the item we’re adding (so it will appear in the correct order)
-      var target = closestToNumber(index, document.querySelectorAll('ol li'));
+      var target = closestToNumber(index, document.querySelectorAll('.list .item'));
       if (target) {
-        document.querySelector('ol').insertBefore(item, target);
+        document.querySelector('.list').insertBefore(item, target);
       } else {
-        document.querySelector('ol').appendChild(item);
+        document.querySelector('.list').appendChild(item);
       }
 
       // OPTIONAL: Run picturefill on the new images: https://scottjehl.github.io/picturefill/#api
@@ -365,9 +373,9 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
       var currentIndex = getItemNumber(currentItem);
 
-      // SHIM: Handle the case where one slide is near the end of the array and the other is near the beginning (since the slides run in a loop)
-      if (index < RANGE && currentIndex > RANGE) index += length;
-      if (currentIndex < RANGE && index > RANGE) index -= length;
+      // SHIM: Handle the case where one slide is near the end of the list and the other is near the beginning (since the slides run in a loop)
+      if (index < RANGE && currentIndex > RANGE) index += length; // [current slide] [end of list] [target slide]
+      if (currentIndex < RANGE && index > RANGE) index -= length; // [target slide] [end of list] [current slide]
 
       return (Math.abs(index - currentIndex) <= RANGE);
     }
@@ -410,9 +418,6 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       }
     }
 
-    var ANIMATION_SPEED = 1/4; // A larger number will show more of the image at a faster pace
-    var SCALE_AMOUNT = 1.05;
-
     function animateImage(image, duration) {
       if (!Modernizr.flexbox) return; // The animation depends on the image being centered via flexible box layout.
 
@@ -420,10 +425,11 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       var figure = getFigure(image);
 
       // The 'data-aspect-ratio' attribute is added by “onChannelImageLoad”
-      if (!figure || !figure.getAttribute('data-aspect-ratio')) return;
+      if (!figure || !figure.getAttribute('data-aspect-ratio') || imageLoaded(figure) === false) return;
 
       var width  = image.naturalWidth;
       var height = image.naturalHeight;
+      var animationSpeed = 1; // A larger number will show more of the image at a faster pace
 
       var imageAspectRatio = width / height;
       var viewportAspectRatio = window.innerWidth / window.innerHeight;
@@ -440,8 +446,8 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
         availableDistance = availableDistance / viewportAspectRatio;
       }
 
-      var translateValue = (duration > availableDistance) ? availableDistance : duration;
-      translateValue = translateValue * ANIMATION_SPEED;
+      var translateValue = (duration / 2 > availableDistance) ? availableDistance : duration / 2;
+      translateValue = translateValue * animationSpeed;
 
       // Choose a random direction (up or down, left or right)
       var translateDirection = getRandomInt(0, 2) ? 1 : -1;
@@ -450,12 +456,21 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       // Randomly decide to zoom in instead of out
       var scaleDirection = getRandomInt(0, 2);
 
+      var scaleValue = 1.025;
+
+      // OPTIONAL: Scale more if we’re only translating a little
+      /*
+      if (translateValue < duration / 2) {
+        scaleValue = 1 + ((duration / 2) / 50);
+      }
+      */
+
       // Move the image to the start position
-      var backward = translateAxis + "(" + translateValue + "%) scale(" + (scaleDirection ? SCALE_AMOUNT : 1) + ")";
+      var backward = translateAxis + "(" + translateValue + "%) scale(" + (scaleDirection ? scaleValue : 1) + ")";
       rewindTransition(image, backward);
 
       // And then move it to the final position
-      var forward = translateAxis + "(" + (translateValue * -1) + "%) scale(" + (scaleDirection ? 1 : SCALE_AMOUNT) + ")";
+      var forward = translateAxis + "(" + (translateValue * -1) + "%) scale(" + (scaleDirection ? 1 : scaleValue) + ")";
       setTimeout(function() {
         playTransition(image, forward, duration);
       }, 1);
@@ -476,36 +491,39 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       }, duration * 1000);
     }
 
-    var SLIDE_DURATION = 3; // Slides will last this long, unless they have text
-    var READING_SPEED = 30; // The larger the number, the longer the text will last
-    var LETTER_SPEED = 5; // The smaller the number, the faster each letter in the text will appear 
-
     function textDuration(text) {
-      var duration = Math.round(text.textContent.length / READING_SPEED); 
-
-      // Show the text for somewhere between half and three times the usual duration
-      if (duration < (SLIDE_DURATION / 2)) duration = SLIDE_DURATION / 2;
-      if (duration > (SLIDE_DURATION * 3)) duration = SLIDE_DURATION * 3;
-
+      var duration = Math.round(text.innerHTML.length / 30);
+      if (duration < 1.5) duration = 1.5;
+      if (duration > 10) duration = 10;
       return duration;
     }
 
     function textImageDuration(text) {
-
-      // If an image appears behind the text, show it for the same amount of time that the text was showing…
-      var duration = textDuration(text);
-
-      // …but not more time than the other images.
-      if (duration > SLIDE_DURATION) duration = SLIDE_DURATION;
-
+      var duration = Math.round(text.innerHTML.length / 60);
+      if (duration < 1.5) duration = 1.5;
+      if (duration > 3) duration = 3;
       return duration;
+    }
+
+    var testImage = new Image();
+    var naturalWidthSupported = ('naturalWidth' in testImage);
+    function imageLoaded(figure) {
+      var image = figure.querySelector('img');
+      if (naturalWidthSupported) {
+        if (image.naturalWidth > 0) {
+          if (window.onChannelImageLoad) window.onChannelImageLoad(image);
+          return true;
+        } else {
+          return false;
+        }
+      }
     }
 
     function next() {
       if (timer) window.clearTimeout(timer);
 
+      var duration = 3;
       var nextStep = nextPage;
-      var duration = SLIDE_DURATION;
 
       var article = currentItem.querySelector('article');
       var text = currentItem.querySelector('.body');
@@ -513,7 +531,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
       // If this is the first slide, show the text.
       if (text && !textShowing && currentImage === 0) {
-        text.className = text.className.replace(/inactive/g, '');
+        removeClassName(text, 'inactive');
         textShowing = true;
         if (images.length > 0) nextStep = next;
 
@@ -522,11 +540,14 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
       // …Or if the text is already showing, hide it.
       } else {
-        if (text) {
-          text.className = text.className.replace(/inactive/g, '');
-          text.className += ' inactive';
+
+        // If the current image has finished loading
+        if (images[currentImage] && imageLoaded(images[currentImage]) !== false) {
+          if (text) {
+            addClassName(text, 'inactive');
+          }
+          textShowing = false;
         }
-        textShowing = false;
       }
 
       // If there are images to show
@@ -536,13 +557,12 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
         // TBD: Make this more efficient, by only doing it on the first loop?
         for (var index = 0; index < images.length; index++) {
           if (images[index] !== images[currentImage]) {
-            images[index].className = images[index].className.replace(/inactive/g, '');
-            images[index].className += ' inactive';
+            addClassName(images[index], 'inactive');
           }
         }
 
         // Show the current image
-        images[currentImage].className = images[currentImage].className.replace(/inactive/g, '');
+        removeClassName(images[currentImage], 'inactive');
 
         var animationDuration = duration;
 
@@ -566,26 +586,41 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
         // If there are more images to show
         if (currentImage + 1 < images.length) {
-          nextStep = next;
 
-          // If the text isn’t showing
-          if (!textShowing) {
+          // If the current image has finished loading
+          if (images[currentImage] && imageLoaded(images[currentImage]) !== false) {
+            nextStep = next;
 
-            // Display the next image
-            currentImage++;
+            // If the text isn’t showing
+            if (!textShowing) {
+
+              // Display the next image
+              currentImage++;
+            }
           }
         }
       }
 
+      // If the current image hasn’t finished loading
+      /*
+      if (images[currentImage] && imageLoaded(images[currentImage]) === false) {
+        nextStep = next;
+        addClassName(document.body, 'loading');
+
+      } else if (hasClassName(document.body, 'loading')) {
+        removeClassName(document.body, 'loading');
+
+        // If the current image just finished loading, show it for three seconds
+        if (images[currentImage] && imageLoaded(images[currentImage]) === true) {
+          duration = 3;
+        }
+      }
+      */
+
       if (!paused) {
         timer = setTimeout(nextStep, duration * 1000);
-        //document.querySelector('.push-channel').className = document.querySelector('.push-channel').className.replace(/paused/g, '');
-        //document.querySelector('.push-channel').className = document.querySelector('.push-channel').className.replace(/autoplaying/g, '');
-        //document.querySelector('.push-channel').className += ' autoplaying';
-
-        var channel = document.querySelector('.push-channel');
-        removeClassName(channel, 'paused');
-        addClassName(channel, 'autoplaying');
+        removeClassName(document.body, 'paused');
+           addClassName(document.body, 'autoplaying');
       }
     }
 
@@ -619,7 +654,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
         clearTimeout(timer);
         timer = undefined;
       }
-      document.querySelector('.push-channel').className += ' paused';
+      addClassName(document.body, 'paused');
     }
 
     function togglePlaying() {
@@ -629,6 +664,14 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
         stopPlaying();
       }
     }
+
+    function startOver() {
+      addItem(0);
+      lastItem = currentItem;
+      currentItem = document.getElementById('item-0');
+      updatePage();
+    }
+    window.dataItemsStartOver = startOver;
 
     (function() {
       var template = document.getElementById('play-template');
@@ -645,7 +688,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
     (function() {
 
       // Start with the first item
-      var items = document.querySelectorAll('main ol li');
+      var items = document.querySelectorAll('main .list .item');
       currentItem = items[0];
 
       // Hide all of the items
@@ -653,7 +696,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
         // …except the active item
         if (items[index] !== currentItem) {
-          items[index].className += ' inactive';
+          addClassName(items[index], 'inactive');
         }
       }
     })();
@@ -669,7 +712,12 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 (function() {
   var updateEvery = 5 * 60; // 5 minutes
 
+  var inProgress = false;
   function updateItemsData() {
+
+    // Only send one request at a time
+    if (inProgress) return;
+
     var xhr = new XMLHttpRequest();
     xhr.addEventListener('load', function() {
 
@@ -684,18 +732,34 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
           items[id] = html;
           count++;
         }
-        window.dataItems = items;
-        window.dataItemsCount = count;
+        if (count > 0) {
+          window.dataItems = items;
+
+          // If the number of slides changed, start over with the first slide.
+          if (window.dataItemsCount && (window.dataItemsCount !== count)) window.dataItemsStartOver();
+
+          window.dataItemsCount = count;
+        }
       }
       catch (e) {
         // Fail silently and just let the current push data remain (don't want to interrupt the UX)
         if (console && console.error) console.error('ERROR getting posts via XHR', e);
       }
+
     });
-    xhr.open('GET', window.location.href);
+    xhr.addEventListener('loadend', function() {
+      inProgress = false;
+    });
+    var url = window.location.href + ((window.location.href.indexOf('?') >= 0) ? '&' : '?') + 'datatemplates=1';
+    xhr.open('GET', url);
     xhr.send();
+    inProgress = true;
   }
 
   setInterval(updateItemsData, updateEvery * 1000);
+  window.updateItemsData = updateItemsData;
+
+  // Fetch all of the posts right away, since the page only contains the first few items.
+  updateItemsData();
 })();
 
