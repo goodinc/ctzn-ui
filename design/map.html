@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Dare to Imagine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     body {
@@ -13,7 +14,7 @@
     /* =Header
     ----------------------------------------------- */
     header {
-      font: 100%/2.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font: 100%/2.25 "Helvetica Neue", Helvetica, Arial, sans-serif;
       padding: 1.25em;
     }
     header h1,
@@ -60,12 +61,22 @@
     }
 
     /*
-    Experimental… Probably needs more work
+    OPTIONAL: Make header font size increase with screen width
+    header {
+      line-height: 106px;
+    }
 
-    @media (min-width: 30em) {
+    @media (min-width: 40em) {
       header h1,
       header p {
         font-size: 3vw;
+      }
+    }
+
+    @media (min-width: 80em) {
+      header h1,
+      header p {
+        font-size: 2.5em;
       }
     }
     */
@@ -75,7 +86,7 @@
 </head>
 <body>
   <header>
-    <h1><img src="dare-to-imagine.png" width="125" height="106" alt="Dare to Imagine" /> Featured Visions</h1>
+    <h1><img src="dare-to-imagine.png" height="53" alt="Dare to Imagine" /> Featured Visions</h1>
     <p class="count">3,500 Total Visions Created</p>
   </header>
 
