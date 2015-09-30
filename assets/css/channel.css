@@ -5,7 +5,6 @@
   Examples:
   http://www.ctznapp.com/push/C50609F6/kaboom?channel=1
   http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1
-  http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1
 
   Sections are grouped under headings with a “=” symbol,
   to make searching easier.
@@ -623,17 +622,7 @@
     color: white;
     width: 20%;
     height: 100%;
-    opacity: 0.5;
     line-height: 1.25;
-  }
-  .autoplaying:not(.loading) nav a {
-    opacity: 0;
-  }
-  nav a:focus {
-    opacity: 0.25;
-  }
-  nav a:active {
-    opacity: 1;
   }
   nav a i {
     /* @hidden-accessible */
@@ -641,9 +630,34 @@
     left: -9999px;
   }
   nav a span {
+    /*
+    background-color: rgba(0, 0, 0, 0.2);
+    */
     position: absolute;
     top: 50%;
     margin-top: -0.75em;
+    padding: 0.1875em;
+    border-radius: 0.125em;
+    text-align: center;
+    opacity: 0.5;
+  }
+  .autoplaying:not(.loading) nav a span {
+    opacity: 0;
+  }
+  /*
+  nav a:focus span {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  nav a:active span {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  */
+  nav a:focus span,
+  nav a:active span {
+    opacity: 0.5 !important;
+  }
+  nav a:active span {
+    background-color: rgba(0, 0, 0, 0.2);
   }
   nav li.next a {
     right: 0;
@@ -831,7 +845,8 @@
   }
 
   /* If the slideshow is active, fill the viewport. */
-  .autoplaying .push-channel article .body {
+  /*.autoplaying .push-channel article .body {*/
+  .push-channel article .body {
     min-height: 0;
     height: 100%;
   }
@@ -1089,10 +1104,11 @@
     position: absolute;
   }
   .push-channel article .pictures figure img {
+    display: block;
     margin: auto;
     max-width: none;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: auto;
   }
 
 
@@ -1104,10 +1120,12 @@
   .autoplaying .push-channel article .pictures figure {
     position: absolute;
   }
+  /*
   .push-channel article .pictures figure,
   .push-channel .body {
     transition: opacity 0.1s;
   }
+  */
   .push-channel .item.inactive {
     display: none;
   }
