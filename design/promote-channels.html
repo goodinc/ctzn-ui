@@ -147,7 +147,7 @@
     }
 
     /* Browsers sometimes render these as inline elements, by default */
-    main, section, article, aside, nav, header, footer, figure {
+    main, header, footer, section, article, aside, nav {
       display: block;
     }
 
@@ -274,18 +274,10 @@
       text-transform: lowercase;
     }
 
-    .mailing-list {
-      margin-top: 3.75em; /* @line-height x 3 */
-      padding-top: 0.7142857143em; /* 15px / 21px */
-      border-top: 0.3125em solid black; /* 5px / @font-size */
-    }
-
     .strawberry form {
       margin-top: 2.5em;
     }
     @media (min-width: 40em) {
-      .tangerine a.action,
-      .strawberry a.action,
       .strawberry form {
         font-size: 1.25em;
       }
@@ -304,27 +296,23 @@
 
     /* =Buttons
     ----------------------------------------------- */
-    a.action,
     button {
       display: inline-block;
       border-width: 0;
       font-family: inherit;
       font-size: inherit;
       font-weight: bold;
-      background-color: black;
-      background-color: rgba(0, 0, 0, 0.9);
+      background: black;
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       padding: 0.46875em 0.9375em; /* @line-height x 3/8     @line-height x 3/4 */
       line-height: inherit;
-      border-radius: 2.1875em;
+      border-radius: 0.25em;
       cursor: pointer;
       transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+      text-transform: lowercase;
       margin: 0;
-      text-decoration: none;
     }
-    a.action:hover,
-    a.action:active,
-    a.action:focus,
     button:hover,
     button:active,
     button:focus {
@@ -338,14 +326,9 @@
       background-color: rgb(109, 90, 219); /* @periwinkle */
       padding: 0.625em 1.25em; /* 10px / @font-size */
     }
-    header:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
 
     header h1 {
-      margin: 0 1.25em 0 0; /* @line-height */
+      margin: 0;
       display: inline-block;
       font-size: inherit;
     }
@@ -366,13 +349,13 @@
     header h1 a:hover,
     header h1 a:active,
     header h1 a:focus {
-      background-color: black;
-      color: white;
+      color: rgb(109, 90, 219); /* @periwinkle */
     }
 
     header p {
       display: inline;
       margin: 0.75em 0.0625em;
+      margin-left: 1.875em; /* @line-height x 3/2 */
       float: right;
     }
     header p a {
@@ -389,7 +372,7 @@
     header p a:active,
     header p a:focus {
       background-color: white;
-      color: black;
+      color: rgb(109, 90, 219); /* @periwinkle */
     }
 
     header ul,
@@ -399,18 +382,13 @@
       padding-left: 0;
     }
     header ul {
-      margin: 0.75em 0 0;
+      margin: 0.875em 0;
       float: right;
     }
     header li {
       display: inline-block;
       vertical-align: top;
-      margin-right: 1.25em; /* @line-height */
-    }
-    @media (min-width: 40em) {
-      header li {
-        margin-right: 1.875em; /* @line-height x 3/2 */
-      }
+      margin-left: 1.875em; /* @line-height x 3/2 */
     }
     header li .icon {
       vertical-align: top;
@@ -418,7 +396,8 @@
       height: 2em;
     }
     header ul a {
-      color: white;
+      color: black;
+      color: rgba(0, 0, 0, 0.7);
       text-decoration: none;
       font-weight: bold;
       line-height: 2em; /* 30px / @font-size */
@@ -427,7 +406,6 @@
     header ul a:active,
     header ul a:focus {
       color: black;
-      color: rgba(0, 0, 0, 0.7);
     }
 
 
@@ -443,7 +421,7 @@
       margin-bottom: 0;
       max-width: none;
     }
-    .channels div {
+    .channels iframe {
       display: block;
       width: 100%;
       border-width: 0 2em 2em;
@@ -454,18 +432,15 @@
               box-sizing: border-box;
     }
     .channels iframe {
-      max-height: 40vh;
+      max-height: 60vh;
     }
     @media (min-width: 60em) {
-      .channels div {
+      .channels iframe {
         width: 33%;
         float: left;
         border-width: 2em;
       }
-      .channels iframe {
-        box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); 
-      }
-      .channels div + div {
+      .channels iframe + iframe {
         border-left-width: 0;
       }
       .channels:after {
@@ -668,12 +643,13 @@
     .tangerine p {
       color: rgba(0, 0, 0, 0.45);
     }
+    .tangerine a {
+      color: black;
+      display: inline-block;
+    }
     .tangerine p,
     .apple h3 {
       color: rgba(0, 0, 0, 0.6);
-    }
-    .tangerine p + p {
-      margin-top: 1.25em;
     }
     .periwinkle p {
       margin-top: 1.25em; /* @line-height */
@@ -983,32 +959,7 @@
       font-size: 0.75em; /* 12px / @font-size */
       line-height: 1.6666666667;
     }
-    footer.primary .legal ul,
-    footer.primary .legal li {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-    footer.primary .legal a {
-      color: inherit;
-      text-decoration: none;
-    }
-    footer.primary .legal a:hover,
-    footer.primary .legal a:active,
-    footer.primary .legal a:focus {
-      color: white;
-    }
 
-    footer.primary .legal ul,
-    footer.primary .legal p,
-    footer.primary .legal li {
-      margin: 0;
-      display: inline-block;
-    }
-    footer.primary .legal p,
-    footer.primary .legal li {
-      margin: 0 0.3125em; /* @line-height / 4 */
-    }
 
 
     /* OPTIONAL: Make the header sticky
@@ -1162,7 +1113,7 @@ body {
   margin:0;
   padding: 0;
 }
-body > iframe {
+iframe {
   float: left;
   width:25vw;
   height:25vw;
@@ -1184,7 +1135,7 @@ body > iframe {
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
-  <!-- for general use -->
+  <!-- standard favicons -->
   <link rel="icon" type="image/png"    href="../assets/images/favicon.png" />
 
   <!-- for iOS -->
@@ -1731,33 +1682,47 @@ body > iframe {
 
   <header>
     <h1>
-      <a href="//getctzn.com">
-        <svg class="icon" width="100" height="38" viewBox="0 0 100 38">
-          <switch>
-            <use xlink:href="#icon-ctzn"></use>
-            <foreignobject>CTZN</foreignobject>
-          </switch>
+      <a href="http://getctzn.com">
+        <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xlink:href="#icon-ctzn"></use>
+          <foreignobject>CTZN</foreignobject>
         </svg>
       </a>
     </h1>
     <p><a href="#download">Download</a></p>
     <ul>
-      <!--
+          <!--
       <li><a href="">Features</a></li>
       <li><a href="">Principles</a></li>
-      -->
+          -->
       <li><a href="https://ctzn.zendesk.com">Support</a></li>
     </ul>
   </header>
 
   <section class="tangerine">
-    <div class="text">
+    <div class="text" id="download">
       <h2>See progress <b>unfold.</b></h2>
       <h3>A new way to connect, capture, and broadcast your push for good.</h3>
 
-      <p>CTZN is currently invite-only. Don’t have an invite code?</p>
-      <p><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Start a group</a></p>
+      <ul class="download">
+        <li>
+          <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
+            <svg width="135" height="40" viewBox="0 0 135 40">
+              <use xlink:href="#icon-apple-store-button"></use>
+              <foreignObject></foreignObject>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
+            <svg width="116" height="40" viewBox="0 0 116 40">
+              <use xlink:href="#icon-google-play-button"></use>
+              <foreignObject></foreignObject>
+            </svg>
+          </a>
+        </li>
+      </ul>
 
+      <p>CTZN is currently invite-only. Don’t have an invite code? <a href="https://ctzn.typeform.com/to/iQXVbn">Get in touch</a></p>
     </div>
 
     <div class="figure">
@@ -1780,24 +1745,23 @@ body > iframe {
   </section>
 
   <iframe width="640" height="480" src="http://www.ctznapp.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" frameborder="0" allowfullscreen></iframe>
+  <iframe width="640" height="480" src="http://www.ctznapp.com/push/86B01D86/perthes-kids-foundation?channel=1" frameborder="0" allowfullscreen></iframe>
   <iframe width="640" height="480" src="http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
-<div style="clear:both;"></div>
+  <iframe width="640" height="480" src="http://www.ctznapp.com/push/A6A6B903/great-streets-network-of-champions?channel=1" frameborder="0" allowfullscreen></iframe>
 
   <section class="periwinkle">
     <div class="figure">
       <figure>
-        <a href="http://magazine.good.is/guides/push-for-good">
-          <img src="../assets/images/about/push-for-good.png" width="500" alt="Push for good" />
+        <a href="http://magazine.good.is">
+          <img src="push-for-good.png" width="500" alt="Push for good" />
         </a>
       </figure>
     </div>
     <div class="text">
-      <h2>Now featured on <a href="http://magazine.good.is/guides/push-for-good">GOOD.IS</a></h2>
+      <h2>Now featured on <a href="http://magazine.good.is">GOOD.IS</a></h2>
       <p>GOOD + CTZN have teamed up to spotlight impactful groups pushing to better their communities.</p>
       <h3 class="more">
-        <a href="http://magazine.good.is/guides/push-for-good">
+        <a href="http://magazine.good.is">
           Meet the groups
           <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-right-circle"></use></svg>
         </a>
@@ -1838,7 +1802,7 @@ body > iframe {
           <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
           Email digests
         </h3>
-        <p>Stay in touch with your group’s 
+        <p>Stay in touch with your group's 
         latests activities — get automated, 
         smart digests that let you comment, 
         love, or even post straight from 
@@ -1884,11 +1848,12 @@ body > iframe {
     </div>
   </section>
 
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/3C1F8367/tfa-la-corps?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/86B01D86/perthes-kids-foundation?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/095380B5/100startswith1-celebration-party?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
-<div style="clear:both;"></div>
+<section>
+<iframe width="640" height="480" src="http://www.ctznapp.com/push/FE037887/manifest-justice?channel=1" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="http://www.ctznapp.com/push/095380B5/100startswith1-celebration-party?channel=1" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="http://www.ctznapp.com/push/99E15ED8/amc2015?channel=1" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="http://www.ctznapp.com/push/0ED7ABB4/neighborday?channel=1" frameborder="0" allowfullscreen></iframe>
+</section>
 
   <section class="orange">
     <div class="text">
@@ -1905,26 +1870,18 @@ body > iframe {
     </figure>
     -->
 
+    <noscript>
       <figure class="channels">
-<div>
-        <p>For Communities</p>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/A6A6B903/great-streets-network-of-champions?channel=1" frameborder="0" allowfullscreen></iframe>
-</div>
-<div>        
-        <p>For Organizations</p>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/75FA699F/826la?channel=1" frameborder="0" allowfullscreen></iframe>
-</div>
-<div>
-        <p>For Projects + Events</p>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/FE037887/manifest-justice?channel=1" frameborder="0" allowfullscreen></iframe>
-</div>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
       </figure>
-<!--
+    </noscript>
     <script type="text/template" id="channels-template">
       <figure class="channels">
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/A6A6B903/great-streets-network-of-champions?channel=1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/75FA699F/826la?channel=1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/FE037887/manifest-justice?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="480" src="http://www.ctznapp.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
       </figure>
     </script>
     <script>
@@ -1959,6 +1916,7 @@ body > iframe {
             template.parentNode.insertBefore(div, template);
           }
         }
+        updateTargetContent();
 
         // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
         function getScrollY() {
@@ -1985,9 +1943,7 @@ body > iframe {
       }
     })();
     </script>
-  -->
   </section>
-
 
   <section class="plumb">
     <div class="text">
@@ -2028,27 +1984,27 @@ body > iframe {
 
       <h3>tell the story of your push—show the heart of your community.</h3>
 
-      <p>We believe in technology’s potential to connect &amp; inspire, 
+      <p>We believe in technology's potential to connect &amp; inspire, 
       to make a difference in our local &amp; global communities. 
       CTZN brings changemakers together in an intentional space 
       where they can exchange &amp; broadcast their key moments.</p>
 
       <div class="video">
-        <video width="200" height="200" poster="//assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.jpg=c640x640" preload="none" controls=""><source src="//assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.m4v" type="video/mp4"><source src="//assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.webm" type="video/webm">
+        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
           </div>
         </video>
 
-        <video width="200" height="200" poster="//assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.jpg=c640x640" preload="none" controls=""><source src="//assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.m4v" type="video/mp4"><source src="//assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.webm" type="video/webm">
+        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
           </div>
         </video>
 
-        <video width="200" height="200" poster="//assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.jpg=c640x640" preload="none" controls=""><source src="//assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.m4v" type="video/mp4"><source src="//assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.webm" type="video/webm">
+        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
@@ -2065,16 +2021,10 @@ body > iframe {
     </div>
   </section>
 
-
-  <section class="strawberry">
+  <section class="strawberry" id="contact">
     <div class="text">
       <h2>Connect <b>with us.</b></h2>
-      <h3>Ready to push your community forward on&nbsp;ctzn?</h3>
-      <p><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Start a group</a></p>
-
-      <h3 class="mailing-list">
-        Stay up to date with all latest ctzn updates. Join our mailing list today!</a>
-      </h3>
+      <h3>Stay up to date with all latest ctzn updates. Join our mailing list today!</h3>
 
       <!-- Begin MailChimp Signup Form -->
       <form action="//good.us2.list-manage.com/subscribe/post?u=5b63a0823e3b9c105434c46d7&amp;id=f9c7839dae" method="post" name="mc-embedded-subscribe-form">
@@ -2095,52 +2045,16 @@ body > iframe {
           <input type="text" name="b_5b63a0823e3b9c105434c46d7_f9c7839dae" tabindex="-1" value="">
         </div>
         <p class="submit">
-          <button type="submit" value="Subscribe" name="subscribe">Join mailing list</button>
+          <button type="submit" value="Subscribe" name="subscribe">Submit</button>
         </p>
       </form>
       <!--End mc_embed_signup-->
     </div>
-
-  </section>
-
-  <section class="lime" id="download">
-
-    <div class="text">
-      <h2>Get the <b>CTZN app!</b></h2>
-      <h3>CTZN is built for <span style="text-transform: none;">iOS and Android</span></h3>
-      <ul class="download" style="margin-top: 2.5em">
-        <li>
-          <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
-            <svg width="135" height="40" viewBox="0 0 135 40">
-              <switch>
-                <use xlink:href="#icon-apple-store-button"></use>
-                <foreignObject>Download on the App Store</foreignObject>
-              </switch>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
-            <svg width="116" height="40" viewBox="0 0 116 40">
-              <switch>
-                <use xlink:href="#icon-google-play-button"></use>
-                <foreignObject>Get it on Google Play</foreignObject>
-              </switch>
-            </svg>
-          </a>
-        </li>
-      </ul>
   </section>
 
   <footer class="primary">
-    <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
-    <div class="legal">
-      <p>Copyright © 2015 GOOD Worldwide Inc</p>
-      <ul>
-        <li><a href="//getctzn.com/privacy">Privacy Policy</a></li>
-        <li><a href="//getctzn.com/terms">Terms of Service</a></li>
-      </ul>
-    </div>
+    <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></svg></a> app</h2>
+    <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
   </footer>
 
 </body>
