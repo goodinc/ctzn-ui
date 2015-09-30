@@ -52,6 +52,48 @@
   </style>
   <!-- /OPTIONAL -->
 
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
+
+  <style>
+    /* If the image is taller than the viewport */
+    @media (min-aspect-ratio: 4/3) { 
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] {
+        -webkit-flex-direction: row;
+                flex-direction: row;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] picture {
+        width: 100%;
+        height: auto;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] img {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* If the image is wider than the viewport */
+    @media (max-aspect-ratio: 4/3) {
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] {
+        -webkit-flex-direction: column;
+                flex-direction: column;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] picture {
+        width: auto;
+        height: 100%;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] img {
+        min-width: 0;
+        min-height: 0;
+        width: auto;
+        height: 100%;
+      }
+    }
+  </style>
+
 </head>
 <!--
   .ctzn-title-only
