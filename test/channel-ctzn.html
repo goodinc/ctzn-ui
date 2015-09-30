@@ -57,7 +57,7 @@
   .ctzn-title-only
   .push-title-only
 -->
-<body class="ctzn-title-only">
+<body class="ctzn-title-only autoplaying">
 
     <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -140,8 +140,23 @@
       </div>
     </header>
 
-    <ol>
-      <li>
+    <nav>
+      <ul>
+        <li class="next">
+          <a href="">
+            <span><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-right"></use><foreignObject>Next</foreignObject></switch></svg></span>
+          </a>
+        </li>
+        <li class="previous">
+          <a href="">
+            <span><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-left"></use><foreignObject>Previous</foreignObject></switch></svg></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="list">
+      <div class="item">
         <article>
           <header>
             <h3>
@@ -161,26 +176,10 @@
             </div>
           </div>
         </article>
-      </li>
-    </ol>
+      </div>
+    </div>
 
   </main>
-
-  <nav>
-    <ul>
-      <li class="next">
-        <a href="">
-          <span><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-right"></use><foreignObject>Next</foreignObject></switch></svg></span>
-        </a>
-      </li>
-      <li class="previous">
-        <a href="">
-          <span><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-left"></use><foreignObject>Previous</foreignObject></switch></svg></span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
 
   <div>
     <p class="toggle-playback">
