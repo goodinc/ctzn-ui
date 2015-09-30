@@ -433,17 +433,50 @@
 
     /* =Channels
     ----------------------------------------------- */
+    body > .channels {
+      background: black;
+    }
+    body > .channels:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    body > .channels iframe {
+      float: left;
+      width: 50%;
+      height: 50vw;
+    }
+    body > .channels {
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    @media (min-width: 50em) {
+      body > .channels iframe {
+        width: 25%;
+        height: 25vw;
+      }
+    }
+
+
+    /* =Channels (with space around them)
+    ----------------------------------------------- */
     body > section.orange {
       padding-bottom: 0;
     }
-    .channels {
+    section .channels {
       margin-top: 0;
       margin-left: -1.875em;
       margin-right: -1.875em;
       margin-bottom: 0;
       max-width: none;
     }
-    .channels div {
+    section .channels div {
       display: block;
       width: 100%;
       border-width: 0 2em 2em;
@@ -453,22 +486,26 @@
          -moz-box-sizing: border-box;
               box-sizing: border-box;
     }
-    .channels iframe {
-      max-height: 40vh;
+    section .channels h4 {
+      color: white;
+      text-transform: lowercase;
+    }
+    section .channels iframe {
+      width: 100%;
+      height: 40vh;
+      background: black;
+      box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); 
     }
     @media (min-width: 60em) {
-      .channels div {
+      section .channels div {
         width: 33%;
         float: left;
         border-width: 2em;
       }
-      .channels iframe {
-        box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); 
-      }
-      .channels div + div {
+      section .channels div + div {
         border-left-width: 0;
       }
-      .channels:after {
+      section .channels:after {
         content: "";
         display: table;
         clear: both;
@@ -1158,47 +1195,6 @@
       }
     }
 
-    .pushes:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    .pushes iframe {
-      float: left;
-      width: 50%;
-      height: 50vw;
-    }
-    .pushes {
-      display: -webkit-flex;
-      display:         flex;
-
-      -webkit-flex-direction: row;
-              flex-direction: row;
-
-      -webkit-align-items: center;
-              align-items: center;
-
-      -webkit-align-content: center;
-              align-content: center;
-
-      -webkit-justify-content: center;
-              justify-content: center;
-
-      -webkit-flex-wrap: wrap;
-              flex-wrap: wrap;
-    }
-    .pushes iframe {
-      
-    }
-
-    @media (min-width: 50em) {
-      .pushes iframe {
-        width: 25%;
-        height: 25vw;
-      }
-    }
-
-
   </style>
 
   <script>
@@ -1804,17 +1800,17 @@
           <iframe width="375" height="667" src="http://www.ctznapp.qa2.goodalpaca.com/live_channel/1582E0C6" frameborder="0" allowfullscreen></iframe>
           <iframe width="375" height="667" src="promote-channel-1.html" frameborder="0" allowfullscreen></iframe>
           -->
-          <iframe width="375" height="667" src="http://www.ctznapp.com/push/9C044CCA/bulletproof?channel=1" frameborder="0" allowfullscreen></iframe>
+          <iframe width="375" height="667" src="http://www.ctznapp.jim.goodalpaca.com/push/9C044CCA/bulletproof?channel=1" frameborder="0" allowfullscreen></iframe>
         </div>
       </figure>
     </div>
   </section>
 
-  <div class="pushes">
-    <iframe width="640" height="480" src="http://www.ctznapp.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="640" height="480" src="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="640" height="480" src="http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="640" height="480" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
+  <div class="channels">
+    <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/93311448/dare-to-imagine?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
   </div>
 
   <section class="periwinkle">
@@ -1916,11 +1912,11 @@
     </div>
   </section>
 
-  <div class="pushes">
-    <iframe width="640" height="480" src="http://www.ctznapp.com/push/3C1F8367/tfa-la-corps?channel=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="640" height="480" src="http://www.ctznapp.com/push/86B01D86/perthes-kids-foundation?channel=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="640" height="480" src="http://www.ctznapp.com/push/095380B5/100startswith1-celebration-party?channel=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="640" height="480" src="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
+  <div class="channels">
+    <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/3C1F8367/tfa-la-corps?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/86B01D86/perthes-kids-foundation?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/095380B5/100startswith1-celebration-party?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
   </div>
 
   <section class="orange">
@@ -1930,95 +1926,21 @@
       <p>Never miss a moment of your social impact journey. Bring your community and best content together, in one space. Our media creation technologies allow you to make instant, visually stunning videos that you can package for any moment, any community, or any goal.</p>
     </div>
 
-    <!--
     <figure class="channels">
-      <iframe width="640" height="480" src="promote-channel-2.html" frameborder="0" allowfullscreen></iframe>
-      <iframe width="640" height="480" src="promote-channel-3.html" frameborder="0" allowfullscreen></iframe>
-      <iframe width="640" height="480" src="promote-channel-4.html" frameborder="0" allowfullscreen></iframe>
+      <div>
+        <h4>For Communities</h4>
+        <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/A6A6B903/great-streets-network-of-champions?channel=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h4>For Organizations</h4>
+        <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/75FA699F/826la?channel=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h4>For Projects + Events</h4>
+        <iframe width="320" height="240" src="http://www.ctznapp.jim.goodalpaca.com/push/FE037887/manifest-justice?channel=1" frameborder="0" allowfullscreen></iframe>
+      </div>
     </figure>
-    -->
 
-      <figure class="channels">
-<div>
-        <p>For Communities</p>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/A6A6B903/great-streets-network-of-champions?channel=1" frameborder="0" allowfullscreen></iframe>
-</div>
-<div>        
-        <p>For Organizations</p>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/75FA699F/826la?channel=1" frameborder="0" allowfullscreen></iframe>
-</div>
-<div>
-        <p>For Projects + Events</p>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/FE037887/manifest-justice?channel=1" frameborder="0" allowfullscreen></iframe>
-</div>
-      </figure>
-<!--
-    <script type="text/template" id="channels-template">
-      <figure class="channels">
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/A6A6B903/great-streets-network-of-champions?channel=1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/75FA699F/826la?channel=1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="640" height="480" src="http://www.ctznapp.com/push/FE037887/manifest-justice?channel=1" frameborder="0" allowfullscreen></iframe>
-      </figure>
-    </script>
-    <script>
-    (function() {
-      // SHIM: Lazy load the channels…
-      // (A better solution might be to add a “pause/play” feature to the
-      // channels, so they can be paused when they’re out of view)
-      var template = document.getElementById('channels-template');
-      if (template){
-        var div = document.createElement('div');
-        div.innerHTML = template.innerHTML;
-
-        var target;
-
-        function absolutePosition(element) {
-          if (element.parentNode && element.parentNode.offsetTop) {
-            return element.offsetTop + absolutePosition(element.parentNode);
-          } else {
-            return element.offsetTop;
-          }
-        }
-
-        function updateTargetPosition() {
-          target = absolutePosition(template);
-        }
-        updateTargetPosition();
-
-        var targetUpdated = false;
-        function updateTargetContent() {
-          if (!targetUpdated) {
-            targetUpdated = true;
-            template.parentNode.insertBefore(div, template);
-          }
-        }
-
-        // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
-        function getScrollY() {
-          var supportPageOffset = window.pageXOffset !== undefined;
-          var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
-          return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-        }
-
-        function checkScrollPosition() {
-          if (getScrollY() >= target - 800) {
-            updateTargetContent();
-          }
-        }
-
-        window.addEventListener('load', checkScrollPosition, false);
-
-        window.addEventListener('scroll', checkScrollPosition, false);
-
-        var throttle;
-        window.addEventListener('resize', function(){
-          if (throttle) clearTimeout(throttle);
-          throttle = setTimeout(updateTargetPosition, 100);
-        }, false);
-      }
-    })();
-    </script>
-  -->
   </section>
 
 
