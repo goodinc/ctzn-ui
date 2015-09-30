@@ -1158,19 +1158,45 @@
       }
     }
 
-body > iframe {
-  float: left;
-  width:50vw;
-  height:50vw;
-}
+    .pushes:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .pushes iframe {
+      float: left;
+      width: 50%;
+      height: 50vw;
+    }
+    .pushes {
+      display: -webkit-flex;
+      display:         flex;
 
-@media (min-width: 50em){
-body > iframe {
-  float: left;
-  width:25vw;
-  height:25vw;
-}  
-}
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .pushes iframe {
+      
+    }
+
+    @media (min-width: 50em) {
+      .pushes iframe {
+        width: 25%;
+        height: 25vw;
+      }
+    }
 
 
   </style>
@@ -1784,11 +1810,12 @@ body > iframe {
     </div>
   </section>
 
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
-<div style="clear:both;"></div>
+  <div class="pushes">
+    <iframe width="640" height="480" src="http://www.ctznapp.com/push/C50609F6/kaboom?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="480" src="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="480" src="http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="480" src="http://www.ctznapp.com/push/0E4E704E/good?channel=1" frameborder="0" allowfullscreen></iframe>
+  </div>
 
   <section class="periwinkle">
     <div class="figure">
@@ -1889,11 +1916,12 @@ body > iframe {
     </div>
   </section>
 
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/3C1F8367/tfa-la-corps?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/86B01D86/perthes-kids-foundation?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/095380B5/100startswith1-celebration-party?channel=1" frameborder="0" allowfullscreen></iframe>
-  <iframe width="640" height="480" src="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
-<div style="clear:both;"></div>
+  <div class="pushes">
+    <iframe width="640" height="480" src="http://www.ctznapp.com/push/3C1F8367/tfa-la-corps?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="480" src="http://www.ctznapp.com/push/86B01D86/perthes-kids-foundation?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="480" src="http://www.ctznapp.com/push/095380B5/100startswith1-celebration-party?channel=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="480" src="http://www.ctznapp.com/push/4B466AC0/community-services-unlimited?channel=1" frameborder="0" allowfullscreen></iframe>
+  </div>
 
   <section class="orange">
     <div class="text">
