@@ -73,7 +73,22 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
     // If fullscreen mode isn’t supported and we’re inside an iframe, open a new window instead.
     } else if (top.location != self.location) {
-      window.open(self.location.href, 'ctzn');
+
+      var url = self.location.href;
+
+      try {
+
+        // OPTIONAL: Autoplay the channel in the new window.
+        url = url.replace('&paused=', '&playing=');
+        url = url.replace('?paused=', '?playing=');
+
+        // OPTIONAL: Show the normal user interface in the new window.
+        url = url.replace('&ui=minimal', '&ui=normal');
+        url = url.replace('?ui=minimal', '?ui=normal');
+
+      } catch(e) {}
+
+      window.open(url, 'ctzn');
     }
   }
 
