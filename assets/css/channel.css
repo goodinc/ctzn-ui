@@ -60,7 +60,8 @@
     margin: 0;
   }
 
-  button {
+  button,
+  .toggle-fullscreen a {
     margin: 0;
     border-width: 0;
 
@@ -77,14 +78,18 @@
     background-color: black;
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
+    display: inline-block;
 
     transition: background-color 0.2s, color 0.2s, opacity 0.2s;
   }
   button:hover,
-  button:focus {
+  button:focus,
+  .toggle-fullscreen a:hover,
+  .toggle-fullscreen a:focus {
     background-color: rgba(0, 0, 0, 0.5);
   }
-  button:active {
+  button:active,
+  .toggle-fullscreen a:active {
     background-color: rgba(0, 0, 0, 0.75);
   }
 
@@ -468,6 +473,7 @@
   .push-title-only .push-channel > header .details {
     position: absolute;
     left: -9999px;
+    top: -9999px;
   }
 
   /*  OPTIONAL: Make the title larger on big screens. */
@@ -558,6 +564,7 @@
     right: 0.75em;
     margin: 0;
   }
+  .toggle-fullscreen a      svg.icon,
   .toggle-fullscreen button svg.icon {
     vertical-align: top;
   }

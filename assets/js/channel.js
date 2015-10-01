@@ -59,49 +59,50 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Add a fullscreen button
 
+var fullscreenActive;
 (function() {
 
-  function showFullscreen() {
+  function showFullscreen(e) {
+    console.log('showFullscreen');
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen();
+      fullscreenActive = true;
     } else if (document.documentElement.msRequestFullscreen) {
       document.documentElement.msRequestFullscreen();
+      fullscreenActive = true;
     } else if (document.documentElement.mozRequestFullScreen) {
       document.documentElement.mozRequestFullScreen();
+      fullscreenActive = true;
     } else if (document.documentElement.webkitRequestFullscreen) {
       document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+      fullscreenActive = true;
+    }
 
-    // If fullscreen mode isn’t supported and we’re inside an iframe, open a new window instead.
-    } else if (top.location != self.location) {
+    // If fullscreen mode isn’t supported and we’re inside an iframe, let the default browser action continue.
+    var isIframe = (top.location !== self.location);
 
-      var url = self.location.href;
-
-      try {
-
-        // OPTIONAL: Autoplay the channel in the new window.
-        url = url.replace('&paused=', '&playing=');
-        url = url.replace('?paused=', '?playing=');
-
-        // OPTIONAL: Show the normal user interface in the new window.
-        url = url.replace('&ui=minimal', '&ui=normal');
-        url = url.replace('?ui=minimal', '?ui=normal');
-
-      } catch(e) {}
-
-      window.open(url, 'ctzn');
+    if (e && (fullscreenActive || !isIframe)) {
+      e.preventDefault();
     }
   }
 
-  function exitFullscreen() {
+  function exitFullscreen(e) {
+    console.log('exitFullscreen');
     if (document.exitFullscreen) {
       document.exitFullscreen();
+      fullscreenActive = false;
     } else if (document.msExitFullscreen) {
       document.msExitFullscreen();
+      fullscreenActive = false;
     } else if (document.mozCancelFullScreen) {
       document.mozCancelFullScreen();
+      fullscreenActive = false;
     } else if (document.webkitExitFullscreen) {
       document.webkitExitFullscreen();
+      fullscreenActive = false;
     }
+
+    if (e) e.preventDefault();
   }
 
   function fullscreenAvailable() {      
@@ -109,50 +110,54 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
             document.documentElement.msRequestFullscreen ||
             document.documentElement.mozRequestFullScreen ||
             document.documentElement.webkitRequestFullscreen ||
-            top.location != self.location); // If fullscreen mode isn’t supported and we’re inside an iframe, we’ll open a new window instead.
+            top.location !== self.location); // If fullscreen mode isn’t supported and we’re inside an iframe, we’ll open a new window instead.
   }
 
-  function fullscreenActive() {      
+
+  function fullscreenElementActive() {      
     return (document.fullscreenElement ||
             document.msFullscreenElement ||
             document.mozFullscreenElement ||
             document.webkitFullscreenElement);
   }
 
-  function update() {
-    if (fullscreen) {
-      showFullscreen();
+  function update(e) {
+    console.log('update');
+    if (!fullscreenActive) {
+      showFullscreen(e);
       button.innerHTML = exitTemplate.innerHTML;
     } else {
-      exitFullscreen();
+      exitFullscreen(e);
       button.innerHTML = template.innerHTML;
     }
   }
 
-  function toggle() {
-    fullscreen = !fullscreen;
-    update();
+  function toggle(e) {
+
+    // If the user is pressing a modifier key, let the browser handle it
+    if (e && (e.shiftKey || e.ctrlKey || e.altKey || e.metaKey)) return;
+
+    update(e);
   }
 
   var template     = document.getElementById('fullscreen-template');
   var exitTemplate = document.getElementById('exit-fullscreen-template');
 
   // If we have all of the features we need…
-  if (fullscreenAvailable() && document.addEventListener && template && exitTemplate) {
+  if (fullscreenAvailable() && (document.addEventListener || document.body.attachEvent) && template && exitTemplate) {
 
     // Show the button
     var button = document.createElement('div');
     button.innerHTML = template.innerHTML;
     template.parentNode.insertBefore(button, template);
 
-    var fullscreen = false; //fullscreenActive();
+    fullscreenActive = false; //fullscreenElementActive();
 
-    update();
-
-    button.addEventListener('click', function(e) {
-      toggle();
-      e.preventDefault();
-    }, false);
+    if (button.addEventListener) {
+      button.addEventListener('click', toggle, false);
+    } else if (button.attachEvent) {
+      button.attachEvent('click', toggle);
+    }
   }
 
 })();
@@ -807,6 +812,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
     // Listen for “pause” requests from the parent page (if we’re inside an iframe)
     window.addEventListener("message", function(e) {
+      if (fullscreenActive === true) return;
       if (e.data === 'pause') {
         stopPlaying();
       } else if (e.data === 'play') {
