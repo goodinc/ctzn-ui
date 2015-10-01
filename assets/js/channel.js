@@ -5,6 +5,8 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // OPTIONAL: Make images look nice in browsers that don’t yet support the <picture> element.
 
+// require ('bower_components/picturefill/dist/picturefill');
+
 /*! Picturefill - v2.3.1 - 2015-04-09
 * http://scottjehl.github.io/picturefill
 * Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT */
@@ -529,12 +531,12 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       var animation;
       function animate() {
         if (requestAnimationFrame) {
-          animation = requestAnimationFrame(function() {
+          //animation = requestAnimationFrame(function() {
             rewindTransition(image, backward);
             animation = requestAnimationFrame(function() {
               playTransition(image, forward, duration);
             });
-          });
+          //});
         }
       }
       animate();
