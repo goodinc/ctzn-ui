@@ -641,6 +641,7 @@
     text-align: center;
     opacity: 0.5;
   }
+  .paused:not(.loading)      nav a span,
   .autoplaying:not(.loading) nav a span {
     opacity: 0;
   }
@@ -731,10 +732,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    /* 20% black PNG-24 (for browsers that don’t support RGBA) */
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEUAAACnej3aAAAAAXRSTlMz/za5cAAAAA1JREFUeNoBAgD9/wAAAAIAAVMrnDAAAAAASUVORK5CYII=);
+    background: rgba(0, 0, 0, 0.2);
   }
   .push-channel article .pictures + .body:before {
-    background-color: rgba(0, 0, 0, 0.5);
+    /* 50% black PNG-24 (for browsers that don’t support RGBA) */
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEUAAACnej3aAAAAAXRSTlOArV5bRgAAAA1JREFUeNoBAgD9/wAAAAIAAVMrnDAAAAAASUVORK5CYII=);
+    background: rgba(0, 0, 0, 0.5);
   }
 
   /* Header */
@@ -1046,6 +1051,18 @@
       position: absolute;
       left: -9999px;
     }
+  }
+
+
+  /* OPTIONAL: Make some elements hideable (via userinterface=minimal)
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  /* Hide the CTZN logo (except on the title screen) */
+  .minimal-ui:not(.ctzn-title-only) header.ctzn {
+    left: -9999px;
+    right: auto;
   }
 
 

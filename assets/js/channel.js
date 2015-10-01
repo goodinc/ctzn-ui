@@ -684,8 +684,9 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       }
     }
 
-    var paused;
+    var paused = true;
     function startPlaying() {
+      if (!paused) return;
       paused = false;
       updatePage();
     }
@@ -762,7 +763,20 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       }
     }, false);
 
-    startPlaying();
+    if (window.location.href.match(/[?|&]paused=/)) {
+      stopPlaying();
+    } else {
+      startPlaying();
+    }
+
+    // Listen for “pause” requests from the parent page (if we’re inside an iframe)
+    window.addEventListener("message", function(e) {
+      if (e.data === 'pause') {
+        stopPlaying();
+      } else if (e.data === 'play') {
+        startPlaying();
+      }
+    }, false)
 
 })();
 
