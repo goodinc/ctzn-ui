@@ -5,8 +5,6 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // OPTIONAL: Make images look nice in browsers that don’t yet support the <picture> element.
 
-// require ('bower_components/picturefill/dist/picturefill');
-
 /*! Picturefill - v2.3.1 - 2015-04-09
 * http://scottjehl.github.io/picturefill
 * Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT */
@@ -14,7 +12,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// OPTIONAL: Test layout before using animation (see note below about flexible box layout)
+// OPTIONAL: Test layout before using animation (see “animateImage”).
 
 /*! modernizr 3.0.0-alpha.4 (Custom Build) | MIT *
  * http://modernizr.com/download/#-flexbox !*/
@@ -22,7 +20,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Respond to a few special keys on the keyboard
+// Respond to a few special keys on the keyboard.
 
 (function() {
     if (!document.querySelector || !document.addEventListener) return;
@@ -464,8 +462,19 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
       }
     }
 
+
+    var requestAnimationFrame = window.requestAnimationFrame ||
+                                window.mozRequestAnimationFrame ||
+                                window.webkitRequestAnimationFrame ||
+                                window.msRequestAnimationFrame;
+
+    var cancelAnimationFrame  = window.cancelAnimationFrame ||
+                                window.mozCancelAnimationFrame ||
+                                window.webkitCancelAnimationFrame ||
+                                window.msCancelAnimationFrame;
+
     function animateImage(image, duration) {
-      if (!Modernizr.flexbox) return; // The animation depends on the image being centered via flexible box layout.
+      if (!Modernizr.flexbox || !requestAnimationFrame) return; // The animation depends on the image being centered via flexible box layout.
 
       // Only animate the image if it has finished loading and has an aspect ratio class name (which will make the animation look sharp)
       var figure = getFigure(image);
@@ -513,19 +522,29 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 
       // Move the image to the start position
       var backward = translateAxis + "(" + translateValue + "%) scale(" + (scaleDirection ? scaleValue : 1) + ")";
-      rewindTransition(image, backward);
 
       // And then move it to the final position
       var forward = translateAxis + "(" + (translateValue * -1) + "%) scale(" + (scaleDirection ? 1 : scaleValue) + ")";
-      setTimeout(function() {
-        playTransition(image, forward, duration);
-      }, 1);
+
+      var animation;
+      function animate() {
+        if (requestAnimationFrame) {
+          animation = requestAnimationFrame(function() {
+            rewindTransition(image, backward);
+            animation = requestAnimationFrame(function() {
+              playTransition(image, forward, duration);
+            });
+          });
+        }
+      }
+      animate();
 
       // Stop the transition if the window changes size
       var throttle;
       function onWindowResize() {
         if (throttle) clearTimeout(throttle);
         throttle = setTimeout(function() {
+          if (animation && cancelAnimationFrame) cancelAnimationFrame(animation);
           stopTransition(image);
         }, 100);
       }
