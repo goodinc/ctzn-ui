@@ -89,24 +89,37 @@
     }
     .post-list {
       -webkit-column-gap: 0;
-      padding-bottom: 10em;
+      padding-bottom: 0;
     }
     .post-list > li {
       -webkit-column-break-inside: avoid;
     }
     .post-item {
       margin-bottom: 0;
+      font-size: 16px;
     }
     .post-list > li {
       position: relative;
       overflow: hidden;
+      max-width: none;
+    }
+    .push-card .post-list .post-item {
+      padding-bottom: 0;
+    }
+    .push-card .post-list .post-item header {
+      bottom: 2.7272727273em; /* 1.25 x 3/2 / font size (0.6875em) */
+      padding: 0 1.8181818182em;
     }
     .push-card .post-list .post-item .body {
       color: white;
-      padding-left: 1.5em;
-      padding-right: 1.5em;
+      padding: 1.25em 1.25em 3.75em;
+      /*
       text-align: center;
+      */
       line-height: 1.25;
+    }
+    .push-card .post-list .post-item .body p {
+      font-size: inherit !important;
     }
     .push-card .post-list .post-item .body p:first-child {
       margin-top: 0;
@@ -156,10 +169,10 @@
     .post-list > li .background {
       background-size: 100% auto;
       background-position: bottom;
-      opacity: 0.25;
+      opacity: 0.125;
       -webkit-transform: scaleY(-1);
-      -webkit-filter: blur(2em);
-              filter: blur(2em);
+      -webkit-filter: blur(1em);
+              filter: blur(1em);
       margin-top: -2em;
 display: none;
       /*
@@ -177,6 +190,7 @@ display: none;
     }
     .push-card .post-list .post-item {
       background: transparent;
+      text-align: center;
     }
     /*
       -webkit-transform: translate(0, -50%) scale(2);
@@ -344,7 +358,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
     <ol class="post-list">
 <li>
         <div class="background-color" style="background-color: #E5D0B4">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/d32e507f0e08f303ca3bcefce95720388501f73e=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/d32e507f0e08f303ca3bcefce95720388501f73e=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #171309"><header><h3>
               <span class="avatar">
@@ -354,7 +368,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
             <p>
               <time datetime="2015-09-29 23:20:50 +0000">September 29, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/d32e507f0e08f303ca3bcefce95720388501f73e=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/d32e507f0e08f303ca3bcefce95720388501f73e=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/d32e507f0e08f303ca3bcefce95720388501f73e=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/d32e507f0e08f303ca3bcefce95720388501f73e=s2048x2048" srcset="/s3/ctzn/d32e507f0e08f303ca3bcefce95720388501f73e=s2048x2048 2x, /s3/ctzn/d32e507f0e08f303ca3bcefce95720388501f73e=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -365,7 +379,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
 
       <li>
         <div class="background-color" style="background-color: #37092B">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/f2ce4bacc42bc0a7bc35a81de82c351c8e2907ca=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/f2ce4bacc42bc0a7bc35a81de82c351c8e2907ca=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #ECE273"><header><h3>
               <span class="avatar">
@@ -375,7 +389,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
             <p>
               <time datetime="2015-09-29 18:04:38 +0000">September 29, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/f2ce4bacc42bc0a7bc35a81de82c351c8e2907ca=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/f2ce4bacc42bc0a7bc35a81de82c351c8e2907ca=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/f2ce4bacc42bc0a7bc35a81de82c351c8e2907ca=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/f2ce4bacc42bc0a7bc35a81de82c351c8e2907ca=s2048x2048" srcset="/s3/ctzn/f2ce4bacc42bc0a7bc35a81de82c351c8e2907ca=s2048x2048 2x, /s3/ctzn/f2ce4bacc42bc0a7bc35a81de82c351c8e2907ca=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -386,7 +400,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
 
       <li>
         <div class="background-color" style="background-color: white">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/b716ac0dff271c3b8cff3f34cf365a3d08500da1=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/b716ac0dff271c3b8cff3f34cf365a3d08500da1=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #050F15"><header><h3>
               <span class="avatar">
@@ -396,7 +410,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
             <p>
               <time datetime="2015-09-29 17:33:51 +0000">September 29, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/b716ac0dff271c3b8cff3f34cf365a3d08500da1=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/b716ac0dff271c3b8cff3f34cf365a3d08500da1=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/b716ac0dff271c3b8cff3f34cf365a3d08500da1=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/b716ac0dff271c3b8cff3f34cf365a3d08500da1=s2048x2048" srcset="/s3/ctzn/b716ac0dff271c3b8cff3f34cf365a3d08500da1=s2048x2048 2x, /s3/ctzn/b716ac0dff271c3b8cff3f34cf365a3d08500da1=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -407,7 +421,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
 
       <li>
         <div class="background-color" style="background-color: #0C0C0E">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/bcf7e2f2980eb5040ea33b503d963682a5be4424=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/bcf7e2f2980eb5040ea33b503d963682a5be4424=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #BDC1A3"><header><h3>
               <span class="avatar">
@@ -417,7 +431,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
             <p>
               <time datetime="2015-09-28 23:16:30 +0000">September 28, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/bcf7e2f2980eb5040ea33b503d963682a5be4424=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/bcf7e2f2980eb5040ea33b503d963682a5be4424=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/bcf7e2f2980eb5040ea33b503d963682a5be4424=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/bcf7e2f2980eb5040ea33b503d963682a5be4424=s2048x2048" srcset="/s3/ctzn/bcf7e2f2980eb5040ea33b503d963682a5be4424=s2048x2048 2x, /s3/ctzn/bcf7e2f2980eb5040ea33b503d963682a5be4424=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -428,7 +442,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
 
       <li>
         <div class="background-color" style="background-color: #050F1B">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/9fe846a6056d4722fd30c8262e5b67d891906a35=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/9fe846a6056d4722fd30c8262e5b67d891906a35=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #FCE995"><header><h3>
               <span class="avatar">
@@ -438,7 +452,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
             <p>
               <time datetime="2015-09-28 21:36:41 +0000">September 28, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/9fe846a6056d4722fd30c8262e5b67d891906a35=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/9fe846a6056d4722fd30c8262e5b67d891906a35=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/9fe846a6056d4722fd30c8262e5b67d891906a35=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/9fe846a6056d4722fd30c8262e5b67d891906a35=s2048x2048" srcset="/s3/ctzn/9fe846a6056d4722fd30c8262e5b67d891906a35=s2048x2048 2x, /s3/ctzn/9fe846a6056d4722fd30c8262e5b67d891906a35=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -449,7 +463,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
 
       <li>
         <div class="background-color" style="background-color: #2D2A28">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/703dd96030c904779a5da92552c357c23b7866d0=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/703dd96030c904779a5da92552c357c23b7866d0=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #FFFEE2"><header><h3>
               <span class="avatar">
@@ -459,7 +473,7 @@ C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" vi
             <p>
               <time datetime="2015-09-28 01:03:52 +0000">September 28, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/703dd96030c904779a5da92552c357c23b7866d0=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/703dd96030c904779a5da92552c357c23b7866d0=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/703dd96030c904779a5da92552c357c23b7866d0=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/703dd96030c904779a5da92552c357c23b7866d0=s2048x2048" srcset="/s3/ctzn/703dd96030c904779a5da92552c357c23b7866d0=s2048x2048 2x, /s3/ctzn/703dd96030c904779a5da92552c357c23b7866d0=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -498,7 +512,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #E6E8F5">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/84a265498798bff13838c97d7e6d3209119709b4=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/84a265498798bff13838c97d7e6d3209119709b4=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #0D141C"><header><h3>
               <span class="avatar">
@@ -508,7 +522,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-09-27 04:45:24 +0000">September 27, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/84a265498798bff13838c97d7e6d3209119709b4=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/84a265498798bff13838c97d7e6d3209119709b4=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/84a265498798bff13838c97d7e6d3209119709b4=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/84a265498798bff13838c97d7e6d3209119709b4=s2048x2048" srcset="/s3/ctzn/84a265498798bff13838c97d7e6d3209119709b4=s2048x2048 2x, /s3/ctzn/84a265498798bff13838c97d7e6d3209119709b4=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -519,7 +533,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #121725">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/18f398b21498a76957d828d394ae71064113301e=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/18f398b21498a76957d828d394ae71064113301e=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #D3D28C"><header><h3>
               <span class="avatar">
@@ -529,7 +543,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-09-26 20:52:16 +0000">September 26, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/18f398b21498a76957d828d394ae71064113301e=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/18f398b21498a76957d828d394ae71064113301e=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/18f398b21498a76957d828d394ae71064113301e=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/18f398b21498a76957d828d394ae71064113301e=s2048x2048" srcset="/s3/ctzn/18f398b21498a76957d828d394ae71064113301e=s2048x2048 2x, /s3/ctzn/18f398b21498a76957d828d394ae71064113301e=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -540,7 +554,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #FAFAFA">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/50394901cd45d12edcfe29f8c19d83167afce89e=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/50394901cd45d12edcfe29f8c19d83167afce89e=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #062011"><header><h3>
               <span class="avatar">
@@ -550,7 +564,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-09-23 05:10:18 +0000">September 23, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/50394901cd45d12edcfe29f8c19d83167afce89e=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/50394901cd45d12edcfe29f8c19d83167afce89e=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/50394901cd45d12edcfe29f8c19d83167afce89e=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/50394901cd45d12edcfe29f8c19d83167afce89e=s2048x2048" srcset="/s3/ctzn/50394901cd45d12edcfe29f8c19d83167afce89e=s2048x2048 2x, /s3/ctzn/50394901cd45d12edcfe29f8c19d83167afce89e=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -561,7 +575,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #505050">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/c87691503eddb5a53ecd3bba012e6bb7beb3b37e=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/c87691503eddb5a53ecd3bba012e6bb7beb3b37e=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #C7F0FF"><header><h3>
               <span class="avatar">
@@ -571,7 +585,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-09-17 23:25:15 +0000">September 17, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/c87691503eddb5a53ecd3bba012e6bb7beb3b37e=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/c87691503eddb5a53ecd3bba012e6bb7beb3b37e=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/c87691503eddb5a53ecd3bba012e6bb7beb3b37e=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/c87691503eddb5a53ecd3bba012e6bb7beb3b37e=s2048x2048" srcset="/s3/ctzn/c87691503eddb5a53ecd3bba012e6bb7beb3b37e=s2048x2048 2x, /s3/ctzn/c87691503eddb5a53ecd3bba012e6bb7beb3b37e=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -582,7 +596,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #1E140D">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #ADDCE9"><header><h3>
               <span class="avatar">
@@ -592,7 +606,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-09-08 22:16:15 +0000">September  8, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048" srcset="/s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 2x, /s3/ctzn/4c9308b70b93f3cbf333729990f9bec266a1edcd=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -603,7 +617,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #DAD7E2">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #111B27"><header><h3>
               <span class="avatar">
@@ -613,7 +627,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-09-06 15:28:02 +0000">September  6, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048" srcset="/s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 2x, /s3/ctzn/bb1d60a205605bc47af4baae0590ff13906923c6=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -624,7 +638,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #1C1D1F">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #F4DDE1"><header><h3>
               <span class="avatar">
@@ -634,7 +648,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-09-04 21:28:22 +0000">September  4, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048" srcset="/s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 2x, /s3/ctzn/5e4b189f13534d0ac535c67578577b05ead1fb39=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -645,7 +659,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #F3EEE6">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #1A1712"><header><h3>
               <span class="avatar">
@@ -655,7 +669,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-23 02:14:04 +0000">August 23, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048" srcset="/s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 2x, /s3/ctzn/bbeb73a155090b7f69ceb39037b139c8e7d37554=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -666,7 +680,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #C3C2BB">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #2C2C26"><header><h3>
               <span class="avatar">
@@ -676,7 +690,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-21 00:15:56 +0000">August 21, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048" srcset="/s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 2x, /s3/ctzn/dc90d165114bfa71e607171d63084b64438ab4ae=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -687,7 +701,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #D9513F">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #FFFFF9"><header><h3>
               <span class="avatar">
@@ -697,7 +711,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-20 20:04:39 +0000">August 20, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048" srcset="/s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 2x, /s3/ctzn/1ace79af7c8af7759fd312f95d5bb94255588ae6=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -708,7 +722,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #271915">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #C9AC4A"><header><h3>
               <span class="avatar">
@@ -718,7 +732,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-20 08:33:26 +0000">August 20, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048" srcset="/s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 2x, /s3/ctzn/77daf49664ce9af86a71d555255e2ff6527ba49c=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -729,7 +743,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #1D1810">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #EDE9D9"><header><h3>
               <span class="avatar">
@@ -739,7 +753,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-12 16:16:37 +0000">August 12, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048" srcset="/s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 2x, /s3/ctzn/73b8ab886732ceacd98c13ac4ece8b56136964de=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -750,7 +764,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: black">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #FFFBFF"><header><h3>
               <span class="avatar">
@@ -760,7 +774,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-11 20:01:53 +0000">August 11, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048" srcset="/s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 2x, /s3/ctzn/a4e631ae9ccc399d4c98b010cc54ffa1eb466fac=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -771,7 +785,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #23272A">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #FBFBFD"><header><h3>
               <span class="avatar">
@@ -781,7 +795,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-11 04:15:07 +0000">August 11, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048" srcset="/s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 2x, /s3/ctzn/4abe2d70461a4a07fbdb1d2c040b013e4070b8f5=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -792,7 +806,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #160E0A">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #F3ECE8"><header><h3>
               <span class="avatar">
@@ -802,7 +816,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-07 16:30:36 +0000">August  7, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048" srcset="/s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 2x, /s3/ctzn/8bf1317faf5ab6820e6d1418bd57e46612090133=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -813,7 +827,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #E9B87B">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #070124"><header><h3>
               <span class="avatar">
@@ -823,7 +837,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-07 16:24:17 +0000">August  7, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048" srcset="/s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 2x, /s3/ctzn/bc6dc066b6ea4b76d7eda56c4d8ed0a7b3ac0a60=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -834,7 +848,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #020100">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #FDFDEF"><header><h3>
               <span class="avatar">
@@ -844,7 +858,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-08-07 16:19:53 +0000">August  7, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048" srcset="/s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 2x, /s3/ctzn/36eabff36c2761ac71d67c6462e0453a334332ee=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -855,7 +869,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #BEAE92">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #020001"><header><h3>
               <span class="avatar">
@@ -865,7 +879,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-07-31 16:28:16 +0000">July 31, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048" srcset="/s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 2x, /s3/ctzn/74654639326aa2c443c41f831e6b5575464b49b5=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -876,7 +890,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: #160417">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #EBF5B7"><header><h3>
               <span class="avatar">
@@ -886,7 +900,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-07-31 16:16:57 +0000">July 31, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048" srcset="/s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 2x, /s3/ctzn/8fbc3a9bd27574e4fc840a1c6fda38ec00316a01=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -897,7 +911,7 @@ of BULLETPROOF™.</p>
 
       <li>
         <div class="background-color" style="background-color: black">
-        <div class="background" style="background-image: url(https://m.ctznapp.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048)"></div>
+        <div class="background" style="background-image: url(/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048)"></div>
         <div class="background-cover"></div></div>
         <article class="post-item" style="color: #FAFCFC"><header><h3>
               <span class="avatar">
@@ -907,7 +921,7 @@ of BULLETPROOF™.</p>
             <p>
               <time datetime="2015-07-31 16:08:06 +0000">July 31, 2015</time></p>
           </header><div class="images n1">
-              <figure><img src="https://m.ctznapp.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048" srcset="https://m.ctznapp.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 2x, https://m.ctznapp.com/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 1x" alt="Uploaded image 1"></figure>
+              <figure><img src="/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048" srcset="/s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 2x, /s3/ctzn/daace8ee46cf3c65ac183725cb226eba2f57bca6=s2048x2048 1x" alt="Uploaded image 1"></figure>
 </div>
 
           <div class="body">
@@ -919,6 +933,656 @@ of BULLETPROOF™.</p>
     </ol></main><footer class="primary"><h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewbox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></switch></svg></a> app</h2>
     <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
   </footer>
+
+
+<script>
+/*!
+ * Color Thief v2.0
+ * by Lokesh Dhakar - http://www.lokeshdhakar.com
+ *
+ * License
+ * -------
+ * Creative Commons Attribution 2.5 License:
+ * http://creativecommons.org/licenses/by/2.5/
+ *
+ * Thanks
+ * ------
+ * Nick Rabinowitz - For creating quantize.js.
+ * John Schulz - For clean up and optimization. @JFSIII
+ * Nathan Spady - For adding drag and drop support to the demo page.
+ *
+ */
+
+
+/*
+  CanvasImage Class
+  Class that wraps the html image element and canvas.
+  It also simplifies some of the canvas context manipulation
+  with a set of helper functions.
+*/
+var CanvasImage = function (image) {
+    this.canvas  = document.createElement('canvas');
+    this.context = this.canvas.getContext('2d');
+
+    document.body.appendChild(this.canvas);
+
+    this.width  = this.canvas.width  = image.width;
+    this.height = this.canvas.height = image.height;
+
+    this.context.drawImage(image, 0, 0, this.width, this.height);
+};
+
+CanvasImage.prototype.clear = function () {
+    this.context.clearRect(0, 0, this.width, this.height);
+};
+
+CanvasImage.prototype.update = function (imageData) {
+    this.context.putImageData(imageData, 0, 0);
+};
+
+CanvasImage.prototype.getPixelCount = function () {
+    return this.width * this.height;
+};
+
+CanvasImage.prototype.getImageData = function () {
+    return this.context.getImageData(0, 0, this.width, this.height);
+};
+
+CanvasImage.prototype.removeCanvas = function () {
+    this.canvas.parentNode.removeChild(this.canvas);
+};
+
+
+var ColorThief = function () {};
+
+/*
+ * getColor(sourceImage[, quality])
+ * returns {r: num, g: num, b: num}
+ *
+ * Use the median cut algorithm provided by quantize.js to cluster similar
+ * colors and return the base color from the largest cluster.
+ *
+ * Quality is an optional argument. It needs to be an integer. 1 is the highest quality settings.
+ * 10 is the default. There is a trade-off between quality and speed. The bigger the number, the
+ * faster a color will be returned but the greater the likelihood that it will not be the visually
+ * most dominant color.
+ *
+ * */
+ColorThief.prototype.getColor = function(sourceImage, quality) {
+    var palette       = this.getPalette(sourceImage, 5, quality);
+    var dominantColor = palette[0];
+    return dominantColor;
+};
+
+
+/*
+ * getPalette(sourceImage[, colorCount, quality])
+ * returns array[ {r: num, g: num, b: num}, {r: num, g: num, b: num}, ...]
+ *
+ * Use the median cut algorithm provided by quantize.js to cluster similar colors.
+ *
+ * colorCount determines the size of the palette; the number of colors returned. If not set, it
+ * defaults to 10.
+ *
+ * BUGGY: Function does not always return the requested amount of colors. It can be +/- 2.
+ *
+ * quality is an optional argument. It needs to be an integer. 1 is the highest quality settings.
+ * 10 is the default. There is a trade-off between quality and speed. The bigger the number, the
+ * faster the palette generation but the greater the likelihood that colors will be missed.
+ *
+ *
+ */
+ColorThief.prototype.getPalette = function(sourceImage, colorCount, quality) {
+
+    if (typeof colorCount === 'undefined') {
+        colorCount = 10;
+    }
+    if (typeof quality === 'undefined' || quality < 1) {
+        quality = 10;
+    }
+
+    // Create custom CanvasImage object
+    var image      = new CanvasImage(sourceImage);
+    var imageData  = image.getImageData();
+    var pixels     = imageData.data;
+    var pixelCount = image.getPixelCount();
+
+    // Store the RGB values in an array format suitable for quantize function
+    var pixelArray = [];
+    for (var i = 0, offset, r, g, b, a; i < pixelCount; i = i + quality) {
+        offset = i * 4;
+        r = pixels[offset + 0];
+        g = pixels[offset + 1];
+        b = pixels[offset + 2];
+        a = pixels[offset + 3];
+        // If pixel is mostly opaque and not white
+        if (a >= 125) {
+            if (!(r > 250 && g > 250 && b > 250)) {
+                pixelArray.push([r, g, b]);
+            }
+        }
+    }
+
+    // Send array to quantize function which clusters values
+    // using median cut algorithm
+    var cmap    = MMCQ.quantize(pixelArray, colorCount);
+    var palette = cmap? cmap.palette() : null;
+
+    // Clean up
+    image.removeCanvas();
+
+    return palette;
+};
+
+
+
+
+/*!
+ * quantize.js Copyright 2008 Nick Rabinowitz.
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
+
+// fill out a couple protovis dependencies
+/*!
+ * Block below copied from Protovis: http://mbostock.github.com/protovis/
+ * Copyright 2010 Stanford Visualization Group
+ * Licensed under the BSD License: http://www.opensource.org/licenses/bsd-license.php
+ */
+if (!pv) {
+    var pv = {
+        map: function(array, f) {
+          var o = {};
+          return f ? array.map(function(d, i) { o.index = i; return f.call(o, d); }) : array.slice();
+        },
+        naturalOrder: function(a, b) {
+            return (a < b) ? -1 : ((a > b) ? 1 : 0);
+        },
+        sum: function(array, f) {
+          var o = {};
+          return array.reduce(f ? function(p, d, i) { o.index = i; return p + f.call(o, d); } : function(p, d) { return p + d; }, 0);
+        },
+        max: function(array, f) {
+          return Math.max.apply(null, f ? pv.map(array, f) : array);
+        }
+    };
+}
+
+
+
+/**
+ * Basic Javascript port of the MMCQ (modified median cut quantization)
+ * algorithm from the Leptonica library (http://www.leptonica.com/).
+ * Returns a color map you can use to map original pixels to the reduced
+ * palette. Still a work in progress.
+ *
+ * @author Nick Rabinowitz
+ * @example
+
+// array of pixels as [R,G,B] arrays
+var myPixels = [[190,197,190], [202,204,200], [207,214,210], [211,214,211], [205,207,207]
+                // etc
+                ];
+var maxColors = 4;
+
+var cmap = MMCQ.quantize(myPixels, maxColors);
+var newPalette = cmap.palette();
+var newPixels = myPixels.map(function(p) {
+    return cmap.map(p);
+});
+
+ */
+var MMCQ = (function() {
+    // private constants
+    var sigbits = 5,
+        rshift = 8 - sigbits,
+        maxIterations = 1000,
+        fractByPopulations = 0.75;
+
+    // get reduced-space color index for a pixel
+    function getColorIndex(r, g, b) {
+        return (r << (2 * sigbits)) + (g << sigbits) + b;
+    }
+
+    // Simple priority queue
+    function PQueue(comparator) {
+        var contents = [],
+            sorted = false;
+
+        function sort() {
+            contents.sort(comparator);
+            sorted = true;
+        }
+
+        return {
+            push: function(o) {
+                contents.push(o);
+                sorted = false;
+            },
+            peek: function(index) {
+                if (!sorted) sort();
+                if (index===undefined) index = contents.length - 1;
+                return contents[index];
+            },
+            pop: function() {
+                if (!sorted) sort();
+                return contents.pop();
+            },
+            size: function() {
+                return contents.length;
+            },
+            map: function(f) {
+                return contents.map(f);
+            },
+            debug: function() {
+                if (!sorted) sort();
+                return contents;
+            }
+        };
+    }
+
+    // 3d color space box
+    function VBox(r1, r2, g1, g2, b1, b2, histo) {
+        var vbox = this;
+        vbox.r1 = r1;
+        vbox.r2 = r2;
+        vbox.g1 = g1;
+        vbox.g2 = g2;
+        vbox.b1 = b1;
+        vbox.b2 = b2;
+        vbox.histo = histo;
+    }
+    VBox.prototype = {
+        volume: function(force) {
+            var vbox = this;
+            if (!vbox._volume || force) {
+                vbox._volume = ((vbox.r2 - vbox.r1 + 1) * (vbox.g2 - vbox.g1 + 1) * (vbox.b2 - vbox.b1 + 1));
+            }
+            return vbox._volume;
+        },
+        count: function(force) {
+            var vbox = this,
+                histo = vbox.histo;
+            if (!vbox._count_set || force) {
+                var npix = 0,
+                    i, j, k;
+                for (i = vbox.r1; i <= vbox.r2; i++) {
+                    for (j = vbox.g1; j <= vbox.g2; j++) {
+                        for (k = vbox.b1; k <= vbox.b2; k++) {
+                             index = getColorIndex(i,j,k);
+                             npix += (histo[index] || 0);
+                        }
+                    }
+                }
+                vbox._count = npix;
+                vbox._count_set = true;
+            }
+            return vbox._count;
+        },
+        copy: function() {
+            var vbox = this;
+            return new VBox(vbox.r1, vbox.r2, vbox.g1, vbox.g2, vbox.b1, vbox.b2, vbox.histo);
+        },
+        avg: function(force) {
+            var vbox = this,
+                histo = vbox.histo;
+            if (!vbox._avg || force) {
+                var ntot = 0,
+                    mult = 1 << (8 - sigbits),
+                    rsum = 0,
+                    gsum = 0,
+                    bsum = 0,
+                    hval,
+                    i, j, k, histoindex;
+                for (i = vbox.r1; i <= vbox.r2; i++) {
+                    for (j = vbox.g1; j <= vbox.g2; j++) {
+                        for (k = vbox.b1; k <= vbox.b2; k++) {
+                             histoindex = getColorIndex(i,j,k);
+                             hval = histo[histoindex] || 0;
+                             ntot += hval;
+                             rsum += (hval * (i + 0.5) * mult);
+                             gsum += (hval * (j + 0.5) * mult);
+                             bsum += (hval * (k + 0.5) * mult);
+                        }
+                    }
+                }
+                if (ntot) {
+                    vbox._avg = [~~(rsum/ntot), ~~(gsum/ntot), ~~(bsum/ntot)];
+                } else {
+//                    console.log('empty box');
+                    vbox._avg = [
+                        ~~(mult * (vbox.r1 + vbox.r2 + 1) / 2),
+                        ~~(mult * (vbox.g1 + vbox.g2 + 1) / 2),
+                        ~~(mult * (vbox.b1 + vbox.b2 + 1) / 2)
+                    ];
+                }
+            }
+            return vbox._avg;
+        },
+        contains: function(pixel) {
+            var vbox = this,
+                rval = pixel[0] >> rshift;
+                gval = pixel[1] >> rshift;
+                bval = pixel[2] >> rshift;
+            return (rval >= vbox.r1 && rval <= vbox.r2 &&
+                    gval >= vbox.g1 && gval <= vbox.g2 &&
+                    bval >= vbox.b1 && bval <= vbox.b2);
+        }
+    };
+
+    // Color map
+    function CMap() {
+        this.vboxes = new PQueue(function(a,b) {
+            return pv.naturalOrder(
+                a.vbox.count()*a.vbox.volume(),
+                b.vbox.count()*b.vbox.volume()
+            );
+        });
+    }
+    CMap.prototype = {
+        push: function(vbox) {
+            this.vboxes.push({
+                vbox: vbox,
+                color: vbox.avg()
+            });
+        },
+        palette: function() {
+            return this.vboxes.map(function(vb) { return vb.color; });
+        },
+        size: function() {
+            return this.vboxes.size();
+        },
+        map: function(color) {
+            var vboxes = this.vboxes;
+            for (var i=0; i<vboxes.size(); i++) {
+                if (vboxes.peek(i).vbox.contains(color)) {
+                    return vboxes.peek(i).color;
+                }
+            }
+            return this.nearest(color);
+        },
+        nearest: function(color) {
+            var vboxes = this.vboxes,
+                d1, d2, pColor;
+            for (var i=0; i<vboxes.size(); i++) {
+                d2 = Math.sqrt(
+                    Math.pow(color[0] - vboxes.peek(i).color[0], 2) +
+                    Math.pow(color[1] - vboxes.peek(i).color[1], 2) +
+                    Math.pow(color[2] - vboxes.peek(i).color[2], 2)
+                );
+                if (d2 < d1 || d1 === undefined) {
+                    d1 = d2;
+                    pColor = vboxes.peek(i).color;
+                }
+            }
+            return pColor;
+        },
+        forcebw: function() {
+            // XXX: won't  work yet
+            var vboxes = this.vboxes;
+            vboxes.sort(function(a,b) { return pv.naturalOrder(pv.sum(a.color), pv.sum(b.color));});
+
+            // force darkest color to black if everything < 5
+            var lowest = vboxes[0].color;
+            if (lowest[0] < 5 && lowest[1] < 5 && lowest[2] < 5)
+                vboxes[0].color = [0,0,0];
+
+            // force lightest color to white if everything > 251
+            var idx = vboxes.length-1,
+                highest = vboxes[idx].color;
+            if (highest[0] > 251 && highest[1] > 251 && highest[2] > 251)
+                vboxes[idx].color = [255,255,255];
+        }
+    };
+
+    // histo (1-d array, giving the number of pixels in
+    // each quantized region of color space), or null on error
+    function getHisto(pixels) {
+        var histosize = 1 << (3 * sigbits),
+            histo = new Array(histosize),
+            index, rval, gval, bval;
+        pixels.forEach(function(pixel) {
+            rval = pixel[0] >> rshift;
+            gval = pixel[1] >> rshift;
+            bval = pixel[2] >> rshift;
+            index = getColorIndex(rval, gval, bval);
+            histo[index] = (histo[index] || 0) + 1;
+        });
+        return histo;
+    }
+
+    function vboxFromPixels(pixels, histo) {
+        var rmin=1000000, rmax=0,
+            gmin=1000000, gmax=0,
+            bmin=1000000, bmax=0,
+            rval, gval, bval;
+        // find min/max
+        pixels.forEach(function(pixel) {
+            rval = pixel[0] >> rshift;
+            gval = pixel[1] >> rshift;
+            bval = pixel[2] >> rshift;
+            if (rval < rmin) rmin = rval;
+            else if (rval > rmax) rmax = rval;
+            if (gval < gmin) gmin = gval;
+            else if (gval > gmax) gmax = gval;
+            if (bval < bmin) bmin = bval;
+            else if (bval > bmax)  bmax = bval;
+        });
+        return new VBox(rmin, rmax, gmin, gmax, bmin, bmax, histo);
+    }
+
+    function medianCutApply(histo, vbox) {
+        if (!vbox.count()) return;
+
+        var rw = vbox.r2 - vbox.r1 + 1,
+            gw = vbox.g2 - vbox.g1 + 1,
+            bw = vbox.b2 - vbox.b1 + 1,
+            maxw = pv.max([rw, gw, bw]);
+        // only one pixel, no split
+        if (vbox.count() == 1) {
+            return [vbox.copy()];
+        }
+        /* Find the partial sum arrays along the selected axis. */
+        var total = 0,
+            partialsum = [],
+            lookaheadsum = [],
+            i, j, k, sum, index;
+        if (maxw == rw) {
+            for (i = vbox.r1; i <= vbox.r2; i++) {
+                sum = 0;
+                for (j = vbox.g1; j <= vbox.g2; j++) {
+                    for (k = vbox.b1; k <= vbox.b2; k++) {
+                        index = getColorIndex(i,j,k);
+                        sum += (histo[index] || 0);
+                    }
+                }
+                total += sum;
+                partialsum[i] = total;
+            }
+        }
+        else if (maxw == gw) {
+            for (i = vbox.g1; i <= vbox.g2; i++) {
+                sum = 0;
+                for (j = vbox.r1; j <= vbox.r2; j++) {
+                    for (k = vbox.b1; k <= vbox.b2; k++) {
+                        index = getColorIndex(j,i,k);
+                        sum += (histo[index] || 0);
+                    }
+                }
+                total += sum;
+                partialsum[i] = total;
+            }
+        }
+        else {  /* maxw == bw */
+            for (i = vbox.b1; i <= vbox.b2; i++) {
+                sum = 0;
+                for (j = vbox.r1; j <= vbox.r2; j++) {
+                    for (k = vbox.g1; k <= vbox.g2; k++) {
+                        index = getColorIndex(j,k,i);
+                        sum += (histo[index] || 0);
+                    }
+                }
+                total += sum;
+                partialsum[i] = total;
+            }
+        }
+        partialsum.forEach(function(d,i) {
+            lookaheadsum[i] = total-d;
+        });
+        function doCut(color) {
+            var dim1 = color + '1',
+                dim2 = color + '2',
+                left, right, vbox1, vbox2, d2, count2=0;
+            for (i = vbox[dim1]; i <= vbox[dim2]; i++) {
+                if (partialsum[i] > total / 2) {
+                    vbox1 = vbox.copy();
+                    vbox2 = vbox.copy();
+                    left = i - vbox[dim1];
+                    right = vbox[dim2] - i;
+                    if (left <= right)
+                        d2 = Math.min(vbox[dim2] - 1, ~~(i + right / 2));
+                    else d2 = Math.max(vbox[dim1], ~~(i - 1 - left / 2));
+                    // avoid 0-count boxes
+                    while (!partialsum[d2]) d2++;
+                    count2 = lookaheadsum[d2];
+                    while (!count2 && partialsum[d2-1]) count2 = lookaheadsum[--d2];
+                    // set dimensions
+                    vbox1[dim2] = d2;
+                    vbox2[dim1] = vbox1[dim2] + 1;
+//                    console.log('vbox counts:', vbox.count(), vbox1.count(), vbox2.count());
+                    return [vbox1, vbox2];
+                }
+            }
+
+        }
+        // determine the cut planes
+        return maxw == rw ? doCut('r') :
+            maxw == gw ? doCut('g') :
+            doCut('b');
+    }
+
+    function quantize(pixels, maxcolors) {
+        // short-circuit
+        if (!pixels.length || maxcolors < 2 || maxcolors > 256) {
+//            console.log('wrong number of maxcolors');
+            return false;
+        }
+
+        // XXX: check color content and convert to grayscale if insufficient
+
+        var histo = getHisto(pixels),
+            histosize = 1 << (3 * sigbits);
+
+        // check that we aren't below maxcolors already
+        var nColors = 0;
+        histo.forEach(function() { nColors++; });
+        if (nColors <= maxcolors) {
+            // XXX: generate the new colors from the histo and return
+        }
+
+        // get the beginning vbox from the colors
+        var vbox = vboxFromPixels(pixels, histo),
+            pq = new PQueue(function(a,b) { return pv.naturalOrder(a.count(), b.count()); });
+        pq.push(vbox);
+
+        // inner function to do the iteration
+        function iter(lh, target) {
+            var ncolors = 1,
+                niters = 0,
+                vbox;
+            while (niters < maxIterations) {
+                vbox = lh.pop();
+                if (!vbox.count())  { /* just put it back */
+                    lh.push(vbox);
+                    niters++;
+                    continue;
+                }
+                // do the cut
+                var vboxes = medianCutApply(histo, vbox),
+                    vbox1 = vboxes[0],
+                    vbox2 = vboxes[1];
+
+                if (!vbox1) {
+//                    console.log("vbox1 not defined; shouldn't happen!");
+                    return;
+                }
+                lh.push(vbox1);
+                if (vbox2) {  /* vbox2 can be null */
+                    lh.push(vbox2);
+                    ncolors++;
+                }
+                if (ncolors >= target) return;
+                if (niters++ > maxIterations) {
+//                    console.log("infinite loop; perhaps too few pixels!");
+                    return;
+                }
+            }
+        }
+
+        // first set of colors, sorted by population
+        iter(pq, fractByPopulations * maxcolors);
+
+        // Re-sort by the product of pixel occupancy times the size in color space.
+        var pq2 = new PQueue(function(a,b) {
+            return pv.naturalOrder(a.count()*a.volume(), b.count()*b.volume());
+        });
+        while (pq.size()) {
+            pq2.push(pq.pop());
+        }
+
+        // next set - generate the median cuts using the (npix * vol) sorting.
+        iter(pq2, maxcolors - pq2.size());
+
+        // calculate the actual colors
+        var cmap = new CMap();
+        while (pq2.size()) {
+            cmap.push(pq2.pop());
+        }
+
+        return cmap;
+    }
+
+    return {
+        quantize: quantize
+    };
+})();
+
+</script>
+
+<script>
+(function() {
+  if (ColorThief) {
+    var colorThief = new ColorThief();
+
+    var items = document.querySelectorAll('li');
+
+    for (var index = 0; index < items.length; index++) {
+      (function() {
+
+      var background = items[index].querySelector('.background-color');
+      var article = items[index].querySelector('article');
+      var image = items[index].querySelector('figure img');
+      var header = items[index].querySelector('header');
+      if (background && article && header && image) {
+        image.addEventListener('load', function() {
+
+        console.log('index: ' ) + index;
+        var colors = colorThief.getPalette(image, 8);
+        console.dir(colors);
+        background.setAttribute('style', 'background-color: rgb(' + colors[0][0] + ', ' + colors[0][1] + ', ' + colors[0][2] + ')');
+        console.log(background.style.backgroundColor);
+        article.setAttribute('style', 'color: rgb(' + colors[1][0] + ', ' + colors[1][1] + ', ' + colors[1][2] + ')');
+        console.log(article.style.backgroundColor);
+        header.setAttribute('style', 'color: rgb(' + colors[5][0] + ', ' + colors[5][1] + ', ' + colors[5][2] + ')');
+
+        });
+      }
+
+      })();
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
 
