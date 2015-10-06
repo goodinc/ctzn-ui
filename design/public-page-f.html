@@ -96,7 +96,8 @@
       font-size: 1rem;
     }
     .post-list {
-      padding-top: 0.625em;
+      background-color: rgb(246, 246, 246); /* @casper */
+      padding: 0.625em;
     }
     .post-list > li {
       position: relative;
@@ -106,6 +107,7 @@
     }
     .push-card .post-list .post-item {
       padding-bottom: 0;
+      border-radius: 0.25em;
       box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
     }
     .push-card .post-list .post-item header {
@@ -120,6 +122,10 @@
     }
     .push-card .post-list .post-item .images figure + figure {
       border-top: 0.0625em solid black;
+    }
+    .push-card .post-list .post-item .images img {
+      border-top-left-radius: 0.25em;
+      border-top-right-radius: 0.25em;
     }
     .push-card .post-list .post-item .body {
       color: white;
@@ -195,6 +201,7 @@
     .post-list > li .background-color {
       background-color: black;
       background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 0.25em;
     }
     .push-card .post-list .post-item {
       background: transparent;
