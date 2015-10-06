@@ -140,6 +140,7 @@
 
   /* =Note
   ----------------------------------------------- */
+  .option-list button .note, /* For the settings page */
   .option-list > p.note, /* For the “invite curator” form */
   .signup.page .note,
   form .note {
@@ -1417,21 +1418,26 @@
     text-align: left;
     color: rgb(5, 5, 5); /* @tungsten */
   }
+  .connect.option-list button:disabled {
+    opacity: 1;
+    cursor: default;
+  }
+  .connect.option-list button:disabled:hover {
+    background: white;
+  }
   .tags.option-list button {
     padding-right: 3em;
   }
      .tags.option-list li .icon:last-child,
   .connect.option-list li .icon:last-child,
-  .connect.option-list button .icon:last-of-type:not(:first-of-type),
-  .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
+  .connect.option-list button .icon:last-of-type:not(:first-of-type) {
     margin-top: -0.75em;
     position: absolute;
     top: 1.375em !important;
     right: 0.75em;
     color: rgb(204, 204, 204); /* @aluminum */
   }
-  .connect.option-list button .icon:last-of-type:not(:first-of-type),
-  .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
+  .connect.option-list button .icon:last-of-type:not(:first-of-type) {
     color: rgb(102, 204, 0); /* @pear */
   }
 
@@ -5129,22 +5135,10 @@
   }
 
 
-  /* Deprecated (consider using an input checkbox instead) */
-  .option-list a[role="checkbox"] {
-    background-image: none;
-  }
-  .connect.option-list button,
-  .option-list a[role="checkbox"][aria-checked="false"] {
+  .connect.option-list button {
     color: rgb(153, 153, 153); /* @nickel */
   }
-  .option-list a[role="checkbox"][aria-checked="false"] {
-    background-image: none;
-  }
-  .option-list a[role="checkbox"][aria-checked="false"] .icon {
-    color: inherit;
-  }
-  .connect.option-list .active button,
-  .option-list a[role="checkbox"][aria-checked="true"] {
+  .connect.option-list .active button {
     color: rgb(5, 5, 5); /* @tungsten */
   }
 
