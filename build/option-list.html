@@ -753,12 +753,45 @@
 &lt;/main&gt;
 </code></pre>
 
-  <h2>Option List with Logos</h2>
+
+  <h2>Push Colors</h2>
+
+  <div class="switch">
+    <ul>
+      <li>
+        <a href="push.html" class="push-card lime">
+          <span class="name">Artizen Labs</span>
+        </a>
+      </li>
+      <li>
+        <a href="push.html" class="push-card cucumber">
+          <span class="name">Crafting Stories</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <pre><code>&lt;div class=&quot;<mark>switch</mark>&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;…&quot; class=&quot;<mark>push-card</mark> lime&quot;&gt;
+        &lt;span class=&quot;name&quot;&gt;Artizen Labs&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;…&quot; class=&quot;push-card cucumber&quot;&gt;
+        &lt;span class=&quot;name&quot;&gt;Crafting Stories&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+  <h2>Logos</h2>
 
   <main class="ready page">
 
     <div>
-      <h1>You’re Ready to Use&nbsp;CTZN</h1>
       <ul>
         <li>
           <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
@@ -824,6 +857,75 @@
   …
 &lt;/main&gt;
 </code></pre>
+
+  <h2>Dialog</h2>
+  <p>TRICKY: Add a class name of “active” to make the dialog transition in.</p>
+
+  <div class="post-options active">
+    <div>
+      <ul>
+        <li>
+          <form action="" method="post">
+            <button type="submit">
+              Option A
+            </button>
+          </form>
+        </li>
+        <li>
+          <form action="" method="post">
+            <button type="submit">
+              Option B
+            </button>
+          </form>
+        </li>
+        <li class="warning">
+          <form action="" method="post">
+            <button type="submit">
+              Destructive Option
+            </button>
+          </form>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <button type="button">
+            Cancel
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <pre><code>&lt;div class=&quot;<mark>post-options</mark> <mark>active</mark>&quot;&gt;
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;form action=&quot;…&quot; method=&quot;post&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;
+              Option A
+            &lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/li&gt;
+        …
+        &lt;li class=&quot;<mark>warning</mark>&quot;&gt;
+          &lt;form action=&quot;…&quot; method=&quot;post&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;
+              Destructive Option
+            &lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;button type=&quot;button&quot;&gt;
+            Cancel
+          &lt;/button&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  </code></pre>
+
 
   <h2>Examples</h2>
 
