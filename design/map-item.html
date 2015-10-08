@@ -45,7 +45,12 @@
       text-decoration: none;
     }
 
-    /* */
+    /* SHIM: (Remove space above the list) */
+    ul.results {
+      margin-top: 0;
+    }
+
+    /* TEMPORARY: (for this particular prototype) */
     ul.results a.station h2,
     ul.results a.station p {
       font-family: inherit;
@@ -62,11 +67,11 @@
 </head>
 
 <body class="index">
-  <div id="container">
     <header>
       <p class="back"><a href="">← Back to Map </a></p>
       <p class="count">4 Stations </p>
     </header>
+  <div id="container">
     <ul class="results opportunities">
       <li>
         <div class="data">
