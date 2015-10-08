@@ -59,8 +59,14 @@
     ul.results a.station,
     ul.results a.location {
       display: block;
-      padding: 23px 72px 21px 128px;
+      padding: 23px 72px 21px 10px;
       position: relative;
+    }
+    @media (min-width: 560px) {
+      ul.results a.station,
+      ul.results a.location {
+        padding-left: 128px;
+      }
     }
     ul.results a.location {
       padding-top: 0;
