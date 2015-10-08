@@ -44,10 +44,73 @@
     ul.results a {
       text-decoration: none;
     }
+    ul.results a.station:hover  h2,
+    ul.results a.station:active h2,
+    ul.results a.station:focus  h2 {
+      text-decoration: underline;
+    }
+    ul.results a.location:hover,
+    ul.results a.location:active,
+    ul.results a.location:focus {
+      text-decoration: underline;
+    }
 
-    /* SHIM: (Remove space above the list) */
+    /* Make the entire item clickable */
+    ul.results a.station,
+    ul.results a.location {
+      display: block;
+      padding: 23px 72px 21px 128px;
+      position: relative;
+    }
+    ul.results a.location {
+      padding-top: 0;
+    }
+    ul.results a.station {
+      padding-bottom: 0;
+      position: relative;
+    }
+    ul.results a.station:after {
+      background-image: url("../images/icons-sd0b1e58e76.png");
+
+      /* SHIM (for prototype) */
+      background-image: url("http://assets.goodstatic.com/s3/magazine/updatable/usdac/images/icons-sd0b1e58e76.png");
+
+      background-position: 15px -84px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      height: 17px;
+      width: 19px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      content: '';
+      background-color: rgb(255, 213, 12);
+      width: 0;
+      height: 0;
+      padding: 24px;
+      position: absolute;
+      top: 23px;
+      right: 12px;
+    }
+    ul.results a.station:hover:after,
+    ul.results a.station:active:after,
+    ul.results a.station:focus:after {
+      background-color: rgb(240, 242, 242);
+    }
+
+    /* SHIM: (Reset styles) */
+    ul.results.opportunities li {
+      padding: 0;
+      display: block;
+    }
+    ul.results li:after {
+      content: none;
+    }
     ul.results {
       margin-top: 0;
+    }
+    ul.results li:hover {
+      background-color: transparent;
     }
 
     /* TEMPORARY: (for this particular prototype) */
@@ -74,52 +137,44 @@
   <div id="container">
     <ul class="results opportunities">
       <li>
-        <div class="data">
-          <a class="station" data-num-visions="1" data-url="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" href="#">
-            <h2>Chapman CAST #DareToImagine</h2>
-            <p>At our Imagination Station you can take part in an array of creative activities, make new connections, and make your voice heard.</p>
-          </a>
-          <a href="" class="location">
-            <h3>Orange</h3>
-            <p>Sunday, November 01, 2015, 12:00 p.m.</p>
-          </a>
-        </p>
+        <a class="station" data-num-visions="1" data-url="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" href="#">
+          <h2>Chapman CAST #DareToImagine</h2>
+          <p>At our Imagination Station you can take part in an array of creative activities, make new connections, and make your voice heard.</p>
+        </a>
+        <a href="" class="location">
+          <h3>Orange</h3>
+          <p>Sunday, November 01, 2015, 12:00 p.m.</p>
+        </a>
       </li>
       <li>
-        <div class="data">
-          <a class="station" data-num-visions="1" data-url="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" href="#">
-            <h2>Music Flash Mob At Chase Plaza</h2>
-            <p>At our Imagination Station you can take part in an array of creative activities, make new connections, and make your voice heard.</p>
-          </a>
-          <a href="" class="location">
-            <h3>Stockton</h3>
-            <p>Sunday, November 01, 2015, 12:00 p.m.</p>
-          </a>
-        </p>
+        <a class="station" data-num-visions="1" data-url="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" href="#">
+          <h2>Music Flash Mob At Chase Plaza</h2>
+          <p>At our Imagination Station you can take part in an array of creative activities, make new connections, and make your voice heard.</p>
+        </a>
+        <a href="" class="location">
+          <h3>Stockton</h3>
+          <p>Sunday, November 01, 2015, 12:00 p.m.</p>
+        </a>
       </li>
       <li>
-        <div class="data">
-          <a class="station" data-num-visions="1" data-url="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&amp;q=user:trevordavis&amp;t=Imagine L.A." href="#">
-            <h2></h2>
-            <p>We will host lightning talks from visionary leaders, highlight youth voices and creativity, and feature interactive art at our Imagination Station, where you can take part in an array of creative activities, make new connections, and make your voice heard.</p>
-          </a>
-          <a href="" class="location">
-            <h3>Los Angeles</h3>
-            <p>Sunday, November 01, 2015, 12:00 p.m.</p>
-          </a>
-        </p>
+        <a class="station" data-num-visions="1" data-url="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&amp;q=user:trevordavis&amp;t=Imagine L.A." href="#">
+          <h2>Imagine LA</h2>
+          <p>We will host lightning talks from visionary leaders, highlight youth voices and creativity, and feature interactive art at our Imagination Station, where you can take part in an array of creative activities, make new connections, and make your voice heard.</p>
+        </a>
+        <a href="" class="location">
+          <h3>Los Angeles</h3>
+          <p>Sunday, November 01, 2015, 12:00 p.m.</p>
+        </a>
       </li>
       <li>
-        <div class="data">
-          <a class="station" data-num-visions="1" data-url="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" href="#">
-            <h2>Neighborhood Vision Romp</h2>
-            <p>Join us as we exercise our social imagination—envisioning the neighborhood we wish to inhabit, sharing those visions with the world, and sparking next steps to bring that future into being. At our Imagination Station you can take part in an array of creative activities, make new connections, and help create a vision for our neighborhood's future. &nbsp;Music, art supplies, and <g>hooplah</g> provided! &nbsp;The station will run from 4 - 6 pm and be followed by a "Neighbors Night Out" potluck dinner from 5 - 7. &nbsp; Come create, generate and activate!</p>
-          </a>
-          <a href="" class="location">
-            <h3>Davis</h3>
-            <p>Sunday, November 01, 2015, 12:00 p.m.</p>
-          </a>
-        </p>
+        <a class="station" data-num-visions="1" data-url="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1" href="#">
+          <h2>Neighborhood Vision Romp</h2>
+          <p>Join us as we exercise our social imagination—envisioning the neighborhood we wish to inhabit, sharing those visions with the world, and sparking next steps to bring that future into being. At our Imagination Station you can take part in an array of creative activities, make new connections, and help create a vision for our neighborhood's future. &nbsp;Music, art supplies, and <g>hooplah</g> provided! &nbsp;The station will run from 4 - 6 pm and be followed by a "Neighbors Night Out" potluck dinner from 5 - 7. &nbsp; Come create, generate and activate!</p>
+        </a>
+        <a href="" class="location">
+          <h3>Davis</h3>
+          <p>Sunday, November 01, 2015, 12:00 p.m.</p>
+        </a>
       </li>
     </ul>
   </div>
