@@ -1141,9 +1141,6 @@
   The “inactive” classname is added by JavaScript
   (so that only one image or text element will be shown at a time).
   ----------------------------------------------- */
-  .autoplaying .push-channel article .pictures figure {
-    position: absolute;
-  }
   /*
   .push-channel article .pictures figure,
   .push-channel .body {
