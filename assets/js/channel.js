@@ -623,7 +623,9 @@ var fullscreenActive;
     function next() {
       if (timer) window.clearTimeout(timer);
 
-      var duration = 3;
+      var currentData = getPushData(currentItem);
+      var duration = (currentData.type === 'push' || currentData.type === 'ctzn') ? 1.5 : 3;
+
       var nextStep = nextPage;
 
       var article = currentItem.querySelector('article');
