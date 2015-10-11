@@ -1163,6 +1163,7 @@
   .push-channel article .pictures figure.inactive {
     opacity: 0;
   }
+  /*
   .push-channel .item.transition {
     transition: opacity 0.2s;
   }
@@ -1172,4 +1173,5 @@
   .push-channel article .pictures figure.transition {
     transition: opacity 0.2s;
   }
+  */
 

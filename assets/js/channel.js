@@ -253,9 +253,10 @@ var fullscreenActive;
     function updatePage(instant) {
       var items = document.querySelectorAll('main .list .item');
 
-      currentItem.style.zIndex = 0;
+      /*
+      //currentItem.style.zIndex = 0;
       if (lastItem) {
-        lastItem.style.zIndex = 1;
+        //lastItem.style.zIndex = 1;
         if (!instant) addClassName(lastItem, 'transition');
         if (lastItem.querySelectorAll('figure').length < 1) {
           if (!instant) addClassName(currentItem, 'transition');
@@ -266,8 +267,9 @@ var fullscreenActive;
       } else {
         removeClassName(currentItem, 'transition');
       }
+      */
 
-      //if (lastItem) addClassName(lastItem, 'inactive');
+      if (lastItem) addClassName(lastItem, 'inactive');
       removeClassName(currentItem, 'inactive');
 
       textShowing = false;
@@ -659,7 +661,7 @@ var fullscreenActive;
         // If the current image has finished loading
         if (images[currentImage] && imageLoaded(images[currentImage]) !== false) {
           if (text) {
-            addClassName(text, 'transition');
+            //addClassName(text, 'transition');
             addClassName(text, 'inactive');
           }
           textShowing = false;
@@ -679,7 +681,7 @@ var fullscreenActive;
         }
 
         if (lastImage && lastImage !== currentImage) addClassName(images[lastImage], 'inactive');
-        addClassName(images[currentImage], 'transition');
+        //addClassName(images[currentImage], 'transition');
         removeClassName(images[currentImage], 'inactive');
 
         var animationDuration = duration;
