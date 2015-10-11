@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../assets/css/channel.css" />
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+  <!-- OPTIONAL: Attempt to use simple emoji (since we’re positioning the text above a background image or color). -->
+  <style>
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* SHIM: Add the same font files with bold weight, so the browser won’t render “faux bold” emoji characters. */
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    /* This is our usual font stack with an emoji font at the end
+      (so it will catch any characters that aren’t available in the other fonts). */
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Android Emoji";
+    }
+  </style>
+  <!-- /OPTIONAL -->
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
+
+  <style>
+    /* If the image is taller than the viewport */
+    @media (min-aspect-ratio: 4/3) { 
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] {
+        -webkit-flex-direction: row;
+                flex-direction: row;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] picture {
+        width: 100%;
+        height: auto;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] img {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* If the image is wider than the viewport */
+    @media (max-aspect-ratio: 4/3) {
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] {
+        -webkit-flex-direction: column;
+                flex-direction: column;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] picture {
+        width: auto;
+        height: 100%;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] img {
+        min-width: 0;
+        min-height: 0;
+        width: auto;
+        height: 100%;
+      }
+    }
+  </style>
+
+  <style>
+    @-webkit-keyframes slide-out {
+      from {
+        -webkit-transform: translate(0, 0);
+      }
+      to {
+        -webkit-transform: translate(-100%, 0);
+      }
+    }
+    @-webkit-keyframes text-slide-out {
+      from {
+        -webkit-transform: translate(0, 0);
+      }
+      to {
+        -webkit-transform: translate(-20%, 0);
+      }
+    }
+    @-webkit-keyframes header-slide-out {
+      from {
+        -webkit-transform: translate(0, 0);
+      }
+      to {
+        -webkit-transform: translate(-10%, 0);
+      }
+    }
+    @-webkit-keyframes border-slide-out {
+      from {
+        -webkit-transform: translate(0, 0);
+      }
+      to {
+        -webkit-transform: translate(-5vw, 0);
+      }
+    }
+    @-webkit-keyframes slide-in {
+      from {
+        -webkit-transform: translate(100%, 0);
+      }
+      to {
+        -webkit-transform: translate(0, 0);
+      }
+    }
+    @-webkit-keyframes text-slide-in {
+      from {
+        -webkit-transform: translate(20%, 0);
+      }
+      to {
+        -webkit-transform: translate(0, 0);
+      }
+    }
+    @-webkit-keyframes header-slide-in {
+      from {
+        -webkit-transform: translate(10%, 0);
+      }
+      to {
+        -webkit-transform: translate(0, 0);
+      }
+    }
+    @-webkit-keyframes border-slide-in {
+      from {
+        -webkit-transform: translate(5vw, 0);
+      }
+      to {
+        -webkit-transform: translate(0, 0);
+      }
+    }
+
+    .item {
+      opacity: 1 !important;
+      z-index: 1 !important;
+    }
+    .item.inactive {
+      opacity: 1 !important;
+      z-index: 0 !important;
+    }
+    .item::before {
+      content: "";
+      display: block;
+      border: 5vw solid white;
+      position: absolute;
+      top: -5vw;
+      left: -5vw;
+      bottom: -5vw;
+      right: -5vw;
+      z-index: 9999;
+    }
+
+    .item.transition {
+      -webkit-animation: slide-out 3s ease-in-out both;
+    }
+    .item.inactive.transition {
+      -webkit-animation: slide-in 3s ease-in-out both;
+    }
+    .item.transition .body p {
+      -webkit-animation: text-slide-out 3s ease-in-out both;
+    }
+    .item.inactive.transition .body p {
+      -webkit-animation: text-slide-in 3s ease-in-out both;
+    }
+    .item.transition header {
+      -webkit-animation: header-slide-out 3s ease-in-out both;
+    }
+    .item.inactive.transition header {
+      -webkit-animation: header-slide-in 3s ease-in-out both;
+    }
+    .item.transition::before {
+      -webkit-animation: border-slide-out 3s ease-in-out both;
+    }
+    .item.inactive.transition::before {
+      -webkit-animation: border-slide-in 3s ease-in-out both;
+    }
+
+  </style>
+
+</head>
+<!--
+  .ctzn-title-only
+  .push-title-only
+-->
+<body class="autoplaying">
+
+    <!-- images/icons.svg -->
+  <svg display="none" width="0" height="0">
+    <symbol id="icon-ctzn" viewBox="0 0 100 37.818">
+      <path d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
+        c0-2.292,0.362-4.373,1.086-6.243c0.724-1.87,1.739-3.478,3.046-4.825s2.855-2.382,4.644-3.106c1.789-0.724,3.75-1.086,5.881-1.086
+        c2.573,0,4.735,0.432,6.484,1.297c1.749,0.864,3.026,1.759,3.83,2.684l-4.765,7.057c-0.523-0.603-1.136-1.096-1.84-1.478
+        c-0.704-0.382-1.518-0.573-2.443-0.573c-1.528,0-2.825,0.543-3.89,1.629c-1.066,1.086-1.598,2.634-1.598,4.644
+        c0,2.01,0.533,3.569,1.598,4.674c1.066,1.106,2.362,1.659,3.89,1.659c0.925,0,1.739-0.201,2.443-0.603
+        c0.704-0.402,1.317-0.905,1.84-1.508l4.765,7.117c-0.804,0.925-2.081,1.819-3.83,2.684c-1.749,0.864-3.91,1.297-6.484,1.297
+        C12.525,37.818,10.565,37.446,8.776,36.702z"/>
+      <path d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
+        v8.806h-4.584v9.59c0,0.764,0.161,1.367,0.482,1.809s0.784,0.663,1.387,0.663c0.362,0,0.714-0.05,1.056-0.151
+        c0.342-0.101,0.573-0.231,0.694-0.392l1.689,7.962c-0.563,0.442-1.397,0.814-2.503,1.116c-1.106,0.302-2.423,0.452-3.951,0.452
+        C35.344,37.818,33.052,37.084,31.604,35.616z"/>
+      <path d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"/>
+      <path d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
+        s-1.759,0.282-2.383,0.844c-0.623,0.563-1.116,1.126-1.478,1.689v18.336H72.798V7.962h10.133v3.378
+        c0.724-1.005,1.86-1.94,3.408-2.805c1.548-0.865,3.327-1.297,5.338-1.297c2.935,0,5.056,0.774,6.363,2.322
+        c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"/>
+    </symbol>
+    <symbol id="icon-left" viewBox="0 0 20 20">
+      <path d="M14.452 16.023l-6.023-6.023 6.023-6.023-1.832-1.832-7.856 7.856 7.856 7.856z"></path>
+    </symbol>
+    <symbol id="icon-right" viewBox="0 0 20 20">
+      <path d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path>
+    </symbol>
+    <symbol id="icon-expand" viewBox="0 0 20 20">
+      <path d="M17.9,2.4c-0.1-0.2-0.2-0.3-0.4-0.4C17.5,2,17.4,2,17.3,2h-5.8c-0.4,0-0.7,0.3-0.7,0.7s0.3,0.7,0.7,0.7h4.1
+        L10.9,8c-0.3,0.3-0.3,0.7,0,1c0.1,0.1,0.3,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2l4.6-4.6v4.1c0,0.4,0.3,0.7,0.7,0.7
+        c0.4,0,0.7-0.3,0.7-0.7V2.7C18,2.6,18,2.5,17.9,2.4z"/>
+      <path d="M9.1,10.9c-0.3-0.3-0.7-0.3-1,0l-4.6,4.6v-4.1c0-0.4-0.3-0.7-0.7-0.7S2,11.1,2,11.5v5.8
+        c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.2,0.3,0.4,0.4C2.5,18,2.6,18,2.7,18h5.8c0.4,0,0.7-0.3,0.7-0.7c0-0.4-0.3-0.7-0.7-0.7H4.5L9.1,12
+        C9.3,11.7,9.3,11.2,9.1,10.9z"/>
+    </symbol>
+    <symbol id="icon-shrink" viewBox="0 0 20 20">
+      <path d="M8.8,10.1C8.7,10,8.6,10,8.5,10H2.7C2.3,10,2,10.3,2,10.7c0,0.4,0.3,0.7,0.7,0.7h4.1L2.2,16
+        c-0.3,0.3-0.3,0.7,0,1c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2l4.6-4.6v4.1c0,0.4,0.3,0.7,0.7,0.7c0.4,0,0.7-0.3,0.7-0.7v-5.8
+        c0-0.1,0-0.2-0.1-0.3C9.1,10.3,9,10.1,8.8,10.1z"/>
+      <path d="M17.3,8.5h-4.1L17.8,4c0.3-0.3,0.3-0.7,0-1c-0.3-0.3-0.7-0.3-1,0l-4.6,4.6V3.5c0-0.4-0.3-0.7-0.7-0.7
+        c-0.4,0-0.7,0.3-0.7,0.7v5.8c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.2,0.3,0.4,0.4c0.1,0,0.2,0.1,0.3,0.1h5.8c0.4,0,0.7-0.3,0.7-0.7
+        C18,8.9,17.7,8.5,17.3,8.5z"/>
+    </symbol>
+  </svg>
+
+  <svg display="none" width="0" height="0">
+    <symbol id="icon-play" viewBox="0 0 20 20">
+      <path d="M10,0.8c-5.1,0-9.2,4.1-9.2,9.2s4.1,9.2,9.2,9.2s9.2-4.1,9.2-9.2S15.1,0.8,10,0.8z M10,17.7
+        c-4.2,0-7.7-3.5-7.7-7.7S5.8,2.3,10,2.3s7.7,3.5,7.7,7.7S14.2,17.7,10,17.7z"/>
+      <polygon points="8.5,13.6 13.2,9.9 8.5,6.6 "/>
+    </symbol>
+  </svg>
+
+  <header class="ctzn">
+    <div>
+      <h2>
+        <!-- TRICKY: Open a new window, since this page is sometimes included in an iframe. -->
+        <a href="http://getctzn.com" target="_blank">
+          <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg>
+        </a>
+      </h2>
+    </div>
+  </header>
+
+  <p class="toggle-fullscreen">
+    <button type="button">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-expand"></use><foreignObject>Fullscreen</foreignObject></switch></svg>
+    </button>
+  </p>
+
+  <main class="strawberry push-channel">
+
+    <header>
+      <div>
+        <h1>
+          <a href="preview-share.html" target="_blank">
+            CommunityServices Unlimited
+          </a>
+        </h1>
+        <div class="details">
+          <p>For more than a decade we’ve worked to establish and maintain a mini urban farm located at the EXPO.</p>
+          <form action="https://m.ctznapp.com/register/push_preview" method="post" target="_blank">
+            <input type="hidden" name="pid" value="9C044CCA"><button type="submit">Join us on CTZN</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <div class="list">
+      <div class="item">
+        <article>
+          <header>
+            <h3>
+              <span class="avatar">
+                <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c100x100" />
+              </span>
+              @<span>benisonchoi</span>
+            </h3>
+            <p><time datetime="2015-06-09T19:43:05.000+00:00">May 22, 2015</time></p>
+          </header>
+          <div class="pictures">
+            <figure data-aspect-ratio="4/3">
+              <picture>
+                <img src="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s2048x2048" alt="Uploaded Image 1" />
+              </picture>
+            </figure>
+          </div>
+          <div class="body">
+            <div>
+              <div>
+                <p><span>Onboarding</span> <span>the</span> <span>interns!</span> <span>Stoked</span> <span>🍜🍲</span></p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="item inactive">
+        <article>
+          <header>
+            <h3>
+              <span class="avatar">
+                <img src="http://m.ctznapp.com/s3/ctzn/33cd6746c1cc42f58bb7e4051333d7e943e48f0c=c60x60" width="30" height="30" alt="">
+              </span>
+              @earlcole
+            </h3>
+            <p>
+              <time datetime="2015-06-21 03:32:51 +0000">June 21, 2015</time>
+            </p>
+          </header>
+          <div class="pictures">
+            <figure data-aspect-ratio="4/3">
+              <picture>
+                <img src="http://assets.goodstatic.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=s2048x2048" alt="Uploaded Image 1" />
+              </picture>
+            </figure>
+          </div>
+          <div class="body">
+            <div>
+              <div>
+                <p>Yes, that is all. #GOODvibes</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </main>
+
+  <nav>
+    <ul>
+      <li class="next">
+        <a href="">
+          <span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <switch><use xlink:href="#icon-right"></use><foreignObject>Next</foreignObject></switch>
+            </svg>
+          </span>
+        </a>
+      </li>
+      <li class="previous">
+        <a href="">
+          <span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <switch><use xlink:href="#icon-left"></use><foreignObject>Previous</foreignObject></switch>
+            </svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div>
+    <p class="toggle-playback">
+      <button type="button">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-play"></use><foreignObject>Play</foreignObject></switch></svg>
+      </button>
+    </p>
+  </div>
+
+  <script>
+  window.addEventListener('load', function() {
+
+    /*
+    var inactive = document.querySelector('.item.inactive');
+    if (inactive) {
+      inactive.classList.remove('inactive');
+    }
+    */
+    var items = document.querySelectorAll('.item');
+    items[0].classList.add('transition');
+    items[1].classList.add('transition');
+
+  }, false);
+  </script>
+
+</body>
+</html>
