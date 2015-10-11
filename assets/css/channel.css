@@ -1163,10 +1163,13 @@
   .push-channel article .pictures figure.inactive {
     opacity: 0;
   }
-  /*
-  .push-channel .body.transition,
-  .push-channel article .pictures figure.transition {
-    transition: opacity 1s;
+  .push-channel .item.transition {
+    transition: opacity 0.2s;
   }
-  */
+  .push-channel .body.transition {
+    transition: opacity 0.4s;
+  }
+  .push-channel article .pictures figure.transition {
+    transition: opacity 0.2s;
+  }
 

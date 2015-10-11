@@ -238,28 +238,27 @@ var fullscreenActive;
       return candidate;
     }
 
-    function nextPage() {
+    function nextPage(instant) {
       lastItem = currentItem;
       currentItem = getNextItem();
-      updatePage();
+      updatePage(instant);
     }
 
-    function previousPage() {
+    function previousPage(instant) {
       lastItem = currentItem;
       currentItem = getPreviousItem();
-      updatePage();
+      updatePage(instant);
     }
 
-    function updatePage() {
+    function updatePage(instant) {
       var items = document.querySelectorAll('main .list .item');
 
-      /*
       currentItem.style.zIndex = 0;
       if (lastItem) {
         lastItem.style.zIndex = 1;
-        addClassName(lastItem, 'transition');
+        if (!instant) addClassName(lastItem, 'transition');
         if (lastItem.querySelectorAll('figure').length < 1) {
-          addClassName(currentItem, 'transition');
+          if (!instant) addClassName(currentItem, 'transition');
         } else {
           removeClassName(currentItem, 'transition');
         }
@@ -267,9 +266,8 @@ var fullscreenActive;
       } else {
         removeClassName(currentItem, 'transition');
       }
-      */
 
-      if (lastItem) addClassName(lastItem, 'inactive');
+      //if (lastItem) addClassName(lastItem, 'inactive');
       removeClassName(currentItem, 'inactive');
 
       textShowing = false;
@@ -661,7 +659,7 @@ var fullscreenActive;
         // If the current image has finished loading
         if (images[currentImage] && imageLoaded(images[currentImage]) !== false) {
           if (text) {
-            //addClassName(text, 'transition');
+            addClassName(text, 'transition');
             addClassName(text, 'inactive');
           }
           textShowing = false;
@@ -681,7 +679,7 @@ var fullscreenActive;
         }
 
         if (lastImage && lastImage !== currentImage) addClassName(images[lastImage], 'inactive');
-        //addClassName(images[currentImage], 'transition');
+        addClassName(images[currentImage], 'transition');
         removeClassName(images[currentImage], 'inactive');
 
         var animationDuration = duration;
@@ -690,6 +688,9 @@ var fullscreenActive;
         if (currentImage === 0 && text && textShowing) {
           animationDuration = textDuration(text) + textImageDuration(text);
         }
+
+        var slideTransitionDelay = 1;
+        animationDuration += slideTransitionDelay;
 
         // If we haven’t already started animating this image
         // (If this is not the first image, or if there isn’t any text, or if the text is showing)
@@ -810,12 +811,13 @@ var fullscreenActive;
       if (e && (e.shiftKey || e.ctrlKey || e.altKey || e.metaKey)) return;
 
       var item = closest(e.target, 'li');
+      var instant = true;
       if (item) {
         if (timer) clearTimeout(timer);
         if (item.className === 'next') {
-          nextPage();
+          nextPage(instant);
         } else {
-          previousPage();
+          previousPage(instant);
         }
 
         e.preventDefault();
