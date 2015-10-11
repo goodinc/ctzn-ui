@@ -253,6 +253,22 @@ var fullscreenActive;
     function updatePage() {
       var items = document.querySelectorAll('main .list .item');
 
+      /*
+      currentItem.style.zIndex = 0;
+      if (lastItem) {
+        lastItem.style.zIndex = 1;
+        addClassName(lastItem, 'transition');
+        if (lastItem.querySelectorAll('figure').length < 1) {
+          addClassName(currentItem, 'transition');
+        } else {
+          removeClassName(currentItem, 'transition');
+        }
+        addClassName(lastItem, 'inactive');
+      } else {
+        removeClassName(currentItem, 'transition');
+      }
+      */
+
       if (lastItem) addClassName(lastItem, 'inactive');
       removeClassName(currentItem, 'inactive');
 
@@ -551,11 +567,11 @@ var fullscreenActive;
       var animation;
       function animate() {
         if (requestAnimationFrame) {
+          rewindTransition(image, backward);
+
+          // TRICKY: Wait one frame before animating (to give “rewindTransition” time to render).
           //animation = requestAnimationFrame(function() {
-            rewindTransition(image, backward);
-            animation = requestAnimationFrame(function() {
-              playTransition(image, forward, duration);
-            });
+            playTransition(image, forward, duration);
           //});
         }
       }
@@ -645,6 +661,7 @@ var fullscreenActive;
         // If the current image has finished loading
         if (images[currentImage] && imageLoaded(images[currentImage]) !== false) {
           if (text) {
+            //addClassName(text, 'transition');
             addClassName(text, 'inactive');
           }
           textShowing = false;
@@ -664,6 +681,7 @@ var fullscreenActive;
         }
 
         if (lastImage && lastImage !== currentImage) addClassName(images[lastImage], 'inactive');
+        //addClassName(images[currentImage], 'transition');
         removeClassName(images[currentImage], 'inactive');
 
         var animationDuration = duration;

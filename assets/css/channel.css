@@ -436,11 +436,8 @@
   }
 
   /* Title screen */
-  .push-title-only .push-channel .list {
-    /* @hide-content */
+  .push-title-only .push-channel .item {
     opacity: 0;
-    position: relative;
-    z-index: -1;
   }
   .push-title-only .push-channel > header {
     font-size: 1.5em;
@@ -1153,17 +1150,23 @@
   The “inactive” classname is added by JavaScript
   (so that only one image or text element will be shown at a time).
   ----------------------------------------------- */
-  /*
-  .push-channel article .pictures figure,
-  .push-channel .body {
-    transition: opacity 0.1s;
+  .push-channel .item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
-  */
   .push-channel .item.inactive {
-    display: none;
+    z-index: -1;
   }
-  .push-channel article .pictures figure.inactive,
-  .push-channel .body.inactive {
+  .push-channel .item.inactive,
+  .push-channel .body.inactive,
+  .push-channel article .pictures figure.inactive {
     opacity: 0;
   }
+  /*
+  .push-channel .body.transition,
+  .push-channel article .pictures figure.transition {
+    transition: opacity 1s;
+  }
+  */
 
