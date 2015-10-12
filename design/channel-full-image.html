@@ -1,0 +1,1437 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype / CTZN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
+
+  <style>
+
+  /*
+    Live Channel styles
+
+    Examples:
+    http://www.ctznapp.com/push/C50609F6/kaboom?channel=1
+    http://www.ctznapp.com/push/0094EAB8/milk-bookies?channel=1
+
+    Sections are grouped under headings with a “=” symbol,
+    to make searching easier.
+
+    When a style is used more than once, it sometimes has a “@keyword”
+    in a comment next to it (to help with search and replace).
+
+    For example…
+
+    16px  @font-size
+    24px  @line-height
+  */
+
+
+    /* =Elements
+    -----------------------------------------------
+    -----------------------------------------------
+    ----------------------------------------------- */
+    html, body {
+      height: 100%;
+    }
+    body {
+      font: 100%/1.5 "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+    }
+
+    /* OPTIONAL: Increase the font size on big screens */
+    @media (min-width: 800px) and (min-height: 800px) { /* @min-font-size (16px) * 100vmin / 2vmin = 16 * 50 = 800 */
+      body {
+        font-size: 2vmin;
+      }
+    }
+
+    a {
+      color: rgb(255, 49, 102); /* @pitaya */
+      transition: color 0.2s, background-color 0.2s, opacity 0.2s;
+    }
+
+    a img {
+      border-width: 0;
+    }
+
+    /* Fit media to the available width */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    button,
+    .toggle-fullscreen a {
+      margin: 0;
+      border-width: 0;
+
+      cursor: pointer;
+      font-size: inherit;
+      font-family: inherit;
+
+      font-weight: bold;
+      text-transform: lowercase;
+
+      padding: 0.375em;
+      line-height: 1.5em;
+      border-radius: 0.25em;
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.2);
+      color: white;
+      display: inline-block;
+
+      transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+    }
+    button:hover,
+    button:focus,
+    .toggle-fullscreen a:hover,
+    .toggle-fullscreen a:focus {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    button:active,
+    .toggle-fullscreen a:active {
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+
+
+    /* Browsers sometimes render these as inline elements, by default */
+    main, section, article, aside, nav, header, footer, figure {
+      display: block;
+    }
+
+
+    /* =Icons
+    -----------------------------------------------
+    -----------------------------------------------
+    ----------------------------------------------- */
+    svg.icon {
+      width : 1.5em; /* @line-height */
+      height: 1.5em;
+      vertical-align: middle;
+      fill: currentColor; /* http://codepen.io/FWeinb/blog/quick-tip-svg-use-style-two-colors */
+      transition: fill 0.2s;
+    }
+
+
+    /* =Avatars
+    -----------------------------------------------
+    -----------------------------------------------
+    ----------------------------------------------- */
+
+    /* Image */
+    .avatar img {
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    /* OPTIONAL: Make image avatars scale with the font size */
+    .avatar img[width="30"] {
+      width : 1.875em; /* 30px / @font-size */
+      height: 1.875em;
+    }
+    .avatar img {
+      /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    /* Letter */
+    .avatar > span {
+      display: inline-block;
+      background-color: rgb(204, 204, 204); /* @aluminum */
+      color: black;
+      width       : 1.5em;
+      line-height : 1.5em;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+    .avatar *[data-content]:after {
+      display: block;
+      content: attr(data-content);
+      speak: none;
+      font-weight: bold;
+      font-style: normal;
+      text-transform: uppercase;
+      text-align: center;
+      opacity: 0.75;
+    }
+    .avatar .name {
+      /* @hidden-accessible */
+      position: absolute;
+      left: -9999px;
+    }
+
+    /* Colors */
+    .avatar .clover {
+      background-color: rgb(0, 235, 98); /* @clover */
+    }
+    .avatar .kiwi {
+      background-color: rgb(0, 255, 208); /* @kiwi */
+    }
+    .avatar .grape {
+      background-color: rgb(159, 104, 246); /* @grape */
+    }
+    .avatar .bluebird {
+      background-color: rgb(0, 206,250); /* @bluebird */
+    }
+    .avatar .cantaloupe {
+      background-color: rgb(255, 203, 117); /* @cantaloupe */
+    }
+    .avatar .cranberry {
+      background-color: rgb(251, 59, 147); /* @cranberry */
+    }
+    .avatar .amethyst {
+      background-color: rgb(255, 152, 248); /* @amethyst */
+    }
+    .avatar .sky {
+      background-color: rgb(0, 255, 254); /* @sky */
+    }
+    .avatar .ocean {
+      background-color: rgb(24, 57, 245); /* @ocean */
+      color: white;
+    }
+
+    /* Sizes */
+    .avatar .size30 {
+      font-size: 1.25em; /* 2/3 x 30px / @font-size */
+    }
+
+
+    /* =CTZN logo
+    ----------------------------------------------- */
+    header.ctzn {
+      display: block;
+      position: absolute;
+      z-index: 5; /* Just above the push header */
+      bottom: 0.75em;
+      right: 0.75em;
+      font-size: 0.875em;
+    }
+    header.ctzn h2 {
+      margin: 0;
+      font-size: inherit;
+      display: inline-block;
+    }
+    /* Make the logo smaller on tiny screens */
+    @media (max-width: 30em), (max-height: 30em) {
+      header.ctzn {
+        font-size: 0.75em;
+      }
+    }
+    header.ctzn h2 .icon {
+      width: 2.625em; /* 42px / @font-size */
+      height: 3.75em; /* 60px / @font-size */
+      vertical-align: top;
+    }
+    header.ctzn h2 a {
+      display: block;
+      border-radius: 50%;
+      width       : 3.75em; /* 60px / @font-size */
+      line-height : 3.75em;
+      text-align: center;
+      background-color: rgb(150, 255, 108); /* @honeydew */
+      color: black;
+    }
+    header.ctzn h2 a:hover,
+    header.ctzn h2 a:active,
+    header.ctzn h2 a:focus {
+      background-color: rgb(109, 90, 219); /* @periwinkle */
+      color: black;
+      background-color: black;
+      color: white;
+    }
+
+    /* Title screen */
+    .ctzn-title-only .push-channel {
+      /* @hide-content */
+      opacity: 0;
+      position: relative;
+      z-index: -1;
+    }
+    .ctzn-title-only {
+      background-color: rgb(150, 255, 108); /* @honeydew */
+    }
+    .ctzn-title-only header.ctzn {
+      font-size: 3em;
+      top: 50%;
+      left: 50%;
+      bottom: auto;
+      right: auto;
+      margin-left : -1.875em; /* logo.width  (3.75em) / 2 */
+      margin-top  : -1.875em; /* logo.height (3.75em) / 2 */
+    }
+    @media (max-width: 30em), (max-height: 30em) {
+      .ctzn-title-only header.ctzn {
+        font-size: 2em;
+      }
+    }
+
+    /* OPTIONAL: Make the logo larger on big screens */
+    @media (min-width: 30em) and (min-height: 30em) {
+      .ctzn-title-only header.ctzn {
+        font-size: 4em;
+      }
+    }
+    @media (min-width: 40em) and (min-height: 40em) {
+      .ctzn-title-only header.ctzn {
+        font-size: 8em;
+      }
+    }
+    @media (min-width: 50em) and (min-height: 50em) {
+      .ctzn-title-only header.ctzn {
+        font-size: 12em;
+      }
+    }
+
+    /* OPTIONAL: Use viewport units in browsers that support it (for more possible sizes). */
+    .ctzn-title-only header.ctzn {
+      font-size: 20vmin;
+    }
+
+
+    /* =Channel
+    ----------------------------------------------- */
+    .push-channel {
+      min-height: 100%;
+    }
+
+    /* Push Colors */
+    .push-channel.lime {
+      background-color: rgb(176, 224, 0); /* @lime */
+    }
+    .push-channel.cucumber {
+      background-color: rgb(60, 210, 0); /* @cucumber */
+    }
+    .push-channel.blueberry {
+      background-color: rgb(0, 204, 204); /* @blueberry */
+    }
+    .push-channel.boysenberry {
+      background-color: rgb(101, 152, 254); /* @boysenberry */
+    }
+    .push-channel.periwinkle {
+      background-color: rgb(109, 90, 219); /* @periwinkle */
+    }
+    .push-channel.plumb {
+      background-color: rgb(181, 62, 194); /* @plumb */
+    }
+    .push-channel.strawberry {
+      background-color: rgb(250, 44, 162); /* @strawberry */
+    }
+    .push-channel.apple {
+      background-color: rgb(255, 0, 86); /* @apple */
+    }
+    .push-channel.tangerine {
+      background-color: rgb(255, 204, 0); /* @tangerine */
+    }
+    .push-channel.orange {
+      background-color: rgb(255, 117, 9); /* @orange */
+    }
+
+
+    /* =Push Name
+    ----------------------------------------------- */
+    .push-channel > header {
+      position: absolute;
+      z-index: 4; /* Just above the navigation */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 1.25em 3.75em 1.25em 1.25em;
+    }
+    .push-channel > header > div {
+      border-left: 0.3125em solid white;
+      padding: 0.25em 0.75em;
+    }
+    .push-channel h1 {
+      font-size: inherit;
+      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 900; /* @extra-bold */
+      line-height: 1;
+      margin: 0;
+      width: 100%;
+      max-width: 28em;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+
+      /* @wrap-long-words */
+      word-wrap     : break-word;
+      overflow-wrap : break-word;
+    }
+    .push-channel h1 a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      max-width: 100%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .push-channel h1 a:hover,
+    .push-channel h1 a:active,
+    .push-channel h1 a:focus {
+      color: white;
+      border-color: white !important;
+    }
+    .push-channel > header .details {
+      margin-top: 0.625em; /* @line-height / 2 */
+      font-size: 0.75em;
+      line-height: 1.25;
+      color: white;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: bold;
+      max-width: 33em;
+
+      /* @wrap-long-words */
+      word-wrap     : break-word;
+      overflow-wrap : break-word;
+    }
+    .push-channel > header .details p,
+    .push-channel > header .details form {
+      display: inline;
+    }
+    .push-channel > header .details a {
+      color: white;
+    }
+    .push-channel > header .details form button {
+      background: transparent;
+      text-decoration: underline;
+      text-transform: none;
+      padding: 0;
+    }
+
+    /* Push Colors */
+    .push-channel.lime > header > div {
+      border-color: rgb(176, 224, 0); /* @lime */
+    }
+    .push-channel.cucumber > header > div {
+      border-color: rgb(60, 210, 0); /* @cucumber */
+    }
+    .push-channel.blueberry > header > div {
+      border-color: rgb(0, 204, 204); /* @blueberry */
+    }
+    .push-channel.boysenberry > header > div {
+      border-color: rgb(101, 152, 254); /* @boysenberry */
+    }
+    .push-channel.periwinkle > header > div {
+      border-color: rgb(109, 90, 219); /* @periwinkle */
+    }
+    .push-channel.plumb > header > div {
+      border-color: rgb(181, 62, 194); /* @plumb */
+    }
+    .push-channel.strawberry > header > div {
+      border-color: rgb(250, 44, 162); /* @strawberry */
+    }
+    .push-channel.apple > header > div {
+      border-color: rgb(255, 0, 86); /* @apple */
+    }
+    .push-channel.tangerine > header > div {
+      border-color: rgb(255, 204, 0); /* @tangerine */
+    }
+    .push-channel.orange > header > div {
+      border-color: rgb(255, 117, 9); /* @orange */
+    }
+
+    /* Title screen */
+    .push-title-only .push-channel .item {
+      opacity: 0;
+    }
+    .push-title-only .push-channel > header {
+      font-size: 1.5em;
+
+      /* Reset */
+      position: static;
+      z-index: auto;
+      padding: 1.25em;
+    }
+    .push-title-only .push-channel > header > div {
+      /* Reset */
+      padding: 0;
+      border-width: 0;
+    }
+    /* Make the title smaller on tiny screens */
+    @media (max-width: 20em), (max-height: 20em) {
+      .push-title-only .push-channel > header {
+        font-size: inherit;
+      }
+    }
+    .push-title-only .push-channel h1,
+    .push-title-only .push-channel h1 a {
+      margin: 0 auto;
+    }
+    .push-title-only .push-channel h1 {
+      font-size: inherit;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .push-title-only .push-channel > header .details {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+    }
+
+    /*  OPTIONAL: Make the title larger on big screens. */
+    @media (min-width: 20em) and (min-height: 20em) {
+      .push-title-only .push-channel > header {
+        font-size: 2em;
+      }
+    }
+    @media (min-width: 30em) and (min-height: 30em) {
+      .push-title-only .push-channel > header {
+        font-size: 3em;
+      }
+    }
+    @media (min-width: 40em) and (min-height: 40em) {
+      .push-title-only .push-channel > header {
+        font-size: 4em;
+      }
+    }
+
+    /* OPTIONAL: Use viewport units in browsers that support it (for more possible sizes). */
+    @media (min-width: 160px) and (min-height: 160px) { /* @min-font-size (16px) * 100vmin / 10vmin = 16 * 10 = 160 */
+      .push-title-only .push-channel > header {
+        font-size: 10vmin;
+      }
+    }
+
+    /* OPTIONAL: Center the text vertically */
+    .push-title-only .push-channel > header {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    .push-title-only .push-channel > header > div {
+      display: table-row;
+    }
+    .push-title-only .push-channel h1 {
+      width: 100%;
+      height: 100%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    /* OPTIONAL: Switch to flexible box layout in browsers that support it (to support @wrap-long-words) */
+    .push-title-only .push-channel > header {
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: column;
+              flex-direction: column;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .push-title-only .push-channel > header > div {
+      display: -webkit-flex;
+      display:         flex;
+      width: 100%;
+    }
+    .push-title-only .push-channel h1 {
+      display: -webkit-flex;
+      display:         flex;
+    }
+
+
+    /* =Toggle
+    ----------------------------------------------- */
+
+    /* Toggle Fullscreen */
+    .toggle-fullscreen {
+      position: absolute;
+      z-index: 9999; /* @infinity */
+      top: 0.75em;
+      right: 0.75em;
+      margin: 0;
+    }
+    .toggle-fullscreen a      svg.icon,
+    .toggle-fullscreen button svg.icon {
+      vertical-align: top;
+    }
+
+    /* Toggle Playback */
+    .toggle-playback {
+      position: absolute;
+      z-index: 6; /* Just above the CTZN slide */
+      top: 0;
+      left: -9999px;
+      margin: 0;
+      font-size: 5em;
+      font-size: 50vmin;
+      opacity: 0.25;
+    }
+    .paused .toggle-playback {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .toggle-playback button {
+      border-radius: 0;
+      padding: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      background: transparent;
+    }
+    .toggle-playback button svg.icon {
+      vertical-align: top;
+    }
+    .toggle-playback button:hover,
+    .toggle-playback button:focus {
+      background: transparent;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .toggle-playback button:active {
+      background: transparent;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+
+
+    /* =Navigation (Next / Previous)
+    ----------------------------------------------- */
+    nav,
+    nav ul,
+    nav li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 0;
+      height: 0;
+      line-height: 0;
+    }
+    nav a {
+      font-size: 2em;
+      position: absolute;
+      z-index: 3; /* Just above the CTZN slide */
+      top: 0;
+      color: white;
+      width: 20%;
+      height: 100%;
+      line-height: 1.25;
+    }
+    nav a i {
+      /* @hidden-accessible */
+      position: absolute;
+      left: -9999px;
+    }
+    nav a span {
+      /*
+      background-color: rgba(0, 0, 0, 0.2);
+      */
+      position: absolute;
+      top: 50%;
+      margin-top: -0.75em;
+      padding: 0.1875em;
+      border-radius: 0.125em;
+      text-align: center;
+      opacity: 0.5;
+    }
+    .paused:not(.loading)      nav a span,
+    .autoplaying:not(.loading) nav a span {
+      opacity: 0;
+    }
+    /*
+    nav a:focus span {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    nav a:active span {
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+    */
+    nav a:focus span,
+    nav a:active span {
+      opacity: 0.5 !important;
+    }
+    nav a:active span {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    nav li.next a {
+      right: 0;
+    }
+    nav li.next a span {
+      right: 0.75em;
+    }
+    nav li.previous a {
+      left: 0;
+    }
+    nav li.previous a span {
+      left: 0.75em;
+    }
+
+
+    /* =Posts
+    ----------------------------------------------- */
+    .push-channel .list {
+      margin: 0;
+    }
+    .push-channel article {
+      position: relative;
+      /*
+      padding-bottom: 100%;
+      padding-bottom: 0vh;
+      min-height: 100vh;
+      */
+    }
+    .push-channel article header {
+      position: absolute;
+      z-index: 4; /* Just above the navigation */
+      margin: 0;
+      padding: 1.25em 3.75em 1.25em;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+
+      /* @wrap-long-words */
+      word-wrap     : break-word;
+      overflow-wrap : break-word;
+    }
+
+    /* OPTIONAL: Line the username and date up on smaller screens */
+    .push-channel article header {
+      padding-left: 3.75em;
+    }
+    .push-channel article header .avatar {
+      position: absolute;
+      top: 1.125em;
+      left: 1.125em;
+    }
+
+  @supports(false) {
+
+    /* Make text easier to read (by darkening the background) */
+    .push-channel article .pictures:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to top,    transparent, transparent 60%, rgba(0, 0, 0, 0.25)),
+                        linear-gradient(to bottom, transparent, transparent 60%, rgba(0, 0, 0, 0.75));
+    }
+    .push-channel article .body:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* 20% black PNG-24 (for browsers that don’t support RGBA) */
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEUAAACnej3aAAAAAXRSTlMz/za5cAAAAA1JREFUeNoBAgD9/wAAAAIAAVMrnDAAAAAASUVORK5CYII=);
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .push-channel article .pictures + .body:before {
+      /* 50% black PNG-24 (for browsers that don’t support RGBA) */
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEUAAACnej3aAAAAAXRSTlOArV5bRgAAAA1JREFUeNoBAgD9/wAAAAIAAVMrnDAAAAAASUVORK5CYII=);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+  }
+
+    /* Header */
+    .push-channel article header h3,
+    .push-channel article header p {
+      display: inline;
+      font-size: inherit;
+      font-weight: bold;
+      line-height: inherit;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+    }
+    .push-channel article header p {
+      display: inline-block;
+    }
+    .push-channel article header h3 .avatar,
+    .push-channel article header h3 {
+      margin-right: 0.5em;
+    }
+    .push-channel article header p {
+      color: rgb(153, 153, 153); /* @nickel */
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .push-channel article .body {
+      position: absolute;
+      z-index: 1;
+    }
+    .push-channel article .body > div > div {
+      padding: 1.2em 1.2em;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    .push-channel article .body p {
+      text-align: center;
+      font-weight: bold;
+      line-height: 1.2; /* @line-height x 1.5 / 1.875em */
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 28em;
+
+      /* @wrap-long-words */
+      word-wrap     : break-word;
+      overflow-wrap : break-word;
+    }
+
+    /* OPTIONAL: Limit the height of the text */
+    .push-channel article .body p {
+      max-height: 2.4em; /* line height x 2 */
+      overflow-y: hidden;
+
+      /* OPTIONAL: Show an ellipses if the text has been truncated
+      http://dropshado.ws/post/1015351370/webkit-line-clamp */
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    /*  OPTIONAL: Make the post text larger on big screens. */
+    @media (min-width: 25em) and (min-height: 25em) {
+      .push-channel article .body p {
+        font-size: 1.25em;
+      }
+    }
+    @media (min-width: 30em) and (min-height: 30em) {
+      .push-channel article .body p {
+        font-size: 1.5em;
+      }
+    }
+    @media (min-width: 35em) and (min-height: 35em) {
+      .push-channel article .body p {
+        font-size: 2em;
+      }
+    }
+    @media (min-width: 50em) and (min-height: 50em) {
+      .push-channel article .body p {
+        font-size: 3em;
+      }
+    }
+    @media (min-width: 60em) and (min-height: 60em) {
+      .push-channel article .body p {
+        font-size: 4em;
+      }
+    }
+
+    /* OPTIONAL: Use viewport units in browsers that support it (for more possible sizes). */
+    @media (min-width: 320px) and (min-height: 320px) { /* @min-font-size (16px) * 100vmin / 5vmin = 16 * 20 = 320 */
+      .push-channel article .body p {
+        font-size: 5vmin;
+      }
+    }
+
+    /* OPTIONAL: Center the text vertically */
+    .push-channel article .body {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 40em;
+      min-height: 100vh;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+
+    /* If the slideshow is active, fill the viewport. */
+    /*.autoplaying .push-channel article .body {*/
+    .push-channel article .body {
+      min-height: 0;
+      height: 100%;
+    }
+
+    .push-channel article .body > div {
+      display: table-row;
+    }
+    .push-channel article .body > div > div {
+      width: 100%;
+      height: 100%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    /* OPTIONAL: Switch to flexible box layout in browsers that support it (to support @wrap-long-words) */
+    .push-channel article .body {
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: column;
+              flex-direction: column;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .push-channel article .body > div {
+      display: -webkit-flex;
+      display:         flex;
+      width: 100%;
+    }
+    .push-channel article .body > div > div {
+      display: -webkit-flex;
+      display:         flex;
+    }
+
+    /* OPTIONAL: Increase the line height on tall screens */
+    @media (min-height: 15em) {
+      .push-channel article .body p {
+        max-height: 3.6em; /* line height x 3 */
+        -webkit-line-clamp: 3;
+      }
+    }
+    @media (min-height: 18em) {
+      .push-channel article .body p {
+        max-height: 4.8em; /* line height x 4 */
+        -webkit-line-clamp: 4;
+      }
+    }
+    @media (min-height: 21em) {
+      .push-channel article .body p {
+        max-height: 6em; /* line height x 5 */
+        -webkit-line-clamp: 5;
+      }
+    }
+    @media (min-height: 24em) {
+      .push-channel article .body p {
+        max-height: 7.2em; /* line height x 6 */
+        -webkit-line-clamp: 6;
+      }
+    }
+    @media (min-height: 27em) {
+      .push-channel article .body p {
+        max-height: 8.4em; /* line height x 7 */
+        -webkit-line-clamp: 7;
+      }
+    }
+    @media (min-height: 30em) {
+      .push-channel article .body p {
+        max-height: 9.6em; /* line height x 8 */
+        -webkit-line-clamp: 8;
+      }
+    }
+    @media (min-height: 33em) {
+      .push-channel article .body p {
+        max-height: 10.8em; /* line height x 9 */
+        -webkit-line-clamp: 9;
+      }
+    }
+    @media (min-height: 36em) {
+      .push-channel article .body p {
+        max-height: 12em; /* line height x 10 */
+        -webkit-line-clamp: 10;
+      }
+    }
+
+
+
+    /* =Big and small
+    -----------------------------------------------
+    -----------------------------------------------
+    ----------------------------------------------- */
+
+    /* OPTIONAL: Make header and footer larger on big screens 
+    ----------------------------------------------- */
+    @media (min-width: 640px) and (min-height: 640px) { /* @min-font-size (16px) * 100vmin / 2.5vmin = 16 * 40 = 640 */
+      .push-channel > header,
+      .push-channel article header {
+        font-size: 2.5vmin;
+      }
+    }
+
+
+    /* OPTIONAL: Hide content on especially small screens (or small iframes) 
+    ----------------------------------------------- */
+    @media (max-height: 20em) and (max-width: 20em) {
+
+      /* Hide the username */
+      .push-channel article header h3 {
+        display: block;
+        text-indent: -9999px;
+      }
+      .push-channel article header h3 .avatar {
+        text-indent: 0;
+        top: 0.25em;
+        left: 0.2em;
+      }
+
+      /* Hide the date */
+      .push-channel article header p {
+        position: absolute;
+        left: -9999px;
+      }
+
+      .push-channel article .body > div > div {
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+      }
+
+      /* Hide the push details */
+      .push-channel > header .details {
+        position: absolute;
+        left: -9999px;
+      }
+
+      /* Make the fullscreen button smaller */
+      .toggle-fullscreen {
+        top: 0.25em;
+        right: 0.25em;
+      }
+
+      /* Make the push name smaller */
+      .push-channel > header,
+      .push-title-only .push-channel > header {
+        padding: 0.25em;
+      }
+      .push-channel > header {
+        padding-right: 2em;
+      }
+
+      /* Make the ctzn logo smaller */
+      header.ctzn {
+        right: 0.25em;
+        bottom: 0.25em;
+      }
+      header.ctzn {
+        font-size: 0.5em;
+      }
+    }
+    @media (max-height: 15em) {
+      /* Hide the push details */
+      .push-channel > header .details {
+        position: absolute;
+        left: -9999px;
+      }
+    }
+    @media (max-height: 25em) and (max-width: 25em) {
+      /* Hide the push details */
+      .push-channel > header .details {
+        position: absolute;
+        left: -9999px;
+      }
+    }
+    @media (max-height: 6em), (max-width: 15em) {
+      .push-channel > header {
+        padding-right: 0.25em;
+      }
+
+      /* Hide the CTZN logo */
+      header.ctzn {
+        left: -9999px;
+        right: auto;
+      }
+    }
+    @media (max-height: 15em) and (max-width: 25em) {
+
+      /* Hide the date */
+      .push-channel article header p {
+        position: absolute;
+        left: -9999px;
+      }
+    }
+
+
+    /* OPTIONAL: Make some elements hideable (via userinterface=minimal)
+    -----------------------------------------------
+    -----------------------------------------------
+    ----------------------------------------------- */
+
+    /* Hide the CTZN logo (except on the title screen) */
+    .minimal-ui:not(.ctzn-title-only) header.ctzn {
+      left: -9999px;
+      right: auto;
+    }
+
+
+
+    /* OPTIONAL: Fit the content to the viewport
+    -----------------------------------------------
+    -----------------------------------------------
+    ----------------------------------------------- */
+    .push-channel article {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+    }
+    .push-channel article .pictures {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .push-channel article .pictures figure {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      /*
+      background-color: black;
+      */
+
+      /* @icon-picture */
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.457 1.228h-14.912c-0.726 0-1.316 0.589-1.316 1.316v14.912c0 0.726 0.589 1.316 1.316 1.316h14.912c0.726 0 1.316-0.589 1.316-1.316v-14.912c0-0.726-0.589-1.316-1.316-1.316zM17.237 17.237h-14.474v-14.474h14.474v14.474z" fill="rgba(0, 0, 0, 0.25)"></path><path d="M13.859 7.588c0 0.678-0.55 1.228-1.228 1.228s-1.228-0.55-1.228-1.228c0-0.678 0.55-1.228 1.228-1.228s1.228 0.55 1.228 1.228z" fill="rgba(0, 0, 0, 0.25)"></path><path d="M4.737 15.833h10.526c0.193 0 0.351-0.158 0.351-0.351v-3.509c0-0.122-0.063-0.236-0.167-0.299s-0.233-0.070-0.341-0.016l-3.351 1.676-6.861-3.43c-0.109-0.054-0.238-0.049-0.341 0.016s-0.167 0.176-0.167 0.299v5.263c0 0.193 0.157 0.351 0.351 0.351z" fill="rgba(0, 0, 0, 0.25)"></path></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 25% auto;
+      background-size: 50vmin auto;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+    }
+    .autoplaying .push-channel article .pictures figure {
+      position: absolute;
+      background: white;
+      padding-top: 3.25em;
+      padding-bottom: 3.25em;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    .push-channel article .pictures figure img {
+      display: block;
+      margin: auto;
+      max-width: none;
+      width: 100%;
+      height: auto;
+
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+
+    /* =Inactive
+    -----------------------------------------------
+    The “inactive” classname is added by JavaScript
+    (so that only one image or text element will be shown at a time).
+    ----------------------------------------------- */
+    .push-channel .item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .push-channel .item.inactive {
+      z-index: -1;
+    }
+    .push-channel .item.inactive,
+    .push-channel .body.inactive,
+    .push-channel article .pictures figure.inactive {
+      opacity: 0;
+    }
+
+  </style>
+
+  <script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+  <!-- OPTIONAL: Attempt to use simple emoji (since we’re positioning the text above a background image or color). -->
+  <style>
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* SHIM: Add the same font files with bold weight, so the browser won’t render “faux bold” emoji characters. */
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    /* This is our usual font stack with an emoji font at the end
+      (so it will catch any characters that aren’t available in the other fonts). */
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Android Emoji";
+    }
+  </style>
+  <!-- /OPTIONAL -->
+
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
+
+  <style>
+    /* If the image is taller than the viewport */
+    @media (min-aspect-ratio: 4/3) { 
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] {
+        -webkit-flex-direction: row;
+                flex-direction: row;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] picture {
+        width: 100%;
+        height: auto;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] img {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* If the image is wider than the viewport */
+    @media (max-aspect-ratio: 4/3) {
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] {
+        -webkit-flex-direction: column;
+                flex-direction: column;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] picture {
+        width: auto;
+        height: 100%;
+      }
+      .push-channel article .pictures figure[data-aspect-ratio="4/3"] img {
+        min-width: 0;
+        min-height: 0;
+        width: auto;
+        height: 100%;
+      }
+    }
+  </style>
+
+<style>
+
+    body {
+      background: white;
+      color: black;
+    }
+    .push-channel {
+      background: white !important;
+    }
+    .push-channel article header p {
+      color: inherit;
+      opacity: 0.7;
+    }
+  </style>
+
+</head>
+<!--
+  .ctzn-title-only
+  .push-title-only
+-->
+<body class="autoplaying">
+
+    <!-- images/icons.svg -->
+  <svg display="none" width="0" height="0">
+    <symbol id="icon-ctzn" viewBox="0 0 100 37.818">
+      <path d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
+        c0-2.292,0.362-4.373,1.086-6.243c0.724-1.87,1.739-3.478,3.046-4.825s2.855-2.382,4.644-3.106c1.789-0.724,3.75-1.086,5.881-1.086
+        c2.573,0,4.735,0.432,6.484,1.297c1.749,0.864,3.026,1.759,3.83,2.684l-4.765,7.057c-0.523-0.603-1.136-1.096-1.84-1.478
+        c-0.704-0.382-1.518-0.573-2.443-0.573c-1.528,0-2.825,0.543-3.89,1.629c-1.066,1.086-1.598,2.634-1.598,4.644
+        c0,2.01,0.533,3.569,1.598,4.674c1.066,1.106,2.362,1.659,3.89,1.659c0.925,0,1.739-0.201,2.443-0.603
+        c0.704-0.402,1.317-0.905,1.84-1.508l4.765,7.117c-0.804,0.925-2.081,1.819-3.83,2.684c-1.749,0.864-3.91,1.297-6.484,1.297
+        C12.525,37.818,10.565,37.446,8.776,36.702z"/>
+      <path d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
+        v8.806h-4.584v9.59c0,0.764,0.161,1.367,0.482,1.809s0.784,0.663,1.387,0.663c0.362,0,0.714-0.05,1.056-0.151
+        c0.342-0.101,0.573-0.231,0.694-0.392l1.689,7.962c-0.563,0.442-1.397,0.814-2.503,1.116c-1.106,0.302-2.423,0.452-3.951,0.452
+        C35.344,37.818,33.052,37.084,31.604,35.616z"/>
+      <path d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"/>
+      <path d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
+        s-1.759,0.282-2.383,0.844c-0.623,0.563-1.116,1.126-1.478,1.689v18.336H72.798V7.962h10.133v3.378
+        c0.724-1.005,1.86-1.94,3.408-2.805c1.548-0.865,3.327-1.297,5.338-1.297c2.935,0,5.056,0.774,6.363,2.322
+        c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"/>
+    </symbol>
+    <symbol id="icon-left" viewBox="0 0 20 20">
+      <path d="M14.452 16.023l-6.023-6.023 6.023-6.023-1.832-1.832-7.856 7.856 7.856 7.856z"></path>
+    </symbol>
+    <symbol id="icon-right" viewBox="0 0 20 20">
+      <path d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path>
+    </symbol>
+    <symbol id="icon-expand" viewBox="0 0 20 20">
+      <path d="M17.9,2.4c-0.1-0.2-0.2-0.3-0.4-0.4C17.5,2,17.4,2,17.3,2h-5.8c-0.4,0-0.7,0.3-0.7,0.7s0.3,0.7,0.7,0.7h4.1
+        L10.9,8c-0.3,0.3-0.3,0.7,0,1c0.1,0.1,0.3,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2l4.6-4.6v4.1c0,0.4,0.3,0.7,0.7,0.7
+        c0.4,0,0.7-0.3,0.7-0.7V2.7C18,2.6,18,2.5,17.9,2.4z"/>
+      <path d="M9.1,10.9c-0.3-0.3-0.7-0.3-1,0l-4.6,4.6v-4.1c0-0.4-0.3-0.7-0.7-0.7S2,11.1,2,11.5v5.8
+        c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.2,0.3,0.4,0.4C2.5,18,2.6,18,2.7,18h5.8c0.4,0,0.7-0.3,0.7-0.7c0-0.4-0.3-0.7-0.7-0.7H4.5L9.1,12
+        C9.3,11.7,9.3,11.2,9.1,10.9z"/>
+    </symbol>
+    <symbol id="icon-shrink" viewBox="0 0 20 20">
+      <path d="M8.8,10.1C8.7,10,8.6,10,8.5,10H2.7C2.3,10,2,10.3,2,10.7c0,0.4,0.3,0.7,0.7,0.7h4.1L2.2,16
+        c-0.3,0.3-0.3,0.7,0,1c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2l4.6-4.6v4.1c0,0.4,0.3,0.7,0.7,0.7c0.4,0,0.7-0.3,0.7-0.7v-5.8
+        c0-0.1,0-0.2-0.1-0.3C9.1,10.3,9,10.1,8.8,10.1z"/>
+      <path d="M17.3,8.5h-4.1L17.8,4c0.3-0.3,0.3-0.7,0-1c-0.3-0.3-0.7-0.3-1,0l-4.6,4.6V3.5c0-0.4-0.3-0.7-0.7-0.7
+        c-0.4,0-0.7,0.3-0.7,0.7v5.8c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.2,0.3,0.4,0.4c0.1,0,0.2,0.1,0.3,0.1h5.8c0.4,0,0.7-0.3,0.7-0.7
+        C18,8.9,17.7,8.5,17.3,8.5z"/>
+    </symbol>
+  </svg>
+
+  <svg display="none" width="0" height="0">
+    <symbol id="icon-play" viewBox="0 0 20 20">
+      <path d="M10,0.8c-5.1,0-9.2,4.1-9.2,9.2s4.1,9.2,9.2,9.2s9.2-4.1,9.2-9.2S15.1,0.8,10,0.8z M10,17.7
+        c-4.2,0-7.7-3.5-7.7-7.7S5.8,2.3,10,2.3s7.7,3.5,7.7,7.7S14.2,17.7,10,17.7z"/>
+      <polygon points="8.5,13.6 13.2,9.9 8.5,6.6 "/>
+    </symbol>
+  </svg>
+
+  <header class="ctzn">
+    <div>
+      <h2>
+        <!-- TRICKY: Open a new window, since this page is sometimes included in an iframe. -->
+        <a href="http://getctzn.com" target="_blank">
+          <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg>
+        </a>
+      </h2>
+    </div>
+  </header>
+
+  <p class="toggle-fullscreen">
+    <button type="button">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-expand"></use><foreignObject>Fullscreen</foreignObject></switch></svg>
+    </button>
+  </p>
+
+  <main class="strawberry push-channel">
+
+    <header>
+      <div>
+        <h1>
+          <a href="preview-share.html" target="_blank">
+            Community Services Unlimited
+          </a>
+        </h1>
+      </div>
+    </header>
+
+    <div class="list">
+      <div class="item">
+        <article>
+          <header>
+            <h3>
+              <span class="avatar">
+                <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c100x100" />
+              </span>
+              @<span>benisonchoi</span>
+            </h3>
+            <p><time datetime="2015-06-09T19:43:05.000+00:00">May 22, 2015</time></p>
+          </header>
+          <div class="pictures">
+            <figure>
+              <picture>
+                <img src="http://assets.goodstatic.com/s3/ctzn/507355ce0d52c180524eb3d2c6e8e0fabf630700=s2048x2048" alt="Uploaded Image 1" />
+              </picture>
+            </figure>
+          </div>
+
+          <!--
+          <div class="body">
+            <div>
+              <div>
+                <p>Onboarding the interns! Stoked 🍜🍲</p>
+              </div>
+            </div>
+          </div>
+          -->
+        </article>
+      </div>
+    </div>
+
+  </main>
+
+  <nav>
+    <ul>
+      <li class="next">
+        <a href="">
+          <span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <switch><use xlink:href="#icon-right"></use><foreignObject>Next</foreignObject></switch>
+            </svg>
+          </span>
+        </a>
+      </li>
+      <li class="previous">
+        <a href="">
+          <span>
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+              <switch><use xlink:href="#icon-left"></use><foreignObject>Previous</foreignObject></switch>
+            </svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div>
+    <p class="toggle-playback">
+      <button type="button">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-play"></use><foreignObject>Play</foreignObject></switch></svg>
+      </button>
+    </p>
+  </div>
+
+</body>
+</html>
