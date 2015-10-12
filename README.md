@@ -45,7 +45,7 @@ These are useful for updating files in this repository (for example, using searc
 
 ### Find the icon elements within a label…
 
-    <label>([\s]+)<svg class="icon"([^>]*)><use xlink:href="#([^"]+)"></use><foreignobject>([^<]+)</foreignobject></svg><br />
+    <label>([\s]+)<switch><svg class="icon"([^>]*)><use xlink:href="#([^"]+)"></use><foreignobject>([^<]+)</foreignobject></switch></svg><br />
 
 #### And replace…
 
