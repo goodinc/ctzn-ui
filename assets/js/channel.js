@@ -216,10 +216,10 @@ var fullscreenActive;
           if (candidate && candidate.nodeType === 1) break;
         } while (candidate = candidate.nextSibling);
       } else {
-        candidate = document.querySelector('main .list .item');
+        candidate = document.querySelector('.list .item');
       }
 
-      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main .list .item');
+      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('.list .item');
       return candidate;
     }
 
@@ -231,43 +231,27 @@ var fullscreenActive;
           if (candidate && candidate.nodeType === 1) break;
         } while (candidate = candidate.previousSibling);
       } else {
-        candidate = document.querySelector('main .list .item:last-child');
+        candidate = document.querySelector('.list .item:last-child');
       }
 
-      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main .list .item:last-child');
+      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('.list .item:last-child');
       return candidate;
     }
 
-    function nextPage(instant) {
+    function nextPage() {
       lastItem = currentItem;
       currentItem = getNextItem();
-      updatePage(instant);
+      updatePage();
     }
 
-    function previousPage(instant) {
+    function previousPage() {
       lastItem = currentItem;
       currentItem = getPreviousItem();
-      updatePage(instant);
+      updatePage();
     }
 
-    function updatePage(instant) {
-      var items = document.querySelectorAll('main .list .item');
-
-      /*
-      //currentItem.style.zIndex = 0;
-      if (lastItem) {
-        //lastItem.style.zIndex = 1;
-        if (!instant) addClassName(lastItem, 'transition');
-        if (lastItem.querySelectorAll('figure').length < 1) {
-          if (!instant) addClassName(currentItem, 'transition');
-        } else {
-          removeClassName(currentItem, 'transition');
-        }
-        addClassName(lastItem, 'inactive');
-      } else {
-        removeClassName(currentItem, 'transition');
-      }
-      */
+    function updatePage() {
+      var items = document.querySelectorAll('.list .item');
 
       if (lastItem) addClassName(lastItem, 'inactive');
       removeClassName(currentItem, 'inactive');
@@ -500,19 +484,8 @@ var fullscreenActive;
       }
     }
 
-
-    var requestAnimationFrame = window.requestAnimationFrame ||
-                                window.mozRequestAnimationFrame ||
-                                window.webkitRequestAnimationFrame ||
-                                window.msRequestAnimationFrame;
-
-    var cancelAnimationFrame  = window.cancelAnimationFrame ||
-                                window.mozCancelAnimationFrame ||
-                                window.webkitCancelAnimationFrame ||
-                                window.msCancelAnimationFrame;
-
     function animateImage(image, duration) {
-      if (!Modernizr.flexbox || !requestAnimationFrame) return; // The animation depends on the image being centered via flexible box layout.
+      if (!Modernizr.flexbox) return; // The animation depends on the image being centered via flexible box layout.
 
       // Only animate the image if it has finished loading and has an aspect ratio class name (which will make the animation look sharp)
       var figure = getFigure(image);
@@ -564,25 +537,14 @@ var fullscreenActive;
       // And then move it to the final position
       var forward = translateAxis + "(" + (translateValue * -1) + "%) scale(" + (scaleDirection ? 1 : scaleValue) + ")";
 
-      var animation;
-      function animate() {
-        if (requestAnimationFrame) {
-          rewindTransition(image, backward);
-
-          // TRICKY: Wait one frame before animating (to give “rewindTransition” time to render).
-          //animation = requestAnimationFrame(function() {
-            playTransition(image, forward, duration);
-          //});
-        }
-      }
-      animate();
+      rewindTransition(image, backward);
+      playTransition(image, forward, duration);
 
       // Stop the transition if the window changes size
       var throttle;
       function onWindowResize() {
         if (throttle) clearTimeout(throttle);
         throttle = setTimeout(function() {
-          if (animation && cancelAnimationFrame) cancelAnimationFrame(animation);
           stopTransition(image);
         }, 100);
       }
@@ -661,7 +623,6 @@ var fullscreenActive;
         // If the current image has finished loading
         if (images[currentImage] && imageLoaded(images[currentImage]) !== false) {
           if (text) {
-            //addClassName(text, 'transition');
             addClassName(text, 'inactive');
           }
           textShowing = false;
@@ -681,7 +642,6 @@ var fullscreenActive;
         }
 
         if (lastImage && lastImage !== currentImage) addClassName(images[lastImage], 'inactive');
-        //addClassName(images[currentImage], 'transition');
         removeClassName(images[currentImage], 'inactive');
 
         var animationDuration = duration;
@@ -690,9 +650,6 @@ var fullscreenActive;
         if (currentImage === 0 && text && textShowing) {
           animationDuration = textDuration(text) + textImageDuration(text);
         }
-
-        var slideTransitionDelay = 1;
-        animationDuration += slideTransitionDelay;
 
         // If we haven’t already started animating this image
         // (If this is not the first image, or if there isn’t any text, or if the text is showing)
@@ -794,7 +751,7 @@ var fullscreenActive;
     (function() {
 
       // Start with the first item
-      var items = document.querySelectorAll('main .list .item');
+      var items = document.querySelectorAll('.list .item');
       currentItem = items[0];
 
       // Hide all of the items
@@ -813,13 +770,12 @@ var fullscreenActive;
       if (e && (e.shiftKey || e.ctrlKey || e.altKey || e.metaKey)) return;
 
       var item = closest(e.target, 'li');
-      var instant = true;
       if (item) {
         if (timer) clearTimeout(timer);
         if (item.className === 'next') {
-          nextPage(instant);
+          nextPage();
         } else {
-          previousPage(instant);
+          previousPage();
         }
 
         e.preventDefault();
