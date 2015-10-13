@@ -3277,6 +3277,21 @@
     padding-right: 0.5em;
   }
 
+  /* Social buttons (for the profile page) */
+  .header.push-card .meta p.social {
+    margin: 0;
+    float: right;
+  }
+  .header.push-card .meta p.social a {
+    display: inline-block;
+    padding-top: 1.125em;
+    padding-bottom: 1.125em;
+    margin-left: -0.25em;
+    margin-right: -0.25em;
+    color: white;
+  }
+
+
   /* Settings button (for the push page) */
   .header.push-card .meta:after {
     content: "";
