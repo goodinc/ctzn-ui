@@ -2113,6 +2113,7 @@
     display: inline-block;
     white-space: nowrap;
     color: rgb(193, 193, 193);
+    color: rgba(0, 0, 0, 0.25);
     font-size: 0.6666666667em;
     text-transform: uppercase;
   }
@@ -2129,6 +2130,7 @@
   }
   .comments .post-item .body p {
     color: rgb(102, 102, 102); /* @tin */
+    color: rgba(0, 0, 0, 0.6);
   }
 
   /* Post footer */
