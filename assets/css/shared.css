@@ -1756,7 +1756,6 @@
     list-style-type: disc;
   }
 
-  /* TBD: Are both of these in use? */
   .post-item .body img.video-fallback {
     margin-bottom: 0;
   }
