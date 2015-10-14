@@ -458,12 +458,10 @@
 
   &lt;div class=&quot;body&quot;&gt;
     &lt;p&gt;
-      &lt;video poster=&quot;video.jpg&quot; controls=&quot;controls&quot; preload=&quot;none&quot;&gt;
-        &lt;source src=&quot;video.m4v&quot; type=&quot;video/mp4&quot; /&gt;
-        &lt;source src=&quot;video.webm…&quot; type=&quot;video/webm&quot; /&gt;
-
-        &lt;!-- For browsers that don’t understand the “video” element --&gt;
-        &lt;img class=&quot;video-fallback&quot; src=&quot;video.jpg&quot; alt=&quot;&quot; /&gt;
+      &lt;video poster=&quot;…poster-image.jpg&quot; controls=&quot;controls&quot; preload=&quot;none&quot;&gt;
+        &lt;source src=&quot;…video-file.m4v&quot; type=&quot;video/mp4&quot; /&gt;
+        &lt;source src=&quot;…video-file.webm…&quot; type=&quot;video/webm&quot; /&gt;
+        &lt;img class=&quot;<mark>video-fallback</mark>&quot; src=&quot;…poster-image.jpg&quot; alt=&quot;&quot; /&gt;
         &lt;span class=&quot;video-fallback&quot;&gt;
           Aw, shucks.
           Our video player isn’t working in this web browser.
@@ -475,6 +473,7 @@
 &lt;/article&gt;
 </code></pre>
 
+<p>The “video-fallback” image and text will appear in browsers that don’t understand <code>video</code> elements.</p>
 
 
 
