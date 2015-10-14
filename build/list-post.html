@@ -712,7 +712,7 @@
         &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
           &lt;use xlink:href=&quot;#icon-star&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
-        Featured
+        <mark>Featured</mark>
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/footer&gt;
@@ -760,7 +760,7 @@
           </a>
         </li>
         <li>
-          <button role="checkbox" aria-checked="false">
+          <button role="checkbox" aria-checked="true">
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-star"></use><foreignObject>Feature</foreignObject></switch></svg>
           </button>
         </li>
@@ -772,6 +772,10 @@
       </ul>
 
       <ul class="meta">
+        <li>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-star"></use></svg>
+          Featured
+        </li>
         <li>
           <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-heart"></use><foreignObject>Heart</foreignObject></switch></svg>
           <ul>
@@ -799,10 +803,16 @@
       …
     &lt;/ul&gt;
 
-    &lt;ul class=&quot;<mark>meta</mark>&quot;&gt;
+    &lt;ul class=&quot;meta&quot;&gt;
       &lt;li&gt;
         &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
-          &lt;switch&gt;&lt;use xlink:href=&quot;#icon-heart&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Heart&lt;/foreignObject&gt;&lt;/switch&gt;
+          &lt;use xlink:href=&quot;#icon-star&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        Featured
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+          &lt;switch&gt;&lt;use xlink:href=&quot;#icon-heart&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;<mark>Heart</mark>&lt;/foreignObject&gt;&lt;/switch&gt;
         &lt;/svg&gt;
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;…&quot;&gt;@aldo&lt;/a&gt;&lt;/li&gt;
@@ -1099,8 +1109,8 @@
     </article>
   </div>
 
-<pre><code>&lt;div class=&quot;comments&quot;&gt;
-  &lt;article class=&quot;post-item&quot;&gt;
+<pre><code>&lt;div class=&quot;<mark>comments</mark>&quot;&gt;
+  &lt;article class=&quot;<mark>post-item</mark>&quot;&gt;
     &lt;header&gt;
       &lt;h3&gt;
         &lt;span class=&quot;avatar&quot;&gt;
