@@ -2938,8 +2938,9 @@
   .push-card.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
+  .push-card.plum,
   .push-card.plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plum */
   }
   .push-card.strawberry {
     background-color: rgb(250, 44, 162); /* @strawberry */
@@ -3916,8 +3917,9 @@
   .mix .periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
+  .mix .plum,
   .mix .plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plum */
   }
   .mix .strawberry {
     background-color: rgb(250, 44, 162); /* @strawberry */
@@ -4387,8 +4389,9 @@
   .mix-editor .preview.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
+  .mix-editor .preview.plum,
   .mix-editor .preview.plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plum */
   }
   .mix-editor .preview.strawberry {
     background-color: rgb(250, 44, 162); /* @strawberry */
@@ -5755,8 +5758,9 @@
   .push-card.periwinkle .post-item .images + .body:before {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
+  .push-card.plum  .post-item .images + .body:before,
   .push-card.plumb .post-item .images + .body:before {
-    background-color: rgb(181, 62, 194); /* @plumb */
+    background-color: rgb(181, 62, 194); /* @plum */
   }
   .push-card.strawberry .post-item .images + .body:before {
     background-color: rgb(250, 44, 162); /* @strawberry */

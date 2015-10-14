@@ -9,7 +9,7 @@
       'blueberry',
       'strawberry',
       'cucumber',
-      'plumb',
+      'plum',
       'orange',
       'boysenberry',
       'lime',
