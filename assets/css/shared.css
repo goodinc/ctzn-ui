@@ -585,7 +585,7 @@
   .text-clone span,
   textarea {
     display: block;
-    height: 4.5em; /* @line-height x 3 */
+    height: 5.25em; /* @line-height x 3 + padding */
   }
   input[type="text"]:disabled {
     color: rgb(153, 153, 153); /* @nickel */
