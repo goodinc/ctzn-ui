@@ -4938,56 +4938,59 @@
   .edit-profile form > p.file {
     text-align: center;
   }
-
+  .edit-profile .file .avatar {
+    display: block;
+    margin-bottom: 0.75em;
+  }
 
   /* DEPRECATED: (for a single image) */
-  .edit-profile .file:first-child {
+  .edit-profile .single.file {
     text-align: center;
     color: rgb(102, 102, 102); /* @tin */
   }
-  .edit-profile .file:first-child .loading-image,
-  .edit-profile .file:first-child .avatar {
+  .edit-profile .single.file .loading-image,
+  .edit-profile .single.file .avatar {
     display: block;
     margin: 0 auto 0.75em;
   }
-  .edit-profile .file:first-child .loading-image {
+  .edit-profile .single.file .loading-image {
     width: 100px; /* profile image size */
     height: 100px;
     background-color: rgb(51, 51, 51); /* @iron */
     border-radius: 50%;
     position: relative;
   }
-  .edit-profile .file:first-child .loading-image .sending.icon {
+  .edit-profile .single.file .loading-image .sending.icon {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-left: -1.25em;
     margin-top: -0.25em;
   }
-  .edit-profile .file:first-child .sending-icon {
+  .edit-profile .single.file .sending-icon {
     display: block;
   }
-  .edit-profile .file:first-child label,
-  .edit-profile .file:first-child label > span {
+  .edit-profile .single.file label,
+  .edit-profile .single.file label > span {
     display: block;
   }
-  .edit-profile .file:first-child label {
+  .edit-profile .single.file label {
     padding-top: 0;
   }
-  .edit-profile .file:first-child img {
+  .edit-profile .single.file img {
     display: block;
     margin: -0.125em auto 0.375em;
     border-radius: 100%;
     border: 0.125em solid transparent;
   }
-  .edit-profile .file:first-child input[type="file"] {
+  .edit-profile .single.file input[type="file"] {
     position: absolute;
     left: -9999px;
   }
-  .edit-profile .file:first-child input[type="file"]:focus ~ span span {
+  .edit-profile .single.file input[type="file"]:focus ~ span span {
     color: rgb(51, 51, 51); /* @iron */
   }
-  .edit-profile .file:first-child input[type="file"]:focus ~ span img {
+  .edit-profile .single.file input[type="file"]:focus ~ span img {
     border-color: rgb(102, 102, 102); /* @tin */
   }
 
