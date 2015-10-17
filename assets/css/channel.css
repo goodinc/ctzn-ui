@@ -438,8 +438,9 @@
   }
 
   /* Title screen */
-  .push-title-only .push-channel .item {
-    opacity: 0;
+  .push-title-only .push-channel .list {
+    position: relative;
+    z-index: -1;
   }
   .push-title-only .push-channel > header {
     font-size: 1.5em;
