@@ -378,7 +378,7 @@
   }
   .headline.plum,
   .headline.plumb {
-    border-top: 10px solid rgb(181, 62, 194); /* @plum */
+    border-top: 10px solid rgb(181, 62, 194); /* @plumb */
   }
   .headline.strawberry {
     border-top: 10px solid rgb(250, 44, 162); /* @strawberry */
@@ -469,7 +469,7 @@
   .weekly.headline.plum,
    .daily.headline.plumb,
   .weekly.headline.plumb {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
    .daily.headline.strawberry,
   .weekly.headline.strawberry {
@@ -685,7 +685,7 @@
   }
   .push.intro.plum div,
   .push.intro.plumb div {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .push.intro.strawberry div {
     background-color: rgb(250, 44, 162); /* @strawberry */
@@ -1036,7 +1036,7 @@
   .article .summary.plum,
   .article .join-summary.plumb,
   .article .summary.plumb {
-    border-left: 5px solid rgb(181, 62, 194); /* @plum */
+    border-left: 5px solid rgb(181, 62, 194); /* @plumb */
   }
   .article .join-summary.strawberry,
   .article .summary.strawberry {
@@ -1243,11 +1243,11 @@
 
   .download.plum,
   .download.plumb {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .feedback.plum,
   .feedback.plumb {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
     background-color: rgb(161, 42, 174); /* 4% darker */
   }
 

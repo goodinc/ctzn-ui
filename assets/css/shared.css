@@ -2940,7 +2940,7 @@
   }
   .push-card.plum,
   .push-card.plumb {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .push-card.strawberry {
     background-color: rgb(250, 44, 162); /* @strawberry */
@@ -3920,7 +3920,7 @@
   }
   .mix .plum,
   .mix .plumb {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .mix .strawberry {
     background-color: rgb(250, 44, 162); /* @strawberry */
@@ -4392,7 +4392,7 @@
   }
   .mix-editor .preview.plum,
   .mix-editor .preview.plumb {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .mix-editor .preview.strawberry {
     background-color: rgb(250, 44, 162); /* @strawberry */
@@ -5774,7 +5774,7 @@
   }
   .push-card.plum  .post-item .images + .body:before,
   .push-card.plumb .post-item .images + .body:before {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .push-card.strawberry .post-item .images + .body:before {
     background-color: rgb(250, 44, 162); /* @strawberry */

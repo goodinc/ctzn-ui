@@ -312,7 +312,7 @@
   }
   .push-channel.plum,
   .push-channel.plumb {
-    background-color: rgb(181, 62, 194); /* @plum */
+    background-color: rgb(181, 62, 194); /* @plumb */
   }
   .push-channel.strawberry {
     background-color: rgb(250, 44, 162); /* @strawberry */
@@ -422,7 +422,7 @@
   }
   .push-channel.plum > header > div,
   .push-channel.plumb > header > div {
-    border-color: rgb(181, 62, 194); /* @plum */
+    border-color: rgb(181, 62, 194); /* @plumb */
   }
   .push-channel.strawberry > header > div {
     border-color: rgb(250, 44, 162); /* @strawberry */
