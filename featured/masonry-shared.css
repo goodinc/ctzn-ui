@@ -5653,8 +5653,10 @@
       -webkit-flex-wrap: wrap;
               flex-wrap: wrap;
     }
-    .public.push-card.page .details .name {
-      font-size: 10vmin;
+    @media (min-width: 30em) and (min-height: 30em) {
+      .public.push-card.page .details .name {
+        font-size: 10vmin;
+      }
     }
 
 
