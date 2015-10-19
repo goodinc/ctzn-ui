@@ -1,0 +1,2288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="hoverable"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Community Services Unlimited</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Community Services Unlimited">
+<meta property="og:description" name="description" content="">
+<meta property="og:site_name" content="ctzn">
+<meta name="twitter:site" content="@ProjectCTZN">
+<style>
+    /*
+      This CSS resource incorporates links to font software which is the valuable copyrighted
+      property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+      redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+      Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
+    */
+    @font-face {
+      font-family: "Proxima Nova";
+      src: url(../assets/fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix);
+      src: url(../assets/fonts/9fbce143-f5db-4c0b-9159-b1e666079f67.eot?#iefix) format("eot"),
+           url(../assets/fonts/19dd5cf2-ac2d-48d5-901a-c432fd291ee2.woff) format("woff"),
+           url(../assets/fonts/22cfbfa4-f607-4751-92eb-6fa194353e57.ttf) format("truetype"),
+           url(../assets/fonts/3d6b6348-e05f-4123-b19a-3bfd02c7f361.svg#3d6b6348-e05f-4123-b19a-3bfd02c7f361) format("svg");
+      font-weight: 900; /* @extra-bold */
+      font-style: normal;
+    }
+  </style>
+<link rel="stylesheet" href="../assets/css/shared.css">
+<style>
+    /*
+    .page > header {
+      position: absolute;
+    }
+    */
+
+    .push-card .details {
+      max-width: none;
+
+      min-height: 80vh;
+      min-height: calc(50vh - 9.0625em);
+
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: column;
+              flex-direction: column;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .push-card.page .details .name {
+      font-size: 10vmin;
+    }
+
+    .post-list {
+      padding-bottom: 0;
+      background: white;
+      /*
+      font-size: 16px;
+      */
+    }
+    .post-list > li {
+      max-width: none;
+    }
+    .push-card .post-list:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .push-card .post-list .post-item {
+      position: relative;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      color: inherit;
+    }
+    .push-card .post-list .post-item header {
+      /*
+      background: rgba(0, 0, 0, 0.2);
+      */
+      position: absolute;
+      top: auto;
+      right: auto;
+      left: 0;
+      bottom: 0;
+    }
+    @media (min-width: 50em) {
+      .push-card .post-list .post-item header {
+        font-size: 2vmin;
+      }
+    }
+    .push-card .post-list .post-item .images {
+      overflow: visible;
+    }
+    /*
+    .push-card .post-list .post-item .images:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, transparent, transparent 60%, rgba(0, 0, 0, 0.75));
+    }
+    */
+    .push-card .post-list .post-item .images figure {
+      position: relative;
+    }
+    .push-card .post-list .post-item .images img {
+      width: auto;
+      height: auto;
+      max-width: none;
+      max-height: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .push-card .post-list > li {
+      float: left;
+    }
+    .push-card .post-list .post-item {
+      float: left;
+    }
+    .push-card .post-list > li article + article header {
+      display: none;
+    }
+
+    /*
+    li header + .body,
+    li figure {
+      width: calc(50vw - 1.875em) !important;
+      height: auto !important;
+      max-height: calc(50vw - 1.875em) !important;
+    }
+    li header + .body {
+      max-height: none !important;
+    }
+    li.landscape figure {
+      width: calc(100vw - 2.5em) !important;
+    }
+
+    li:not(.landscape):first-child + li.landscape figure {
+      width: calc(50vw - 1.875em) !important;
+      height: auto !important;
+      max-height: calc(50vw - 1.875em) !important;
+    }
+    */
+
+
+    .push-card .post-list .post-item .body {
+      color: white;
+      padding: 1.25em;
+      font-weight: inherit;
+      text-align: center;
+    }
+
+    .push-card .post-list .text-only .post-item {
+      background: white;
+      color: black;
+    }
+
+    .push-card .post-list li:nth-child(2n).text-only .post-item {
+      background: rgb(246, 246, 246);
+    }
+
+    .push-card .post-list .text-only header,
+    .push-card .post-list .text-only .body {
+      background: transparent;
+      color: inherit;
+    }
+    .push-card .post-list .text-and-image header,
+    .push-card .post-list .text-and-image .body {
+      background: transparent;
+      color: inherit;
+    }
+    .post-item header p {
+      color: inherit;
+    }
+    .push-card .post-list .post-item header time {
+      color: inherit;
+      opacity: 0.5;
+    }
+    .push-card .post-list .post-item .body {
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: column;
+              flex-direction: column;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .push-card .post-list .post-item .body p:first-child {
+      margin-top: 0;
+    }
+    .push-card .post-list .post-item .body p {
+      max-width: 33em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .push-card .post-list .post-item .body:before,
+    .push-card .post-list .post-item .body:after {
+      content: none !important;
+    }
+
+
+
+    .post-list .text-and-image .body {
+      position: absolute !important;
+      top: 20%;
+      left: 0;
+      width: 100% !important;
+      height: 60% !important;
+      overflow: hidden;
+    }
+    .post-list .text-and-image .images:before {
+      display: none;
+    }
+
+
+
+    .post-list .text-and-image figure {
+      overflow: hidden;
+    }
+    .post-list .text-and-image figure img {
+      visibility: hidden;
+      /*
+      opacity: 0.2;
+      -webkit-transform: scaleY(-1);
+      -webkit-filter: blur(3em);
+              filter: blur(3em);
+      */
+    }
+
+    @media (min-aspect-ratio: 1/1) {
+      .post-list .text-and-image figure img {
+        -webkit-transform: scaleX(-1);
+      }
+    }
+
+
+
+
+
+
+    li header + .body,
+    li figure {
+      width: 50vw !important;
+      height: 50vw !important;
+    }
+
+    @media (min-aspect-ratio: 1/1) {
+      .post-list > li {
+        width: 100vw;
+      }
+      li header + .body,
+      li figure {
+        width: 50vw !important;
+        height: 50vw !important;
+        min-height: 80vh !important;
+        min-height: calc(100vh - 3.0625em) !important;
+      }
+      .landscape figure {
+        width: 66.666vw !important;
+      }
+      .landscape.text-and-image figure {
+        width: 33.333vw !important;
+      }
+      .portrait figure {
+        width: auto !important;
+        height: 50vh !important;
+      }
+      .portrait figure img {
+        width: auto !important;
+      }
+      /*
+      li:not(.landscape):first-child + li.landscape figure {
+        width: 50vw !important;
+        height: 50vw !important;
+      }
+      */
+    }
+
+
+
+    @media (max-aspect-ratio: 1/1) {
+      li header + .body,
+      li figure {
+        width: 100vw !important;
+        height: auto !important;
+      }
+      li header + .body {
+        height: 100vw !important;
+      }
+      /*
+      li.text-only header + .body {
+        height: 100vw !important;
+      }
+      */
+      .portrait.text-and-image figure {
+        height: 100vw !important;
+      }
+      /*
+      li.landscape figure {
+        width: 100vh !important;
+      }
+      li.portrait figure {
+        height: 100vh !important;
+      }
+      */
+      /*
+      li:not(.landscape):first-child + li.landscape figure {
+        width: 50vw !important;
+        height: 50vw !important;
+      }
+      */
+      .post-list .text-and-image figure {
+        width: 100vw !important;
+        height: auto !important;
+        position: absolute !important;
+      }
+      .post-list .text-only header + .body,
+      .post-list .text-and-image .body {
+        display: block !important;
+        padding-top: 6em !important;
+        width: 100vw !important;
+        height: auto !important;
+        min-height: 0 !important;
+        position: static !important;
+        padding-bottom: 6em !important;
+      }
+    }
+
+    .post-list .text-only header + .body {
+      display: block !important;
+      padding-top: 6em !important;
+      width: 100vw !important;
+      height: auto !important;
+      min-height: 0 !important;
+      position: static !important;
+      padding-bottom: 6em !important;
+    }
+
+
+
+    /*
+    .post-list li.text-only .body {
+      padding-top: 6em !important;
+      width: 100vw !important;
+      height: auto !important;
+      position: static !important;
+      padding-bottom: 6em !important;
+    }
+    */
+
+
+    /*
+    .post-list li.text-and-image {
+      display: none;
+    }
+    .post-list li.text-only {
+      display: none;
+    }
+    */
+  </style>
+<style>
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* SHIM: Add the same font files with bold weight, so the browser won’t render “faux bold” emoji characters. */
+    @font-face {
+      font-family: "Android Emoji";
+      src: url(../assets/fonts/androidemoji.eot?#iefix);
+      src: url(../assets/fonts/androidemoji.eot?#iefix) format("eot"),
+           url(../assets/fonts/androidemoji.woff) format("woff"),
+           url(../assets/fonts/androidemoji.ttf) format("truetype"),
+           url(../assets/fonts/androidemoji.svg#androidemoji) format("svg");
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    /* This is our usual font stack with an emoji font at the end
+      (so it will catch any characters that aren’t available in the other fonts). */
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Android Emoji";
+    }
+  </style>
+<script type="text/javascript" async="" src="//fast.fonts.net/t/trackingCode.js"></script><script>
+    // fonts.com tracking
+    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
+    (function() {
+      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
+      t.src = "//fast.fonts.net/t/trackingCode.js";
+      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
+    })();
+  </script><script>
+  (function() {
+    // Make new HTML elements styleable in older browsers
+    var elements = ['main', 'section', 'article', 'aside', 'nav', 'header', 'footer', 'figure'];
+    for (var index = 0; index < elements.length; index++) { document.createElement(elements[index]); }
+  })();
+  </script><link rel="icon" type="image/png" href="/images/favicon-192.png">
+<link rel="apple-touch-icon" href="/images/favicon-192.png">
+<meta name="msapplication-TileImage" content="/images/favicon-192-transparent.png">
+<meta name="msapplication-TileColor" content="rgb(150, 255, 108)">
+<script>
+    /*!
+     * Color Thief v2.0
+     * by Lokesh Dhakar - http://www.lokeshdhakar.com
+     *
+     * License
+     * -------
+     * Creative Commons Attribution 2.5 License:
+     * http://creativecommons.org/licenses/by/2.5/
+     *
+     * Thanks
+     * ------
+     * Nick Rabinowitz - For creating quantize.js.
+     * John Schulz - For clean up and optimization. @JFSIII
+     * Nathan Spady - For adding drag and drop support to the demo page.
+     *
+     */
+    var CanvasImage=function(a){this.canvas=document.createElement("canvas"),this.context=this.canvas.getContext("2d"),document.body.appendChild(this.canvas),this.width=this.canvas.width=a.width,this.height=this.canvas.height=a.height,this.context.drawImage(a,0,0,this.width,this.height)};CanvasImage.prototype.clear=function(){this.context.clearRect(0,0,this.width,this.height)},CanvasImage.prototype.update=function(a){this.context.putImageData(a,0,0)},CanvasImage.prototype.getPixelCount=function(){return this.width*this.height},CanvasImage.prototype.getImageData=function(){return this.context.getImageData(0,0,this.width,this.height)},CanvasImage.prototype.removeCanvas=function(){this.canvas.parentNode.removeChild(this.canvas)};var ColorThief=function(){};/*!
+     * quantize.js Copyright 2008 Nick Rabinowitz.
+     * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+     */
+    /*!
+     * Block below copied from Protovis: http://mbostock.github.com/protovis/
+     * Copyright 2010 Stanford Visualization Group
+     * Licensed under the BSD License: http://www.opensource.org/licenses/bsd-license.php
+     */
+    if(ColorThief.prototype.getColor=function(a,b){var c=this.getPalette(a,5,b),d=c[0];return d},ColorThief.prototype.getPalette=function(a,b,c){"undefined"==typeof b&&(b=10),"undefined"==typeof c&&(c=10);for(var d,e,f,g,h,i=new CanvasImage(a),j=i.getImageData(),k=j.data,l=i.getPixelCount(),m=[],n=0;l>n;n+=c)d=4*n,e=k[d+0],f=k[d+1],g=k[d+2],h=k[d+3],h>=125&&(e>250&&f>250&&g>250||m.push([e,f,g]));var o=MMCQ.quantize(m,b),p=o.palette();return i.removeCanvas(),p},!pv)var pv={map:function(a,b){var c={};return b?a.map(function(a,d){return c.index=d,b.call(c,a)}):a.slice()},naturalOrder:function(a,b){return b>a?-1:a>b?1:0},sum:function(a,b){var c={};return a.reduce(b?function(a,d,e){return c.index=e,a+b.call(c,d)}:function(a,b){return a+b},0)},max:function(a,b){return Math.max.apply(null,b?pv.map(a,b):a)}};var MMCQ=function(){function a(a,b,c){return(a<<2*i)+(b<<i)+c}function b(a){function b(){c.sort(a),d=!0}var c=[],d=!1;return{push:function(a){c.push(a),d=!1},peek:function(a){return d||b(),void 0===a&&(a=c.length-1),c[a]},pop:function(){return d||b(),c.pop()},size:function(){return c.length},map:function(a){return c.map(a)},debug:function(){return d||b(),c}}}function c(a,b,c,d,e,f,g){var h=this;h.r1=a,h.r2=b,h.g1=c,h.g2=d,h.b1=e,h.b2=f,h.histo=g}function d(){this.vboxes=new b(function(a,b){return pv.naturalOrder(a.vbox.count()*a.vbox.volume(),b.vbox.count()*b.vbox.volume())})}function e(b){var c,d,e,f,g=1<<3*i,h=new Array(g);return b.forEach(function(b){d=b[0]>>j,e=b[1]>>j,f=b[2]>>j,c=a(d,e,f),h[c]=(h[c]||0)+1}),h}function f(a,b){var d,e,f,g=1e6,h=0,i=1e6,k=0,l=1e6,m=0;return a.forEach(function(a){d=a[0]>>j,e=a[1]>>j,f=a[2]>>j,g>d?g=d:d>h&&(h=d),i>e?i=e:e>k&&(k=e),l>f?l=f:f>m&&(m=f)}),new c(g,h,i,k,l,m,b)}function g(b,c){function d(a){var b,d,e,f,g,h=a+"1",j=a+"2",k=0;for(i=c[h];i<=c[j];i++)if(o[i]>n/2){for(e=c.copy(),f=c.copy(),b=i-c[h],d=c[j]-i,g=d>=b?Math.min(c[j]-1,~~(i+d/2)):Math.max(c[h],~~(i-1-b/2));!o[g];)g++;for(k=p[g];!k&&o[g-1];)k=p[--g];return e[j]=g,f[h]=e[j]+1,[e,f]}}if(c.count()){var e=c.r2-c.r1+1,f=c.g2-c.g1+1,g=c.b2-c.b1+1,h=pv.max([e,f,g]);if(1==c.count())return[c.copy()];var i,j,k,l,m,n=0,o=[],p=[];if(h==e)for(i=c.r1;i<=c.r2;i++){for(l=0,j=c.g1;j<=c.g2;j++)for(k=c.b1;k<=c.b2;k++)m=a(i,j,k),l+=b[m]||0;n+=l,o[i]=n}else if(h==f)for(i=c.g1;i<=c.g2;i++){for(l=0,j=c.r1;j<=c.r2;j++)for(k=c.b1;k<=c.b2;k++)m=a(j,i,k),l+=b[m]||0;n+=l,o[i]=n}else for(i=c.b1;i<=c.b2;i++){for(l=0,j=c.r1;j<=c.r2;j++)for(k=c.g1;k<=c.g2;k++)m=a(j,k,i),l+=b[m]||0;n+=l,o[i]=n}return o.forEach(function(a,b){p[b]=n-a}),d(h==e?"r":h==f?"g":"b")}}function h(a,c){function h(a,b){for(var c,d=1,e=0;k>e;)if(c=a.pop(),c.count()){var f=g(i,c),h=f[0],j=f[1];if(!h)return;if(a.push(h),j&&(a.push(j),d++),d>=b)return;if(e++>k)return}else a.push(c),e++}if(!a.length||2>c||c>256)return!1;var i=e(a),j=0;i.forEach(function(){j++});var m=f(a,i),n=new b(function(a,b){return pv.naturalOrder(a.count(),b.count())});n.push(m),h(n,l*c);for(var o=new b(function(a,b){return pv.naturalOrder(a.count()*a.volume(),b.count()*b.volume())});n.size();)o.push(n.pop());h(o,c-o.size());for(var p=new d;o.size();)p.push(o.pop());return p}var i=5,j=8-i,k=1e3,l=.75;return c.prototype={volume:function(a){var b=this;return(!b._volume||a)&&(b._volume=(b.r2-b.r1+1)*(b.g2-b.g1+1)*(b.b2-b.b1+1)),b._volume},count:function(b){var c=this,d=c.histo;if(!c._count_set||b){var e,f,g,h=0;for(e=c.r1;e<=c.r2;e++)for(f=c.g1;f<=c.g2;f++)for(g=c.b1;g<=c.b2;g++)index=a(e,f,g),h+=d[index]||0;c._count=h,c._count_set=!0}return c._count},copy:function(){var a=this;return new c(a.r1,a.r2,a.g1,a.g2,a.b1,a.b2,a.histo)},avg:function(b){var c=this,d=c.histo;if(!c._avg||b){var e,f,g,h,j,k=0,l=1<<8-i,m=0,n=0,o=0;for(f=c.r1;f<=c.r2;f++)for(g=c.g1;g<=c.g2;g++)for(h=c.b1;h<=c.b2;h++)j=a(f,g,h),e=d[j]||0,k+=e,m+=e*(f+.5)*l,n+=e*(g+.5)*l,o+=e*(h+.5)*l;c._avg=k?[~~(m/k),~~(n/k),~~(o/k)]:[~~(l*(c.r1+c.r2+1)/2),~~(l*(c.g1+c.g2+1)/2),~~(l*(c.b1+c.b2+1)/2)]}return c._avg},contains:function(a){var b=this,c=a[0]>>j;return gval=a[1]>>j,bval=a[2]>>j,c>=b.r1&&c<=b.r2&&gval>=b.g1&&gval<=b.g2&&bval>=b.b1&&bval<=b.b2}},d.prototype={push:function(a){this.vboxes.push({vbox:a,color:a.avg()})},palette:function(){return this.vboxes.map(function(a){return a.color})},size:function(){return this.vboxes.size()},map:function(a){for(var b=this.vboxes,c=0;c<b.size();c++)if(b.peek(c).vbox.contains(a))return b.peek(c).color;return this.nearest(a)},nearest:function(a){for(var b,c,d,e=this.vboxes,f=0;f<e.size();f++)c=Math.sqrt(Math.pow(a[0]-e.peek(f).color[0],2)+Math.pow(a[1]-e.peek(f).color[1],2)+Math.pow(a[2]-e.peek(f).color[2],2)),(b>c||void 0===b)&&(b=c,d=e.peek(f).color);return d},forcebw:function(){var a=this.vboxes;a.sort(function(a,b){return pv.naturalOrder(pv.sum(a.color),pv.sum(b.color))});var b=a[0].color;b[0]<5&&b[1]<5&&b[2]<5&&(a[0].color=[0,0,0]);var c=a.length-1,d=a[c].color;d[0]>251&&d[1]>251&&d[2]>251&&(a[c].color=[255,255,255])}},{quantize:h}}();
+  </script><script>
+  (function() {
+
+    // KUDOS: http://stackoverflow.com/questions/1186414/whats-the-algorithm-to-calculate-aspect-ratio-i-need-an-output-like-43-169#answer-1186465
+    function gcd(a, b) {
+      return (b === 0) ? a : gcd (b, a % b);
+    }
+
+    // KUDOS: http://stackoverflow.com/questions/16080961/dynamic-media-queries#answer-16083458
+    var style;
+    var aspectRatios = {};
+    function addMediaQueries(aspectRatio) {
+
+      // Don’t add the aspect ratio media queries, if they already exist
+      if (aspectRatios[aspectRatio]) return;
+
+      var template = document.getElementById('aspect-ratio-media-queries');
+      var rules = template.textContent.replace(/\{\{aspect-ratio\}\}/g, aspectRatio);
+
+      aspectRatios[aspectRatio] = 1;
+
+      if (!style) {
+        style = document.createElement('style');
+        document.head.appendChild(style);
+      }
+      style.textContent += rules;
+    }
+
+    function getAncestor(element, tagName) {
+      var ancestor = element;
+      while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== tagName);
+      if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === tagName) {
+        return ancestor;
+      }
+    }
+
+    var thief;
+    if (ColorThief) {
+      thief = new ColorThief();
+    }
+
+    function addAspectRatio(image) {
+      var width = image.naturalWidth;
+      var height = image.naturalHeight;
+      var item = getAncestor(image, 'li');
+      var article = getAncestor(image, 'article');
+
+      if (width > 0 && height > 0) {
+        //var greatestCommonDenominator = gcd(width, height);
+        //var aspectRatio = (width / greatestCommonDenominator) + '/' + (height / greatestCommonDenominator);
+
+        var aspectRatio = 'square';
+
+        if (width/height >= 4/3 && width > (window.innerWidth / 2)) {
+          aspectRatio = 'landscape';
+        }
+
+        if (width/height <= 3/4 && height > (window.innerHeight / 2)) {
+          aspectRatio = 'portrait';
+        }
+
+        if (article) {
+          article.className += ' ' + aspectRatio;
+          //addMediaQueries(aspectRatio);
+        }
+      } else if (width === 0 && height === 0) {
+        //item.setAttribute('data-no-dimensions', 1);
+      }
+
+
+      if (item && thief) {
+
+          var colors = thief.getPalette(image, 2);
+          if (colors[0] && colors[1]) {
+            if (image === item.querySelector('figure img')) {
+              item.style.backgroundColor = 'rgb(' + colors[0][0] + ', ' + colors[0][1] + ', ' + colors[0][2] + ')';
+              item.style.color = 'rgb(' + colors[1][0] + ', ' + colors[1][1] + ', ' + colors[1][2] + ')';
+            }
+            //background.setAttribute('style', 'background-color: rgb(' + colors[0][0] + ', ' + colors[0][1] + ', ' + colors[0][2] + ')');
+            //article.setAttribute('style', 'color: rgb(' + colors[1][0] + ', ' + colors[1][1] + ', ' + colors[1][2] + ')');
+          }
+      }
+
+    }
+
+    window.onPublicPageImageLoad = addAspectRatio;
+  })();
+</script>
+<body>
+  <svg display="none" width="0" height="0"><symbol id="icon-ctzn" viewBox="0 0 100 37.818"><path d="M8.776,36.702c-1.789-0.744-3.338-1.779-4.644-3.106S1.81,30.66,1.086,28.77C0.362,26.88,0,24.789,0,22.498
+      c0-2.292,0.362-4.373,1.086-6.243c0.724-1.87,1.739-3.478,3.046-4.825s2.855-2.382,4.644-3.106c1.789-0.724,3.75-1.086,5.881-1.086
+      c2.573,0,4.735,0.432,6.484,1.297c1.749,0.864,3.026,1.759,3.83,2.684l-4.765,7.057c-0.523-0.603-1.136-1.096-1.84-1.478
+      c-0.704-0.382-1.518-0.573-2.443-0.573c-1.528,0-2.825,0.543-3.89,1.629c-1.066,1.086-1.598,2.634-1.598,4.644
+      c0,2.01,0.533,3.569,1.598,4.674c1.066,1.106,2.362,1.659,3.89,1.659c0.925,0,1.739-0.201,2.443-0.603
+      c0.704-0.402,1.317-0.905,1.84-1.508l4.765,7.117c-0.804,0.925-2.081,1.819-3.83,2.684c-1.749,0.864-3.91,1.297-6.484,1.297
+      C12.525,37.818,10.565,37.446,8.776,36.702z"></path><path d="M31.604,35.616c-1.448-1.468-2.171-3.689-2.171-6.665V16.768h-3.679V7.962h3.679V0h10.193v7.962h4.584
+      v8.806h-4.584v9.59c0,0.764,0.161,1.367,0.482,1.809s0.784,0.663,1.387,0.663c0.362,0,0.714-0.05,1.056-0.151
+      c0.342-0.101,0.573-0.231,0.694-0.392l1.689,7.962c-0.563,0.442-1.397,0.814-2.503,1.116c-1.106,0.302-2.423,0.452-3.951,0.452
+      C35.344,37.818,33.052,37.084,31.604,35.616z"></path><path d="M47.346,29.615l9.469-12.847h-9.469V7.962h22.558v7.177l-9.59,13.149h9.831v8.806H47.346V29.615z"></path><path d="M89.807,19.482c0-1.166-0.261-2-0.784-2.503c-0.523-0.503-1.267-0.754-2.232-0.754
+      s-1.759,0.282-2.383,0.844c-0.623,0.563-1.116,1.126-1.478,1.689v18.336H72.798V7.962h10.133v3.378
+      c0.724-1.005,1.86-1.94,3.408-2.805c1.548-0.865,3.327-1.297,5.338-1.297c2.935,0,5.056,0.774,6.363,2.322
+      c1.307,1.548,1.96,3.468,1.96,5.76v21.774H89.807V19.482z"></path></symbol><symbol id="icon-good" viewBox="0 0 112 55.795"><path d="M104.198,44.138c0,2.142-1.748,3.885-3.901,3.885h-3.901V7.765h3.901c2.153,0,3.901,1.743,3.901,3.883
+      V44.138z M100.297,0H89.305c-0.392,0-0.709,0.313-0.709,0.705v54.38c0,0.394,0.317,0.71,0.709,0.71h10.992
+      C106.75,55.794,112,50.56,112,44.138v-32.49C112,5.225,106.75,0,100.297,0z M74.668,44.138c0,2.142-1.75,3.885-3.901,3.885
+      s-3.904-1.743-3.904-3.885v-32.49c0-2.139,1.753-3.883,3.904-3.883s3.901,1.743,3.901,3.883V44.138z M70.767,0
+      c-6.453,0-11.702,5.225-11.702,11.648v32.49c0,6.421,5.248,11.656,11.702,11.656c6.453,0,11.701-5.234,11.701-11.656v-32.49
+      C82.467,5.225,77.22,0,70.767,0z M11.701,0C5.25,0,0,5.225,0,11.648v32.49c0,6.421,5.25,11.656,11.701,11.656
+      c2.745,0,5.262-0.955,7.26-2.532l0.897,2.532h2.835c0.392,0,0.709-0.316,0.709-0.71V23.305c0-0.391-0.317-0.705-0.709-0.705H12.058
+      c-0.394,0-0.712,0.313-0.712,0.705v6.354c0,0.394,0.318,0.707,0.712,0.707h3.544v13.773c0,2.142-1.75,3.885-3.901,3.885
+      S7.8,46.281,7.8,44.139v-32.49c0-2.139,1.75-3.883,3.901-3.883s3.901,1.743,3.901,3.883v2.475c0,0.387,0.318,0.705,0.712,0.705
+      h6.379c0.392,0,0.709-0.318,0.709-0.705v-2.475C23.402,5.225,18.155,0,11.701,0z M45.135,44.138c0,2.142-1.752,3.885-3.901,3.885
+      c-2.151,0-3.901-1.743-3.901-3.885v-32.49c0-2.139,1.75-3.883,3.901-3.883c2.149,0,3.901,1.743,3.901,3.883V44.138z M41.234,0
+      C34.781,0,29.53,5.225,29.53,11.648v32.49c0,6.421,5.25,11.656,11.703,11.656s11.701-5.234,11.701-11.656v-32.49
+      C52.935,5.225,47.687,0,41.234,0z"></path></symbol><symbol id="icon-close-circle" viewBox="0 0 20 20"><path d="M14.087 5.913c-0.395-0.395-1.035-0.395-1.43 0l-2.657 2.657-2.657-2.657c-0.395-0.395-1.035-0.395-1.43 0s-0.395 1.036 0 1.43l2.657 2.657-2.657 2.657c-0.395 0.395-0.395 1.035 0 1.43 0.198 0.197 0.457 0.297 0.715 0.297s0.517-0.099 0.715-0.297l2.657-2.657 2.657 2.657c0.197 0.197 0.457 0.297 0.715 0.297s0.518-0.099 0.715-0.297c0.395-0.395 0.395-1.035 0-1.43l-2.657-2.657 2.657-2.657c0.395-0.395 0.395-1.035 0-1.43z"></path><path d="M10 0.833c-5.054 0-9.167 4.112-9.167 9.167s4.112 9.167 9.167 9.167c5.055 0 9.167-4.112 9.167-9.167s-4.112-9.167-9.167-9.167zM10 17.692c-4.241 0-7.692-3.451-7.692-7.692s3.45-7.692 7.692-7.692c4.241 0 7.692 3.45 7.692 7.692s-3.451 7.692-7.692 7.692z"></path></symbol><symbol id="icon-info-circle" viewBox="0 0 20 20"><path d="M10 19.167c-5.054 0-9.167-4.112-9.167-9.167s4.112-9.167 9.167-9.167c5.055 0 9.167 4.112 9.167 9.167s-4.112 9.167-9.167 9.167zM10 2.308c-4.241 0-7.692 3.45-7.692 7.692s3.45 7.692 7.692 7.692c4.241 0 7.692-3.451 7.692-7.692s-3.451-7.692-7.692-7.692z"></path><path d="M11.75 13.305l-0.117 0.482c-0.353 0.139-0.635 0.245-0.846 0.318s-0.455 0.11-0.733 0.11c-0.428 0-0.761-0.104-0.998-0.313s-0.356-0.473-0.356-0.795c0-0.125 0.009-0.252 0.027-0.382s0.047-0.277 0.086-0.442l0.442-1.563c0.039-0.15 0.072-0.292 0.099-0.426s0.040-0.256 0.040-0.367c0-0.2-0.042-0.339-0.123-0.417s-0.239-0.118-0.473-0.118c-0.115 0-0.232 0.018-0.352 0.053s-0.223 0.069-0.308 0.102l0.117-0.482c0.289-0.118 0.567-0.218 0.831-0.303s0.515-0.126 0.75-0.126c0.426 0 0.752 0.103 0.983 0.308s0.346 0.472 0.346 0.8c0 0.067-0.008 0.188-0.024 0.358s-0.046 0.328-0.088 0.471l-0.44 1.557c-0.036 0.125-0.068 0.268-0.097 0.428s-0.043 0.282-0.043 0.364c0 0.207 0.047 0.348 0.138 0.422s0.253 0.113 0.481 0.113c0.107 0 0.228-0.018 0.363-0.056s0.234-0.070 0.295-0.098zM11.863 6.77c0 0.271-0.103 0.503-0.308 0.693s-0.453 0.287-0.741 0.287-0.537-0.096-0.744-0.287-0.31-0.422-0.31-0.693c0-0.271 0.103-0.503 0.31-0.696s0.455-0.289 0.744-0.289 0.536 0.097 0.741 0.289c0.205 0.193 0.308 0.425 0.308 0.696z"></path></symbol><symbol id="icon-hashtag-circle" viewBox="0 0 20 20"><path d="M14.245 8.62c0.411 0 0.744-0.334 0.744-0.744s-0.332-0.744-0.744-0.744h-0.913l0.202-1.262c0.065-0.406-0.211-0.787-0.616-0.852-0.41-0.068-0.785 0.212-0.852 0.616l-0.24 1.497h-2.741l0.202-1.262c0.065-0.406-0.211-0.787-0.616-0.852-0.403-0.065-0.785 0.212-0.852 0.616l-0.24 1.499h-1.83c-0.41 0-0.744 0.334-0.744 0.744s0.334 0.744 0.744 0.744h1.591l-0.442 2.759h-1.15c-0.41 0-0.744 0.332-0.744 0.744s0.334 0.744 0.744 0.744h0.913l-0.202 1.262c-0.065 0.406 0.211 0.785 0.616 0.852 0.040 0.007 0.079 0.010 0.118 0.010 0.359 0 0.675-0.26 0.733-0.625l0.24-1.497h2.741l-0.202 1.262c-0.065 0.406 0.211 0.785 0.616 0.852 0.040 0.007 0.079 0.010 0.118 0.010 0.359 0 0.675-0.26 0.733-0.625l0.24-1.497h1.83c0.411 0 0.744-0.332 0.744-0.744s-0.332-0.744-0.744-0.744h-1.591l0.442-2.759h1.151zM11.15 11.38h-2.741l0.442-2.759h2.741l-0.442 2.759z"></path><path d="M10 0.766c-5.091 0-9.234 4.143-9.234 9.234s4.143 9.234 9.234 9.234c5.091 0 9.234-4.143 9.234-9.234s-4.143-9.234-9.234-9.234zM10 17.748c-4.273 0-7.748-3.475-7.748-7.748s3.475-7.748 7.748-7.748c4.271 0 7.748 3.475 7.748 7.748s-3.476 7.748-7.748 7.748z"></path></symbol><symbol id="icon-add-circle" viewBox="0 0 20 20"><path d="M10 0.8c-5.1 0-9.2 4.1-9.2 9.2s4.1 9.2 9.2 9.2 9.2-4.1 9.2-9.2-4.1-9.2-9.2-9.2zM10 17.7c-4.3 0-7.7-3.5-7.7-7.7s3.4-7.7 7.7-7.7c4.3 0 7.7 3.5 7.7 7.7s-3.4 7.7-7.7 7.7z"></path><path d="M10.9 6.5h-1.8v2.5h-2.6v1.8h2.5v2.5h1.8v-2.5h2.5v-1.7h-2.5v-2.6z"></path></symbol><symbol id="icon-user-circle" viewBox="0 0 20 20"><path d="M10,19.2c-5.1,0-9.2-4.1-9.2-9.2S4.9,0.8,10,0.8s9.2,4.1,9.2,9.2S15.1,19.2,10,19.2z M10,2.3
+      c-4.2,0-7.7,3.5-7.7,7.7s3.5,7.7,7.7,7.7c4.2,0,7.7-3.5,7.7-7.7S14.2,2.3,10,2.3z"></path><path d="M4.5,17.3L4.5,17.3l0.2,0.2c0,0,0.1,0.1,0.1,0.1c0,0,0,0,0,0c0.4,0.2,0.7,0.5,1.1,0.6c0,0,0,0,0,0
+      c0.1,0.1,0.3,0.1,0.4,0.2c0,0,0,0,0,0c0.4,0.2,0.8,0.3,1.2,0.4c0,0,0,0,0.1,0C7.9,18.9,8,19,8.1,19c0,0,0,0,0.1,0
+      C8.5,19,8.7,19.1,9,19.1c0,0,0.1,0,0.1,0c0.1,0,0.2,0,0.3,0c0,0,0.1,0,0.1,0c0.1,0,0.3,0,0.4,0s0.3,0,0.4,0c0,0,0.1,0,0.1,0
+      c0.1,0,0.2,0,0.3,0c0,0,0.1,0,0.1,0c0.3,0,0.6-0.1,0.9-0.1c0,0,0,0,0.1,0c0.1,0,0.3-0.1,0.4-0.1c0,0,0,0,0.1,0
+      c0.4-0.1,0.8-0.3,1.2-0.4c0,0,0,0,0,0c0.1-0.1,0.3-0.1,0.4-0.2c0,0,0,0,0,0c0.4-0.2,0.8-0.4,1.1-0.6c0,0,0,0,0,0
+      c0,0,0.1-0.1,0.1-0.1l0.2-0.2l0,0l-0.2-1.1c-0.5-1.9-1.9-3.4-3.7-3.9c0.9-0.5,1.5-1.5,1.5-2.6c0-1.7-1.4-3.1-3.1-3.1
+      c-1.7,0-3.1,1.4-3.1,3.1c0,1.1,0.6,2.1,1.5,2.6c-1.8,0.5-3.3,2-3.7,3.9L4.5,17.3z"></path></symbol><symbol id="icon-user" viewBox="0 0 20 20"><path d="M18.334 16.25h-16.666c0-2.301 3.73-4.166 8.334-4.166s8.334 1.865 8.334 4.166zM14.166 7.916c0-2.301-1.865-4.166-4.166-4.166s-4.166 1.865-4.166 4.166 1.865 4.166 4.166 4.166c2.301 0 4.166-1.865 4.166-4.166z"></path></symbol><symbol id="icon-more" viewBox="0 0 20 20"><path d="M5 8.334c-0.916 0-1.666 0.75-1.666 1.666s0.75 1.666 1.666 1.666c0.916 0 1.666-0.75 1.666-1.666s-0.75-1.666-1.666-1.666zM15 8.334c-0.916 0-1.666 0.75-1.666 1.666s0.75 1.666 1.666 1.666c0.916 0 1.666-0.75 1.666-1.666s-0.75-1.666-1.666-1.666zM10 8.334c-0.916 0-1.666 0.75-1.666 1.666s0.75 1.666 1.666 1.666c0.916 0 1.666-0.75 1.666-1.666s-0.75-1.666-1.666-1.666z"></path></symbol><symbol id="icon-settings" viewBox="0 0 20 20"><path d="M18.4,8.6c-0.5,0-1,0-1.5,0c-0.7,0-1.2-0.4-1.4-1c-0.2-0.6,0-1.1,0.4-1.5c0.3-0.4,0.7-0.7,1-1c0,0,0,0,0,0
+      c-0.7-0.7-1.3-1.3-2-2c0,0,0,0,0,0.1c-0.3,0.3-0.7,0.7-1,1c-0.1,0.1-0.3,0.3-0.5,0.3c-0.9,0.4-2-0.3-2-1.3c0-0.5,0-1,0-1.5
+      c0,0,0-0.1,0-0.1c-0.9,0-1.9,0-2.8,0c0,0,0,0.1,0,0.1c0,0.5,0,0.9,0,1.4c0,0.5-0.2,0.9-0.6,1.2C7.4,4.6,6.6,4.6,6,4
+      C5.7,3.7,5.4,3.4,5,3C5,3,5,3,5,3C4.3,3.7,3.7,4.3,3,5C3,5,3,5,3.1,5c0.3,0.3,0.7,0.7,1,1c0.3,0.4,0.5,0.8,0.4,1.3
+      C4.4,8.1,3.8,8.6,3.1,8.6c-0.5,0-1,0-1.5,0c0,0-0.1,0-0.1,0c0,0,0,0.1,0,0.1c0,0.9,0,1.8,0,2.7c0,0.1,0,0.1,0.1,0.1
+      c0.5,0,0.9,0,1.4,0c0.3,0,0.6,0,0.8,0.2c0.6,0.3,0.9,0.9,0.8,1.5c-0.1,0.3-0.3,0.6-0.5,0.9c-0.3,0.3-0.7,0.7-1,1C3,15,3,15,3,15
+      c0.7,0.7,1.3,1.3,2,2c0,0,0,0,0.1-0.1c0.3-0.3,0.7-0.7,1-1c0.1-0.1,0.3-0.2,0.5-0.3c0.9-0.4,2.1,0.3,2,1.4c0,0.5,0,1,0,1.4
+      c0,0,0,0.1,0,0.1c0.9,0,1.9,0,2.8,0c0,0,0-0.1,0-0.1c0-0.5,0-0.9,0-1.4c0-0.2,0-0.4,0.1-0.6c0.2-0.6,0.8-1,1.5-0.9
+      c0.4,0,0.7,0.2,0.9,0.5c0.4,0.3,0.7,0.7,1.1,1.1c0,0,0,0,0,0c0.7-0.7,1.3-1.3,2-2c0,0,0,0-0.1-0.1c-0.3-0.3-0.7-0.7-1-1
+      c-0.1-0.1-0.3-0.3-0.4-0.5c-0.3-0.6-0.2-1.2,0.3-1.6c0.3-0.3,0.7-0.4,1-0.4c0.5,0,1,0,1.5,0c0,0,0.1,0,0.1,0
+      C18.5,10.5,18.5,9.5,18.4,8.6C18.5,8.6,18.4,8.6,18.4,8.6z M10,14.4c-2.4,0-4.4-2-4.4-4.4c0-2.4,2-4.4,4.4-4.4c2.4,0,4.4,2,4.4,4.4
+      C14.4,12.4,12.4,14.4,10,14.4z"></path></symbol><symbol id="icon-hashtag" viewBox="0 0 20 20"><path d="M16.707 12.235h-2.624l0.681-4.568h1.943c0.583 0 1.069-0.486 1.069-1.069s-0.486-1.069-1.069-1.069h-1.556l0.389-2.139c0.098-0.583-0.292-1.166-0.875-1.166-0.681 0-1.166 0.292-1.264 0.972l-0.389 2.43h-4.568l0.389-2.139c0.098-0.681-0.389-1.166-0.875-1.36-0.681 0-1.166 0.389-1.264 0.972l-0.486 2.43h-2.916c-0.583 0-1.069 0.486-1.069 1.166s0.486 1.069 1.069 1.069h2.624l-0.681 4.568h-1.943c-0.583 0-1.069 0.486-1.069 1.069s0.486 1.069 1.069 1.069h1.556l-0.389 2.139c-0.098 0.583 0.292 1.166 0.875 1.166 0.098 0 0.098 0 0.098 0 0.486 0 0.972-0.389 1.069-0.875l0.389-2.43h4.568l-0.389 2.139c-0.098 0.583 0.292 1.166 0.875 1.166 0.098 0 0.098 0 0.098 0 0.486 0 0.972-0.389 1.069-0.875l0.389-2.43h3.014c0.583 0 1.069-0.486 1.069-1.069 0.194-0.681-0.292-1.166-0.875-1.166zM7.376 12.235l0.681-4.472h4.568l-0.681 4.472c0 0-4.568 0-4.568 0z"></path></symbol><symbol id="icon-connect" viewBox="0 0 20 20"><path d="M14.386 4.912c-1.228 0-2.457 0.438-3.421 1.228 0 0-0.088 0.088-0.088 0.175s0 0.088 0.088 0.175l0.878 1.053c0 0 0.088 0.088 0.175 0.088s0.088 0 0.175-0.088c0.526-0.526 1.316-0.878 2.193-0.878 1.93 0 3.421 1.491 3.421 3.333s-1.579 3.333-3.421 3.333c-0.701 0-1.404-0.175-1.93-0.614-0.614-0.351-1.053-0.964-1.316-1.667-0.088-0.175-0.088-0.351-0.175-0.614 0-0.175 0-0.263 0-0.438v-0.175c0 0 0 0 0-0.088 0-0.263 0-0.526-0.088-0.789-0.263-1.404-1.053-2.543-2.28-3.333-0.878-0.526-1.842-0.878-2.895-0.878-2.895 0-5.263 2.28-5.263 5.175 0 2.807 2.368 5.088 5.263 5.088 1.316 0 2.543-0.438 3.509-1.316 0.088-0.088 0.088-0.175 0-0.263l-0.964-0.964c-0.088-0.088-0.175-0.088-0.263 0-0.614 0.526-1.404 0.878-2.28 0.878-1.93 0-3.421-1.491-3.421-3.333s1.579-3.333 3.421-3.333c0.701 0 1.404 0.175 1.93 0.614 0.789 0.526 1.316 1.228 1.491 2.105 0 0.263 0.088 0.438 0.088 0.614 0 0.351 0 0.614 0.088 0.789 0.088 0.351 0.088 0.614 0.263 0.878 0.351 1.053 1.141 1.93 2.017 2.543s1.842 0.878 2.895 0.878c2.895 0 5.263-2.28 5.263-5.088-0.088-2.807-2.457-5.088-5.351-5.088z"></path></symbol><symbol id="icon-envelope" viewBox="0 0 20 20"><path d="M17.7,3.2c-0.1,0-0.2-0.1-0.3-0.1c0,0,0,0,0,0c-0.1,0-0.3,0-0.4,0H3c-0.1,0-0.3,0-0.4,0c0,0,0,0,0,0
+      c-0.1,0-0.2,0.1-0.3,0.1C1.5,3.5,1,4.2,1,5.1v9.8c0,0.9,0.5,1.6,1.3,1.9c0.1,0,0.2,0.1,0.3,0.1c0,0,0,0,0,0c0.1,0,0.3,0,0.4,0h14
+      c0.1,0,0.3,0,0.4,0c0,0,0,0,0,0c0.1,0,0.2-0.1,0.3-0.1c0.8-0.3,1.3-1,1.3-1.9V5.1C19,4.2,18.5,3.5,17.7,3.2z M16.7,4.4l-4.6,4.6
+      L11.1,10l-0.7,0.7c-0.3,0.2-0.7,0.2-0.9,0L8.9,10L7.9,9.1L3.3,4.4H16.7z M2.3,14.6V5.4L7,10L2.3,14.6z M3.3,15.6l4.6-4.6l0.7,0.7
+      C9,12,9.5,12.2,10,12.2s1-0.2,1.4-0.6l0.7-0.7l4.6,4.6H3.3z M17.7,14.6L13,10l4.6-4.6V14.6z"></path></symbol><symbol id="icon-padlock" viewBox="0 0 20 20"><path d="M16.1,7.8h-2.2V4.9C13.9,2.8,12.2,1,10,1S6.1,2.8,6.1,4.9v2.9H3.9C3.2,7.8,2.7,8.3,2.7,9v8.8c0,0.7,0.5,1.2,1.2,1.2h12.2
+      c0.7,0,1.2-0.5,1.2-1.2V9C17.3,8.3,16.8,7.8,16.1,7.8z M7.1,4.9C7.1,3.3,8.4,2,10,2s2.9,1.3,2.9,2.9v2.9H12V4.9c0-1.1-0.9-2-2-2
+      s-2,0.9-2,2v2.9H7.1V4.9z M10.9,7.8H9.1V4.9C9.1,4.4,9.5,4,10,4s0.9,0.4,0.9,0.9V7.8z M16.3,17.8c0,0.1-0.1,0.2-0.2,0.2H3.9
+      c-0.1,0-0.2-0.1-0.2-0.2V9c0-0.1,0.1-0.2,0.2-0.2h2.2h3h1.9h3h2.2c0.1,0,0.2,0.1,0.2,0.2V17.8z"></path><path d="M10,10.3c-1.2,0-2.2,1-2.2,2.2c0,0.7,0.3,1.3,0.8,1.7v1.7c0,0.3,0.2,0.5,0.5,0.5h1.7c0.3,0,0.5-0.2,0.5-0.5v-1.7
+      c0.5-0.4,0.8-1.1,0.8-1.7C12.2,11.3,11.2,10.3,10,10.3z M10.6,13.6c-0.2,0.1-0.3,0.3-0.3,0.4v1.4H9.7V14c0-0.2-0.1-0.3-0.3-0.4
+      c-0.4-0.2-0.6-0.6-0.6-1c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2C11.2,13,11,13.4,10.6,13.6z"></path></symbol><symbol id="icon-refresh" viewBox="0 0 20 20"><path d="M19.14 9.652l-2.416 2.418c-0.124 0.124-0.293 0.194-0.468 0.194s-0.341-0.069-0.467-0.194l-2.415-2.418c-0.258-0.258-0.258-0.676 0-0.935s0.676-0.258 0.935 0l1.286 1.289v-0.006c0-3.2-2.601-5.803-5.803-5.803s-5.804 2.602-5.804 5.803 2.604 5.802 5.804 5.802c1.55 0 3.006-0.604 4.104-1.699 0.257-0.258 0.676-0.258 0.934 0s0.257 0.676 0 0.934c-1.345 1.346-3.134 2.086-5.037 2.086-3.929 0-7.126-3.196-7.126-7.124s3.196-7.124 7.126-7.124 7.124 3.195 7.124 7.124v0.006l1.289-1.289c0.258-0.258 0.676-0.258 0.935 0s0.259 0.676 0.001 0.934z"></path></symbol><symbol id="icon-sync" viewBox="0 0 20 20"><path d="M16.364 6.196l-3.636 3.636h2.727c0 3-2.454 5.454-5.454 5.454-0.909 0-1.819-0.273-2.546-0.636l-1.364 1.364c1.181 0.636 2.454 1.091 3.909 1.091 4 0 7.273-3.273 7.273-7.272h2.726l-3.636-3.636zM4.546 9.834c0-3 2.454-5.454 5.454-5.454 0.909 0 1.819 0.273 2.546 0.636l1.364-1.364c-1.181-0.638-2.455-1.091-3.909-1.091-4 0-7.272 3.273-7.272 7.272h-2.728l3.636 3.636 3.636-3.636h-2.726z"></path></symbol><symbol id="icon-switch" viewBox="0 0 20 20"><path d="M16.856 4.11c0.076-0.181 0.076-0.384 0-0.566-0.037-0.091-0.091-0.174-0.161-0.241l-3.086-3.086c-0.289-0.289-0.759-0.289-1.047 0s-0.289 0.759 0 1.048l1.821 1.821h-10.557c-0.409 0-0.741 0.331-0.741 0.741v6.174c0 0.409 0.331 0.741 0.741 0.741s0.741-0.331 0.741-0.741v-5.431h9.816l-1.821 1.822c-0.289 0.289-0.289 0.759 0 1.048 0.144 0.144 0.334 0.216 0.524 0.216s0.379-0.072 0.524-0.216l3.086-3.086c0.069-0.069 0.123-0.151 0.161-0.242z"></path><path d="M16.174 9.259c-0.409 0-0.741 0.331-0.741 0.741v5.431h-9.816l1.821-1.821c0.289-0.289 0.289-0.759 0-1.047s-0.759-0.289-1.047 0l-3.086 3.085c-0.069 0.068-0.123 0.149-0.16 0.239s-0.057 0.186-0.057 0.284c0 0.099 0.020 0.196 0.057 0.284 0.037 0.090 0.091 0.171 0.16 0.239l3.086 3.086c0.144 0.147 0.334 0.22 0.524 0.22s0.379-0.073 0.524-0.216c0.289-0.289 0.289-0.759 0-1.047l-1.823-1.823h10.558c0.409 0 0.741-0.331 0.741-0.741v-6.172c0.001-0.409-0.331-0.741-0.739-0.741z"></path></symbol><symbol id="icon-mixes" viewBox="0 0 20 20"><path d="M4.605 1.934c0.199 0 0.366 0.169 0.366 0.366v2.305c0 0.199-0.169 0.366-0.366 0.366h-2.305c-0.199 0-0.366-0.169-0.366-0.366v-2.305c0-0.199 0.169-0.366 0.366-0.366h2.305zM4.605 0.834h-2.305c-0.806 0-1.466 0.66-1.466 1.466v2.305c0 0.806 0.66 1.466 1.466 1.466h2.305c0.806 0 1.466-0.66 1.466-1.466v-2.305c0-0.806-0.66-1.466-1.466-1.466v0z"></path><path d="M11.152 1.934c0.199 0 0.366 0.169 0.366 0.366v2.305c0 0.199-0.169 0.366-0.366 0.366h-2.305c-0.199 0-0.366-0.169-0.366-0.366v-2.305c0-0.199 0.169-0.366 0.366-0.366h2.305zM11.152 0.834h-2.305c-0.806 0-1.466 0.66-1.466 1.466v2.305c0 0.806 0.66 1.466 1.466 1.466h2.305c0.806 0 1.466-0.66 1.466-1.466v-2.305c0-0.806-0.66-1.466-1.466-1.466v0z"></path><path d="M17.7 1.934c0.199 0 0.366 0.169 0.366 0.366v2.305c0 0.199-0.169 0.366-0.366 0.366h-2.305c-0.199 0-0.366-0.169-0.366-0.366v-2.305c0-0.199 0.169-0.366 0.366-0.366h2.305zM17.7 0.834h-2.305c-0.806 0-1.466 0.66-1.466 1.466v2.305c0 0.806 0.66 1.466 1.466 1.466h2.305c0.806 0 1.466-0.66 1.466-1.466v-2.305c0-0.806-0.66-1.466-1.466-1.466v0z"></path><path d="M17.7 8.481c0.199 0 0.366 0.169 0.366 0.366v2.305c0 0.199-0.169 0.366-0.366 0.366h-2.305c-0.199 0-0.366-0.169-0.366-0.366v-2.305c0-0.199 0.169-0.366 0.366-0.366h2.305zM17.7 7.381h-2.305c-0.806 0-1.466 0.66-1.466 1.466v2.305c0 0.806 0.66 1.466 1.466 1.466h2.305c0.806 0 1.466-0.66 1.466-1.466v-2.305c0-0.806-0.66-1.466-1.466-1.466v0z"></path><path d="M4.605 8.481c0.199 0 0.366 0.169 0.366 0.366v2.305c0 0.199-0.169 0.366-0.366 0.366h-2.305c-0.199 0-0.366-0.169-0.366-0.366v-2.305c0-0.199 0.169-0.366 0.366-0.366h2.305zM4.605 7.381h-2.305c-0.806 0-1.466 0.66-1.466 1.466v2.305c0 0.806 0.66 1.466 1.466 1.466h2.305c0.806 0 1.466-0.66 1.466-1.466v-2.305c0-0.806-0.66-1.466-1.466-1.466v0z"></path><path d="M17.7 15.029c0.199 0 0.366 0.169 0.366 0.366v2.305c0 0.199-0.169 0.366-0.366 0.366h-2.305c-0.199 0-0.366-0.169-0.366-0.366v-2.305c0-0.199 0.169-0.366 0.366-0.366h2.305zM17.7 13.929h-2.305c-0.806 0-1.466 0.66-1.466 1.466v2.305c0 0.806 0.66 1.466 1.466 1.466h2.305c0.806 0 1.466-0.66 1.466-1.466v-2.305c0-0.806-0.66-1.466-1.466-1.466v0z"></path><path d="M11.152 15.029c0.199 0 0.366 0.169 0.366 0.366v2.305c0 0.199-0.169 0.366-0.366 0.366h-2.305c-0.199 0-0.366-0.169-0.366-0.366v-2.305c0-0.199 0.169-0.366 0.366-0.366h2.305zM11.152 13.929h-2.305c-0.806 0-1.466 0.66-1.466 1.466v2.305c0 0.806 0.66 1.466 1.466 1.466h2.305c0.806 0 1.466-0.66 1.466-1.466v-2.305c0-0.806-0.66-1.466-1.466-1.466v0z"></path><path d="M4.605 15.029c0.199 0 0.366 0.169 0.366 0.366v2.305c0 0.199-0.169 0.366-0.366 0.366h-2.305c-0.199 0-0.366-0.169-0.366-0.366v-2.305c0-0.199 0.169-0.366 0.366-0.366h2.305zM4.605 13.929h-2.305c-0.806 0-1.466 0.66-1.466 1.466v2.305c0 0.806 0.66 1.466 1.466 1.466h2.305c0.806 0 1.466-0.66 1.466-1.466v-2.305c0-0.806-0.66-1.466-1.466-1.466v0z"></path><path d="M8.473 12.291l3.055-2.444-3.055-2.139z"></path></symbol><symbol id="icon-mix" viewBox="0 0 20 20"><path d="M17.777 0h-11.851c-1.225 0-2.223 0.996-2.223 2.223v1.481h-1.481c-1.226-0.001-2.222 0.996-2.222 2.221v11.851c0 1.226 0.996 2.223 2.222 2.223h11.851c1.225 0 2.223-0.996 2.223-2.223v-1.481h1.481c1.225 0 2.222-0.996 2.222-2.223v-11.851c-0.001-1.226-0.997-2.223-2.224-2.223zM14.815 17.777c0 0.409-0.331 0.741-0.741 0.741h-11.851c-0.409 0-0.741-0.331-0.741-0.741v-11.851c0-0.409 0.333-0.741 0.741-0.741h1.481v8.889c0 1.225 0.996 2.223 2.222 2.223h8.889v1.481zM14.815 14.815h-8.889c-0.409 0-0.741-0.331-0.741-0.741v-8.889h8.889c0.409 0 0.741 0.333 0.741 0.741v8.889zM18.519 14.074c0 0.409-0.331 0.741-0.741 0.741h-1.481v-8.889c0-1.225-0.996-2.222-2.223-2.222h-8.889v-1.481c0-0.409 0.332-0.741 0.741-0.741h11.851c0.409 0 0.741 0.333 0.741 0.741v11.851z"></path><path d="M8.611 12.315l3.088-2.469-3.088-2.161z"></path></symbol><symbol id="icon-picture" viewBox="0 0 20 20"><path d="M17.457 1.228h-14.912c-0.726 0-1.316 0.589-1.316 1.316v14.912c0 0.726 0.589 1.316 1.316 1.316h14.912c0.726 0 1.316-0.589 1.316-1.316v-14.912c0-0.726-0.589-1.316-1.316-1.316zM17.237 17.237h-14.474v-14.474h14.474v14.474z"></path><path d="M13.859 7.588c0 0.678-0.55 1.228-1.228 1.228s-1.228-0.55-1.228-1.228c0-0.678 0.55-1.228 1.228-1.228s1.228 0.55 1.228 1.228z"></path><path d="M4.737 15.833h10.526c0.193 0 0.351-0.158 0.351-0.351v-3.509c0-0.122-0.063-0.236-0.167-0.299s-0.233-0.070-0.341-0.016l-3.351 1.676-6.861-3.43c-0.109-0.054-0.238-0.049-0.341 0.016s-0.167 0.176-0.167 0.299v5.263c0 0.193 0.157 0.351 0.351 0.351z"></path></symbol><symbol id="icon-picture-stack" viewBox="0 0 20 20"><path d="M11.1,8.2c-0.5,0-0.9,0.4-0.9,0.9s0.4,0.9,0.9,0.9S12,9.6,12,9.1S11.6,8.2,11.1,8.2z M3.7,16.4L3.7,16.4l0-5
+l6.4,2.8l3.1-1.7v3.9H3.7z M19,2.2v11.9c0,0.6-0.5,1.1-1.1,1.1h-2.5v2.5c0,0.6-0.5,1.1-1.1,1.1H2.5c-0.6,0-1.1-0.5-1.1-1.1V5.7
+c0-0.6,0.5-1.1,1.1-1.1H5V2.2C5,1.7,5.4,1.2,6,1.2H18C18.5,1.2,19,1.7,19,2.2z M14.1,6.1H2.9v11.2h11.2C14.1,17.3,14.1,6.1,14.1,6.1
+z M17.6,2.6H6.4v2.1h8.1c0.6,0,1.1,0.5,1.1,1.1v8.1h2.1C17.6,13.8,17.6,2.6,17.6,2.6z"></path></symbol><symbol id="icon-camera" viewBox="0 0 20 20"><path d="M16.9,3.4H3.1c-1.1,0-2.1,0.9-2.1,2v9.3c0,1.1,0.9,2,2.1,2h13.7c1.1,0,2.1-0.9,2.1-2V5.4C18.9,4.3,18,3.4,16.9,3.4z
+       M17.5,14.6c0,0.4-0.3,0.7-0.7,0.7H3.1c-0.4,0-0.7-0.3-0.7-0.7V5.4c0-0.4,0.3-0.7,0.7-0.7h13.7c0.4,0,0.7,0.3,0.7,0.7V14.6z"></path><path d="M10,6c-2.3,0-4.1,1.8-4.1,4s1.8,4,4.1,4s4.1-1.8,4.1-4S12.3,6,10,6z M10,12.6c-1.5,0-2.7-1.2-2.7-2.6
+      c0-1.5,1.2-2.6,2.7-2.6s2.7,1.2,2.7,2.6C12.7,11.5,11.5,12.6,10,12.6z"></path><ellipse cx="15.3" cy="6.8" rx="1.2" ry="1.2"></ellipse></symbol><symbol id="icon-note" viewBox="0 0 20 20"><path d="M16.563 18.75h-13.125c-1.206 0-2.188-0.981-2.188-2.188v-13.125c0-1.206 0.981-2.188 2.188-2.188h13.125c1.206 0 2.188 0.981 2.188 2.188v13.125c0 1.206-0.981 2.188-2.188 2.188zM3.438 2.709c-0.401 0-0.729 0.328-0.729 0.729v13.125c0 0.402 0.328 0.729 0.729 0.729h13.125c0.402 0 0.729-0.326 0.729-0.729v-13.125c0-0.401-0.326-0.729-0.729-0.729h-13.125z"></path><path d="M5.99 11.51l6.249-6.25 2.501 2.501-6.25 6.249z"></path><path d="M7.761 14.74h-2.501v-2.501z"></path></symbol><symbol id="icon-exit" viewBox="0 0 20 20"><path d="M8.3,13.2l1.3,1.3L14,10L9.5,5.5L8.3,6.8l2.3,2.3H1.9v1.8h8.7L8.3,13.2L8.3,13.2z M16.3,1.9H3.7
+c-1,0-1.8,0.8-1.8,1.8v3.6h1.8V3.7h12.6v12.6H3.7v-3.6H1.9v3.6c0,1,0.8,1.8,1.8,1.8h12.6c1,0,1.8-0.8,1.8-1.8V3.7
+C18.1,2.7,17.3,1.9,16.3,1.9L16.3,1.9z"></path></symbol><symbol id="icon-edit" viewBox="0 0 20 20"><path d="M3.301 12.523l10.439-10.439 4.176 4.176-10.439 10.439z"></path><path d="M6.259 17.917h-4.176v-4.176z"></path></symbol><symbol id="icon-reply" viewBox="0 0 20 20"><path d="M2.2,8.9c0,1,0.3,1.9,1,2.8c0.7,0.9,1.6,1.5,2.8,2c1.2,0.5,2.5,0.7,3.9,0.7c0.4,0,0.8,0,1.3-0.1c1.1,1,2.5,1.7,4,2.1
+      c0.3,0.1,0.6,0.1,1,0.2c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.1,0.2-0.3v0c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1L16.5,16
+      c0,0,0,0-0.1-0.1c0,0-0.1-0.1-0.1-0.1c0,0-0.1-0.1-0.3-0.3c-0.1-0.2-0.2-0.3-0.3-0.3s-0.2-0.2-0.3-0.3c-0.1-0.2-0.2-0.3-0.3-0.4
+      c-0.1-0.1-0.1-0.3-0.2-0.5s-0.2-0.4-0.2-0.7c0.9-0.5,1.6-1.2,2.1-1.9s0.8-1.6,0.8-2.4c0-0.8-0.2-1.5-0.6-2.2s-1-1.3-1.7-1.8
+      S14,4.1,13,3.8s-2-0.4-3-0.4c-1.4,0-2.7,0.2-3.9,0.7S4,5.2,3.3,6.1S2.2,7.9,2.2,8.9z"></path></symbol><symbol id="icon-heart" viewBox="0 0 20 20"><path d="M17.631 5.93c-0.394-0.913-1.185-1.682-2.281-2.158-0.968-0.422-2.012-0.471-2.96-0.214s-1.801 0.956-2.388 1.767c-0.588-0.811-1.44-1.511-2.389-1.767-0.949-0.258-1.991-0.207-2.96 0.214-1.096 0.476-1.885 1.243-2.281 2.158-0.394 0.912-0.397 1.974 0.103 3.027 1.062 2.257 7.494 7.55 7.529 7.64 0.033-0.090 6.466-5.383 7.53-7.64 0.498-1.053 0.496-2.115 0.101-3.027z"></path></symbol><symbol id="icon-star" viewBox="0 0 20 20"><path d="M1.6,7.4c0,0.1,0.1,0.3,0.3,0.5l3.7,3.6l-0.9,5c0,0,0,0.1,0,0.2c0,0.1,0,0.3,0.1,0.4s0.2,0.1,0.3,0.1
+    c0.1,0,0.3,0,0.4-0.1l4.5-2.4l4.5,2.4c0.1,0.1,0.3,0.1,0.4,0.1c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.2,0.1-0.4c0,0,0-0.1,0-0.2l-0.9-5
+    l3.7-3.6c0.2-0.2,0.3-0.3,0.3-0.5c0-0.2-0.2-0.4-0.6-0.5l-5.1-0.7l-2.3-4.6c-0.1-0.3-0.3-0.4-0.5-0.4S9.6,1.3,9.5,1.6L7.2,6.2
+    L2.2,6.9C1.8,7,1.6,7.1,1.6,7.4z"></path></symbol><symbol id="icon-checkmark" viewBox="0 0 20 20"><path d="M7.859 15.521l-4.654-4.936c-0.474-0.501-0.451-1.294 0.051-1.766s1.295-0.45 1.767 0.051l2.889 3.064 7.089-7.089c0.489-0.489 1.279-0.489 1.767 0s0.489 1.28 0 1.767l-8.91 8.91z"></path></symbol><symbol id="icon-checkmark-circle" viewBox="0 0 20 20"><path d="M8.5,13.9l-3.3-3.5c-0.3-0.4-0.3-0.9,0-1.2c0.4-0.3,0.9-0.3,1.2,0l2,2.1l5-5c0.3-0.3,0.9-0.3,1.2,0
+      c0.3,0.3,0.3,0.9,0,1.2L8.5,13.9L8.5,13.9z"></path><path d="M10,0.8c-5.1,0-9.2,4.1-9.2,9.2s4.1,9.2,9.2,9.2s9.2-4.1,9.2-9.2S15.1,0.8,10,0.8z M10,17.7
+      c-4.2,0-7.7-3.5-7.7-7.7S5.8,2.3,10,2.3c4.2,0,7.7,3.5,7.7,7.7S14.2,17.7,10,17.7z"></path></symbol><symbol id="icon-add" viewBox="0 0 20 20"><path d="M17.1,11H11v6.1H9V11H2.9V9H9V2.9h2V9h6.1V11L17.1,11z"></path></symbol><symbol id="icon-subtract" viewBox="0 0 20 20"><path d="M9,11H2.9V9H9h2h6.1v2l0,0H11H9z"></path></symbol><symbol id="icon-close" viewBox="0 0 20 20"><path d="M17.792 3.766l-1.558-1.559-6.234 6.234-6.234-6.234-1.559 1.558 6.234 6.234-6.234 6.234 1.558 1.558 6.234-6.234 6.234 6.234 1.558-1.558-6.234-6.234z"></path></symbol><symbol id="icon-back" viewBox="0 0 20 20"><path d="M2.143 10l7.857 7.857 1.947-1.947-4.534-4.534h10.443v-2.753h-10.443l4.534-4.534-1.947-1.947z"></path></symbol><symbol id="icon-bell" viewBox="0 0 20 20"><path d="M14.352 8.769c0-3.111-1.564-4.504-2.827-5.122-0.007-0.864-0.709-1.563-1.573-1.563-0.87 0-1.575 0.704-1.575 1.575 0 0.013 0.001 0.025 0.002 0.038-1.244 0.641-2.729 2.040-2.729 5.072 0 0 0.354 4.607-2.384 4.541v1.367h13.473v-1.367c-2.74 0.067-2.386-4.541-2.386-4.541z"></path><path d="M7.443 15.478c0.091 1.362 1.222 2.439 2.607 2.439s2.516-1.077 2.607-2.44h-5.213z"></path></symbol><symbol id="icon-instagram" viewBox="0 0 20 20"><path d="M4.116 2.083h11.769c1.117 0 2.032 0.914 2.032 2.032v11.769c0 1.117-0.914 2.032-2.032 2.032h-11.769c-1.117 0-2.032-0.914-2.032-2.033v-11.768c0-1.117 0.914-2.032 2.032-2.032v0zM13.617 3.843c-0.392 0-0.713 0.321-0.713 0.713v1.706c0 0.392 0.321 0.713 0.713 0.713h1.79c0.392 0 0.713-0.321 0.713-0.713v-1.706c0-0.392-0.321-0.712-0.713-0.712-0.001 0-1.79 0-1.79 0zM16.127 8.778h-1.393c0.132 0.431 0.203 0.887 0.203 1.357 0 2.633-2.205 4.77-4.921 4.77s-4.922-2.135-4.922-4.769c0-0.471 0.071-0.929 0.202-1.357h-1.452v6.688c0 0.346 0.283 0.629 0.629 0.629h11.026c0.346 0 0.629-0.283 0.629-0.629v-6.689zM10.015 6.885c-1.756 0-3.179 1.38-3.179 3.082s1.424 3.082 3.179 3.082 3.179-1.38 3.179-3.082c0.001-1.703-1.423-3.082-3.179-3.082z"></path></symbol><symbol id="icon-twitter" viewBox="0 0 20 20"><path d="M18.334 4.831c-0.614 0.271-1.273 0.456-1.964 0.539 0.706-0.424 1.249-1.094 1.504-1.891-0.661 0.391-1.393 0.676-2.171 0.83-0.624-0.665-1.512-1.080-2.496-1.080-1.889 0-3.42 1.531-3.42 3.42 0 0.269 0.030 0.529 0.089 0.779-2.839-0.144-5.36-1.505-7.046-3.574-0.294 0.506-0.464 1.093-0.464 1.72 0 1.186 0.604 2.232 1.521 2.846-0.56-0.019-1.087-0.171-1.549-0.429-0.001 0.014-0.001 0.029-0.001 0.044 0 1.656 1.179 3.039 2.742 3.354-0.286 0.077-0.589 0.119-0.901 0.119-0.22 0-0.434-0.021-0.644-0.061 0.435 1.359 1.699 2.346 3.194 2.374-1.17 0.918-2.644 1.464-4.246 1.464-0.276 0-0.549-0.016-0.815-0.049 1.514 0.97 3.311 1.536 5.241 1.536 6.29 0 9.729-5.211 9.729-9.729 0-0.149-0.004-0.296-0.010-0.442 0.669-0.481 1.247-1.084 1.706-1.769v0z"></path></symbol><symbol id="icon-facebook" viewBox="0 0 20 20"><path d="M17,2.1H3C2.5,2.1,2.1,2.5,2.1,3V17c0,0.5,0.4,0.9,0.9,0.9h7.6v-6.1H8.5V9.4h2.1V7.6c0-2,1.2-3.2,3.1-3.2
+      c0.9,0,1.6,0.1,1.8,0.1v2.1l-1.3,0c-1,0-1.2,0.5-1.2,1.2v1.5h2.4l-0.3,2.4H13v6.1h4c0.5,0,0.9-0.4,0.9-0.9V3
+      C17.9,2.5,17.5,2.1,17,2.1z"></path></symbol><symbol id="icon-alert" viewBox="0 0 20 20"><path d="M17.915 14.961l-6.725-11.615c-0.654-1.131-1.725-1.131-2.38 0l-6.725 11.615c-0.654 1.131-0.121 2.056 1.185 2.056h13.458c1.306 0 1.839-0.925 1.185-2.056zM10.828 14.534h-1.655v-1.655h1.655v1.655zM10.828 11.223h-1.655v-3.31h1.655v3.31z"></path></symbol><symbol id="icon-down" viewBox="0 0 20 20"><path d="M16.023 5.548l-6.023 6.023-6.023-6.023-1.832 1.832 7.856 7.856 7.856-7.856z"></path></symbol><symbol id="icon-up" viewBox="0 0 20 20"><path d="M3.977 14.452l6.023-6.023 6.023 6.023 1.832-1.832-7.856-7.856-7.856 7.856z"></path></symbol><symbol id="icon-left" viewBox="0 0 20 20"><path d="M14.452 16.023l-6.023-6.023 6.023-6.023-1.832-1.832-7.856 7.856 7.856 7.856z"></path></symbol><symbol id="icon-right" viewBox="0 0 20 20"><path d="M5.548 3.977l6.023 6.023-6.023 6.023 1.832 1.832 7.856-7.856-7.856-7.856z"></path></symbol><symbol id="icon-link" viewBox="0 0 20 20"><path d="M17.7,2.2C17,1.4,16,1,14.9,1c-1.1,0-2,0.4-2.8,1.2L8.5,5.8c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0
+      l3.6-3.6C13.9,3.2,14.4,3,14.9,3c0.5,0,1,0.2,1.4,0.6c0.4,0.4,0.6,0.9,0.6,1.4c0,0.5-0.2,1-0.6,1.4L12.7,10c-0.4,0.4-0.4,1,0,1.4
+      c0.2,0.2,0.4,0.3,0.7,0.3c0.3,0,0.5-0.1,0.7-0.3l3.6-3.6C18.4,7,18.9,6,18.9,4.9C18.9,3.9,18.4,2.9,17.7,2.2z"></path><path d="M9.8,12.8l-3.6,3.6C5.8,16.8,5.3,17,4.8,17c-0.5,0-1-0.2-1.4-0.6c-0.8-0.8-0.8-2,0-2.8L7,10
+      c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L2,12.3c-1.5,1.5-1.5,4,0,5.6C2.8,18.6,3.7,19,4.8,19c1.1,0,2-0.4,2.8-1.2l3.6-3.6
+      c0.4-0.4,0.4-1,0-1.4C10.8,12.4,10.2,12.4,9.8,12.8z"></path><path d="M6.4,13.5c0.2,0.2,0.4,0.3,0.7,0.3c0.3,0,0.5-0.1,0.7-0.3l5.5-5.5c0.4-0.4,0.4-1,0-1.4
+      c-0.4-0.4-1-0.4-1.4,0l-5.5,5.5C6,12.4,6,13.1,6.4,13.5z"></path></symbol><symbol id="icon-download" viewBox="0 0 20 20"><path d="M17,7c-0.5-0.5-1.2-0.5-1.6,0l-4.2,4.2V2.6c0-0.6-0.5-1.2-1.2-1.2S8.8,2,8.8,2.6v8.6L4.6,7
+      C4.2,6.5,3.5,6.5,3,7S2.6,8.1,3,8.6l6.2,6.2c0.2,0.2,0.5,0.3,0.8,0.3c0.3,0,0.6-0.1,0.8-0.3L17,8.6C17.4,8.1,17.4,7.4,17,7z"></path><path d="M17.4,18.6H2.6c-0.6,0-1.2-0.5-1.2-1.2s0.5-1.2,1.2-1.2h14.8c0.6,0,1.2,0.5,1.2,1.2S18,18.6,17.4,18.6z"></path></symbol><symbol id="icon-share-android" viewBox="0 0 20 20"><path d="M15.5,13.2c-0.8,0-1.5,0.4-2,0.9l-6.4-3.5c0.1-0.2,0.1-0.5,0.1-0.7s0-0.5-0.1-0.7l6.4-3.5c0.5,0.6,1.2,0.9,2,0.9
+  c1.5,0,2.7-1.2,2.7-2.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,0.3,0,0.5,0.1,0.7L6.5,8.2C6,7.7,5.3,7.3,4.5,7.3
+  C3,7.3,1.8,8.5,1.8,10s1.2,2.7,2.7,2.7c0.8,0,1.5-0.4,2-0.9l6.4,3.5c-0.1,0.2-0.1,0.5-0.1,0.7c0,1.5,1.2,2.7,2.7,2.7
+  c1.5,0,2.7-1.2,2.7-2.7C18.2,14.5,17,13.2,15.5,13.2z"></path></symbol><symbol id="icon-expand" viewBox="0 0 20 20"><path d="M17.9,2.4c-0.1-0.2-0.2-0.3-0.4-0.4C17.5,2,17.4,2,17.3,2h-5.8c-0.4,0-0.7,0.3-0.7,0.7s0.3,0.7,0.7,0.7h4.1
+      L10.9,8c-0.3,0.3-0.3,0.7,0,1c0.1,0.1,0.3,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2l4.6-4.6v4.1c0,0.4,0.3,0.7,0.7,0.7
+      c0.4,0,0.7-0.3,0.7-0.7V2.7C18,2.6,18,2.5,17.9,2.4z"></path><path d="M9.1,10.9c-0.3-0.3-0.7-0.3-1,0l-4.6,4.6v-4.1c0-0.4-0.3-0.7-0.7-0.7S2,11.1,2,11.5v5.8
+      c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.2,0.3,0.4,0.4C2.5,18,2.6,18,2.7,18h5.8c0.4,0,0.7-0.3,0.7-0.7c0-0.4-0.3-0.7-0.7-0.7H4.5L9.1,12
+      C9.3,11.7,9.3,11.2,9.1,10.9z"></path></symbol><symbol id="icon-shrink" viewBox="0 0 20 20"><path d="M8.8,10.1C8.7,10,8.6,10,8.5,10H2.7C2.3,10,2,10.3,2,10.7c0,0.4,0.3,0.7,0.7,0.7h4.1L2.2,16
+      c-0.3,0.3-0.3,0.7,0,1c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2l4.6-4.6v4.1c0,0.4,0.3,0.7,0.7,0.7c0.4,0,0.7-0.3,0.7-0.7v-5.8
+      c0-0.1,0-0.2-0.1-0.3C9.1,10.3,9,10.1,8.8,10.1z"></path><path d="M17.3,8.5h-4.1L17.8,4c0.3-0.3,0.3-0.7,0-1c-0.3-0.3-0.7-0.3-1,0l-4.6,4.6V3.5c0-0.4-0.3-0.7-0.7-0.7
+      c-0.4,0-0.7,0.3-0.7,0.7v5.8c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.2,0.3,0.4,0.4c0.1,0,0.2,0.1,0.3,0.1h5.8c0.4,0,0.7-0.3,0.7-0.7
+      C18,8.9,17.7,8.5,17.3,8.5z"></path></symbol><symbol id="icon-launch" viewBox="0 0 20 20"><path d="M4.5,5.6c0,0.7,0.5,1.2,1.1,1.1h5.9l-6.1,6.1c-0.4,0.4-0.5,1.2,0,1.7c0.5,0.5,1.3,0.4,1.7,0l6.1-6.1v5.9
+      c-0.1,0.6,0.4,1.1,1.1,1.1s1.1-0.5,1.1-1.1V5.6c0-0.3-0.1-0.6-0.4-0.8c-0.2-0.2-0.5-0.4-0.8-0.4H5.6C5,4.6,4.5,5.1,4.5,5.6z"></path></symbol></svg><main class="cucumber push-card page"><header class="powered-by"><h1>
+        <a href="http://getctzn.com" target="_blank">
+          <span>Powered by</span> <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a>
+      </h1>
+      <p class="action">
+        <a href="/push/4B466AC0/community-services-unlimited?channel=1">
+          Live Channel
+        </a>
+      </p>
+    </header><div class="details">
+      <h1 class="name">Community Services Unlimited</h1>
+      <div class="about">
+        <p></p>
+
+      </div>
+
+    </div>
+
+    <ol class="post-list">
+<li style="background-color: rgb(88, 74, 73); color: rgb(220, 214, 183);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/062ca5a3993f6e7094b819bce0d40eeb5aaa98e4=c60x60" width="30" height="30" alt=""></span>
+              @daisy
+            </h3>
+            <p>
+              <time datetime="2015-10-12 17:11:40 +0000">October 12, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/c28a264e8ce873d74a7c778c288bc599e4e98b77=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Solor infused healing. Fresh comfrey and plantain infusions. #diy #comfrey #plantain #freshfromthegarden #expofarm #csuinc #southLA #wellness</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/062ca5a3993f6e7094b819bce0d40eeb5aaa98e4=c60x60" width="30" height="30" alt=""></span>
+              @daisy
+            </h3>
+            <p>
+              <time datetime="2015-10-12 17:11:40 +0000">October 12, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/c28a264e8ce873d74a7c778c288bc599e4e98b77=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(80, 72, 64); color: rgb(207, 187, 162);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-10-04 00:32:58 +0000">October  4, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/4d9c0325884ef942e87f5c364c63a440b2ff946a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Live pop up produce stand for the people as well. #Csuinc #VillageMarketPlace "Building community with food culture"</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-10-04 00:32:58 +0000">October  4, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/4d9c0325884ef942e87f5c364c63a440b2ff946a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(203, 196, 176); color: rgb(140, 48, 35);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-10-01 19:12:12 +0000">October  1, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/3f0212bb622e653bebc6264893ac19e38e06b2ba=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>The little homie Cruz knows ?? He's always down for #organic produce ?
+#Csuinc #VillageMarketPlace</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-10-01 19:12:12 +0000">October  1, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/3f0212bb622e653bebc6264893ac19e38e06b2ba=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(196, 189, 176); color: rgb(77, 58, 44);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-09-26 20:23:25 +0000">September 26, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/a1abb1be3c22e79fdaf264fe9e30a11244939e25=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>1993'?
+#Csuinc</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-09-26 20:23:25 +0000">September 26, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/a1abb1be3c22e79fdaf264fe9e30a11244939e25=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(181, 173, 163); color: rgb(60, 49, 57);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/062ca5a3993f6e7094b819bce0d40eeb5aaa98e4=c60x60" width="30" height="30" alt=""></span>
+              @daisy
+            </h3>
+            <p>
+              <time datetime="2015-08-16 01:37:11 +0000">August 16, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/c96bbfc7664619404b0d03741b22e3abec4e1f38=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Clearing space. Our first group workday at the Paul Robeson Center. #paulrobesoncenter #csuinc #beyondorganic #producemarket</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/062ca5a3993f6e7094b819bce0d40eeb5aaa98e4=c60x60" width="30" height="30" alt=""></span>
+              @daisy
+            </h3>
+            <p>
+              <time datetime="2015-08-16 01:37:11 +0000">August 16, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/c96bbfc7664619404b0d03741b22e3abec4e1f38=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(92, 82, 65); color: rgb(218, 209, 199);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-07-23 01:10:36 +0000">July 23, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/1019447f606ff62b518a2810a5e163203889387f=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>getting ready for a trust activity at the #expofarm !!</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-07-23 01:10:36 +0000">July 23, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/1019447f606ff62b518a2810a5e163203889387f=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(80, 68, 57); color: rgb(228, 228, 204);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <span class="size30 amethyst" data-content="g"></span>
+              </span>
+              @garrick
+            </h3>
+            <p>
+              <time datetime="2015-07-22 03:59:47 +0000">July 22, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/754732835a238a6fb59feb41b841d8b4fa249ae1=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Study circle at the farm!</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <span class="size30 amethyst" data-content="g"></span>
+              </span>
+              @garrick
+            </h3>
+            <p>
+              <time datetime="2015-07-22 03:59:47 +0000">July 22, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/754732835a238a6fb59feb41b841d8b4fa249ae1=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(174, 171, 164); color: rgb(47, 55, 50);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-07-21 17:05:28 +0000">July 21, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/cbdeafcfd7af4abe6629fb3a98d2346eeadb5730=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#fgu interns first time doing #outreach</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-07-21 17:05:28 +0000">July 21, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/cbdeafcfd7af4abe6629fb3a98d2346eeadb5730=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(214, 178, 167); color: rgb(67, 60, 28);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-07-21 06:20:15 +0000">July 21, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/71afcf6bb241054500580df78b21f7b3208f265e=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Going back to the future. #milpa #csuinc native foods, native knowledge, current times</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-07-21 06:20:15 +0000">July 21, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/71afcf6bb241054500580df78b21f7b3208f265e=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(51, 44, 38); color: rgb(210, 188, 169);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-07-18 00:55:14 +0000">July 18, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/4166435c8595959acd11589d66990dccd07e0c3a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#fgu #interns trying to find their dynamic duo!!!
+  after a hard days of work at the#csuinc #expofarm , #funandlaughter sounds good.</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-07-18 00:55:14 +0000">July 18, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/4166435c8595959acd11589d66990dccd07e0c3a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(83, 72, 71); color: rgb(226, 217, 204);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-07-17 17:10:51 +0000">July 17, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/2548b390876e0f2ff25394b949145a2968253048=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#fgu #interns learning about the greens that grow in the #csuinc 's #expofarm .....
+@stephanie 's wondering if she could eat it already!</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-07-17 17:10:51 +0000">July 17, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/2548b390876e0f2ff25394b949145a2968253048=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(79, 70, 60); color: rgb(210, 187, 155);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-07-16 18:10:44 +0000">July 16, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/319a4a93cf9007072c376710f2895d8f1165c2cd=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#Csu home made jams, packed with love from the #VillageMarketPlace team! ??
+#SupportLocal #UrbanFarmers</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-07-16 18:10:44 +0000">July 16, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/319a4a93cf9007072c376710f2895d8f1165c2cd=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(63, 70, 89); color: rgb(205, 180, 180);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c60x60" width="30" height="30" alt=""></span>
+              @jackie318
+            </h3>
+            <p>
+              <time datetime="2015-07-16 06:24:37 +0000">July 16, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/6d9bcc5b82c208c94b77dcd1b4cd5c6f07337aba=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>There were so many people coming through today at the Adams/Vermont Farmers' Market! Also, CalFresh outreach went equally well as last week (:</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c60x60" width="30" height="30" alt=""></span>
+              @jackie318
+            </h3>
+            <p>
+              <time datetime="2015-07-16 06:24:37 +0000">July 16, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/6d9bcc5b82c208c94b77dcd1b4cd5c6f07337aba=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(28, 27, 24); color: rgb(176, 156, 135);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-07-15 06:27:48 +0000">July 15, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/4a8a4ab3ce479e855a34c50a3c1b432311d611f0=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Thankful for tonight's exhibit and lecture, "To Live and Dine in LA" on food justice in South Central LA. @neelooks @ronfinleyhq ? #Csu</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-07-15 06:27:48 +0000">July 15, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/4a8a4ab3ce479e855a34c50a3c1b432311d611f0=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(55, 46, 45); color: rgb(210, 213, 221);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-07-11 01:42:36 +0000">July 11, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/84e621769624d520365de40ade05ff4e7a45b00d=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>The #csuinc #veggiebus bout to make a come back! #joy #abouttime #repurpose #csuinc #sustainableliving</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-07-11 01:42:36 +0000">July 11, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/84e621769624d520365de40ade05ff4e7a45b00d=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(73, 59, 54); color: rgb(215, 208, 182);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-07-11 01:34:01 +0000">July 11, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/9c5d3ed365449d878b826b2d839a4c112914bd0a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Rosalie, an old freind &amp; regular of the #expofarm dropped by today: it was so good to see her. This lady is just too cool, love her hat &amp; her dope bracelets. She told me how happy she is every time she walks by the farm &amp; looks in to see how everything is doing. #community #csuinc #love</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-07-11 01:34:01 +0000">July 11, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/9c5d3ed365449d878b826b2d839a4c112914bd0a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(55, 36, 32); color: rgb(224, 151, 147);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-07-11 01:18:25 +0000">July 11, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/f1cfbe4b6cd8683159b272137407ac60b4cff96c=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>@STICRGB in conversation with Carlos &amp; Janae from #FGU for a web based series coming soon: stay tuned for more news. #csuinc #sticman #expofarm</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-07-11 01:18:25 +0000">July 11, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/f1cfbe4b6cd8683159b272137407ac60b4cff96c=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(49, 52, 60); color: rgb(187, 209, 210);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/062ca5a3993f6e7094b819bce0d40eeb5aaa98e4=c60x60" width="30" height="30" alt=""></span>
+              @daisy
+            </h3>
+            <p>
+              <time datetime="2015-07-10 18:09:57 +0000">July 10, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/c0a4407ce6a6ff9b62372ce9ca037cd3c49a514f=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Look for the comeback of the CSU Veggie Bus coming soon!
+
+#paulrobesoncenter #csuinc #veggiebus #greenhouse #seedstarting #southLA #outdoorclassroom</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/062ca5a3993f6e7094b819bce0d40eeb5aaa98e4=c60x60" width="30" height="30" alt=""></span>
+              @daisy
+            </h3>
+            <p>
+              <time datetime="2015-07-10 18:09:57 +0000">July 10, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/c0a4407ce6a6ff9b62372ce9ca037cd3c49a514f=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(63, 70, 160); color: rgb(69, 75, 51);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-07-09 20:41:16 +0000">July  9, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/17df5a438319aaef0365afec32b0c03b1335c392=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Steeezy little squash, the first of its kind that I've seen thanks to #Csu Mini Urban Farm. #SupportLocal #UrbanFarmers ?</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-07-09 20:41:16 +0000">July  9, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/17df5a438319aaef0365afec32b0c03b1335c392=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(166, 149, 129); color: rgb(27, 22, 16);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c60x60" width="30" height="30" alt=""></span>
+              @jackie318
+            </h3>
+            <p>
+              <time datetime="2015-07-08 04:54:25 +0000">July  8, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/14cf25ead6058ffecdf308388e48c767c92d24e8=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>The beautiful aquaponics system at CSU's mini urban farm in South LA? There are cute little gold fishies in the tank doing their job, ensuring there's a symbiotic relationship with the plants being grown &lt;3  #growyourownfood #sustainablecommunities #csuinc #foodjustice</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c60x60" width="30" height="30" alt=""></span>
+              @jackie318
+            </h3>
+            <p>
+              <time datetime="2015-07-08 04:54:25 +0000">July  8, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/14cf25ead6058ffecdf308388e48c767c92d24e8=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li>
+        <article class="post-item text-only"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/8c0e36bea625af7f6bd59765dbb13458f922d9b7=c60x60" width="30" height="30" alt=""></span>
+              @csuincla
+            </h3>
+            <p>
+              <time datetime="2015-07-07 23:54:13 +0000">July  7, 2015</time></p>
+          </header><div class="body">
+            
+              <p>If you haven't signed it yet, please sign the petition to Save the Farm! The CSU/EXPO urban mini farm is under threat of being destroyed to create parking. Please read the details and join us in signing this petition (and sending a letter) to keep this community green space in South Central LA intact. #csuinc</p>
+            
+          </div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(60, 62, 80); color: rgb(217, 181, 149);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c60x60" width="30" height="30" alt=""></span>
+              @jackie318
+            </h3>
+            <p>
+              <time datetime="2015-07-02 21:57:24 +0000">July  2, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/d91d69fd3cffbc4d95583e6f59ba29fcb924d0bc=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>A typical Thursday at the LA USC County hospital ^_^ Making real, organic food accessible to folks in the community (: My heart is happy &lt;3 ^_^ &lt;3 #foodjustice #sustainablecommunities #csuinc #CalFresh</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/4c630a7bf639054f8a4cf233b82644af68eca036=c60x60" width="30" height="30" alt=""></span>
+              @jackie318
+            </h3>
+            <p>
+              <time datetime="2015-07-02 21:57:24 +0000">July  2, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/d91d69fd3cffbc4d95583e6f59ba29fcb924d0bc=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(230, 194, 169); color: rgb(24, 22, 77);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-06-27 19:28:22 +0000">June 27, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/7f6f1d6801c624bdaa2acb02cce0462c6657f9c3=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#communitymapping What is here now? What do we want to see? #fgu #paulrobesoncenter #csuinc</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-06-27 19:28:22 +0000">June 27, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/7f6f1d6801c624bdaa2acb02cce0462c6657f9c3=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(88, 86, 85); color: rgb(238, 228, 203);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-06-25 18:05:41 +0000">June 25, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/53e65610f0470e0d915a9e05d37def3ebe954982=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Top of the am! ???????
+Making access to clean organic fruits and veggies possible with #Csu Village Market Place. #SupportLocal #Vmp</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-06-25 18:05:41 +0000">June 25, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/53e65610f0470e0d915a9e05d37def3ebe954982=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(184, 142, 104); color: rgb(40, 34, 17);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-06-13 22:59:24 +0000">June 13, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/f625bb90bbf2b02c0c96c0bf8d0e3c4e4d2ea9ec=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Leimert Park vibes . 
+#SoLA food co-op is hosting a local healthy event today partnered with #Csu's Village Market Place. Food, music, and activities for all. #SupportLocal #Organic</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/154dc3a3a158e739db39a178c221d82fcd14d0a7=c60x60" width="30" height="30" alt=""></span>
+              @sentermcginestiv
+            </h3>
+            <p>
+              <time datetime="2015-06-13 22:59:24 +0000">June 13, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/f625bb90bbf2b02c0c96c0bf8d0e3c4e4d2ea9ec=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(41, 45, 56); color: rgb(190, 209, 229);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/f9cb0230987b97db1af53328bbf2542e279d1a94=c60x60" width="30" height="30" alt=""></span>
+              @mindyvnguyen
+            </h3>
+            <p>
+              <time datetime="2015-05-31 01:37:01 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/9e9f6b2cb65a4804620fcb4a895d94ad4926a5cc=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Jamming out to Tutu Sweeney and the Brothers Band ?? #beyondorganic</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/f9cb0230987b97db1af53328bbf2542e279d1a94=c60x60" width="30" height="30" alt=""></span>
+              @mindyvnguyen
+            </h3>
+            <p>
+              <time datetime="2015-05-31 01:37:01 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/9e9f6b2cb65a4804620fcb4a895d94ad4926a5cc=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(83, 86, 81); color: rgb(207, 212, 208);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/483f040594b1eb14680672f852575edc1112090c=c60x60" width="30" height="30" alt=""></span>
+              @juanarosa
+            </h3>
+            <p>
+              <time datetime="2015-05-31 01:19:03 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/bbbdcada9d9b222d71a181dbfa3e9869de13c1e1=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Yucasoul supporting Community Services Unlimited in raising funds for the first organic market in South LA.</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/483f040594b1eb14680672f852575edc1112090c=c60x60" width="30" height="30" alt=""></span>
+              @juanarosa
+            </h3>
+            <p>
+              <time datetime="2015-05-31 01:19:03 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/bbbdcada9d9b222d71a181dbfa3e9869de13c1e1=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(67, 68, 73); color: rgb(209, 221, 226);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/f9cb0230987b97db1af53328bbf2542e279d1a94=c60x60" width="30" height="30" alt=""></span>
+              @mindyvnguyen
+            </h3>
+            <p>
+              <time datetime="2015-05-31 01:14:51 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/0e199e2b96e90d9d7a52bc429c60fc472bf98adb=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>So many good vibes ☀️?? #whatsreallygood @eddy</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/f9cb0230987b97db1af53328bbf2542e279d1a94=c60x60" width="30" height="30" alt=""></span>
+              @mindyvnguyen
+            </h3>
+            <p>
+              <time datetime="2015-05-31 01:14:51 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/0e199e2b96e90d9d7a52bc429c60fc472bf98adb=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/f9cb0230987b97db1af53328bbf2542e279d1a94=c60x60" width="30" height="30" alt=""></span>
+              @mindyvnguyen
+            </h3>
+            <p>
+              <time datetime="2015-05-31 01:14:51 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/d4a8ba590b5a3db3841a093fe7190835ce153ffa=s2048x2048" alt="Uploaded image 2" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/f9cb0230987b97db1af53328bbf2542e279d1a94=c60x60" width="30" height="30" alt=""></span>
+              @mindyvnguyen
+            </h3>
+            <p>
+              <time datetime="2015-05-31 01:14:51 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/293f4bbb86db7425edebfb6e0e1a6252156b09ad=s2048x2048" alt="Uploaded image 3" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(111, 158, 212); color: rgb(41, 43, 62);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <span class="size30 ocean" data-content="a"></span>
+              </span>
+              @adamvine
+            </h3>
+            <p>
+              <time datetime="2015-05-31 00:50:23 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/86a6197d0766247d60de210080cd060b55905dee=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#whatsreallygood in south la. Thanks #csuinc</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <span class="size30 ocean" data-content="a"></span>
+              </span>
+              @adamvine
+            </h3>
+            <p>
+              <time datetime="2015-05-31 00:50:23 +0000">May 31, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/86a6197d0766247d60de210080cd060b55905dee=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(43, 50, 23); color: rgb(225, 221, 210);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-30 17:40:07 +0000">May 30, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/dcd9f6110da2ad78c7cb5e66347e34ed35346970=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#sajla #workday #expofarm #compost #corn #csuinc</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-30 17:40:07 +0000">May 30, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/dcd9f6110da2ad78c7cb5e66347e34ed35346970=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(90, 74, 62); color: rgb(213, 209, 200);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-30 17:35:16 +0000">May 30, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/a1bab3831730466fb4942c0dd45ae5d6a6b942f6=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#sajla #expofarm #workday #compost #csuinc</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-30 17:35:16 +0000">May 30, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/a1bab3831730466fb4942c0dd45ae5d6a6b942f6=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(70, 65, 53); color: rgb(214, 191, 181);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-30 16:39:19 +0000">May 30, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/c4ecefbf04036070a2c839b9c7170609b9a04d12=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Giant #sunflowers at the #expofarm #csuinc #sajla #workday #volunteer</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-30 16:39:19 +0000">May 30, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/c4ecefbf04036070a2c839b9c7170609b9a04d12=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(202, 202, 202); color: rgb(36, 36, 36);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-30 02:41:59 +0000">May 30, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/264e52ccf3a23e1496aeabe3c5bdfefd773659c1=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#videoshoot #aloeblac #owningourown #organic #csuinc #community #vmp #southla #donate http://owl.li/MSM0q</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-30 02:41:59 +0000">May 30, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/264e52ccf3a23e1496aeabe3c5bdfefd773659c1=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(53, 62, 51); color: rgb(215, 145, 123);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c60x60" width="30" height="30" alt=""></span>
+              @eddy
+            </h3>
+            <p>
+              <time datetime="2015-05-27 23:05:57 +0000">May 27, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/bb99279e73c8ccfb4a47a9f93e2c531e836e529a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#csu</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c60x60" width="30" height="30" alt=""></span>
+              @eddy
+            </h3>
+            <p>
+              <time datetime="2015-05-27 23:05:57 +0000">May 27, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/bb99279e73c8ccfb4a47a9f93e2c531e836e529a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(58, 51, 67); color: rgb(206, 187, 160);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-21 00:04:33 +0000">May 21, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/340d49fd8b524a0e0b7a72ca631068bd449a74f9=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Son &amp; sunflower #earthdayeveryday #csuinc #csufamily #vmp</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-21 00:04:33 +0000">May 21, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/340d49fd8b524a0e0b7a72ca631068bd449a74f9=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(79, 72, 60); color: rgb(209, 182, 182);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-12 18:55:59 +0000">May 12, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/01c30c565ce682d5d01763d8d32b2c5cbd3fb76d=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>@sheldonbotler at the #expofarm "these are the best blackberries I've ever tasted &amp; their a native variety" #vmp #csuinc #csufamily</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-05-12 18:55:59 +0000">May 12, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/01c30c565ce682d5d01763d8d32b2c5cbd3fb76d=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(62, 35, 85); color: rgb(223, 200, 190);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-04-29 18:15:04 +0000">April 29, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/e5d8a8ff896e9e9455f3276e304f450ffcfce207=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Hooking up south LA families with #babychicks #gardengateway #growourown #urbanfarming #csuinc #expofarm</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-04-29 18:15:04 +0000">April 29, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/e5d8a8ff896e9e9455f3276e304f450ffcfce207=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(47, 32, 21); color: rgb(209, 190, 165);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-04-27 05:09:28 +0000">April 27, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/0e1dbf583c8dd2e5dc4dcfdf514f935c51761b3a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#healthycookingdemo #USCEnvironmentalGroup #vmp #csuinc #beyondorganic #local #delicious</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-04-27 05:09:28 +0000">April 27, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/0e1dbf583c8dd2e5dc4dcfdf514f935c51761b3a=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(127, 126, 127); color: rgb(33, 30, 30);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-04-25 19:01:12 +0000">April 25, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/051e9e5cf6ab2cb940471039050fee5d7c20cbe8=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>A healthy change never looked so cool!!
+#championsforchange
+#EarthDayEveryDay
+#SustainableSolutions
+#OurSouthLA
+#fgu</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-04-25 19:01:12 +0000">April 25, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/051e9e5cf6ab2cb940471039050fee5d7c20cbe8=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(144, 150, 156); color: rgb(37, 40, 42);">
+
+
+
+
+
+
+        <article class="post-item text-and-image landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-04-25 18:20:22 +0000">April 25, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/ab93fdcce716181134d10989506fdb3f24cfbb3b=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>#fgu interns demonstrating how to make savory greens 
+#championsforchange
+#EarthDayEveryDay
+#SustainableSolutions
+#OurSouthLA</p>
+            
+          </div>
+
+        </article><article class="post-item landscape"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60" width="30" height="30" alt=""></span>
+              @fgufromthegroundupfgualumni
+            </h3>
+            <p>
+              <time datetime="2015-04-25 18:20:22 +0000">April 25, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/ab93fdcce716181134d10989506fdb3f24cfbb3b=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(193, 101, 81); color: rgb(32, 15, 10);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-04-13 00:25:27 +0000">April 13, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/251d424fe2a773e3fd2ae165f10a2e5a947ce014=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Coming soon #aquaponicpesto from the #expofarm #csuinc #vmp #growwaterwise</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-04-13 00:25:27 +0000">April 13, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/251d424fe2a773e3fd2ae165f10a2e5a947ce014=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+      <li style="background-color: rgb(59, 54, 43); color: rgb(214, 188, 178);">
+
+
+
+
+
+
+        <article class="post-item text-and-image square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-04-13 00:08:20 +0000">April 13, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/3f913ce621f626dbdb2b567793c6cb508f7513c5=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+
+          <div class="body">
+            
+              <p>Untying the plastic bag these poor little things get sold &amp; transported in; felt really great to let them into the #expofarm #aquaponics system tank. #lovelife #goldfish #csuinc #wrigleyscienceinstitute</p>
+            
+          </div>
+
+        </article><article class="post-item square"><header><h3>
+              <span class="avatar">
+                  <img src="http://assets.goodstatic.com/s3/ctzn/24eea8e1feb65b8214aca26d1a0dfdd8b6bd2d0f=c60x60" width="30" height="30" alt=""></span>
+              @neelam
+            </h3>
+            <p>
+              <time datetime="2015-04-13 00:08:20 +0000">April 13, 2015</time></p>
+          </header><div class="images">
+              <figure><img src="http://assets.goodstatic.com/s3/ctzn/3f913ce621f626dbdb2b567793c6cb508f7513c5=s2048x2048" alt="Uploaded image 1" onload="if (window.onPublicPageImageLoad) window.onPublicPageImageLoad(this)"></figure>
+</div>
+
+        </article>
+</li>
+    </ol></main><footer class="primary"><h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
+    <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
+  </footer>
+
+
+</body></html>
+
