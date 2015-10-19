@@ -392,6 +392,9 @@
   .avatar .size100 {
     font-size: 4.1666666667em; /* 2/3 x 100px / @font-size */
   }
+  .avatar .size200 {
+    font-size: 8.3333333334em; /* 2/3 x 200px / @font-size */
+  }
 
   /* Icon (for links to “my profile”) */
   .avatar *[data-content].has-icon:after {
@@ -6068,4 +6071,55 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .push-card .people,
+  .push-card .people li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .push-card .people {
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: row;
+            flex-direction: row;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+  }
+  .push-card .people li {
+    display: block;
+    float: left;
+    flex-basis: 12.5em;
+    flex-grow: 1;
+  }
+  .push-card .people li .avatar {
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+  }
+  .push-card .people li .avatar span,
+  .push-card .people li .avatar img {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 16em;
+    max-height: 16em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+
 
