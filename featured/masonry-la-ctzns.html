@@ -166,16 +166,35 @@
       if (width > 0 && height > 0) {
         var aspectRatio = 'square';
 
-        if (width/height >= 4/3 && width >= (window.innerWidth * 2/3)) {
+        if (width/height >= 3/2) {
           aspectRatio = 'landscape';
-        }
-
-        if (width/height <= 3/4 && height >= (window.innerHeight * 2/3)) {
+        } else if (width/height <= 2/3) {
           aspectRatio = 'portrait';
         }
 
         if (article) {
           addClassName(article, aspectRatio);
+          switch (aspectRatio) {
+            case 'square':
+            case 'portrait':
+              if (width >= window.innerWidth && height >= window.innerHeight) {
+                addClassName(article, 'large');
+              } else if (width >= window.innerWidth * 2/3 && height >= window.innerHeight * 2/3) {
+                addClassName(article, 'medium');
+              }
+              break;
+            case 'landscape':
+              if (width >= window.innerWidth) {
+                addClassName(article, 'large');
+              } else if (width >= window.innerWidth * 2/3) {
+                addClassName(article, 'medium');
+              }
+
+              if (width/height >= 2/1 && width >= window.innerWidth) {
+                addClassName(article, 'panoramic');
+              }
+              break;
+          }
         }
       }
     }
@@ -197,6 +216,7 @@
       }
     }
 
+    var throttle;
     window.onPublicPageImageLoad = function(image) {
       var images = getAncestor(image, 'div');
       if (images && images.className.indexOf('loaded') < 0) images.className += ' loaded';
@@ -208,7 +228,15 @@
 
       //addColor(image);
 
-      if (window.msnry) msnry.layout();
+      if (window.msnry) {
+        if (!throttle) {
+          throttle = true;
+          setTimeout(function() {
+            window.msnry.layout();
+            throttle = undefined;
+          }, 1000);
+        }
+      }
     }
   })();
   </script>

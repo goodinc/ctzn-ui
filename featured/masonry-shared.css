@@ -5678,7 +5678,7 @@
     width: 100%;
     max-width: none;
   }
-  @media (min-width: 64em) {
+  @media (min-width: 40em) {
     .push-card .post-list .post-item,
     .push-card .pseudo-post-list-item {
       width: 50%;
@@ -5688,17 +5688,51 @@
       width: 100%;
     }
   }
-  @media (min-width: 128em) {
+  @media (min-width: 80em) {
     .push-card .post-list .post-item,
     .push-card .pseudo-post-list-item {
-      width: 33.3333%;
       max-width: none;
+      width: 33.3333%;
     }
-    .push-card .post-list .post-item.landscape {
+
+
+    .push-card .post-list .post-item.square {
+      width: 33.3333%;
+    }
+    .push-card .post-list .post-item.square.medium {
+      width: 33.3333%;
+    }
+    .push-card .post-list .post-item.square.large {
       width: 66.666%;
     }
+
+
+    .push-card .post-list .post-item.portrait {
+      width: 33.3333%;
+    }
+    .push-card .post-list .post-item.portrait.medium {
+      width: 33.3333%;
+    }
+    .push-card .post-list .post-item.portrait.large {
+      width: 33.3333%;
+    }
+
+
+    .push-card .post-list .post-item.landscape {
+      width: 33.3333%;
+    }
+    .push-card .post-list .post-item.medium.landscape {
+      width: 33.3333%;
+    }
+    .push-card .post-list .post-item.large.landscape {
+      width: 66.666%;
+    }
+    .push-card .post-list .post-item.large.panoramic.landscape {
+      width: 100%;
+    }
   }
-  @media (min-width: 192em) {
+  /*
+  @media (min-width: 144em) {
     .push-card .post-list .post-item,
     .push-card .pseudo-post-list-item {
       width: 25%;
@@ -5708,6 +5742,7 @@
       width: 50%;
     }
   }
+  */
 
 
   .push-card .post-list .post-item {
@@ -5759,7 +5794,7 @@
     padding: 1.5em;
     padding-top: 12em;
     margin-bottom: 0;
-    font-size: 0.875em; /* 14px / @font-size */
+    font-size: 0.75em; /* 12px / @font-size */
   }
   .push-card .post-list .post-item header:before {
     content: attr(data-content);
@@ -5782,8 +5817,12 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+  .push-card .post-list .post-item.short header {
+    padding-top: 9em;
+  }
 
 
+  /*
   @media (min-width: 40em) {
     .push-card .post-list .post-item header {
       padding-top: 16em;
@@ -5794,7 +5833,6 @@
     }
   }
 
-  /*
   .push-card .post-list .post-item header h3,
   .push-card .post-list .post-item header p {
     position: relative;
@@ -5991,7 +6029,7 @@
     z-index: 1;
     background: inherit;
     top: 0;
-    left: 2em;
+    left: 1.65em;
     width: 1em;
     height: 1em;
     margin-top: -0.5em;
