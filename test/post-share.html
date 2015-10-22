@@ -2,45 +2,18 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../assets/css/fonts.css" />
+  <title>Project Citizen, from day one to Beta</title>
+
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
-  <script>
-    // fonts.com tracking
-    var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
-    (function() {
-      var t = document.createElement("script"); t.type = "text/javascript"; t.async = "true";
-      t.src = "//fast.fonts.net/t/trackingCode.js";
-      var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s);
-    })();
-  </script>
-
-  <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp.demo.goodalpaca.com/s3/demo.ctzn/69a0da880569f7321da5707935b54e30a321adf2=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/e62eb390941ca7edf3bb675786c4e2f05627547a=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048);
-    }
-
-    h3 {
-      font-size: inherit;
-    }
-  </style>
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -314,266 +287,55 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
+  <header class="primary">
+    <h2><a href="http://getctzn.com"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a></h2>
   </header>
 
-  <h1>Design</h1>
-
-  <div class="pattern-list">
-    <!--
-    <section>
-      <h2>Dare to Imagine</h2>
-      <ul>
-        <li><a href="map-item.html">Map Item</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Join via Email</h2>
-      <ul>
-        <li><a href="../test/confirm-joined-via-email.html">Confirmation</a></li>
-        <li><a href="../email/welcome-password.html">Welcome</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Widget</h2>
-      <ul>
-        <li><a href="../test/settings.html">Settings</a></li>
-        <li><a href="../test/widget.html">Embed Code</a></li>
-      </ul>
-    </section>
-    -->
-    <section>
-      <h2>Public Page</h2>
-      <ul>
-        <li><a href="../test/post-share.html">Shareable Post</a></li>
-        <li><a href="../featured/single-column-imagine.html">Single Column</a></li>
-        <li><a href="../featured/packery-imagine.html">Multi-Column</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Invite Link</h2>
-      <ul>
-        <li><a href="settings-a.html">Option A (current)</a></li>
-        <li><a href="settings-b.html">Option B</a></li>
-        <li><a href="settings-c.html">Option C</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Activity Indicator</h2>
-      <ul>
-        <li><a href="../test/push.html">Switch Push</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Social Accounts</h2>
-      <ul>
-        <li><a href="profile-a.html">Option A</a></li>
-        <li><a href="profile-b.html">Option B</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Profile Photo</h2>
-      <ul>
-        <li><a href="profile.html">Background</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Edit Profile</h2>
-      <ul>
-        <li><a href="profile-edit-avatar.html">Start (option A)</a></li>
-        <li><a href="profile-edit-avatar-icon.html">Start (option B)</a></li>
-        <li><a href="profile-edit.html">One image</a></li>
-        <li><a href="profile-edit-multiple.html">Multiple images</a></li>
-        <li><a href="profile-edit-hybrid.html">Hybrid</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>*Heart* via email</h2>
-      <ul>
-        <li><a href="../email/daily.html">Daily Email</a></li>
-        <li><a href="../email/weekly.html">Weekly Email</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Image loading</h2>
-      <ul>
-        <li><a href="image-blur.html">Example</a></li>
-        <li><a href="image-blur-loading.html">Example (loading state)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Channel</h2>
-      <ul>
-        <li><a href="../featured/channel-push.html">Push title</a></li>
-        <li><a href="../featured/channel-sliding.html">Picture slide</a></li>
-        <li><a href="../featured/channel-typing.html">Type text</a></li>
-        <li><a href="../featured/channel-reveal.html">Reveal text</a></li>
-        <li><a href="../featured/channel-full-image.html">Letterbox (white)</a></li>
-        <li><a href="../featured/channel-full-image-black.html">Letterbox (black)</a></li>
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Public Page (widget)</h2>
-      <ul>
-        <li><a href="../featured/widget-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/widget-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/widget-community.html">Community Services</a></li>
-        <li><a href="../featured/widget-good.html">GOOD</a></li>
-        <li><a href="../featured/widget-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/widget-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/widget-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/widget-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/widget-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page (people)</h2>
-      <ul>
-        <li><a href="../featured/people-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/people-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/people-community.html">Community Services</a></li>
-        <li><a href="../featured/people-good.html">GOOD</a></li>
-        <li><a href="../featured/people-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/people-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/people-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/people-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/people-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page</h2>
-      <ul>
-        <li><a href="../featured/masonry-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/masonry-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/masonry-community.html">Community Services</a></li>
-        <li><a href="../featured/masonry-good.html">GOOD</a></li>
-        <li><a href="../featured/masonry-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/masonry-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/masonry-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/masonry-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/masonry-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page (captions)</h2>
-      <ul>
-        <li><a href="../featured/masonry-text-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/masonry-text-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/masonry-text-community.html">Community Services</a></li>
-        <li><a href="../featured/masonry-text-good.html">GOOD</a></li>
-        <li><a href="../featured/masonry-text-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/masonry-text-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/masonry-text-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/masonry-text-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/masonry-text-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page (matte)</h2>
-      <ul>
-        <li><a href="../featured/public-grid-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/public-grid-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/public-grid-community.html">Community Services</a></li>
-        <li><a href="../featured/public-grid-good.html">GOOD</a></li>
-        <li><a href="../featured/public-grid-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/public-grid-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/public-grid-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/public-grid-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/public-grid-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    -->
-    <!--
-    <section>
-      <h2>Public Page (colors)</h2>
-      <ul>
-        <li><a href="../featured/grid-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/grid-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/grid-community.html">Community Services</a></li>
-        <li><a href="../featured/grid-good.html">GOOD</a></li>
-        <li><a href="../featured/grid-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/grid-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/grid-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/grid-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Switch</h2>
-      <ul>
-        <li><a href="switch-alt.html">New Layout</a></li>
-        <li><a href="switch-reorder.html">Reorder</a></li>
-        <li><a href="switch-reorder-alt.html">Reorder (Drag)</a></li>
-      </ul>
-    </section>
+  <main class="orange push-card shareable-mix page">
     <div>
-      <h2 style="font-size: 150%; margin-bottom: 0">Public Page</h2>
-      <section>
-        <h3>Type Variations</h3>
-        <ul>
-          <li><a href="../featured/public-page.html">Design A</a></li>
-          <li><a href="../featured/public-page-b.html">Design B</a></li>
-          <li><a href="../featured/public-page-c.html">Design C</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Borders</h3>
-        <ul>
-          <li><a href="../featured/public-page-d.html">Design D</a></li>
-          <li><a href="../featured/public-page-e.html">Design E</a></li>
-          <li><a href="../featured/public-page-f.html">Design F</a></li>
-          <li><a href="../featured/public-page-g.html">Design G</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Grid</h3>
-        <ul>
-          <li><a href="../featured/public-page-h.html">Design H</a></li>
-          <li><a href="../featured/public-page-i.html">Design I</a></li>
-          <li><a href="../featured/public-page-j.html">Design J</a></li>
-          <li><a href="../featured/public-page-k.html">Design K</a></li>
-          <li><a href="../featured/public-page-l.html">Design L</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Examples (Grid)</h3>
-        <ul>
-          <li><a href="../featured/public-grid-bookies.html">MILK + BOOKIES</a></li>
-          <li><a href="../featured/public-grid-bulletproof.html">BULLETPROOF.</a></li>
-          <li><a href="../featured/public-grid-community.html">Community Services</a></li>
-          <li><a href="../featured/public-grid-good.html">GOOD</a></li>
-          <li><a href="../featured/public-grid-imagine.html">Dare to Imagine</a></li>
-          <li><a href="../featured/public-grid-kaboom.html">KABOOM!</a></li>
-          <li><a href="../featured/public-grid-la-ctzns.html">LA CTZNs</a></li>
-          <li><a href="../featured/public-grid-rosies.html">Rosies Foundation</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Examples (Columns)</h3>
-        <ul>
-          <li><a href="../featured/public-bookies.html">MILK + BOOKIES</a></li>
-          <li><a href="../featured/public-bulletproof.html">BULLETPROOF.</a></li>
-          <li><a href="../featured/public-community.html">Community Services</a></li>
-          <li><a href="../featured/public-good.html">GOOD</a></li>
-          <li><a href="../featured/public-great-streets.html">Great Streets</a></li>
-          <li><a href="../featured/public-imagine.html">Dare to Imagine</a></li>
-          <li><a href="../featured/public-kaboom.html">KABOOM!</a></li>
-          <li><a href="../featured/public-la-ctzns.html">LA CTZNs</a></li>
-          <li><a href="../featured/public-rosies.html">Rosies Foundation</a></li>
-          <li><a href="../featured/public-making-of.html">Making of CTZN</a></li>
-        </ul>
-      </section>
-      -->
-    </div>
+
+<article class="post-item">
+
+    <header>
+      <h3>
+        <span class="avatar">
+            <img src="http://assets.goodstatic.com/s3/ctzn/ea5789c85c33dd97a83df98975965571dc7d793e=c60x60" width="30" height="30" alt=""></span>
+        @indiraallegra
+      </h3>
+      <p>
+        <time datetime="2015-10-19 20:31:51 +0000">October 19, 2015</time></p>
+    </header>
+
+  <div class="body">
+    <p><img src="http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s640x2048" srcset="http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s640x2048 640w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s768x2048 768w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s896x2048 896w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s1024x2048 1024w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s1152x2048 1152w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s1280x2048 1280w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s1536x2048 1536w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s1664x2048 1664w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s1792x2048 1792w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s1920x2048 1920w, http://assets.goodstatic.com/s3/ctzn/36caa61c7a27b5f0e85f6c93c193a1bf73162045=s2048x2048 2048w" sizes="100vw" alt="Uploaded image 1" /></p>
+    <p>A glance at mid-market street in SF. United Playaz + Yerba Buena Center for the Arts team up during the Market Street Prototyping festival in San Francisco. In the face of rapid gentrification they ask long term low income residents "What do you want to see for the future of Market street?" to explore how the future of the city can support the self esteem of all of its residents. Forgot to post from last week but late is better than never! #daretoimagine</p>
   </div>
+
+</article>
+
+      <p class="about">a post for <a href="">Dare to Imagine</a></p>
+
+      <ul class="action">
+        <li>
+          <a href="http://www.facebook.com">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use></svg>
+            Share on Facebook
+          </a>
+        </li>
+        <li>
+          <a href="http://twitter.com">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
+            Share on Twitter
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="primary">
+    <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
+    <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
+  </footer>
 
 </body>
 </html>
