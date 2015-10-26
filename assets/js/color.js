@@ -5,15 +5,15 @@
 
   function startColorAnimation() {
     var colors = [
-      'apple',
-      'blueberry',
-      'strawberry',
-      'cucumber',
-      'plum',
+      'red',
+      'teal',
+      'magenta',
+      'green',
+      'purple',
       'orange',
-      'boysenberry',
+      'blue',
       'lime',
-      'tangerine',
+      'gold',
       'periwinkle'
     ];
 

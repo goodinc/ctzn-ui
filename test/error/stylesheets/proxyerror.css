@@ -58,7 +58,7 @@
     font: 100%/1.75 "Helvetica Neue", Helvetica, Arial, sans-serif; /* @helvetica */
     margin: 0;
     padding: 0;
-    background: rgb(246, 246, 246); /* @casper */
+    background: rgb(204, 204, 204); /* @aluminum */
     color: rgb(5, 5, 5); /* @tungsten */
     text-align: center;
   }
@@ -94,30 +94,29 @@
   .lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
+  .green {
+    background-color: rgb(60, 210, 0); /* @green */
   }
-  .blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
+  .teal {
+    background-color: rgb(0, 204, 204); /* @teal */
   }
-  .boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
+  .blue {
+    background-color: rgb(101, 152, 254); /* @blue */
   }
   .periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .plum,
-  .plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+  .purple {
+    background-color: rgb(181, 62, 194); /* @purple */
   }
-  .strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
+  .magenta {
+    background-color: rgb(250, 44, 162); /* @magenta */
   }
-  .apple {
-    background-color: rgb(255, 0, 86); /* @apple */
+  .red {
+    background-color: rgb(255, 0, 86); /* @red */
   }
-  .tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
+  .gold {
+    background-color: rgb(255, 204, 0); /* @gold */
   }
   .orange {
     background-color: rgb(255, 117, 9); /* @orange */
