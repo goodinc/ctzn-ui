@@ -5722,7 +5722,7 @@
     margin-bottom: 0;
     font-size: 0.75em; /* 12px / @font-size */
   }
-  .public.page .post-item header:before {
+  .public.page .post-item.text-only header:before {
     content: attr(data-content);
     position: absolute;
     top: 0;
@@ -5735,6 +5735,7 @@
     box-sizing: border-box;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
+    max-width: 32em;
 
     /* OPTIONAL: Show an ellipses if the text has been truncated
     http://dropshado.ws/post/1015351370/webkit-line-clamp */
@@ -5815,53 +5816,9 @@
   .public.page .post-list li > a {
     text-decoration: none;
   }
-  .public.page .post-item .body {
-    background: white;
-    padding: 1.5em 1.5em 3em 1.5em;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    font-size: 0.875em; /* 14px / @font-size */
-  }
-
-  .public.page .post-item .body p:first-child {
-    margin-top: 0;
-  }
-  .public.page .post-item .body p {
-    color: inherit;
-    max-width: 33em;
-  }
-
-  .public.page .post-item .body {
-    position: relative;
-  }
-  .public.page .post-item .body.inactive {
-    display: none;
-  }
 
   .public.page .post-item  header time {
     transition: opacity 0.2s;
-  }
-  .public.page .post-item:not(.active) a header p:after {
-    content: " …";
-    opacity: 0.5;
-    transition: opacity 0.2s;
-  }
-  .public.page .post-item:not(.active) a:hover  header time,
-  .public.page .post-item:not(.active) a:hover  header p:after,
-  .public.page .post-item:not(.active) a:active header p:after,
-  .public.page .post-item:not(.active) a:focus  header p:after {
-    opacity: 1;
-  }
-
-  .public.page .post-item {
-    position: relative;
-    z-index: 0;
-  }
-  .public.page .post-list li.active .post-item {
-    outline: 0.5em solid white;
-    box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.5);
-    z-index: 1;
   }
 
   .public.page .post-item .body:before {    
@@ -5931,4 +5888,50 @@
       font-size: 10vmin;
     }
   }
+
+
+  /* =Public Page (Single Post)
+  ----------------------------------------------- */
+  .public-post > div {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @media (min-height: 30em) {
+    .push-card .details {
+      margin-top: 1.5em;
+    }
+  }
+  .public-post .details + .post-item {
+    margin-top: 3em;
+  }
+  @media (min-width: 25em) {
+    .public-post.push-card .details .name {
+      font-size: 2em;
+    }
+  }
+  .public-post .details .name a {
+    text-decoration: none;
+  }
+  .public-post nav {
+    margin-top: 3em;
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+  }
+  .public-post nav:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .public-post nav .next {
+    float: right;
+  }
+  .public-post nav .previous {
+    float: left;
+  }
+  .public-post nav .next a,
+  .public-post nav .previous a {
+    text-decoration: none;
+    color: white;
+  }
+
 
