@@ -5723,23 +5723,34 @@
     background: rgb(238, 238, 238); /* @seashell */
     color: black;
   }
+  .public.page .post-item.text-only a {
+    min-height: 50vw;
+
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: row;
+            flex-direction: row;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
   .public.page .post-item.text-only .body {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.5em;
     padding: 2.25em 2.25em 3em;
     font-weight: normal;
   }
-  .public.page .post-item.text-only .body > div {
-    max-height: 6em;
-    overflow: hidden;
 
-    /* OPTIONAL: Show an ellipses if the text has been truncated
-    http://dropshado.ws/post/1015351370/webkit-line-clamp */
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-  }
   .public.page .post-item .body p {
     margin: 0 auto;
     max-width: 32em;

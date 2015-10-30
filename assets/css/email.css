@@ -1057,8 +1057,6 @@
   /* =Video
   -----------------------------------------------
   (emails get a video preview in lieu of an actual video element)
-
-  TBD: At the time of this writing, this hasn’t been implemented.
   ----------------------------------------------- */
   .article a.video {
     background: rgb(44, 44, 44); /* @thorium */
@@ -1074,6 +1072,8 @@
   }
   .article a.video img {
     margin-bottom: 0;
+    width: 100%;
+    height: auto;
   }
   .article a.video span {
     display: block;
