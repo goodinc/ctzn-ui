@@ -12,6 +12,9 @@
 
   rgb(235,  29,  82)  @raspberry
   rgb(238, 238, 238)  @seashell
+
+                 640  @post-media-width
+                 680  @main-column-width = @post-media-width + (column padding x 2)
 */
 
 
@@ -37,7 +40,7 @@
     min-height: 100%;
     padding-bottom: 30px;
   }
-  @media (min-width: 600px) {
+  @media (min-width: 700px) { /* @main-column-width + (10 x 2) */
     .container {
       padding: 20px 0 60px !important; /* This is “!important” to override the inlined CSS rules */
     }
@@ -65,7 +68,7 @@
      for the curator email span the full-width of the screen. */
   img.featured,
   img.screenshot {
-    width: 580px;
+    width: 680px; /* @main-column-width */
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -272,7 +275,7 @@
     text-align: right;
     padding-right: 20px;
   }
-  @media (min-width: 600px) {
+  @media (min-width: 700px) { /* @main-column-width + (10 x 2) */
     .header p {
       padding-right: 0;
     }
@@ -306,7 +309,7 @@
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    max-width: 580px;
+    max-width: 680px; /* @main-column-width */
     margin-left: auto;
     margin-right: auto;
     font-size: 12px;
@@ -317,7 +320,7 @@
     padding-left: 0;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) { /* @main-column-width + (10 x 2) */
     .footer h2 {
       float: left;
     }
@@ -493,7 +496,7 @@
 
   /* =Layout
   -----------------------------------------------
-  The main column is 580 pixels wide.
+  The main column is 680 pixels wide.
 
   It generally has 30 pixels of padding on the right and left.
   -----------------------------------------------
@@ -526,16 +529,16 @@
   .tip,
   .download,
   .feedback {
-    max-width: 520px; /* 580px - (30px x 2) */
+    max-width: 620px; /* @main-column-width - (30 x 2) */
   }
   .article {
     padding: 15px;
-    max-width: 550px; /* 580px - (15px x 2) */
+    max-width: 650px; /* @main-column-width - (15 x 2) */
   }
   .header,
   .footer,
   .steps {
-    max-width: 580px;
+    max-width: 680px; /* @main-column-width */
   }
   .headline {
     margin-top: 10px;
@@ -554,7 +557,7 @@
     padding: 10px 30px;
   }
   .message {
-    max-width: 520px; /* 580px - (30px x 2) */
+    max-width: 620px; /* @main-column-width - (30px x 2) */
     padding: 5px 30px 15px 30px;
   }
   .message.first {
@@ -579,7 +582,7 @@
   ----------------------------------------------- */
 
   .intro {
-    max-width: 520px; /* 580px - (30px x 2) */
+    max-width: 620px; /* @main-column-width - (30 x 2) */
     margin: 0 auto;
     position: relative;
     padding-left: 30px;
@@ -784,7 +787,7 @@
   .stats {
     padding-left: 10px;
     padding-right: 10px;
-    max-width: 560px; /* 580 - (10 x 2) */
+    max-width: 660px; /* @main-column-width - (10 x 2) */
   }
   .stats ul,
   .stats li {
@@ -827,7 +830,7 @@
     background-color: white;
     margin-left: auto;
     margin-right: auto;
-    max-width: 580px; /* 580px - (30px x 2) */
+    max-width: 680px; /* @main-column-width - (30 x 2) */
     margin-top: 1px;
   }
   .members li a {
@@ -909,8 +912,30 @@
   .article h4 .avatar {
     margin-right: 7px;
   }
-  .article .body img {
+  .article .body {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgb(51, 51, 51); /* @iron */
+  }
+  .article .body p {
+    max-width: 33em; /* @readable-line-limit */
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+  .article .body .figure {
+    margin: 15px 0;
+  }
+  .article .body img,
+  .article .body video {
     display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .article .body    img,
+  .article .summary img {
+    border-radius: 2px;
 
     /* OPTIONAL: Show something while the image is loading (or if it fails to load).
 
@@ -921,40 +946,16 @@
     min-height: 20px;
     background-color: rgba(0, 0, 0, 0.25);
   }
-  .article .body {
-    padding-left: 5px;
-    padding-right: 5px;
-    color: rgb(51, 51, 51); /* @iron */
-  }
-  .article .body img,
-  .article .body video {
-    margin: 15px auto;
-    max-width: 100%;
-    height: auto;
-  }
-  .article .summary video {
-    display: block;
-    height: 100px;
-  }
 
   /* An article summary is a smaller presentation of a post, intended for the post author 
   (so they’ll a context when they’re looking at comments on their post). */
-  .article .summary img.video-fallback {
-    margin-bottom: 0;
-  }
-  .article .summary span.video-fallback {
-    font-size: 0.75em;
-    opacity: 0.5;
-    font-style: italic;
+  .article .summary .figure {
+    display: inline;
   }
   .article .summary img {
-    display: block;
+    display: inline;
     height: 100px;
-
-    /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-    min-height: 30px;
-    min-width: 30px;
-    background-color: rgba(0, 0, 0, 0.25);
+    width: auto;
   }
   .article .comment + .comment,
   .article .summary + .comment,
@@ -974,6 +975,11 @@
     margin-top: 0;
     padding-left: 42px;
     margin-bottom: 10px;
+    max-width: 33em; /* @readable-line-limit */
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   .article .action {
     margin-top: 30px;
@@ -998,6 +1004,13 @@
   .article .summary p {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  .article .summary p {
+    max-width: 33em; /* @readable-line-limit */
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   .article .summary h5 {
     font-size: inherit;
@@ -1054,9 +1067,9 @@
   }
 
 
-  /* =Video
+  /* =Video Link
   -----------------------------------------------
-  (emails get a video preview in lieu of an actual video element)
+  a preview image with a link to the app (in case the video element isn’t supported)
   ----------------------------------------------- */
   .article a.video {
     background: rgb(44, 44, 44); /* @thorium */
@@ -1090,15 +1103,9 @@
     background-color: transparent;
   }
   .article .body a.video {
-    max-width: 512px;
+    max-width: 640px; /* @post-media-width */
     margin-left: auto;
     margin-right: auto;
-  }
-  .article .summary a.video {
-    max-width: 200px;
-  }
-  .article .summary a.video > img {
-    height: 200px;
   }
 
 

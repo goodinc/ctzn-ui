@@ -5820,9 +5820,8 @@
   }
 
   /* OPTIONAL: Show a preview image while the real image is loading */
-  .public.page .post-item .images figure {
+  .public.page .post-item .images figure[style*="padding"] {
     position: relative;
-    padding-bottom: 100%;
 
     /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
     overflow: hidden;
@@ -5830,21 +5829,18 @@
     -webkit-transform: translate3d(0, 0, 0);
     */
   }
-
-  .public.page .post-item .images img {
-    min-width: 0;
-    min-height: 0;
-    max-width: none;
-
+  .public.page .post-item .images figure[style*="padding"] img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-width: none;
   }
-
   .public.page .post-item .images img.preview {
     margin: calc(-3em);
-    width: calc(100% + 6em);
+    width: calc(100% + 6em) !important;
     -webkit-filter: blur(1.5em);
             filter: blur(1.5em);
   }
