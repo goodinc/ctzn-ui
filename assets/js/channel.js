@@ -655,6 +655,13 @@ var fullscreenActive;
         // (If this is not the first image, or if there isn’t any text, or if the text is showing)
         if (currentImage > 0 || !text || textShowing) {
           animateImage(images[currentImage].querySelector('img'), animationDuration);
+
+          // SHIM: Some browsers position the image with its left edge in the
+          //       middle of the window (particularly Chrome 46). This seems to help.
+          images[currentImage].querySelector('img').style.flexGrow = '1';
+          setTimeout(function() {
+            images[currentImage].querySelector('img').style.flexGrow = '';
+          }, 100);
         }
 
         // If this image was shown under the text
