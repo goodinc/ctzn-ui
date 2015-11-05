@@ -1153,7 +1153,7 @@
             filter: blur(1.5em);
   }
   .push-channel article .pictures figure img {
-    position: relative;
+    position: relative; /* Position the image above the preview */
     display: block;
     margin: auto;
     max-width: none;
@@ -1179,5 +1179,12 @@
   .push-channel .body.inactive,
   .push-channel article .pictures figure.inactive {
     opacity: 0;
+  }
+
+  /* SHIM: Chrome 46 sometimes positions images in the wrong place when the screen
+           has a portrait aspect ratio and the image has a landscape aspect ratio. This seems to help.
+           http://stackoverflow.com/questions/23474191/flexbox-height-not-updating-when-content-changes#answer-23477001 */
+  .push-channel .item.inactive img {
+    position: static;
   }
 
