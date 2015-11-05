@@ -562,6 +562,7 @@
   input[type="email"   ],
   input[type="password"],
   input[type="number"  ],
+  input[type="datetime-local"],
   textarea {
     font-family: inherit;
     font-size: inherit;
@@ -600,6 +601,7 @@
   .supports-placeholder input[type="email"   ],
   .supports-placeholder input[type="password"],
   .supports-placeholder input[type="number"  ],
+  .supports-placeholder input[type="datetime-local"],
   .supports-placeholder textarea {
     margin-top: 0;
     border-width: 0;

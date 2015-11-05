@@ -2,13 +2,12 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Design / CTZN</title>
+  <title>Prototype / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-  <link rel="stylesheet" href="../assets/css/pattern.css" />
 
   <script>
     // fonts.com tracking
@@ -20,27 +19,28 @@
     })();
   </script>
 
-  <style>
-    body.pattern {
-      background-image: url(https://m.ctznapp-demo.com/s3/demo.ctzn/4fa481595e810cc76a8b9a992ebd1fe6eaddebaa=s2048x2048);
-      background-image: url(https://m.ctznapp-demo.com/s3/demo.ctzn/ee401f404c7e263e0aced267123a30fa06a8ab76=s2048x2048);
-      background-image: url(https://m.ctznapp-demo.com/s3/ctzn/d4d04ba3195f489c9986c57b9a0a7ea77b1c33e5=s2048x2048);
-      background-image: url(https://m.ctznapp-demo.com/s3/demo.ctzn/acef73220b3fe2f52db5bcb8c09d1a40b3d5d505=s2048x2048);
-      background-image: url(https://m.ctznapp-demo.com/s3/demo.ctzn/0425171d5d32d5f7e8c7aecfd18af60420fdd3b4=s2048x2048);
-      background-image: url(https://m.ctznapp-demo.com/s3/demo.ctzn/8dee3b9d64d3f3de00aff73b55aa103cfbc92dd1=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/1559cd8a3e8778e369930574588450819207ca60=s2048x2048);
-      background-image: url(https://m.ctznapp-demo.com/s3/demo.ctzn/69a0da880569f7321da5707935b54e30a321adf2=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/e62eb390941ca7edf3bb675786c4e2f05627547a=s2048x2048);
-      background-image: url(https://m.ctznapp.com/s3/ctzn/2f69b69cb112646957abf50d1cd158cb2e1dedd6=s2048x2048);
-    }
+  <script src="../assets/js/placeholder.js"></script>
 
-    h3 {
-      font-size: inherit;
-    }
+  <!--[if lte IE 8]>
+    <script src="../assets/js/html5.js"></script>
+  <![endif]-->
+
+  <style>
+  .notifications .post-item .push-card {
+    margin: 0;
+    width  : 4.2857142857em; /* target image size / font size (60px / 14px) */
+    line-height : 4.2857142857em;
+    min-width: 1px;
+    min-height: 1px;
+    position: absolute;
+    top  : 0.7142857143em; /* 10px / 14px */
+    right: 0.7142857143em;
+    padding: 0;
+  }
   </style>
 
 </head>
-<body class="pattern index">
+<body>
 
   <!-- images/icons.svg -->
   <svg display="none" width="0" height="0">
@@ -314,277 +314,917 @@
     </symbol>
   </svg>
 
-  <header class="pattern">
-    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a></h2>
-    <nav>
-      <ul>
-        <li class="active"><a href="">Design</a></li>
-        <li><a href="../build/">Build</a></li>
-        <li><a href="../test/">Test</a></li>
-      </ul>
-    </nav>
-  </header>
+<section class="notifications page"><header><h1>Notifications</h1>
 
-  <h1>Design</h1>
+      <a href="#push" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></switch></svg></a>
+    </header><div>
+      
+      <h2>Recent</h2>
+      <ol class="post-list">
+        <li>
+          <article class="post-item">
+            <header>
+              <h3>
+                <span class="avatar">
+                  <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"></span>
+                
+                <span>@brian</span>
+                added a new action to CicLAvia: <span style="font-weight: normal;">#biketowork</span>
+              </h3>
+            </header>
+            <div class="periwinkle push-card">
+              <span class="name">#</span>
+            </div>
+            <p class="time">
+              <time datetime="2015-02-03T04:53:41+00:00">1 day ago</time>
+            </p>
+          </article>
+        </li>
+      </ol>
+<h2>Older</h2>
+        
 
-  <div class="pattern-list">
-    <!--
-    <section>
-      <h2>Dare to Imagine</h2>
-      <ul>
-        <li><a href="map-item.html">Map Item</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Join via Email</h2>
-      <ul>
-        <li><a href="../test/confirm-joined-via-email.html">Confirmation</a></li>
-        <li><a href="../email/welcome-password.html">Welcome</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Widget</h2>
-      <ul>
-        <li><a href="../test/settings.html">Settings</a></li>
-        <li><a href="../test/widget.html">Embed Code</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page</h2>
-      <ul>
-        <li><a href="../test/post-share.html">Shareable Post</a></li>
-        <li><a href="../featured/single-column-imagine.html">Single Column</a></li>
-        <li><a href="../featured/packery-imagine.html">Multi-Column</a></li>
-      </ul>
-    </section>
-    -->
-    <section>
-      <h2>Actions</h2>
-      <ul>
-        <li><a href="action-list-empty.html">My Actions (empty)</a></li>
-        <li><a href="action-form.html">New Action</a></li>
-        <li><a href="action.html">Action Details</a></li>
-        <li><a href="action-list.html">My Actions</a></li>
-        <li><a href="action-notification.html">Notification</a></li>
-        <li><a href="action-email.html">Email</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Invite Link</h2>
-      <ul>
-        <li><a href="settings-a.html">Option A (current)</a></li>
-        <li><a href="settings-b.html">Option B</a></li>
-        <li><a href="settings-c.html">Option C</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Activity Indicator</h2>
-      <ul>
-        <li><a href="../test/push.html">Switch Push</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Social Accounts</h2>
-      <ul>
-        <li><a href="profile-a.html">Option A</a></li>
-        <li><a href="profile-b.html">Option B</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Profile Photo</h2>
-      <ul>
-        <li><a href="profile.html">Background</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Edit Profile</h2>
-      <ul>
-        <li><a href="profile-edit-avatar.html">Start (option A)</a></li>
-        <li><a href="profile-edit-avatar-icon.html">Start (option B)</a></li>
-        <li><a href="profile-edit.html">One image</a></li>
-        <li><a href="profile-edit-multiple.html">Multiple images</a></li>
-        <li><a href="profile-edit-hybrid.html">Hybrid</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>*Heart* via email</h2>
-      <ul>
-        <li><a href="../email/daily.html">Daily Email</a></li>
-        <li><a href="../email/weekly.html">Weekly Email</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Image loading</h2>
-      <ul>
-        <li><a href="image-blur.html">Example</a></li>
-        <li><a href="image-blur-loading.html">Example (loading state)</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Channel</h2>
-      <ul>
-        <li><a href="../featured/channel-push.html">Push title</a></li>
-        <li><a href="../featured/channel-sliding.html">Picture slide</a></li>
-        <li><a href="../featured/channel-typing.html">Type text</a></li>
-        <li><a href="../featured/channel-reveal.html">Reveal text</a></li>
-        <li><a href="../featured/channel-full-image.html">Letterbox (white)</a></li>
-        <li><a href="../featured/channel-full-image-black.html">Letterbox (black)</a></li>
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Public Page (widget)</h2>
-      <ul>
-        <li><a href="../featured/widget-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/widget-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/widget-community.html">Community Services</a></li>
-        <li><a href="../featured/widget-good.html">GOOD</a></li>
-        <li><a href="../featured/widget-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/widget-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/widget-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/widget-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/widget-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page (people)</h2>
-      <ul>
-        <li><a href="../featured/people-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/people-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/people-community.html">Community Services</a></li>
-        <li><a href="../featured/people-good.html">GOOD</a></li>
-        <li><a href="../featured/people-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/people-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/people-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/people-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/people-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page</h2>
-      <ul>
-        <li><a href="../featured/masonry-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/masonry-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/masonry-community.html">Community Services</a></li>
-        <li><a href="../featured/masonry-good.html">GOOD</a></li>
-        <li><a href="../featured/masonry-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/masonry-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/masonry-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/masonry-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/masonry-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page (captions)</h2>
-      <ul>
-        <li><a href="../featured/masonry-text-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/masonry-text-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/masonry-text-community.html">Community Services</a></li>
-        <li><a href="../featured/masonry-text-good.html">GOOD</a></li>
-        <li><a href="../featured/masonry-text-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/masonry-text-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/masonry-text-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/masonry-text-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/masonry-text-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Public Page (matte)</h2>
-      <ul>
-        <li><a href="../featured/public-grid-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/public-grid-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/public-grid-community.html">Community Services</a></li>
-        <li><a href="../featured/public-grid-good.html">GOOD</a></li>
-        <li><a href="../featured/public-grid-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/public-grid-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/public-grid-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/public-grid-perthes.html">Perthes Kids Foundation</a></li>
-        <li><a href="../featured/public-grid-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    -->
-    <!--
-    <section>
-      <h2>Public Page (colors)</h2>
-      <ul>
-        <li><a href="../featured/grid-bookies.html">MILK + BOOKIES</a></li>
-        <li><a href="../featured/grid-bulletproof.html">BULLETPROOF.</a></li>
-        <li><a href="../featured/grid-community.html">Community Services</a></li>
-        <li><a href="../featured/grid-good.html">GOOD</a></li>
-        <li><a href="../featured/grid-imagine.html">Dare to Imagine</a></li>
-        <li><a href="../featured/grid-kaboom.html">KABOOM!</a></li>
-        <li><a href="../featured/grid-la-ctzns.html">LA CTZNs</a></li>
-        <li><a href="../featured/grid-rosies.html">Rosies Foundation</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Switch</h2>
-      <ul>
-        <li><a href="switch-alt.html">New Layout</a></li>
-        <li><a href="switch-reorder.html">Reorder</a></li>
-        <li><a href="switch-reorder-alt.html">Reorder (Drag)</a></li>
-      </ul>
-    </section>
-    <div>
-      <h2 style="font-size: 150%; margin-bottom: 0">Public Page</h2>
-      <section>
-        <h3>Type Variations</h3>
-        <ul>
-          <li><a href="../featured/public-page.html">Design A</a></li>
-          <li><a href="../featured/public-page-b.html">Design B</a></li>
-          <li><a href="../featured/public-page-c.html">Design C</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Borders</h3>
-        <ul>
-          <li><a href="../featured/public-page-d.html">Design D</a></li>
-          <li><a href="../featured/public-page-e.html">Design E</a></li>
-          <li><a href="../featured/public-page-f.html">Design F</a></li>
-          <li><a href="../featured/public-page-g.html">Design G</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Grid</h3>
-        <ul>
-          <li><a href="../featured/public-page-h.html">Design H</a></li>
-          <li><a href="../featured/public-page-i.html">Design I</a></li>
-          <li><a href="../featured/public-page-j.html">Design J</a></li>
-          <li><a href="../featured/public-page-k.html">Design K</a></li>
-          <li><a href="../featured/public-page-l.html">Design L</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Examples (Grid)</h3>
-        <ul>
-          <li><a href="../featured/public-grid-bookies.html">MILK + BOOKIES</a></li>
-          <li><a href="../featured/public-grid-bulletproof.html">BULLETPROOF.</a></li>
-          <li><a href="../featured/public-grid-community.html">Community Services</a></li>
-          <li><a href="../featured/public-grid-good.html">GOOD</a></li>
-          <li><a href="../featured/public-grid-imagine.html">Dare to Imagine</a></li>
-          <li><a href="../featured/public-grid-kaboom.html">KABOOM!</a></li>
-          <li><a href="../featured/public-grid-la-ctzns.html">LA CTZNs</a></li>
-          <li><a href="../featured/public-grid-rosies.html">Rosies Foundation</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Examples (Columns)</h3>
-        <ul>
-          <li><a href="../featured/public-bookies.html">MILK + BOOKIES</a></li>
-          <li><a href="../featured/public-bulletproof.html">BULLETPROOF.</a></li>
-          <li><a href="../featured/public-community.html">Community Services</a></li>
-          <li><a href="../featured/public-good.html">GOOD</a></li>
-          <li><a href="../featured/public-great-streets.html">Great Streets</a></li>
-          <li><a href="../featured/public-imagine.html">Dare to Imagine</a></li>
-          <li><a href="../featured/public-kaboom.html">KABOOM!</a></li>
-          <li><a href="../featured/public-la-ctzns.html">LA CTZNs</a></li>
-          <li><a href="../featured/public-rosies.html">Rosies Foundation</a></li>
-          <li><a href="../featured/public-making-of.html">Making of CTZN</a></li>
-        </ul>
-      </section>
-      -->
-    </div>
-  </div>
+      <ol class="post-list">
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 grape" data-content="d"></span>
+                  </span>
+                  <span>@dan</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>A shiny new version of our app just went up. Hooray!</p></div>
+            <p class="time">
+              <time datetime="2014-12-18T19:45:02+00:00">7 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"></span>
+                  
+                  <span>@brian</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>A shiny new version of our app just went up. Hooray!</p></div>
+            <p class="time">
+              <time datetime="2014-12-18T16:13:06+00:00">7 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"></span>
+                  
+                  <span>@cogg</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>A shiny new version of our app just went up. Hooray!</p></div>
+            <p class="time">
+              <time datetime="2014-12-18T15:40:34+00:00">7 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"></span>
+                  
+                  <span>@aldoatgood</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>A shiny new version of our app just went up. Hooray!</p></div>
+            <p class="time">
+              <time datetime="2014-12-18T03:11:28+00:00">7 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"></span>
+                  
+                  <span>@eshah</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>A shiny new version of our app just went up. Hooray!</p></div>
+            <p class="time">
+              <time datetime="2014-12-18T03:11:01+00:00">7 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 ocean" data-content="b"></span>
+                  </span>
+                  <span>@baxter</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Paint and markers are being put to good use at CTZN mixer!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-24T17:15:56+00:00">10 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 cranberry" data-content="v"></span>
+                  </span>
+                  <span>@vogg</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Paint and markers are being put to good use at CTZN mixer!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-24T16:06:37+00:00">10 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"></span>
+                  
+                  <span>@aldoatgood</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Paint and markers are being put to good use at CTZN mixer!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-24T02:49:49+00:00">10 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 sky" data-content="a"></span>
+                  </span>
+                  <span>anton</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Paint and markers are being put to good use at CTZN mixer!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-23T05:46:23+00:00">11 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 grape" data-content="j"></span>
+                  </span>
+                  <span>jelena</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Paint and markers are being put to good use at CTZN mixer!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/5a3a37d6b1d536ea73d3709e7a938cf7edef0f5d=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/e185f9c58f8a5716d06a787a588b11f03db2009a=c500x500"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/7fa10087e93bf12dfc07ef828ef201c16adc80b7=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-23T04:46:51+00:00">11 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 grape" data-content="j"></span>
+                  </span>
+                  <span>jelena</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-21T04:10:51+00:00">11 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 bluebird" data-content="l"></span>
+                  </span>
+                  <span>lfatone</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-18T04:30:07+00:00">11 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"></span>
+                  
+                  <span>@eshah</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-17T19:51:27+00:00">11 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 sky" data-content="a"></span>
+                  </span>
+                  <span>anton</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-16T10:33:47+00:00">11 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100"></span>
+                  
+                  <span>@brian</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-15T13:47:51+00:00">12 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 cantaloupe" data-content="*"></span>
+                  </span>
+                  <span>[anonymous22]</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-14T23:22:01+00:00">12 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 kiwi" data-content="c"></span>
+                  </span>
+                  <span>caseycaplowe</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-14T22:14:13+00:00">12 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"></span>
+                  
+                  <span>@aldoatgood</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-14T21:22:09+00:00">12 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c100x100"></span>
+                  
+                  <span>@cogg</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-14T21:18:56+00:00">12 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 ocean" data-content="b"></span>
+                  </span>
+                  <span>@baxter</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Celebrating our first release of CTZN with brunch at Tom Bergin’s!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c52a23f6c720f077eaff2651de7b008f545c34b3=c500x500"></p></div>
+            <p class="time">
+              <time datetime="2014-11-14T20:42:24+00:00">12 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c100x100"></span>
+                  
+                  <span>@aldoatgood</span>
+                </a>
+                
+
+                
+                mentioned you in a post on <span>Project Citizen</span>:
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>@cogg @dan @brian @anton @jim @eshah @jelena we did it!! You guys are awesome &lt;3 &lt;3 &lt;3</p></div>
+            <p class="time">
+              <time datetime="2014-11-14T00:38:44+00:00">12 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  <span class="avatar">
+                    <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/c0a2ca50ab0ece1295529809b72f1a420e7a2d7e=c100x100"></span>
+                  
+                  <span>@eshah</span>
+                </a>
+                
+
+                
+
+                
+
+                
+
+                
+                gave your post on <span>Project Citizen</span> some love:
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>Here are some photos from yesterday’s event at the big house!</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/db496e6df03423d6e7baeb605b6658140cbc27d7=c500x500" alt="house-1.jpg"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/c2d4e29834d1c3b5141c1cf8fb4dd4ac8cc782db=c500x500" alt="house-2.jpg"></p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/1f995e834720d0f7ca3996de20cef93b14b20cca=c500x500" alt="house-3.jpg"></p></div>
+            <p class="time">
+              <time datetime="2014-11-14T00:28:59+00:00">12 weeks ago</time></p>
+          </article>
+</li>
+      
+<li>
+          <article class="post-item"><header><h3>
+                
+                <a href="">
+                  
+                  <span class="avatar">
+                    <span class="size30 grape" data-content="j"></span>
+                  </span>
+                  <span>jelena</span>
+                </a>
+                
+
+                
+                mentioned you in a post on <span>Project Citizen</span>:
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+              </h3>
+            </header><div class="body"><p>No posts today? But we did so much on our push! @aldoatgood made this nifty start page design... @Jim helped me tweak some Tumblr code... (sidenote: I wish when I hit @ and started typing the app would suggest who I could mention in this push.)</p>
+
+<p><img src="https://m.ctznapp.com/s3/ctzn/09ea4f7dfbebb798fa9fd66c789ff81aa1a69305=c500x500" alt="ctzn-start.png"></p></div>
+            <p class="time">
+              <time datetime="2014-11-04T02:41:26+00:00">13 weeks ago</time></p>
+          </article>
+</li>
+      </ol>
+
+</div>
+  </section>
 
 </body>
 </html>
