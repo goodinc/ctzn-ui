@@ -315,11 +315,14 @@
         <label>
           <span>Choose a Push</span><br />
           <select>
-            <option>CicLAvia</option>
+            <option selected="selected">CicLAvia</option>
+            <option>GOOD</option>
+            <option>LA CTZNs</option>
           </select>
         </label>
       </p>
 
+      <h3>Name</h3>
       <p class="text">
         <label>
           <span>#untitledaction (required)</span><br />
@@ -328,10 +331,11 @@
       </p>
 
       <div class="datetime">
+        <h3>From</h3>
         <p class="text">
           <label>
             <span>Start Date</span><br />
-            <input placeholder="today" type="datetime-local" />
+            <input type="text" placeholder="10/27/2015" />
           </label>
         </p>
       </div>
@@ -341,7 +345,7 @@
         <p class="text">
           <label>
             <span>End Date</span><br />
-            <input placeholder="forever" type="datetime-local" />
+            <input type="text" placeholder="forever" />
           </label>
         </p>
       </div>
@@ -352,7 +356,7 @@
           <span>short description (required)</span><br />
           <textarea placeholder="short description (required)"></textarea>
         </label>
-        <span class="note">140 characters</span>
+        <span class="note" style="display: block; text-align: right; margin-bottom: 1.5em;">140 characters</span>
       </p>
       <p class="text">
         <label>

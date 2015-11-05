@@ -25,6 +25,68 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
+  <style>
+    .header.push-card {
+      position: relative;
+      color: white;
+      padding-top: 20em;
+      background-image: url(https://m.ctznapp.com/s3/ctzn/a9/69/c75c0a163dd819e245a2577794a0e3d675bf.jpg=s2048x2048);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .header.push-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 3.75em);
+      background-image: linear-gradient(to top,    transparent, transparent 60%, rgba(0, 0, 0, 0.25)),
+                        linear-gradient(to bottom, transparent, transparent 60%, rgba(0, 0, 0, 0.75));
+    }
+    .header.push-card .details {
+      position: relative;
+      z-index: 1;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 29.5em;
+    }
+    .header.push-card .details .action a {
+      background: transparent;
+      padding: 0;
+      color: rgb(176, 224, 0); /* @lime */
+    }
+    .lime.header.push-card .meta {
+      position: relative;
+      z-index: 1;
+    }
+    .lime.header.push-card .meta::before {
+      content: "";
+      background-color: rgb(176, 224, 0); /* @lime */
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .header.push-card .meta {
+      margin-top: 0;
+    }
+    .header.push-card .meta p {
+      margin-top: 0;
+      padding: 1.25em 1.25em;
+    }
+
+    .page .details {
+      padding: 1.5em 1.25em;
+    }
+
+  </style>
+
 </head>
 <body>
 
@@ -315,7 +377,7 @@
       </a>
     </header>
 
-    <div class="header push-card periwinkle">
+    <div class="header push-card lime">
       <div class="details">
         <h2 class="name">#biketowork</h2>
         <p>CicLAvia</h2>
@@ -331,23 +393,25 @@
 
     </div>
 
-    <p><b>You</b> and 22 others are in</p>
+    <div class="details">
+      <p><b>You</b> and 22 others are in</p>
 
-    <ul>
-      <li><a href="http://ctznapp.com">@aaron</a></li>
-      <li><a href="http://ctznapp.com">@aldoatgood</a></li>
-      <li><a href="http://ctznapp.com">@brian</a></li>
-      <li><a href="http://ctznapp.com">@caseycaplowe</a></li>
-      <li><a href="http://ctznapp.com">@cogg</a></li>
-      <li><a href="http://ctznapp.com">@eshah</a></li>
-    </ul>
+      <ul>
+        <li><a href="http://ctznapp.com">@aaron</a></li>
+        <li><a href="http://ctznapp.com">@aldoatgood</a></li>
+        <li><a href="http://ctznapp.com">@brian</a></li>
+        <li><a href="http://ctznapp.com">@caseycaplowe</a></li>
+        <li><a href="http://ctznapp.com">@cogg</a></li>
+        <li><a href="http://ctznapp.com">@eshah</a></li>
+      </ul>
 
-    <h3>Show us what changemaking looks like to you</h3>
-    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h3>Show us what changemaking looks like to you</h3>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-    <p class="action"><a href="">Add a new post</a></p>
+      <p class="action"><a href="">Add a new post</a></p>
+    </div>
 
     <div class="post-list-header">
       <h2>Posts for #biketowork</h2>
