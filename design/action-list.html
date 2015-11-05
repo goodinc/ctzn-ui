@@ -18,7 +18,9 @@ ul.<!doctype html>
       padding-left: 0;
     }
     ul.nav {
-      margin: 0 1.25em;
+      max-width: 32em;
+      margin: -0.5em auto 0;
+      padding: 0 0.75em;
       -webkit-box-sizing: border-box;
          -moz-box-sizing: border-box;
               box-sizing: border-box;
@@ -76,6 +78,82 @@ ul.<!doctype html>
       display: inline;
     }
 
+    .page > .action {
+      max-width: 29.5em;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1.25em;
+      text-align: center;
+    }
+
+
+    .page > .action a {
+      width: 100%;
+      font-weight: normal;
+      font-size: 1.5em; /* 24px / @font-size */
+      border-radius: 0.1666666667em; /* 4px / 24px */
+      line-height: 1.4833333333em; /* 50px / 24px */
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      text-align: center;
+
+      /* For the “Open this URL in Safari” page. */
+      /* @wrap-long-words */
+      word-wrap     : break-word;
+      overflow-wrap : break-word;
+    }
+
+
+    .post-item a.push-card,
+    .post-item a.push-card:hover,
+    .post-item a.push-card:active,
+    .post-item a.push-card:focus {
+      color: white;
+    }
+    .post-item a.push-card p:first-child {
+      margin: -1.5em -1.25em 0;
+      padding: 0.375em 1.25em;
+      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+    }
+    .post-item a.push-card p:last-child {
+      margin: 0 -1.6666666667em -2em; /* 1.25em / 0.75em */ /* 1.5em / 0.75em */
+      padding: 0.75em 1.6666666667em; /* 1.25em / 0.75em */
+      background: rgba(0, 0, 0, 0.4);
+      font-size: 0.75em;
+    }
+    .post-item a.push-card h2 {
+      padding: 1.25em;
+      margin-left: -0.6666666667em; /* 1.25em / 1.875em */
+      margin-right: -0.6666666667em;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .post-item a.push-card h2[style*="background-image"] {
+      padding-top: 3.75em;
+      padding-bottom: 3.75em;
+      padding-top: 25vh;
+      padding-bottom: 25vh;
+    }
+    .post-item a.push-card h2:before {
+      content: "";
+      display: block;
+      background: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .post-item a.push-card h2 span {
+      position: relative;
+      z-index: 1;
+    }
   </style>
 
   <script>
@@ -369,7 +447,7 @@ ul.<!doctype html>
     </symbol>
   </svg>
 
-  <section class="settings page">
+  <section class="page">
 
     <header>
       <h1>My Actions</h1>
@@ -398,47 +476,73 @@ ul.<!doctype html>
       </li>
     </ul>
 
-    <p class="action" style="margin: 1.5em 1.25em; text-align: center;"><a href="">Create a new action</a></p>
+    <p class="action"><a href="">Create a new action</a></p>
 
     <ol class="post-list">
       <li>
         <article class="post-item">
-          <div class="lime push-card">
-            <p>CicLAvia</p>
-            <h2 class="name">#biketowork</h2>
+          <a href="" class="red push-card">
+            <p>CTZN Changemakers</p>
+            <h2 class="name"><span>#pushforgood</span></h2>
             <p>ongoing</p>
-          </div>
-          <h3>Show us what changemaking looks like to you</h3>
+          </a>
+          <h4>Show us what changemaking looks like to you</h4>
           <p>
-            You are in
+            <b>You</b> are in
             <span class="avatar">
               <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" alt="@brian" />
             </span>
           </p>
-          <ul>
-            <li class="action"><a href="">View Details</a></li>
-            <li><form action="" method="post"><button>Remove Me</button></form></li>
-          </ul>
+          <footer>
+            <ul class="action">
+              <li><a href="">View Details</a></li>
+              <li><form action="" method="post"><button>Remove Me</button></form></li>
+            </ul>
+          </footer>
         </article>
       </li>
       <li>
         <article class="post-item">
-          <div class="gold push-card">
-            <p>Bulletproof</p>
-            <h2 class="name">#wearyourshirttowork</h2>
-            <p>tomorrow</p>
-          </div>
-          <h3>Show us what changemaking looks like to you</h3>
+          <a href="" class="lime push-card">
+            <p>CicLAvia</p>
+            <h2 class="name" style="background-image: url(https://m.ctznapp.com/s3/ctzn/a9/69/c75c0a163dd819e245a2577794a0e3d675bf.jpg);"><span>#biketowork</span></h2>
+            <p>ends in 3 days</p>
+          </a>
+          <h4>Ride your favorite bicycle to work</h4>
           <p>
-            You are in
+            <b>You</b> are in
             <span class="avatar">
               <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" alt="@brian" />
             </span>
           </p>
-          <ul>
-            <li class="action"><a href="">View Details</a></li>
-            <li><form action="" method="post"><button>Remove Me</button></form></li>
-          </ul>
+          <footer>
+            <ul class="action">
+              <li><a href="">View Details</a></li>
+              <li><form action="" method="post"><button>Remove Me</button></form></li>
+            </ul>
+          </footer>
+        </article>
+      </li>
+      <li>
+        <article class="post-item">
+          <a href="" class="gold push-card">
+            <p>Bulletproof</p>
+            <h2 class="name" style="background-image: url(https://m.ctznapp.com//s3/ctzn/bc/f7/e2f2980eb5040ea33b503d963682a5be4424.jpg);"><span>#wearyourshirt</span></h2>
+            <p>tomorrow</p>
+          </a>
+          <h4>We’re going to take pictures of people wearing their awesome shirts.</h4>
+          <p>
+            <b>You</b> are in
+            <span class="avatar">
+              <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" alt="@brian" />
+            </span>
+          </p>
+          <footer>
+            <ul class="action">
+              <li><a href="">View Details</a></li>
+              <li><form action="" method="post"><button>Remove Me</button></form></li>
+            </ul>
+          </footer>
         </article>
       </li>
     </ol>

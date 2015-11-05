@@ -18,7 +18,9 @@ ul.<!doctype html>
       padding-left: 0;
     }
     ul.nav {
-      margin: 0 1.25em;
+      max-width: 32em;
+      margin: -0.5em auto 0;
+      padding: 0 0.75em;
       -webkit-box-sizing: border-box;
          -moz-box-sizing: border-box;
               box-sizing: border-box;
@@ -65,6 +67,44 @@ ul.<!doctype html>
       padding-right: 1.5em;
     }
 
+    .post-list li ul,
+    .post-list li ul li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .post-list li ul li,
+    .post-list li ul li form {
+      display: inline;
+    }
+
+    .page > .action {
+      max-width: 29.5em;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1.25em;
+      text-align: center;
+    }
+
+
+    .page > .action a {
+      width: 100%;
+      font-weight: normal;
+      font-size: 1.5em; /* 24px / @font-size */
+      border-radius: 0.1666666667em; /* 4px / 24px */
+      line-height: 1.4833333333em; /* 50px / 24px */
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      text-align: center;
+
+      /* For the “Open this URL in Safari” page. */
+      /* @wrap-long-words */
+      word-wrap     : break-word;
+      overflow-wrap : break-word;
+    }
   </style>
 
   <script>
