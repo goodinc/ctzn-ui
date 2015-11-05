@@ -149,7 +149,7 @@
     /* @note */
     font-style: italic;
     font-size: 0.875em;
-    margin-top: 0.8571428571em; /* @line-height / 2 / 0.875em */
+    margin-top: 0.4285714286em; /* @line-height / 4 / 0.875em */
     color: rgb(153, 153, 153); /* @nickel */
   }
 
@@ -754,9 +754,10 @@
     margin-top: 0;
     display: inline-block;
     vertical-align: top;
+    margin-right: 1.5em;
   }
   .settings .datetime + .datetime {
-    margin-left: 1.5em;
+    margin-right: 0;
   }
   @media (max-width: 25em) {
     .settings .datetime {
@@ -767,9 +768,12 @@
       width: 100%;
     }
   }
-  .settings .datetime h3 {
+  .settings.page .datetime h3 {
     margin-top: 1.5em;
     margin-bottom: 0;
+  }
+  .settings.page .datetime + h3 {
+    margin-top: 1.5em;
   }
   .settings p.select {
     margin-top: 0;
