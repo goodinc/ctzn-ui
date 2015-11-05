@@ -5746,9 +5746,14 @@
   }
   .public.page .post-item.text-only .body {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.5em;
-    padding: 2.25em 2.25em 3em;
+    padding: 2.25em 2.25em 3.75em;
     font-weight: normal;
+  }
+  @media (min-width: 40em) {
+    .public.page .post-item.text-only .body {
+      font-size: 1.5em;
+      padding-bottom: 3em;
+    }
   }
 
   .public.page .post-item .body p {
