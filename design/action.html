@@ -29,7 +29,8 @@
     .header.push-card {
       position: relative;
       color: white;
-      padding-top: 10em;
+      padding-top: 5em;
+      padding-bottom: 9.5em;
       background-image: url(https://m.ctznapp.com/s3/ctzn/a9/69/c75c0a163dd819e245a2577794a0e3d675bf.jpg);
       background-repeat: no-repeat;
       background-size: cover;
@@ -37,7 +38,9 @@
     }
     @media (min-height: 40em) {
       .header.push-card {
-        padding-top: 20em;
+        padding-top: 10em;
+        padding-bottom: 14.5em;
+        padding-bottom: calc(10em + 9vmin);
       }
     }
     .header.push-card::before {
@@ -75,8 +78,15 @@
       color: rgb(176, 224, 0); /* @lime */
     }
     .header.push-card .meta {
-      position: relative;
+      margin: 0;
+      position: absolute;
       z-index: 1;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
     }
     .header.push-card .meta p {
       text-transform: lowercase;
@@ -117,6 +127,22 @@
     .header.push-card .meta p {
       margin-top: 0;
       padding: 1.25em 1.25em;
+    }
+    .header.push-card .name + p {
+      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 900;
+      /* @extra-bold */
+      line-height: 1;
+      border-left: 0.3125em solid rgb(176, 224, 0); /* @lime */
+      padding: 0.25em 0.75em;
+    }
+    @media (min-width: 40em), (min-height: 40em) {
+      .header.push-card .name {
+        font-size: 8vmin;
+      }
+      .header.push-card p {
+        font-size: 3vmin;
+      }
     }
 
     .page .details {
@@ -654,7 +680,7 @@
             </span></a></li>
       </ul>
 
-      <h3>Ride your favorite bicycle to work</h3>
+      <h3>Ride your favorite human-propelled transporter to work</h3>
       <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
