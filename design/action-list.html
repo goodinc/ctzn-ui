@@ -65,6 +65,17 @@ ul.<!doctype html>
       padding-right: 1.5em;
     }
 
+    .post-list li ul,
+    .post-list li ul li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .post-list li ul li,
+    .post-list li ul li form {
+      display: inline;
+    }
+
   </style>
 
   <script>
@@ -387,17 +398,48 @@ ul.<!doctype html>
       </li>
     </ul>
 
-    <p class="action"><a href="">Create a new action</a></p>
+    <p class="action" style="margin: 1.5em 1.25em; text-align: center;"><a href="">Create a new action</a></p>
 
-    <ol class="action-list">
+    <ol class="post-list">
       <li>
-        <h2>CicLAvia</h2>
-        <h3>#biketowork</h3>
-        <p>ongoing</p>
-        <p>Show us what changemaking looks like to you</p>
-        <p>You are in</p>
-        <p class="action"><a href="">View Details</a></p>
-        <form action="" method="post"><button>Remove Me</button></form>
+        <article class="post-item">
+          <div class="lime push-card">
+            <p>CicLAvia</p>
+            <h2 class="name">#biketowork</h2>
+            <p>ongoing</p>
+          </div>
+          <h3>Show us what changemaking looks like to you</h3>
+          <p>
+            You are in
+            <span class="avatar">
+              <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" alt="@brian" />
+            </span>
+          </p>
+          <ul>
+            <li class="action"><a href="">View Details</a></li>
+            <li><form action="" method="post"><button>Remove Me</button></form></li>
+          </ul>
+        </article>
+      </li>
+      <li>
+        <article class="post-item">
+          <div class="gold push-card">
+            <p>Bulletproof</p>
+            <h2 class="name">#wearyourshirttowork</h2>
+            <p>tomorrow</p>
+          </div>
+          <h3>Show us what changemaking looks like to you</h3>
+          <p>
+            You are in
+            <span class="avatar">
+              <img height="30" width="30" alt="" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" alt="@brian" />
+            </span>
+          </p>
+          <ul>
+            <li class="action"><a href="">View Details</a></li>
+            <li><form action="" method="post"><button>Remove Me</button></form></li>
+          </ul>
+        </article>
       </li>
     </ol>
 
