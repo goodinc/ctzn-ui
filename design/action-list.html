@@ -48,7 +48,7 @@ ul.<!doctype html>
       line-height: 1.5;
       padding: 0.75em;
       text-align: center;
-      border: 1px solid rgb(153, 153, 153); /* @nickel */
+      border: 1px solid rgb(102, 102, 102); /* @tin */
     }
     ul.nav li + li a {
       border-left-width: 0;
@@ -57,14 +57,18 @@ ul.<!doctype html>
     ul.nav a:hover,
     ul.nav a:active,
     ul.nav a:focus {
-      background-color: rgb(153, 153, 153); /* @nickel */
+      background-color: rgb(102, 102, 102); /* @tin */
       color: white;
     }
     ul.nav li:first-child a {
       padding-left: 1.5em;
+      border-top-left-radius: 0.25em;
+      border-bottom-left-radius: 0.25em;
     }
     ul.nav li:last-child a {
       padding-right: 1.5em;
+      border-top-right-radius: 0.25em;
+      border-bottom-right-radius: 0.25em;
     }
 
     .post-list li ul,
@@ -78,7 +82,8 @@ ul.<!doctype html>
       display: inline;
     }
 
-    .page > .action {
+    .page > .action,
+    .introduction .action {
       max-width: 29.5em;
       margin-left: auto;
       margin-right: auto;
@@ -87,7 +92,8 @@ ul.<!doctype html>
     }
 
 
-    .page > .action a {
+    .page > .action a,
+    .introduction .action a {
       width: 100%;
       font-weight: normal;
       font-size: 1.5em; /* 24px / @font-size */
