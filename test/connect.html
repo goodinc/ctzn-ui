@@ -318,28 +318,36 @@
     </div>
 
     <form action="" method="post">
-      <div class="option-list">
+      <div class="connect option-list">
         <h3>Your Acccounts</h3>
         <ul>
           <li class="instagram">
-            <a href="#instagram" role="checkbox" aria-checked="false">
+            <button type="submit">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use></svg>
-              <span>Connect my Instagram</span>
-            </a>
+              <span>Sync My Instagram</span>
+            </button>
           </li>
-          <li class="twitter">
-            <a href="#twitter-add" role="checkbox" aria-checked="true">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch></svg>
-              <span>@supervolunteerla</span>
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>Connected</foreignObject></switch></svg>
-            </a>
+          <li class="twitter active">
+            <button type="submit" title="Remove this account from CTZN">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+                <switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch>
+              </svg>
+              <span>@brianatgood</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+                <switch><use xlink:href="#icon-checkmark"></use><foreignObject>is syncing</foreignObject></switch>
+              </svg>
+            </button>
           </li>
-          <li class="facebook">
-            <a href="#facebook-add" role="checkbox" aria-checked="true">
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></switch></svg>
-              <span>@supervolunteerla</span>
-              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>Connected</foreignObject></switch></svg>
-            </a>
+          <li class="facebook active">
+            <button type="submit" title="Remove this account from CTZN">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+                <switch><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></switch>
+              </svg>
+              <span class="username">Brian Nilsen</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+                <switch><use xlink:href="#icon-checkmark"></use><foreignObject>is syncing</foreignObject></switch>
+              </svg>
+            </button>
           </li>
         </ul>
       </div>
