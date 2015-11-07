@@ -1698,6 +1698,10 @@
   .post-item header h3 a {
     color: inherit;
     text-decoration: none;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   .hoverable .post-item header h3 a:hover,
              .post-item header h3 a:active,
