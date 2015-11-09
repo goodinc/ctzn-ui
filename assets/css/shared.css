@@ -4911,13 +4911,16 @@
     margin: 0;
   }
   .page .switch,
-  .page .post-list-header {
+  .post-list-header,
+  .page > .post-list-header {
     padding-top: 0;
     padding-bottom: 0;
     max-width: 29.5em;
+    margin-left: auto;
+    margin-right: auto;
   }
   .profile.page .switch h2,
-  .page .post-list-header h2 {
+  .post-list-header h2 {
     margin: 0;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -4934,7 +4937,7 @@
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
-  .page .post-list-header + .post-list {
+  .post-list-header + .post-list {
     margin-top: 0;
   }
 
@@ -4948,7 +4951,7 @@
       margin-top: 1.5em;
     }
     .page .switch,
-    .page .post-list-header {
+    .post-list-header {
       margin-top: 1.5em;
     }
   }
