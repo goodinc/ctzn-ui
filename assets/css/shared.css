@@ -2941,35 +2941,27 @@
   .push-card.lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .push-card.cucumber,
   .push-card.green {
     background-color: rgb(60, 210, 0); /* @green */
   }
-  .push-card.blueberry,
   .push-card.teal {
     background-color: rgb(0, 204, 204); /* @teal */
   }
-  .push-card.boysenberry,
   .push-card.blue {
     background-color: rgb(101, 152, 254); /* @blue */
   }
   .push-card.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .push-card.plum,
-  .push-card.plumb,
   .push-card.purple {
     background-color: rgb(181, 62, 194); /* @purple */
   }
-  .push-card.strawberry,
   .push-card.magenta {
     background-color: rgb(250, 44, 162); /* @magenta */
   }
-  .push-card.apple,
   .push-card.red {
     background-color: rgb(255, 0, 86); /* @red */
   }
-  .push-card.tangerine,
   .push-card.gold {
     background-color: rgb(255, 204, 0); /* @gold */
   }
@@ -3928,35 +3920,27 @@
   .mix .lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .mix .cucumber,
   .mix .green {
     background-color: rgb(60, 210, 0); /* @green */
   }
-  .mix .blueberry,
   .mix .teal {
     background-color: rgb(0, 204, 204); /* @teal */
   }
-  .mix .boysenberry,
   .mix .blue {
     background-color: rgb(101, 152, 254); /* @blue */
   }
   .mix .periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .mix .plum,
-  .mix .plumb,
   .mix .purple {
     background-color: rgb(181, 62, 194); /* @purple */
   }
-  .mix .strawberry,
   .mix .magenta {
     background-color: rgb(250, 44, 162); /* @magenta */
   }
-  .mix .apple,
   .mix .red {
     background-color: rgb(255, 0, 86); /* @red */
   }
-  .mix .tangerine,
   .mix .gold {
     background-color: rgb(255, 204, 0); /* @gold */
   }
@@ -4407,35 +4391,27 @@
   .mix-editor .preview.lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .mix-editor .preview.cucumber,
   .mix-editor .preview.green {
     background-color: rgb(60, 210, 0); /* @green */
   }
-  .mix-editor .preview.blueberry,
   .mix-editor .preview.teal {
     background-color: rgb(0, 204, 204); /* @teal */
   }
-  .mix-editor .preview.boysenberry,
   .mix-editor .preview.blue {
     background-color: rgb(101, 152, 254); /* @blue */
   }
   .mix-editor .preview.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .mix-editor .preview.plum,
-  .mix-editor .preview.plumb,
   .mix-editor .preview.purple {
     background-color: rgb(181, 62, 194); /* @purple */
   }
-  .mix-editor .preview.strawberry,
   .mix-editor .preview.magenta {
     background-color: rgb(250, 44, 162); /* @magenta */
   }
-  .mix-editor .preview.apple,
   .mix-editor .preview.red {
     background-color: rgb(255, 0, 86); /* @red */
   }
-  .mix-editor .preview.tangerine,
   .mix-editor .preview.gold {
     background-color: rgb(255, 204, 0); /* @gold */
   }
