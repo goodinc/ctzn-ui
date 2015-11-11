@@ -75,6 +75,46 @@
 
   <style>
 
+    .page > div.push-card {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      padding-top: 7.5em;
+      padding-bottom: 7.5em;
+      text-transform: lowercase;
+    }
+    .page > div.push-card h2 {
+      font-size: inherit;
+      margin-top: 0;
+      text-transform: lowercase;
+    }
+    .page > div.push-card p {
+      margin-top: 3em;
+      text-transform: lowercase;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 40em) and (min-height: 40em) {
+      .page > div.push-card {
+        padding-top: 12.5em;
+        padding-top: calc(30vmin);
+        padding-bottom: 12.5em;
+        padding-bottom: calc(30vmin);
+      }
+      .page > div.push-card .name {
+        font-size: 8vmin;
+      }
+    }
+
+    .page > header .action {
+      border-left-width: 0;
+      padding: 1.25em;
+    }
+    .page > header .action a {
+      background-color: black;
+    }
+
     .option-list li a {
       border-left-width: 0;
       border-right-width: 0;
@@ -414,8 +454,8 @@
       <p class="action"><a href="action-form-public.html">New action</a></p>
     </header>
 
-    <div class="push-card">
-      <h1>Kickoff</h1>
+    <div class="push-card" style="background-image: url(https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s2048x2048);">
+      <h1 class="name">Kickoff</h1>
       <h2>Move people to action</h2>
       <p>Effortlessly organize and participate in actions for change</p>
     </div>
