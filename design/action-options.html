@@ -2,12 +2,13 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>#bikepedcount15 / CTZN</title>
+  <title>#DareToImagine / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
+  <link rel="stylesheet" href="action.css" />
 
   <script>
     // fonts.com tracking
@@ -24,160 +25,6 @@
   <!--[if lte IE 8]>
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
-
-  <style>
-    .header.push-card {
-      position: relative;
-      color: white;
-      padding: 0;
-      padding-top: 5em;
-      padding-bottom: 3em;
-      background-image: url(https://m.ctznapp.com/s3/ctzn/a9/69/c75c0a163dd819e245a2577794a0e3d675bf.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-    .header.push-card .details p {
-      margin-top: 5em;
-    }
-    @media (min-height: 40em) {
-      .header.push-card {
-        padding-top: 10em;
-        padding-bottom: 4.5em;
-        padding-bottom: 9vmin;
-      }
-      .header.push-card .details p {
-        margin-top: 10em;
-      }
-    }
-    .header.push-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to top,    transparent, transparent 60%, rgba(0, 0, 0, 0.25)),
-                        linear-gradient(to bottom, transparent, transparent 60%, rgba(0, 0, 0, 0.75));
-
-      /* 50% black PNG-24 (for browsers that don’t support RGBA) */
-      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEUAAACnej3aAAAAAXRSTlOArV5bRgAAAA1JREFUeNoBAgD9/wAAAAIAAVMrnDAAAAAASUVORK5CYII=);
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .header.push-card::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      /* 20% black PNG-24 (for browsers that don’t support RGBA) */
-      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEUAAACnej3aAAAAAXRSTlMz/za5cAAAAA1JREFUeNoBAgD9/wAAAAIAAVMrnDAAAAAASUVORK5CYII=);
-      background: rgba(0, 0, 0, 0.2);
-    }
-    .header.push-card .details {
-      position: relative;
-      z-index: 1;
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 29.5em;
-    }
-    .header.push-card .details .action a {
-      background: transparent;
-      padding: 0;
-      color: rgb(176, 224, 0); /* @lime */
-    }
-    .header.push-card .meta {
-      margin: 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-    }
-    .header.push-card .meta p {
-      text-transform: lowercase;
-      display: block;
-      text-align: center;
-      position: relative;
-      z-index: 3;
-    }
-    .header.push-card .meta p .count {
-      font-weight: normal;
-    }
-    .header.push-card .meta:before {
-      display: block;
-      content: "";
-      position: absolute;
-      background-color: rgb(176, 224, 0); /* @lime */
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .header.push-card .meta:after {
-      display: block;
-      content: "";
-      position: absolute;
-      background-color: rgba(0, 0, 0, 0.1);
-      z-index: 2;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .header.push-card .meta {
-      margin-top: 0;
-    }
-    .header.push-card .meta p {
-      margin-top: 0;
-      padding: 1.25em 1.25em;
-    }
-    .header.push-card .details p {
-      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 900;
-      /* @extra-bold */
-      line-height: 1;
-      border-left: 0.3125em solid rgb(176, 224, 0); /* @lime */
-      padding: 0.25em 0.75em;
-    }
-    .header.push-card .name {
-      text-align: center;
-    }
-    @media (min-width: 40em), (min-height: 40em) {
-      .header.push-card .name {
-        font-size: 8vmin;
-      }
-      .header.push-card p {
-        font-size: 3vmin;
-      }
-    }
-
-    .page .details {
-      padding: 1.5em 1.25em;
-      max-width: 29.5em;
-    }
-    .page .details ul,
-    .page .details li {
-      list-style: none;
-      padding-left: 0;
-      margin-left: 0;
-    }
-    .page .details li {
-      display: inline-block;
-      margin-bottom: 0.25em;
-    }
-    .page .details li a {
-      text-decoration: none;
-    }
-
-  </style>
 
 </head>
 <body>
@@ -454,10 +301,10 @@
     </symbol>
   </svg>
 
-  <section class="edit page">
+  <section class="action-details page">
 
     <header>
-      <h1>#bikepedcount15</h1>
+      <h1 class="name">#DareToImagine</h1>
 
       <a href="#edit-profile" class="next">
         <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-more"></use><foreignObject>Options</foreignObject></switch></svg>
@@ -469,26 +316,18 @@
       </a>
     </header>
 
-    <div class="header push-card lime">
-      <div class="details">
-        <h2 class="name">#bikepedcount15</h2>
-        <p>CicLAvia</h2>
+    <div class="header push-card orange">
+      <div class="details" style="background-image: url(https://m.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s2048x2048)">
+        <h2 class="name">#DareToImagine</h2>
+        <p>U.S. Department of Arts and Culture</p>
       </div>
-
-      
-      <div class="meta">
-        <p>
-          <span class="count">Ends in 3 days</span>
-        </p>
-
-      </div>    
-
+      <p class="time">5 days left</p>    
     </div>
 
-    <div class="details">
-      <p><b>You</b> and 46 others are in</p>
+    <div class="action-members">
+      <h3><b>You</b> and 46 others are in</h3>
 
-<ul data-bind="foreach: good.currentPush().participants.filter(function(p) { return p.username.indexOf('[anonymous') != 0; }).sort(function(a, b) { if(a.username &gt; b.username) { return 1; } if(a.username &lt; b.username) { return -1; } return 0; } )">
+      <ul data-bind="foreach: good.currentPush().participants.filter(function(p) { return p.username.indexOf('[anonymous') != 0; }).sort(function(a, b) { if(a.username &gt; b.username) { return 1; } if(a.username &lt; b.username) { return -1; } return 0; } )">
         <!-- ko if: profile_image -->
         <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
@@ -1203,17 +1042,18 @@
       
         <!-- ko if: profile_image --><!-- /ko -->
       </ul>
+    </div>
 
-      <h3>Ride your favorite human-propelled transportation device to work</h3>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="about">
+      <h3>#DareToImagine</h3>
+      <p>From October 10th-18th, people across the United States are practicing radical imagination and creating the world they want to see. What if instead of another holiday commemorating the past, we took time to envision and celebrate the future?</p>
+      <p>Join us and explore what’s possible. Post your own visions of the Future using #DareToImagine on Facebook, Twitter, and Instagram and find an Imagination Station near you. <a href="http://dare-to-imagine.us" target="_blank">dare-to-imagine.us</a></p>
 
       <p class="action"><a href="">Add a new post</a></p>
     </div>
 
     <div class="post-list-header">
-      <h2>Posts for #bikepedcount15</h2>
+      <h2>Posts for #DareToImagine</h2>
     </div>
 
 <ol class="post-list">

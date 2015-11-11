@@ -2487,6 +2487,7 @@
   }
 
   /* OPTIONAL: Give edit and detail pages a white header. */
+  .action-details.page > header,
   .mix.page          > header,
   .mixes.page        > header,
   .mix-editor.page   > header,
@@ -2498,6 +2499,7 @@
     color: black;
     border-bottom-color: rgb(222, 222, 222); /* @silver */
   }
+  .action-details.page > header a,
   .mix.page          > header a,
   .mixes.page        > header a,
   .mix-editor.page   > header a,
@@ -2508,6 +2510,9 @@
     border-color: transparent !important;
     color: rgb(102, 102, 102); /* @tin */
   }
+  .hoverable .action-details.page > header a:hover,
+             .action-details.page > header a:active,
+             .action-details.page > header a:focus,
   .hoverable .mix.page          > header a:hover,
              .mix.page          > header a:active,
              .mix.page          > header a:focus,

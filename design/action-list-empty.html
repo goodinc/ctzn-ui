@@ -8,189 +8,7 @@
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
-
-  <style>
-
-    ul.nav,
-    ul.nav li {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-    ul.nav {
-      max-width: 32em;
-      margin: 0.75em auto 0;
-      padding: 0 0.75em;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-      transition: opacity 0.2s;
-      text-align: center;
-
-      display: -webkit-flex;
-      display:         flex;
-
-      -webkit-justify-content: stretch;
-              justify-content: stretch;
-    }
-
-    ul.nav li {
-      position: relative;
-      display: inline-block;
-      -webkit-flex-grow: 1;
-              flex-grow: 1;
-    }
-    ul.nav a {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      font-size: 0.75em;
-      line-height: 1.5;
-      padding: 0.75em;
-      text-align: center;
-      border: 1px solid rgb(102, 102, 102); /* @tin */
-    }
-    ul.nav li + li a {
-      border-left-width: 0;
-    }
-    ul.nav .active a,
-    ul.nav a:hover,
-    ul.nav a:active,
-    ul.nav a:focus {
-      background-color: rgb(102, 102, 102); /* @tin */
-      color: white;
-    }
-    ul.nav li:first-child a {
-      padding-left: 1.5em;
-      border-top-left-radius: 0.25em;
-      border-bottom-left-radius: 0.25em;
-    }
-    ul.nav li:last-child a {
-      padding-right: 1.5em;
-      border-top-right-radius: 0.25em;
-      border-bottom-right-radius: 0.25em;
-    }
-
-    .post-list li ul,
-    .post-list li ul li {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-    .post-list li ul li,
-    .post-list li ul li form {
-      display: inline;
-    }
-
-    .post-list > li {
-      max-width: 29.5em;
-    }
-
-    .page > .action,
-    .introduction .action {
-      max-width: 29.5em;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 1.25em;
-      text-align: center;
-    }
-
-
-    .page > .action a,
-    .introduction .action a {
-      width: 100%;
-      font-weight: normal;
-      font-size: 1.5em; /* 24px / @font-size */
-      border-radius: 0.1666666667em; /* 4px / 24px */
-      line-height: 1.4833333333em; /* 50px / 24px */
-      padding-top: 0.3em;
-      padding-bottom: 0.3em;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-      text-align: center;
-
-      /* For the “Open this URL in Safari” page. */
-      /* @wrap-long-words */
-      word-wrap     : break-word;
-      overflow-wrap : break-word;
-    }
-
-    .post-list {
-      padding-left: 1.25em;
-      padding-right: 1.25em;
-    }
-
-    .post-item a.push-card {
-      margin: -1.25em -1.25em 0;
-    }
-
-    .post-item a.push-card,
-    .post-item a.push-card:hover,
-    .post-item a.push-card:active,
-    .post-item a.push-card:focus {
-      color: white;
-    }
-    .post-item a.push-card p:first-child {
-      margin: -1.5em -1.25em 0;
-      padding: 0.375em 1.25em;
-      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: bold;
-    }
-    .post-item a.push-card p:last-child {
-      margin: 0 -1.6666666667em -2em; /* 1.25em / 0.75em */ /* 1.5em / 0.75em */
-      padding: 0.75em 1.6666666667em; /* 1.25em / 0.75em */
-      background: rgba(0, 0, 0, 0.4);
-      font-size: 0.75em;
-    }
-    .post-item a.push-card h2 {
-      padding: 1.25em;
-      margin-left: -0.6666666667em; /* 1.25em / 1.875em */
-      margin-right: -0.6666666667em;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .post-item a.push-card h2[style*="background-image"] {
-      padding-top: 3.75em;
-      padding-bottom: 3.75em;
-      padding-top: 25vh;
-      padding-bottom: 25vh;
-    }
-    .post-item a.push-card h2:before {
-      content: "";
-      display: block;
-      background: rgba(0, 0, 0, 0.2);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .post-item a.push-card h2 span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .post-item footer .action a,
-    .post-item footer .action button {
-      font-size: inherit;
-    }
-
-
-    .post-item h4 {
-      margin-top: 1em;
-      font-size: 1.25em;
-      line-height: 1.2;
-    }
-    .post-item h4 + p {
-      font-size: 0.75em;
-    }
-    .post-item h4 + p .avatar {
-      margin-left: 0.375em;
-    }
-  </style>
+  <link rel="stylesheet" href="action.css" />
 
   <script>
     // fonts.com tracking
@@ -507,23 +325,25 @@
       </a>
     </header>
 
-    <ul class="nav">
-      <li class="active">
-        <a href="">
-          Current
-        </a>
-      </li>
-      <li>
-        <a href="">
-          Archive
-        </a>
-      </li>
-      <li>
-        <a href="">
-          Join
-        </a>
-      </li>
-    </ul>
+    <nav>
+      <ul>
+        <li class="active">
+          <a href="">
+            Current
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Archive
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Join
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <section class="empty-message introduction">
       <svg class="icon"><use xlink:href="#icon-action"></use></svg>
