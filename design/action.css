@@ -413,7 +413,7 @@
   .action-details .header.push-card .time {
     background-color: rgba(0, 0, 0, 0.2);
     margin: 0;
-    padding: 1.25em;
+    padding: 0.75em 1.25em;
     text-transform: lowercase;
     text-align: center;
   }

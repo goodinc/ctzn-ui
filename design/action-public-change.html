@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>#bikepedcountla2015 / CTZN</title>
+  <title>#pushforgood / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -388,8 +388,8 @@
 
   <section class="action-details page">
 
-    <header class="gold">
-      <h1 class="name">#bikepedcountla2015</h1>
+    <header class="red">
+      <h1 class="name">#pushforgood</h1>
 
       <ul class="action">
         <li>
@@ -412,56 +412,25 @@
       </ul>
     </header>
 
-    <div class="header push-card gold">
-      <div class="details" style="background-image: url(https://m.ctznapp.com/s3/ctzn/a9/69/c75c0a163dd819e245a2577794a0e3d675bf.jpg)">
-        <h2 class="name">#bikepedcountla2015</h2>
+    <div class="header push-card red">
+      <div class="details">
+        <h2 class="name">#pushforgood</h2>
         <!--
-        <p>Los Angeles Walks</p>
+        <p>CTZN Changemakers</p>
         -->
       </div>
-      <p class="time">3 days left</p>    
+      <p class="time">ongoing</p>    
     </div>
 
     <div class="action-members">
-      <h3>46 people are in</h3>
+      <h3>25 people are in</h3>
 
       <ul data-bind="foreach: good.currentPush().participants.filter(function(p) { return p.username.indexOf('[anonymous') != 0; }).sort(function(a, b) { if(a.username &gt; b.username) { return 1; } if(a.username &lt; b.username) { return -1; } return 0; } )">
-        <!-- ko if: profile_image -->
         <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
                 <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="aaron" srcset="https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c135x135 3x, https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c90x90 2x, https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/925b05e804d9c545b3015c42c6fb4c7e6829d52f=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="adamalbright-hanna" srcset="https://m.ctznapp.com/s3/ctzn/7deb087e1df95db0d73e9dbfc64bc51870453d04=c135x135 3x, https://m.ctznapp.com/s3/ctzn/7deb087e1df95db0d73e9dbfc64bc51870453d04=c90x90 2x, https://m.ctznapp.com/s3/ctzn/7deb087e1df95db0d73e9dbfc64bc51870453d04=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/7deb087e1df95db0d73e9dbfc64bc51870453d04=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="aishathinker" srcset="https://m.ctznapp.com/s3/ctzn/87d1308471f1b43983d939f945f8f4e00d26540b=c135x135 3x, https://m.ctznapp.com/s3/ctzn/87d1308471f1b43983d939f945f8f4e00d26540b=c90x90 2x, https://m.ctznapp.com/s3/ctzn/87d1308471f1b43983d939f945f8f4e00d26540b=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/87d1308471f1b43983d939f945f8f4e00d26540b=c45x45">
               <!-- /ko -->
 
               <!-- ko ifnot: profile_image --><!-- /ko -->
@@ -504,40 +473,6 @@
         </li>
          <!-- /ko -->
       
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="benisonchoi" srcset="https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c135x135 3x, https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c90x90 2x, https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/3f6ded8697809566d2dc3f597565c9d33084fefb=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="brian" srcset="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
         <!-- ko if: profile_image --><!-- /ko -->
       
         <!-- ko if: profile_image -->
@@ -559,71 +494,7 @@
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="caseycaplowe" srcset="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c135x135 3x, https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c90x90 2x, https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
                 <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="cogg" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="craigcarilli" srcset="https://m.ctznapp.com/s3/ctzn/4bd1abcc65529430adb550fcc0b3839e6656bcb2=c135x135 3x, https://m.ctznapp.com/s3/ctzn/4bd1abcc65529430adb550fcc0b3839e6656bcb2=c90x90 2x, https://m.ctznapp.com/s3/ctzn/4bd1abcc65529430adb550fcc0b3839e6656bcb2=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/4bd1abcc65529430adb550fcc0b3839e6656bcb2=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="earlcole" srcset="https://m.ctznapp.com/s3/ctzn/33cd6746c1cc42f58bb7e4051333d7e943e48f0c=c135x135 3x, https://m.ctznapp.com/s3/ctzn/33cd6746c1cc42f58bb7e4051333d7e943e48f0c=c90x90 2x, https://m.ctznapp.com/s3/ctzn/33cd6746c1cc42f58bb7e4051333d7e943e48f0c=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/33cd6746c1cc42f58bb7e4051333d7e943e48f0c=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="eddy" srcset="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45">
               <!-- /ko -->
 
               <!-- ko ifnot: profile_image --><!-- /ko -->
@@ -674,80 +545,6 @@
         </li>
          <!-- /ko -->
       
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="gabe" srcset="https://m.ctznapp.com/s3/ctzn/9bcab6704346fa52499a185ad8870a2d1ad7cf7e=c135x135 3x, https://m.ctznapp.com/s3/ctzn/9bcab6704346fa52499a185ad8870a2d1ad7cf7e=c90x90 2x, https://m.ctznapp.com/s3/ctzn/9bcab6704346fa52499a185ad8870a2d1ad7cf7e=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/9bcab6704346fa52499a185ad8870a2d1ad7cf7e=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="goldhirsh" srcset="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c135x135 3x, https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c90x90 2x, https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/49c66d4e80b47bc0da61da67d36a2d9165663f57=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="good_marshall" srcset="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c135x135 3x, https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c90x90 2x, https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/b4db7bb9041c00a8234b6137ed649bc821b3e069=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="grant" srcset="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c135x135 3x, https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c90x90 2x, https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/0764e2617ea7e9588084cc5671266c3635146fcb=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="iamdamonturner" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
         <!-- ko if: profile_image --><!-- /ko -->
       
         <!-- ko if: profile_image --><!-- /ko -->
@@ -773,37 +570,7 @@
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="jeffdossett" srcset="https://m.ctznapp.com/s3/ctzn/4248d0770127cb87b1e2f295e0a8236f94c8d856=c135x135 3x, https://m.ctznapp.com/s3/ctzn/4248d0770127cb87b1e2f295e0a8236f94c8d856=c90x90 2x, https://m.ctznapp.com/s3/ctzn/4248d0770127cb87b1e2f295e0a8236f94c8d856=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/4248d0770127cb87b1e2f295e0a8236f94c8d856=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
                 <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="jenyoung" srcset="https://m.ctznapp.com/s3/ctzn/b2b6dd28ba7fdb2050e57d1892afae0d536cd6bd=c135x135 3x, https://m.ctznapp.com/s3/ctzn/b2b6dd28ba7fdb2050e57d1892afae0d536cd6bd=c90x90 2x, https://m.ctznapp.com/s3/ctzn/b2b6dd28ba7fdb2050e57d1892afae0d536cd6bd=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/b2b6dd28ba7fdb2050e57d1892afae0d536cd6bd=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="jim" srcset="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c135x135 3x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c90x90 2x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45">
               <!-- /ko -->
 
               <!-- ko ifnot: profile_image --><!-- /ko -->
@@ -820,22 +587,6 @@
             <span class="avatar">
               <!-- ko if: profile_image -->
                 <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="judithfreeman" srcset="https://m.ctznapp.com/s3/ctzn/a15c7b92da9a60b52b27383a05b8a19e22e368b8=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a15c7b92da9a60b52b27383a05b8a19e22e368b8=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a15c7b92da9a60b52b27383a05b8a19e22e368b8=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a15c7b92da9a60b52b27383a05b8a19e22e368b8=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="kaitlinmeek" srcset="https://m.ctznapp.com/s3/ctzn/71403c4c3cb8db11bce764f03171abfefa367d87=c135x135 3x, https://m.ctznapp.com/s3/ctzn/71403c4c3cb8db11bce764f03171abfefa367d87=c90x90 2x, https://m.ctznapp.com/s3/ctzn/71403c4c3cb8db11bce764f03171abfefa367d87=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/71403c4c3cb8db11bce764f03171abfefa367d87=c45x45">
               <!-- /ko -->
 
               <!-- ko ifnot: profile_image --><!-- /ko -->
@@ -863,35 +614,7 @@
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="kritikamisra" srcset="https://m.ctznapp.com/s3/ctzn/63277559cf952401a7e1bcf16fee7c99c055ea16=c135x135 3x, https://m.ctznapp.com/s3/ctzn/63277559cf952401a7e1bcf16fee7c99c055ea16=c90x90 2x, https://m.ctznapp.com/s3/ctzn/63277559cf952401a7e1bcf16fee7c99c055ea16=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/63277559cf952401a7e1bcf16fee7c99c055ea16=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
                 <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="lizwaldorf" srcset="https://m.ctznapp.com/s3/ctzn/8ea958dec625a9637e4a3823a5da7f4f67f6b811=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8ea958dec625a9637e4a3823a5da7f4f67f6b811=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8ea958dec625a9637e4a3823a5da7f4f67f6b811=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8ea958dec625a9637e4a3823a5da7f4f67f6b811=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="lou" srcset="https://m.ctznapp.com/s3/ctzn/233b2518144e84c7abd6fa03a6a3036decf7af7e=c135x135 3x, https://m.ctznapp.com/s3/ctzn/233b2518144e84c7abd6fa03a6a3036decf7af7e=c90x90 2x, https://m.ctznapp.com/s3/ctzn/233b2518144e84c7abd6fa03a6a3036decf7af7e=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/233b2518144e84c7abd6fa03a6a3036decf7af7e=c45x45">
               <!-- /ko -->
 
               <!-- ko ifnot: profile_image --><!-- /ko -->
@@ -965,34 +688,6 @@
           <a href="">
             <span class="avatar">
               <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="my_name_is_hj" srcset="https://m.ctznapp.com/s3/ctzn/e07dc7d7b694cfc99245769f1434fd3de16c274e=c135x135 3x, https://m.ctznapp.com/s3/ctzn/e07dc7d7b694cfc99245769f1434fd3de16c274e=c90x90 2x, https://m.ctznapp.com/s3/ctzn/e07dc7d7b694cfc99245769f1434fd3de16c274e=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/e07dc7d7b694cfc99245769f1434fd3de16c274e=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="parisla" srcset="https://m.ctznapp.com/s3/ctzn/ae0b724d97657192686186175de856671952f8c5=c135x135 3x, https://m.ctznapp.com/s3/ctzn/ae0b724d97657192686186175de856671952f8c5=c90x90 2x, https://m.ctznapp.com/s3/ctzn/ae0b724d97657192686186175de856671952f8c5=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/ae0b724d97657192686186175de856671952f8c5=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
                 <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="priyaprakash" srcset="https://m.ctznapp.com/s3/ctzn/604c7ea598250c25a4dead82566d1264ec1f5b25=c135x135 3x, https://m.ctznapp.com/s3/ctzn/604c7ea598250c25a4dead82566d1264ec1f5b25=c90x90 2x, https://m.ctznapp.com/s3/ctzn/604c7ea598250c25a4dead82566d1264ec1f5b25=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/604c7ea598250c25a4dead82566d1264ec1f5b25=c45x45">
               <!-- /ko -->
 
@@ -1008,34 +703,6 @@
             <span class="avatar">
               <!-- ko if: profile_image -->
                 <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="rob_good" srcset="https://m.ctznapp.com/s3/ctzn/888cbdfc45759b7b9c5af58e55befadc53d9c0f8=c135x135 3x, https://m.ctznapp.com/s3/ctzn/888cbdfc45759b7b9c5af58e55befadc53d9c0f8=c90x90 2x, https://m.ctznapp.com/s3/ctzn/888cbdfc45759b7b9c5af58e55befadc53d9c0f8=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/888cbdfc45759b7b9c5af58e55befadc53d9c0f8=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="shari" srcset="https://m.ctznapp.com/s3/ctzn/816d5bfd2defda9846d8ad39d7f9bdcf94026c35=c135x135 3x, https://m.ctznapp.com/s3/ctzn/816d5bfd2defda9846d8ad39d7f9bdcf94026c35=c90x90 2x, https://m.ctznapp.com/s3/ctzn/816d5bfd2defda9846d8ad39d7f9bdcf94026c35=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/816d5bfd2defda9846d8ad39d7f9bdcf94026c35=c45x45">
-              <!-- /ko -->
-
-              <!-- ko ifnot: profile_image --><!-- /ko -->
-            </span>
-          </a>
-        </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image -->
-        <li data-bind="click: function() { $root.onViewProfile($data); }, clickBubble: false">
-          <a href="">
-            <span class="avatar">
-              <!-- ko if: profile_image -->
-                <img data-bind="attr: { alt: username, srcset: good.avatarSourceSet(profile_image), src: sizedS3Image(profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="shaunanep" srcset="https://m.ctznapp.com/s3/ctzn/592027eac3d7d2ef8c393c4953aaa93a29dfbafc=c135x135 3x, https://m.ctznapp.com/s3/ctzn/592027eac3d7d2ef8c393c4953aaa93a29dfbafc=c90x90 2x, https://m.ctznapp.com/s3/ctzn/592027eac3d7d2ef8c393c4953aaa93a29dfbafc=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/592027eac3d7d2ef8c393c4953aaa93a29dfbafc=c45x45">
               <!-- /ko -->
 
               <!-- ko ifnot: profile_image --><!-- /ko -->
@@ -1136,23 +803,21 @@
             </span>
           </a>
         </li>
-         <!-- /ko -->
-      
-        <!-- ko if: profile_image --><!-- /ko -->
       </ul>
     </div>
 
     <p class="action"><a href="">Join Us</a></p>
 
     <div class="about">
-      <h3>Help us count the number bicyclists and pedestrians as they commute on September 16th and 19th.</h3>
-      <p>The city of Los Angeles is working to become more bike and pedestrian friendly, but LADOT currently only measures the number of motor vehicles that pass through intersections.   They do not currently count pedestrians, cyclists, or other road users.   This lack of data makes it difficult to determine where infrastructure is needed and where it needs improvement.   The Los Angeles County Bike Coalition and Los Angeles Walks are teaming up again to count people on bikes and people walking at key locations throughout the city and provide that data to LADOT on September 16th and 19th.   I'm going to be counting at Santa Monica Blvd. near Glendon Ave on the 16th.   I hope some of you will join me in helping improve the safety and mobility for everyone in Los Angeles!   More info here: <a href="http://la-bike.org/bikepedcountla2015" target="_blank">la-bike.org/bikepedcount1…</a></p>
+      <h3>Sign up to be an Emissary from the Future!</h3>
+      <p>From October 10th-18th, people across the United States are practicing radical imagination and creating the world they want to see. What if instead of another holiday commemorating the past, we took time to envision and celebrate the future?</p>
+      <p>Join us and explore what’s possible. Post your own visions of the Future using #pushforgood on Facebook, Twitter, and Instagram and find an Imagination Station near you. <a href="http://dare-to-imagine.us" target="_blank">dare-to-imagine.us</a></p>
 
       <div class="meta">
-        <p>Ends on September 1, 2015</p>
-        <p>Takes place in Los Angeles, California, USA</p>
-        <p>Created by <a href="">bikedudela</a> for <a href="">losangeleswalks</a></p>
-        <p>Keywords: <a href="">bike</a>, <a href="">biking</a>, <a href="">los angeles</a>, <a href="">pedestrian count</a>, <a href="">metrics</a>, <a href="">data</a></p>
+        <p>Ends on October 18th, 2015</p>
+        <p>Takes place everywhere</p>
+        <p>Created by <a href="">katemcneely</a> for <a href="">U.S. Department of Arts and Culture</a></p>
+        <p>Keywords: <a href="">imagination</a>, <a href="">future</a>, <a href="">art</a>, <a href="">community</a>, <a href="">grassroots movement</a></p>
       </div>
     </div>
 

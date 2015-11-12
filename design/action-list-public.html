@@ -76,6 +76,7 @@
   <style>
 
     .page > div.push-card {
+      background-color: black;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -84,8 +85,11 @@
       padding-bottom: 7.5em;
       text-transform: lowercase;
     }
+    .page > div.push-card .name {
+      font-size: 3.75em;
+    }
     .page > div.push-card h2 {
-      font-size: inherit;
+      font-size: 1.3333em;
       margin-top: 0;
       text-transform: lowercase;
     }
@@ -97,13 +101,13 @@
 
     @media (min-width: 40em) and (min-height: 40em) {
       .page > div.push-card {
-        padding-top: 12.5em;
-        padding-top: calc(30vmin);
-        padding-bottom: 12.5em;
-        padding-bottom: calc(30vmin);
+        padding-top: 10em;
+        padding-top: calc(25vmin);
+        padding-bottom: 10em;
+        padding-bottom: calc(25vmin);
       }
       .page > div.push-card .name {
-        font-size: 8vmin;
+        font-size: 10vmin;
       }
     }
 
@@ -119,7 +123,7 @@
       border-left-width: 0;
       border-right-width: 0;
       background-color: transparent;
-      padding-left: 0;
+      padding-left: 0.5em;
       color: inherit;
     }
 
@@ -128,11 +132,23 @@
     .option-list p {
       display: inline;
     }
+    .option-list h3,
     .option-list img,
-    .option-list h3 {
+    .option-list .push-card {
       margin-right: 0.5em;
     }
-    .option-list img {
+    .option-list img,
+    .option-list .push-card {
+      vertical-align: middle;
+    }
+    .option-list .push-card {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+    }
+    .option-list img,
+    .option-list .push-card {
       vertical-align: middle;
     }
     .option-list h3 {
@@ -438,7 +454,7 @@
     </symbol>
   </svg>
 
-  <section class="page">
+  <main class="page">
 
     <header class="promote">
       <h1>
@@ -465,93 +481,93 @@
     <div class="option-list">
       <ul>
         <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
+          <a href="action-public.html">
+            <img src="https://m.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=c120x120" width="60" height="60" alt="" />
+            <h3>#DareToImagine</h3>
+            <p>ends in 5 days</p>
+          </a>
+        </li>
+        <li>
+          <a href="action-public-count.html">
+            <img src="https://m.ctznapp.com/s3/ctzn/a9/69/c75c0a163dd819e245a2577794a0e3d675bf.jpg=c120x120" width="60" height="60" alt="" />
+            <h3>#bikepedcount</h3>
+            <p>ends in 3 days</p>
+          </a>
+        </li>
+        <li>
+          <a href="action-public-change.html">
+            <span class="red push-card"></span>
+            <h3>#pushforgood</h3>
+            <p>ongoing</p>
+          </a>
+        </li>
+        <li>
+          <a href="action-public.html">
+            <span class="blue push-card"></span>
+            <h3>#votela2050</h3>
+            <p>ends in 2 days</p>
+          </a>
+        </li>
+        <li>
+          <a href="action-public.html">
+            <span class="periwinkle push-card"></span>
             <h3>#youngworkerla</h3>
             <p>ongoing</p>
           </a>
         </li>
         <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
+          <a href="action-public.html">
+            <span class="gold push-card"></span>
+            <h3>#gimmectzn</h3>
+            <p>ends tomorrow</p>
+          </a>
+        </li>
+        <li>
+          <a href="action-public.html">
+            <span class="orange push-card"></span>
+            <h3>#DareToImagine</h3>
+            <p>ends in 5 days</p>
+          </a>
+        </li>
+        <li>
+          <a href="action-public-count.html">
+            <img src="https://m.ctznapp.com/s3/ctzn/a9/69/c75c0a163dd819e245a2577794a0e3d675bf.jpg=c120x120" width="60" height="60" alt="" />
+            <h3>#bikepedcount</h3>
+            <p>ends in 3 days</p>
+          </a>
+        </li>
+        <li>
+          <a href="action-public-change.html">
+            <span class="teal push-card"></span>
             <h3>#pushforgood</h3>
             <p>ongoing</p>
           </a>
         </li>
         <li>
           <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
-            <h3>#gimmectzn</h3>
-            <p>ends tomorrow</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
+            <span class="green push-card"></span>
             <h3>#votela2050</h3>
             <p>ends in 2 days</p>
           </a>
         </li>
         <li>
           <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
+            <span class="magenta push-card"></span>
             <h3>#youngworkerla</h3>
             <p>ongoing</p>
           </a>
         </li>
         <li>
           <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
-            <h3>#pushforgood</h3>
-            <p>ongoing</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
+            <span class="blue push-card"></span>
             <h3>#gimmectzn</h3>
             <p>ends tomorrow</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
-            <h3>#votela2050</h3>
-            <p>ends in 2 days</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
-            <h3>#youngworkerla</h3>
-            <p>ongoing</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
-            <h3>#pushforgood</h3>
-            <p>ongoing</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
-            <h3>#gimmectzn</h3>
-            <p>ends tomorrow</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="http://placehold.it/60x60" alt="" />
-            <h3>#votela2050</h3>
-            <p>ends in 2 days</p>
           </a>
         </li>
       </ul>
     </div>
 
-  </section>
+  </main>
 
 </body>
 </html>
