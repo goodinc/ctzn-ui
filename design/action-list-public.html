@@ -102,13 +102,27 @@
     @media (min-width: 40em) and (min-height: 40em) {
       .page > div.push-card {
         padding-top: 10em;
-        padding-top: calc(25vmin);
         padding-bottom: 10em;
-        padding-bottom: calc(25vmin);
       }
       .page > div.push-card .name {
         font-size: 10vmin;
       }
+    }
+
+    @media (min-aspect-ratio: 1/1) {
+      .page > div.push-card {
+        padding-top: 25vh;
+        padding-bottom: 25vh;
+      }
+    }
+
+    .page > div.push-card + h3 {
+      color: rgb(153, 153, 153);
+      text-align: center;
+      font-size: inherit;
+      line-height: inherit;
+      text-transform: lowercase;
+      font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
     .page > header .action {
@@ -476,7 +490,7 @@
       <p>Effortlessly organize and participate in actions for change</p>
     </div>
 
-    <h3 style="color: rgb(153, 153, 153); text-align: center; font-size: inherit; line-height: inherit; text-transform: lowercase; font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Join an action below</h3>
+    <h3>Join an action below</h3>
 
     <div class="option-list">
       <ul>
