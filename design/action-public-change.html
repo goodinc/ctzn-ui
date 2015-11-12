@@ -11,10 +11,15 @@
   <link rel="stylesheet" href="action.css" />
 
   <style>
+
     .action-details.page > header {
       text-align: left;
       padding-left: 1.25em;
       box-shadow: none;
+    }
+    .action-details.page > header h1 {
+      font-weight: bold;
+      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .action-details.page > header .action ul,
     .action-details.page > header .action li {
@@ -50,6 +55,13 @@
     .action-details .header.push-card .details::before {
       background-color: rgba(0, 0, 0, 0.2);
       background-color: transparent;
+    }
+    .action-details .header.push-card .details .name,
+    .action-details .header.push-card .details h3 {
+      text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.125);
+      max-width: 32em;
+      margin-left: auto;
+      margin-right: auto;
     }
     .action-details .header.push-card .details h3 {
       text-align: center;
