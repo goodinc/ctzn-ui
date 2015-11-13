@@ -669,886 +669,886 @@
     </div>
 
     <ol class="post-list">
-      <!-- ko if: showPrevButton --><!-- /ko -->
+      
 
-      <!-- ko foreach: visiblePosts -->
+      
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-18284">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-18284">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">iamdamonturner</span>
+                <span class="avatar" ></span>
+                @<span >iamdamonturner</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+            <p class="source" >
+              
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-11-07T03:47:51+00:00">6 days ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-11-07T03:47:51+00:00">6 days ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1920x2048 1920w" class=" loaded"><p>Had the pleasure of meeting these amazing creators: Tynisha, the founder of @leviteawilmington and Alim Smith of @yesterdaynite. Tonight at the Wilmington Art Loop there were deep conversation around building the already beautiful comminity of artists out to become a national destination for art and culture. Thank you @shefonnachelle and the city of Wilmington for welcoming me into your community. #culturalarchitect #greedycity #artloop #ctzn
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/ac/ba/59da815cd75297ff2617a9b68b41fdec035f.jpg=s1920x2048 1920w" class=" loaded"><p>Had the pleasure of meeting these amazing creators: Tynisha, the founder of @leviteawilmington and Alim Smith of @yesterdaynite. Tonight at the Wilmington Art Loop there were deep conversation around building the already beautiful comminity of artists out to become a national destination for art and culture. Thank you @shefonnachelle and the city of Wilmington for welcoming me into your community. #culturalarchitect #greedycity #artloop #ctzn
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target --><!-- /ko -->
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target --><!-- /ko -->
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-18182">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-18182">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">cogg</span>
+                <span class="avatar" ></span>
+                @<span >cogg</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-11-05T00:57:13+00:00">1 week ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-11-05T00:57:13+00:00">1 week ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1920x2048 1920w" class=" loaded"><p>@eddy and I discussing community building strategy at #goodhq around US Dept of Arts &amp; Culture activations now that their first on CTZN is under the belt. Should the "Peoples' State of the Union" be a separate push or part of the existing "Dare to Imagine" push? We settled on separate because we believe them to be distinct communities.
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/d3/12/054ed3fd0a52d660675bca927ca551e3dba5.jpg=s1920x2048 1920w" class=" loaded"><p>@eddy and I discussing community building strategy at #goodhq around US Dept of Arts &amp; Culture activations now that their first on CTZN is under the belt. Should the "Peoples' State of the Union" be a separate push or part of the existing "Dare to Imagine" push? We settled on separate because we believe them to be distinct communities.
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-18438">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-18438">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">brian</span>
+                <span class="avatar" ></span>
+                @<span >brian</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+            <p class="source" >
+              
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-10-13T21:29:31+00:00">4 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-10-13T21:29:31+00:00">4 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><p>I am testing #ctzn stuff
+
+
+  <div class="body" ><p>I am testing #ctzn stuff
 <video alt="video" preload="none" poster="https://m.ctznapp.com/s3/ctzn/20/84/cf047bb76f17833442e1f987903e7fae5e75.jpg=s512x512" type="video/mp4" controls="yes"><source src="https://m.ctznapp.com/s3/ctzn/20/84/cf047bb76f17833442e1f987903e7fae5e75.m4v" type="video/mp4"><source src="https://m.ctznapp.com/s3/ctzn/20/84/cf047bb76f17833442e1f987903e7fae5e75.webm" type="video/webm"><img src="https://m.ctznapp.com/s3/ctzn/20/84/cf047bb76f17833442e1f987903e7fae5e75.jpg=s512x512" class="video-fallback"><span class="video-fallback">Aw, shucks. Our video player isn’t working in this web browser. Please try again in another browser or on another device.</span></video></p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-16447">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-16447">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">eddy</span>
+                <span class="avatar" ></span>
+                @<span >eddy</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+            <p class="source" >
+              
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-10-13T00:36:16+00:00">4 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-10-13T00:36:16+00:00">4 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><p>The Emissaries from the Future have arrived! CTZN's partner, the U.S. Department of Arts &amp; Culture, has officially launched the #DareToImagine National Action, a week long event for all of us to activate our imaginations and envision the futures we want to inhabit. </p>
+
+
+  <div class="body" ><p>The Emissaries from the Future have arrived! CTZN's partner, the U.S. Department of Arts &amp; Culture, has officially launched the #DareToImagine National Action, a week long event for all of us to activate our imaginations and envision the futures we want to inhabit. </p>
 
 <p>Check out the Emissaries flexing their creative muscles below, or participate by finding an Imagination Station near you: <a href="http://dare-to-imagine.us/" target="_blank">dare-to-imagine.us/</a></p>
 
 <p>#goodla #ctzn #lactzn #daretoimagine
 <video alt="video" preload="none" poster="https://m.ctznapp.com/s3/ctzn/73/b7/3b709420e5201458bcd5ea463706bc1695b3.jpg=s512x512" type="video/mp4" controls="yes"><source src="https://m.ctznapp.com/s3/ctzn/73/b7/3b709420e5201458bcd5ea463706bc1695b3.m4v" type="video/mp4"><source src="https://m.ctznapp.com/s3/ctzn/73/b7/3b709420e5201458bcd5ea463706bc1695b3.webm" type="video/webm"><img src="https://m.ctznapp.com/s3/ctzn/73/b7/3b709420e5201458bcd5ea463706bc1695b3.jpg=s512x512" class="video-fallback"><span class="video-fallback">Aw, shucks. Our video player isn’t working in this web browser. Please try again in another browser or on another device.</span></video></p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target --><!-- /ko -->
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-15501">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-15501">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">iamdamonturner</span>
+                <span class="avatar" ></span>
+                @<span >iamdamonturner</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+            <p class="source" >
+              
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-30T10:57:16+00:00">6 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-30T10:57:16+00:00">6 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1920x2048 1920w" class=" loaded"><p>I am very blessed to have the opportunity of building community with some of the world's most creative and distinguished human beings. I mean the "everyday people," who get up and fight like hell for a better life for the ones they love...with limited resources and limitless reasons to fail! I am blessed to live among the strong hearted and the strong willed; those who get knocked down but find the strength to get back up and persevere until the race is won. Scripture says the meek shall inheret the earth! So peace to the meek and thank you for all being my living, breathing, examples of the True and Living God.</p>
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/55/90/8aea52f8c98ca1464fc3e550570693b71383.jpg=s1920x2048 1920w" class=" loaded"><p>I am very blessed to have the opportunity of building community with some of the world's most creative and distinguished human beings. I mean the "everyday people," who get up and fight like hell for a better life for the ones they love...with limited resources and limitless reasons to fail! I am blessed to live among the strong hearted and the strong willed; those who get knocked down but find the strength to get back up and persevere until the race is won. Scripture says the meek shall inheret the earth! So peace to the meek and thank you for all being my living, breathing, examples of the True and Living God.</p>
 
 <p>#global #ctzn #good #bulletproof #rp from the boss man @oscarmerino of @52blend
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-15464">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-15464">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c135x135 3x, https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c90x90 2x, https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c135x135 3x, https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c90x90 2x, https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">vandenorth</span>
+                <span class="avatar" ></span>
+                @<span >vandenorth</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+            <p class="source" >
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-29T23:20:44+00:00">6 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-29T23:20:44+00:00">6 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1920x2048 1920w" class=" loaded"><p>Living and loving my #bulletproof T. Much gratitude to founder @iamdamonturner. Get yours and join #ctzn at <a href="http://www.bulletproof.good.is" target="_blank">www.bulletproof.good.is</a> #bulletproof #blacklivesmatter
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/fc/92/f4198d872417fa6f228444f53a5e04e7506f.jpg=s1920x2048 1920w" class=" loaded"><p>Living and loving my #bulletproof T. Much gratitude to founder @iamdamonturner. Get yours and join #ctzn at <a href="http://www.bulletproof.good.is" target="_blank">www.bulletproof.good.is</a> #bulletproof #blacklivesmatter
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target --><!-- /ko -->
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-15448">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-15448">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c135x135 3x, https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c90x90 2x, https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c135x135 3x, https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c90x90 2x, https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/038985702544f092f3896fbef380b5c6ffeebddd=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">vandenorth</span>
+                <span class="avatar" ></span>
+                @<span >vandenorth</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+            <p class="source" >
+              
+              
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-29T22:08:17+00:00">6 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-29T22:08:17+00:00">6 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><p>-- 
+
+
+  <div class="body" ><p>-- 
 Joseph Vandenorth
 <a href="http://www.about.me/vandenorth" target="_blank">www.about.me/vandenorth</a></p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-15134">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-15134">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">cogg</span>
+                <span class="avatar" ></span>
+                @<span >cogg</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-25T05:02:18+00:00">7 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-25T05:02:18+00:00">7 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1920x2048 1920w" class=" loaded"><p>How people from the other business units thought CTZN should be described
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/76/a0/b54fd815a0d8953627d3099ce4875ecc8717.jpg=s1920x2048 1920w" class=" loaded"><p>How people from the other business units thought CTZN should be described
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-15041">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-15041">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">iamdamonturner</span>
+                <span class="avatar" ></span>
+                @<span >iamdamonturner</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+            <p class="source" >
+              
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-23T05:10:18+00:00">7 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-23T05:10:18+00:00">7 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1920x2048 1920w" class=" loaded"><p>Can I share a #latergram of the beautiful @randigloss rep ping a #BULLETPROOF. Tee?! Thank you for your love and support! #ctzn
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/50/39/4901cd45d12edcfe29f8c19d83167afce89e.jpg=s1920x2048 1920w" class=" loaded"><p>Can I share a #latergram of the beautiful @randigloss rep ping a #BULLETPROOF. Tee?! Thank you for your love and support! #ctzn
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-14930">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-14930">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/b6a65485f8c0095e806eb73018cb485f7b76634a=c135x135 3x, https://m.ctznapp.com/s3/ctzn/b6a65485f8c0095e806eb73018cb485f7b76634a=c90x90 2x, https://m.ctznapp.com/s3/ctzn/b6a65485f8c0095e806eb73018cb485f7b76634a=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/b6a65485f8c0095e806eb73018cb485f7b76634a=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/b6a65485f8c0095e806eb73018cb485f7b76634a=c135x135 3x, https://m.ctznapp.com/s3/ctzn/b6a65485f8c0095e806eb73018cb485f7b76634a=c90x90 2x, https://m.ctznapp.com/s3/ctzn/b6a65485f8c0095e806eb73018cb485f7b76634a=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/b6a65485f8c0095e806eb73018cb485f7b76634a=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">tommaybrier</span>
+                <span class="avatar" ></span>
+                @<span >tommaybrier</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-21T01:02:13+00:00">8 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-21T01:02:13+00:00">8 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1920x2048 1920w" class=" loaded"><p>"A citizen is one who produces the future, someone who does not wait, beg or dream for the future."</p>
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/4e/d3/c4dadc6c08dd3dddb0348b8cb157fb479206.jpg=s1920x2048 1920w" class=" loaded"><p>"A citizen is one who produces the future, someone who does not wait, beg or dream for the future."</p>
 
 <p>from Community: The Structure of Belonging by Peter Block
 </p></div>
-<!-- /ko -->
 
-
-
-        </article>
-      </li>
-      <!-- /ko -->
-      <!-- /ko -->
-      
-
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
-  
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-14898">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
-        <article class="post-item">
-          <header>
-            <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/6103112c9b6de7d1c25502e5e042204b378e95ec=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6103112c9b6de7d1c25502e5e042204b378e95ec=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6103112c9b6de7d1c25502e5e042204b378e95ec=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6103112c9b6de7d1c25502e5e042204b378e95ec=c45x45">
-                </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">chan</span>
-              </a>
-            </h3>
-            <p class="source" data-bind="if: source"></p>
-            <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-20T00:35:36+00:00">8 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
-              </a>
-            </p>
-          </header>
-
-          
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
-
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><p>Hi chan</p></div>
-<!-- /ko -->
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target --><!-- /ko -->
       
-
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-14828">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-14898">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/6103112c9b6de7d1c25502e5e042204b378e95ec=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6103112c9b6de7d1c25502e5e042204b378e95ec=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6103112c9b6de7d1c25502e5e042204b378e95ec=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6103112c9b6de7d1c25502e5e042204b378e95ec=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">cogg</span>
+                <span class="avatar" ></span>
+                @<span >chan</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-18T20:32:12+00:00">8 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-20T00:35:36+00:00">8 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1920x2048 1920w" class=" loaded"><p>#ctzn team in a breakthrough beerstorming session. #process #getready #nextlevel
+
+
+  <div class="body" ><p>Hi chan</p></div>
+
+
+
+
+        </article>
+      </li>
+      
+      
+      
+
+      
+      
+
+      
+  
+      
+      <li  id="post-14828">
+        
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
+                </span>
+                <span class="avatar" ></span>
+                @<span >cogg</span>
+              </a>
+            </h3>
+            <p class="source" ></p>
+            <p>
+              <a href="#post" >
+                
+                <time  datetime="2015-09-18T20:32:12+00:00">8 weeks ago</time>
+                
+              </a>
+            </p>
+          </header>
+
+          
+
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/6c/ff/95d1bdc44ea4b16b851b20de824f366505f1.jpg=s1920x2048 1920w" class=" loaded"><p>#ctzn team in a breakthrough beerstorming session. #process #getready #nextlevel
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target --><!-- /ko -->
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-14361">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-14361">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">iamdamonturner</span>
+                <span class="avatar" ></span>
+                @<span >iamdamonturner</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+            <p class="source" >
+              
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-08T22:16:15+00:00">9 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-08T22:16:15+00:00">9 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1920x2048 1920w" class=" loaded"><p>Getting these pre orders out. #BULLETPROOF #ctzn
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/4c/93/08b70b93f3cbf333729990f9bec266a1edcd.jpg=s1920x2048 1920w" class=" loaded"><p>Getting these pre orders out. #BULLETPROOF #ctzn
 </p></div>
-<!-- /ko -->
 
-
-
-        </article>
-      </li>
-      <!-- /ko -->
-      <!-- /ko -->
-      
-
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
-  
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-13866">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
-        <article class="post-item">
-          <header>
-            <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image"></span>
-                <span class="avatar" data-bind="if: !user.profile_image">
-                  <span class="size30 sky" data-bind="{ attr: { 'data-content': user.username.charAt(0).replace('[', '*') }, css: good.avatarColor(user.id) }" data-content="c"></span>
-                </span>
-                @<span data-bind="text: user.username">cogg.1</span>
-              </a>
-            </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
-            </p>
-            <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-09-01T19:12:29+00:00">10 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
-              </a>
-            </p>
-          </header>
-
-          
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
-
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><p>We shipped "email to join" functionality today. This post was created via this functionality. w00t!</p></div>
-<!-- /ko -->
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-13428">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-13866">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
+              <a href="" >
+                <span class="avatar" ></span>
+                <span class="avatar" >
+                  <span class="size30 sky"  data-content="c"></span>
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">cogg</span>
+                @<span >cogg.1</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" >
+              
+              
+              
+            </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-08-20T00:45:03+00:00">12 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-09-01T19:12:29+00:00">10 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1920x2048 1920w" class=" loaded"><p>Eddy killing it on organizing our partners.
+
+
+  <div class="body" ><p>We shipped "email to join" functionality today. This post was created via this functionality. w00t!</p></div>
+
+
+
+
+        </article>
+      </li>
+      
+      
+      
+
+      
+  
+      
+      <li  id="post-13428">
+        
+        <article class="post-item">
+          <header>
+            <h3>
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c135x135 3x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c90x90 2x, https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/a2876f45c1a26ac2baff58b8287771b2d3460534=c45x45">
+                </span>
+                <span class="avatar" ></span>
+                @<span >cogg</span>
+              </a>
+            </h3>
+            <p class="source" ></p>
+            <p>
+              <a href="#post" >
+                
+                <time  datetime="2015-08-20T00:45:03+00:00">12 weeks ago</time>
+                
+              </a>
+            </p>
+          </header>
+
+          
+
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/c1/f4/2fb7cb088d842d79e7d84136330f063ced81.jpg=s1920x2048 1920w" class=" loaded"><p>Eddy killing it on organizing our partners.
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target --><!-- /ko -->
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-13359">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-13359">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c135x135 3x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c90x90 2x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c135x135 3x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c90x90 2x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">jim</span>
+                <span class="avatar" ></span>
+                @<span >jim</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-08-17T20:24:22+00:00">12 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-08-17T20:24:22+00:00">12 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1920x2048 1920w" class=" loaded"><p>CTZN has some colorful new error pages (for those occasional slips and hiccups).
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/93/4c/f4952a5016d2e866014e2c298a3a433e2d6d.jpg=s1920x2048 1920w" class=" loaded"><p>CTZN has some colorful new error pages (for those occasional slips and hiccups).
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-13854">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-13854">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">brian</span>
+                <span class="avatar" ></span>
+                @<span >brian</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+            <p class="source" >
+              
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-08-17T17:52:55+00:00">12 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-08-17T17:52:55+00:00">12 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><p>Testing things on #ctzn
+
+
+  <div class="body" ><p>Testing things on #ctzn
 <video alt="video" preload="none" poster="https://m.ctznapp.com/s3/ctzn/e8/4c/14be89bfc17b7d1c759c377cc6f5ddabf3a8.jpg=s512x512" type="video/mp4" controls="yes"><source src="https://m.ctznapp.com/s3/ctzn/e8/4c/14be89bfc17b7d1c759c377cc6f5ddabf3a8.m4v" type="video/mp4"><source src="https://m.ctznapp.com/s3/ctzn/e8/4c/14be89bfc17b7d1c759c377cc6f5ddabf3a8.webm" type="video/webm"><img src="https://m.ctznapp.com/s3/ctzn/e8/4c/14be89bfc17b7d1c759c377cc6f5ddabf3a8.jpg=s512x512" class="video-fallback"><span class="video-fallback">Aw, shucks. Our video player isn’t working in this web browser. Please try again in another browser or on another device.</span></video></p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-14190">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-14190">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">iamdamonturner</span>
+                <span class="avatar" ></span>
+                @<span >iamdamonturner</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' --><!-- /ko -->
-              <!-- ko if: source == 'facebook' -->
+            <p class="source" >
+              
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>via facebook</foreignObject></switch></svg>
-              <!-- /ko -->
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-08-11T21:54:05+00:00">13 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-08-11T21:54:05+00:00">13 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><p>Still marinating on the conversation I had yesterday with Michelle O'Grady! This new strategy is going to be epic! Cant wait to dive into it next week. #ctzn #good #teamfriday</p></div>
-<!-- /ko -->
+
+
+  <div class="body" ><p>Still marinating on the conversation I had yesterday with Michelle O'Grady! This new strategy is going to be epic! Cant wait to dive into it next week. #ctzn #good #teamfriday</p></div>
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-13134">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-13134">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">eddy</span>
+                <span class="avatar" ></span>
+                @<span >eddy</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-08-11T21:03:26+00:00">13 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-08-11T21:03:26+00:00">13 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s640x2048" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s640x2048" alt="Uploaded image 3" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1920x2048 1920w" class=" loaded"><p>Flipagram's aesthetic is fab. </p>
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/a7/c2/ce4a038e9aa32717a74f2ffe3a90ffd71d94.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s640x2048" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/18/5f/73121a002728415cf5779ff0090db69e4659.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s640x2048" alt="Uploaded image 3" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/98/eb/d28b0c1e31a4b71d11a071206758192a67cc.jpg=s1920x2048 1920w" class=" loaded"><p>Flipagram's aesthetic is fab. </p>
 
 <p>#CTZNxFlipagram #servinsmiles</p>
 
@@ -1556,202 +1556,202 @@ Joseph Vandenorth
 
 
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-13001">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-13001">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c135x135 3x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c90x90 2x, https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/6912521b393afd47147043cdb1b153668c1f72da=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">eddy</span>
+                <span class="avatar" ></span>
+                @<span >eddy</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-08-08T19:47:39+00:00">14 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-08-08T19:47:39+00:00">14 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s640x2048" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s640x2048" alt="Uploaded image 3" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1920x2048 1920w" class=" loaded"><p>So fortunate to have been invited to demo CTZN to the Great Streets Network of Champions! Leaving super inspired by all the creative ideas on how to improve our LA streets and communities!</p>
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/16/d9/343c293d20df3eb46cc7f810bacc86f4769a.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s640x2048" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/92/74/42d60508a1bf209786241b23eee37b63c5cc.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s640x2048" alt="Uploaded image 3" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/d9/38/128704aa0bdee6973408d5e67a17fe83c0e0.jpg=s1920x2048 1920w" class=" loaded"><p>So fortunate to have been invited to demo CTZN to the Great Streets Network of Champions! Leaving super inspired by all the creative ideas on how to improve our LA streets and communities!</p>
 
 <p>#good #lactzn #lagreatstreets #ctzn
 
 
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-12866">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-12866">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">brian</span>
+                <span class="avatar" ></span>
+                @<span >brian</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-08-06T03:20:54+00:00">14 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-08-06T03:20:54+00:00">14 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><p>Definitely digging the new content notification on the switch screen.   I'm now just leaving the app on switch and checking a push when it's got a light next to it.</p></div>
-<!-- /ko -->
+
+
+  <div class="body" ><p>Definitely digging the new content notification on the switch screen.   I'm now just leaving the app on switch and checking a push when it's got a light next to it.</p></div>
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-12564">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-12564">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c135x135 3x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c90x90 2x, https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">iamdamonturner</span>
+                <span class="avatar" ></span>
+                @<span >iamdamonturner</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source">
-              <!-- ko if: source == 'twitter' --><!-- /ko -->
-              <!-- ko if: source == 'instagram' -->
+            <p class="source" >
+              
+              
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>via instagram</foreignObject></switch></svg>
-              <!-- /ko -->
-              <!-- ko if: source == 'facebook' --><!-- /ko -->
+              
+              
             </p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-31T00:20:35+00:00">15 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-07-31T00:20:35+00:00">15 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1920x2048 1920w" class=" loaded"><p>Would love to hear... | #ctzn #greedycity #good
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/28/75/09cfa1ad091070d5367f3f18b14f3e8c99c7.jpg=s1920x2048 1920w" class=" loaded"><p>Would love to hear... | #ctzn #greedycity #good
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
       
 
-      <!-- ko if: !ref || !ref.type == 'USER_PROFILE' || !ref.target -->
+      
   
-      <!-- ko if: !pending_approval || good.currentPush().currentUserIsOwner || user.id === good.currentUser().id -->
-      <li data-bind="attr: { id: 'post-' + id }" id="post-12344">
-        <!-- ko if: pending_approval && good.currentUser().id !== user.id --><!-- /ko -->
+      
+      <li  id="post-12344">
+        
         <article class="post-item">
           <header>
             <h3>
-              <a href="" data-bind="click: function(){ $root.handleUserClicked(user) }">
-                <span class="avatar" data-bind="if: user.profile_image">
-                  <img data-bind="attr: { srcset: good.avatarSourceSet(user.profile_image), src: sizedS3Image(user.profile_image, good.S3_AVATAR_SIZE) }" height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c135x135 3x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c90x90 2x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45">
+              <a href="" >
+                <span class="avatar" >
+                  <img  height="30" width="30" alt="" srcset="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c135x135 3x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c90x90 2x, https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45 1x" src="https://m.ctznapp.com/s3/ctzn/d5137107f0fb3718cde6f325e87bec71f151cd81=c45x45">
                 </span>
-                <span class="avatar" data-bind="if: !user.profile_image"></span>
-                @<span data-bind="text: user.username">jim</span>
+                <span class="avatar" ></span>
+                @<span >jim</span>
               </a>
             </h3>
-            <p class="source" data-bind="if: source"></p>
+            <p class="source" ></p>
             <p>
-              <a href="#post" data-bind="click: function(){ $root.viewPost(id, event) }">
-                <!-- ko if: ref && ref.type == 'USER_PROFILE' && ref.target --><!-- /ko -->
-                <time data-bind="attr: { datetime: created_at }, text: good.timeAgo.inWords(created_at)" datetime="2015-07-29T04:52:23+00:00">15 weeks ago</time>
-                <!-- ko if: (good.currentPush().currentUserIsOwner || good.currentUser().is_admin || good.currentUser().id == flagged_by) && flagged_by --><!-- /ko -->
+              <a href="#post" >
+                
+                <time  datetime="2015-07-29T04:52:23+00:00">15 weeks ago</time>
+                
               </a>
             </p>
           </header>
 
           
-<!-- ko if: $data.ref && $data.ref.type == 'USER_PROFILE' && $data.ref.target --><!-- /ko -->
 
-<!-- ko ifnot: $data.ref -->
-  <div class="body" data-bind="html: good.postBodyToHtml($data.body())"><img src="https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s640x2048" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1920x2048 1920w" class=" loaded"><p>I wonder if the manager for our fancy office building would let us do something like this to the front door…
+
+
+  <div class="body" ><img src="https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s640x2048" alt="Uploaded image 1" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/5a/06/7ef6c625b0f7815ba0c294ac05b20e1c32fa.jpg=s1920x2048 1920w" class=" loaded"><img src="https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s640x2048" alt="Uploaded image 2" role="link" tabindex="0" style="cursor: pointer" onclick="good.currentScreen({ name: 'image', imageURL: 'https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s2048x2048' })" onload="this.className += ' loaded'" sizes="(min-width: 1200px) 708px, (min-width: 1000px) 649px, (min-width: 800px) 590px, (min-width: 600px) 531px, (min-width: 512px) 472px, 100vw" srcset="https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s640x2048 640w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s768x2048 768w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s896x2048 896w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1024x2048 1024w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1152x2048 1152w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1280x2048 1280w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1408x2048 1408w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1536x2048 1536w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1664x2048 1664w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1792x2048 1792w, https://m.ctznapp.com/s3/ctzn/4e/d7/0b0b2f7426a4b32d75440cfc129ea8de3ea8.jpg=s1920x2048 1920w" class=" loaded"><p>I wonder if the manager for our fancy office building would let us do something like this to the front door…
 
 </p></div>
-<!-- /ko -->
+
 
 
 
         </article>
       </li>
-      <!-- /ko -->
-      <!-- /ko -->
-      <!-- /ko -->
+      
+      
+      
 
-      <!-- ko if: $root.showNextButton -->
+      
       <li class="next action">
-        <a href="#next" data-bind="click: onNextPage">
+        <a href="#next" >
           Older posts
           <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-down"></use></svg>
         </a>
       </li>
-      <!-- /ko -->
+      
     </ol>
 
   </section>
