@@ -1839,7 +1839,8 @@
     min-height: 0;
     background-color: transparent;
   }
-  .post-item .body figure[style*="padding"] img.primary {
+  .post-item .body figure[style*="padding"] img.primary,
+  .post-item .body figure[style*="padding"] img.preview + img.primary {
     position: absolute;
     top: 0;
     left: 0;
