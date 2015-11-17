@@ -171,7 +171,7 @@
     background-color: rgb(159, 104, 246); /* @grape */
   }
   .avatar .bluebird {
-    background-color: rgb(0, 206,250); /* @bluebird */
+    background-color: rgb(0, 206, 250); /* @bluebird */
   }
   .avatar .cantaloupe {
     background-color: rgb(255, 203, 117); /* @cantaloupe */
@@ -292,35 +292,36 @@
   ----------------------------------------------- */
   .push-channel {
     min-height: 100%;
+    background-color: black;
   }
 
   /* Push Colors */
   .push-channel.lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .push-channel.cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
+  .push-channel.green {
+    background-color: rgb(60, 210, 0); /* @green */
   }
-  .push-channel.blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
+  .push-channel.teal {
+    background-color: rgb(0, 204, 204); /* @teal */
   }
-  .push-channel.boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
+  .push-channel.blue {
+    background-color: rgb(101, 152, 254); /* @blue */
   }
   .push-channel.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .push-channel.plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+  .push-channel.purple {
+    background-color: rgb(181, 62, 194); /* @purple */
   }
-  .push-channel.strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
+  .push-channel.magenta {
+    background-color: rgb(250, 44, 162); /* @magenta */
   }
-  .push-channel.apple {
-    background-color: rgb(255, 0, 86); /* @apple */
+  .push-channel.red {
+    background-color: rgb(255, 0, 86); /* @red */
   }
-  .push-channel.tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
+  .push-channel.gold {
+    background-color: rgb(255, 204, 0); /* @gold */
   }
   .push-channel.orange {
     background-color: rgb(255, 117, 9); /* @orange */
@@ -407,29 +408,29 @@
   .push-channel.lime > header > div {
     border-color: rgb(176, 224, 0); /* @lime */
   }
-  .push-channel.cucumber > header > div {
-    border-color: rgb(60, 210, 0); /* @cucumber */
+  .push-channel.green > header > div {
+    border-color: rgb(60, 210, 0); /* @green */
   }
-  .push-channel.blueberry > header > div {
-    border-color: rgb(0, 204, 204); /* @blueberry */
+  .push-channel.teal > header > div {
+    border-color: rgb(0, 204, 204); /* @teal */
   }
-  .push-channel.boysenberry > header > div {
-    border-color: rgb(101, 152, 254); /* @boysenberry */
+  .push-channel.blue > header > div {
+    border-color: rgb(101, 152, 254); /* @blue */
   }
   .push-channel.periwinkle > header > div {
     border-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .push-channel.plumb > header > div {
-    border-color: rgb(181, 62, 194); /* @plumb */
+  .push-channel.purple > header > div {
+    border-color: rgb(181, 62, 194); /* @purple */
   }
-  .push-channel.strawberry > header > div {
-    border-color: rgb(250, 44, 162); /* @strawberry */
+  .push-channel.magenta > header > div {
+    border-color: rgb(250, 44, 162); /* @magenta */
   }
-  .push-channel.apple > header > div {
-    border-color: rgb(255, 0, 86); /* @apple */
+  .push-channel.red > header > div {
+    border-color: rgb(255, 0, 86); /* @red */
   }
-  .push-channel.tangerine > header > div {
-    border-color: rgb(255, 204, 0); /* @tangerine */
+  .push-channel.gold > header > div {
+    border-color: rgb(255, 204, 0); /* @gold */
   }
   .push-channel.orange > header > div {
     border-color: rgb(255, 117, 9); /* @orange */
@@ -437,8 +438,6 @@
 
   /* Title screen */
   .push-title-only .push-channel .list {
-    /* @hide-content */
-    opacity: 0;
     position: relative;
     z-index: -1;
   }
@@ -781,7 +780,7 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .push-channel article .body p {
+  .push-channel article .body .container {
     text-align: center;
     font-weight: bold;
     line-height: 1.2; /* @line-height x 1.5 / 1.875em */
@@ -794,9 +793,19 @@
     word-wrap     : break-word;
     overflow-wrap : break-word;
   }
+  .push-channel article .body > div > div p {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+  }
+  .push-channel article .body > div > div p:first-child {
+    margin-top: 0;
+  }
+  .push-channel article .body > div > div p:last-child {
+    margin-bottom: 0;
+  }
 
   /* OPTIONAL: Limit the height of the text */
-  .push-channel article .body p {
+  .push-channel article .body .container {
     max-height: 2.4em; /* line height x 2 */
     overflow-y: hidden;
 
@@ -810,34 +819,34 @@
 
   /*  OPTIONAL: Make the post text larger on big screens. */
   @media (min-width: 25em) and (min-height: 25em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       font-size: 1.25em;
     }
   }
   @media (min-width: 30em) and (min-height: 30em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       font-size: 1.5em;
     }
   }
   @media (min-width: 35em) and (min-height: 35em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       font-size: 2em;
     }
   }
   @media (min-width: 50em) and (min-height: 50em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       font-size: 3em;
     }
   }
   @media (min-width: 60em) and (min-height: 60em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       font-size: 4em;
     }
   }
 
   /* OPTIONAL: Use viewport units in browsers that support it (for more possible sizes). */
   @media (min-width: 320px) and (min-height: 320px) { /* @min-font-size (16px) * 100vmin / 5vmin = 16 * 20 = 320 */
-    .push-channel article .body p {
+    .push-channel article .body .container {
       font-size: 5vmin;
     }
   }
@@ -905,49 +914,49 @@
 
   /* OPTIONAL: Increase the line height on tall screens */
   @media (min-height: 15em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       max-height: 3.6em; /* line height x 3 */
       -webkit-line-clamp: 3;
     }
   }
   @media (min-height: 18em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       max-height: 4.8em; /* line height x 4 */
       -webkit-line-clamp: 4;
     }
   }
   @media (min-height: 21em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       max-height: 6em; /* line height x 5 */
       -webkit-line-clamp: 5;
     }
   }
   @media (min-height: 24em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       max-height: 7.2em; /* line height x 6 */
       -webkit-line-clamp: 6;
     }
   }
   @media (min-height: 27em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       max-height: 8.4em; /* line height x 7 */
       -webkit-line-clamp: 7;
     }
   }
   @media (min-height: 30em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       max-height: 9.6em; /* line height x 8 */
       -webkit-line-clamp: 8;
     }
   }
   @media (min-height: 33em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       max-height: 10.8em; /* line height x 9 */
       -webkit-line-clamp: 9;
     }
   }
   @media (min-height: 36em) {
-    .push-channel article .body p {
+    .push-channel article .body .container {
       max-height: 12em; /* line height x 10 */
       -webkit-line-clamp: 10;
     }
@@ -1127,7 +1136,24 @@
   .autoplaying .push-channel article .pictures figure {
     position: absolute;
   }
+  .push-channel article .pictures figure .preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: calc(-3em);
+    width: calc(100% + 6em) !important;
+    height: calc(100% + 6em) !important;
+    -webkit-filter: blur(1.5em);
+            filter: blur(1.5em);
+  }
   .push-channel article .pictures figure img {
+    position: relative; /* Position the image above the preview */
     display: block;
     margin: auto;
     max-width: none;
@@ -1141,20 +1167,24 @@
   The “inactive” classname is added by JavaScript
   (so that only one image or text element will be shown at a time).
   ----------------------------------------------- */
-  .autoplaying .push-channel article .pictures figure {
+  .push-channel .item {
     position: absolute;
+    width: 100%;
+    height: 100%;
   }
-  /*
-  .push-channel article .pictures figure,
-  .push-channel .body {
-    transition: opacity 0.1s;
-  }
-  */
   .push-channel .item.inactive {
-    display: none;
+    z-index: -1;
   }
-  .push-channel article .pictures figure.inactive,
-  .push-channel .body.inactive {
+  .push-channel .item.inactive,
+  .push-channel .body.inactive,
+  .push-channel article .pictures figure.inactive {
     opacity: 0;
+  }
+
+  /* SHIM: Chrome 46 sometimes positions images in the wrong place when the screen
+           has a portrait aspect ratio and the image has a landscape aspect ratio. This seems to help.
+           http://stackoverflow.com/questions/23474191/flexbox-height-not-updating-when-content-changes#answer-23477001 */
+  .push-channel .item.inactive img {
+    position: static;
   }
 

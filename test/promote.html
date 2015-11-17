@@ -117,29 +117,6 @@
       }
     }
 
-    /*
-    @media false (max-width: 60em) {
-      section .text .video:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      section .text video {
-        float: left;
-        width: 33.3333%;
-        height: calc(33.3333vw - 1.25em);
-      }
-    }
-    */
-
-    /*
-    @media (max-width: 60em) {
-      section .text video {
-        width: 30%;
-      }
-    }
-    */
-
     .video-fallback {
       background: black;
       color: white;
@@ -185,8 +162,6 @@
       font-size  : 1.5em;   /* 24px / @font-size */
       line-height: 1.25; /* 30px / @font-size */
 
-
-
       font-size: 1.3125em; /* 21px / @font-size */
       line-height: 1.1904761905; /* 25px / 21px */
       margin-top   : 0.9523809524em; /* 20px / 21px */
@@ -202,29 +177,29 @@
     .lime {
       background-color: rgb(176, 224, 0); /* @lime */
     }
-    .cucumber {
-      background-color: rgb(60, 210, 0); /* @cucumber */
+    .green {
+      background-color: rgb(60, 210, 0); /* @green */
     }
-    .blueberry {
-      background-color: rgb(0, 204, 204); /* @blueberry */
+    .teal {
+      background-color: rgb(0, 204, 204); /* @teal */
     }
-    .boysenberry {
-      background-color: rgb(101, 152, 254); /* @boysenberry */
+    .blue {
+      background-color: rgb(101, 152, 254); /* @blue */
     }
     .periwinkle {
       background-color: rgb(109, 90, 219); /* @periwinkle */
     }
-    .plumb {
-      background-color: rgb(181, 62, 194); /* @plumb */
+    .purple {
+      background-color: rgb(181, 62, 194); /* @purple */
     }
-    .strawberry {
-      background-color: rgb(250, 44, 162); /* @strawberry */
+    .magenta {
+      background-color: rgb(250, 44, 162); /* @magenta */
     }
-    .apple {
-      background-color: rgb(255, 0, 86); /* @apple */
+    .red {
+      background-color: rgb(255, 0, 86); /* @red */
     }
-    .tangerine {
-      background-color: rgb(255, 204, 0); /* @tangerine */
+    .gold {
+      background-color: rgb(255, 204, 0); /* @gold */
     }
     .orange {
       background-color: rgb(255, 117, 9); /* @orange */
@@ -280,18 +255,18 @@
       border-top: 0.3125em solid black; /* 5px / @font-size */
     }
 
-    .strawberry form {
+    .contact form {
       margin-top: 2.5em;
     }
     @media (min-width: 40em) {
-      .tangerine a.action,
-      .strawberry a.action,
-      .strawberry form {
+      .about   a.action,
+      .contact a.action,
+      .contact form {
         font-size: 1.25em;
       }
     }
 
-    .strawberry form label {
+    .contact form label {
       color: white;
     }
     form p {
@@ -328,7 +303,9 @@
     button:hover,
     button:active,
     button:focus {
-      background-color: black;
+      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: black;
     }
 
 
@@ -468,7 +445,7 @@
 
     /* =Channels (with space around them)
     ----------------------------------------------- */
-    body > section.orange {
+    body > section.media {
       padding-bottom: 0;
     }
     section .channels {
@@ -524,11 +501,11 @@
       margin-left: 0;
       padding-left: 0;
     }
-    .download {
-      margin-top   : 1.25em; /* 20px / @font-size */
+    ul.download {
+      margin-top   : 2.5em; /* @line-height x 2 */
       margin-bottom: 0.9375em;
     }
-    .download li {
+    ul.download li {
       display: inline-block;
       margin-bottom: 0.3125em;
       vertical-align: top;
@@ -536,14 +513,12 @@
 
     /* TRICKY: Space the buttons out, but attempt to keep them on one line */
     @media (min-width: 21em) {
-      .download li {
+      ul.download li {
         margin-right: 0.3125em;
       }
     }
 
-    .download li a {
-    }
-    .download li a svg {
+    ul.download li a svg {
       max-width: none;
       vertical-align: top;
     }
@@ -574,7 +549,7 @@
       padding-top    : 3.125em; /* @line-height x 2.5 */
       padding-bottom : 3.125em;
     }
-    body > section.orange .text {
+    body > section.media .text {
       margin-bottom: 3.125em;
     }
 
@@ -595,7 +570,7 @@
         padding-top    : 6.25em; /* @line-height x 5 */
         padding-bottom : 6.25em;
       }
-      body > section.orange .text {
+      body > section.media .text {
         padding-bottom: 4.25em;
         margin-bottom: 0;
       }
@@ -621,51 +596,51 @@
     section h3 ~ ul {
       font-weight: bold;
     }
-    .apple section {
+    .features section {
       margin-top: 2.5em; /* @line-height x 2 */
     }
     @media (min-width: 40em) {
-      .apple {
+      .features {
         padding: 3.75em;
         padding: 10vw;
       }
-      .apple > .text {
+      .features > .text {
         max-width: none;
       }
-      .apple section {
+      .features section {
         display: inline-block;
         vertical-align: top;
         margin-top: 3.75em; /* 60px / @font-size */
       }
-      .apple section:nth-of-type(1n) {
+      .features section:nth-of-type(1n) {
         margin-right: 4%;
         max-width: 47%;
       }
-      .apple section:nth-of-type(2n) {
+      .features section:nth-of-type(2n) {
         margin-right: 0;
       }
     }
     @media (min-width: 60em) {
-      .apple section:nth-of-type(1n) {
+      .features section:nth-of-type(1n) {
         margin-right: 4%;
         max-width: 30%;
       }
-      .apple section:nth-of-type(3n) {
+      .features section:nth-of-type(3n) {
         margin-right: 0;
       }
     }
 
-    .apple h3 {
+    .features h3 {
       margin-top: 0;
     }
-    .periwinkle h3 .icon,
-    .apple h3 .icon {
+    .good     h3 .icon,
+    .features h3 .icon {
       font-size: 1.5em;
       color: white;
       margin-right: 0.25em;
     }
 
-    .apple section.more {
+    .features section.more {
       display: block;
       max-width: none;
     }
@@ -678,55 +653,51 @@
       margin-right: 0;
       margin-left: 0.25em;
     }
-    .periwinkle h2 a {
+    .good h2 a {
       color: white;
       color: rgba(255, 255, 255, 0.95);
       text-decoration: none;
       text-transform: none;
     }
-    .periwinkle h2 a:hover,
-    .periwinkle h2 a:active,
-    .periwinkle h2 a:focus {
+    .good h2 a:hover,
+    .good h2 a:active,
+    .good h2 a:focus {
       color: white;
     }
 
-    .periwinkle h3 a,
-    .apple h3 a {
+    .good h3 a,
+    .features h3 a {
       color: inherit;
       text-decoration: none;
     }
-    .periwinkle h3 a:hover,
-    .periwinkle h3 a:active,
-    .periwinkle h3 a:focus,
-    .apple h3 a:hover,
-    .apple h3 a:active,
-    .apple h3 a:focus {
+    .good h3 a:hover,
+    .good h3 a:active,
+    .good h3 a:focus,
+    .features h3 a:hover,
+    .features h3 a:active,
+    .features h3 a:focus {
       color: black;
     }
 
-    .tangerine h3,
-    .tangerine p {
-      color: rgba(0, 0, 0, 0.45);
-    }
-    .tangerine p,
-    .apple h3 {
-      color: rgba(0, 0, 0, 0.6);
-    }
-    .tangerine p + p {
-      margin-top: 1.25em;
-    }
-    .periwinkle p {
-      margin-top: 1.25em; /* @line-height */
-      margin-bottom: 2.5em;
-    }
-    .periwinkle  p,
-    .apple       p,
-    .blueberry   p,
-    .plumb       p,
-    .boysenberry p,
-    .orange      p {
+    body > section p {
       color: white;
       color: rgba(255, 255, 255, 0.8);
+    }
+
+    .about h3,
+    .about p {
+      color: rgba(0, 0, 0, 0.45);
+    }
+    .about p,
+    .features h3 {
+      color: rgba(0, 0, 0, 0.6);
+    }
+    .about p + p {
+      margin-top: 1.25em;
+    }
+    .good p {
+      margin-top: 1.25em; /* @line-height */
+      margin-bottom: 2.5em;
     }
 
     section .text,
@@ -746,25 +717,25 @@
       margin-top: 1.875em; /* @line-height x 3/2 */
     }
     @media (min-width: 35em) {
-      .tangerine  .text,
-      .periwinkle .text,
-      .plumb      .text,
-      .blueberry  .text {
+      .about  .text,
+      .good   .text,
+      .tools  .text,
+      .social .text {
         margin-bottom: 5em;
       }
-      .tangerine  .figure,
-      .periwinkle .figure,
-      .plumb      .figure,
-      .blueberry  .figure {
+      .about  .figure,
+      .good   .figure,
+      .tools  .figure,
+      .social .figure {
         margin-top: 0;
       }
     }
     /* SHIM: Balance the text vertically when the layout is horizontal */
     @media (min-width: 60em) {
-      .tangerine  .text,
-      .periwinkle .text,
-      .plumb      .text,
-      .blueberry  .text {
+      .about  .text,
+      .good   .text,
+      .tools  .text,
+      .social .text {
         margin-top: 5em;
       }
     }
@@ -779,20 +750,20 @@
       margin: 0;
     }
 
-    .tangerine .figure {
+    .about .figure {
       position: relative;
       padding-bottom: 3.125em;
       padding-right: 7.5em;
     }
-    .plumb     figure.preview,
-    .tangerine figure.preview:first-child {
+    .tools figure.preview,
+    .about figure.preview:first-child {
       background-color: white;
     }
-    .plumb     figure.preview:after,
-    .tangerine figure.preview:first-child:after {
+    .tools figure.preview:after,
+    .about figure.preview:first-child:after {
       border-color: rgba(0, 0, 0, 0.15);
     }
-    .tangerine figure.preview:last-child {
+    .about figure.preview:last-child {
       display: block;
       position: absolute;
       top: 3.125em;
@@ -815,9 +786,9 @@
     }
 
     @media (min-width: 35em) and (max-width: 60em) {
-      .tangerine .figure,
-      .plumb     .figure,
-      .blueberry .figure {
+      .about .figure,
+      .tools .figure,
+      .video .figure {
         display: table;
         margin-left: auto;
         margin-right: auto;
@@ -825,29 +796,29 @@
     }
 
     @media (max-width: 60em) {
-      .plumb     .figure figure,
-      .blueberry .figure figure {
+      .tools .figure figure,
+      .video .figure figure {
         padding-bottom: 0;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
       }
-      .plumb     .figure figure.preview div,
-      .blueberry .figure figure.preview div {
+      .tools .figure figure.preview div,
+      .video .figure figure.preview div {
         height: 25em;
       }
-      .plumb     .figure figure:after,
-      .blueberry .figure figure:after {
+      .tools .figure figure:after,
+      .video .figure figure:after {
         display: none;
       }
-      .plumb     .figure,
-      .blueberry .figure {
+      .tools .figure,
+      .video .figure {
         margin-bottom: -3.125em;
       }
     }
 
     @media (min-width: 40em) and (max-width: 60em) {
-      .plumb     .figure,
-      .blueberry .figure {
+      .tools .figure,
+      .video .figure {
         margin-bottom: -6.25em;
       }
     }
@@ -926,7 +897,7 @@
       margin-left: -1.875em;
     }
 
-    .tangerine figure.preview {
+    .about figure.preview {
       font-size: 0.625em;
     }
 
@@ -938,11 +909,11 @@
         font-size: 3.2vw;
         margin-bottom: 0;
       }
-      .tangerine .figure {
+      .about .figure {
         font-size: 0.5em;
         font-size: 2.5vw;
       }
-      .tangerine .figure figure.preview {
+      .about .figure figure.preview {
         font-size: inherit;
       }
     }
@@ -950,7 +921,7 @@
     /* OPTIONAL: Increase the size of the preview, to give a more accurate preview
     http://stackoverflow.com/questions/2630308/possible-to-shrink-contents-of-iframe#answer-10714595 */
     @media (max-width: 35em) {
-      .tangerine .figure {
+      .about .figure {
 
         /* Increase the size of the preview */
         font-size: 4vw;
@@ -971,24 +942,14 @@
         margin-bottom: -80vw;
       }
     }
-    /*
-    @media (max-width: 21em) {
-      .tangerine figure.preview {
-        margin-left: -3em;
-        margin-right: -3em;
-        font-size: 0.5em;
-        font-size: 2.875vw;
-      }
-    }
-    */
     @media (min-width: 60em) {
       figure.preview {
         font-size: 0.75em;
       }
-      .tangerine .figure {
+      .about .figure {
         font-size: 0.675em;
       }
-      .tangerine .figure figure.preview {
+      .about .figure figure.preview {
         font-size: inherit;
       }
     }
@@ -1097,7 +1058,7 @@
         margin-left: 3.125em;
         margin-right: 3.125em;
       }
-      body > .apple > .text {
+      body > .features > .text {
         display: block;
         margin-left: 0;
         margin-right: 0;
@@ -1129,9 +1090,9 @@
         -webkit-flex-wrap: wrap;
                 flex-wrap: wrap;
       }
-      body > section.periwinkle,
-      body > section.blueberry,
-      body > section.tangerine {
+      body > section.good,
+      body > section.social,
+      body > section.about {
         -webkit-flex-direction: row-reverse;
                 flex-direction: row-reverse;
       }
@@ -1147,19 +1108,19 @@
         margin-right: 3.125em;
       }
 
-      body > section.apple {
+      body > section.features {
         display: block;
       }
-      body > section.apple > .text {
+      body > section.features > .text {
         margin-left: 0;
         margin-right: 0;
       }
 
 
-      body > section.orange {
+      body > section.media {
         display: block;
       }
-      body > section.orange .text {
+      body > section.media .text {
         max-width: 35em;
         margin-left: auto;
         margin-right: auto;
@@ -1174,14 +1135,6 @@
         -webkit-flex-direction: column;
                 flex-direction: column;
 
-        /*
-        -webkit-align-items: center;
-                align-items: center;
-
-        -webkit-align-content: center;
-                align-content: center;
-
-        */
         -webkit-justify-content: center;
                 justify-content: center;
       }
@@ -1189,11 +1142,11 @@
     }
 
 
-    .periwinkle .figure {
+    .good .figure {
       padding-bottom: 2.5em;
     }
     @media (min-width: 88em) {
-      .periwinkle .figure {
+      .good .figure {
         padding: 0 2.5em;
       }
     }
@@ -1761,7 +1714,7 @@
 
   <header>
     <h1>
-      <a href="//getctzn.com">
+      <a href="http://getctzn.com">
         <svg class="icon" width="100" height="38" viewBox="0 0 100 38">
           <switch>
             <use xlink:href="#icon-ctzn"></use>
@@ -1780,7 +1733,7 @@
     </ul>
   </header>
 
-  <section class="tangerine">
+  <section class="gold about">
     <div class="text">
       <h2>See progress <b>unfold.</b></h2>
       <h3>A new way to connect, capture, and broadcast your push for good.</h3>
@@ -1800,23 +1753,23 @@
       <figure class="preview">
         <div>
           <!--
-          <iframe width="375" height="667" src="http://www.ctznapp.qa2.goodalpaca.com/live_channel/1582E0C6" frameborder="0" allowfullscreen></iframe>
+          <iframe width="375" height="667" src="http://www.ctznapp-qa2.com/live_channel/1582E0C6" frameborder="0" allowfullscreen></iframe>
           <iframe width="375" height="667" src="promote-channel-1.html" frameborder="0" allowfullscreen></iframe>
           -->
-          <iframe class="channel" width="375" height="667" src="http://www.ctznapp.qa2.goodalpaca.com/push/9C044CCA/bulletproof?channel=1" frameborder="0" allowfullscreen></iframe>
+          <iframe class="channel" width="375" height="667" src="http://www.ctznapp-qa2.com/push/9C044CCA/bulletproof?channel=1" frameborder="0" allowfullscreen></iframe>
         </div>
       </figure>
     </div>
   </section>
 
   <div class="channels">
-    <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/C50609F6/kaboom?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/93311448/dare-to-imagine?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/0094EAB8/milk-bookies?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/0E4E704E/good?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/C50609F6/kaboom?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/93311448/dare-to-imagine?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0094EAB8/milk-bookies?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0E4E704E/good?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
   </div>
 
-  <section class="periwinkle">
+  <section class="periwinkle good">
     <div class="figure">
       <figure>
         <a href="http://magazine.good.is/guides/push-for-good">
@@ -1836,7 +1789,7 @@
     </div>
   </section>
 
-  <section class="apple">
+  <section class="red features">
     <div class="text">
       <h2>Built for changemakers. <b>Free to use.</b></h2>
 
@@ -1916,13 +1869,13 @@
   </section>
 
   <div class="channels">
-    <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/3C1F8367/tfa-la-corps?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/86B01D86/perthes-kids-foundation?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/095380B5/100startswith1-celebration-party?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/4B466AC0/community-services-unlimited?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/3C1F8367/tfa-la-corps?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/86B01D86/perthes-kids-foundation?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/095380B5/100startswith1-celebration-party?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/4B466AC0/community-services-unlimited?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
   </div>
 
-  <section class="orange">
+  <section class="orange media">
     <div class="text">
       <h2>Raise the <b>collective voice.</b></h2>
       <h3>Tell your story, from every perspective.</h3>
@@ -1932,22 +1885,22 @@
     <figure class="channels">
       <div>
         <h4>For Communities</h4>
-        <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/A6A6B903/great-streets-network-of-champions?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/A6A6B903/great-streets-network-of-champions?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
       </div>
       <div>
         <h4>For Organizations</h4>
-        <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/75FA699F/826la?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/75FA699F/826la?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
       </div>
       <div>
         <h4>For Projects + Events</h4>
-        <iframe width="320" height="240" src="http://www.ctznapp.qa2.goodalpaca.com/push/FE037887/manifest-justice?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/FE037887/manifest-justice?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
       </div>
     </figure>
 
   </section>
 
 
-  <section class="plumb">
+  <section class="purple tools">
     <div class="text">
       <h2>Made for &amp; by <b>communities.</b></h2>
 
@@ -1964,7 +1917,7 @@
     </div>
   </section>
 
-  <section class="boysenberry">
+  <section class="blue social">
     <div class="icons">
       <div>
         <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use></svg>
@@ -1980,7 +1933,7 @@
     </div>
   </section>
 
-  <section class="blueberry">
+  <section class="teal video">
     <div class="text">
       <h2>Social media <b>with intent.</b></h2>
 
@@ -1992,21 +1945,21 @@
       where they can exchange &amp; broadcast their key moments.</p>
 
       <div class="video">
-        <video width="200" height="200" poster="//assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.jpg=c640x640" preload="none" controls=""><source src="//assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.m4v" type="video/mp4"><source src="//assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.webm" type="video/webm">
+        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
           </div>
         </video>
 
-        <video width="200" height="200" poster="//assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.jpg=c640x640" preload="none" controls=""><source src="//assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.m4v" type="video/mp4"><source src="//assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.webm" type="video/webm">
+        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
           </div>
         </video>
 
-        <video width="200" height="200" poster="//assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.jpg=c640x640" preload="none" controls=""><source src="//assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.m4v" type="video/mp4"><source src="//assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.webm" type="video/webm">
+        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.webm" type="video/webm">
           <div class="video-fallback">
             <h4>Aw, shucks.</h4>
             <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
@@ -2024,7 +1977,7 @@
   </section>
 
 
-  <section class="strawberry">
+  <section class="magenta contact">
     <div class="text">
       <h2>Connect <b>with us.</b></h2>
       <h3>Ready to push your community forward on&nbsp;ctzn?</h3>
@@ -2061,12 +2014,12 @@
 
   </section>
 
-  <section class="lime" id="download">
+  <section class="lime download" id="download">
 
     <div class="text">
       <h2>Get the <b>CTZN app!</b></h2>
       <h3>CTZN is built for <span style="text-transform: none;">iOS and Android</span></h3>
-      <ul class="download" style="margin-top: 2.5em">
+      <ul class="download">
         <li>
           <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
             <svg width="135" height="40" viewBox="0 0 135 40">
@@ -2095,8 +2048,8 @@
     <div class="legal">
       <p>Copyright © 2015 GOOD Worldwide Inc</p>
       <ul>
-        <li><a href="//getctzn.com/privacy">Privacy Policy</a></li>
-        <li><a href="//getctzn.com/terms">Terms of Service</a></li>
+        <li><a href="http://getctzn.com/privacy">Privacy Policy</a></li>
+        <li><a href="http://getctzn.com/terms">Terms of Service</a></li>
       </ul>
     </div>
   </footer>
@@ -2109,6 +2062,7 @@
     var channels = document.querySelectorAll('.channels iframe, iframe.channel');
     var positions = [];
 
+    // KUDOS: http://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element#answer-442474
     function getOffset( el ) {
       var _x = 0;
       var _y = 0;

@@ -216,10 +216,10 @@ var fullscreenActive;
           if (candidate && candidate.nodeType === 1) break;
         } while (candidate = candidate.nextSibling);
       } else {
-        candidate = document.querySelector('main .list .item');
+        candidate = document.querySelector('.list .item');
       }
 
-      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main .list .item');
+      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('.list .item');
       return candidate;
     }
 
@@ -231,10 +231,10 @@ var fullscreenActive;
           if (candidate && candidate.nodeType === 1) break;
         } while (candidate = candidate.previousSibling);
       } else {
-        candidate = document.querySelector('main .list .item:last-child');
+        candidate = document.querySelector('.list .item:last-child');
       }
 
-      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('main .list .item:last-child');
+      if (!candidate || candidate.nodeType !== 1) candidate = document.querySelector('.list .item:last-child');
       return candidate;
     }
 
@@ -251,7 +251,7 @@ var fullscreenActive;
     }
 
     function updatePage() {
-      var items = document.querySelectorAll('main .list .item');
+      var items = document.querySelectorAll('.list .item');
 
       if (lastItem) addClassName(lastItem, 'inactive');
       removeClassName(currentItem, 'inactive');
@@ -484,19 +484,8 @@ var fullscreenActive;
       }
     }
 
-
-    var requestAnimationFrame = window.requestAnimationFrame ||
-                                window.mozRequestAnimationFrame ||
-                                window.webkitRequestAnimationFrame ||
-                                window.msRequestAnimationFrame;
-
-    var cancelAnimationFrame  = window.cancelAnimationFrame ||
-                                window.mozCancelAnimationFrame ||
-                                window.webkitCancelAnimationFrame ||
-                                window.msCancelAnimationFrame;
-
     function animateImage(image, duration) {
-      if (!Modernizr.flexbox || !requestAnimationFrame) return; // The animation depends on the image being centered via flexible box layout.
+      if (!Modernizr.flexbox) return; // The animation depends on the image being centered via flexible box layout.
 
       // Only animate the image if it has finished loading and has an aspect ratio class name (which will make the animation look sharp)
       var figure = getFigure(image);
@@ -548,25 +537,14 @@ var fullscreenActive;
       // And then move it to the final position
       var forward = translateAxis + "(" + (translateValue * -1) + "%) scale(" + (scaleDirection ? 1 : scaleValue) + ")";
 
-      var animation;
-      function animate() {
-        if (requestAnimationFrame) {
-          //animation = requestAnimationFrame(function() {
-            rewindTransition(image, backward);
-            animation = requestAnimationFrame(function() {
-              playTransition(image, forward, duration);
-            });
-          //});
-        }
-      }
-      animate();
+      rewindTransition(image, backward);
+      playTransition(image, forward, duration);
 
       // Stop the transition if the window changes size
       var throttle;
       function onWindowResize() {
         if (throttle) clearTimeout(throttle);
         throttle = setTimeout(function() {
-          if (animation && cancelAnimationFrame) cancelAnimationFrame(animation);
           stopTransition(image);
         }, 100);
       }
@@ -773,7 +751,7 @@ var fullscreenActive;
     (function() {
 
       // Start with the first item
-      var items = document.querySelectorAll('main .list .item');
+      var items = document.querySelectorAll('.list .item');
       currentItem = items[0];
 
       // Hide all of the items

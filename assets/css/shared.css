@@ -140,6 +140,7 @@
 
   /* =Note
   ----------------------------------------------- */
+  .option-list button .note, /* For the settings page */
   .option-list > p.note, /* For the “invite curator” form */
   .signup.page .note,
   form .note {
@@ -148,7 +149,7 @@
     /* @note */
     font-style: italic;
     font-size: 0.875em;
-    margin-top: 0.8571428571em; /* @line-height / 2 / 0.875em */
+    margin-top: 0.4285714286em; /* @line-height / 4 / 0.875em */
     color: rgb(153, 153, 153); /* @nickel */
   }
 
@@ -362,7 +363,7 @@
     background-color: rgb(159, 104, 246); /* @grape */
   }
   .avatar .bluebird {
-    background-color: rgb(0, 206,250); /* @bluebird */
+    background-color: rgb(0, 206, 250); /* @bluebird */
   }
   .avatar .cantaloupe {
     background-color: rgb(255, 203, 117); /* @cantaloupe */
@@ -561,6 +562,7 @@
   input[type="email"   ],
   input[type="password"],
   input[type="number"  ],
+  input[type="datetime-local"],
   textarea {
     font-family: inherit;
     font-size: inherit;
@@ -584,7 +586,7 @@
   .text-clone span,
   textarea {
     display: block;
-    height: 4.5em; /* @line-height x 3 */
+    height: 5.25em; /* @line-height x 3 + padding */
   }
   input[type="text"]:disabled {
     color: rgb(153, 153, 153); /* @nickel */
@@ -599,6 +601,7 @@
   .supports-placeholder input[type="email"   ],
   .supports-placeholder input[type="password"],
   .supports-placeholder input[type="number"  ],
+  .supports-placeholder input[type="datetime-local"],
   .supports-placeholder textarea {
     margin-top: 0;
     border-width: 0;
@@ -751,9 +754,10 @@
     margin-top: 0;
     display: inline-block;
     vertical-align: top;
+    margin-right: 1.5em;
   }
   .settings .datetime + .datetime {
-    margin-left: 1.5em;
+    margin-right: 0;
   }
   @media (max-width: 25em) {
     .settings .datetime {
@@ -764,9 +768,12 @@
       width: 100%;
     }
   }
-  .settings .datetime h3 {
+  .settings.page .datetime h3 {
     margin-top: 1.5em;
     margin-bottom: 0;
+  }
+  .settings.page .datetime + h3 {
+    margin-top: 1.5em;
   }
   .settings p.select {
     margin-top: 0;
@@ -1256,7 +1263,7 @@
     padding: 0.6666666667em; /* @line-height / 2 / 1.125 */
     line-height: 1.3333333333; /* @line-height / 1.125 */
     background: white;
-    color: rgb(101, 152, 254); /* @boysenberry */
+    color: rgb(101, 152, 254); /* @blue */
     color: rgb(60, 109, 218); /* @elderberry */
     font-weight: bold;
   }
@@ -1417,21 +1424,26 @@
     text-align: left;
     color: rgb(5, 5, 5); /* @tungsten */
   }
+  .connect.option-list button:disabled {
+    opacity: 1;
+    cursor: default;
+  }
+  .connect.option-list button:disabled:hover {
+    background: white;
+  }
   .tags.option-list button {
     padding-right: 3em;
   }
      .tags.option-list li .icon:last-child,
   .connect.option-list li .icon:last-child,
-  .connect.option-list button .icon:last-of-type:not(:first-of-type),
-  .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
+  .connect.option-list button .icon:last-of-type:not(:first-of-type) {
     margin-top: -0.75em;
     position: absolute;
     top: 1.375em !important;
     right: 0.75em;
     color: rgb(204, 204, 204); /* @aluminum */
   }
-  .connect.option-list button .icon:last-of-type:not(:first-of-type),
-  .option-list li a[role="checkbox"][aria-checked="true"] .icon:last-of-type:not(:first-of-type) {
+  .connect.option-list button .icon:last-of-type:not(:first-of-type) {
     color: rgb(102, 204, 0); /* @pear */
   }
 
@@ -1465,7 +1477,7 @@
     left: 1.5em;
     width: 1em;
     height: 1em;
-    margin-top: -0.5em;
+    margin-top: -0.45em;
     margin-left: -0.5em;
     -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
@@ -1686,6 +1698,10 @@
   .post-item header h3 a {
     color: inherit;
     text-decoration: none;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
   .hoverable .post-item header h3 a:hover,
              .post-item header h3 a:active,
@@ -1704,6 +1720,9 @@
     color: rgb(193, 193, 193);
     color: rgba(0, 0, 0, 0.25);
     font-size: 0.875em;
+
+    /* Attempt to keep the date on one line */
+    display: inline-block;
   }
   .post-item header p.source {
     float: right;
@@ -1750,7 +1769,6 @@
     list-style-type: disc;
   }
 
-  /* TBD: Are both of these in use? */
   .post-item .body img.video-fallback {
     margin-bottom: 0;
   }
@@ -1782,17 +1800,50 @@
     opacity: 0.8;
   }
 
-  /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-  .post-item .body img {
+  /* OPTIONAL: Show a color while the image is loading (or if it fails to load). */
+  .post-item .body img.primary:not(.loaded) {
     background-color: rgba(0, 0, 0, 0.25);
     min-width: 9em;
     min-height: 9em;
   }
-  /* TRICKY: Remove the minimum width and height, once the image has loaded
-            (panoramic images are sometimes shorter than the minimum height). */
-  .post-item .body img.loaded {
+
+  /* OPTIONAL: Show a preview instead of a color. */
+  .post-item .body figure {
+    position: relative;
+    padding: 0;
+    margin: 0.75em 0;
+    overflow: hidden;
+  }
+  .post-item .body figure img {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    margin: 0;
+  }
+  .post-item .body figure img.preview {
+    margin: calc(-3em);
+    width: calc(100% + 6em);
+    max-width: none;
+    -webkit-filter: blur(1.5em);
+            filter: blur(1.5em);
+  }
+  .post-item .body figure img.preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .post-item .body figure img.preview +     img.primary,
+  .post-item .body figure[style*="padding"] img.primary {
+    position: relative;
     min-width: 0;
     min-height: 0;
+    background-color: transparent;
+  }
+  .post-item .body figure[style*="padding"] img.primary,
+  .post-item .body figure[style*="padding"] img.preview + img.primary {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
 
@@ -2108,6 +2159,7 @@
     display: inline-block;
     white-space: nowrap;
     color: rgb(193, 193, 193);
+    color: rgba(0, 0, 0, 0.25);
     font-size: 0.6666666667em;
     text-transform: uppercase;
   }
@@ -2124,6 +2176,7 @@
   }
   .comments .post-item .body p {
     color: rgb(102, 102, 102); /* @tin */
+    color: rgba(0, 0, 0, 0.6);
   }
 
   /* Post footer */
@@ -2470,6 +2523,7 @@
   }
 
   /* OPTIONAL: Give edit and detail pages a white header. */
+  .action-details.page > header,
   .mix.page          > header,
   .mixes.page        > header,
   .mix-editor.page   > header,
@@ -2481,6 +2535,7 @@
     color: black;
     border-bottom-color: rgb(222, 222, 222); /* @silver */
   }
+  .action-details.page > header a,
   .mix.page          > header a,
   .mixes.page        > header a,
   .mix-editor.page   > header a,
@@ -2491,6 +2546,9 @@
     border-color: transparent !important;
     color: rgb(102, 102, 102); /* @tin */
   }
+  .hoverable .action-details.page > header a:hover,
+             .action-details.page > header a:active,
+             .action-details.page > header a:focus,
   .hoverable .mix.page          > header a:hover,
              .mix.page          > header a:active,
              .mix.page          > header a:focus,
@@ -2795,6 +2853,7 @@
   }
 
   ul.create li {
+    position: relative;
     display: inline-block;
     -webkit-flex-grow: 1;
             flex-grow: 1;
@@ -2832,6 +2891,30 @@
              ul.create li a:active .icon,
              ul.create li a:focus  .icon {
     fill: currentColor;
+  }
+  ul.create p[role="status"] {
+    margin: 0;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    /* @hidden-accessible-text */
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  ul.create p[role="status"]:before {
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 49, 102); /* @pitaya */
+    top: 50%;
+    left: 50%;
+    width: 0.325em;
+    height: 0.325em;
+    margin-top: -0.6625em;
+    margin-left: -1.1625em;
+    border-radius: 100%;
   }
 
 
@@ -2894,29 +2977,29 @@
   .push-card.lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .push-card.cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
+  .push-card.green {
+    background-color: rgb(60, 210, 0); /* @green */
   }
-  .push-card.blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
+  .push-card.teal {
+    background-color: rgb(0, 204, 204); /* @teal */
   }
-  .push-card.boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
+  .push-card.blue {
+    background-color: rgb(101, 152, 254); /* @blue */
   }
   .push-card.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .push-card.plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+  .push-card.purple {
+    background-color: rgb(181, 62, 194); /* @purple */
   }
-  .push-card.strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
+  .push-card.magenta {
+    background-color: rgb(250, 44, 162); /* @magenta */
   }
-  .push-card.apple {
-    background-color: rgb(255, 0, 86); /* @apple */
+  .push-card.red {
+    background-color: rgb(255, 0, 86); /* @red */
   }
-  .push-card.tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
+  .push-card.gold {
+    background-color: rgb(255, 204, 0); /* @gold */
   }
   .push-card.orange {
     background-color: rgb(255, 117, 9); /* @orange */
@@ -2967,6 +3050,10 @@
              .push-card .action a:active,
              .push-card .action a:focus {
     background-color: black;
+  }
+  .push-card .social a {
+    background-color: transparent;
+    padding: 0.375em;
   }
 
   /* For the “Join us on CTZN” link on the public page for a push */
@@ -3039,10 +3126,10 @@
   }
 
   /* SHIM: Allow the website URL on the push preview page to be as wide as the column or screen
-
-  (Should this style apply to all of the buttons, except the ones inside of a list?)
-
-  */
+           (Should this style apply to all of the buttons, except the ones inside of a list?) */
+  /* SHIM: These selector contain a “p” which makes them more specific than the rules that follow.
+           (This should probably be moved after the rules it’s intended to override.) */
+  .public.page nav         p.action a,
   .push-card.page .details p.action a {
     display: inline-block;
     width: auto;
@@ -3071,6 +3158,7 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+  .public.page nav .action a,
   .login  > div   .action  a,
   .signup > div   .action  a,
   .dialog.page    .action  a,
@@ -3100,6 +3188,7 @@
   }
 
   /* SHIM: Make website link on the public page and profile look the same. */
+  .public.page nav .action a,
   .push-card.page .details .action.website a {
     background: rgb(51, 51, 51);
     background: rgba(0, 0, 0, 0.25);
@@ -3241,6 +3330,21 @@
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
+
+  /* Social buttons (for the profile page) */
+  .header.push-card .meta p.social {
+    margin: 0;
+    float: right;
+  }
+  .header.push-card .meta p.social a {
+    display: inline-block;
+    padding-top: 1.125em;
+    padding-bottom: 1.125em;
+    margin-left: -0.25em;
+    margin-right: -0.25em;
+    color: white;
+  }
+
 
   /* Settings button (for the push page) */
   .header.push-card .meta:after {
@@ -3611,6 +3715,7 @@
   .hoverable .file input[type="file"]:hover   ~ span,
              .file input[type="file"]:active  ~ span,
              .file input[type="file"]:focus   ~ span {
+    background: transparent;
     color: black;
   }
   form .images {
@@ -3853,29 +3958,29 @@
   .mix .lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .mix .cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
+  .mix .green {
+    background-color: rgb(60, 210, 0); /* @green */
   }
-  .mix .blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
+  .mix .teal {
+    background-color: rgb(0, 204, 204); /* @teal */
   }
-  .mix .boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
+  .mix .blue {
+    background-color: rgb(101, 152, 254); /* @blue */
   }
   .mix .periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .mix .plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+  .mix .purple {
+    background-color: rgb(181, 62, 194); /* @purple */
   }
-  .mix .strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
+  .mix .magenta {
+    background-color: rgb(250, 44, 162); /* @magenta */
   }
-  .mix .apple {
-    background-color: rgb(255, 0, 86); /* @apple */
+  .mix .red {
+    background-color: rgb(255, 0, 86); /* @red */
   }
-  .mix .tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
+  .mix .gold {
+    background-color: rgb(255, 204, 0); /* @gold */
   }
   .mix .orange {
     background-color: rgb(255, 117, 9); /* @orange */
@@ -4324,29 +4429,29 @@
   .mix-editor .preview.lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-  .mix-editor .preview.cucumber {
-    background-color: rgb(60, 210, 0); /* @cucumber */
+  .mix-editor .preview.green {
+    background-color: rgb(60, 210, 0); /* @green */
   }
-  .mix-editor .preview.blueberry {
-    background-color: rgb(0, 204, 204); /* @blueberry */
+  .mix-editor .preview.teal {
+    background-color: rgb(0, 204, 204); /* @teal */
   }
-  .mix-editor .preview.boysenberry {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
+  .mix-editor .preview.blue {
+    background-color: rgb(101, 152, 254); /* @blue */
   }
   .mix-editor .preview.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-  .mix-editor .preview.plumb {
-    background-color: rgb(181, 62, 194); /* @plumb */
+  .mix-editor .preview.purple {
+    background-color: rgb(181, 62, 194); /* @purple */
   }
-  .mix-editor .preview.strawberry {
-    background-color: rgb(250, 44, 162); /* @strawberry */
+  .mix-editor .preview.magenta {
+    background-color: rgb(250, 44, 162); /* @magenta */
   }
-  .mix-editor .preview.apple {
-    background-color: rgb(255, 0, 86); /* @apple */
+  .mix-editor .preview.red {
+    background-color: rgb(255, 0, 86); /* @red */
   }
-  .mix-editor .preview.tangerine {
-    background-color: rgb(255, 204, 0); /* @tangerine */
+  .mix-editor .preview.gold {
+    background-color: rgb(255, 204, 0); /* @gold */
   }
   .mix-editor .preview.orange {
     background-color: rgb(255, 117, 9); /* @orange */
@@ -4825,13 +4930,16 @@
     margin: 0;
   }
   .page .switch,
-  .profile.page .post-list-header {
+  .post-list-header,
+  .page > .post-list-header {
     padding-top: 0;
     padding-bottom: 0;
     max-width: 29.5em;
+    margin-left: auto;
+    margin-right: auto;
   }
   .profile.page .switch h2,
-  .profile.page .post-list-header h2 {
+  .post-list-header h2 {
     margin: 0;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -4848,7 +4956,7 @@
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
-  .profile.page .post-list-header + .post-list {
+  .post-list-header + .post-list {
     margin-top: 0;
   }
 
@@ -4862,7 +4970,7 @@
       margin-top: 1.5em;
     }
     .page .switch,
-    .profile.page .post-list-header {
+    .post-list-header {
       margin-top: 1.5em;
     }
   }
@@ -4876,53 +4984,66 @@
   .edit-profile .full-name input[type="text"] {
     font-weight: bold;
   }
-  .edit-profile .file {
+
+  /* Multiple images */
+  .edit-profile form > ol.images,
+  .edit-profile form > p.avatar,
+  .edit-profile form > p.file {
+    text-align: center;
+  }
+  .edit-profile .file .avatar {
+    display: block;
+    margin-bottom: 0.75em;
+  }
+
+  /* DEPRECATED: (for a single image) */
+  .edit-profile .single.file {
     text-align: center;
     color: rgb(102, 102, 102); /* @tin */
   }
-  .edit-profile .file .loading-image,
-  .edit-profile .file .avatar {
+  .edit-profile .single.file .loading-image,
+  .edit-profile .single.file .avatar {
     display: block;
     margin: 0 auto 0.75em;
   }
-  .edit-profile .file .loading-image {
+  .edit-profile .single.file .loading-image {
     width: 100px; /* profile image size */
     height: 100px;
     background-color: rgb(51, 51, 51); /* @iron */
     border-radius: 50%;
     position: relative;
   }
-  .edit-profile .file .loading-image .sending.icon {
+  .edit-profile .single.file .loading-image .sending.icon {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-left: -1.25em;
     margin-top: -0.25em;
   }
-  .edit-profile .file .sending-icon {
+  .edit-profile .single.file .sending-icon {
     display: block;
   }
-  .edit-profile .file label,
-  .edit-profile .file label > span {
+  .edit-profile .single.file label,
+  .edit-profile .single.file label > span {
     display: block;
   }
-  .edit-profile .file label {
+  .edit-profile .single.file label {
     padding-top: 0;
   }
-  .edit-profile .file img {
+  .edit-profile .single.file img {
     display: block;
     margin: -0.125em auto 0.375em;
     border-radius: 100%;
     border: 0.125em solid transparent;
   }
-  .edit-profile input[type="file"] {
+  .edit-profile .single.file input[type="file"] {
     position: absolute;
     left: -9999px;
   }
-  .edit-profile input[type="file"]:focus ~ span span {
+  .edit-profile .single.file input[type="file"]:focus ~ span span {
     color: rgb(51, 51, 51); /* @iron */
   }
-  .edit-profile input[type="file"]:focus ~ span img {
+  .edit-profile .single.file input[type="file"]:focus ~ span img {
     border-color: rgb(102, 102, 102); /* @tin */
   }
 
@@ -5129,22 +5250,10 @@
   }
 
 
-  /* Deprecated (consider using an input checkbox instead) */
-  .option-list a[role="checkbox"] {
-    background-image: none;
-  }
-  .connect.option-list button,
-  .option-list a[role="checkbox"][aria-checked="false"] {
+  .connect.option-list button {
     color: rgb(153, 153, 153); /* @nickel */
   }
-  .option-list a[role="checkbox"][aria-checked="false"] {
-    background-image: none;
-  }
-  .option-list a[role="checkbox"][aria-checked="false"] .icon {
-    color: inherit;
-  }
-  .connect.option-list .active button,
-  .option-list a[role="checkbox"][aria-checked="true"] {
+  .connect.option-list .active button {
     color: rgb(5, 5, 5); /* @tungsten */
   }
 
@@ -5215,7 +5324,7 @@
   }
   .dialog.page .action a.restart,
   .dialog.page    button.restart {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
+    background-color: rgb(101, 152, 254); /* @blue */
   }
   .hoverable .dialog.page .action a.reinstall:hover,
              .dialog.page .action a.reinstall:active,
@@ -5232,7 +5341,7 @@
   .hoverable .dialog.page    button.restart:hover,
              .dialog.page    button.restart:active,
              .dialog.page    button.restart:focus {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
+    background-color: rgb(101, 152, 254); /* @blue */
     background-color: rgb(81, 132, 234); /* 4% darker */
   }
   .dialog.page .action {
@@ -5566,171 +5675,8 @@
   }
 
 
-  /* =Featured (public page)
+  /* =Push Card Page
   ----------------------------------------------- */
-  .push-card .post-list .post-item {
-    background: rgba(0, 0, 0, 0.1);
-  }
-
-  /* Position post headers at the bottom */
-  .push-card .post-list .post-item {
-    padding: 0 0 3.75em 0;
-  }
-  .push-card .post-list .post-item header {
-    color: rgba(255, 255, 255, 1);
-    padding: 1.5em;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    z-index: 2;
-    margin-bottom: 0;
-    font-size: 0.6875em; /* 12px / @font-size */
-  }
-  .push-card .post-list .post-item header .avatar {
-    position: static;
-    margin-right: 0.5em;
-  }
-  .push-card .post-list .post-item header time {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  .push-card .post-list .post-item header .source {
-    position: absolute;
-    margin-bottom: -3em;
-    bottom: 6em;
-    bottom: 100vh;
-    left: 3em;
-  }
-  .push-card .post-list .post-item .body {
-    padding: 1.5em 3em 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: bold;
-  }
-  .push-card .post-list .post-item .body .source {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 1.5em;
-    color: rgba(255, 255, 255, 1);
-  }
-  .push-card .post-list .post-item .body p {
-    color: inherit;
-  }
-
-  /* SHIM: The source appears before the body on the preview page, in the app.
-           (If we make it consistent with the normal preview page (the one outside the app),
-           this rule can be removed) */
-  .push-card .post-list .post-item > .source {
-    color: rgba(255, 255, 255, 1);
-    text-align: center;
-    padding-top: 1.5em;
-    margin-bottom: -0.75em;
-  }
-
-  /* SHIM: Prevent a scrollbar on small screens (the images element overlaps the edge by 1 pixel). */
-  .push-card .post-list .post-item .images {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* OPTIONAL: Make images stick to the left and right edge of the post */
-  .push-card .post-list .post-item .images img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-  }
-
-  /* OPTIONAL: Show something while the image is loading (or if it fails to load). */
-  .push-card .post-list .post-item .images img {
-    background-color: rgba(0, 0, 0, 0.25);
-    min-height: 9em;
-  }
-
-  /* OPTIONAL: Position multiple images in a grid */
-  .push-card .post-list .post-item .images:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .push-card .post-list .post-item .images.n2     img,
-  .push-card .post-list .post-item .images.n-even img,
-  .push-card .post-list .post-item .images.n-odd  img {
-    width: 50%;
-    float: left;
-  }
-  .push-card .post-list .post-item .images.n-even figure:nth-child(n+3) img,
-  .push-card .post-list .post-item .images.n-odd  figure:nth-child(n+3) img {
-    border-top: 0.0625em solid black; /* 1px / @font-size */
-  }
-  .push-card .post-list .post-item .images.n-odd figure:last-child img {
-    width: 100%;
-    /*
-    TRICKY: This causes the image to appear in the wrong place in Firefox, strangly.
-
-    float: none;
-    */
-  }
-  .push-card .post-list .post-item .images.n2     figure:nth-child(2n) img,
-  .push-card .post-list .post-item .images.n-even figure:nth-child(2n) img,
-  .push-card .post-list .post-item .images.n-odd  figure:nth-child(2n) img {
-    border-left: 0.0625em solid black; /* 1px / @font-size */
-    margin-right: -0.0625em;
-  }
-
-  /* OPTIONAL: Add a pointer below the images */
-  .push-card .post-list .post-item .images + .body {
-    position: relative;
-  }
-  .push-card .post-list .post-item .images + .body:before,
-  .push-card .post-list .post-item .images + .body:after {    
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 1em;
-    height: 1em;
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
-  }
-  .push-card .post-list .post-item .images + .body:after {
-    background: rgba(0, 0, 0, 0.1); /* .post-item background-color */
-  }
-
-  .push-card.lime .post-item .images + .body:before {
-    background-color: rgb(176, 224, 0); /* @lime */
-  }
-  .push-card.cucumber .post-item .images + .body:before {
-    background-color: rgb(60, 210, 0); /* @cucumber */
-  }
-  .push-card.blueberry .post-item .images + .body:before {
-    background-color: rgb(0, 204, 204); /* @blueberry */
-  }
-  .push-card.boysenberry .post-item .images + .body:before {
-    background-color: rgb(101, 152, 254); /* @boysenberry */
-  }
-  .push-card.periwinkle .post-item .images + .body:before {
-    background-color: rgb(109, 90, 219); /* @periwinkle */
-  }
-  .push-card.plumb .post-item .images + .body:before {
-    background-color: rgb(181, 62, 194); /* @plumb */
-  }
-  .push-card.strawberry .post-item .images + .body:before {
-    background-color: rgb(250, 44, 162); /* @strawberry */
-  }
-  .push-card.apple .post-item .images + .body:before {
-    background-color: rgb(255, 0, 86); /* @apple */
-  }
-  .push-card.tangerine .post-item .images + .body:before {
-    background-color: rgb(255, 204, 0); /* @tangerine */
-  }
-  .push-card.orange .post-item .images + .body:before {
-    background-color: rgb(255, 117, 9); /* @orange */
-  }
 
   /* OPTIONAL: Hide the “powered by” text on small screens */
   @media (max-width: 30em) {
@@ -5779,4 +5725,364 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+
+  /* =Public Page
+  ----------------------------------------------- */
+  .public.page .post-list li {
+    max-width: none;
+  }
+  .public.page .post-item {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  .public.page nav .next {
+    padding-bottom: 4.5em;
+  }
+  .public.page .details + nav {
+    margin-top: 1.5em;
+    padding-top: 3.625em;
+    padding-bottom: 1px;
+    border-top: 0.0625em solid rgba(0, 0, 0, 0.2);
+  }
+
+  .public.page .post-item header {
+    position: relative;
+
+    padding: 1.5em;
+    margin-bottom: 0;
+    font-size: 0.75em; /* 12px / @font-size */
+  }
+  .public.page .post-item.text-only {
+    background: rgb(238, 238, 238); /* @seashell */
+    color: black;
+  }
+  .public.page .post-item.text-only a {
+    min-height: 50vw;
+
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-direction: row;
+            flex-direction: row;
+
+    -webkit-align-items: center;
+            align-items: center;
+
+    -webkit-align-content: center;
+            align-content: center;
+
+    -webkit-justify-content: center;
+            justify-content: center;
+
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .public.page .post-item.text-only .body {
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 2.25em 2.25em 3.75em;
+    font-weight: normal;
+  }
+  @media (min-width: 40em) {
+    .public.page .post-item.text-only .body {
+      font-size: 1.5em;
+      padding-bottom: 3em;
+    }
+  }
+
+  .public.page .post-item .body p {
+    margin: 0 auto;
+    max-width: 32em;
+  }
+
+  .public.page .post-item header .avatar {
+    position: static;
+    margin-right: 0.5em;
+  }
+  .public.page .post-item header p {
+    color: inherit;
+  }
+  .public.page .post-item header time {
+    color: inherit;
+    opacity: 0.5;
+  }
+
+  /* OPTIONAL: Position post headers at the bottom */
+  .public.page .post-item > a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+  }
+  .public.page .post-item .images:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent, transparent 60%, rgba(0, 0, 0, 0.75));
+  }
+  .public.page .post-item header {
+    padding: 1.5em;
+    background: transparent;
+    box-shadow: none;
+    color: black;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    z-index: 2;
+  }
+  .public.page .post-item.has-images header {
+    color: white;
+  }
+
+  .public.page .post-list li > a {
+    text-decoration: none;
+  }
+
+  .public.page .post-item  header time {
+    transition: opacity 0.2s;
+  }
+
+  /* OPTIONAL: Make images stick to the left and right edge of the post */
+  .public.page .post-item .images img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  /* OPTIONAL: Show a preview image while the real image is loading */
+  .public.page .post-item .images figure[style*="padding"] {
+    position: relative;
+
+    /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
+    overflow: hidden;
+
+    /* TRICKY: This causes iOS 7 & 8 to crash.
+    -webkit-transform: translate3d(0, 0, 0);
+    */
+  }
+  .public.page .post-item .images figure[style*="padding"] img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-width: none;
+  }
+  .public.page .post-item .images img.preview {
+    margin: calc(-3em);
+    width: calc(100% + 6em) !important;
+    -webkit-filter: blur(1.5em);
+            filter: blur(1.5em);
+  }
+
+  /* OPTIONAL: Show an icon while the image is loading (if a preview images isn’t available) */
+  .public.page .post-item .images figure:not([style*="padding"]):not(.loaded) img {
+    min-height: 200px;
+    min-height: 25vw;
+
+    /* @icon-picture */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.457 1.228h-14.912c-0.726 0-1.316 0.589-1.316 1.316v14.912c0 0.726 0.589 1.316 1.316 1.316h14.912c0.726 0 1.316-0.589 1.316-1.316v-14.912c0-0.726-0.589-1.316-1.316-1.316zM17.237 17.237h-14.474v-14.474h14.474v14.474z" fill="rgba(0, 0, 0, 0.25)"></path><path d="M13.859 7.588c0 0.678-0.55 1.228-1.228 1.228s-1.228-0.55-1.228-1.228c0-0.678 0.55-1.228 1.228-1.228s1.228 0.55 1.228 1.228z" fill="rgba(0, 0, 0, 0.25)"></path><path d="M4.737 15.833h10.526c0.193 0 0.351-0.158 0.351-0.351v-3.509c0-0.122-0.063-0.236-0.167-0.299s-0.233-0.070-0.341-0.016l-3.351 1.676-6.861-3.43c-0.109-0.054-0.238-0.049-0.341 0.016s-0.167 0.176-0.167 0.299v5.263c0 0.193 0.157 0.351 0.351 0.351z" fill="rgba(0, 0, 0, 0.25)"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 50%;
+  }
+
+  /* OPTIONAL: Make details fill more of the viewport height on tall screens */
+  @media (min-height: 40em) {
+    .public.page .details {
+      max-width: none;
+
+      min-height: 70vh;
+      min-height: calc(100vh - 18.0625em);
+
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .public.page .details .name {
+      font-size: 10vmin;
+    }
+  }
+
+
+
+  /* OPTIONAL: Arrange the posts in columns. */
+  /*
+  This is commented out, to avoid a bug in the current version of Chrome:
+  Positioned elements (e.g. position: absolute) don’t appear when using CSS columns…
+  https://code.google.com/p/chromium/issues/detail?id=527709
+
+  .public.page .post-list {
+    -webkit-column-gap: 0;
+       -moz-column-gap: 0;
+            column-gap: 0;
+  }
+  .public.page .post-list .post-item {
+    -webkit-column-break-inside: avoid;
+              page-break-inside: avoid;
+                   break-inside: avoid;
+  }
+  @media (min-width: 48em) {
+    .public.page .post-list {
+      -webkit-column-count: 2;
+         -moz-column-count: 2;
+              column-count: 2;
+    }
+  }
+  @media (min-width: 96em) {
+    .public.page .post-list {
+      -webkit-column-count: 3;
+         -moz-column-count: 3;
+              column-count: 3;
+    }
+  }
+  @media (min-width: 144em) {
+    .public.page .post-list {
+      -webkit-column-count: 4;
+         -moz-column-count: 4;
+              column-count: 4;
+    }
+  }
+  @media (min-width: 192em) {
+    .public.page .post-list {
+      -webkit-column-count: 5;
+         -moz-column-count: 5;
+              column-count: 5;
+    }
+  }
+  */
+
+  /* OPTIONAL: Use “Packery” to lay out the posts according to their aspect ratio. http://packery.metafizzy.co */
+  /*
+  .public.page .packery.post-list {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
+  */
+  .public.page .packery.post-list > li {
+    max-width: none;
+  }
+  .public.page .packery.post-list .post-item {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* SHIM: Disable Packery on small screens */
+  @media (max-width: 39.9em) {
+    .public.page .packery.post-list {
+      height: auto !important;
+    }
+    .public.page .packery.post-list .post-item {
+      position: relative !important;
+      top: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      left: auto !important;
+      opacity: 1 !important;
+      -webkit-transform: none !important;
+              transform: none !important;
+    }
+  }
+
+  @media (min-width: 60em) {
+    .public.page .packery.post-list .post-item {
+      max-width: none;
+    }
+    .public.page .packery.post-list .post-item.square,
+    .public.page .packery.post-list .post-item.portrait {
+      width: 50%;
+    }
+    .public.page .packery.post-list .post-item.text-only,
+    .public.page .packery.post-list .post-item.landscape,
+    .public.page .packery.post-list .post-item.panoramic {
+      width: 100%;
+    }
+  }
+  @media (min-width: 90em) {
+    .public.page .packery.post-list .post-item.text-only {
+      width: 50%;
+    }
+  }
+  @media (min-width: 120em) {
+    .public.page .packery.post-list .post-item.landscape {
+      width: 50%;
+    }
+  }
+
+
+
+  /* =Public Page (Single Post)
+  ----------------------------------------------- */
+  .public-post > div {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @media (min-height: 30em) {
+    .push-card .details {
+      margin-top: 1.5em;
+    }
+  }
+  .public-post .details + .post-item {
+    margin-top: 3em;
+  }
+  @media (min-width: 25em) {
+    .public-post.push-card .details .name {
+      font-size: 2em;
+    }
+  }
+  .public-post .details .name a {
+    text-decoration: none;
+  }
+  .public-post nav {
+    margin-top: 3em;
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+  }
+  .public-post nav:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .public-post nav .next {
+    float: right;
+  }
+  .public-post nav .previous {
+    float: left;
+  }
+  .public-post nav .next a,
+  .public-post nav .previous a {
+    text-decoration: none;
+    color: white;
+  }
+
 

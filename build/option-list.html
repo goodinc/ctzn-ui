@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="hoverable">
 <head>
   <meta charset="utf-8" />
-  <title>Icons / CTZN</title>
+  <title>Option List / CTZN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -341,6 +341,7 @@
         </a>
       </li>
       <li>
+        <!-- (to make URL copying easier) -->
         <a href="" target="_blank" class="disabled" onclick="event.preventDefault();">
           Disabled link
         </a>
@@ -353,6 +354,29 @@
       </li>
     </ul>
   </div>
+  <pre><code>&lt;div class=&quot;option-list&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;http://getctzn.com&quot;&gt;
+        Link
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;http://getctzn.com&quot; <mark>class=&quot;disabled&quot;</mark> onclick=&quot;event.preventDefault();&quot;&gt;
+        Disabled link
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;http://getctzn.com&quot;&gt;
+        &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+          &lt;switch&gt;&lt;use xlink:href=&quot;#icon-link&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Link&lt;/foreignObject&gt;&lt;/switch&gt;
+        &lt;/svg&gt;
+        Link with an icon
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
   <h2>Text</h2>
 
@@ -363,18 +387,36 @@
       </li>
     </ul>
   </div>
+  <pre><code>&lt;div class=&quot;option-list&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;span <mark>class=&quot;text&quot;</mark>&gt;letsneighbor&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
   <h2>Buttons</h2>
 
   <div class="option-list">
     <ul>
       <li>
-        <form action="" method="post">
-          <button>Leave Push</button>
+        <form action="/do/action" method="post">
+          <button>Do Action</button>
         </form>
       </li>
     </ul>
   </div>
+  <pre><code>&lt;div class=&quot;option-list&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;form action=&quot;/do/action&quot; method=&quot;post&quot;&gt;
+        &lt;button&gt;Do Action&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
   <h2>Delete Buttons</h2>
 
@@ -398,6 +440,27 @@
       </li>
     </ul>
   </div>
+  <pre><code>&lt;div class=&quot;<mark>tags</mark> option-list&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+        &lt;button type=&quot;submit&quot; title=&quot;Delete this hashtag&quot;&gt;
+          &lt;span&gt;#freelotsangeles&lt;/span&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+        &lt;button type=&quot;submit&quot; title=&quot;Delete this hashtag&quot;&gt;
+          &lt;span&gt;#myla&lt;/span&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
   <h2>Checkboxes</h2>
 
@@ -417,27 +480,63 @@
       </label>
     </li>
   </ul>
+  <pre><code>&lt;ul class=&quot;option-list&quot;&gt;
+  &lt;li&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; /&gt;
+      &lt;span&gt;Option&lt;/span&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+    &lt;/label&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; <mark>checked=&quot;checked&quot;</mark> /&gt;
+      &lt;span&gt;Another Option&lt;/span&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+    &lt;/label&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
 
   <h2>Radio Buttons</h2>
 
-  <div class="option-list">
-    <ul>
-      <li>
-        <label>
-          <input type="radio" name="variablename" value="a" />
-          <span>Option A</span>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="radio" name="variablename" value="b" checked="checked" />
-          <span>Option B</span>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
-        </label>
-      </li>
-    </ul>
-  </div>
+<div class="option-list">
+  <ul>
+    <li>
+      <label>
+        <input type="radio" name="variablename" value="a" />
+        <span>Option A</span>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="variablename" value="b" checked="checked" />
+        <span>Option B</span>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
+      </label>
+    </li>
+  </ul>
+</div>
+<pre><code>&lt;div class=&quot;option-list&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;variablename&quot; value=&quot;a&quot; /&gt;
+        &lt;span&gt;Option A&lt;/span&gt;
+        &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+      &lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;variablename&quot; value=&quot;b&quot; <mark>checked=&quot;checked&quot;</mark> /&gt;
+        &lt;span&gt;Option B&lt;/span&gt;
+        &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+      &lt;/label&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
   <h2>Connect Buttons</h2>
 
@@ -457,12 +556,39 @@
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch></svg>
             <span>@brianatgood</span>
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>is syncing</foreignObject></switch></svg>
-            <p class="note">Pulls in photos and status updates from your account.</p>
+            <span class="note">Pulls in photos and status updates from your account.</span>
           </button>
         </form>
       </li>
     </ul>
   </div>
+  <pre><code>&lt;div class=&quot;<mark>connect</mark> option-list&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;twitter&quot;&gt;
+      &lt;form action=&quot;/connect&quot; method=&quot;post&quot;&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-twitter&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;span&gt;Sync My Twitter&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;twitter <mark>active</mark>&quot;&gt;
+      &lt;form action=&quot;/disconnect&quot; method=&quot;post&quot;&gt;
+        &lt;button type=&quot;submit&quot; title=&quot;Remove this account from CTZN&quot;&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+            &lt;switch&gt;&lt;use xlink:href=&quot;#icon-twitter&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Twitter&lt;/foreignObject&gt;&lt;/switch&gt;
+          &lt;/svg&gt;
+          &lt;span&gt;@brianatgood&lt;/span&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+            &lt;switch&gt;&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;is syncing&lt;/foreignObject&gt;&lt;/switch&gt;
+          &lt;/svg&gt;
+          &lt;span class=&quot;note&quot;&gt;Pulls in photos and status updates from your account.&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
   <h2>Upgrade Connection</h2>
 
@@ -474,20 +600,49 @@
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></switch></svg>
             <span class="username">Brian Nilsen</span>
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>is syncing</foreignObject></switch></svg>
-            <p class="note">Pulls in photos and status updates from your account.</p>
+            <span class="note">Pulls in photos and status updates from your account.</span>
           </button>
         </form>
       </li>
     </ul>
-    <div class="reconnect">
+    <form action="" method="post" class="reconnect">
       <p>
         Reconnect Facebook to also post videos and content from Facebook Groups you&nbsp;manage.
-        <button>
+        <button type="submit">
           <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-refresh"></use><foreignObject>Refresh</foreignObject></switch></svg>
         </button>
       </p>
-    </div>
+    </form>
   </div>
+  <pre><code>&lt;div class=&quot;connect option-list&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;facebook active&quot;&gt;
+      &lt;form action=&quot;/disconnect&quot; method=&quot;post&quot;&gt;
+        &lt;button type=&quot;submit&quot; title=&quot;Remove this account from CTZN&quot;&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+            &lt;switch&gt;&lt;use xlink:href=&quot;#icon-facebook&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Facebook&lt;/foreignObject&gt;&lt;/switch&gt;
+          &lt;/svg&gt;
+          &lt;span class=&quot;username&quot;&gt;Brian Nilsen&lt;/span&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+            &lt;switch&gt;&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;is syncing&lt;/foreignObject&gt;&lt;/switch&gt;
+          &lt;/svg&gt;
+          &lt;span class=&quot;note&quot;&gt;Pulls in photos and status updates from your account.&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;form action=&quot;…&quot; method=&quot;post&quot; class=&quot;<mark>reconnect</mark>&quot;&gt;
+    &lt;p&gt;
+      Reconnect Facebook to also post videos and content from Facebook Groups you&amp;manage.
+      &lt;button type=&quot;submit&quot;&gt;
+        &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+          &lt;switch&gt;&lt;use xlink:href=&quot;#icon-refresh&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Refresh&lt;/foreignObject&gt;&lt;/switch&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/p&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
 
   <h2>Connection Failed</h2>
 
@@ -499,6 +654,8 @@
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch></svg>
             <span>@brianatgood</span>
           </button>
+        </form>
+        <form action="" method="post">
           <button type="submit" class="settings" title="Please sign in to sync this account again">
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-alert"></use><foreignObject>This account is not syncing</foreignObject></switch></svg>
           </button>
@@ -506,94 +663,123 @@
       </li>
     </ul>
   </div>
+  <pre><code>&lt;div class=&quot;connect option-list&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;twitter active&quot;&gt;
+      &lt;form action=&quot;/disconnect&quot; method=&quot;post&quot;&gt;
+        &lt;button type=&quot;submit&quot; title=&quot;Remove this account from CTZN&quot;&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+            &lt;switch&gt;&lt;use xlink:href=&quot;#icon-twitter&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Twitter&lt;/foreignObject&gt;&lt;/switch&gt;
+          &lt;/svg&gt;
+          &lt;span&gt;@brianatgood&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/form&gt;
+      &lt;form action=&quot;/reconnect&quot; method=&quot;post&quot;&gt;
+        &lt;button type=&quot;submit&quot; <mark>class=&quot;settings&quot;</mark> title=&quot;Please sign in to sync this account again&quot;&gt;
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+            &lt;switch&gt;&lt;use xlink:href=&quot;#icon-alert&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;This account is not syncing&lt;/foreignObject&gt;&lt;/switch&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
-  <!--
-  <h2>Connect Checkboxes</h2>
+  <h2>Connection Readonly</h2>
 
-  <div class="option-list">
+  <div class="connect option-list">
+    <h3>You can also post form these groups</h3>
     <ul>
-      <li class="twitter">
-        <label>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
-          <input type="checkbox" />
-          <span>Sync My Twitter</span>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
-        </label>
-      </li>
-      <li class="twitter">
-        <label>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch></svg>
-          <input type="checkbox" checked="checked" />
-          <span>@brianatgood</span>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-checkmark"></use></svg>
-        </label>
-      </li>
-      <li class="twitter">
-        <label>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch></svg>
-          <input type="checkbox" checked="checked" />
-          <span>@brianatgood</span>
-          <svg style="color: rgb(255, 49, 59); /* @watermelon */" class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-alert"></use><foreignObject>Something went wrong. Fix my settings</foreignObject></switch></svg>
-        </label>
+      <li class="facebook active">
+        <button type="button" disabled="disabled">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></switch></svg>
+          <span class="username">CicLAvia</span>
+        </button>
       </li>
     </ul>
   </div>
-  -->
+  <pre><code>&lt;div class=&quot;connect option-list&quot;&gt;
+  &lt;h3&gt;You can also post form these groups&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;facebook active&quot;&gt;
+      &lt;button type=&quot;button&quot; <mark>disabled=&quot;disabled&quot;</mark>&gt;
+        &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+          &lt;switch&gt;&lt;use xlink:href=&quot;#icon-facebook&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Facebook&lt;/foreignObject&gt;&lt;/switch&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;username&quot;&gt;CicLAvia&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
-  <h2>Connect Links (deprecated)</h2>
+  <h2>Monochrome</h2>
 
-  <div class="option-list">
-    <ul>
-      <li class="twitter">
-        <a href="#twitter-add" role="checkbox" aria-checked="false">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
-          <span>sync my twitter</span>
-        </a>
-      </li>
-      <li class="twitter">
-        <a href="#twitter-add" role="checkbox" aria-checked="true">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch></svg>
-          <span>@brianatgood</span>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>Connected</foreignObject></switch></svg>
-        </a>
-      </li>
-      <li class="twitter">
-        <a href="#twitter-add" role="checkbox" aria-checked="true">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch></svg>
-          <span>@brianatgood</span>
-          <svg style="color: rgb(255, 49, 59); /* @watermelon */" class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-alert"></use><foreignObject>Something went wrong. Fix my settings</foreignObject></switch></svg>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <!-- Deprecated example
-  <div class="option-list">
+  <main class="pushes page">
+
+    <div class="option-list">
+      <h3>Options</h3>
+      <ul>
+        <li>
+          <a href="">
+            Join a push
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Start a new push
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+<pre><code>&lt;main class=&quot;<mark>pushes</mark> page&quot;&gt;
+  &lt;div class=&quot;option-list&quot;&gt;
+    &lt;h3&gt;Options&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;/join&quot;&gt;
+          Join a push
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;/start&quot;&gt;
+          Start a new push
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+
+
+  <h2>Push Colors</h2>
+
+  <div class="switch">
     <ul>
       <li>
-        <a href="" role="checkbox" aria-checked="false">
-          Option
+        <a href="push.html" class="push-card lime">
+          <span class="name">Artizen Labs</span>
         </a>
       </li>
       <li>
-        <a href="" role="checkbox" aria-checked="true">
-          Selected Option
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>Selected</foreignObject></switch></svg>
+        <a href="push.html" class="push-card green">
+          <span class="name">Crafting Stories</span>
         </a>
       </li>
     </ul>
   </div>
-  -->
-  <pre><code>&lt;div class=&quot;option-list&quot;&gt;
+  <pre><code>&lt;div class=&quot;<mark>switch</mark>&quot;&gt;
   &lt;ul&gt;
     &lt;li&gt;
-      &lt;a href=&quot;…&quot; role=&quot;checkbox&quot; aria-checked=&quot;false&quot;&gt;
-        Option
+      &lt;a href=&quot;…&quot; class=&quot;<mark>push-card</mark> lime&quot;&gt;
+        &lt;span class=&quot;name&quot;&gt;Artizen Labs&lt;/span&gt;
       &lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      &lt;a href=&quot;…&quot; role=&quot;checkbox&quot; aria-checked=&quot;<mark>true</mark>&quot;&gt;
-        Selected Option
-        &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;<mark>#checkmark</mark>&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Selected&lt;/foreignObject&gt;&lt;/svg&gt;
+      &lt;a href=&quot;…&quot; class=&quot;push-card green&quot;&gt;
+        &lt;span class=&quot;name&quot;&gt;Crafting Stories&lt;/span&gt;
       &lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
@@ -601,6 +787,147 @@
 </code></pre>
 
 
+  <h2>Logos</h2>
+
+  <main class="ready page">
+
+    <div>
+      <ul>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
+            <div>
+              <img src="../assets/images/logos/google-play.svg" height="35" alt="" />
+            </div>
+            Get CTZN for&nbsp;Android
+          </a>
+        </li>
+        <li>
+          <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
+            <div>
+              <img src="../assets/images/logos/apple-store.svg" height="35" alt="" />
+            </div>
+            Get CTZN for&nbsp;iPhone
+          </a>
+        </li>
+        <li>
+          <a href="start.html">
+            <div>
+              <img src="../assets/images/logos/chrome.svg" height="50" alt="" />
+              <img src="../assets/images/logos/safari.svg" height="50" alt="" />
+            </div>
+            Use CTZN from Chrome or&nbsp;Safari
+          </a>
+        </li>
+        <li>
+          <a href="email.html">
+            <div>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
+            </div>
+            Use CTZN via&nbsp;email
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <aside>
+      <div>
+        <img src="../assets/images/logos/chrome.svg" height="50" alt="" />
+        <img src="../assets/images/logos/safari.svg" height="50" alt="" />
+      </div>
+      <p>Use CTZN  by visiting <a href="https://m.ctznapp.com">ctznapp.com</a> in <a href="http://www.google.com/chrome/">Chrome</a> or&nbsp;<a href="http://www.apple.com/safari/">Safari</a></p>
+    </aside>
+
+  </main>
+
+  <pre><code>&lt;main class=&quot;<mark>ready</mark> page&quot;&gt;
+  &lt;div&gt;
+    …
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;…&quot;&gt;
+          &lt;div&gt;
+            &lt;img src=&quot;…&quot; height=&quot;35&quot; alt=&quot;&quot; /&gt;
+          &lt;/div&gt;
+          Get CTZN for Android
+        &lt;/a&gt;
+      &lt;/li&gt;
+      …
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  …
+&lt;/main&gt;
+</code></pre>
+
+  <h2>Dialog</h2>
+  <p>TRICKY: Add a class name of “active” to make the dialog transition in.</p>
+
+  <div class="post-options active">
+    <div>
+      <ul>
+        <li>
+          <form action="" method="post">
+            <button type="submit">
+              Option A
+            </button>
+          </form>
+        </li>
+        <li>
+          <form action="" method="post">
+            <button type="submit">
+              Option B
+            </button>
+          </form>
+        </li>
+        <li class="warning">
+          <form action="" method="post">
+            <button type="submit">
+              Destructive Option
+            </button>
+          </form>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <button type="button">
+            Cancel
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <pre><code>&lt;div class=&quot;<mark>post-options</mark> <mark>active</mark>&quot;&gt;
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;form action=&quot;…&quot; method=&quot;post&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;
+              Option A
+            &lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/li&gt;
+        …
+        &lt;li class=&quot;<mark>warning</mark>&quot;&gt;
+          &lt;form action=&quot;…&quot; method=&quot;post&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;
+              Destructive Option
+            &lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;button type=&quot;button&quot;&gt;
+            Cancel
+          &lt;/button&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  </code></pre>
+
+
+  <h2>Examples</h2>
 
   <section class="settings page">
     <header>
@@ -620,7 +947,7 @@
       </p>
     </header>
 
-    <div class="blueberry push-card">
+    <div class="teal push-card">
       <h2 class="name">Free Lots Angeles</h2>
     </div>
 
@@ -1024,32 +1351,32 @@
           </a>
         </li>
         <li>
-          <a href="push.html" class="push-card cucumber">
+          <a href="push.html" class="push-card green">
             <span class="name">Crafting Stories</span>
           </a>
         </li>
         <li>
-          <a href="push.html" class="push-card blueberry">
+          <a href="push.html" class="push-card teal">
             <span class="name">LA 2050</span>
           </a>
         </li>
         <li>
-          <a href="push.html" class="push-card boysenberry">
+          <a href="push.html" class="push-card blue">
             <span class="name">826LA</span>
           </a>
         </li>
         <li>
-          <a href="push.html" class="push-card plumb">
+          <a href="push.html" class="push-card purple">
             <span class="name">GOOD</span>
           </a>
         </li>
         <li>
-          <a href="push.html" class="push-card strawberry">
+          <a href="push.html" class="push-card magenta">
             <span class="name">South LA Organizers</span>
           </a>
         </li>
         <li>
-          <a href="push.html" class="push-card tangerine">
+          <a href="push.html" class="push-card gold">
             <span class="name">Global CTZN</span>
           </a>
         </li>
@@ -1078,9 +1405,6 @@
     </div>
 
   </main>
-
-
-
 
 
 

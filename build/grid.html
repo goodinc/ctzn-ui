@@ -312,304 +312,127 @@
     </nav>
   </header>
 
-  <h1>Grid</h1>
+  <h1>Grid (with links)</h1>
 
-
-
-  <section class="mixes page">
-    <header>
-      <h1>My Mixes</h1>
-
-      <a href="#push" class="back">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>←</foreignObject></switch></svg>
-        <span>Go Back</span>
+  <ul class="mix-list">
+    <li class="add">
+      <a href="">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
+        <span>New Mix</span>
       </a>
-    </header>
+    </li>
+    <li>
+      <a href="">
+        <img src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640" alt="Project Citizen, from day one to Beta" />
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <img src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640" alt="Lights Mix" />
+      </a>
+    </li>
+  </ul>
 
-    <div>
-      <ul class="mix-list">
-        <li class="add">
-          <a href="#new-mix">
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
-            <span>New Mix</span>
-          </a>
-        </li>
-        <li>
-          <a href="#mix">
-            <img src="https://m.ctznapp.com/s3/ctzn/slideshows/2c1e493b028f5a77148dbd3c61a2490be3193f58.jpg=c640x640" alt="Project Citizen, from day one to Beta"></a>
-        </li>
-        <li>
-          <a href="#mix">
-            <img src="https://m.ctznapp.com/s3/ctzn/slideshows/e28d82c5187ef40da78d7a8536591e21d469501f.jpg=c640x640" alt="Lights Mix"></a>
-        </li>
-      </ul>
-    </div>
-  </section>
+  <pre><code>&lt;ul class=&quot;<mark>mix-list</mark>&quot;&gt;
+  &lt;li class=&quot;add&quot;&gt;
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-mix&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+      &lt;span&gt;New Mix&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;img src=&quot;…&quot; alt=&quot;Project Citizen, from day one to Beta&quot; /&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;img src=&quot;…&quot; alt=&quot;Lights Mix&quot; /&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
 
+<h1>Grid (with checkboxes)</h1>
 
-<section class="mix-editor page"><header><h1>Create Mix</h1>
+<section class="mix-editor page">
+  <header>
+    <h1>Create Mix</h1>
+    <a href="" class="back">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></switch></svg>
+    </a>
+  </header>
 
-      <a href="" class="back">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>Go Back</foreignObject></switch></svg></a>
-    </header>
-
-    
-    <form action="" method="get">
-      <div class="selected-images">
-        <h2 style="display: none;">Select images</h2>
-
-<ol id="selectedImageList"  style="">
-          
-          <li role="button" tabindex="0" >
-            <img  src="https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c128x128" alt="Selected Image 1">
-          </li>
-          
-          <li role="button" tabindex="0" >
-            <img  src="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c128x128" alt="Selected Image 2">
-          </li>
-          
-          <li role="button" tabindex="0" >
-            <img  src="https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c128x128" alt="Selected Image 3">
-          </li>
-          
-          <li role="button" tabindex="0" >
-            <img  src="https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c128x128" alt="Selected Image 4">
-          </li>
-          
-        </ol>
-</div>
-
+  <form action="" method="post">
+    <ul class="image-list">
+      <li>
+        <label>
+          <input type="checkbox" />
+          <img src="https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c640x640" alt="Image 1" />
+          <span class="number"></span>
+        </label>
+      </li>
       
+      <li>
+        <label>
+          <input type="checkbox" />
+          <img src="https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c640x640" alt="Image 2" />
+          <span class="number"></span>
+        </label>
+      </li>
+      
+      <li>
+        <label>
+          <input type="checkbox" checked="checked" />
+          <img src="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c640x640" alt="Image 3" />
+          <span class="number"><span>1</span></span>
+        </label>
+      </li>
+    </ul>
+    <p class="submit">
+      <button type="submit">Next</button>
+    </p>
+  </form>
+</section>
 
-      <ul id="unselectedImageList" class="image-list">
-        
-        
-        
-        
-        <li><label><input type="checkbox" checked="checked" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c480x480 3x, https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c320x320 2x, https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/8f8af2b0243f2217929eadecd82911073e73e42c=c160x160" alt="Image 74">
-          <span class="number" ><span >1</span></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c480x480 3x, https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c320x320 2x, https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/6a7294005982cb28b532099cdfe39039c243628c=c160x160" alt="Image 75">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" checked="checked" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c480x480 3x, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c320x320 2x, https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/a0d8181877d3de82f75906cbf60a918d5d0d665e=c160x160" alt="Image 76">
-          <span class="number" ><span >2</span></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c480x480 3x, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c320x320 2x, https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/fdad3bcdb8e5077560969f858e48f634da163dae=c160x160" alt="Image 77">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" checked="checked" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c480x480 3x, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c320x320 2x, https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/f41b2e5729c3051aeed1fdb3597522a39b233980=c160x160" alt="Image 78">
-          <span class="number" ><span >3</span></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c480x480 3x, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c320x320 2x, https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/9d43e697d58267ebc7bdc9fd359f8a4ab7d01cc1=c160x160" alt="Image 79">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c480x480 3x, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c320x320 2x, https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/8cc70e170310ca2a7abe92614a6d3fc93dd0e29b=c160x160" alt="Image 80">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" checked="checked" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c480x480 3x, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c320x320 2x, https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/d86230b26a60321327e3003925b43385c6607b41=c160x160" alt="Image 81">
-          <span class="number" ><span >4</span></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c480x480 3x, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c320x320 2x, https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/a9d0d2c7a5b29f6d9bec74dde5149c84cc448365=c160x160" alt="Image 82">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c480x480 3x, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c320x320 2x, https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/0ec59bea8cb34aa4a122abd9722df4e99845683b=c160x160" alt="Image 83">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c480x480 3x, https://m.ctznapp.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c320x320 2x, https://m.ctznapp.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/9b5e987a9a9de14ed14111c6f3dcbe826c4070da=c160x160" alt="Image 84">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c480x480 3x, https://m.ctznapp.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c320x320 2x, https://m.ctznapp.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/2e93cd50c7766e450de03b5966628f1457a74794=c160x160" alt="Image 85">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c480x480 3x, https://m.ctznapp.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c320x320 2x, https://m.ctznapp.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/661bf7c5c5e02283186df3dec8c6e68ed4a56969=c160x160" alt="Image 86">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c480x480 3x, https://m.ctznapp.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c320x320 2x, https://m.ctznapp.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/e03a69605a3cd1c33f03f0e7265d523034821587=c160x160" alt="Image 87">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c480x480 3x, https://m.ctznapp.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c320x320 2x, https://m.ctznapp.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/c5e495b8e80dd19ce7b4c17d5e0b8cea230b773e=c160x160" alt="Image 88">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c480x480 3x, https://m.ctznapp.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c320x320 2x, https://m.ctznapp.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/85d090d709bd1fbe485880b747d79ba45829a1e9=c160x160" alt="Image 89">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c480x480 3x, https://m.ctznapp.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c320x320 2x, https://m.ctznapp.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/4f44ea183519332f8ee5c9c4395c0402eab5e118=c160x160" alt="Image 90">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c480x480 3x, https://m.ctznapp.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c320x320 2x, https://m.ctznapp.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/abf9214676bf4c071e7c9f16d85bc927b5ee6c26=c160x160" alt="Image 91">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c480x480 3x, https://m.ctznapp.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c320x320 2x, https://m.ctznapp.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/6dc47836ee9d34d0ea463e29e28947f0b8772dad=c160x160" alt="Image 92">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c480x480 3x, https://m.ctznapp.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c320x320 2x, https://m.ctznapp.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/47ce75e9c4f1da9ac5d375fc1f4bc3a9cd70bca6=c160x160" alt="Image 93">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c480x480 3x, https://m.ctznapp.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c320x320 2x, https://m.ctznapp.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/41b48322d1c6da435283251f10de1451bf44f902=c160x160" alt="Image 94">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c480x480 3x, https://m.ctznapp.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c320x320 2x, https://m.ctznapp.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/b5f92077f7f7e238ba800e5ae98c514b7bb81c74=c160x160" alt="Image 95">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c480x480 3x, https://m.ctznapp.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c320x320 2x, https://m.ctznapp.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/54abc886048d16620003b4c7bedb9cac859be63e=c160x160" alt="Image 96">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c480x480 3x, https://m.ctznapp.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c320x320 2x, https://m.ctznapp.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/e8630746dee7c3b448d3f94f168b734c40c38af5=c160x160" alt="Image 97">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c480x480 3x, https://m.ctznapp.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c320x320 2x, https://m.ctznapp.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/ba5eb29f6259249f6cce1d9497b97724d5a06a36=c160x160" alt="Image 98">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c480x480 3x, https://m.ctznapp.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c320x320 2x, https://m.ctznapp.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/4fd1b9f7cb3cff811336be54cb448d2e3973bd43=c160x160" alt="Image 99">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c480x480 3x, https://m.ctznapp.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c320x320 2x, https://m.ctznapp.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/4025d21b5af6a8d1d641dc181924fbfe6f50787d=c160x160" alt="Image 100">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c480x480 3x, https://m.ctznapp.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c320x320 2x, https://m.ctznapp.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/c053ccdeb06cff72f14d605f016e7e061328d4ba=c160x160" alt="Image 101">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c480x480 3x, https://m.ctznapp.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c320x320 2x, https://m.ctznapp.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/0127c7c5bfee0b370bd1a693a817247122f5a969=c160x160" alt="Image 102">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c480x480 3x, https://m.ctznapp.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c320x320 2x, https://m.ctznapp.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/8791e5569e1b2ff7ae97ed59f1dae1468791850d=c160x160" alt="Image 103">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c480x480 3x, https://m.ctznapp.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c320x320 2x, https://m.ctznapp.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/8198257eb005443e741d0fee3cd8dbc133c045f6=c160x160" alt="Image 104">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c480x480 3x, https://m.ctznapp.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c320x320 2x, https://m.ctznapp.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/71ca3091d0f07d0dbf165c841a47287d61f23c44=c160x160" alt="Image 105">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c480x480 3x, https://m.ctznapp.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c320x320 2x, https://m.ctznapp.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/983af5ff09826db0ff970cad8fa2e93808f0ee0d=c160x160" alt="Image 106">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c480x480 3x, https://m.ctznapp.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c320x320 2x, https://m.ctznapp.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/88f2da2c80afdf536fa33c9d24078719ab7be596=c160x160" alt="Image 107">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c480x480 3x, https://m.ctznapp.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c320x320 2x, https://m.ctznapp.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/0e917ab485b1ac70db2542321c4be37052319fa2=c160x160" alt="Image 108">
-          <span class="number" ></span>
-          </label>
-        </li>
-        
-        <li><label><input type="checkbox" />
-          <img  srcset="https://m.ctznapp.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c480x480 3x, https://m.ctznapp.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c320x320 2x, https://m.ctznapp.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c160x160 1x" src="https://m.ctznapp.com/s3/ctzn/2fefbf49dc4066140799862b8e2cd8df4aa8abe9=c160x160" alt="Image 109">
-          <span class="number" ></span>
-          </label>
-        </li>
-      </ul>
-      <p class="submit">
-        <button>Next</button>
-      </p>
+<pre><code>&lt;section class=&quot;<mark>mix-editor</mark> page&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Create Mix&lt;/h1&gt;
+    …
+  &lt;/header&gt;
 
-    </form>
-    
-
-  </section>
+  &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+    &lt;ul class=&quot;<mark>image-list</mark>&quot;&gt;
+      &lt;li&gt;
+        &lt;label&gt;
+          &lt;input type=&quot;checkbox&quot; /&gt;
+          &lt;img src=&quot;…&quot; alt=&quot;Image 1&quot; /&gt;
+          &lt;span class=&quot;number&quot;&gt;&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/li&gt;
+      
+      &lt;li&gt;
+        &lt;label&gt;
+          &lt;input type=&quot;checkbox&quot; /&gt;
+          &lt;img src=&quot;…&quot; alt=&quot;Image 2&quot; /&gt;
+          &lt;span class=&quot;number&quot;&gt;&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/li&gt;
+      
+      &lt;li&gt;
+        &lt;label&gt;
+          &lt;input type=&quot;checkbox&quot; <mark>checked=&quot;checked&quot;</mark> /&gt;
+          &lt;img src=&quot;…&quot; alt=&quot;Image 3&quot; /&gt;
+          &lt;span class=&quot;number&quot;&gt;<mark>&lt;span&gt;1&lt;/span&gt;</mark>&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p class=&quot;submit&quot;&gt;
+      &lt;button type=&quot;submit&quot;&gt;Next&lt;/button&gt;
+    &lt;/p&gt;
+  &lt;/form&gt;
+&lt;/section&gt;
+</code></pre>
 
 </body>
 </html>

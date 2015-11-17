@@ -314,7 +314,7 @@
       </p>
     </header>
 
-    <div class="plumb push-card">
+    <div class="purple push-card">
       <h2 class="name">GOOD</h2>
       <p class="action">
         <a href="push-edit.html">
@@ -355,46 +355,45 @@
       </ul>
     </div>
 
-    <div class="option-list">
+    <div class="connect option-list">
       <h3>From These Accounts</h3>
       <ul>
         <li class="instagram">
-          <a href="#instagram" role="checkbox" aria-checked="true">
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-instagram"></use><foreignObject>Instagram</foreignObject></switch></svg>
-            @<span>briannilsen</span>
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>Connected</foreignObject></switch></svg>
-          </a>
+          <form action="" method="post">
+            <button type="submit">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use></svg>
+              <span>Connect my Instagram</span>
+            </button>
+          </form>
         </li>
-        <li class="twitter">
-          <a href="#twitter-add" role="checkbox" aria-checked="false">
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
-            <span>sync my twitter</span>
-          </a>
+        <li class="twitter active">
+          <form action="" method="post">
+            <button type="submit" title="Remove this account from CTZN">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-twitter"></use><foreignObject>Twitter</foreignObject></switch></svg>
+              <span>@briannilsen</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>is syncing</foreignObject></switch></svg>
+            </button>
+          </form>
         </li>
-        <li class="facebook">
-          <a href="#facebook-remove"  role="checkbox" aria-checked="true">
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></switch></svg>
-            <span class="username">Brian Nilsen</span>
-            <svg style="color: rgb(255, 49, 59); /* @watermelon */" class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-alert"></use><foreignObject>Something went wrong. Fix my settings</foreignObject></switch></svg>
-          </a>
-        </li>
-        <li class="facebook">
-          <a href="#facebook-remove" role="checkbox" aria-checked="true">
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></switch></svg>
-            <span class="username">Brian Nilsen</span>
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>Connected</foreignObject></switch></svg>
-            <p class="note">Pulls in photos and status updates from your account.</p>
-          </a>
+        <li class="facebook active">
+          <form action="" method="post">
+            <button type="submit" title="Remove this account from CTZN">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-facebook"></use><foreignObject>Facebook</foreignObject></switch></svg>
+              <span class="username">Brian Nilsen</span>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>is syncing</foreignObject></switch></svg>
+              <span class="note">Pulls in photos and status updates from your account.</span>
+            </button>
+          </form>
         </li>
       </ul>
-      <div class="reconnect">
+      <form action="" method="post" class="reconnect">
         <p>
           Reconnect Facebook to also post videos and content from Facebook Groups you&nbsp;manage.
-          <button>
+          <button type="submit">
             <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-refresh"></use><foreignObject>Refresh</foreignObject></switch></svg>
           </button>
         </p>
-      </div>
+      </form>
     </div>
 
     <div class="option-list">
@@ -411,25 +410,6 @@
         </li>
       </ul>
     </div>
-
-    <!--
-    <div class="option-list">
-      <h3>Email Digest</h3>
-      <ul>
-        <li>
-          <a href="#" role="checkbox" aria-checked="true">
-            Daily
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-checkmark"></use><foreignObject>Selected</foreignObject></switch></svg>
-          </a>
-        </li>
-        <li>
-          <a href="#" role="checkbox" aria-checked="false">
-            Weekly
-          </a>
-        </li>
-      </ul>
-    </div>
-    -->
 
     <div class="option-list">
       <h3>Share Push</h3>

@@ -312,7 +312,23 @@
 
   <section class="page">
     <header>
-      <h1>Basic</h1>
+      <h1>Page Title</h1>
+    </header>
+  </section>
+
+<pre><code>&lt;section class=&quot;page&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Page Title&lt;/h1&gt;
+  &lt;/header&gt;
+  …
+&lt;/section&gt;
+</code></pre>
+
+  <div style="margin-top: 3em"></div>
+
+  <section class="page">
+    <header>
+      <h1>Page Title</h1>
 
       <a href="" class="back">
         <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>←</foreignObject></switch></svg>
@@ -321,47 +337,107 @@
     </header>
   </section>
 
-  <section class="profile page">
-    <header>
-      <h1>@profile</h1>
+<pre><code>&lt;section class=&quot;page&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Page Title&lt;/h1&gt;
 
-      <a href="#edit-profile" class="next">  
-        <svg aria-label="Edit Profile" class="icon" viewBox="0 0 24 24" width="24" height="24"><g><polygon points="3.538,15.187 16.725,2 22,7.275 8.813,20.462"></polygon></g><g><polygon points="7.275,22 2,22 2,16.725"></polygon></g><foreignObject>Edit Profile</foreignObject></svg>
-      </a>
-
-      <a href="#push" class="back">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>←</foreignObject></switch></svg>
-        <span>Go Back</span>
-      </a>
-    </header>
-  </section>
-
-  <section class="page">
-    <header>
-      <h1>Settings</h1>
-
-      <a href="#push" class="back">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>←</foreignObject></switch></svg>
-        <span>Go Back</span>
-      </a>
-
-      <p class="action">
-        <a href="">Done</a>
-      </p>
-    </header>
-  </section>
+    &lt;a href=&quot;…&quot; class=&quot;<mark>back</mark>&quot;&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+        &lt;switch&gt;&lt;use xlink:href=&quot;#icon-back&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;←&lt;/foreignObject&gt;&lt;/switch&gt;
+      &lt;/svg&gt;
+      &lt;span&gt;Go Back&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/header&gt;
+  …
+&lt;/section&gt;
+</code></pre>
 
   <div style="margin-top: 3em"></div>
 
   <section class="page">
     <header>
-      <h1 class="name">Push Name</h1>
+      <h1>Page Title</h1>
+
+      <a href="" class="next">  
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24"><switch><use xlink:href="#icon-edit"></use><foreignObject>Edit Profile</foreignObject></switch></svg>
+      </a>
+
+      <a href="" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>←</foreignObject></switch></svg>
+        <span>Go Back</span>
+      </a>
+    </header>
+  </section>
+
+<pre><code>&lt;section class=&quot;page&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Page Title&lt;/h1&gt;
+
+    &lt;a href=&quot;…&quot; class=&quot;<mark>next</mark>&quot;&gt;  
+      &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;
+        &lt;switch&gt;&lt;use xlink:href=&quot;#icon-edit&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;Edit Profile&lt;/foreignObject&gt;&lt;/switch&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;…&quot; class=&quot;back&quot;&gt;…&lt;/a&gt;
+  &lt;/header&gt;
+&lt;/section&gt;
+</code></pre>
+
+  <div style="margin-top: 3em"></div>
+
+  <section class="page">
+    <header>
+      <h1>Settings</h1>
+
+      <p class="action">
+        <a href="">Done</a>
+      </p>
+
+      <a href="" class="back">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>←</foreignObject></switch></svg>
+        <span>Go Back</span>
+      </a>
+    </header>
+  </section>
+
+<pre><code>&lt;section class=&quot;page&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Settings&lt;/h1&gt;
+
+    &lt;p class=&quot;<mark>action</mark>&quot;&gt;
+      &lt;a href=&quot;…&quot;&gt;Done&lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;a href=&quot;…&quot; class=&quot;back&quot;&gt;…&lt;/a&gt;
+  &lt;/header&gt;
+&lt;/section&gt;
+</code></pre>
+
+  <div style="margin-top: 3em"></div>
+
+  <section class="page">
+    <header>
+      <h1 class="name">Case Sensitive Page Title</h1>
+
       <a href="#push" class="back">
         <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><switch><use xlink:href="#icon-back"></use><foreignObject>←</foreignObject></switch></svg>
         <span>Go Back</span>
       </a>
     </header>
   </section>
+
+<pre><code>&lt;section class=&quot;page&quot;&gt;
+  &lt;header&gt;
+    &lt;h1 class=&quot;<mark>name</mark>&quot;&gt;Push Name&lt;/h1&gt;
+
+    &lt;a href=&quot;…&quot; class=&quot;back&quot;&gt;…&lt;/a&gt;
+  &lt;/header&gt;
+  …
+&lt;/section&gt;
+</code></pre>
+
+  <div style="margin-top: 3em"></div>
 
   <section class="edit page">
     <header>
@@ -372,6 +448,19 @@
       </a>
     </header>
   </section>
+
+<pre><code>&lt;section class=&quot;<mark>edit</mark> page&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Form&lt;/h1&gt;
+
+    &lt;a href=&quot;…&quot; class=&quot;back&quot;&gt;
+      Cancel
+    &lt;/a&gt;
+  &lt;/header&gt;
+&lt;/section&gt;
+</code></pre>
+
+  <div style="margin-top: 3em"></div>
 
   <section class="mix-editor page">
     <header>
@@ -384,6 +473,17 @@
     </header>
   </section>
 
+<pre><code>&lt;section class=&quot;<mark>mix-editor</mark> page&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mix Editor&lt;/h1&gt;
+
+    &lt;a href=&quot;…&quot; class=&quot;back&quot;&gt;…&lt;/a&gt;
+  &lt;/header&gt;
+&lt;/section&gt;
+</code></pre>
+
+  <div style="margin-top: 3em"></div>
+
   <section class="page">
     <header class="powered-by">
       <h1><a href="">Powered by <svg class="icon" width="100" height="38" viewBox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a></h1>
@@ -394,6 +494,24 @@
       </a>
     </header>
   </section>
+
+<pre><code>&lt;section class=&quot;page&quot;&gt;
+  &lt;header class=&quot;<mark>powered-by</mark>&quot;&gt;
+    &lt;h1&gt;
+      &lt;a href=&quot;…&quot;&gt;
+        Powered by
+        &lt;svg class=&quot;icon&quot; width=&quot;100&quot; height=&quot;38&quot; viewBox=&quot;0 0 100 38&quot;&gt;
+          &lt;switch&gt;&lt;use xlink:href=&quot;#icon-ctzn&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;CTZN&lt;/foreignObject&gt;&lt;/switch&gt;
+        &lt;/svg&gt;
+      &lt;/a&gt;
+    &lt;/h1&gt;
+
+    &lt;a href=&quot;…&quot; class=&quot;back&quot;&gt;…&lt;/a&gt;
+  &lt;/header&gt;
+&lt;/section&gt;
+</code></pre>
+
+  <div style="margin-top: 3em"></div>
 
   <section class="push-card page">
     <header class="powered-by">
@@ -407,34 +525,50 @@
     </header>
   </section>
 
-  <header class="primary">
-    <h2>
-      <a href="">
-        <svg class="icon" viewBox="0 0 100 37.818" width="100" height="38">
-          <switch>
-          <use xlink:href="#icon-ctzn"></use>
-          <foreignObject>Citizen</foreignObject>
-          </switch>
-        </svg>
-      </a>
-    </h2>
-  </header>
+<pre><code>&lt;section class=&quot;<mark>push-card</mark> page&quot;&gt;
+  &lt;header class=&quot;powered-by&quot;&gt;
+    &lt;h1&gt;…&lt;/h1&gt;
+
+    &lt;p class=&quot;<mark>action</mark>&quot;&gt;
+      &lt;a href=&quot;&quot;&gt;
+        &lt;span&gt;live channel&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/header&gt;
+&lt;/section&gt;
+</code></pre>
 
   <div style="margin-top: 3em"></div>
 
   <header class="primary">
     <h2>
-      <a href="#sync">
-        <svg class="icon" viewBox="0 0 100 37.818" width="100" height="38">
-          <switch>
-          <use xlink:href="#icon-ctzn"></use>
-          <foreignObject>Citizen</foreignObject>
-          </switch>
-        </svg>
+      <a href="">
+        <svg class="icon" viewBox="0 0 100 37.818" width="100" height="38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg>
+      </a>
+    </h2>
+  </header>
+
+<pre><code>&lt;header class=&quot;<mark>primary</mark>&quot;&gt;
+  &lt;h2&gt;
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 100 37.818&quot; width=&quot;100&quot; height=&quot;38&quot;&gt;
+        &lt;switch&gt;&lt;use xlink:href=&quot;#icon-ctzn&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;CTZN&lt;/foreignObject&gt;&lt;/switch&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/h2&gt;
+&lt;/header&gt;
+</code></pre>
+
+  <div style="margin-top: 3em"></div>
+
+  <header class="primary">
+    <h2>
+      <a href="">
+        <svg class="icon" viewBox="0 0 100 37.818" width="100" height="38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg>
       </a>
     </h2>
 
-    <a href="#notifications" class="notifications">
+    <a href="" class="notifications">
       <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
         <switch>
         <use xlink:href="#icon-bell"></use>
@@ -443,7 +577,7 @@
       </svg>
     </a>
 
-    <a href="#profile" class="profile">
+    <a href="" class="profile">
       <span class="avatar">
         <span class="size30 has-icon" data-content="B">
           <svg class="icon"><use xlink:href="#icon-user-circle"></use></svg>
@@ -452,22 +586,48 @@
     </a>
   </header>
 
+<pre><code>&lt;header class=&quot;primary&quot;&gt;
+  &lt;h2&gt;
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 100 37.818&quot; width=&quot;100&quot; height=&quot;38&quot;&gt;
+        &lt;switch&gt;
+        &lt;use xlink:href=&quot;#icon-ctzn&quot;&gt;&lt;/use&gt;
+        &lt;foreignObject&gt;Citizen&lt;/foreignObject&gt;
+        &lt;/switch&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/h2&gt;
+
+  &lt;a href=&quot;…&quot; class=&quot;<mark>notifications</mark>&quot;&gt;
+    &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;
+      &lt;switch&gt;
+      &lt;use xlink:href=&quot;#icon-bell&quot;&gt;&lt;/use&gt;
+      &lt;foreignObject&gt;Notifications&lt;/foreignObject&gt;
+      &lt;/switch&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+
+  &lt;a href=&quot;…&quot; class=&quot;<mark>profile</mark>&quot;&gt;
+    &lt;span class=&quot;avatar&quot;&gt;
+      &lt;span class=&quot;size30 has-icon&quot; data-content=&quot;B&quot;&gt;
+        &lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#icon-user-circle&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+      &lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/a&gt;
+&lt;/header&gt;
+</code></pre>
+
   <div style="margin-top: 3em"></div>
 
   <header class="primary">
     <h2>
-      <a href="#sync">
-        <svg class="icon" viewBox="0 0 100 37.818" width="100" height="38">
-          <switch>
-          <use xlink:href="#icon-ctzn"></use>
-          <foreignObject>Citizen</foreignObject>
-          </switch>
-        </svg>
+      <a href="">
+        <svg class="icon" viewBox="0 0 100 37.818" width="100" height="38"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg>
       </a>
       <span class="network-indicator"><span class="sending icon"></span></span>
     </h2>
 
-    <a href="#notifications" class="notifications">
+    <a href="" class="notifications">
       <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
         <switch>
         <use xlink:href="#icon-bell"></use>
@@ -476,12 +636,26 @@
       </svg>
     </a>
 
-    <a href="#profile" class="profile">
+    <a href="" class="profile">
       <span class="avatar">
-        <img height="30" width="30" alt="Brian Nilsen" src="https://m.ctznapp.demo.goodalpaca.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" />
+        <img height="30" width="30" alt="Brian Nilsen" src="https://m.ctznapp-demo.com/s3/ctzn/8ee564fe337ec48ad98d926dadd280bc520ddf09=c100x100" />
       </span>
     </a>
   </header>
+
+<pre><code>&lt;header class=&quot;primary&quot;&gt;
+  &lt;h2&gt;
+    &lt;a href=&quot;&quot;&gt;
+      &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 100 37.818&quot; width=&quot;100&quot; height=&quot;38&quot;&gt;&lt;switch&gt;&lt;use xlink:href=&quot;#icon-ctzn&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;CTZN&lt;/foreignObject&gt;&lt;/switch&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;span class=&quot;<mark>network-indicator</mark>&quot;&gt;&lt;span class=&quot;sending icon&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/h2&gt;
+
+  &lt;a href=&quot;&quot; class=&quot;notifications&quot;&gt;…&lt;/a&gt;
+
+  &lt;a href=&quot;&quot; class=&quot;profile&quot;&gt;…&lt;/a&gt;
+&lt;/header&gt;
+</code></pre>
 
   <h1>Footers</h1>
 
@@ -489,6 +663,22 @@
     <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
     <p class="legal">Copyright © 2015 GOOD Worldwide Inc</p>
   </footer>
+
+<pre><code>&lt;footer class=&quot;primary&quot;&gt;
+  &lt;h2 class=&quot;about&quot;&gt;
+    a
+    &lt;a href=&quot;http://good.is&quot;&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;56&quot; height=&quot;28&quot; viewBox=&quot;0 0 56 28&quot;&gt;
+        &lt;switch&gt;&lt;use xlink:href=&quot;#icon-good&quot;&gt;&lt;/use&gt;&lt;foreignObject&gt;GOOD&lt;/foreignObject&gt;&lt;/switch&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;
+    app
+  &lt;/h2&gt;
+  &lt;p class=&quot;legal&quot;&gt;
+    Copyright © 2015 GOOD Worldwide Inc
+  &lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
 
 </body>
 </html>
