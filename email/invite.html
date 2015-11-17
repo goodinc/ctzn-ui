@@ -71,7 +71,9 @@
     .headline,
     .message,
     .steps,
-    .footer {
+    .footer,
+    .feedback,
+    .download {
       margin-left: auto;
       margin-right: auto;
     }
@@ -81,7 +83,9 @@
       max-width: 600px;
     }
     .headline,
-    .message {
+    .message,
+    .feedback,
+    .download {
       max-width: 540px; /* 600px - (30px x 2) */
     }
     .headline,
@@ -90,11 +94,14 @@
       background-color: white;
     }
     .headline,
-    .message {
+    .message,
+    .feedback,
+    .download {
       padding: 25px 30px;
     }
     .headline,
-    .footer {
+    .footer,
+    .download {
       margin-top: 10px;
     }
     .headline.first {
@@ -145,10 +152,7 @@
 
     /* Footer */
     .footer h2 {
-      float: left;
-    }
-    .footer .unsubscribe {
-      float: right;
+      text-align: center;
     }
     .footer .unsubscribe a {
       font-size: 12px;
@@ -285,6 +289,148 @@
       color: rgb(255, 117, 9); /* @orange */
     }
 
+  .download,
+  .feedback {
+    border-width: 0;
+  }
+  .download {
+    background-color: rgb(176, 176, 176);
+  }
+  .download img {
+    vertical-align: top;
+  }
+  .download h2 {
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .download h2,
+  .download p {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .download p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .download p img {
+    margin: 5px;
+  }
+  .feedback {
+    background-color: rgb(153, 153, 153); /* @nickel */
+  }
+  .feedback {
+    font-size: 14px;
+    color: white;
+  }
+  .feedback a {
+    color: white;
+  }
+  .feedback a:hover,
+  .feedback a:active,
+  .feedback a:focus {
+    color: white;
+  }
+
+
+  /* CTZN Color */
+  .download.honeydew {
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    background-color: rgb(130, 235, 88); /* 4% darker */
+  }
+  .feedback.honeydew {
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    background-color: rgb(110, 215, 68); /* 8% darker */
+  }
+
+
+  /* Push Colors */
+  .download.lime {
+    background-color: rgb(176, 224, 0); /* @lime */
+    background-color: rgb(156, 204, 0); /* 4% darker */
+  }
+  .feedback.lime {
+    background-color: rgb(176, 224, 0); /* @lime */
+    background-color: rgb(136, 184, 0); /* 8% darker */
+  }
+
+  .download.cucumber {
+    background-color: rgb(60, 210, 0); /* @cucumber */
+    background-color: rgb(40, 190, 0); /* 4% darker */
+  }
+  .feedback.cucumber {
+    background-color: rgb(60, 210, 0); /* @cucumber */
+    background-color: rgb(20, 170, 0); /* 8% darker */
+  }
+
+  .download.blueberry {
+    background-color: rgb(0, 204, 204); /* @blueberry */
+  }
+  .feedback.blueberry {
+    background-color: rgb(0, 204, 204); /* @blueberry */
+    background-color: rgb(0, 184, 184); /* 4% darker */
+  }
+
+  .download.boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+  }
+  .feedback.boysenberry {
+    background-color: rgb(101, 152, 254); /* @boysenberry */
+    background-color: rgb(91, 132, 234); /* 4% darker */
+  }
+
+  .download.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .feedback.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+    background-color: rgb(89, 70, 199); /* 4% darker */
+  }
+
+  .download.plumb {
+    background-color: rgb(181, 62, 194); /* @plumb */
+  }
+  .feedback.plumb {
+    background-color: rgb(181, 62, 194); /* @plumb */
+    background-color: rgb(161, 42, 174); /* 4% darker */
+  }
+
+  .download.strawberry {
+    background-color: rgb(250, 44, 162); /* @strawberry */
+  }
+  .feedback.strawberry {
+    background-color: rgb(250, 44, 162); /* @strawberry */
+    background-color: rgb(230, 24, 142); /* 4% darker */
+  }
+
+  .download.apple {
+    background-color: rgb(255, 0, 86); /* @apple */
+  }
+  .feedback.apple {
+    background-color: rgb(255, 0, 86); /* @apple */
+    background-color: rgb(235, 0, 66); /* 4% darker */
+  }
+
+  .download.tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+  }
+  .feedback.tangerine {
+    background-color: rgb(255, 204, 0); /* @tangerine */
+    background-color: rgb(235, 184, 0); /* 4% darker */
+  }
+
+  .download.orange {
+    background-color: rgb(255, 117, 9); /* @orange */
+  }
+  .feedback.orange {
+    background-color: rgb(255, 117, 9); /* @orange */
+    background-color: rgb(235, 97, 0); /* 4% darker */
+  }
+
   </style>
 
 </head>
@@ -373,9 +519,20 @@
       </ol>
     </div><!-- /.steps -->
 
+    <div class="lime download">
+      <h2>Get the CTZN app!</h2>
+      <p>
+        <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn"><img src="../assets/images/email/welcome/google-play.png" height="35" alt="Get CTZN for Android" /></a>
+        <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8"><img src="../assets/images/email/welcome/apple-store.png" height="35" alt="Get CTZN for iPhone" /></a>
+      </p>
+    </div><!-- /.download -->
+
+    <div class="lime feedback">
+      <p><b>Have feedback?</b> Let us know by emailing <a href="mailto:ctzn@goodinc.com">ctzn@goodinc.com</a></p>
+    </div><!-- /.feedback -->
+
     <div class="footer">
       <h2><a href="http://ctznapp.com"><img src="https://gallery.mailchimp.com/3b9403e4fc51a974e5b08c12a/images/da0d53ce-555e-407e-91a7-4b8bb31700e5.png" alt="CTZN" width="75" height="28" /></a></h2>
-      <p class="unsubscribe"><a href="http://ctznapp.com">Unsubscribe</a></p>
     </div><!-- /.footer -->
 
   </div><!-- ./body -->
