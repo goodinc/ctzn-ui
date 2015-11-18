@@ -1,186 +1,6 @@
 
 
-  /* =Navigation
-  ----------------------------------------------- */
-  nav ul,
-  nav ul li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  nav ul {
-    max-width: 33em;
-    margin: 0.75em auto 0;
-    padding: 0 0.75em;
-    transition: opacity 0.2s;
-    text-align: center;
 
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-justify-content: stretch;
-            justify-content: stretch;
-  }
-
-  nav ul li {
-    position: relative;
-    display: inline-block;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
-  }
-  nav ul a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    font-size: 0.75em;
-    line-height: 1.5;
-    padding: 0.75em;
-    text-align: center;
-    border: 1px solid rgb(102, 102, 102); /* @tin */
-  }
-  nav ul li + li a {
-    border-left-width: 0;
-  }
-  nav ul .active a,
-  .hoverable nav ul a:hover,
-             nav ul a:active,
-             nav ul a:focus {
-    background-color: rgb(102, 102, 102); /* @tin */
-    color: white;
-  }
-  nav ul li:first-child a {
-    padding-left: 1.5em;
-    border-top-left-radius: 0.25em;
-    border-bottom-left-radius: 0.25em;
-  }
-  nav ul li:last-child a {
-    padding-right: 1.5em;
-    border-top-right-radius: 0.25em;
-    border-bottom-right-radius: 0.25em;
-  }
-
-
-  /* =Action List
-  ----------------------------------------------- */
-  .actions.post-list li ul,
-  .actions.post-list li ul li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .actions.post-list li ul li,
-  .actions.post-list li ul li form {
-    display: inline;
-  }
-
-  .actions.post-list > li {
-    max-width: 32em;
-  }
-
-  .page > .action,
-  .introduction .action {
-    max-width: 32em;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.25em;
-    text-align: center;
-  }
-
-
-  .page > .action a,
-  .introduction .action a {
-    width: 100%;
-    font-weight: normal;
-    font-size: 1.5em; /* 24px / @font-size */
-    border-radius: 0.1666666667em; /* 4px / 24px */
-    line-height: 1.4833333333em; /* 50px / 24px */
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center;
-
-    /* For the “Open this URL in Safari” page. */
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-  }
-
-  .actions.post-list {
-    padding-left: 1.25em;
-    padding-right: 1.25em;
-  }
-
-  .actions.post-list .post-item a.push-card {
-    margin: -1.25em -1.25em 0;
-  }
-
-  .actions.post-list .post-item a.push-card,
-  .actions.post-list .post-item a.push-card:hover,
-  .actions.post-list .post-item a.push-card:active,
-  .actions.post-list .post-item a.push-card:focus {
-    color: white;
-  }
-  .actions.post-list .post-item a.push-card p:first-child {
-    margin: -1.5em -1.25em 0;
-    padding: 0.375em 1.25em;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-  }
-  .actions.post-list .post-item a.push-card p:last-child {
-    margin: 0 -1.6666666667em -2em; /* 1.25em / 0.75em */ /* 1.5em / 0.75em */
-    padding: 0.75em 1.6666666667em; /* 1.25em / 0.75em */
-    background: rgba(0, 0, 0, 0.4);
-    font-size: 0.75em;
-  }
-  .actions.post-list .post-item a.push-card h2 {
-    padding: 1.25em;
-    margin-left: -0.6666666667em; /* 1.25em / 1.875em */
-    margin-right: -0.6666666667em;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  .actions.post-list .post-item a.push-card h2[style*="background-image"] {
-    padding-top: 3.75em;
-    padding-bottom: 3.75em;
-    padding-top: 25vh;
-    padding-bottom: 25vh;
-  }
-  .actions.post-list .post-item a.push-card h2:before {
-    content: "";
-    display: block;
-    background: rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .actions.post-list .post-item a.push-card h2 span {
-    position: relative;
-    z-index: 1;
-  }
-
-  .actions.post-list .post-item footer .action a,
-  .actions.post-list .post-item footer .action button {
-    font-size: inherit;
-  }
-
-
-  .actions.post-list .post-item h4 {
-    margin-top: 1em;
-    font-size: 1.25em;
-    line-height: 1.2;
-  }
-  .actions.post-list .post-item h4 + p {
-    font-size: 0.75em;
-  }
-  .actions.post-list .post-item h4 + p .avatar {
-    margin-left: 0.375em;
-  }
 
 
   /* OPTIONAL: Present the list of actions horizontally
@@ -190,7 +10,7 @@
     padding-right: 1.25em;
     text-align: center;
   }
-  .push .actions.post-list {
+  .push .actions .post-list {
     text-align: center;
     padding-right: 0;
     white-space: nowrap;
@@ -202,7 +22,7 @@
 
     padding-bottom: 1.25em;
   }
-  .push .actions.post-list > li {
+  .push .actions .post-list > li {
     width: 32em;
     max-width: 90%;
     display: inline-block;
@@ -211,20 +31,21 @@
     background: white;
     margin-right: 1.25em;
   }
-  .push .actions.post-list > li .post-item {
+  .push .actions .post-list > li .post-item {
     margin-bottom: 0;
   }
-  .push .actions.post-list .post-item a.push-card {
+  .push .actions .post-item a.push-card {
     margin: -2.75em -1.25em 0;
   }
-  .push .actions.post-list .post-item a.push-card h2,
-  .push .actions.post-list .post-item a.push-card h2[style*="background-image"] {
+  .push .actions .post-item a.push-card h2,
+  .push .actions .post-item a.push-card h2[style*="background-image"] {
     padding-top: 3.75em;
     padding-bottom: 3.75em;
     padding-top: 15vh;
     padding-bottom: 15vh;
   }
-  .push .actions.post-list .post-item a.push-card h2 {
+
+  .push .actions .post-item a.push-card h2 {
     height: 1.2em;
     white-space: nowrap;
     word-wrap     : inherit;
@@ -238,7 +59,8 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
   }
-  .push .actions.post-list h4 {
+
+  .push .actions .post-list h4 {
     height: 2.4em;
     overflow: hidden;
 
@@ -250,14 +72,7 @@
     -webkit-box-orient: vertical;
   }
 
-  /*
-  .push .actions.post-list .post-item footer .action a,
-  .push .actions.post-list .post-item footer .action button {
-    font-size: 0.75em;
-  }
-  */
-
-  .push .actions.post-list .post-item footer .action button {  
+  .push .actions .post-item footer .action button {  
     border-color: rgb(255, 49, 102); /* @pitaya */
     background-color: rgb(255, 49, 102); /* @pitaya */
     color: white;
