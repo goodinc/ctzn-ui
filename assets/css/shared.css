@@ -4977,6 +4977,7 @@
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
+  .post-list-header + .actions .post-list,
   .post-list-header + .post-list {
     margin-top: 0;
   }
@@ -5184,8 +5185,12 @@
   }
 
   /* Main title */
+  .actions .post-item {
+    padding-top: 0;
+  }
   .actions .post-item a.push-card {
-    margin: -1.25em -1.25em 0;
+    margin: 0 -1.25em 0;
+    padding-top: 0;
   }
   .actions .post-item a.push-card,
   .actions .post-item a.push-card:hover,
@@ -5194,7 +5199,7 @@
     color: white;
   }
   .actions .post-item a.push-card p:first-child {
-    margin: -1.5em -1.25em 0;
+    margin: 0 -1.25em 0;
     padding: 0.375em 1.25em;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
@@ -5402,6 +5407,16 @@
     text-decoration: none;
   }
 
+
+  /* =Actions on the Push page
+  ----------------------------------------------- */
+
+  /* OPTIONAL: Make the “Add Me” button stand out */
+  .push .actions .post-item footer .action button {  
+    border-color: rgb(255, 49, 102); /* @pitaya */
+    background-color: rgb(255, 49, 102); /* @pitaya */
+    color: white;
+  }
 
 
   /* =Settings
