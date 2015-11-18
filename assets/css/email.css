@@ -337,7 +337,9 @@
   -----------------------------------------------
   -----------------------------------------------
   ----------------------------------------------- */
-
+  .headline {
+    text-align: center;
+  }
   .headline h1 {
     margin-top: 0;
     margin-bottom: 0;
@@ -361,6 +363,12 @@
   .headline h2 b {
     color: black;
     text-decoration: none;
+  }
+  .headline > .icon {
+    display: block;
+    margin: 0 auto 10px;
+    width: 30px;
+    height: 30px;
   }
 
   /* Push Colors */
@@ -704,6 +712,64 @@
   }
 
 
+  /* =Push Card (for actions)
+  ----------------------------------------------- */
+  .push-card {
+    text-align: center;
+  }
+  .push-card a {
+    background: rgba(0, 0, 0, 0.1);
+    display: block;
+    font-size: 2.5em;
+    line-height: 1.2;
+    color: white;
+    padding: 2.5em 1.25em;
+    text-decoration: none;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+  .push-card a:hover,
+  .push-card a:active,
+  .push-card a:focus {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  /* Push Colors */
+  .push-card.lime {
+    background-color: rgb(176, 224, 0); /* @lime */
+    background-color: rgb(156, 204, 0); /* 4% darker */
+  }
+  .push-card.green {
+    background-color: rgb(60, 210, 0); /* @green */
+  }
+  .push-card.teal {
+    background-color: rgb(0, 204, 204); /* @teal */
+  }
+  .push-card.blue {
+    background-color: rgb(101, 152, 254); /* @blue */
+  }
+  .push-card.periwinkle {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .push-card.purple {
+    background-color: rgb(181, 62, 194); /* @purple */
+  }
+  .push-card.magenta {
+    background-color: rgb(250, 44, 162); /* @magenta */
+  }
+  .push-card.red {
+    background-color: rgb(255, 0, 86); /* @red */
+  }
+  .push-card.gold {
+    background-color: rgb(255, 204, 0); /* @gold */
+  }
+  .push-card.orange {
+    background-color: rgb(255, 117, 9); /* @orange */
+  }
+
+
   /* =Steps
   -----------------------------------------------
   (for the welcome email)
@@ -917,6 +983,10 @@
     padding-right: 5px;
     color: rgb(51, 51, 51); /* @iron */
   }
+  .article .body h6 {
+    font-size: inherit;
+    margin-bottom: 0;
+  }
   .article .body p {
     max-width: 33em; /* @readable-line-limit */
 
@@ -953,7 +1023,7 @@
   }
 
   /* An article summary is a smaller presentation of a post, intended for the post author 
-  (so they’ll a context when they’re looking at comments on their post). */
+  (so they’ll have a context when they’re looking at comments on their post). */
   .article .summary .figure {
     display: inline;
   }
