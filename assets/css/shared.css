@@ -2283,6 +2283,22 @@
     top  : 0.7142857143em; /* 10px / 14px */
     right: 0.7142857143em;
   }
+  .notifications .post-item .push-card {
+    margin: 0;
+    width  : 2.2857142857em; /* target image size / font size (60px / 14px / 1.875) */
+    line-height : 2.2857142857em;
+    min-width: 1px;
+    min-height: 1px;
+    position: absolute;
+    top  : 0.380952381em; /* 10px / 14px / 1.875 */
+    right: 0.380952381em;
+    padding: 0;
+    font-size: 1.875em;
+  }
+  .notifications .post-item .push-card .name {
+    line-height: inherit;
+    font-size: inherit;
+  }
   .notifications .post-list .post-item footer {
     font-size: 1.1428571429em; /* 1 / 0.875em */
   }
@@ -5758,6 +5774,8 @@
     background: rgb(238, 238, 238); /* @seashell */
     color: black;
   }
+
+  /* Make the text items different colors so it’s easier to tell them apart. */
   .public.page li:nth-child(3n+1) .post-item.text-only {
     background: rgb(222, 222, 222); /* @silver */
   }
@@ -5767,6 +5785,7 @@
   .public.page li:nth-child(3n+3) .post-item.text-only {
     background: white;
   }
+
   .public.page .post-item.text-only a {
     min-height: 50vw;
 
