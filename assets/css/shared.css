@@ -5474,7 +5474,7 @@
     -webkit-box-orient: vertical;
   }
   .push .action-members {
-    height: 4.375em; /* 1.875+0.25+0.75+1.5 */
+    height: 4.125em; /* 1.875em + 0.75em + 1.5em */
     word-wrap     : inherit;
     overflow-wrap : inherit;
     overflow: hidden;
