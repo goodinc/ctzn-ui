@@ -5417,6 +5417,11 @@
     background-color: rgb(255, 49, 102); /* @pitaya */
     color: white;
   }
+  .hoverable .push .actions .post-item footer .action button:hover,
+             .push .actions .post-item footer .action button:active,
+             .push .actions .post-item footer .action button:focus {
+    background-color: rgb(235, 29, 82); /* @raspberry */
+  }
 
   /* OPTIONAL: Present the list of actions horizontally */
   .push .post-list-header {
