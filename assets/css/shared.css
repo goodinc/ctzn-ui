@@ -5241,15 +5241,15 @@
   }
 
   /* Sub title */
-  .actions .post-item h4 {
+  .actions .post-item .push-card + h3 {
     margin-top: 1em;
     font-size: 1.25em;
     line-height: 1.2;
   }
-  .actions .post-item h4 + p {
+  .actions .post-item .push-card + h3 + p {
     font-size: 0.75em;
   }
-  .actions .post-item h4 + p .avatar {
+  .actions .post-item .push-card + h3 + p .avatar {
     margin-left: 0.375em;
   }
 
@@ -5416,6 +5416,67 @@
     border-color: rgb(255, 49, 102); /* @pitaya */
     background-color: rgb(255, 49, 102); /* @pitaya */
     color: white;
+  }
+
+  /* OPTIONAL: Present the list of actions horizontally */
+  .push .post-list-header {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    text-align: center;
+  }
+  .push .actions .post-list {
+    text-align: center;
+    padding-right: 0;
+    white-space: nowrap;
+    overflow-y: visible;
+    overflow-x: scroll;
+
+    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
+    -webkit-overflow-scrolling: touch;
+
+    padding-bottom: 1.25em;
+  }
+  .push .actions .post-list > li {
+    width: 32em;
+    max-width: 90%;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    background: white;
+    margin-right: 1.25em;
+  }
+
+  /* OPTIONAL: Attempt to make the items the same height */
+  .push .actions .post-item a.push-card h2,
+  .push .actions .post-item a.push-card h2[style*="background-image"] {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    padding-top: 25vh;
+    padding-bottom: 25vh;
+  }
+  .push .actions .post-list a.push-card + h3,
+  .push .actions .post-item a.push-card h2 {
+    height: 1.2em;
+    white-space: nowrap;
+    word-wrap     : inherit;
+    overflow-wrap : inherit;
+    overflow: hidden;
+
+    /* OPTIONAL: Show an ellipses if the text has been truncated
+    http://dropshado.ws/post/1015351370/webkit-line-clamp */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  .push .action-members {
+    height: 4.375em; /* 1.875+0.25+0.75+1.5 */
+    word-wrap     : inherit;
+    overflow-wrap : inherit;
+    overflow: hidden;
+  }
+  .push .action-members h3 {
+    margin-top: 0;
   }
 
 
