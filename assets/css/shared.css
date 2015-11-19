@@ -557,12 +557,12 @@
   /* =Fields
   ----------------------------------------------- */
   .text-clone span,
-  input[type="text"    ],
-  input[type="url"     ],
-  input[type="email"   ],
+  input[type="text"],
+  input[type="url"],
+  input[type="email"],
   input[type="password"],
-  input[type="number"  ],
-  input[type="datetime-local"],
+  input[type="number"],
+  input[type="date"],
   textarea {
     font-family: inherit;
     font-size: inherit;
@@ -596,15 +596,21 @@
     -webkit-text-fill-color: rgb(153, 153, 153); /* @nickel */
   }
   .supports-placeholder .text-clone span,
-  .supports-placeholder input[type="text"    ],
-  .supports-placeholder input[type="url"     ],
-  .supports-placeholder input[type="email"   ],
+  .supports-placeholder input[type="text"],
+  .supports-placeholder input[type="url"],
+  .supports-placeholder input[type="email"],
   .supports-placeholder input[type="password"],
-  .supports-placeholder input[type="number"  ],
-  .supports-placeholder input[type="datetime-local"],
+  .supports-placeholder input[type="number"],
+  .supports-placeholder input[type="date"],
   .supports-placeholder textarea {
     margin-top: 0;
     border-width: 0;
+  }
+
+  .supports-date .datetime .text label {
+    border-width: 0;
+    background-color: transparent;
+    padding: 0;
   }
 
 
