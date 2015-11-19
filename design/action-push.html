@@ -9,6 +9,50 @@
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
 
+  <style>
+
+    /* =Action Navigation (dots)
+    ----------------------------------------------- */
+    div.actions > nav {
+      text-align: center;
+      padding: 0 1.25em 1.25em;
+    }
+    div.actions > nav ol,
+    div.actions > nav li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    div.actions > nav ol {
+      margin: 0;
+    }
+    div.actions > nav li {
+      display: inline;
+    }
+    div.actions > nav li a {
+      display: inline-block;
+      text-decoration: none;
+      width: 0.75em;
+      height: 0.75em;
+      border-radius: 50%;
+      border: 0.0625em solid rgb(204, 204, 204); /* @aluminum */
+
+      /* @hidden-accessible-text */
+      text-indent: -9999px;
+      overflow: hidden;
+    }
+    .hoverable div.actions > nav li a:hover,
+               div.actions > nav li a:active,
+               div.actions > nav li a:focus {
+      background-color: rgb(204, 204, 204); /* @aluminum */
+    }
+    div.actions > nav li.active a {
+      background-color: black !important;
+      border-color: black;
+    }
+
+  </style>
+
   <script>
     // fonts.com tracking
     var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
@@ -440,7 +484,7 @@
     <div class="actions">
     <ol class="post-list">
       <li>
-        <article class="post-item">
+        <article class="post-item" id="action-1">
           <a href="action.html" class="blue push-card">
             <h2 class="name"><span>#pushforgood</span></h2>
             <p>ongoing</p>
@@ -825,7 +869,7 @@
         </article>
       </li>
       <li>
-        <article class="post-item">
+        <article class="post-item" id="action-2">
           <a href="action.html" class="blue push-card">
             <h2 class="name" style="background-image: url(https://m.ctznapp.com//s3/ctzn/bc/f7/e2f2980eb5040ea33b503d963682a5be4424.jpg);"><span>#wearyourshirt</span></h2>
             <p>ends tomorrow</p>
@@ -1001,7 +1045,7 @@
         </article>
       </li>
       <li>
-        <article class="post-item">
+        <article class="post-item" id="action-3">
           <a href="action.html" class="blue push-card">
             <h2 class="name" style="background-image: url(https://m.ctznapp.com/s3/ctzn/a9/69/c75c0a163dd819e245a2577794a0e3d675bf.jpg);"><span>#bikepedcountlosangeles2015</span></h2>
             <p>ends in 3 days</p>
@@ -1737,6 +1781,17 @@
         </article>
       </li>
     </ol>
+
+    <!--
+    <nav>
+      <ol>
+        <li class="active"><a href="#action-1">Action 1</a></li>
+        <li><a href="#action-2">Action 2</a></li>
+        <li><a href="#action-3">Action 3</a></li>
+      </ol>
+    </nav>
+    -->
+
   </div><!-- /.actions -->
 
 
