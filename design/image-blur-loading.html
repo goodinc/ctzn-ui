@@ -27,33 +27,6 @@
 
   <style>
 
-    .post-item .body figure {
-      position: relative;
-      padding: 0;
-      padding-bottom: 100%;
-      margin: 1.5em 0;
-
-      /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
-      overflow: hidden;
-      -webkit-transform: translate3d(0, 0, 0);
-    }
-    .post-item .body figure img {
-      min-width: 0;
-      min-height: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      margin: 0;
-      background-color: transparent;
-    }
-    .post-item .body figure img.preview {
-      margin: calc(-3em);
-      width: calc(100% + 6em);
-      max-width: none;
-      -webkit-filter: blur(1.5em);
-              filter: blur(1.5em);
-    }
     .post-item .body figure img.primary {
       display: none;
     }
@@ -394,7 +367,7 @@
           </header>
 
           <div class="body" >
-            <figure>
+            <figure style="padding-bottom: 100%">
               <a href="">
                 <!--
                 <img class="preview" src="https://m.ctznapp-qa2.com/s3/ctzn/287509cfa1ad091070d5367f3f18b14f3e8c99c7=ps40x40" alt="" />
