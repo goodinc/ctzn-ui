@@ -6,7 +6,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!--
   <script src="../assets/js/placeholder.js"></script>
+  -->
 
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
@@ -307,6 +309,303 @@
     </symbol>
   </svg>
 
+  <header class="pattern">
+    <h2><a href="../"><svg class="icon" width="80" height="30" viewBox="0 0 80 30"><switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch></svg></a></h2>
+    <nav>
+      <ul>
+        <li><a href="../design/">Design</a></li>
+        <li class="active"><a href="../build/">Build</a></li>
+        <li><a href="../test/">Test</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Forms</h1>
+
+  <section class="page">
+    <form action="" method="post">
+      <p class="text">
+        <label>
+          <span>Field label</span><br />
+          <input type="text" />
+        </label>
+      </p>
+      <p class="submit">
+        <button type="submit">Submit</button>
+      </p>
+    </form>
+  </section>
+
+<pre><code>&lt;form action=&quot;…&quot; method=&quot;post&quot;&gt;
+  &lt;p class=&quot;text&quot;&gt;
+    &lt;label&gt;
+      &lt;span&gt;Field label&lt;/span&gt;&lt;br /&gt;
+      &lt;input type=&quot;text&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/p&gt;
+  &lt;p class=&quot;submit&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+  &lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+<div class="supports-placeholder">
+
+<h2>Placeholder</h2>
+
+<section class="page">
+  <form action="" method="post">
+    <p class="text">
+      <label>
+        <span>Field label</span><br />
+        <input type="text" placeholder="Field label" />
+      </label>
+    </p>
+    <p class="submit">
+      <button>Submit</button>
+    </p>
+  </form>
+</section>
+
+<pre><code>&lt;html class=&quot;<mark>supports-placeholder</mark>&quot;&gt;
+  …
+  &lt;form action=&quot;…&quot; method=&quot;post&quot;&gt;
+    &lt;p class=&quot;text&quot;&gt;
+      &lt;label&gt;
+        &lt;span&gt;Field label&lt;/span&gt;&lt;br /&gt;
+        &lt;input type=&quot;text&quot; <mark>placeholder</mark>=&quot;Field label&quot; /&gt;
+      &lt;/label&gt;
+    &lt;/p&gt;
+      &lt;p class=&quot;submit&quot;&gt;
+        &lt;button&gt;Submit&lt;/button&gt;
+      &lt;/p&gt;
+  &lt;/form&gt;
+  …
+&lt;/html&gt;
+</code></pre>
+
+<p>The “supports-placeholder" classname is added by JavaScript. It hints to the style sheet that it’s safe to hide the field label (since it’s often the same as the placeholder).</p>
+
+<h2>Field with Icon</h2>
+
+<section class="page">
+  <form action="" method="post" class="has-icon">
+    <p class="text">
+      <label>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user"></use></svg><span>Field label</span><br />
+        <input type="text" placeholder="Field label" />
+      </label>
+    </p>
+    <p class="submit">
+      <button>Submit</button>
+    </p>
+  </form>
+</section>
+
+<pre><code>&lt;form action=&quot;…&quot; method=&quot;post&quot; class=&quot;<mark>has-icon</mark>&quot;&gt;
+  &lt;p class=&quot;text&quot;&gt;
+    &lt;label&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-user&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+      &lt;span&gt;Field label&lt;/span&gt;&lt;br /&gt;
+      &lt;input type=&quot;text&quot; placeholder=&quot;Field label&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h2>Multiline</h2>
+
+<section class="page">
+  <form action="" method="post">
+    <p class="text">
+      <label>
+        <span>Enter message (optional)</span><br />
+        <textarea placeholder="Enter message (optional)"></textarea>
+      </label>
+    </p>
+    <p class="submit">
+      <button>Submit</button>
+    </p>
+  </form>
+</section>
+
+<pre><code>&lt;p class=&quot;text&quot;&gt;
+  &lt;label&gt;
+    &lt;span&gt;Enter message (optional)&lt;/span&gt;&lt;br /&gt;
+    &lt;textarea placeholder=&quot;Enter message (optional)&quot;&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
+&lt;/p&gt;
+</code></pre>
+
+<h2>Field Group</h2>
+
+<section class="page">
+  <form action="" method="post" class="has-icon">
+    <ul class="text">
+      <li>
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg><span>Email</span><br />
+          <input type="email" placeholder="Email" />
+        </label>
+      </li>
+      <li>
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg><span>Password</span><br />
+          <input type="password" placeholder="Password" />
+        </label>
+      </li>
+    </ul>
+    <p class="submit">
+      <button>Submit</button>
+    </p>
+  </form>
+</section>
+
+<pre><code>&lt;ul class=&quot;text&quot;&gt;
+  &lt;li&gt;
+    &lt;label&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-envelope&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;Email&lt;/span&gt;&lt;br /&gt;
+      &lt;input type=&quot;email&quot; placeholder=&quot;Email&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;label&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-padlock&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;Password&lt;/span&gt;&lt;br /&gt;
+      &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h2>Notes</h2>
+
+<section class="page">
+  <form action="" method="post" class="has-icon">
+    <p>Note about the whole form</p>
+    <p class="text">
+      <label>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg><span>Email</span><br />
+        <input type="email" placeholder="Email" />
+      </label>
+      <em class="note">Note with details about this field.</em>
+    </p>
+    <p class="text">
+      <label>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg><span>Password</span><br />
+        <input type="password" placeholder="Password" />
+      </label>
+    </p>
+    <p class="submit">
+      <button>Send</button>
+    </p>
+  </form>
+</section>
+
+<pre><code>&lt;form action=&quot;…&quot; method=&quot;post&quot; class=&quot;has-icon&quot;&gt;
+  <mark>&lt;p&gt;Note about the whole form&lt;/p&gt;</mark>
+  &lt;p class=&quot;text&quot;&gt;
+    &lt;label&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-envelope&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;Email&lt;/span&gt;&lt;br /&gt;
+      &lt;input type=&quot;email&quot; placeholder=&quot;Email&quot; /&gt;
+    &lt;/label&gt;
+    &lt;em class=&quot;<mark>note</mark>&quot;&gt;Note with details about this field.&lt;/em&gt;
+  &lt;/p&gt;
+  &lt;p class=&quot;text&quot;&gt;
+    &lt;label&gt;
+      &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-padlock&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;Password&lt;/span&gt;&lt;br /&gt;
+      &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/p&gt;
+  &lt;p class=&quot;submit&quot;&gt;
+    &lt;button&gt;Send&lt;/button&gt;
+  &lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h2>Validation Error</h2>
+
+<section class="page">
+  <form action="" method="post" class="has-icon">
+    <p class="text error">
+      <label>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user"></use></svg><span>Field label</span><br />
+        <input type="text" placeholder="Field label" />
+      </label>
+    </p>
+    <p class="validation-message">
+      Oops! There’s something wrong with this field.
+    </p>
+    <p class="submit">
+      <button>Submit</button>
+    </p>
+  </form>
+</section>
+
+<pre><code>&lt;p class=&quot;text <mark>error</mark>&quot;&gt;
+  &lt;label&gt;
+    &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-user&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;Field label&lt;/span&gt;&lt;br /&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;Field label&quot; /&gt;
+  &lt;/label&gt;
+&lt;/p&gt;
+&lt;p class=&quot;<mark>validation-message</mark>&quot;&gt;
+  Oops! There’s something wrong with this field.
+&lt;/p&gt;
+</code></pre>
+
+<h2>Validation Success</h2>
+
+<section class="page">
+  <form action="" method="post" class="has-icon">
+    <p class="text success">
+      <label>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-user"></use></svg><span>Field label</span><br />
+        <input type="text" placeholder="Field label" />
+      </label>
+    </p>
+    <p class="submit">
+      <button>Submit</button>
+    </p>
+  </form>
+</section>
+
+<pre><code>&lt;p class=&quot;text <mark>success</mark>&quot;&gt;
+  &lt;label&gt;
+    &lt;svg class=&quot;icon&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use xlink:href=&quot;#icon-user&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;span&gt;Field label&lt;/span&gt;&lt;br /&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;Field label&quot; /&gt;
+  &lt;/label&gt;
+&lt;/p&gt;
+</code></pre>
+
+<h2>Error (for the whole form)</h2>
+
+<section class="page">
+  <section class="upload-message error" role="status">
+    <h1>
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-alert"></use></svg>
+      Something went wrong while sending the form data.
+    </h1>
+  </section>
+  <form action="" method="post" class="has-icon">
+    <ul class="text">
+      <li>
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg><span>Email</span><br />
+          <input type="email" placeholder="Email" />
+        </label>
+      </li>
+      <li>
+        <label>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg><span>Password</span><br />
+          <input type="password" placeholder="Password" />
+        </label>
+      </li>
+    </ul>
+    <p class="submit">
+      <button>Send</button>
+    </p>
+  </form>
+</section>
+
+  <h2>Examples</h2>
 
   <section class="edit page">
     <header>
@@ -1112,6 +1411,7 @@
     </form>
   </section>
 
+  </div><!-- /.supports-placeholder -->
 
 </body>
 </html>
