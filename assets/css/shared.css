@@ -6186,6 +6186,9 @@
 
   /* =Public Page
   ----------------------------------------------- */
+  .public.page .details .name a {
+    text-decoration: none;
+  }
   .public.page .post-list li {
     max-width: none;
   }
