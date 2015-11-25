@@ -140,17 +140,28 @@
 
   /* =Note
   ----------------------------------------------- */
-  .option-list button .note, /* For the settings page */
-  .option-list > p.note, /* For the “invite curator” form */
+  .option-list button .note, /* For the settings page (in case the buttons aren’t inside a form element). */
+  .option-list > p.note, /* For the settings page and the “invite curator” form. */
   .signup.page .note,
   form .note {
     display: block;
+    margin-left: 1em;
 
     /* @note */
     font-style: italic;
-    font-size: 0.875em;
-    margin-top: 0.4285714286em; /* @line-height / 4 / 0.875em */
+    font-size: 0.75em;
+    margin-top: 0.5em; /* @line-height / 4 / 0.75em */
     color: rgb(153, 153, 153); /* @nickel */
+  }
+
+  /* For the “Create a Push” form. */
+  form .has-note + .text {
+    margin-top: 1.5em;
+  }
+
+  /* OPTIONAL: Attempt to line up with the option text. */
+  .option-list > p.note {
+    margin-left: 1.5em;
   }
 
 
@@ -4726,6 +4737,10 @@
   .signup.page aside {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .signup.page p.checkbox:last-child {
+    color: rgb(153, 153, 153); /* @nickel */
+    margin-top: 0;
   }
   .signup.page aside a {
     display: block;
