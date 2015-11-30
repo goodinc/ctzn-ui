@@ -25,14 +25,6 @@
     <script src="../assets/js/html5.js"></script>
   <![endif]-->
 
-
-<style> .option-list button .note, .option-list > p.note, .signup.page .note, form .note {
-    display: block;
-    font-style: italic;
-    font-size: 0.75em;
-    margin-top: 0.4285714286em;
-    color: rgb(153, 153, 153);
-    margin-left: 1em;} </style> 
 </head>
 <body>
 
@@ -319,7 +311,13 @@
   </svg>
 
   <header class="primary">
-    <h2><a href="start.html"><svg class="icon" width="100" height="38" viewBox="0 0 100 38"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></svg></a></h2>
+    <h2>
+      <a href="start.html">
+        <svg class="icon" width="100" height="38" viewBox="0 0 100 38">
+          <switch><use xlink:href="#icon-ctzn"></use><foreignObject>CTZN</foreignObject></switch>
+        </svg>
+      </a>
+    </h2>
   </header>
 
   <section class="settings page">
@@ -328,32 +326,35 @@
 
       <h3>Details</h3>
      
-        <p class="text">
-          <label>
-            <span>Push Name</span><br />
-            <input type="text" placeholder="Push Name" />
-          </label> <em class="note">The name of the community or effort you are bringing onto CTZN.</em>
-        </p>
-        <p class="text" style="margin-top:1.5em">
-          <label>
-            <span>Purpose (optional)</span><br />
-            <textarea placeholder="Purpose (optional)"></textarea>
-          </label> <em class="note">Share a brief statement of what you're currently working toward.</em>
-        </p>
-       <p class="text" style="margin-top:1.5em">
-          <label>
-            <span>Push Hashtag</span><br />
-            <input type="text" placeholder="Push Hashtag" />
-          </label> <em class="note">This hashtag will be suggested to members of your Push.</em>
-        </p>
-       <p class="text" style="margin-top:1.5em">
-          <label>
-            <span>Website (optional)</span><br />
-            <input type="url" placeholder="Website (optional)" />
-          </label> 
-        </p>
-    
 
+      <p class="text has-note">
+        <label>
+          <span>Push Name</span><br />
+          <input type="text" placeholder="Push Name" />
+        </label>
+        <em class="note">The name of the community or effort you are bringing onto CTZN.</em>
+      </p>
+      <p class="text has-note">
+        <label>
+          <span>Purpose (optional)</span><br />
+          <textarea placeholder="Purpose (optional)"></textarea>
+        </label>
+        <em class="note">Share a brief statement of what you're currently working toward.</em>
+      </p>
+      <p class="text has-note">
+        <label>
+          <span>Push Hashtag</span><br />
+          <input type="text" placeholder="Push Hashtag" />
+        </label>
+        <em class="note">This hashtag will be suggested to members of your Push.</em>
+      </p>
+      <p class="text">
+        <label>
+          <span>Website (optional)</span><br />
+          <input type="url" placeholder="Website (optional)" />
+        </label> 
+      </p>
+  
       <h3>Push Color</h3>
       <p class="select">
         <label>
@@ -380,6 +381,7 @@
           <span>Invite Code</span><br />
           <input type="text" name="invite_code" placeholder="sampleinvitecode" autocapitalize="off" />
         </label>
+
         <em class="note"> A Push is a private community. Create a code that you can share with others to invite them into the Push. Enter at least five valid characters: a-z 0-9 _ ! * - </em>
       </p>
 
