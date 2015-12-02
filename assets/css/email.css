@@ -347,7 +347,8 @@
     line-height: 30px;
     color: rgb(102, 102, 102); /* @tin */
   }
-  .headline.first h1 {
+  .headline.first   h1,
+  .headline.primary h1 {
     font-size: 24px;
     line-height: 30px;
   }
@@ -421,9 +422,9 @@
     display: inline-block;
   }
 
-  /* Weekly Digest */
-   .daily.headline,
-  .weekly.headline {
+  /* Digest */
+    .daily.headline,
+  .primary.headline {
     border-top-width: 0;
     color: white;
   }
@@ -445,58 +446,58 @@
   }
 
   /* Push Colors */
-   .daily.headline,
-  .weekly.headline {
+    .daily.headline,
+  .primary.headline {
     background-color: rgb(176, 176, 176);
   }
-  .weekly.headline h1 {
+  .primary.headline h1 {
     color: white;
     color: rgba(255, 255, 255, 0.8);
     font-size: 24px;
   }
-  .weekly.headline h1 a,
-  .weekly.headline h1 b {
+  .primary.headline h1 a,
+  .primary.headline h1 b {
     color: white;
     text-decoration: none;
   }
-   .daily.headline.lime,
-  .weekly.headline.lime {
+    .daily.headline.lime,
+  .primary.headline.lime {
     background-color: rgb(176, 224, 0); /* @lime */
   }
-   .daily.headline.green,
-  .weekly.headline.green {
+    .daily.headline.green,
+  .primary.headline.green {
     background-color: rgb(60, 210, 0); /* @green */
   }
-   .daily.headline.teal,
-  .weekly.headline.teal {
+    .daily.headline.teal,
+  .primary.headline.teal {
     background-color: rgb(0, 204, 204); /* @teal */
   }
-   .daily.headline.blue,
-  .weekly.headline.blue {
+    .daily.headline.blue,
+  .primary.headline.blue {
     background-color: rgb(101, 152, 254); /* @blue */
   }
-   .daily.headline.periwinkle,
-  .weekly.headline.periwinkle {
+    .daily.headline.periwinkle,
+  .primary.headline.periwinkle {
     background-color: rgb(109, 90, 219); /* @periwinkle */
   }
-   .daily.headline.purple,
-  .weekly.headline.purple {
+    .daily.headline.purple,
+  .primary.headline.purple {
     background-color: rgb(181, 62, 194); /* @purple */
   }
-   .daily.headline.magenta,
-  .weekly.headline.magenta {
+    .daily.headline.magenta,
+  .primary.headline.magenta {
     background-color: rgb(250, 44, 162); /* @magenta */
   }
-   .daily.headline.red,
-  .weekly.headline.red {
+    .daily.headline.red,
+  .primary.headline.red {
     background-color: rgb(255, 0, 86); /* @red */
   }
-   .daily.headline.gold,
-  .weekly.headline.gold {
+    .daily.headline.gold,
+  .primary.headline.gold {
     background-color: rgb(255, 204, 0); /* @gold */
   }
-    .daily.headline.orange,
-  .weekly.headline.orange {
+     .daily.headline.orange,
+  .primary.headline.orange {
     background-color: rgb(255, 117, 9); /* @orange */
   }
 
@@ -515,6 +516,7 @@
   .headline,
   .article,
   .message,
+  .reminder,
   .steps,
   .tip,
   .download,
@@ -526,6 +528,7 @@
   .headline,
   .article,
   .message,
+  .reminder,
   .steps,
   .tip,
   .download,
@@ -534,6 +537,7 @@
   }
   .headline,
   .message,
+  .reminder,
   .tip,
   .download,
   .feedback {
@@ -552,11 +556,6 @@
     margin-top: 10px;
     padding: 20px 30px;
   }
-  /*
-  .headline.first {
-    margin-top: 0;
-  }
-  */
   .download {
     padding: 20px 30px;
   }
@@ -564,7 +563,8 @@
   .feedback {
     padding: 10px 30px;
   }
-  .message {
+  .message,
+  .reminder {
     max-width: 620px; /* @main-column-width - (30px x 2) */
     padding: 5px 30px 15px 30px;
   }
@@ -1186,6 +1186,78 @@
     margin-right: auto;
   }
 
+
+  /* =Reminder
+  ----------------------------------------------- */
+  .reminder {
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: rgb(255, 255, 229);
+  }
+  .reminder h1 {
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.25em;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reminder p {
+    margin-bottom: 20px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reminder .action {
+    margin-top: 25px;
+  }
+  .reminder .action a {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    border-radius: 1.5em;
+    line-height: 1;
+    padding: 1em 3em;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+  }
+
+  /* Push Colors */
+  .reminder.lime svg {
+    color: rgb(176, 224, 0); /* @lime */
+  }
+  .reminder.green svg {
+    color: rgb(60, 210, 0); /* @green */
+  }
+  .reminder.teal svg {
+    color: rgb(0, 204, 204); /* @teal */
+  }
+  .reminder.blue svg {
+    color: rgb(101, 152, 254); /* @blue */
+  }
+  .reminder.periwinkle svg {
+    color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .reminder.purple svg {
+    color: rgb(181, 62, 194); /* @purple */
+  }
+  .reminder.magenta svg {
+    color: rgb(250, 44, 162); /* @magenta */
+  }
+  .reminder.red svg {
+    color: rgb(255, 0, 86); /* @red */
+  }
+  .reminder.gold svg {
+    color: rgb(255, 204, 0); /* @gold */
+  }
+  .reminder.orange svg {
+    color: rgb(255, 117, 9); /* @orange */
+  }
 
 
   /* =Promotions
