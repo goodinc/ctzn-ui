@@ -313,6 +313,7 @@
     ----------------------------------------------- */
     header {
       background-color: rgb(109, 90, 219); /* @periwinkle */
+      background-color: rgba(109, 90, 219, 0.95); /* @periwinkle */
       padding: 0.625em 1.25em; /* 10px / @font-size */
     }
     header:after {
@@ -326,12 +327,20 @@
       display: inline-block;
       font-size: inherit;
     }
-    header h1 .icon {
+    header h1.animated {
+      transition: opacity 0.2s;
+    }
+    .scrolled-up header h1 {
+      opacity: 0;
+    }
+    header h1 .icon,
+    body > section.about .text .ctzn .icon {
       width: 2.625em; /* 42px / @font-size */
       height: 3.75em; /* 60px / @font-size */
       vertical-align: top;
     }
-    header h1 a {
+    header h1 a,
+    body > section.about .text .ctzn {
       display: block;
       border-radius: 50%;
       width       : 3.75em; /* 60px / @font-size */
@@ -445,6 +454,7 @@
 
     /* =Channels (with space around them)
     ----------------------------------------------- */
+    body > section.about,
     body > section.media {
       padding-bottom: 0;
     }
@@ -455,7 +465,7 @@
       margin-bottom: 0;
       max-width: none;
     }
-    section .channels div {
+    section .channels figure {
       display: block;
       width: 100%;
       border-width: 0 2em 2em;
@@ -465,9 +475,11 @@
          -moz-box-sizing: border-box;
               box-sizing: border-box;
     }
-    section .channels h4 {
-      color: white;
+    section .channels figcaption {
+      margin-top: 0.625em; /* @line-height / 2 */
+      color: black;
       text-transform: lowercase;
+      font-weight: bold;
     }
     section .channels iframe {
       width: 100%;
@@ -477,12 +489,12 @@
       box-shadow: 0 0.1em 0.8em rgba(0, 0, 0, 0.4); 
     }
     @media (min-width: 60em) {
-      section .channels div {
+      section .channels figure {
         width: 33%;
         float: left;
         border-width: 2em;
       }
-      section .channels div + div {
+      section .channels figure + figure {
         border-left-width: 0;
       }
       section .channels:after {
@@ -599,6 +611,10 @@
     .features section {
       margin-top: 2.5em; /* @line-height x 2 */
     }
+    .features .text,
+    .features section {
+      text-align: center;
+    }
     @media (min-width: 40em) {
       .features {
         padding: 3.75em;
@@ -688,8 +704,14 @@
     .about p {
       color: rgba(0, 0, 0, 0.45);
     }
-    .about p,
+    .about p {
+      color: rgba(0, 0, 0, 0.6);
+    }
     .features h3 {
+      color: white;
+    }
+    .features p {
+      color: black;
       color: rgba(0, 0, 0, 0.6);
     }
     .about p + p {
@@ -1117,9 +1139,11 @@
       }
 
 
+      body > section.about,
       body > section.media {
         display: block;
       }
+      body > section.about .text,
       body > section.media .text {
         max-width: 35em;
         margin-left: auto;
@@ -1141,6 +1165,65 @@
 
     }
 
+    body > section.about .image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin: -11.25em -1.875em 0; /* section padding */
+      position: relative;
+    }
+    body > section.about .image:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    body > section.about .text {
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 1.875em;
+      padding-right: 1.875em;
+      padding-top: 6.25em;
+      padding-bottom: 3.125em;
+      padding-top: 25vh;
+      padding-bottom: 12.5vh;
+      text-align: center;
+      max-width: 50em;
+      color: white;
+    }
+    body > section.about .text .ctzn {
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    body > section.about .text h1 {
+      font-weight: normal;
+    }
+    @media (max-width: 39.9em) {
+      body > section.about .text h1 {
+        font-size: 1.5em;
+      }
+    }
+    @media (min-width: 40em) {
+      body > section.about .text .ctzn {
+        font-size: 3em;
+      }
+    }
+    body > section.about .text a {
+      color: white;
+    }
+    body > section.about .text p + p {
+      margin-top: 1.875em;
+    }
+    body > section.about .text a.action {
+      background-color: white;
+      color: black;
+      padding: 0.9375em 1.875em;
+    }
 
     .good .figure {
       padding-bottom: 2.5em;
@@ -1464,6 +1547,13 @@
 
   <div style="height: 0; width: 0; position: absolute; visibility: hidden;">
   <svg>
+    <symbol id="icon-users" viewBox="0 0 20 20">
+      <path d="M12.7,14.7H0.3c0-1.7,2.8-3.1,6.2-3.1C9.9,11.6,12.7,12.9,12.7,14.7z M9.6,8.4
+        c0-1.7-1.4-3.1-3.1-3.1c-1.7,0-3.1,1.4-3.1,3.1s1.4,3.1,3.1,3.1C8.2,11.6,9.6,10.2,9.6,8.4z"/>
+      <path d="M14.8,11.2c-1.2,0-2.4,0.2-3.2,0.6c1.1,0.5,1.7,1.1,1.7,1.9h6.5
+        C19.7,12.4,17.5,11.2,14.8,11.2z M17.2,8.8c0-1.4-1.1-2.5-2.5-2.5c-1.4,0-2.5,1.1-2.5,2.5c0,1.4,1.1,2.5,2.5,2.5
+        C16.1,11.2,17.2,10.1,17.2,8.8z"/>
+    </symbol>
     <symbol id="icon-right-circle" viewBox="0 0 20 20">
       <path d="M10,0.8c-5.1,0-9.2,4.1-9.2,9.2s4.1,9.2,9.2,9.2s9.2-4.1,9.2-9.2S15.1,0.8,10,0.8z M10,17.7
         c-4.2,0-7.7-3.5-7.7-7.7S5.8,2.3,10,2.3c4.2,0,7.7,3.5,7.7,7.7S14.2,17.7,10,17.7z"/>
@@ -1744,15 +1834,28 @@
   </header>
 
   <section class="gold about">
-    <div class="text">
-      <h2>See progress <b>unfold.</b></h2>
-      <h3>A new way to connect, capture, and broadcast your push for good.</h3>
 
-      <p>CTZN is currently invite-only. Don’t have an invite code?</p>
-      <p><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Start a group</a></p>
+    <div class="image" style="background-image: url(http://www.ctznapp.com/s3/ctzn/3f/f7/b7109e38376d4314398ec841f29bfb9d427e.png);">
+      <div class="text">
 
+        <p class="ctzn">
+          <svg class="icon" width="100" height="38" viewBox="0 0 100 38">
+            <switch>
+              <use xlink:href="#icon-ctzn"></use>
+              <foreignobject>CTZN</foreignobject>
+            </switch>
+          </svg>
+        </p>
+
+        <h1>Show the heart of your movement from every point of view—for free!</h1>
+
+        <p><a href="">Watch our video</a></p>
+        <p><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Start a group</a></p>
+
+      </div>
     </div>
 
+    <!--
     <div class="figure">
       <figure class="preview">
         <div>
@@ -1762,13 +1865,97 @@
 
       <figure class="preview">
         <div>
-          <!--
-          <iframe width="375" height="667" src="http://www.ctznapp-qa2.com/live_channel/1582E0C6" frameborder="0" allowfullscreen></iframe>
-          <iframe width="375" height="667" src="promote-channel-1.html" frameborder="0" allowfullscreen></iframe>
-          -->
           <iframe class="channel" width="375" height="667" src="http://www.ctznapp-qa2.com/push/9C044CCA/bulletproof?channel=1" frameborder="0" allowfullscreen></iframe>
         </div>
       </figure>
+    </div>
+    -->
+
+    <div class="channels">
+      <figure>
+        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/A6A6B903/great-streets-network-of-champions?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+        <figcaption>For Communities</figcaption>
+      </figure>
+      <figure>
+        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/75FA699F/826la?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+        <figcaption>For Organizations</figcaption>
+      </figure>
+      <figure>
+        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/FE037887/manifest-justice?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+        <figcaption>For Projects &amp; Events</figcaption>
+      </figure>
+    </div>
+
+  </section>
+
+  <section class="red features">
+    <div class="text">
+      <h2>Storytelling tools <b>for changemakers</b></h2>
+
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-users"></use></svg>
+          Community spaces
+        </h3>
+        <p>Dedicated spaces to shape to 
+        the needs and goals of your group. 
+        Contribute and curate your 
+        collective story, together.</p>
+      </section>
+
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
+          Smart emails
+        </h3>
+        <p>Stay in touch with automated, 
+        smart digests that let you comment, 
+        love, and even post straight from 
+        your inbox.</p>
+      </section>
+
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use></svg>
+          Live channels
+        </h3>
+        <p>Live-updating streams for key moments and progress — 
+        made ready to project, display, 
+        or embed.</p>
+      </section>
+
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
+          Video mixes
+        </h3>
+        <p>Turn moments and milestones 
+        into stunning visual recaps. 
+        Select photos, mix them in any order, 
+        and share them instantly.</p>
+      </section>
+
+      <section>
+        <h3>
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use></svg>
+          Open integrations
+        </h3>
+        <p>Connect your social media to 
+        post from anywhere — via app, inbox, 
+        Instagram, Twitter, or Facebook. 
+        CTZN brings it all together in one place.</p>
+      </section>
+
+      <!--
+      <section class="more">
+        <h3>
+          <a href="">
+            Explore our features
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-right-circle"></use></svg>
+          </a>
+        </h3>
+      </section>
+      -->
     </div>
   </section>
 
@@ -1799,85 +1986,6 @@
     </div>
   </section>
 
-  <section class="red features">
-    <div class="text">
-      <h2>Built for changemakers. <b>Free to use.</b></h2>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-padlock"></use></svg>
-          Closed groups
-        </h3>
-        <p>Dedicated spaces that you can 
-        shape to the needs and goals of your 
-        group. Invite those most engaged with 
-        your push to contribute and curate 
-        your collective story, together.</p>
-      </section>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use></svg>
-          Post from anywhere
-        </h3>
-        <p>Easily connect your social media to 
-        post from anywhere — via app, inbox, 
-        Instagram, Twitter, or Facebook. 
-        CTZN does the work to bring it all 
-        together in one&nbsp;feed.</p>
-      </section>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
-          Email digests
-        </h3>
-        <p>Stay in touch with your group’s 
-        latests activities — get automated, 
-        smart digests that let you comment, 
-        love, or even post straight from 
-        your inbox.</p>
-      </section>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
-          Video mixes
-        </h3>
-        <p>Easily turn your favorite moments 
-        and milestones into stunning visual 
-        recaps. Select your favorite photos, 
-        mix them in any order, and share 
-        them instantly to any of your other 
-        social media platforms.</p>
-      </section>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use></svg>
-          Live channels
-        </h3>
-        <p>Live-updating streams featuring 
-        your key moments and progress — 
-        ready for you to project, display, 
-        or embed as a widget on your 
-        website. Build visibility and 
-        welcome the world to your push.</p>
-      </section>
-
-      <!--
-      <section class="more">
-        <h3>
-          <a href="">
-            Explore our features
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-right-circle"></use></svg>
-          </a>
-        </h3>
-      </section>
-      -->
-    </div>
-  </section>
-
   <div class="channels">
     <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/3C1F8367/tfa-la-corps?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
     <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/86B01D86/perthes-kids-foundation?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
@@ -1891,24 +1999,7 @@
       <h3>Tell your story, from every perspective.</h3>
       <p>Never miss a moment of your social impact journey. Bring your community and best content together, in one space. Our media creation technologies allow you to make instant, visually stunning videos that you can package for any moment, any community, or any goal.</p>
     </div>
-
-    <figure class="channels">
-      <div>
-        <h4>For Communities</h4>
-        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/A6A6B903/great-streets-network-of-champions?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h4>For Organizations</h4>
-        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/75FA699F/826la?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h4>For Projects + Events</h4>
-        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/FE037887/manifest-justice?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </figure>
-
   </section>
-
 
   <section class="purple tools">
     <div class="text">
@@ -2084,6 +2175,23 @@
       return { top: _y, left: _x };
     }
 
+    function hasClassName(element, className) {
+      if (!element || !className) return;
+      return element.className.indexOf(className) >= 0;
+    }
+
+    function addClassName(element, className) {
+      if (!element || !className) return;
+      if (hasClassName(element, className)) return;
+      element.className += ' ' + className;
+    }
+
+    function removeClassName(element, className) {
+      if (!element || !className) return;
+      var regex = eval('/[\s]*' + className + '/g');
+      element.className = element.className.replace(regex, '');
+    }
+
     function play(channel) {
       if (channel.contentWindow) channel.contentWindow.postMessage('play', '*');
     }
@@ -2127,6 +2235,12 @@
           pause(channels[index]);
         }
       }
+
+      if (scrollY < 300) {
+        addClassName(document.body, 'scrolled-up');
+      } else {
+        removeClassName(document.body, 'scrolled-up');
+      }
     }
 
     updatePositions();
@@ -2151,6 +2265,11 @@
         throttle = setTimeout(playVisible, 10);
       }, false);
     })();
+
+    setTimeout(function() {
+      var headline = document.querySelector('header h1');
+      if (headline) addClassName(headline, 'animated');
+    }, 1);
 
   })();
   </script>
