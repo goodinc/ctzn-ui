@@ -6229,24 +6229,42 @@
     margin-bottom: 0;
     font-size: 0.75em; /* 12px / @font-size */
   }
-  .public.page .post-item.text-only {
+
+  .public.page .post-list > li,
+  .public.page .post-list > li .post-item.text-only {
     background: rgb(238, 238, 238); /* @seashell */
     color: black;
   }
+  .public.page .post-list > li {
+    border-style: solid;
+    border-width: 0;
+    border-color: rgb(238, 238, 238); /* @seashell */
+  }
 
   /* Make the text items different colors so it’s easier to tell them apart. */
-  .public.page li:nth-child(3n+1) .post-item.text-only {
+  .public.page .post-list > li:nth-child(3n+1),
+  .public.page .post-list > li:nth-child(3n+1) .post-item.text-only {
     background: rgb(222, 222, 222); /* @silver */
+    border-color: rgb(222, 222, 222); /* @silver */
   }
-  .public.page li:nth-child(3n+2) .post-item.text-only {
+  .public.page .post-list > li:nth-child(3n+2),
+  .public.page .post-list > li:nth-child(3n+2) .post-item.text-only {
     background: rgb(238, 238, 238); /* @seashell */
+    border-color: rgb(238, 238, 238); /* @seashell */
   }
-  .public.page li:nth-child(3n+3) .post-item.text-only {
+  .public.page .post-list > li:nth-child(3n+3),
+  .public.page .post-list > li:nth-child(3n+3) .post-item.text-only {
     background: white;
+    border-color: white;
   }
 
   .public.page .post-item.text-only a {
+    padding: 2.25em 2.25em 3.75em;
     min-height: 50vw;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 
     display: -webkit-flex;
     display:         flex;
@@ -6268,19 +6286,65 @@
   }
   .public.page .post-item.text-only .body {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding: 2.25em 2.25em 3.75em;
     font-weight: normal;
+  }
+  @media (max-width: 59.99999em) {
+    .public.page .post-item.text-only div[style*="padding"] {
+      padding-bottom: 0 !important;
+    }
+  }
+  @media (min-width: 60em) {
+    .public.page .post-item.text-only div[style*="padding"] {
+      position: relative;
+    }
+    .public.page .post-item.text-only div[style*="padding"] a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
   }
   @media (min-width: 40em) {
     .public.page .post-item.text-only .body {
       font-size: 1.5em;
-      padding-bottom: 3em;
+    }
+  }
+
+  .public.page .post-item .thumbnails {
+    margin: 0 0.75em 1.5em;
+  }
+  .public.page .post-item .thumbnails img {
+    height: 2.5em;
+    width: auto;
+    margin: 0.1875em;
+  }
+
+  @media (min-width: 40em) {
+    .public.page .post-item .thumbnails {
+      margin: 1.5em;
+    }
+    .public.page .post-item .thumbnails img {
+      height: 5em;
+      margin: 0.375em;
     }
   }
 
   .public.page .post-item .body p {
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
     max-width: 32em;
+  }
+  .public.page .post-item .body p:first-child {
+    margin-top: 0;
+  }
+  .public.page .post-item .body p:last-child {
+    margin-bottom: 0;
   }
 
   .public.page .post-item header .avatar {
@@ -6296,12 +6360,15 @@
   }
 
   /* OPTIONAL: Position post headers at the bottom */
+  .public.page .post-item > a,
+  .public.page .post-item > div[style*="padding"] > a {
+    text-decoration: none;
+  }
   .public.page .post-item > a {
     display: block;
     position: relative;
-    text-decoration: none;
   }
-  .public.page .post-item .images:before {
+  .public.page .post-item header ~ .images:before {
     content: "";
     position: absolute;
     z-index: 1;
@@ -6420,7 +6487,6 @@
     }
   }
 
-
   /* OPTIONAL: Arrange the posts in columns. */
   .public.page .post-list > li {
     max-width: none;
@@ -6430,19 +6496,22 @@
     max-width: none;
   }
 
-  .public.page .post-list:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .public.page .post-list > li article {
-    float: left;
-  }
-  .public.page .post-list > li article.first-in-row {
-    clear: both;
-  }
-
   @media (min-width: 60em) {
+    .public.page .post-list > li:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .public.page .post-list > li article {
+      float: left;
+    }
+    .public.page .post-list > li article.first-in-row {
+      clear: both;
+    }
+    .public.page .post-list > li:nth-child(2n) article {
+      float: right;
+    }
+
     .public.page .post-list .post-item {
       max-width: none;
     }
@@ -6456,18 +6525,69 @@
       width: 100%;
     }
   }
-  /*
-  @media (min-width: 90em) {
-    .public.page .post-list .post-item.text-only {
-      width: 50%;
+
+
+
+
+/* EXPERIMENTAL */
+  .public.page .post-item.text-only a {
+    min-height: 18vw;
+  }
+  .public.page .post-item.text-only:first-child a {
+    min-height: 42vw;
+  }
+  .public.page .post-list > li {
+    border-width: 0.75em 0.75em 3em;
+  }
+  .public.page .post-list .thumbnails {
+    display: none;
+  }
+  .public.page .post-item.has-images header {
+    padding-bottom: 3em;
+  }
+  .public.page .post-item.text-only header {
+    padding: 0;
+  }
+  .public.page .post-list > li .post-item {
+    text-align: center;
+  }
+  @media (min-width: 40em) {
+    .public.page .post-list > li {
+      border-width: 1.5em;
     }
   }
-  @media (min-width: 120em) {
-    .public.page .post-list .post-item.landscape {
-      width: 50%;
+  @media (min-width: 50em) {
+    .public.page .post-list > li {
+      border-width: 2.25em;
     }
   }
-  */
+  @media (min-width: 60em) {
+    .public.page .post-list > li {
+      border-width: 3em;
+    }
+    .public.page .post-list > li:nth-child(2n+1) .post-item.square {
+      float: right;
+    }
+    .public.page .post-list > li .post-item.square.text-only a {
+      padding-right: 3em;
+      padding-left: 0;
+    }
+    .public.page .post-list > li:nth-child(3n+2) .post-item.square {
+      float: left;
+    }
+    .public.page .post-list > li:nth-child(3n+2) .post-item.square.text-only a {
+      padding-right: 0;
+      padding-left: 3em;
+    }
+  }
+
+  .public.page .post-list > li {
+    background-color: black !important;
+  }
+
+
+
+
 
 
 
@@ -6514,5 +6634,4 @@
     text-decoration: none;
     color: white;
   }
-
 
