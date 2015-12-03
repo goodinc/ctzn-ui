@@ -1236,6 +1236,85 @@
 
   </style>
 
+  <style>
+
+    @media (min-width: 40em) {
+      p.action,
+      p.action {
+        font-size: 1.25em;
+      }
+    }
+
+
+    /* =Buttons
+    ----------------------------------------------- */
+    p.action {
+      margin-top: 1.25em;
+      display: inline-block;
+      border-width: 0;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: bold;
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 0.46875em 0.9375em; /* @line-height x 3/8     @line-height x 3/4 */
+      line-height: inherit;
+      border-radius: 2.1875em;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+      text-decoration: none;
+    }
+    a:hover  p.action,
+    a:active p.action,
+    a:focus  p.action {
+      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: black;
+    }
+
+    body > section.start {
+      display: block;
+    }
+    body > section.start iframe {
+      width: 100%;
+    }
+    body > section.start > div.text > a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    body > section.start > div.text p:not(.action) {
+      color: inherit;
+    }
+
+    body > section.start > .text {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 45em;
+    }
+    body > section.start > .text p {
+      max-width: 35em;
+    }
+    section form .text {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    body > section.start > .text + .text {
+      margin-top: 5em;
+    }
+
+    /*
+    @media (min-width: 40em) {
+      .start .text {
+        font-size: 1.25em;
+      }
+    }
+    */
+
+  </style>
+
   <script>
     // fonts.com tracking
     var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
@@ -1825,164 +1904,36 @@
     </h1>
     <p><a href="#download">Download</a></p>
     <ul>
-      <!--
-      <li><a href="">Features</a></li>
-      <li><a href="">Principles</a></li>
-      -->
       <li><a href="https://ctzn.zendesk.com">Support</a></li>
     </ul>
   </header>
 
-  <section class="gold about">
+  <section class="gold start">
+    <div class="text">
+      <a href="push-new.html">
+        <h1>Create a push</h1>
+        <p>A push is a dedicated space to shape to the needs and goals of your group. Contribute and curate your collective story, together.</p>
+        <p class="action">Start</p>
+      </a>
+    </div>
 
-    <div class="image" style="background-image: url(http://www.ctznapp.com/s3/ctzn/3f/f7/b7109e38376d4314398ec841f29bfb9d427e.png);">
-      <div class="text">
-
-        <p class="ctzn">
-          <svg class="icon" width="100" height="38" viewBox="0 0 100 38">
-            <switch>
-              <use xlink:href="#icon-ctzn"></use>
-              <foreignobject>CTZN</foreignobject>
-            </switch>
-          </svg>
+    <div class="text">
+      <form action="https://m.ctznapp.com/register/push_preview" method="post">
+        <h1>Join your group to get started</h1>
+        <p class="text">
+          <label>
+            <span>Enter invite code…</span><br />
+            <input type="text" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" name="invite_code" />
+          </label>
         </p>
-
-        <h1>Show the heart of your movement from every point of view—for free!</h1>
-
-        <p><a href="">Watch our video</a></p>
-        <p><a class="action" href="promote-start.html">Start now</a></p>
-
-      </div>
+        <p class="submit">
+          <button type="submit">Start</button>
+        </p>
+      </form>
     </div>
 
-    <!--
-    <div class="figure">
-      <figure class="preview">
-        <div>
-          <iframe width="375" height="667" src="promote-switch.html" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </figure>
-
-      <figure class="preview">
-        <div>
-          <iframe class="channel" width="375" height="667" src="http://www.ctznapp-qa2.com/push/9C044CCA/bulletproof?channel=1" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </figure>
-    </div>
-    -->
-
-    <div class="channels">
-      <figure>
-        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/A6A6B903/great-streets-network-of-champions?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-        <figcaption>For Communities</figcaption>
-      </figure>
-      <figure>
-        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/75FA699F/826la?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-        <figcaption>For Organizations</figcaption>
-      </figure>
-      <figure>
-        <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/FE037887/manifest-justice?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-        <figcaption>For Projects &amp; Events</figcaption>
-      </figure>
-    </div>
-
-  </section>
-
-  <section class="red features">
-    <div class="text">
-      <h2>Storytelling tools <b>for changemakers</b></h2>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-users"></use></svg>
-          Community spaces
-        </h3>
-        <p>Dedicated spaces to shape to 
-        the needs and goals of your group. 
-        Contribute and curate your 
-        collective story, together.</p>
-      </section>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
-          Smart emails
-        </h3>
-        <p>Stay in touch with automated, 
-        smart digests that let you comment, 
-        love, and even post straight from 
-        your inbox.</p>
-      </section>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-expand"></use></svg>
-          Live channels
-        </h3>
-        <p>Live-updating streams for key moments and progress — 
-        made ready to project, display, 
-        or embed.</p>
-      </section>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-mix"></use></svg>
-          Video mixes
-        </h3>
-        <p>Turn moments and milestones 
-        into stunning visual recaps. 
-        Select photos, mix them in any order, 
-        and share them instantly.</p>
-      </section>
-
-      <section>
-        <h3>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-settings"></use></svg>
-          Open integrations
-        </h3>
-        <p>Connect your social media to 
-        post from anywhere — via app, inbox, 
-        Instagram, Twitter, or Facebook. 
-        CTZN brings it all together in one place.</p>
-      </section>
-
-      <!--
-      <section class="more">
-        <h3>
-          <a href="">
-            Explore our features
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-right-circle"></use></svg>
-          </a>
-        </h3>
-      </section>
-      -->
-    </div>
-  </section>
-
-  <div class="channels">
-    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/C50609F6/kaboom?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/93311448/dare-to-imagine?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0094EAB8/milk-bookies?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0E4E704E/good?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <section class="periwinkle good">
-    <div class="figure">
-      <figure>
-        <a href="http://magazine.good.is/guides/push-for-good">
-          <img src="../assets/images/about/push-for-good.png" width="500" alt="Push for good" />
-        </a>
-      </figure>
-    </div>
-    <div class="text">
-      <h2>Now featured on <a href="http://magazine.good.is/guides/push-for-good">GOOD.IS</a></h2>
-      <p>GOOD + CTZN have teamed up to spotlight impactful groups pushing to better their communities.</p>
-      <h3 class="more">
-        <a href="http://magazine.good.is/guides/push-for-good">
-          Meet the groups
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-right-circle"></use></svg>
-        </a>
-      </h3>
+    <div class="text" style="padding-bottom: 0; margin-bottom: -3.75em">
+      <h1 style="margin-bottom: 0;">Explore</h1>
     </div>
   </section>
 
@@ -1992,157 +1943,12 @@
     <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/095380B5/100startswith1-celebration-party?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
     <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/4B466AC0/community-services-unlimited?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
   </div>
-
-  <section class="orange media">
-    <div class="text">
-      <h2>Raise the <b>collective voice.</b></h2>
-      <h3>Tell your story, from every perspective.</h3>
-      <p>Never miss a moment of your social impact journey. Bring your community and best content together, in one space. Our media creation technologies allow you to make instant, visually stunning videos that you can package for any moment, any community, or any goal.</p>
-    </div>
-  </section>
-
-  <section class="purple tools">
-    <div class="text">
-      <h2>Made for &amp; by <b>communities.</b></h2>
-
-      <h3>Distraction-free technology shaped by communities pushing the world forward.</h3>
-
-      <p>CTZN provides the customization &amp; tools you need to build community, with less of the social media noise. Invite your people, connect your preferred platforms, employ your hashtags strategically, and choose when to receive notifications and Digests — daily or weekly.</p>
-    </div>
-    <div class="figure">
-      <figure class="preview">
-        <div>
-          <iframe width="375" height="667" src="promote-push.html" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </figure>
-    </div>
-  </section>
-
-  <section class="blue social">
-    <div class="icons">
-      <div>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-instagram"></use></svg>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-twitter"></use></svg>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-facebook"></use></svg>
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#icon-envelope"></use></svg>
-      </div>
-    </div>
-    <div class="text">
-      <h2>Push from <b>anywhere.</b></h2>
-      <h3>Contribute from any of our 3 unique platform experiences— web, app, and inbox.</h3>
-      <p>Free, cross-platform and multi-media support allows you to participate, however and wherever it is most accessible to you. And you can seamlessly connect and post any type of content— photos, tweets, Instagram videos, and Facebook posts.</p>
-    </div>
-  </section>
-
-  <section class="teal video">
-    <div class="text">
-      <h2>Social media <b>with intent.</b></h2>
-
-      <h3>tell the story of your push—show the heart of your community.</h3>
-
-      <p>We believe in technology’s potential to connect &amp; inspire, 
-      to make a difference in our local &amp; global communities. 
-      CTZN brings changemakers together in an intentional space 
-      where they can exchange &amp; broadcast their key moments.</p>
-
-      <div class="video">
-        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/d95ab251956b17337135188d3b77e6768f64f8f2.webm" type="video/webm">
-          <div class="video-fallback">
-            <h4>Aw, shucks.</h4>
-            <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
-          </div>
-        </video>
-
-        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/5cb91a2024b5215c4b5e11314abe7db7e247c248.webm" type="video/webm">
-          <div class="video-fallback">
-            <h4>Aw, shucks.</h4>
-            <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
-          </div>
-        </video>
-
-        <video width="200" height="200" poster="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.jpg=c640x640" preload="none" controls=""><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.m4v" type="video/mp4"><source src="http://assets.goodstatic.com/s3/ctzn/slideshows/870a065fa7ca7f9a3fffd8decd844f7af4962ca0.webm" type="video/webm">
-          <div class="video-fallback">
-            <h4>Aw, shucks.</h4>
-            <p>Our video player isn’t working in this web browser. Please try again in another browser or on another device.</p>
-          </div>
-        </video>
-      </div>
-    </div>
-    <div class="figure">
-      <figure class="preview">
-        <div>
-          <iframe width="375" height="667" src="promote-mix.html" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </figure>
-    </div>
-  </section>
-
-
-  <section class="magenta contact">
-    <div class="text">
-      <h2>Connect <b>with us.</b></h2>
-      <h3>Ready to push your community forward on&nbsp;ctzn?</h3>
-      <p><a class="action" href="https://ctzn.typeform.com/to/iQXVbn">Start a group</a></p>
-
-      <h3 class="mailing-list">
-        Stay up to date with all latest ctzn updates. Join our mailing list today!</a>
-      </h3>
-
-      <!-- Begin MailChimp Signup Form -->
-      <form action="//good.us2.list-manage.com/subscribe/post?u=5b63a0823e3b9c105434c46d7&amp;id=f9c7839dae" method="post" name="mc-embedded-subscribe-form">
-        <p class="text">
-          <label>
-            <span>Full name</span><br />
-            <input type="text" value="" name="FNAME" class="" id="mce-FNAME" />
-          </label>
-        </p>
-        <p class="text">
-          <label>
-            <span>Email address</span><br />
-            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" />
-          </label>
-        </p>
-        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style="position: absolute; left: -5000px;">
-          <input type="text" name="b_5b63a0823e3b9c105434c46d7_f9c7839dae" tabindex="-1" value="">
-        </div>
-        <p class="submit">
-          <button type="submit" value="Subscribe" name="subscribe">Join mailing list</button>
-        </p>
-      </form>
-      <!--End mc_embed_signup-->
-    </div>
-
-  </section>
-
-  <section class="lime download" id="download">
-
-    <div class="text">
-      <h2>Get the <b>CTZN app!</b></h2>
-      <h3>CTZN is built for <span style="text-transform: none;">iOS and Android</span></h3>
-      <ul class="download">
-        <li>
-          <a href="https://itunes.apple.com/us/app/ctzn-from-good/id961270038?ls=1&amp;mt=8">
-            <svg width="135" height="40" viewBox="0 0 135 40">
-              <switch>
-                <use xlink:href="#icon-apple-store-button"></use>
-                <foreignObject>Download on the App Store</foreignObject>
-              </switch>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="https://play.google.com/store/apps/details?id=com.goodinc.ctzn">
-            <svg width="116" height="40" viewBox="0 0 116 40">
-              <switch>
-                <use xlink:href="#icon-google-play-button"></use>
-                <foreignObject>Get it on Google Play</foreignObject>
-              </switch>
-            </svg>
-          </a>
-        </li>
-      </ul>
-  </section>
+  <div class="channels">
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/C50609F6/kaboom?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/93311448/dare-to-imagine?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0094EAB8/milk-bookies?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0E4E704E/good?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+  </div>
 
   <footer class="primary">
     <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
@@ -2236,11 +2042,13 @@
         }
       }
 
+      /*
       if (scrollY < 300) {
         addClassName(document.body, 'scrolled-up');
       } else {
         removeClassName(document.body, 'scrolled-up');
       }
+      */
     }
 
     updatePositions();
@@ -2266,25 +2074,15 @@
       }, false);
     })();
 
+    /*
     setTimeout(function() {
       var headline = document.querySelector('header h1');
       if (headline) addClassName(headline, 'animated');
     }, 1);
+    */
 
   })();
   </script>
-
-  <!-- This is the tracking script that we use in production
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-1694058-34', 'auto');
-    ga('send', 'pageview');
-  </script>
-  -->
 
 </body>
 </html>
