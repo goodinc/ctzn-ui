@@ -1954,9 +1954,11 @@
     </ul>
   </header>
 
-  <section class="gold create">
-    <div class="text" style="text-align: center;">
-      <a href="push-new.html" style="padding-top: 12.5vh; padding-bottom: 12.5vh;">
+  <div style="padding-top: 5em"></div>
+
+  <section class="gold create" style="width: 50%; float: left; padding-top: 2.5em; min-height: 21.5em;">
+    <div class="text">
+      <a href="push-new.html">
         <h1>Create a push</h1>
         <!--
         <iframe style="width: 100%" width="320" height="240" src="http://www.ctznapp-qa2.com/push/0094EAB8/milk-bookies?channel=1" frameborder="0" allowfullscreen></iframe>
@@ -1967,27 +1969,51 @@
     </div>
   </section>
 
-  <section class="orange create" style="padding-top: 1.25em; width: 50%; float: left; padding-top: 12.5vh; padding-bottom: 12.5vh;">
-    <div class="text" style="text-align: center;">
-      <a href="https://m.ctznapp.com/register/invite_code">
+  <section class="orange join" style="width: 50%; float: right; padding-top: 2.5em; min-height: 21.5em;">
+    <div class="text">
+      <form action="https://m.ctznapp.com/register/push_preview" method="post">
         <h1>Join a push</h1>
-        <p>Have an invite code? Enter it here.</p>
-        <p class="action">Start</p>
-      </a>
+        <p class="text">
+          <label>
+            <span style="color: black">Have an invite code? Enter it here…</span><br />
+            <input style="max-width: 17em" type="text" data-placeholder="invitecode" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" name="invite_code" />
+          </label>
+        </p>
+        <p class="submit">
+          <button type="submit">Submit</button>
+        </p>
+      </form>
     </div>
   </section>
 
-  <section class="lime create" style="padding-top: 1.25em; width: 50%; float: right; padding-top: 12.5vh; padding-bottom: 12.5vh;">
-    <div class="text" style="text-align: center;">
-      <a href="promote-explore.html">
-        <h1>Explore other pushes</h1>
-        <p>See what other communities are pushing for on CTZN.</p>
-        <p class="action">Start</p>
-      </a>
+  <section class="lime explore" style="clear: both; padding-top: 2.5em;">
+    <div class="text">
+      <div style="padding: 1.25em 1.25em 0.625em;">
+        <h1 style="margin-bottom: 0;"><b>Explore other pushes…</b></h1>
+      </div>
     </div>
   </section>
 
-  <footer class="primary" style="clear: both;">
+  <div class="channels">
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/3C1F8367/tfa-la-corps?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/86B01D86/perthes-kids-foundation?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/095380B5/100startswith1-celebration-party?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/4B466AC0/community-services-unlimited?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="channels">
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/C50609F6/kaboom?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/93311448/dare-to-imagine?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0094EAB8/milk-bookies?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0E4E704E/good?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="channels">
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/A6A6B903/great-streets-network-of-champions?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/75FA699F/826la?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/FE037887/manifest-justice?channel=1&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/9C044CCA/bulletproof?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <footer class="primary">
     <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
     <div class="legal">
       <p>Copyright © 2015 GOOD Worldwide Inc</p>
@@ -1998,6 +2024,128 @@
     </div>
   </footer>
 
+  <script>
+  // OPTIONAL: Autoplay the channels if they’re in view
+  (function() {
+    if (!document.querySelector || !window.addEventListener) return;
+
+    var channels = document.querySelectorAll('.channels iframe, iframe.channel');
+    var positions = [];
+
+    // KUDOS: http://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element#answer-442474
+    function getOffset( el ) {
+      var _x = 0;
+      var _y = 0;
+      while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+          _x += el.offsetLeft;
+          _y += el.offsetTop;
+          el = el.offsetParent;
+      }
+      return { top: _y, left: _x };
+    }
+
+    function hasClassName(element, className) {
+      if (!element || !className) return;
+      return element.className.indexOf(className) >= 0;
+    }
+
+    function addClassName(element, className) {
+      if (!element || !className) return;
+      if (hasClassName(element, className)) return;
+      element.className += ' ' + className;
+    }
+
+    function removeClassName(element, className) {
+      if (!element || !className) return;
+      var regex = eval('/[\s]*' + className + '/g');
+      element.className = element.className.replace(regex, '');
+    }
+
+    function play(channel) {
+      if (channel.contentWindow) channel.contentWindow.postMessage('play', '*');
+    }
+
+    function pause(channel) {
+      if (channel.contentWindow) channel.contentWindow.postMessage('pause', '*');
+    }
+
+    // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
+    function getScrollY() {
+      var supportPageOffset = window.pageXOffset !== undefined;
+      var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+      return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+    }
+
+    function isVisible(element, elementTop, windowTop) {
+      var elementBottom = elementTop + element.offsetHeight;
+      var windowBottom  = windowTop  + window.innerHeight;
+
+      // If the top edge of the window is greater than the top edge of the target
+      if ((elementTop > windowTop && elementTop < windowBottom) || (elementBottom > windowTop && elementBottom < windowBottom)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function updatePositions() {
+      positions = [];
+      for (var index = 0; index < channels.length; index++) {
+        positions.push(getOffset(channels[index]).top);
+      }
+    }
+
+    function playVisible(e) {
+      var scrollY = getScrollY();
+      for (var index = 0; index < channels.length; index++) {
+        if (isVisible(channels[index], positions[index], scrollY)) {
+          play(channels[index]);
+        } else {
+          pause(channels[index]);
+        }
+      }
+
+      /*
+      if (scrollY < 300) {
+        addClassName(document.body, 'scrolled-up');
+      } else {
+        removeClassName(document.body, 'scrolled-up');
+      }
+      */
+    }
+
+    updatePositions();
+    playVisible();
+
+    window.addEventListener('load', function() {
+      updatePositions();
+    }, false);
+
+    (function() {
+      var throttle;
+      window.addEventListener('resize', function() {
+        if (throttle) clearTimeout(throttle);
+        throttle = setTimeout(updatePositions, 100);
+      }, false);
+    })();
+
+    (function() {
+      var throttle;
+      window.addEventListener('scroll', function() {
+        if (throttle) clearTimeout(throttle);
+        throttle = setTimeout(playVisible, 10);
+      }, false);
+    })();
+
+    /*
+    setTimeout(function() {
+      var headline = document.querySelector('header h1');
+      if (headline) addClassName(headline, 'animated');
+    }, 1);
+    */
+
+  })();
+  </script>
 
 </body>
 </html>
