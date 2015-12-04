@@ -2081,13 +2081,17 @@
 
     window.addEventListener('load', function() {
       updatePositions();
+      playVisible();
     }, false);
 
     (function() {
       var throttle;
       window.addEventListener('resize', function() {
         if (throttle) clearTimeout(throttle);
-        throttle = setTimeout(updatePositions, 100);
+        throttle = setTimeout(function() {
+          updatePositions();
+          playVisible();
+        }, 100);
       }, false);
     })();
 
