@@ -1276,7 +1276,18 @@
     body > section.create  h1,
     body > section.join    h1,
     body > section.explore h1 {
+      margin-top: 0;
       color: white;
+    }
+    body > section.create  p,
+    body > section.join    p,
+    body > section.explore p {
+      font-weight: bold;
+    }
+    body > section.create  p:last-child,
+    body > section.join    p:last-child,
+    body > section.join    h1:last-child {
+      margin-bottom: 0;
     }
     body > section.create  h1 b,
     body > section.join    h1 b,
@@ -1320,14 +1331,6 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      max-width: 45em;
-    }
-    body > section.create > .text p {
-      max-width: 35em;
-    }
-    section form .text {
-      margin-left: 0;
-      margin-right: 0;
     }
 
     /*
@@ -1968,7 +1971,7 @@
         <p class="text">
           <label>
             <span style="color: black">Have an invite code? Enter it here…</span><br />
-            <input type="text" data-placeholder="invitecode" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" name="invite_code" />
+            <input style="max-width: 17em" type="text" data-placeholder="invitecode" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" name="invite_code" />
           </label>
         </p>
         <p class="submit">
@@ -1979,13 +1982,25 @@
   </section>
 
   <section class="lime explore">
-    <div class="text" style="padding-bottom: 0;">
-      <div style="padding: 1.25em;">
+    <div class="text">
+      <div style="padding: 1.25em 1.25em 0.625em;">
         <h1 style="margin-bottom: 0;"><b>Explore other pushes…</b></h1>
       </div>
     </div>
   </section>
 
+  <div class="channels">
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/3C1F8367/tfa-la-corps?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/86B01D86/perthes-kids-foundation?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/095380B5/100startswith1-celebration-party?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/4B466AC0/community-services-unlimited?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="channels">
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/C50609F6/kaboom?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/93311448/dare-to-imagine?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0094EAB8/milk-bookies?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+    <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/0E4E704E/good?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
+  </div>
   <div class="channels">
     <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/3C1F8367/tfa-la-corps?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
     <iframe width="320" height="240" src="http://www.ctznapp-qa2.com/push/86B01D86/perthes-kids-foundation?channel=1&amp;ui=minimal&amp;paused=1" frameborder="0" allowfullscreen></iframe>
