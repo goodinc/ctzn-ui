@@ -2312,7 +2312,6 @@
   (function() {
     if (!document.querySelector) return;
 
-    var cursor = 0;
     var posts = [
       {
         image: 'http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s2048x2048',
@@ -2323,12 +2322,52 @@
         date: 'November 8, 2015'
       },
       {
+        image: 'http://www.ctznapp.com/s3/ctzn/a0/d8/181877d3de82f75906cbf60a918d5d0d665e.jpg=s2048x2048',
+        color: 'purple',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/816d5bfd2defda9846d8ad39d7f9bdcf94026c35=c60x60',
+        username: 'shari',
+        push: 'GOOD',
+        date: 'June 30, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/1d/2d/25d1be26f6a076d869198da4b8790925e36a.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/904caa3d0c4e887f3b8199b88b77ffe408a5ef0d=c60x60',
+        username: 'sproutfund',
+        push: 'Dare to Imagine',
+        date: 'October 16, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/47/23/0b9244a8977790499fa6e88edf125f1cf5ea.jpg=s2048x2048',
+        color: 'teal',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/010959343f338a3ef8ff319feb2f1ea8a624845c=c60x60',
+        username: 'aleshadailey',
+        push: 'Milk + Bookies',
+        date: 'August 8, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/43/b8/41ed6f4702e6a8e9323bb0f6ae9974165896.jpg=s2048x2048',
+        color: 'teal',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/010959343f338a3ef8ff319feb2f1ea8a624845c=c60x60',
+        username: 'aleshadailey',
+        push: 'Milk + Bookies',
+        date: 'July 16, 2015'
+      },
+      {
         image: 'http://www.ctznapp.com/s3/ctzn/bc/4a/68588a4af81100697d88c7bffc2e8d8c5e91.jpg=s2048x2048',
         color: 'purple',
         avatar: 'http://www.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c60x60',
         username: 'casey',
         push: 'GOOD',
         date: 'October 24, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/8c/e2/7ae576d4591593c51e3f375dde0c0e0447e2.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/6f0cae95016dc21fd45b744a3e9d6d72d69d0bce=c60x60',
+        username: 'adamhorowitz',
+        push: 'Dare to Imagine',
+        date: 'October 13, 2015'
       },
       {
         image: 'http://www.ctznapp.com/s3/ctzn/1a/4d/f74f75cf6d885cb5ad5899bc7f47b68f1abe.jpg=s2048x2048',
@@ -2339,12 +2378,28 @@
         date: 'October 1, 2015'
       },
       {
+        image: 'http://www.ctznapp.com/s3/ctzn/4f/d2/aea264a3af525967c5265fcaaf140b996845.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
+        username: 'patcheson',
+        push: 'Dare to Imagine',
+        date: 'October 15, 2015'
+      },
+      {
         image: 'http://www.ctznapp.com/s3/ctzn/67/5c/6e311fcbd85b740e94605dc2b8dbcc07d7e4.jpg=s2048x2048',
         color: 'teal',
         avatar: 'http://www.ctznapp.com/s3/ctzn/9e369c817069e2e5ad02429b8b1042a5ab258d7b=c60x60',
         username: 'tafaraibayne',
         push: 'LA CTZNs',
         date: 'July 25, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/e5/2d/5abec89424ad3d931b4166685d5adca91f81.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
+        username: 'melanieariens',
+        push: 'Dare to Imagine',
+        date: 'October 13, 2015'
       },
       {
         image: 'http://www.ctznapp.com/s3/ctzn/41/66/435c8595959acd11589d66990dccd07e0c3a.jpg=s2048x2048',
@@ -2355,12 +2410,28 @@
         date: 'July 18, 2015'
       },
       {
+        image: 'http://www.ctznapp.com/s3/ctzn/6f/4a/6a97752ac005372246bedd3dd54033a074d1.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
+        username: 'melanieariens',
+        push: 'Dare to Imagine',
+        date: 'September 2, 2015'
+      },
+      {
         image: 'http://www.ctznapp.com/s3/ctzn/3f/f7/b7109e38376d4314398ec841f29bfb9d427e.png=s2048x2048',
         color: 'teal',
         avatar: 'http://www.ctznapp.com/s3/ctzn/010959343f338a3ef8ff319feb2f1ea8a624845c=c60x60',
         username: 'aleshadailey',
         push: 'Milk + Bookies',
         date: 'July 12, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/3d/dd/341ed76e375b608c68e90699d0ac7ca85d2f.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
+        username: 'sarah.m.sherban',
+        push: 'Dare to Imagine',
+        date: 'October 14, 2015'
       },
       {
         image: 'http://www.ctznapp.com/s3/ctzn/7f/8c/5beabc4457b2f525e97a214c26ec82af2859.jpg=s2048x2048',
@@ -2371,12 +2442,28 @@
         date: 'June 21, 2015'
       },
       {
+        image: 'http://www.ctznapp.com/s3/ctzn/1f/c8/1c8bcbd6f464c826af4a51f1933bdcebbc55.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/904caa3d0c4e887f3b8199b88b77ffe408a5ef0d=c60x60',
+        username: 'sproutfund',
+        push: 'Dare to Imagine',
+        date: 'October 16, 2015'
+      },
+      {
         image: 'http://www.ctznapp.com/s3/ctzn/b9/9b/ecb255994391cca151d6370e9e4df2f04b66.jpg=s2048x2048',
         color: 'blue',
         avatar: 'http://www.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60',
         username: 'aldo',
         push: 'Neighborday',
         date: 'April 25, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/ab/3f/9121e487397c6e111f43a4438398f45e6906.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
+        username: 'melanieariens',
+        push: 'Dare to Imagine',
+        date: 'October 15, 2015'
       },
       {
         image: 'http://www.ctznapp.com/s3/ctzn/cc/42/e4d3b2cf989af63b4b9cfb42c4e8230eaa39.jpg=s2048x2048',
@@ -2386,7 +2473,14 @@
         push: 'BULLETPROOF.',
         date: 'November 26, 2015'
       }
+
     ];
+
+    var min = 0;
+    var max = posts.length - 1;
+
+    var random = Math.floor(Math.random() * (max - min + 1) + min);
+    var cursor = random;
 
     var image = document.querySelector('.image');
     var color = document.querySelector('.image-credit span:first-child');
@@ -2407,6 +2501,7 @@
     }
 
     setInterval(update, 7000);
+    update();
  
     // Preload
     for (var index = 0; index < posts.length; index++) {
