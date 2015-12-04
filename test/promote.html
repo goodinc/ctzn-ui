@@ -2405,8 +2405,14 @@
       if (push) push.innerHTML = posts[cursor].push;
       if (date) date.innerHTML = posts[cursor].date;
     }
- 
+
     setInterval(update, 7000);
+ 
+    // Preload
+    for (var index = 0; index < posts.length; index++) {
+      var temp = new Image();
+      temp.src = posts[index].image;
+    }
   })();
   </script>
 
