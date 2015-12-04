@@ -1236,6 +1236,38 @@
 
   </style>
 
+  <style>
+    p.image-credit {
+      margin: 0;
+      font-size: 0.75em;
+      position: absolute;
+      bottom: 2.5em;
+      left: 2.5em;
+      color: white;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    p.image-credit span:last-child {
+      font-weight: bold;
+    }
+    p.image-credit b {
+      color: white;
+    }
+    .image-credit img {
+      border-radius: 50%;
+      vertical-align: middle;
+      width: 1.875em;
+      height: 1.875em;
+      margin-right: 0.25em;
+    }
+    .image-credit span:first-child {
+      display: inline-block;
+      padding-left: 5px;
+      height: 1.875em;
+      margin-right: 0.5em;
+      vertical-align: middle;
+    }
+  </style>
+
   <script>
     // fonts.com tracking
     var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
@@ -1835,14 +1867,14 @@
 
   <section class="gold about">
 
-    <div class="image" style="background-image: url(http://www.ctznapp.com/s3/ctzn/3f/f7/b7109e38376d4314398ec841f29bfb9d427e.png);">
+    <div class="image" style="background-image: url(http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s2048x2048);">
       <div class="text">
 
         <p class="ctzn">
           <svg class="icon" width="100" height="38" viewBox="0 0 100 38">
             <switch>
               <use xlink:href="#icon-ctzn"></use>
-              <foreignobject>CTZN</foreignobject>
+              <foreignObject>CTZN</foreignObject>
             </switch>
           </svg>
         </p>
@@ -1853,6 +1885,7 @@
         <p><a class="action" href="promote-start.html">Start now</a></p>
 
       </div>
+      <p class="image-credit"><span class="orange"></span><img src="http://www.ctznapp.com/s3/ctzn/9d/4f/07b2c1cf2280b8cf4dea8015436a0d833b06.jpg=c60x60" alt=""> <b class="username">@katemcentee</b> for <b class="push">Dare To Imagine</b> / <span class="date">November 8, 2015</span></p>
     </div>
 
     <!--
@@ -2142,6 +2175,7 @@
           </a>
         </li>
       </ul>
+    </div>
   </section>
 
   <footer class="primary">
@@ -2271,6 +2305,108 @@
       if (headline) addClassName(headline, 'animated');
     }, 1);
 
+  })();
+  </script>
+
+  <script>
+  (function() {
+    if (!document.querySelector) return;
+
+    var cursor = 0;
+    var posts = [
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s2048x2048',
+        color: 'orange',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/9d/4f/07b2c1cf2280b8cf4dea8015436a0d833b06.jpg=c60x60',
+        username: 'katemcentee',
+        push: 'Dare To Imagine',
+        date: 'November 8, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/bc/4a/68588a4af81100697d88c7bffc2e8d8c5e91.jpg=s2048x2048',
+        color: 'purple',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c60x60',
+        username: 'casey',
+        push: 'GOOD',
+        date: 'October 24, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/1a/4d/f74f75cf6d885cb5ad5899bc7f47b68f1abe.jpg=s2048x2048',
+        color: 'blue',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/33cd6746c1cc42f58bb7e4051333d7e943e48f0c=c60x60',
+        username: 'earlcole',
+        push: 'Perthes Kids Foundation',
+        date: 'October 1, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/67/5c/6e311fcbd85b740e94605dc2b8dbcc07d7e4.jpg=s2048x2048',
+        color: 'teal',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/9e369c817069e2e5ad02429b8b1042a5ab258d7b=c60x60',
+        username: 'tafaraibayne',
+        push: 'LA CTZNs',
+        date: 'July 25, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/41/66/435c8595959acd11589d66990dccd07e0c3a.jpg=s2048x2048',
+        color: 'green',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60',
+        username: 'fgufromthegroundupfgualumni',
+        push: 'Community Services Unlimited',
+        date: 'July 18, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/3f/f7/b7109e38376d4314398ec841f29bfb9d427e.png=s2048x2048',
+        color: 'teal',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/010959343f338a3ef8ff319feb2f1ea8a624845c=c60x60',
+        username: 'aleshadailey',
+        push: 'Milk + Bookies',
+        date: 'July 12, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/7f/8c/5beabc4457b2f525e97a214c26ec82af2859.jpg=s2048x2048',
+        color: 'gold',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/e911be73783616c5a309f3a82f58924a317b5535=c60x60',
+        username: 'lceo',
+        push: 'ROSIES Foundation',
+        date: 'June 21, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/b9/9b/ecb255994391cca151d6370e9e4df2f04b66.jpg=s2048x2048',
+        color: 'blue',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60',
+        username: 'aldo',
+        push: 'Neighborday',
+        date: 'April 25, 2015'
+      },
+      {
+        image: 'http://www.ctznapp.com/s3/ctzn/cc/42/e4d3b2cf989af63b4b9cfb42c4e8230eaa39.jpg=s2048x2048',
+        color: 'gold',
+        avatar: 'http://www.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60',
+        username: 'iamdamonturner',
+        push: 'BULLETPROOF.',
+        date: 'November 26, 2015'
+      }
+    ];
+
+    var image = document.querySelector('.image');
+    var color = document.querySelector('.image-credit span:first-child');
+    var avatar = document.querySelector('.image-credit img');
+    var username = document.querySelector('.image-credit .username');
+    var push = document.querySelector('.image-credit .push');
+    var date = document.querySelector('.image-credit .date');
+
+    function update() {
+      cursor++;
+      if (cursor >= posts.length) cursor = 0;
+      if (image) image.style.backgroundImage = 'url(' + posts[cursor].image + ')';
+      if (color) color.className = posts[cursor].color;
+      if (avatar) avatar.src = posts[cursor].avatar;
+      if (username) username.innerHTML = '@' + posts[cursor].username;
+      if (push) push.innerHTML = posts[cursor].push;
+      if (date) date.innerHTML = posts[cursor].date;
+    }
+ 
+    setInterval(update, 7000);
   })();
   </script>
 
