@@ -6230,37 +6230,43 @@
     font-size: 0.75em; /* 12px / @font-size */
   }
 
-  .public.page .post-list > li,
+  .public.page .post-list > li {
+    background-color: black;
+    border-style: solid;
+    border-width: 0.75em 0.75em 3em;
+    border-color: rgb(238, 238, 238); /* @seashell */
+  }
+  .public.page .post-list > li .post-item {
+    text-align: center;
+  }
   .public.page .post-list > li .post-item.text-only {
     background: rgb(238, 238, 238); /* @seashell */
     color: black;
   }
-  .public.page .post-list > li {
-    border-style: solid;
-    border-width: 0;
-    border-color: rgb(238, 238, 238); /* @seashell */
-  }
 
   /* Make the text items different colors so it’s easier to tell them apart. */
-  .public.page .post-list > li:nth-child(3n+1),
-  .public.page .post-list > li:nth-child(3n+1) .post-item.text-only {
-    background: rgb(222, 222, 222); /* @silver */
+  .public.page .post-list > li:nth-child(3n+1) {
     border-color: rgb(222, 222, 222); /* @silver */
   }
-  .public.page .post-list > li:nth-child(3n+2),
-  .public.page .post-list > li:nth-child(3n+2) .post-item.text-only {
-    background: rgb(238, 238, 238); /* @seashell */
+  .public.page .post-list > li:nth-child(3n+1) .post-item.text-only {
+    background: rgb(222, 222, 222); /* @silver */
+  }
+  .public.page .post-list > li:nth-child(3n+2) {
     border-color: rgb(238, 238, 238); /* @seashell */
   }
-  .public.page .post-list > li:nth-child(3n+3),
+  .public.page .post-list > li:nth-child(3n+2) .post-item.text-only {
+    background: rgb(238, 238, 238); /* @seashell */
+  }
+  .public.page .post-list > li:nth-child(3n+3) {
+    border-color: white;
+  }
   .public.page .post-list > li:nth-child(3n+3) .post-item.text-only {
     background: white;
-    border-color: white;
   }
 
   .public.page .post-item.text-only a {
     padding: 2.25em 2.25em 3.75em;
-    min-height: 50vw;
+    min-height: 18vw;
 
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -6284,6 +6290,12 @@
     -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
   }
+
+  /* Post without images */
+  .public.page .post-item.text-only:first-child a {
+    min-height: 42vw;
+  }
+
   .public.page .post-item.text-only .body {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
@@ -6313,25 +6325,6 @@
   @media (min-width: 40em) {
     .public.page .post-item.text-only .body {
       font-size: 1.5em;
-    }
-  }
-
-  .public.page .post-item .thumbnails {
-    margin: 0 0.75em 1.5em;
-  }
-  .public.page .post-item .thumbnails img {
-    height: 2.5em;
-    width: auto;
-    margin: 0.1875em;
-  }
-
-  @media (min-width: 40em) {
-    .public.page .post-item .thumbnails {
-      margin: 1.5em;
-    }
-    .public.page .post-item .thumbnails img {
-      height: 5em;
-      margin: 0.375em;
     }
   }
 
@@ -6395,6 +6388,10 @@
   }
   .public.page .post-item.has-images header {
     color: white;
+    padding-bottom: 3em;
+  }
+  .public.page .post-item.text-only header {
+    padding: 0;
   }
 
   .public.page .post-list li > a {
@@ -6487,6 +6484,23 @@
     }
   }
 
+  /* OPTIONAL: Show a border around each post. */
+  @media (min-width: 40em) {
+    .public.page .post-list > li {
+      border-width: 1.5em;
+    }
+  }
+  @media (min-width: 50em) {
+    .public.page .post-list > li {
+      border-width: 2.25em;
+    }
+  }
+  @media (min-width: 60em) {
+    .public.page .post-list > li {
+      border-width: 3em;
+    }
+  }
+
   /* OPTIONAL: Arrange the posts in columns. */
   .public.page .post-list > li {
     max-width: none;
@@ -6512,59 +6526,6 @@
       float: right;
     }
 
-    .public.page .post-list .post-item {
-      max-width: none;
-    }
-    .public.page .post-list .post-item.text-only,
-    .public.page .post-list .post-item.square,
-    .public.page .post-list .post-item.portrait {
-      width: 50%;
-    }
-    .public.page .post-list .post-item.landscape,
-    .public.page .post-list .post-item.panoramic {
-      width: 100%;
-    }
-  }
-
-
-
-
-/* EXPERIMENTAL */
-  .public.page .post-item.text-only a {
-    min-height: 18vw;
-  }
-  .public.page .post-item.text-only:first-child a {
-    min-height: 42vw;
-  }
-  .public.page .post-list > li {
-    border-width: 0.75em 0.75em 3em;
-  }
-  .public.page .post-list .thumbnails {
-    display: none;
-  }
-  .public.page .post-item.has-images header {
-    padding-bottom: 3em;
-  }
-  .public.page .post-item.text-only header {
-    padding: 0;
-  }
-  .public.page .post-list > li .post-item {
-    text-align: center;
-  }
-  @media (min-width: 40em) {
-    .public.page .post-list > li {
-      border-width: 1.5em;
-    }
-  }
-  @media (min-width: 50em) {
-    .public.page .post-list > li {
-      border-width: 2.25em;
-    }
-  }
-  @media (min-width: 60em) {
-    .public.page .post-list > li {
-      border-width: 3em;
-    }
     .public.page .post-list > li:nth-child(2n+1) .post-item.square {
       float: right;
     }
@@ -6579,16 +6540,20 @@
       padding-right: 0;
       padding-left: 3em;
     }
+
+    .public.page .post-list .post-item {
+      max-width: none;
+    }
+    .public.page .post-list .post-item.text-only,
+    .public.page .post-list .post-item.square,
+    .public.page .post-list .post-item.portrait {
+      width: 50%;
+    }
+    .public.page .post-list .post-item.landscape,
+    .public.page .post-list .post-item.panoramic {
+      width: 100%;
+    }
   }
-
-  .public.page .post-list > li {
-    background-color: black !important;
-  }
-
-
-
-
-
 
 
   /* =Public Page (Single Post)
