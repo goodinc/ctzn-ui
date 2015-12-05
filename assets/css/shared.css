@@ -6214,6 +6214,7 @@
   }
   .public.page nav .next {
     padding-bottom: 4.5em;
+    margin-bottom: 0;
   }
   .public.page .details + nav {
     margin-top: 1.5em;
