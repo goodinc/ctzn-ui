@@ -6231,7 +6231,9 @@
   }
 
   .public.page .post-list > li {
+    /*
     background-color: black;
+    */
     border-style: solid;
     border-width: 0.75em 0.75em 3em;
     border-color: rgb(238, 238, 238); /* @seashell */
@@ -6239,6 +6241,7 @@
   .public.page .post-list > li .post-item {
     text-align: center;
   }
+  .public.page .post-list > li,
   .public.page .post-list > li .post-item.text-only {
     background: rgb(238, 238, 238); /* @seashell */
     color: black;
@@ -6248,18 +6251,21 @@
   .public.page .post-list > li:nth-child(3n+1) {
     border-color: rgb(222, 222, 222); /* @silver */
   }
+  .public.page .post-list > li:nth-child(3n+1),
   .public.page .post-list > li:nth-child(3n+1) .post-item.text-only {
     background: rgb(222, 222, 222); /* @silver */
   }
   .public.page .post-list > li:nth-child(3n+2) {
     border-color: rgb(238, 238, 238); /* @seashell */
   }
+  .public.page .post-list > li:nth-child(3n+2),
   .public.page .post-list > li:nth-child(3n+2) .post-item.text-only {
     background: rgb(238, 238, 238); /* @seashell */
   }
   .public.page .post-list > li:nth-child(3n+3) {
     border-color: white;
   }
+  .public.page .post-list > li:nth-child(3n+3),
   .public.page .post-list > li:nth-child(3n+3) .post-item.text-only {
     background: white;
   }
@@ -6289,6 +6295,10 @@
 
     -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
+  }
+  .public.page .square + .post-item.text-only.square a {
+    min-height: 42vw;
+    min-height: calc(50vw - 3em);
   }
 
   /* Post without images */
@@ -6526,6 +6536,22 @@
       float: right;
     }
 
+    .public.page .post-list .post-item {
+      max-width: none;
+    }
+    .public.page .post-list .post-item.text-only,
+    .public.page .post-list .post-item.square,
+    .public.page .post-list .post-item.portrait {
+      width: 50%;
+    }
+    .public.page .post-list .post-item.landscape,
+    .public.page .post-list .post-item.panoramic {
+      width: 100%;
+    }
+  }
+
+  /* OPTIONAL: Make the square image positions (left or right) seem more random */
+  @media (min-width: 60em) {
     .public.page .post-list > li:nth-child(2n+1) .post-item.square {
       float: right;
     }
@@ -6539,19 +6565,6 @@
     .public.page .post-list > li:nth-child(3n+2) .post-item.square.text-only a {
       padding-right: 0;
       padding-left: 3em;
-    }
-
-    .public.page .post-list .post-item {
-      max-width: none;
-    }
-    .public.page .post-list .post-item.text-only,
-    .public.page .post-list .post-item.square,
-    .public.page .post-list .post-item.portrait {
-      width: 50%;
-    }
-    .public.page .post-list .post-item.landscape,
-    .public.page .post-list .post-item.panoramic {
-      width: 100%;
     }
   }
 
