@@ -6388,6 +6388,15 @@
   .public.page .post-item .body p:last-child {
     margin-bottom: 0;
   }
+  .public.page .post-item .body p a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .public.page .post-item .body p a:hover,
+  .public.page .post-item .body p a:active,
+  .public.page .post-item .body p a:focus {
+    text-decoration: underline;
+  }
   .public.page .post-item header .avatar {
     position: static;
     margin-right: 0.5em;

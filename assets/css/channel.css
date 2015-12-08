@@ -803,6 +803,15 @@
   .push-channel article .body > div > div p:last-child {
     margin-bottom: 0;
   }
+  .push-channel article .body a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .push-channel article .body a:hover,
+  .push-channel article .body a:active,
+  .push-channel article .body a:focus {
+    text-decoration: underline;
+  }
 
   /* OPTIONAL: Limit the height of the text */
   .push-channel article .body .container {
