@@ -6201,6 +6201,81 @@
 
   /* =Public Page
   ----------------------------------------------- */
+  .public.page > header {
+    text-align: left;
+    border-width: 0;
+    box-shadow: none;
+    background-color: rgb(255, 117, 9); /* @orange */
+    padding-left: 1.25em;
+    padding-right: 9em;
+  }
+
+  /* Push Colors */
+  .push-card.public.page.lime > header {
+    background-color: rgb(176, 224, 0); /* @lime */
+  }
+  .push-card.public.page.green > header {
+    background-color: rgb(60, 210, 0); /* @green */
+  }
+  .push-card.public.page.teal > header {
+    background-color: rgb(0, 204, 204); /* @teal */
+  }
+  .push-card.public.page.blue > header {
+    background-color: rgb(101, 152, 254); /* @blue */
+  }
+  .push-card.public.page.periwinkle > header {
+    background-color: rgb(109, 90, 219); /* @periwinkle */
+  }
+  .push-card.public.page.purple > header {
+    background-color: rgb(181, 62, 194); /* @purple */
+  }
+  .push-card.public.page.magenta > header {
+    background-color: rgb(250, 44, 162); /* @magenta */
+  }
+  .push-card.public.page.red > header {
+    background-color: rgb(255, 0, 86); /* @red */
+  }
+  .push-card.public.page.gold > header {
+    background-color: rgb(255, 204, 0); /* @gold */
+  }
+  .push-card.public.page.orange > header {
+    background-color: rgb(255, 117, 9); /* @orange */
+  }
+
+  .public.page > header h1 {
+    text-transform: none;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 900;
+  }
+  .public.page > header h1 a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .public.page > header .action {
+    border-left-width: 0;
+  }
+  .public.page > header h1.animated {
+    transition: opacity 0.2s;
+  }
+  .scrolled-up .public.page > header h1 {
+    opacity: 0;
+  }
+
+  .public.page .powered-by {
+    color: white;
+    padding: 1.5em 1.25em;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  .public.page .powered-by a {
+    color: inherit;
+  }
+  .public.page .powered-by a svg.icon {
+    width: 2.625em; /* 42px / @font-size */
+    height: 1em;
+    vertical-align: baseline;
+  }
+
   .public.page .details .name a {
     text-decoration: none;
   }
@@ -6213,7 +6288,7 @@
     margin: 0;
   }
   .public.page nav .next {
-    padding-bottom: 4.5em;
+    padding-bottom: 9em;
     margin-bottom: 0;
   }
   .public.page .details + nav {
@@ -6235,6 +6310,7 @@
     border-style: solid;
     border-width: 0.75em 0.75em 1.5em;
     background-color: white;
+    border-color: white;
   }
 
   .public.page .post-list > li .post-item {
@@ -6248,6 +6324,9 @@
   /* Make the text items different colors so it’s easier to tell them apart. */
   .public.page .post-list > li:nth-child(3n+1) {
     border-color: rgb(222, 222, 222); /* @silver */
+    background-color: rgb(222, 222, 222); /* @silver */
+  }
+  .public.page .post-list > li.multiple-images:nth-child(3n+1) {
     background-color: white;
   }
   .public.page .post-list > li:nth-child(3n+1) .post-item.text-only {
@@ -6255,6 +6334,9 @@
   }
   .public.page .post-list > li:nth-child(3n+2) {
     border-color: rgb(238, 238, 238); /* @seashell */
+    background-color: rgb(238, 238, 238); /* @seashell */
+  }
+  .public.page .post-list > li.multiple-images:nth-child(3n+2) {
     background-color: white;
   }
   .public.page .post-list > li:nth-child(3n+2) .post-item.text-only {
@@ -6262,6 +6344,9 @@
   }
   .public.page .post-list > li:nth-child(3n+3) {
     border-color: white;
+    background-color: white;
+  }
+  .public.page .post-list > li.multiple-images:nth-child(3n+3) {
     background-color: rgb(238, 238, 238); /* @seashell */
   }
   .public.page .post-list > li:nth-child(3n+3) .post-item.text-only {
@@ -6295,28 +6380,16 @@
             flex-wrap: wrap;
   }
 
-  @media (min-width: 39.9em) {
+  @media (min-width: 40em) {
     .public.page .post-item.text-only .container {
       padding: 1.875em 1.875em 3em;
     }
   }
 
-  @media (min-width: 59.9em) {
+  @media (min-width: 60em) {
     .public.page .post-item.text-only .container {
       padding: 2.25em 2.25em 3.75em;
     }
-  }
-
-  /* SHIM: Only apply the inline style on wide screens */
-  @media (max-width: 59.9em) {
-    .public.page .square + .post-item.text-only.square .container {
-      min-height: 0 !important;
-    }
-  }
-
-  .public.page .square + .post-item.text-only.square .container {
-    min-height: 42vw;
-    min-height: calc(50vw - 3em);
   }
 
   /* Post without images */
@@ -6588,8 +6661,34 @@
     .public.page .post-list > li article.first-in-row {
       clear: both;
     }
+    .public.page .post-list > li .post-item.square.text-only .container {
+      padding-right: 0;
+      padding-left: 3em;
+    }
+
+    /* OPTIONAL: Make the square image positions (left or right) seem random */
     .public.page .post-list > li:nth-child(2n) article {
       float: right;
+    }
+    .public.page .post-list > li:nth-child(2n) .post-item.square.text-only .container {
+      padding-right: 3em;
+      padding-left: 0;
+    }
+
+    .public.page .post-list > li:nth-child(2n+1) article {
+      float: right;
+    }
+    .public.page .post-list > li:nth-child(2n+1) .post-item.square.text-only .container {
+      padding-right: 3em;
+      padding-left: 0;
+    }
+
+    .public.page .post-list > li:nth-child(3n+2) article {
+      float: left;
+    }
+    .public.page .post-list > li:nth-child(3n+2) .post-item.square.text-only .container {
+      padding-right: 0;
+      padding-left: 3em;
     }
 
     .public.page .post-list .post-item {
@@ -6599,43 +6698,49 @@
     .public.page .post-list .post-item.square,
     .public.page .post-list .post-item.portrait {
       width: 50%;
+      -webkit-flex-basis: 50%;
+              flex-basis: 50%;
     }
     .public.page .post-list .post-item.landscape,
     .public.page .post-list .post-item.panoramic {
       width: 100%;
+      -webkit-flex-basis: 100%;
+              flex-basis: 100%;
     }
   }
 
-  /* OPTIONAL: Make the square image positions (left or right) seem more random */
+  /* OPTIONAL: Center the items vertically, in browsers that support flexbox */
   @media (min-width: 60em) {
-    .public.page .post-list > li:nth-child(2n+1) .post-item.square {
-      float: right;
-    }
-    .public.page .post-list > li .post-item.square.text-only .container {
-      padding-right: 3em;
-      padding-left: 0;
-    }
-    .public.page .post-list > li:nth-child(3n+2) .post-item.square {
-      float: left;
-    }
-    .public.page .post-list > li:nth-child(3n+2) .post-item.square.text-only .container {
-      padding-right: 0;
-      padding-left: 3em;
-    }
-  }
+    .public.page .post-list > li {
+      display: -webkit-flex;
+      display:         flex;
 
-  /* SHIM: If the text is long, switch to single-column */
-  .public.page .post-list .long-text.last-image.first-in-row,
-  .public.page .post-list .long-text.text-only {
-    float: none;
-    width: 100%;
-  }
-  .public.page .post-list .long-text.text-only .container {
-    min-height: 0 !important;
-  }
-  @media (min-width: 60em) {
-    .public.page .post-list .long-text.text-only .container {
-      padding-left: 0 !important;
+      -webkit-flex-direction: row;
+              flex-direction: row;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .public.page .post-list > li:nth-child(2n) {
+      -webkit-flex-direction: row-reverse;
+              flex-direction: row-reverse;
+    }
+    .public.page .post-list > li:nth-child(2n+1) {
+      -webkit-flex-direction: row-reverse;
+              flex-direction: row-reverse;
+    }
+    .public.page .post-list > li:nth-child(3n+2) {
+      -webkit-flex-direction: row;
+              flex-direction: row;
     }
   }
 

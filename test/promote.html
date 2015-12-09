@@ -2251,10 +2251,14 @@
   </footer>
 
   <script>
-  // OPTIONAL: Autoplay the channels if they’re in view
   (function() {
+
+    /* Do we have the features we need? */
     if (!document.querySelector || !window.addEventListener) return;
 
+
+    /* =Utilities
+    ----------------------------------------------- */
     var channels = document.querySelectorAll('.channels iframe, iframe.channel');
     var positions = [];
 
@@ -2322,6 +2326,7 @@
     }
 
     function playVisible(e) {
+      // OPTIONAL: Autoplay the channels if they’re in view
       var scrollY = getScrollY();
       for (var index = 0; index < channels.length; index++) {
         if (isVisible(channels[index], positions[index], scrollY)) {
@@ -2331,6 +2336,9 @@
         }
       }
 
+
+      /* OPTIONAL: Add a class name of “scrolled-up” to the body if the 
+                   introduction (including the CTZN logo) is visible. */
       if (scrollY < 300) {
         addClassName(document.body, 'scrolled-up');
       } else {
@@ -2341,6 +2349,17 @@
     updatePositions();
     playVisible();
 
+    (function() {
+      var throttle;
+      window.addEventListener('scroll', function() {
+        if (throttle) clearTimeout(throttle);
+        throttle = setTimeout(playVisible, 10);
+      }, false);
+    })();
+
+
+    /* OPTIONAL: Handle slow loading content and and resizing windows.
+    ----------------------------------------------- */
     window.addEventListener('load', function() {
       updatePositions();
     }, false);
@@ -2353,14 +2372,9 @@
       }, false);
     })();
 
-    (function() {
-      var throttle;
-      window.addEventListener('scroll', function() {
-        if (throttle) clearTimeout(throttle);
-        throttle = setTimeout(playVisible, 10);
-      }, false);
-    })();
 
+    /* OPTIONAL: Use a transition when revealing the push name in the sticky header.
+    ----------------------------------------------- */
     setTimeout(function() {
       var headline = document.querySelector('header h1');
       if (headline) addClassName(headline, 'animated');
