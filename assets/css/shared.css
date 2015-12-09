@@ -6074,13 +6074,13 @@
     font-weight: inherit;
     line-height: inherit;
     text-align: left;
-    padding-left: 48px;
-    padding-bottom: 8px;
   }
   .shareable-mix h1 .avatar {
-    margin-left: -48px;
-    position: absolute;
-    margin-top: -8px;
+    margin-right: 0.375em;
+  }
+  .shareable-mix h1 .avatar img[width="40"] {
+    width: 2.5em; /* 40px / @font-size */
+    height: 2.5em;
   }
   .shareable-mix h1 span {
     font-weight: bold;
