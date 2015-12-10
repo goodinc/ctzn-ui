@@ -6298,7 +6298,7 @@
     border-top: 0.0625em solid rgba(0, 0, 0, 0.2);
   }
 
-  .public.page .post-item header {
+  .public.page .post-list header {
     position: relative;
 
     padding: 1.5em;
@@ -6353,7 +6353,7 @@
     background: white;
   }
 
-  .public.page .post-item.text-only .container {
+  .public.page .post-item.text-only {
     padding: 1.25em 1.25em 2.5em;
     min-height: 18vw;
 
@@ -6381,47 +6381,25 @@
   }
 
   @media (min-width: 40em) {
-    .public.page .post-item.text-only .container {
+    .public.page .post-item.text-only {
       padding: 1.875em 1.875em 3em;
     }
   }
 
   @media (min-width: 60em) {
-    .public.page .post-item.text-only .container {
+    .public.page .post-item.text-only {
       padding: 2.25em 2.25em 3.75em;
     }
   }
 
   /* Post without images */
-  .public.page .post-item.text-only:first-child .container {
+  .public.page .post-list header + .post-item.text-only {
     min-height: 42vw;
   }
 
   .public.page .post-item.text-only .body {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
-  }
-  @media (max-width: 59.99999em) {
-    .public.page .post-item.text-only div[style*="padding"] {
-      padding-bottom: 0 !important;
-    }
-  }
-  @media (min-width: 60em) {
-    .public.page .post-item.text-only div[style*="padding"] {
-      position: relative;
-    }
-    .public.page .post-item.text-only div[style*="padding"] .container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      min-height: 0;
-
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-    }
   }
   @media (max-width: 29.9em) {
     .public.page .post-item .body p {
@@ -6470,24 +6448,47 @@
   .public.page .post-item .body p a:focus {
     text-decoration: underline;
   }
-  .public.page .post-item header .avatar {
-    position: static;
+
+  .public.page .post-list header h3,
+  .public.page .post-list header p {
+      float: none;
+      display: inline;
+      font-size: inherit;
+      line-height: inherit;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      vertical-align: baseline;
+  }
+  .public.page .post-list header h3,
+  .public.page .post-list header .avatar {
     margin-right: 0.5em;
   }
-  .public.page .post-item header p {
+  .public.page .post-list header p {
     color: inherit;
   }
-  .public.page .post-item header time {
+  .public.page .post-list header p a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block; /* Attempt to keep the date on one line */
+  }
+
+  .public.page .post-list header p a:hover,
+  .public.page .post-list header p a:active,
+  .public.page .post-list header p a:focus {
+      color: black;
+  }
+  .public.page .post-list header time {
     color: inherit;
     opacity: 0.5;
   }
 
   /* OPTIONAL: Position post headers at the bottom */
-  .public.page .post-item > .container {
-    display: block;
+  .public.page .post-list li {
     position: relative;
+    z-index: 1;
   }
-  .public.page .post-item header ~ .images:before {
+  .public.page .post-list header ~ .post-item:last-child figure:before {
     content: "";
     position: absolute;
     z-index: 1;
@@ -6497,8 +6498,8 @@
     height: 100%;
     background-image: linear-gradient(to bottom, transparent, transparent 60%, rgba(0, 0, 0, 0.75));
   }
-  .public.page .post-item header {
-    padding: 1.5em;
+  .public.page .post-list header {
+    padding: 0 1.5em;
     background: transparent;
     box-shadow: none;
     color: black;
@@ -6512,19 +6513,19 @@
             box-sizing: border-box;
     z-index: 2;
   }
-  .public.page .post-item.has-images header {
+  .public.page .post-list header.only-images {
     color: white;
     padding-bottom: 3em;
   }
-  .public.page .post-item header a:hover,
-  .public.page .post-item header a:active,
-  .public.page .post-item header a:focus {
+  .public.page .post-list header a:hover,
+  .public.page .post-list header a:active,
+  .public.page .post-list header a:focus {
     color: black;
     text-decoration: underline;
   }
-  .public.page .post-item.has-images header a:hover,
-  .public.page .post-item.has-images header a:active,
-  .public.page .post-item.has-images header a:focus {
+  .public.page .post-list header.only-images a:hover,
+  .public.page .post-list header.only-images a:active,
+  .public.page .post-list header.only-images a:focus {
     color: white;
     text-decoration: underline;
   }
@@ -6537,7 +6538,7 @@
   }
 
   /* OPTIONAL: Make images stick to the left and right edge of the post */
-  .public.page .post-item .images img {
+  .public.page .post-item figure img {
     display: block;
     width: 100%;
     height: auto;
@@ -6545,7 +6546,7 @@
   }
 
   /* OPTIONAL: Show a preview image while the real image is loading */
-  .public.page .post-item .images figure[style*="padding"] {
+  .public.page .post-item figure[style*="padding"] {
     position: relative;
 
     /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
@@ -6555,7 +6556,7 @@
     -webkit-transform: translate3d(0, 0, 0);
     */
   }
-  .public.page .post-item .images figure[style*="padding"] img {
+  .public.page .post-item figure[style*="padding"] img {
     position: absolute;
     top: 0;
     left: 0;
@@ -6564,7 +6565,7 @@
     min-height: 0;
     max-width: none;
   }
-  .public.page .post-item .images img.preview {
+  .public.page .post-item figure img.preview {
     margin: calc(-3em);
     width: calc(100% + 6em) !important;
     -webkit-filter: blur(1.5em);
@@ -6572,7 +6573,7 @@
   }
 
   /* OPTIONAL: Show an icon while the image is loading (if a preview images isn’t available) */
-  .public.page .post-item .images figure:not([style*="padding"]):not(.loaded) img {
+  .public.page .post-item figure:not([style*="padding"]):not(.loaded) img {
     min-height: 200px;
     min-height: 25vw;
 
@@ -6655,40 +6656,60 @@
       display: table;
       clear: both;
     }
-    .public.page .post-list > li article {
+    .public.page .post-list > li .post-item {
       float: left;
     }
-    .public.page .post-list > li article.first-in-row {
+    .public.page .post-list > li .post-item.first-in-row {
       clear: both;
     }
-    .public.page .post-list > li .post-item.square.text-only .container {
+    .public.page .post-list > li .post-item.square.text-only {
       padding-right: 0;
       padding-left: 3em;
+    }
+    .public.page .post-list > li header.square {
+      width: 50%;
+      left: auto;
+      right: 0;
     }
 
     /* OPTIONAL: Make the square image positions (left or right) seem random */
-    .public.page .post-list > li:nth-child(2n) article {
+    .public.page .post-list > li:nth-child(2n) .post-item {
       float: right;
     }
-    .public.page .post-list > li:nth-child(2n) .post-item.square.text-only .container {
+    .public.page .post-list > li:nth-child(2n) .post-item.square.text-only {
       padding-right: 3em;
       padding-left: 0;
     }
+    .public.page .post-list > li:nth-child(2n) header.square {
+      width: 50%;
+      left: 0;
+      right: auto;
+    }
 
-    .public.page .post-list > li:nth-child(2n+1) article {
+    .public.page .post-list > li:nth-child(2n+1) .post-item {
       float: right;
     }
-    .public.page .post-list > li:nth-child(2n+1) .post-item.square.text-only .container {
+    .public.page .post-list > li:nth-child(2n+1) .post-item.square.text-only {
       padding-right: 3em;
       padding-left: 0;
     }
+    .public.page .post-list > li:nth-child(2n+1) header.square {
+      width: 50%;
+      left: 0;
+      right: auto;
+    }
 
-    .public.page .post-list > li:nth-child(3n+2) article {
+    .public.page .post-list > li:nth-child(3n+2) .post-item {
       float: left;
     }
-    .public.page .post-list > li:nth-child(3n+2) .post-item.square.text-only .container {
+    .public.page .post-list > li:nth-child(3n+2) .post-item.square.text-only {
       padding-right: 0;
       padding-left: 3em;
+    }
+    .public.page .post-list > li:nth-child(3n+2) header.square {
+      width: 50%;
+      left: auto;
+      right: 0;
     }
 
     .public.page .post-list .post-item {
@@ -6710,7 +6731,7 @@
   }
 
   /* OPTIONAL: Center the items vertically, in browsers that support flexbox */
-  @media (min-width: 60em) {
+  @media (false) and (min-width: 60em) {
     .public.page .post-list > li {
       display: -webkit-flex;
       display:         flex;
