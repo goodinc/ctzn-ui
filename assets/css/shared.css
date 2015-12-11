@@ -6328,7 +6328,7 @@
     border-color: rgb(222, 222, 222); /* @silver */
     background-color: rgb(222, 222, 222); /* @silver */
   }
-  .featured-posts > li.multiple-images:nth-child(3n+1) {
+  .featured-posts > li.with-multiple-images:nth-child(3n+1) {
     background-color: white;
   }
   .featured-posts > li:nth-child(3n+1) .text {
@@ -6339,7 +6339,7 @@
     border-color: rgb(238, 238, 238); /* @seashell */
     background-color: rgb(238, 238, 238); /* @seashell */
   }
-  .featured-posts > li.multiple-images:nth-child(3n+2) {
+  .featured-posts > li.with-multiple-images:nth-child(3n+2) {
     background-color: white;
   }
   .featured-posts > li:nth-child(3n+2) .text {
@@ -6350,7 +6350,7 @@
     border-color: white;
     background-color: white;
   }
-  .featured-posts > li.multiple-images:nth-child(3n+3) {
+  .featured-posts > li.with-multiple-images:nth-child(3n+3) {
     background-color: black;
   }
   .featured-posts > li:nth-child(3n+3) .text {
@@ -6359,7 +6359,6 @@
 
   .featured-posts .text {
     padding: 1.25em 1.25em 2.5em;
-    min-height: 18vw;
 
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -6368,8 +6367,8 @@
     display: -webkit-flex;
     display:         flex;
 
-    -webkit-flex-direction: row;
-            flex-direction: row;
+    -webkit-flex-direction: column;
+            flex-direction: column;
 
     -webkit-align-items: center;
             align-items: center;
@@ -6537,13 +6536,13 @@
     text-decoration: underline;
   }
 
-  .featured-posts .only-images header {
+  .featured-posts .without-text header {
     color: white;
     padding-bottom: 3em;
   }
-  .featured-posts .only-images header a:hover,
-  .featured-posts .only-images header a:active,
-  .featured-posts .only-images header a:focus {
+  .featured-posts .without-text header a:hover,
+  .featured-posts .without-text header a:active,
+  .featured-posts .without-text header a:focus {
     color: white;
   }
 
@@ -6556,7 +6555,7 @@
   }
 
   /* OPTIONAL: Show a preview image while the real image is loading */
-  .featured-posts .image figure[style*="padding"] {
+  .featured-posts .image figure.with-padding {
     position: relative;
 
     /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
@@ -6566,7 +6565,7 @@
     -webkit-transform: translate3d(0, 0, 0);
     */
   }
-  .featured-posts .image figure[style*="padding"] img {
+  .featured-posts .image figure.with-padding img {
     position: absolute;
     top: 0;
     left: 0;
@@ -6583,7 +6582,7 @@
   }
 
   /* OPTIONAL: Show an icon while the image is loading (if a preview images isn’t available) */
-  .featured-posts .image figure:not([style*="padding"]):not(.loaded) img {
+  .featured-posts .image figure:not(.with-padding):not(.loaded) img {
     min-height: 200px;
     min-height: 25vw;
 
@@ -6676,7 +6675,7 @@
     }
 
     /* Text on the RIGHT */
-    .featured-posts > li.one-portrait:nth-child(n) header:nth-last-child(3) {
+    .featured-posts > li.with-one-portrait:nth-child(n) header:nth-last-child(3) {
       width: 50%;
       left: auto;
       right: 0;
@@ -6693,7 +6692,7 @@
     /* OPTIONAL: Randomly arrange items on the left or right */
 
     /* Text on the LEFT */
-    .featured-posts > li.one-portrait:nth-child(2n+1) header:nth-last-child(3) {
+    .featured-posts > li.with-one-portrait:nth-child(2n+1) header:nth-last-child(3) {
       width: 50%;
       left: 0;
       right: auto;
@@ -6708,7 +6707,7 @@
     }
 
     /* Text on the RIGHT */
-    .featured-posts > li.one-portrait:nth-child(3n+2) header:nth-last-child(3) {
+    .featured-posts > li.with-one-portrait:nth-child(3n+2) header:nth-last-child(3) {
       width: 50%;
       left: auto;
       right: 0;
@@ -6723,7 +6722,7 @@
     }
 
     /* Text on the LEFT */
-    .featured-posts > li.one-portrait:nth-child(4n+3) header:nth-last-child(3) {
+    .featured-posts > li.with-one-portrait:nth-child(4n+3) header:nth-last-child(3) {
       width: 50%;
       left: 0;
       right: auto;
