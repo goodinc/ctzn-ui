@@ -259,7 +259,6 @@
       margin-top: 2.5em;
     }
     @media (min-width: 40em) {
-      .about   a.action,
       .contact a.action,
       .contact form {
         font-size: 1.25em;
@@ -1231,14 +1230,44 @@
     body > section.about .text h1 {
       font-weight: normal;
     }
-    @media (max-width: 39.9em) {
-      body > section.about .text h1 {
+    body > section.about .text h1,
+    body > section.about .text .ctzn {
+      font-size: inherit;
+    }
+    @media (min-width: 21em) {
+      body > section.about .text h1,
+      body > section.about .text .ctzn {
+        font-size: 1.25em;
+      }
+    }
+    @media (min-width: 30em) {
+      body > section.about .text h1,
+      body > section.about .text .ctzn {
         font-size: 1.5em;
       }
     }
     @media (min-width: 40em) {
+      body > section.about .text h1,
+      body > section.about .text .ctzn {
+        font-size: 2em;
+      }
+      body > section.about .text p {
+        font-size: 1.125em;
+      }
+    }
+    @media (min-width: 50em) {
+      body > section.about .text h1,
+      body > section.about .text .ctzn {
+        font-size: 2.5em;
+      }
+    }
+    @media (min-width: 60em) {
+      body > section.about .text h1,
       body > section.about .text .ctzn {
         font-size: 3em;
+      }
+      body > section.about .text p {
+        font-size: 1.25em;
       }
     }
     body > section.about .text a {
@@ -1251,7 +1280,6 @@
     }
     body > section.about .text h1 + p {
       font-weight: bold;
-      font-size: 1.25em;
       line-height: 1;
       margin-top: 1.5em;
       margin-bottom: 2em;
