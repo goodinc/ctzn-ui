@@ -6279,15 +6279,20 @@
   .public.page .details .name a {
     text-decoration: none;
   }
-  .public.page .post-list li {
+  .featured-posts,
+  .featured-posts li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .featured-posts {
+    margin-top: 3em;
+  }
+  .featured-posts li {
     max-width: none;
   }
-  .public.page .post-item {
-    background: transparent;
-    padding: 0;
-    margin: 0;
-  }
   .public.page nav .next {
+    margin-top: 3.75em;
     padding-bottom: 9em;
     margin-bottom: 0;
   }
@@ -6298,7 +6303,7 @@
     border-top: 0.0625em solid rgba(0, 0, 0, 0.2);
   }
 
-  .public.page .post-list header {
+  .featured-posts header {
     position: relative;
 
     padding: 1.5em;
@@ -6306,54 +6311,53 @@
     font-size: 0.75em; /* 12px / @font-size */
   }
 
-  .public.page .post-list > li {
+  .featured-posts > li {
     border-style: solid;
     border-width: 0.75em 0.75em 1.5em;
     background-color: white;
     border-color: white;
-  }
-
-  .public.page .post-list > li .post-item {
     text-align: center;
   }
-  .public.page .post-list > li .post-item.text-only {
+  .featured-posts > li .text {
     background: rgb(238, 238, 238); /* @seashell */
     color: black;
   }
 
   /* Make the text items different colors so it’s easier to tell them apart. */
-  .public.page .post-list > li:nth-child(3n+1) {
+  .featured-posts > li:nth-child(3n+1) {
     border-color: rgb(222, 222, 222); /* @silver */
     background-color: rgb(222, 222, 222); /* @silver */
   }
-  .public.page .post-list > li.multiple-images:nth-child(3n+1) {
+  .featured-posts > li.multiple-images:nth-child(3n+1) {
     background-color: white;
   }
-  .public.page .post-list > li:nth-child(3n+1) .post-item.text-only {
+  .featured-posts > li:nth-child(3n+1) .text {
     background: rgb(222, 222, 222); /* @silver */
   }
-  .public.page .post-list > li:nth-child(3n+2) {
+
+  .featured-posts > li:nth-child(3n+2) {
     border-color: rgb(238, 238, 238); /* @seashell */
     background-color: rgb(238, 238, 238); /* @seashell */
   }
-  .public.page .post-list > li.multiple-images:nth-child(3n+2) {
+  .featured-posts > li.multiple-images:nth-child(3n+2) {
     background-color: white;
   }
-  .public.page .post-list > li:nth-child(3n+2) .post-item.text-only {
+  .featured-posts > li:nth-child(3n+2) .text {
     background: rgb(238, 238, 238); /* @seashell */
   }
-  .public.page .post-list > li:nth-child(3n+3) {
+
+  .featured-posts > li:nth-child(3n+3) {
     border-color: white;
     background-color: white;
   }
-  .public.page .post-list > li.multiple-images:nth-child(3n+3) {
-    background-color: rgb(238, 238, 238); /* @seashell */
+  .featured-posts > li.multiple-images:nth-child(3n+3) {
+    background-color: black;
   }
-  .public.page .post-list > li:nth-child(3n+3) .post-item.text-only {
+  .featured-posts > li:nth-child(3n+3) .text {
     background: white;
   }
 
-  .public.page .post-item.text-only {
+  .featured-posts .text {
     padding: 1.25em 1.25em 2.5em;
     min-height: 18vw;
 
@@ -6381,76 +6385,85 @@
   }
 
   @media (min-width: 40em) {
-    .public.page .post-item.text-only {
+    .featured-posts .text {
       padding: 1.875em 1.875em 3em;
     }
   }
 
   @media (min-width: 60em) {
-    .public.page .post-item.text-only {
+    .featured-posts .text {
       padding: 2.25em 2.25em 3.75em;
     }
   }
 
   /* Post without images */
-  .public.page .post-list header + .post-item.text-only {
-    min-height: 42vw;
+  .featured-posts header + .text {
+    min-height: 42vw; /* This number is arbitrary, but seems to work well. */
   }
 
-  .public.page .post-item.text-only .body {
+  .featured-posts .text {
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
   }
+
   @media (max-width: 29.9em) {
-    .public.page .post-item .body p {
+    .featured-posts .text p {
       line-height: 1.25;
+      margin-top : 0.625em; /* 1.25em / 2 */
+      margin-bottom :0.625em;
     }
   }
 
   @media (min-width: 40em) {
-    .public.page .post-item.text-only .body {
+    .featured-posts .text {
       font-size: 1.125em;
     }
   }
   @media (min-width: 60em) {
-    .public.page .post-item.text-only .body {
+    .featured-posts .text {
       font-size: 1.25em;
     }
   }
   @media (min-width: 80em) {
-    .public.page .post-item.text-only .body {
+    .featured-posts .text {
       font-size: 1.375em;
     }
   }
   @media (min-width: 100em) {
-    .public.page .post-item.text-only .body {
+    .featured-posts .text {
       font-size: 1.5em;
     }
   }
 
-  .public.page .post-item .body p {
+  .featured-posts .text p {
     margin-right: auto;
     margin-left: auto;
     max-width: 40em;
+    color: rgb(51, 51, 51); /* @iron */
+    color: rgba(0, 0, 0, 0.8);
   }
-  .public.page .post-item .body p:first-child {
+  .featured-posts .text p:first-child {
     margin-top: 0;
   }
-  .public.page .post-item .body p:last-child {
+  .featured-posts .text p:last-child {
     margin-bottom: 0;
   }
-  .public.page .post-item .body p a {
+  .featured-posts .text p a {
     text-decoration: none;
     color: inherit;
   }
-  .public.page .post-item .body p a:hover,
-  .public.page .post-item .body p a:active,
-  .public.page .post-item .body p a:focus {
+  .featured-posts .text p a:hover,
+  .featured-posts .text p a:active,
+  .featured-posts .text p a:focus {
     text-decoration: underline;
   }
 
-  .public.page .post-list header h3,
-  .public.page .post-list header p {
+  .featured-posts header h3,
+  .featured-posts header p {
       float: none;
       display: inline;
       font-size: inherit;
@@ -6460,35 +6473,39 @@
       padding: 0;
       vertical-align: baseline;
   }
-  .public.page .post-list header h3,
-  .public.page .post-list header .avatar {
+  .featured-posts header h3,
+  .featured-posts header .avatar {
     margin-right: 0.5em;
   }
-  .public.page .post-list header p {
+  .featured-posts header p {
     color: inherit;
+    font-size: 0.875em;
+
+    /* Attempt to keep the date on one line */
+    display: inline-block;
   }
-  .public.page .post-list header p a {
+  .featured-posts header p a {
     color: inherit;
     text-decoration: none;
     display: inline-block; /* Attempt to keep the date on one line */
   }
 
-  .public.page .post-list header p a:hover,
-  .public.page .post-list header p a:active,
-  .public.page .post-list header p a:focus {
+  .featured-posts header p a:hover,
+  .featured-posts header p a:active,
+  .featured-posts header p a:focus {
       color: black;
   }
-  .public.page .post-list header time {
+  .featured-posts header time {
     color: inherit;
     opacity: 0.5;
   }
 
   /* OPTIONAL: Position post headers at the bottom */
-  .public.page .post-list li {
+  .featured-posts li {
     position: relative;
     z-index: 1;
   }
-  .public.page .post-list header ~ .post-item:last-child figure:before {
+  .featured-posts header ~ .image:last-child:before {
     content: "";
     position: absolute;
     z-index: 1;
@@ -6498,7 +6515,7 @@
     height: 100%;
     background-image: linear-gradient(to bottom, transparent, transparent 60%, rgba(0, 0, 0, 0.75));
   }
-  .public.page .post-list header {
+  .featured-posts header {
     padding: 0 1.5em;
     background: transparent;
     box-shadow: none;
@@ -6513,32 +6530,25 @@
             box-sizing: border-box;
     z-index: 2;
   }
-  .public.page .post-list header.only-images {
-    color: white;
-    padding-bottom: 3em;
-  }
-  .public.page .post-list header a:hover,
-  .public.page .post-list header a:active,
-  .public.page .post-list header a:focus {
+  .featured-posts header a:hover,
+  .featured-posts header a:active,
+  .featured-posts header a:focus {
     color: black;
     text-decoration: underline;
   }
-  .public.page .post-list header.only-images a:hover,
-  .public.page .post-list header.only-images a:active,
-  .public.page .post-list header.only-images a:focus {
-    color: white;
-    text-decoration: underline;
-  }
-  .public.page .post-item.text-only header {
-    padding: 0;
-  }
 
-  .public.page .post-item  header time {
-    transition: opacity 0.2s;
+  .featured-posts .only-images header {
+    color: white;
+    padding-bottom: 3em;
+  }
+  .featured-posts .only-images header a:hover,
+  .featured-posts .only-images header a:active,
+  .featured-posts .only-images header a:focus {
+    color: white;
   }
 
   /* OPTIONAL: Make images stick to the left and right edge of the post */
-  .public.page .post-item figure img {
+  .featured-posts .image img {
     display: block;
     width: 100%;
     height: auto;
@@ -6546,7 +6556,7 @@
   }
 
   /* OPTIONAL: Show a preview image while the real image is loading */
-  .public.page .post-item figure[style*="padding"] {
+  .featured-posts .image figure[style*="padding"] {
     position: relative;
 
     /* KUDOS: http://stackoverflow.com/questions/12224320/defined-edges-with-css3-filter-blur#answer-23370117 */
@@ -6556,7 +6566,7 @@
     -webkit-transform: translate3d(0, 0, 0);
     */
   }
-  .public.page .post-item figure[style*="padding"] img {
+  .featured-posts .image figure[style*="padding"] img {
     position: absolute;
     top: 0;
     left: 0;
@@ -6565,7 +6575,7 @@
     min-height: 0;
     max-width: none;
   }
-  .public.page .post-item figure img.preview {
+  .featured-posts .image figure img.preview {
     margin: calc(-3em);
     width: calc(100% + 6em) !important;
     -webkit-filter: blur(1.5em);
@@ -6573,7 +6583,7 @@
   }
 
   /* OPTIONAL: Show an icon while the image is loading (if a preview images isn’t available) */
-  .public.page .post-item figure:not([style*="padding"]):not(.loaded) img {
+  .featured-posts .image figure:not([style*="padding"]):not(.loaded) img {
     min-height: 200px;
     min-height: 25vw;
 
@@ -6621,118 +6631,116 @@
 
   /* OPTIONAL: Show a border around each post. */
   @media (min-width: 30em) {
-    .public.page .post-list > li {
+    .featured-posts > li {
       border-width: 0.75em 0.75em 1.875em;
     }
   }
   @media (min-width: 40em) {
-    .public.page .post-list > li {
+    .featured-posts > li {
       border-width: 1.5em 1.5em 3em;
     }
   }
   @media (min-width: 50em) {
-    .public.page .post-list > li {
+    .featured-posts > li {
       border-width: 2.25em 2.25em 3em;
     }
   }
   @media (min-width: 60em) {
-    .public.page .post-list > li {
+    .featured-posts > li {
       border-width: 3em;
     }
   }
 
   /* OPTIONAL: Arrange the posts in columns. */
-  .public.page .post-list > li {
-    max-width: none;
-  }
-  .public.page .post-list .post-item {
-    width: 100%;
-    max-width: none;
-  }
-
   @media (min-width: 60em) {
-    .public.page .post-list > li:after {
+    .featured-posts > li:nth-child(n):after {
       content: "";
       display: table;
       clear: both;
     }
-    .public.page .post-list > li .post-item {
-      float: left;
-    }
-    .public.page .post-list > li .post-item.first-in-row {
+    .featured-posts > li:nth-child(n) .first-in-row {
       clear: both;
     }
-    .public.page .post-list > li .post-item.square.text-only {
-      padding-right: 0;
-      padding-left: 3em;
-    }
-    .public.page .post-list > li header.square {
-      width: 50%;
-      left: auto;
-      right: 0;
-    }
 
-    /* OPTIONAL: Make the square image positions (left or right) seem random */
-    .public.page .post-list > li:nth-child(2n) .post-item {
-      float: right;
-    }
-    .public.page .post-list > li:nth-child(2n) .post-item.square.text-only {
-      padding-right: 3em;
-      padding-left: 0;
-    }
-    .public.page .post-list > li:nth-child(2n) header.square {
-      width: 50%;
-      left: 0;
-      right: auto;
-    }
-
-    .public.page .post-list > li:nth-child(2n+1) .post-item {
-      float: right;
-    }
-    .public.page .post-list > li:nth-child(2n+1) .post-item.square.text-only {
-      padding-right: 3em;
-      padding-left: 0;
-    }
-    .public.page .post-list > li:nth-child(2n+1) header.square {
-      width: 50%;
-      left: 0;
-      right: auto;
-    }
-
-    .public.page .post-list > li:nth-child(3n+2) .post-item {
-      float: left;
-    }
-    .public.page .post-list > li:nth-child(3n+2) .post-item.square.text-only {
-      padding-right: 0;
-      padding-left: 3em;
-    }
-    .public.page .post-list > li:nth-child(3n+2) header.square {
-      width: 50%;
-      left: auto;
-      right: 0;
-    }
-
-    .public.page .post-list .post-item {
-      max-width: none;
-    }
-    .public.page .post-list .post-item.text-only,
-    .public.page .post-list .post-item.square,
-    .public.page .post-list .post-item.portrait {
-      width: 50%;
-      -webkit-flex-basis: 50%;
-              flex-basis: 50%;
-    }
-    .public.page .post-list .post-item.landscape,
-    .public.page .post-list .post-item.panoramic {
+    .featured-posts > li:nth-child(n) .image,
+    .featured-posts > li:nth-child(n) .text {
       width: 100%;
       -webkit-flex-basis: 100%;
               flex-basis: 100%;
     }
+    .featured-posts > li:nth-child(n) .portrait,
+    .featured-posts > li:nth-child(n) header + .portrait + .text {
+      width: 50%;
+      -webkit-flex-basis: 50%;
+              flex-basis: 50%;
+    }
+
+    /* Text on the RIGHT */
+    .featured-posts > li.one-portrait:nth-child(n) header:nth-last-child(3) {
+      width: 50%;
+      left: auto;
+      right: 0;
+    }
+    .featured-posts > li:nth-child(n) .portrait {
+      float: left;
+    }
+    .featured-posts > li:nth-child(n) header + .portrait + .text {
+      float: left;
+      padding-right: 0;
+      padding-left: 3em;
+    }
+
+    /* OPTIONAL: Randomly arrange items on the left or right */
+
+    /* Text on the LEFT */
+    .featured-posts > li.one-portrait:nth-child(2n+1) header:nth-last-child(3) {
+      width: 50%;
+      left: 0;
+      right: auto;
+    }
+    .featured-posts > li:nth-child(2n+1) .portrait {
+      float: right;
+    }
+    .featured-posts > li:nth-child(2n+1) header + .portrait + .text {
+      float: right;
+      padding-right: 3em;
+      padding-left: 0;
+    }
+
+    /* Text on the RIGHT */
+    .featured-posts > li.one-portrait:nth-child(3n+2) header:nth-last-child(3) {
+      width: 50%;
+      left: auto;
+      right: 0;
+    }
+    .featured-posts > li:nth-child(3n+2) .portrait {
+      float: left;
+    }
+    .featured-posts > li:nth-child(3n+2) header + .portrait + .text {
+      float: left;
+      padding-right: 0;
+      padding-left: 3em;
+    }
+
+    /* Text on the LEFT */
+    .featured-posts > li.one-portrait:nth-child(4n+3) header:nth-last-child(3) {
+      width: 50%;
+      left: 0;
+      right: auto;
+    }
+    .featured-posts > li:nth-child(4n+3) .portrait {
+      float: right;
+    }
+    .featured-posts > li:nth-child(4n+3) header + .portrait + .text {
+      float: right;
+      padding-right: 3em;
+      padding-left: 0;
+    }
   }
 
   /* OPTIONAL: Center the items vertically, in browsers that support flexbox */
-  @media (false) and (min-width: 60em) {
-    .public.page .post-list > li {
+  @media (min-width: 60em) {
+    .featured-posts > li:nth-child(n) article {
       display: -webkit-flex;
       display:         flex;
 
@@ -6751,17 +6759,17 @@
       -webkit-flex-wrap: wrap;
               flex-wrap: wrap;
     }
-    .public.page .post-list > li:nth-child(2n) {
+    .featured-posts > li:nth-child(2n+1) article {
       -webkit-flex-direction: row-reverse;
               flex-direction: row-reverse;
     }
-    .public.page .post-list > li:nth-child(2n+1) {
-      -webkit-flex-direction: row-reverse;
-              flex-direction: row-reverse;
-    }
-    .public.page .post-list > li:nth-child(3n+2) {
+    .featured-posts > li:nth-child(3n+2) article {
       -webkit-flex-direction: row;
               flex-direction: row;
+    }
+    .featured-posts > li:nth-child(4n+3) article {
+      -webkit-flex-direction: row-reverse;
+              flex-direction: row-reverse;
     }
   }
 
