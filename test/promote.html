@@ -1063,6 +1063,7 @@
     ----------------------------------------------- */
     @media (min-width: 20em) and (min-height: 20em) {
       header {
+        position: absolute;
         position: fixed;
         top: 0;
         left: 0;
@@ -1189,17 +1190,12 @@
     }
 
     body > section.about .container {
-      margin: -3.25em -1.875em 0; /* section padding */
+      margin: -8.25em -1.875em 0; /* section padding */
       position: relative;
     }
-    @supports (position: fixed) {
+    @media (min-width: 40em) {
       body > section.about .container {
-        margin-top: -8.25em;
-      }
-      @media (min-width: 40em) {
-        body > section.about .container {
-          margin-top: -11.25em;
-        }
+        margin-top: -11.25em;
       }
     }
     body > section.about .container figure {
@@ -1251,7 +1247,7 @@
     @supports (object-fit: contain) {
       body > section.about .container figure .preview,
       body > section.about .container figure .primary {
-      position: absolute;
+        position: absolute;
         top: 0;
         left: 0;
       }
