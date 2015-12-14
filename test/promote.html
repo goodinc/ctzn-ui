@@ -1188,16 +1188,87 @@
 
     }
 
-    body > section.about .image {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      margin: -11.25em -1.875em 0; /* section padding */
+    body > section.about .container {
+      margin: -3.25em -1.875em 0; /* section padding */
       position: relative;
     }
-    body > section.about .image:before {
+    @supports (position: fixed) {
+      body > section.about .container {
+        margin-top: -8.25em;
+      }
+      @media (min-width: 40em) {
+        body > section.about .container {
+          margin-top: -11.25em;
+        }
+      }
+    }
+    body > section.about .container figure {
+      background: black;
+      margin: 0;
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      overflow: hidden;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: column;
+              flex-direction: column;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+    }
+    body > section.about .container figure .preview,
+    body > section.about .container figure .primary {
+      width: 100%;
+      height: auto;
+      max-width: none;
+    }
+    body > section.about .container figure .primary {
+      z-index: 1;
+    }
+    body > section.about .container figure .preview {
+      display: none;
+      margin: calc(-3em);
+      width: calc(100% + 6em);
+      -webkit-filter: blur(1.5em);
+              filter: blur(1.5em);
+    }
+    body > section.about .container figure .primary.loaded + .preview {
+      display: none;
+    }
+    @supports (object-fit: contain) {
+      body > section.about .container figure .preview,
+      body > section.about .container figure .primary {
+      position: absolute;
+        top: 0;
+        left: 0;
+      }
+      body > section.about .container figure .preview {
+        display: block;
+        height: calc(100% + 6em);
+        object-fit: cover;
+      }
+      body > section.about .container figure .primary {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    body > section.about .container figure:before {
       content: "";
       position: absolute;
+      z-index: 2;
       top: 0;
       left: 0;
       width: 100%;
@@ -1206,6 +1277,7 @@
     }
     body > section.about .text {
       position: relative;
+      z-index: 1;
       margin-top: 0;
       margin-bottom: 0;
       padding-left: 1.875em;
@@ -1223,7 +1295,6 @@
       }
     }
     body > section.about .text .ctzn {
-      display: table;
       margin-left: auto;
       margin-right: auto;
     }
@@ -1310,16 +1381,26 @@
 
   <style>
     p.image-credit {
-      margin: 0;
+      margin: 2.5em;
+      padding-top: 0.3125em;
+      padding-bottom: 0.3125em;
+      padding-left: 3.5em;
       font-size: 0.75em;
       position: absolute;
-      bottom: 2.5em;
-      left: 2.5em;
+      bottom: 0;
+      left: 0;
       color: white;
       color: rgba(255, 255, 255, 0.7);
+      z-index: 2;
+    }
+    p.image-credit img {
+      position: absolute;
+      top: 0;
+      left: 1em;
     }
     p.image-credit span:last-child {
       font-weight: bold;
+      display: inline-block;
     }
     p.image-credit b {
       color: white;
@@ -1333,10 +1414,14 @@
     }
     .image-credit span:first-child {
       display: inline-block;
-      padding-left: 5px;
+      padding-left: 0.4166666667em;
       height: 1.875em;
       margin-right: 0.5em;
       vertical-align: middle;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
     }
   </style>
 
@@ -1939,7 +2024,7 @@
 
   <section class="gold about">
 
-    <div class="image" style="background-image: url(http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s2048x2048);">
+    <div class="container">
       <div class="text">
 
         <p class="ctzn">
@@ -1957,7 +2042,14 @@
         <p><a class="action" href="promote-start.html">Start now</a></p>
 
       </div>
-      <p class="image-credit"><span class="orange"></span><img src="http://www.ctznapp.com/s3/ctzn/9d/4f/07b2c1cf2280b8cf4dea8015436a0d833b06.jpg=c60x60" alt=""> <b class="username">@katemcentee</b> for <b class="push">Dare To Imagine</b> / <span class="date">November 8, 2015</span></p>
+      <figure>
+        <div>
+          <!-- http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=ps40x40 -->
+          <img class="primary" src="http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s640x2048" srcset="http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s640x2048 640w, http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s1024x2048 1024w, http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s1536x2048 1536w, http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s2048x2048 2048w" onload="this.className += ' loaded'" alt="" />
+          <img class="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbACgDASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAABQABAgMEBv/EACIQAAIBBAICAwEAAAAAAAAAAAECAwAEESESMQUiFEFRof/EABcBAQEBAQAAAAAAAAAAAAAAAAEAAgP/xAAaEQEBAAIDAAAAAAAAAAAAAAAAARESAkFh/9oADAMBAAIRAxEAPwCE6SLEpwVJGsVkWGTORlTjOvuuogtk4plhIBnup/DtwzHjs7rOkgw5OJZonMsmx9rVUksjSZQEE9UfuIovmZ48o8bU/tQu1tUtVuFhIHWqrwnQnoNLPKiqGIIG9UqPWNlbS2qswBLfylRoRSHHAYGKs9Apd24gazTQbTdTYAxsCNV1sIL5J2W+QBfQpnOOzWKQSX8Yt4zwK5JH7R64RZAocZx1WBI1XyBVVAXj0KMA/i1UWQiceynY+xSqxdXwA6K0qU//2Q==" alt="" />
+        </div>
+        <figcaption><p class="image-credit"><span class="orange"></span><img src="http://www.ctznapp.com/s3/ctzn/9d/4f/07b2c1cf2280b8cf4dea8015436a0d833b06.jpg=c60x60" alt=""> <b class="username">@katemcentee</b> for <b class="push">Dare To Imagine</b> / <span class="date">November 8, 2015</span></p></figcaption>
+      </figure>
     </div>
 
     <!--
@@ -2369,8 +2461,10 @@
                    introduction (including the CTZN logo) is visible. */
       if (scrollY < 300) {
         addClassName(document.body, 'scrolled-up');
+        if (window._aboutImages) window._aboutImages.play();
       } else {
         removeClassName(document.body, 'scrolled-up');
+        if (window._aboutImages) window._aboutImages.pause();
       }
     }
 
@@ -2390,13 +2484,17 @@
     ----------------------------------------------- */
     window.addEventListener('load', function() {
       updatePositions();
+      playVisible();
     }, false);
 
     (function() {
       var throttle;
       window.addEventListener('resize', function() {
         if (throttle) clearTimeout(throttle);
-        throttle = setTimeout(updatePositions, 100);
+        throttle = setTimeout(function() {
+          updatePositions();
+          playVisible();
+        }, 100);
       }, false);
     })();
 
@@ -2413,11 +2511,13 @@
 
   <script>
   (function() {
-    if (!document.querySelector) return;
+
+    if (!document.querySelector && !document.addEventListener) return;
 
     var posts = [
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbACgDASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAABQABAgMEBv/EACIQAAIBBAICAwEAAAAAAAAAAAECAwAEESESMQUiFEFRof/EABcBAQEBAQAAAAAAAAAAAAAAAAEAAgP/xAAaEQEBAAIDAAAAAAAAAAAAAAAAARESAkFh/9oADAMBAAIRAxEAPwCE6SLEpwVJGsVkWGTORlTjOvuuogtk4plhIBnup/DtwzHjs7rOkgw5OJZonMsmx9rVUksjSZQEE9UfuIovmZ48o8bU/tQu1tUtVuFhIHWqrwnQnoNLPKiqGIIG9UqPWNlbS2qswBLfylRoRSHHAYGKs9Apd24gazTQbTdTYAxsCNV1sIL5J2W+QBfQpnOOzWKQSX8Yt4zwK5JH7R64RZAocZx1WBI1XyBVVAXj0KMA/i1UWQiceynY+xSqxdXwA6K0qU//2Q==',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/9d/4f/07b2c1cf2280b8cf4dea8015436a0d833b06.jpg=c60x60',
         username: 'katemcentee',
@@ -2425,7 +2525,8 @@
         date: 'November 8, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/a0/d8/181877d3de82f75906cbf60a918d5d0d665e.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/a0/d8/181877d3de82f75906cbf60a918d5d0d665e.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAUGBAID/8QAJRAAAQQDAAICAQUAAAAAAAAAAQACAxEEBRIhQRMxBhUiVGFi/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAEDAgT/xAAcEQADAAIDAQAAAAAAAAAAAAAAARECMQMSIUH/2gAMAwEAAhEDEQA/AKmWTk0CpbL2eWyaQNmcACaTHc7ZmDJRHTvQUlNmumlc8jmzam02W48scU6N4tpnUfknJ/te0G2yZHeHvLbrr0lEWQJKHtPNTC7ks4NEGrCx6dVSxTUGODkzSStD3khCMOCSGZoe0jyhVx0Q5528Jr8oPWzeAfpL8eKJ+PI98oa5v00+0x3jYzsp/ldX7kkdy154NhBzwYa6hmxOIBF+VcwZcEZYzmnONCgoPXDuaMf6CtsfDAo9WQekGlFsauohCyzvIyYWhxFjyEJ0zCU32qzMjYSyQwOc0nwQlX6Hsf4r0IQI3avUZsWQ0y47wL+1YxMe0Cx5CEIg/hxIyQ5jHgHkeEIQhDekf//Z',
         color: 'purple',
         avatar: 'http://www.ctznapp.com/s3/ctzn/816d5bfd2defda9846d8ad39d7f9bdcf94026c35=c60x60',
         username: 'shari',
@@ -2433,7 +2534,8 @@
         date: 'June 30, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/1d/2d/25d1be26f6a076d869198da4b8790925e36a.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/1d/2d/25d1be26f6a076d869198da4b8790925e36a.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/wAALCAAbACgBAREA/8QAGAABAQEBAQAAAAAAAAAAAAAABQQGAAL/xAAjEAACAQMDBQEBAAAAAAAAAAABAgMABBEFEhMhIjFBURQy/9oACAEBAAA/ANRJcJHu3H+Rk1NHqltKcK9WAgjI8Gp7xikJKnBoouXbuJNQ3d3PNLJFnuPnB9UbGvDKyscN6A903b6i5tRGT3qRg5pmVTPAMdCRmpfwv9FC2VvxX8ssrDHgAmumaxacyuVypx5r1byWKs2SRk7ix8Unp1xuZoUfkVRkN9FJbulZ6aNWt0cjLEgE0NqkapMVVQB8qYM3HGmTt+VodDYrM4BwOOk4pHI6sa//2Q==',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/904caa3d0c4e887f3b8199b88b77ffe408a5ef0d=c60x60',
         username: 'sproutfund',
@@ -2441,7 +2543,8 @@
         date: 'October 16, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/47/23/0b9244a8977790499fa6e88edf125f1cf5ea.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/47/23/0b9244a8977790499fa6e88edf125f1cf5ea.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAAQCAwUBBv/EACMQAAICAgICAQUAAAAAAAAAAAECAAMEESExE0ESBSJSYYH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAGxEAAgIDAQAAAAAAAAAAAAAAAAECERIhMQP/2gAMAwEAAhEDEQA/ANdcZt9CRbFf8RqPVN1sCTYrrfGpGJpbMw4xC8icFJHPIjruo5kQwfoQxKTKK1I7JhLypO9QgKit7SlDEEb1FcXLCU+Ow/LXuK3Z+NZS1flH3DRimL4VPjW3ak9xN0XGmzZuvVCAU2D1owpuVHsJOgRvkzHvtYMQhb4j2PcSqtsa4hnYgnUMrLcFo9bVcLE2CP4YTGqtbFcBEYgjmEEzKUo3oRt+ku9hYMACY5iY1dICkguPcISHJmigujJ4s+Gu/wBStsSvewoBhCJi892UbsUarcFt9QhCMl9P/9k=',
         color: 'teal',
         avatar: 'http://www.ctznapp.com/s3/ctzn/010959343f338a3ef8ff319feb2f1ea8a624845c=c60x60',
         username: 'aleshadailey',
@@ -2449,7 +2552,8 @@
         date: 'August 8, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/43/b8/41ed6f4702e6a8e9323bb0f6ae9974165896.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/43/b8/41ed6f4702e6a8e9323bb0f6ae9974165896.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAAYCBAUBA//EACsQAAICAgAFAwIHAQAAAAAAAAECAAMEEQUGEiExE0FRYXEUFRYiMjOBkf/EABgBAAMBAQAAAAAAAAAAAAAAAAABAgME/8QAGxEAAwADAQEAAAAAAAAAAAAAAAEREiExIkH/2gAMAwEAAhEDEQA/ANmzmTFrI/axHyPE825pxFIHp2HfwIn2Nuta+/bz9IIjqvUuyoPYyayKxxbmnEQ6KWb+0j+qsQj+uz/kV7Vrda2rJNpOiPmdy8azGYC0aYjcEwr6Nh5kxh5RxCKqmt1B0NiEnJiyZDGY39NK19TMf9Mv3cPvRglaitNfxLSpisy56MoAVGAOoxDF/EvbYeoH23GkQ2/iML8tuwbEuuAKA+xk+J2+rdSvSSQNk+ZtGo5WOaL16QvvOJhU09No0SgIIPfccuzoT8C+qlSQF0PtCb1pFFNhu9Mhl2D27GEjEwjLC8sYi66XsGvr5lurhKVbAusIPyYQmkRstcJU8LWotu6xw3sxhZwumylqizAN57whKoHk3A8ZwBYWcDwCYQhJgPZ//9k=',
         color: 'teal',
         avatar: 'http://www.ctznapp.com/s3/ctzn/010959343f338a3ef8ff319feb2f1ea8a624845c=c60x60',
         username: 'aleshadailey',
@@ -2457,7 +2561,8 @@
         date: 'July 16, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/bc/4a/68588a4af81100697d88c7bffc2e8d8c5e91.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/bc/4a/68588a4af81100697d88c7bffc2e8d8c5e91.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAeACgDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQBAgUD/8QAJhAAAgEEAQQBBQEAAAAAAAAAAQIDAAQRIRIFMUFRExUiIzJhkf/EABYBAQEBAAAAAAAAAAAAAAAAAAECAP/EABkRAQEBAQEBAAAAAAAAAAAAAAABEQISQf/aAAwDAQACEQMRAD8A7/W45IGSSHZ9Vl3FwGCcdDNQ9uigsWODUJDEU5chrwa3uicT4ftus3EBQZJRfFWuesyzhwcAHsPVZ7AL+ynj7quINMT31U7TjTtetXEJAUgoPFFIKUyQBsUUeqyVf5FIbx4qzWTJD8vIFT6pmOOMRn7dkd6pBcfjaB15If8ARVc5IrCc7jiAhZgAM5pNnV8x6wTo+q7XBKSOgOhS4XjGH1s0ioWaSOXip7aP9opyyt0luQXGQwzRRaZH/9k=',
         color: 'purple',
         avatar: 'http://www.ctznapp.com/s3/ctzn/f05ab35921a94bfd775370d30e305a32e58aa900=c60x60',
         username: 'casey',
@@ -2465,7 +2570,8 @@
         date: 'October 24, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/8c/e2/7ae576d4591593c51e3f375dde0c0e0447e2.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/8c/e2/7ae576d4591593c51e3f375dde0c0e0447e2.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAAECAwQFBv/EACEQAAIDAAICAwEBAAAAAAAAAAECAAMRBCESMQVBURMi/8QAGAEBAQEBAQAAAAAAAAAAAAAAAgEDAAT/xAAeEQEBAAEEAwEAAAAAAAAAAAABABECAxIhEzFRQf/aAAwDAQACEQMRAD8A5fyIbPyXfA3gOOwB7/I7lcZnud1r8QTsdQLlUqgAU/Uz5EuNu/B/Fiu4PYNIG9zdtauolmsVTOc4XL5iLgxpFat1tlj2N7PS7F5AKOju0fn7qbOA2Xf6J6A+4TDtr5TnFVCoPUIXcH3Lgfa3zOO38HI04PUjrRVoRs6P0BLzr5VOibrDIzi/I18Kw8fk16nj7C73MgHq9Gsx+SVhq11FDAwPkmsyg7LNb1uPJTin1EYK47GyDiTtidWdRc1hcVoTh7J9QltKQhwNgB3ISOM0Nv7SrYrkA9ZG2BS2EAwhOtsThgGDqIWA9QhDcQGDD62EISxb/9k=',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/6f0cae95016dc21fd45b744a3e9d6d72d69d0bce=c60x60',
         username: 'adamhorowitz',
@@ -2473,7 +2579,8 @@
         date: 'October 13, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/1a/4d/f74f75cf6d885cb5ad5899bc7f47b68f1abe.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/1a/4d/f74f75cf6d885cb5ad5899bc7f47b68f1abe.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAeACgDASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAABQAEAQIDBv/EACQQAAIBBAIBBAMAAAAAAAAAAAECAwAEESESQQUTIjFhBjJR/8QAFwEBAQEBAAAAAAAAAAAAAAAAAgABA//EAB0RAAMAAgIDAAAAAAAAAAAAAAABAgMRBBIhIoH/2gAMAwEAAhEDEQA/AGFRVC8uzig78cLsjrnikb+8yqpGDlWwapMqNLtixG2GaLopjwV/NjjDGYjgk9UeCRDy5tmk2WL1hGzEhtiuM9s4JULlcdVdhdNAj3UoJ95qV2uY0VlYb6Ix8VKSYWtC/lJpIHEYYkDZb+1gXEaReqiBSy9n5+6s+eQGzt5sbJ3QN1pRx0KKTb0zo2lKpCtooCGcjlIW1k6pV5EWRm9oHHLfVedti/G3Xl7cFsVLm6ZoCoyOZ3RqTYc/Tae0M4klj/UtsVKufj6NMZIydDB3UqXIjH60thyY3T3L0f/Z',
         color: 'blue',
         avatar: 'http://www.ctznapp.com/s3/ctzn/33cd6746c1cc42f58bb7e4051333d7e943e48f0c=c60x60',
         username: 'earlcole',
@@ -2481,7 +2588,8 @@
         date: 'October 1, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/4f/d2/aea264a3af525967c5265fcaaf140b996845.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/4f/d2/aea264a3af525967c5265fcaaf140b996845.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAeACgDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAwUABAYBAv/EACMQAAIBAwMFAQEAAAAAAAAAAAECAwAEERITIQUiMUFRQoH/xAAXAQEBAQEAAAAAAAAAAAAAAAADAgEA/8QAHBEAAwEAAgMAAAAAAAAAAAAAAQIRAAMhEhMx/9oADAMBAAIRAxEAPwBXb3LmNgVBOPBq3BKxiwI+QPRpfFHcW8+bmAhMYyw4pise1Ar7ikN+R6rmfx+bBxB/uPtNp57G+nwaFLdbciKUVgByR9o0c4I0uSRVa5tlGXjOR8ohzd0jJ6IsBw2uZ4bKRoFQnXqYewKlcs5lguQXGUPawPypVBb3NhMMu0HXpYNCLMAItXeR5FZO4mRr4bDsYc8CmvUc3E0+4c4TNZtC0cxVTjmrRaouknxYjNy5DYDZoodwMg/yqStqHPmvQZh4NJ6ExHne9Ysya2yOKlBeYipSqoUQYmLsad//2Q==',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
         username: 'patcheson',
@@ -2489,7 +2597,8 @@
         date: 'October 15, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/67/5c/6e311fcbd85b740e94605dc2b8dbcc07d7e4.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/67/5c/6e311fcbd85b740e94605dc2b8dbcc07d7e4.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAAAAMEAgUGAf/EACUQAAICAgAHAAIDAAAAAAAAAAECAAMEEQUSEyExQVEiYQYVcf/EABYBAQEBAAAAAAAAAAAAAAAAAAIBA//EABsRAAMBAAMBAAAAAAAAAAAAAAABEQISITED/9oADAMBAAIRAxEAPwCjkUtjXOiEsF1JMa6wa0vmZ5WTVjWk26bmTWpQq4mFtBO+WOsUNx17fdfeZULbkMQo5SPsYmcb2LKoYHt3EkOf0m5VVB97Q0qzfCO3AuUFuYRPL+IO9ZO9frUS1hjOTtte5yzkkmSVYzP77zZWcF6Q5mtGv0JbxKaqU02iZnr6JLo3xm+lj+NUMEsNi/h639l23hqvlhlGq/cYWQD+CDt8ll3K+dwc72B3LH9bjo4ZSNe1PiI6uz7iTkCHL8Q4ib7AlZ0i/PcqDLbm7nxETTijZNl/huWwyU7+TN89pPnURA1GTXZE158r2/2IiEh//9k=',
         color: 'teal',
         avatar: 'http://www.ctznapp.com/s3/ctzn/9e369c817069e2e5ad02429b8b1042a5ab258d7b=c60x60',
         username: 'tafaraibayne',
@@ -2497,7 +2606,8 @@
         date: 'July 25, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/e5/2d/5abec89424ad3d931b4166685d5adca91f81.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/e5/2d/5abec89424ad3d931b4166685d5adca91f81.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAQFAwYB/8QAJxAAAgICAQQBAwUAAAAAAAAAAQIAAwQRIQUSMVETBhRxIjJCUmH/xAAXAQEBAQEAAAAAAAAAAAAAAAABAgMA/8QAGxEBAQADAAMAAAAAAAAAAAAAAQACETESIWH/2gAMAwEAAhEDEQA/AOarF2Tcq7JO4/XaldhFgAP9piR8fa37W9zLILMAQAQPM41PuoJl41jFbC2vaxHPoC2A1Ozo3IB8iaYtKPWLgAAp5E3zMkfIhUaHbwdRyfkB13TKmNThtciE1KNbae0Fj54hIQtB1VfsH6gQtTIrL5EZP0tkuuhag3E6FuwqmcWHbDewYm/Vc4N+nKs1+YjSlbwujYuO742dkBSvOwdAxw9K6L/LJU/l5F6pXY+BTku5YnXJ8yIxY+5SJZ45GRsqpFePnWrjvtAdAj1CJV2BdbhM0ta9aKLMJrVGiy8bnN9u+4/7CEcaWrrcb8BaC4IVZJYaXXqEI7XseIcvUVtQhCdN/9k=',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
         username: 'melanieariens',
@@ -2505,7 +2615,8 @@
         date: 'October 13, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/41/66/435c8595959acd11589d66990dccd07e0c3a.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/41/66/435c8595959acd11589d66990dccd07e0c3a.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAeACgDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAUDBAYC/8QAJRAAAgEDAgcAAwAAAAAAAAAAAQIAAwQRBRIGISIxQVFhExQj/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAECA//EABkRAQEBAAMAAAAAAAAAAAAAAAABERMhMf/aAAwDAQACEQMRAD8AzrbuxMhcBT0gk+494f00alXZ6oxRTv8AZzrFstvestFVCeMSe4cy+kzElADzkiOyJ6E6a2IyzED19llbKrdW6pRp5KnmYejEdN8AZOdxyYSQqtCt+u6jcO8Irow94ZZTpWAeoMSYo1Cv/Z2bmScRhwsTTsq3kkZHyKrlC9w5qHOCZeiRSAFWqqu+1RzPyPzdpSshRtCCc9RmXc5cmWLEl6wVicSTndWaru9Rn258g+4TQmzofhClfHeEy5G3G//Z',
         color: 'green',
         avatar: 'http://www.ctznapp.com/s3/ctzn/80d07d06477e8ce0d7297eba6ddd70f60644508b=c60x60',
         username: 'fgufromthegroundupfgualumni',
@@ -2513,7 +2624,8 @@
         date: 'July 18, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/6f/4a/6a97752ac005372246bedd3dd54033a074d1.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/6f/4a/6a97752ac005372246bedd3dd54033a074d1.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoAB4DASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAjEAACAQQCAgIDAAAAAAAAAAABAgMABBEhEkExURMiBSMy/8QAFgEBAQEAAAAAAAAAAAAAAAAABAID/8QAHxEAAgIBBAMAAAAAAAAAAAAAAAECAxEhIjFBEhNR/9oADAMBAAIRAxEAPwBlkHurUxSfaNTkY6rkTpwuSvkA5q9LmawtykQxzOj3SomOZJJ1BJ791JTj9F3F5I8KoqMM61SbWJndiy413XRs5ALcPhSqt4PdV3UEYYSRrlm8jPitvZLsxVcODkfkJnYqo6NTySO1tnBZv5UCtW5NzFcSE5wdZp8EqBFiVfuO6lPEM9iLH5z04GH4hYIruVmxtSN0qKQsxDZ0PdZnVnf5G2Rqi38saqE3Y0gdsVBaG7e0a3WSPkCJDo1qztma7ZOQ5qND3RRR5Pbke3itopktlMHN24qDupomjlcoP1KBkE90UVrDa1gLJJrU/9k=',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
         username: 'melanieariens',
@@ -2521,7 +2633,8 @@
         date: 'September 2, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/3f/f7/b7109e38376d4314398ec841f29bfb9d427e.png=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/3f/f7/b7109e38376d4314398ec841f29bfb9d427e.png',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAAQCAwUGAf/EACIQAAICAQQCAwEAAAAAAAAAAAECAAMRBBIhMRNBIlFhBf/EABcBAQEBAQAAAAAAAAAAAAAAAAECAAP/xAAcEQEBAAICAwAAAAAAAAAAAAAAARExElECAyH/2gAMAwEAAhEDEQA/AM3W2s2pY2cMfqQRvIwwQIpawLcNu/TJ127fUrKWnXYVYJ7j+luLMFmIthBDgdzU0VqVqWYHdNlnQJYoUJnruEy6L2ssGB3CGGcxXp97HBBxL6EVH+S9GXsjLaz2YCk4G3qR1DVoSVbg9fYk7VxeWFfOigHbnqNlySV2kfuJV5FuC5+JA42iTOVwd7n3zMePR+pfHSHCnd9mEYotqsrRLjkY9GEcybFYVjM9K1kEESkUpkeQ8QhOcpvlbfp6yqsWVeJss3GBK7RqVJTh8qRx6EISpo9j+WWDlXONvowhCHs2h//Z',
         color: 'teal',
         avatar: 'http://www.ctznapp.com/s3/ctzn/010959343f338a3ef8ff319feb2f1ea8a624845c=c60x60',
         username: 'aleshadailey',
@@ -2529,7 +2642,8 @@
         date: 'July 12, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/3d/dd/341ed76e375b608c68e90699d0ac7ca85d2f.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/3d/dd/341ed76e375b608c68e90699d0ac7ca85d2f.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbACgDASEAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFBgL/xAAkEAACAgEDBAMBAQAAAAAAAAABAgADEQQSIQUTIjFBUWEyof/EABgBAAMBAQAAAAAAAAAAAAAAAAABAgME/8QAHBEBAAMAAwEBAAAAAAAAAAAAAQACEQMhQRJh/9oADAMBAAIRAxEAPwDOUUC+5Kycbj7lWvo9VTq3d5B+phe7VwI/ZUW2pWCcknjP1OLLQuUrXOD8wL2E+iTp5IvWtattS048gcmE3j79i3Tw51SsFyFOTNJurKB2XM5+QdE9lFdYxXWP6wOYpcwrs9Z3HErkNzIB3JWp6b3787x6+ISqqkFF2J03LTfWEPhu5M0A1dZYBSCv2JHJVsmQqbCy/f6bao/2K23hm5IAH7EDp+SqYmMS1WsGnsXtvuBHOITarprMzrqIIAbGB9CO6JFZzkev2OMlg0V2afDrnA4mVsJ3sM8ZiDCKMaGpLX813Qlwn//Z',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
         username: 'sarah.m.sherban',
@@ -2537,7 +2651,8 @@
         date: 'October 14, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/7f/8c/5beabc4457b2f525e97a214c26ec82af2859.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/7f/8c/5beabc4457b2f525e97a214c26ec82af2859.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAUCAwEEBv/EACcQAAICAQQCAQMFAAAAAAAAAAECAAMEERITIQVBMRQiUSMyM2Fx/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQIAA//EABkRAQEAAwEAAAAAAAAAAAAAAAABAhExIf/aAAwDAQACEQMRAD8A5ym63kXVz8x3lNeuYqJYVUqP8igIFu0/Bj/MrHIlh1ChB6kZOqeGllxK2tuRBqT7Mp8hg124jZGOWG09gmTxMqul9wYsG6IPuS8lmrw8dahAx+B7hA5s1jf+oTCMbaEetXHr90I7K7A8Wc693YlKwemHuM2ZOVqX6UDaCfc1/HZP0PjuRjuZj0skvlu/4F1PuboSsxa6Pu3Kq69azFWIuQpsIVh6ImlkMX3Fm117MtxPKfSY4q4wRKuNxgl2ndiXhdtCoVbruELPN45qI4yrjsafmEmbJLysqaan+palxDqW+NIQlTrVm28fPzBslCvY16hCVfWhba5JOkIQgX//2Q==',
         color: 'gold',
         avatar: 'http://www.ctznapp.com/s3/ctzn/e911be73783616c5a309f3a82f58924a317b5535=c60x60',
         username: 'lceo',
@@ -2545,7 +2660,8 @@
         date: 'June 21, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/1f/c8/1c8bcbd6f464c826af4a51f1933bdcebbc55.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/1f/c8/1c8bcbd6f464c826af4a51f1933bdcebbc55.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoAB4DASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAgUAAwQBBv/EACQQAAIBAwQCAgMAAAAAAAAAAAECAwAEEQUSIUEiMRNRFBUy/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGhEAAwEBAQEAAAAAAAAAAAAAAAEhAhExUf/aAAwDAQACEQMRAD8ABrjTZGZHHkSc9jNYpXtreZoY1Vgy8mtU8NnZoXiXe4Gce6VWrQzSGR+GGc1dPhs0MmMoffj1XVKMg4IbuqpkZPOP+WqtpsKAZMH6xRVFqDPQIt18ytzuQ+6V3kHxak8UXHlxT61tp7e6jkC7cHnn2KHU9NP7L8mI5ON20VtOhygZNLmeGL4kLbUwRSwaRIzHxOa9JZalLFBsmiO/o491VFOzs7yR4YnqiPj+HbYtPDE8hO8HNbbmEOyTiRV45H3UqVkV+lNzLHIgCryO6KylhOROg4HBqVKidI1D/9k=',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/904caa3d0c4e887f3b8199b88b77ffe408a5ef0d=c60x60',
         username: 'sproutfund',
@@ -2553,7 +2669,8 @@
         date: 'October 16, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/b9/9b/ecb255994391cca151d6370e9e4df2f04b66.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/b9/9b/ecb255994391cca151d6370e9e4df2f04b66.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAAQBAwUGAv/EACcQAAICAQMCBQUAAAAAAAAAAAECAAMRBBIhEzEUQVFhcQUiMoGh/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEDAv/EABoRAQEBAQADAAAAAAAAAAAAAAARARICIXH/2gAMAwEAAhEDEQA/AMrQueoNx+Z0tGpQIv3f2ctWoBx2jlddlhVVY8mTzyhx0b62mobnf9RV9ZpNSSMj2zMjU1sG2P3+YiysDwcR9CGfqD1NuU8Y9ITNtG08nMIxDSU2uw2gnPeaVFL1gkkrt5zKdO7OcDEcuY9Ak8KO4kevavGRn22C4m0PuJONvnFLLVOQAQRJs6jWs9CHafST4fdTvYkWZ7e0t9YV12hKjvUHMJUyOeMQhcZh6slTxnJjdblhtPI9IQkdWevBKPxZlz5AyGpFaAMOBCELpRQwQDtCEIQ7r//Z',
         color: 'blue',
         avatar: 'http://www.ctznapp.com/s3/ctzn/545160c78af8f0adbd05f0cd817bb7aa3a2f732d=c60x60',
         username: 'aldo',
@@ -2561,7 +2678,8 @@
         date: 'April 25, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/ab/3f/9121e487397c6e111f43a4438398f45e6906.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/ab/3f/9121e487397c6e111f43a4438398f45e6906.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoACgDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAEFAgME/8QAJRAAAgICAAUFAQEAAAAAAAAAAQIAAwQREhMhMUEiIzJRYQWC/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//EABsRAQEBAQEBAQEAAAAAAAAAAAEAEQIxIRJB/9oADAMBAAIRAxEAPwCWmBfyVvdfaY6B3NHFAPaVsWyrI/lpjK3vKd6Paa5BpYcytGI+2nPNbaoUU44+oLjKZUuVFs5llahD00G7GYqo429tkP8ArtCP8g/NaccB7W4agNgbO4S7j14+ObHyLk3w6AB8wgIrRUrtQ+v0rvqZrIYm90D8VY+B3G2QcjKOl0jjsTONKmnm8wAgdh9TXHmzr3Jqpratnr41b5Dc7MlaWk0hgjDZB8GcupCMW151+TTKbN6YgDtGh7U56TS8yC/Kyitanh338QnTGy7sKxgo2hPmE5dPW/LRmfZ002E7B1Hk13BlCjYboxMISnTT8ntu3HYhSreoDX5HiJcQy2jX6IQmf05XJZGKSCQYQhILMv/Z',
         color: 'orange',
         avatar: 'http://www.ctznapp.com/s3/ctzn/7e5d898d19991ca96235c74de6bee3603982d372=c60x60',
         username: 'melanieariens',
@@ -2569,7 +2687,8 @@
         date: 'October 15, 2015'
       },
       {
-        image: 'http://www.ctznapp.com/s3/ctzn/cc/42/e4d3b2cf989af63b4b9cfb42c4e8230eaa39.jpg=s2048x2048',
+        image: 'http://www.ctznapp.com/s3/ctzn/cc/42/e4d3b2cf989af63b4b9cfb42c4e8230eaa39.jpg',
+        preview: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAwb/xAAlEAABBAEEAQQDAAAAAAAAAAABAAIDEQQFEiExQQYTIjIkUXH/xAAXAQEBAQEAAAAAAAAAAAAAAAACAQME/8QAHBEAAgICAwAAAAAAAAAAAAAAAAECESExAxJB/9oADAMBAAIRAxEAPwCfDhVRCcfLNFE430FsHMiiL3mmjtS8zVoXsLI2k35XDHvN4EsCD8aaZrpuDfNK36cxojLGMiK6sgEeUjGY/Z3NkIsdeFd0XMxps2COJ4tkZBv9rqtsTikVNUdk7GtxhtbYFoTWVNtjNAGuUIuiI4PVcr8dsbT9jyo1rTI+4/iyHa044qMaQNmonf7ZYDwUxpkpg1CFwNfIAohaNzRQrhb6lGyLPYI2ho46VT8K9WdlkNyIxvHzaeQhPw847AeRsCFgM//Z',
         color: 'gold',
         avatar: 'http://www.ctznapp.com/s3/ctzn/8b29238a44a36ec02541e227c6fc8903016492c4=c60x60',
         username: 'iamdamonturner',
@@ -2582,35 +2701,75 @@
     var min = 0;
     var max = posts.length - 1;
 
-    var random = Math.floor(Math.random() * (max - min + 1) + min);
-    var cursor = random;
+    //var random = Math.floor(Math.random() * (max - min + 1) + min);
+    var cursor = 0; //random;
 
-    var image = document.querySelector('.image');
-    var color = document.querySelector('.image-credit span:first-child');
-    var avatar = document.querySelector('.image-credit img');
+    var image    = document.querySelector('.about .primary');
+    var preview  = document.querySelector('.about .preview');
+    var color    = document.querySelector('.image-credit span:first-child');
+    var avatar   = document.querySelector('.image-credit img');
     var username = document.querySelector('.image-credit .username');
-    var push = document.querySelector('.image-credit .push');
-    var date = document.querySelector('.image-credit .date');
+    var push     = document.querySelector('.image-credit .push');
+    var date     = document.querySelector('.image-credit .date');
 
+    function hasClassName(element, className) {
+      if (!element || !className) return;
+      return element.className.indexOf(className) >= 0;
+    }
+
+    function addClassName(element, className) {
+      if (!element || !className) return;
+      if (hasClassName(element, className)) return;
+      element.className += ' ' + className;
+    }
+
+    function removeClassName(element, className) {
+      if (!element || !className) return;
+      var regex = eval('/[\s]*' + className + '/g');
+      element.className = element.className.replace(regex, '');
+    }
+
+    var imageListener;
     function update() {
+      // If the image hasn’t finished loading, skip this update
+      if (!hasClassName(image, 'loaded')) return;
+
       cursor++;
       if (cursor >= posts.length) cursor = 0;
-      if (image) image.style.backgroundImage = 'url(' + posts[cursor].image + ')';
-      if (color) color.className = posts[cursor].color;
-      if (avatar) avatar.src = posts[cursor].avatar;
+      if (image) {
+        if (!imageListener) {
+          imageListener = image.addEventListener('load', updateCaption);
+        }
+
+        removeClassName(image, 'loaded');
+        image.setAttribute('srcset', posts[cursor].image + '=s640x2048 640w,' + 
+                                     posts[cursor].image + '=s1024x2048 1024w,' + 
+                                     posts[cursor].image + '=s1536x2048 1536w,' + 
+                                     posts[cursor].image + '=s2048x2048 2048w');
+        image.setAttribute('src',    posts[cursor].image + '=s640x2048');
+      }
+      if (preview)  preview.setAttribute('src', posts[cursor].preview);
+    }
+    function updateCaption() {
+      if (color)    color.className = posts[cursor].color;
+      if (avatar)   avatar.setAttribute('src', posts[cursor].avatar);
       if (username) username.innerHTML = '@' + posts[cursor].username;
-      if (push) push.innerHTML = posts[cursor].push;
-      if (date) date.innerHTML = posts[cursor].date;
+      if (push)     push.innerHTML = posts[cursor].push;
+      if (date)     date.innerHTML = posts[cursor].date;
     }
 
-    setInterval(update, 7000);
-    update();
- 
-    // Preload
-    for (var index = 0; index < posts.length; index++) {
-      var temp = new Image();
-      temp.src = posts[index].image;
+    var timer;
+
+    window._aboutImages = {
+      play: function() {
+        if (!timer) timer = setInterval(update, 7000);
+      },
+      pause: function() {
+        if (timer) clearInterval(timer);
+        timer = undefined;
+      }
     }
+    window._aboutImages.play();
   })();
   </script>
 
