@@ -2770,6 +2770,12 @@
       }
     }
     window._aboutImages.play();
+
+    // Preload
+    for (var index = 0; index < posts.length; index++) {
+      var temp = new Image();
+      temp.src = posts[index].avatar;
+    }
   })();
   </script>
 
