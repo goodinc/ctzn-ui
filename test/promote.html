@@ -2697,8 +2697,8 @@
     var min = 0;
     var max = posts.length - 1;
 
-    //var random = Math.floor(Math.random() * (max - min + 1) + min);
-    var cursor = 0; //random;
+    var random = Math.floor(Math.random() * (max - min + 1) + min);
+    var cursor = random;
 
     var image    = document.querySelector('.about .primary');
     var preview  = document.querySelector('.about .preview');
@@ -2726,9 +2726,9 @@
     }
 
     var imageListener;
-    function update() {
+    function update(forceUpdate) {
       // If the image hasn’t finished loading, skip this update
-      if (!hasClassName(image, 'loaded')) return;
+      if (!forceUpdate && !hasClassName(image, 'loaded')) return;
 
       cursor++;
       if (cursor >= posts.length) cursor = 0;
@@ -2766,6 +2766,8 @@
       }
     }
     window._aboutImages.play();
+
+    update(true);
 
     // Preload
     for (var index = 0; index < posts.length; index++) {
