@@ -6787,3 +6787,57 @@
     }
   }
 
+
+  /* =iOS Dialog
+  ----------------------------------------------- */
+  .ios-dialog.page > div.options {
+    background: rgba(0, 0, 0, 0.1);
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+  .ios-dialog.page .ctzn-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 3.75em; /* 60px / @font-size */
+    line-height: 3.75em;
+    text-align: center;
+    background-color: rgb(150, 255, 108); /* @honeydew */
+    color: black;
+    font-size: 3em !important;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+  }
+  .ios-dialog.page .ctzn-logo .icon {
+    width: 2.625em; /* 42px / @font-size */
+    height: 3.75em; /* 60px / @font-size */
+    vertical-align: top;
+  }
+  .ios-dialog.page ul.action li + li {
+    margin-top: 1.5em;
+  }
+  .ios-dialog.page ul.action a {
+    display: block;
+    line-height: 1.875em; /* 30px / @font-size */
+    padding: 0.625em;
+    color: white;
+    border: 0.125em solid white;
+    border-radius: 1.9375em; /* line height (30px) + border width (2px) / 2 */
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .ios-dialog.page ul.action .primary a {
+    background: black;
+    border-color: black;
+  }
+  .ios-dialog.page ul.action a:hover,
+  .ios-dialog.page ul.action a:active,
+  .ios-dialog.page ul.action a:focus {
+    background-color: white;
+    border-color: white;
+    color: black;
+  }
+
+
+
