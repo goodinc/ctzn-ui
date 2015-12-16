@@ -5370,10 +5370,8 @@
   }
 
   /* Sub title */
-  .actions .post-item .push-card + h3 {
+  .actions .post-item .push-card + .action-members {
     margin-top: 1em;
-    font-size: 1.25em;
-    line-height: 1.2;
   }
   .actions .post-item .push-card + h3 + p {
     font-size: 0.75em;
@@ -5541,14 +5539,14 @@
   ----------------------------------------------- */
 
   /* OPTIONAL: Make the “Add Me” button stand out */
-  .push .actions .post-item footer .action button {  
+  .push .actions .post-item footer .primary.action button {  
     border-color: rgb(255, 49, 102); /* @pitaya */
     background-color: rgb(255, 49, 102); /* @pitaya */
     color: white;
   }
-  .hoverable .push .actions .post-item footer .action button:hover,
-             .push .actions .post-item footer .action button:active,
-             .push .actions .post-item footer .action button:focus {
+  .hoverable .push .actions .post-item footer .primary.action button:hover,
+             .push .actions .post-item footer .primary.action button:active,
+             .push .actions .post-item footer .primary.action button:focus {
     background-color: rgb(235, 29, 82); /* @raspberry */
   }
 
@@ -5583,23 +5581,19 @@
   /* OPTIONAL: Attempt to make the items the same height */
   .push .actions .post-item a.push-card h2,
   .push .actions .post-item a.push-card h2[style*="background-image"] {
-    padding-top: 33%;
-    padding-bottom: 33%;
+    padding-top: 20%;
+    padding-bottom: 20%;
   }
-  .push .actions .post-list a.push-card + h3,
   .push .actions .post-item a.push-card h2 span {
     display: block;
-    height: 1.2em;
-    white-space: nowrap;
-    word-wrap     : inherit;
-    overflow-wrap : inherit;
+    height: 3.6em;
     overflow: hidden;
 
     /* OPTIONAL: Show an ellipses if the text has been truncated
     http://dropshado.ws/post/1015351370/webkit-line-clamp */
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
   .push .action-members {
