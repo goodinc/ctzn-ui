@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/shared.css" />
 
+  <style>
+    select {
+      -webkit-appearance: menulist-button;
+    }
+  </style>
+
   <script>
     // fonts.com tracking
     var MTIProjectId = "10a9d239-187d-4d7f-856c-2687a38610fd";
@@ -334,13 +340,27 @@
 
       <p class="text">
         <label>
-          <span>#untitledaction (required)</span><br />
-          <input type="text" placeholder="#untitledaction (required)" autocapitalize="off" autocorrect="off" />
+          <span>Title</span><br />
+          <input type="text" placeholder="Title" autocapitalize="off" autocorrect="off" />
+        </label>
+      </p>
+
+      <p class="text">
+        <label>
+          <span>Description</span><br />
+          <textarea placeholder="Description"></textarea>
+        </label>
+      </p>
+
+      <p class="text">
+        <label>
+          <span>Suggested Hashtag</span><br />
+          <input type="text" placeholder="Suggested Hashtag" autocapitalize="off" autocorrect="off" />
         </label>
       </p>
 
       <div class="datetime">
-        <h3>From</h3>
+        <h3>Starts</h3>
         <p class="text">
           <label>
             <span>Start Date</span><br />
@@ -350,7 +370,7 @@
       </div>
 
       <div class="datetime">
-        <h3>To</h3>
+        <h3>Ends</h3>
         <p class="text">
           <label>
             <span>End Date</span><br />
@@ -359,20 +379,6 @@
         </p>
       </div>
 
-      <h3>Action Details</h3>
-      <p class="text">
-        <label>
-          <span>short description (required)</span><br />
-          <textarea placeholder="short description (required)"></textarea>
-        </label>
-        <span class="note" style="text-align: right; margin-bottom: 1.5em;">140 characters</span>
-      </p>
-      <p class="text">
-        <label>
-          <span>detailed description</span><br />
-          <textarea placeholder="detailed description"></textarea>
-        </label>
-      </p>
       <p class="submit">
         <button>Done</button>
       </p>
