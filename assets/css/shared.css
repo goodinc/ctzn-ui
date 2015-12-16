@@ -6805,7 +6805,7 @@
     text-align: center;
     background-color: rgb(150, 255, 108); /* @honeydew */
     color: black;
-    font-size: 3em !important;
+    font-size: 3em;
     margin-top: 0;
     margin-bottom: 1.5em;
   }
