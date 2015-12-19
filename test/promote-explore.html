@@ -259,7 +259,6 @@
       margin-top: 2.5em;
     }
     @media (min-width: 40em) {
-      .about   a.action,
       .contact a.action,
       .contact form {
         font-size: 1.25em;
@@ -454,9 +453,8 @@
 
     /* =Channels (with space around them)
     ----------------------------------------------- */
-    body > section.about,
-    body > section.media {
-      padding-bottom: 0;
+    body > section.about {
+      padding-bottom: 1px;
     }
     section .channels {
       margin-top: 0;
@@ -468,12 +466,15 @@
     section .channels figure {
       display: block;
       width: 100%;
-      border-width: 0 2em 2em;
+      border-width: 2em;
       border-style: solid;
       border-color: transparent;
       -webkit-box-sizing: border-box;
          -moz-box-sizing: border-box;
               box-sizing: border-box;
+    }
+    section .channels figure + figure {
+      border-width: 0 2em 2em 2em;
     }
     section .channels figcaption {
       margin-top: 0.625em; /* @line-height / 2 */
@@ -495,7 +496,7 @@
         border-width: 2em;
       }
       section .channels figure + figure {
-        border-left-width: 0;
+        border-width: 2em 2em 2em 0;
       }
       section .channels:after {
         content: "";
@@ -561,9 +562,6 @@
       padding-top    : 3.125em; /* @line-height x 2.5 */
       padding-bottom : 3.125em;
     }
-    body > section.media .text {
-      margin-bottom: 3.125em;
-    }
 
     @media (min-width: 21em) {
       section h2 {
@@ -581,10 +579,6 @@
       body > section {
         padding-top    : 6.25em; /* @line-height x 5 */
         padding-bottom : 6.25em;
-      }
-      body > section.media .text {
-        padding-bottom: 4.25em;
-        margin-bottom: 0;
       }
     }
 
@@ -610,6 +604,11 @@
     }
     .features section {
       margin-top: 2.5em; /* @line-height x 2 */
+    }
+    .features section p {
+      max-width: 25em;
+      margin-left: auto;
+      margin-right: auto;
     }
     .features .text,
     .features section {
@@ -637,9 +636,37 @@
       }
     }
     @media (min-width: 60em) {
+      .features:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .features .figure {
+        float: left;
+      }
+      .features .figure + .text {
+        float: right;
+        width: calc(100% - 25em);
+      }
+      .features section:nth-of-type(1) {
+        margin-top: 5em; /* 80px / @font-size */
+      }
       .features section:nth-of-type(1n) {
-        margin-right: 4%;
-        max-width: 30%;
+        max-width: none;
+      }
+      .features section:nth-of-type(2n+1) {
+        clear: right;
+      }
+    }
+    @media (min-width: 90em) {
+      .features section:nth-of-type(1),
+      .features section:nth-of-type(2) {
+        margin-top: 6.25em;
+      }
+      .features section:nth-of-type(1n) {
+        margin-right: 0;
+        max-width: 42%;
+        margin-left: 4%;
       }
       .features section:nth-of-type(3n) {
         margin-right: 0;
@@ -714,9 +741,6 @@
       color: black;
       color: rgba(0, 0, 0, 0.6);
     }
-    .about p + p {
-      margin-top: 1.25em;
-    }
     .good p {
       margin-top: 1.25em; /* @line-height */
       margin-bottom: 2.5em;
@@ -772,20 +796,21 @@
       margin: 0;
     }
 
-    .about .figure {
+    .features .figure {
+      margin-top: 6em;
       position: relative;
       padding-bottom: 3.125em;
       padding-right: 7.5em;
     }
     .tools figure.preview,
-    .about figure.preview:first-child {
+    .features figure.preview:first-child {
       background-color: white;
     }
     .tools figure.preview:after,
-    .about figure.preview:first-child:after {
+    .features figure.preview:first-child:after {
       border-color: rgba(0, 0, 0, 0.15);
     }
-    .about figure.preview:last-child {
+    .features figure.preview:last-child {
       display: block;
       position: absolute;
       top: 3.125em;
@@ -808,7 +833,7 @@
     }
 
     @media (min-width: 35em) and (max-width: 60em) {
-      .about .figure,
+      .features .figure,
       .tools .figure,
       .video .figure {
         display: table;
@@ -919,7 +944,7 @@
       margin-left: -1.875em;
     }
 
-    .about figure.preview {
+    .features figure.preview {
       font-size: 0.625em;
     }
 
@@ -931,11 +956,11 @@
         font-size: 3.2vw;
         margin-bottom: 0;
       }
-      .about .figure {
+      .features .figure {
         font-size: 0.5em;
         font-size: 2.5vw;
       }
-      .about .figure figure.preview {
+      .features .figure figure.preview {
         font-size: inherit;
       }
     }
@@ -943,7 +968,7 @@
     /* OPTIONAL: Increase the size of the preview, to give a more accurate preview
     http://stackoverflow.com/questions/2630308/possible-to-shrink-contents-of-iframe#answer-10714595 */
     @media (max-width: 35em) {
-      .about .figure {
+      .features .figure {
 
         /* Increase the size of the preview */
         font-size: 4vw;
@@ -968,10 +993,10 @@
       figure.preview {
         font-size: 0.75em;
       }
-      .about .figure {
+      .features .figure {
         font-size: 0.675em;
       }
-      .about .figure figure.preview {
+      .features .figure figure.preview {
         font-size: inherit;
       }
     }
@@ -979,9 +1004,13 @@
 
     /* =Footer
     ----------------------------------------------- */
+    footer.primary {
+      background: black;
+      color: white;
+    }
     footer.primary .about,
     footer.primary .legal {
-      padding: 0.625em; /* @line-height / 2 */
+      padding: 0.75em;
       background: rgb(51, 51, 51);
       color: white;
       text-align: center;
@@ -990,16 +1019,17 @@
       margin: 0;
       font-size: inherit;
       font-weight: inherit;
-      padding: 1.25em; /* @line-height */
+      padding: 1.5em;
       background: black;
       color: rgb(153, 153, 153); /* @nickel */
     }
     footer.primary .about svg.icon {
-      width: 2.5em;   /* @line-height x 2 */
-      height: 1.25em; /* @line-height */
+      width: 2.5em;   /* 40px / @font-size */
+      height: 1.25em; /* 20px / @font-size */
       vertical-align: baseline;
       color: white;
     }
+
     footer.primary .legal {
       margin: 0;
       color: rgb(102, 102, 102); /* @tin */
@@ -1034,10 +1064,141 @@
     }
 
 
+    .push-card + footer.primary {
+      margin-top: 0;
+      background-color: rgb(204, 204, 204); /* @aluminum */
+      color: black;
+      color: rgba(0, 0, 0, 0.95);
+    }
+    .push-card.lime + footer.primary {
+      background-color: rgb(176, 224, 0); /* @lime */
+    }
+    .push-card.green + footer.primary {
+      background-color: rgb(60, 210, 0); /* @green */
+    }
+    .push-card.teal + footer.primary {
+      background-color: rgb(0, 204, 204); /* @teal */
+    }
+    .push-card.blue + footer.primary {
+      background-color: rgb(101, 152, 254); /* @blue */
+    }
+    .push-card.periwinkle + footer.primary {
+      background-color: rgb(109, 90, 219); /* @periwinkle */
+    }
+    .push-card.purple + footer.primary {
+      background-color: rgb(181, 62, 194); /* @purple */
+    }
+    .push-card.magenta + footer.primary {
+      background-color: rgb(250, 44, 162); /* @magenta */
+    }
+    .push-card.red + footer.primary {
+      background-color: rgb(255, 0, 86); /* @red */
+    }
+    .push-card.gold + footer.primary {
+      background-color: rgb(255, 204, 0); /* @gold */
+    }
+    .push-card.orange + footer.primary {
+      background-color: rgb(255, 117, 9); /* @orange */
+    }
+
+
+    footer.primary > div {
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
+    footer.primary > div:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer.primary .good,
+    footer.primary .ctzn {
+      width: 50%;
+      padding-right: 1.5em;
+      padding-left: 1.5em;
+    }
+    footer.primary .ctzn {
+      border-right: 0.0625em solid;
+      margin: 0;
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: 2.25;
+      float: left;
+      text-align: right;
+
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    footer.primary .good {
+      display: block;
+      padding-top: 0.375em;
+      margin: 0;
+      float: right;
+      text-align: left;
+
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+
+    footer.primary .ctzn span,
+    footer.primary .good span {
+      font-size: 0.875em;
+      text-transform: lowercase;
+    }
+    footer.primary .ctzn span {
+      margin-right: 0.5em;
+    }
+
+    footer.primary .good a {
+      display: table;
+      color: inherit;
+    }
+    .push-card + footer.primary .good a:hover,
+    .push-card + footer.primary .good a:active,
+    .push-card + footer.primary .good a:focus {
+      color: white;
+    }
+
+    footer.primary .ctzn a {
+      display: inline-block;
+      border-radius: 50%;
+      width: 3.75em; /* 60px / @font-size */
+      line-height: 3.75em;
+      text-align: center;
+      background-color: rgb(150, 255, 108); /* @honeydew */
+      color: black;
+      font-size: 1.25em;
+    }
+    footer.primary .ctzn a:hover,
+    footer.primary .ctzn a:active,
+    footer.primary .ctzn a:focus {
+      background: black;
+      color: white;
+    }
+
+    footer.primary .ctzn .icon {
+      width: 2.625em; /* 42px / @font-size */
+      height: 3.75em; /* 60px / @font-size */
+      vertical-align: top;
+      color: inherit;
+    }
+    footer.primary .good .icon {
+      margin-top: 0.375em;
+      display: block;
+      width: 3em; /* 40px / @font-size */
+      height: 1.5em; /* 20px / @font-size */
+      color: inherit;
+      vertical-align: middle;
+    }
+
+
     /* OPTIONAL: Make the header sticky
     ----------------------------------------------- */
     @media (min-width: 20em) and (min-height: 20em) {
       header {
+        position: absolute;
         position: fixed;
         top: 0;
         left: 0;
@@ -1139,12 +1300,10 @@
       }
 
 
-      body > section.about,
-      body > section.media {
+      body > section.about {
         display: block;
       }
-      body > section.about .text,
-      body > section.media .text {
+      body > section.about .text {
         max-width: 35em;
         margin-left: auto;
         margin-right: auto;
@@ -1165,64 +1324,223 @@
 
     }
 
-    body > section.about .image {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      margin: -11.25em -1.875em 0; /* section padding */
+    body > section.about .container {
+      margin: -8.25em -1.875em 0; /* section padding */
       position: relative;
     }
-    body > section.about .image:before {
+    @media (min-width: 40em) {
+      body > section.about .container {
+        margin-top: -11.25em;
+      }
+    }
+    body > section.about .container figure {
+      background: black;
+      margin: 0;
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      overflow: hidden;
+
+      display: -webkit-flex;
+      display:         flex;
+
+      -webkit-flex-direction: column;
+              flex-direction: column;
+
+      -webkit-align-items: center;
+              align-items: center;
+
+      -webkit-align-content: center;
+              align-content: center;
+
+      -webkit-justify-content: center;
+              justify-content: center;
+    }
+    body > section.about .container figure .preview,
+    body > section.about .container figure .primary {
+      width: 100%;
+      height: auto;
+      max-width: none;
+    }
+    body > section.about .container figure .primary {
+      z-index: 1;
+    }
+    body > section.about .container figure .preview {
+      display: none;
+      margin: calc(-3em);
+      width: calc(100% + 6em);
+      -webkit-filter: blur(1.5em);
+              filter: blur(1.5em);
+    }
+    body > section.about .container figure .primary.loaded + .preview {
+      display: none;
+    }
+    @supports (object-fit: contain) {
+      body > section.about .container figure .preview,
+      body > section.about .container figure .primary {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      body > section.about .container figure .preview {
+        display: block;
+        height: calc(100% + 6em);
+        object-fit: cover;
+      }
+      body > section.about .container figure .primary {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    body > section.about .container figure:before {
       content: "";
       position: absolute;
+      z-index: 2;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
     }
+
+    body > section.about .container figcaption p {
+      margin: 2.5em;
+      padding-top: 0.3125em;
+      padding-bottom: 0.3125em;
+      padding-left: 3.5em;
+      font-size: 0.75em;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: white;
+      color: rgba(255, 255, 255, 0.7);
+      z-index: 2;
+    }
+    body > section.about .container figcaption img {
+      position: absolute;
+      top: 0;
+      left: 1em;
+    }
+    body > section.about .container figcaption span:last-child {
+      font-weight: bold;
+      display: inline-block;
+    }
+    body > section.about .container figcaption b {
+      color: white;
+    }
+    body > section.about .container figcaption img {
+      border-radius: 50%;
+      vertical-align: middle;
+      width: 1.875em;
+      height: 1.875em;
+      margin-right: 0.25em;
+    }
+    body > section.about .container figcaption span:first-child {
+      display: inline-block;
+      padding-left: 0.4166666667em;
+      height: 1.875em;
+      margin-right: 0.5em;
+      vertical-align: middle;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
     body > section.about .text {
       position: relative;
+      z-index: 1;
       margin-top: 0;
       margin-bottom: 0;
       padding-left: 1.875em;
       padding-right: 1.875em;
-      padding-top: 6.25em;
-      padding-bottom: 3.125em;
-      padding-top: 25vh;
-      padding-bottom: 12.5vh;
+      padding-top: 11.25em;
+      padding-bottom: 6.125em;
       text-align: center;
       max-width: 50em;
       color: white;
     }
+    @media (min-height: 60em) {
+      body > section.about .text {
+        padding-top: 20vh;
+        padding-bottom: 10vh;
+      }
+    }
     body > section.about .text .ctzn {
-      display: table;
       margin-left: auto;
       margin-right: auto;
     }
     body > section.about .text h1 {
       font-weight: normal;
     }
-    @media (max-width: 39.9em) {
-      body > section.about .text h1 {
+    body > section.about .text h1,
+    body > section.about .text .ctzn {
+      font-size: inherit;
+    }
+    @media (min-width: 21em) {
+      body > section.about .text h1,
+      body > section.about .text .ctzn {
+        font-size: 1.25em;
+      }
+    }
+    @media (min-width: 30em) {
+      body > section.about .text h1,
+      body > section.about .text .ctzn {
         font-size: 1.5em;
       }
     }
     @media (min-width: 40em) {
+      body > section.about .text h1,
+      body > section.about .text .ctzn {
+        font-size: 2em;
+      }
+      body > section.about .text p {
+        font-size: 1.125em;
+      }
+    }
+    @media (min-width: 50em) {
+      body > section.about .text h1,
+      body > section.about .text .ctzn {
+        font-size: 2.5em;
+      }
+    }
+    @media (min-width: 60em) {
+      body > section.about .text h1,
       body > section.about .text .ctzn {
         font-size: 3em;
+      }
+      body > section.about .text p {
+        font-size: 1.25em;
       }
     }
     body > section.about .text a {
       color: white;
     }
-    body > section.about .text p + p {
-      margin-top: 1.875em;
+    body > section.about .text a:hover,
+    body > section.about .text a:active,
+    body > section.about .text a:focus {
+      background-color: black;
+    }
+    body > section.about .text h1 + p {
+      font-weight: bold;
+      line-height: 1;
+      margin-top: 1.5em;
+      margin-bottom: 2em;
     }
     body > section.about .text a.action {
       background-color: white;
       color: black;
       padding: 0.9375em 1.875em;
+    }
+    body > section.about .text a.action:hover,
+    body > section.about .text a.action:active,
+    body > section.about .text a.action:focus {
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
     }
 
     .good .figure {
@@ -1233,131 +1551,6 @@
         padding: 0 2.5em;
       }
     }
-
-  </style>
-
-  <style>
-
-    @media (min-width: 40em) {
-      p.action,
-      p.action {
-        font-size: 1.25em;
-      }
-    }
-
-
-    /* =Buttons
-    ----------------------------------------------- */
-    p.action {
-      margin-top: 1.25em;
-      display: inline-block;
-      border-width: 0;
-      font-family: inherit;
-      font-size: inherit;
-      font-weight: bold;
-      background-color: black;
-      background-color: rgba(0, 0, 0, 0.9);
-      color: white;
-      padding: 0.46875em 0.9375em; /* @line-height x 3/8     @line-height x 3/4 */
-      line-height: inherit;
-      border-radius: 2.1875em;
-      cursor: pointer;
-      transition: background-color 0.2s, color 0.2s, opacity 0.2s;
-      text-decoration: none;
-    }
-    a:hover  p.action,
-    a:active p.action,
-    a:focus  p.action {
-      background-color: white;
-      background-color: rgba(255, 255, 255, 0.9);
-      color: black;
-    }
-
-    body > section.create  h1,
-    body > section.join    h1,
-    body > section.explore h1 {
-      margin-top: 0;
-      color: white;
-    }
-    body > section.create  p,
-    body > section.join    p,
-    body > section.explore p {
-      font-weight: bold;
-    }
-    body > section.create  p:last-child,
-    body > section.join    p:last-child,
-    body > section.join    h1:last-child {
-      margin-bottom: 0;
-    }
-    body > section.create  h1 b,
-    body > section.join    h1 b,
-    body > section.explore h1 b {
-      color: white;
-    }
-    body > section.create,
-    body > section.join,
-    body > section.explore {
-      display: block;
-      min-height: 0;
-    }
-    body > section.create {
-      padding-top: 6.25em;
-      padding-bottom: 1.25em;
-    }
-    body > section.join,
-    body > section.explore {
-      padding-top: 1.25em;
-      padding-bottom: 1.25em;
-      position: relative;
-    }
-    body > section.create > div.text > a {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-      padding: 1.25em;
-    }
-    body > section.join form {
-      padding: 1.25em;
-    }
-    body > section.create > div.text p:not(.action) {
-      color: inherit;
-    }
-    body > section.join > div.text p:not(.action)  {
-      color: white;
-    }
-    body > section.create  > .text,
-    body > section.join    > .text,
-    body > section.explore > .text {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /*
-    @media (min-width: 40em) {
-      .start .text {
-        font-size: 1.25em;
-      }
-    }
-    */
-
-
-    /* =Placeholders
-    ----------------------------------------------- */
-    /*
-    ::-webkit-input-placeholder {
-      text-transform: lowercase;
-      color: rgb(102, 102, 102);
-    }
-    ::-moz-placeholder {
-      text-transform: lowercase;
-      color: rgb(102, 102, 102);
-    }
-    :-ms-input-placeholder {
-      text-transform: lowercase;
-      color: rgb(102, 102, 102);
-    }
-    */
 
   </style>
 
@@ -1976,7 +2169,17 @@
   </div>
 
   <footer class="primary">
-    <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
+    <div>
+      <h2 class="ctzn">
+        <a href="http://getctzn.com">
+          <svg class="icon" width="100" height="38" viewbox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></switch></svg></a>
+      </h2>
+      <p class="good">
+        <span>A new app from</span>
+        <a href="http://good.is">
+          <svg class="icon" width="56" height="28" viewbox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></switch></svg></a>
+      </p>
+    </div>
     <div class="legal">
       <p>Copyright © 2015-2016 GOOD Worldwide Inc</p>
       <ul>

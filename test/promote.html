@@ -1004,9 +1004,13 @@
 
     /* =Footer
     ----------------------------------------------- */
+    footer.primary {
+      background: black;
+      color: white;
+    }
     footer.primary .about,
     footer.primary .legal {
-      padding: 0.625em; /* @line-height / 2 */
+      padding: 0.75em;
       background: rgb(51, 51, 51);
       color: white;
       text-align: center;
@@ -1015,16 +1019,17 @@
       margin: 0;
       font-size: inherit;
       font-weight: inherit;
-      padding: 1.25em; /* @line-height */
+      padding: 1.5em;
       background: black;
       color: rgb(153, 153, 153); /* @nickel */
     }
     footer.primary .about svg.icon {
-      width: 2.5em;   /* @line-height x 2 */
-      height: 1.25em; /* @line-height */
+      width: 2.5em;   /* 40px / @font-size */
+      height: 1.25em; /* 20px / @font-size */
       vertical-align: baseline;
       color: white;
     }
+
     footer.primary .legal {
       margin: 0;
       color: rgb(102, 102, 102); /* @tin */
@@ -1056,6 +1061,136 @@
     footer.primary .legal p,
     footer.primary .legal li {
       margin: 0 0.3125em; /* @line-height / 4 */
+    }
+
+
+    .push-card + footer.primary {
+      margin-top: 0;
+      background-color: rgb(204, 204, 204); /* @aluminum */
+      color: black;
+      color: rgba(0, 0, 0, 0.95);
+    }
+    .push-card.lime + footer.primary {
+      background-color: rgb(176, 224, 0); /* @lime */
+    }
+    .push-card.green + footer.primary {
+      background-color: rgb(60, 210, 0); /* @green */
+    }
+    .push-card.teal + footer.primary {
+      background-color: rgb(0, 204, 204); /* @teal */
+    }
+    .push-card.blue + footer.primary {
+      background-color: rgb(101, 152, 254); /* @blue */
+    }
+    .push-card.periwinkle + footer.primary {
+      background-color: rgb(109, 90, 219); /* @periwinkle */
+    }
+    .push-card.purple + footer.primary {
+      background-color: rgb(181, 62, 194); /* @purple */
+    }
+    .push-card.magenta + footer.primary {
+      background-color: rgb(250, 44, 162); /* @magenta */
+    }
+    .push-card.red + footer.primary {
+      background-color: rgb(255, 0, 86); /* @red */
+    }
+    .push-card.gold + footer.primary {
+      background-color: rgb(255, 204, 0); /* @gold */
+    }
+    .push-card.orange + footer.primary {
+      background-color: rgb(255, 117, 9); /* @orange */
+    }
+
+
+    footer.primary > div {
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
+    footer.primary > div:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer.primary .good,
+    footer.primary .ctzn {
+      width: 50%;
+      padding-right: 1.5em;
+      padding-left: 1.5em;
+    }
+    footer.primary .ctzn {
+      border-right: 0.0625em solid;
+      margin: 0;
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: 2.25;
+      float: left;
+      text-align: right;
+
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    footer.primary .good {
+      display: block;
+      padding-top: 0.375em;
+      margin: 0;
+      float: right;
+      text-align: left;
+
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+
+    footer.primary .ctzn span,
+    footer.primary .good span {
+      font-size: 0.875em;
+      text-transform: lowercase;
+    }
+    footer.primary .ctzn span {
+      margin-right: 0.5em;
+    }
+
+    footer.primary .good a {
+      display: table;
+      color: inherit;
+    }
+    .push-card + footer.primary .good a:hover,
+    .push-card + footer.primary .good a:active,
+    .push-card + footer.primary .good a:focus {
+      color: white;
+    }
+
+    footer.primary .ctzn a {
+      display: inline-block;
+      border-radius: 50%;
+      width: 3.75em; /* 60px / @font-size */
+      line-height: 3.75em;
+      text-align: center;
+      background-color: rgb(150, 255, 108); /* @honeydew */
+      color: black;
+      font-size: 1.25em;
+    }
+    footer.primary .ctzn a:hover,
+    footer.primary .ctzn a:active,
+    footer.primary .ctzn a:focus {
+      background: black;
+      color: white;
+    }
+
+    footer.primary .ctzn .icon {
+      width: 2.625em; /* 42px / @font-size */
+      height: 3.75em; /* 60px / @font-size */
+      vertical-align: top;
+      color: inherit;
+    }
+    footer.primary .good .icon {
+      margin-top: 0.375em;
+      display: block;
+      width: 3em; /* 40px / @font-size */
+      height: 1.5em; /* 20px / @font-size */
+      color: inherit;
+      vertical-align: middle;
     }
 
 
@@ -1271,6 +1406,50 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
     }
+
+    body > section.about .container figcaption p {
+      margin: 2.5em;
+      padding-top: 0.3125em;
+      padding-bottom: 0.3125em;
+      padding-left: 3.5em;
+      font-size: 0.75em;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: white;
+      color: rgba(255, 255, 255, 0.7);
+      z-index: 2;
+    }
+    body > section.about .container figcaption img {
+      position: absolute;
+      top: 0;
+      left: 1em;
+    }
+    body > section.about .container figcaption span:last-child {
+      font-weight: bold;
+      display: inline-block;
+    }
+    body > section.about .container figcaption b {
+      color: white;
+    }
+    body > section.about .container figcaption img {
+      border-radius: 50%;
+      vertical-align: middle;
+      width: 1.875em;
+      height: 1.875em;
+      margin-right: 0.25em;
+    }
+    body > section.about .container figcaption span:first-child {
+      display: inline-block;
+      padding-left: 0.4166666667em;
+      height: 1.875em;
+      margin-right: 0.5em;
+      vertical-align: middle;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
     body > section.about .text {
       position: relative;
       z-index: 1;
@@ -1373,52 +1552,6 @@
       }
     }
 
-  </style>
-
-  <style>
-    p.image-credit {
-      margin: 2.5em;
-      padding-top: 0.3125em;
-      padding-bottom: 0.3125em;
-      padding-left: 3.5em;
-      font-size: 0.75em;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      color: white;
-      color: rgba(255, 255, 255, 0.7);
-      z-index: 2;
-    }
-    p.image-credit img {
-      position: absolute;
-      top: 0;
-      left: 1em;
-    }
-    p.image-credit span:last-child {
-      font-weight: bold;
-      display: inline-block;
-    }
-    p.image-credit b {
-      color: white;
-    }
-    .image-credit img {
-      border-radius: 50%;
-      vertical-align: middle;
-      width: 1.875em;
-      height: 1.875em;
-      margin-right: 0.25em;
-    }
-    .image-credit span:first-child {
-      display: inline-block;
-      padding-left: 0.4166666667em;
-      height: 1.875em;
-      margin-right: 0.5em;
-      vertical-align: middle;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-    }
   </style>
 
   <script>
@@ -2044,7 +2177,7 @@
           <img class="primary" src="http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s640x2048" srcset="http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s640x2048 640w, http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s1024x2048 1024w, http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s1536x2048 1536w, http://www.ctznapp.com/s3/ctzn/32/70/d0540e95a3ca3457b01e25c50f09f7bd8dd5.jpg=s2048x2048 2048w" onload="this.className += ' loaded'" alt="" />
           <img class="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbACgDASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAABQABAgMEBv/EACIQAAIBBAICAwEAAAAAAAAAAAECAwAEESESMQUiFEFRof/EABcBAQEBAQAAAAAAAAAAAAAAAAEAAgP/xAAaEQEBAAIDAAAAAAAAAAAAAAAAARESAkFh/9oADAMBAAIRAxEAPwCE6SLEpwVJGsVkWGTORlTjOvuuogtk4plhIBnup/DtwzHjs7rOkgw5OJZonMsmx9rVUksjSZQEE9UfuIovmZ48o8bU/tQu1tUtVuFhIHWqrwnQnoNLPKiqGIIG9UqPWNlbS2qswBLfylRoRSHHAYGKs9Apd24gazTQbTdTYAxsCNV1sIL5J2W+QBfQpnOOzWKQSX8Yt4zwK5JH7R64RZAocZx1WBI1XyBVVAXj0KMA/i1UWQiceynY+xSqxdXwA6K0qU//2Q==" alt="" />
         </div>
-        <figcaption><p class="image-credit"><span class="orange"></span><img src="http://www.ctznapp.com/s3/ctzn/9d/4f/07b2c1cf2280b8cf4dea8015436a0d833b06.jpg=c60x60" alt=""> <b class="username">@katemcentee</b> for <b class="push">Dare To Imagine</b> / <span class="date">November 8, 2015</span></p></figcaption>
+        <figcaption><p><span class="orange"></span><img src="http://www.ctznapp.com/s3/ctzn/9d/4f/07b2c1cf2280b8cf4dea8015436a0d833b06.jpg=c60x60" alt=""> <b class="username">@katemcentee</b> for <b class="push">Dare To Imagine</b> / <span class="date">November 8, 2015</span></p></figcaption>
       </figure>
     </div>
 
@@ -2356,7 +2489,17 @@
   </section>
 
   <footer class="primary">
-    <h2 class="about">a <a href="http://good.is"><svg class="icon" width="56" height="28" viewBox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignObject>GOOD</foreignObject></switch></svg></a> app</h2>
+    <div>
+      <h2 class="ctzn">
+        <a href="http://getctzn.com">
+          <svg class="icon" width="100" height="38" viewbox="0 0 100 38"><switch><use xlink:href="#icon-ctzn"></use><foreignobject>CTZN</foreignobject></switch></svg></a>
+      </h2>
+      <p class="good">
+        <span>A new app from</span>
+        <a href="http://good.is">
+          <svg class="icon" width="56" height="28" viewbox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></switch></svg></a>
+      </p>
+    </div>
     <div class="legal">
       <p>Copyright © 2015-2016 GOOD Worldwide Inc</p>
       <ul>
@@ -2702,11 +2845,11 @@
 
     var image    = document.querySelector('.about .primary');
     var preview  = document.querySelector('.about .preview');
-    var color    = document.querySelector('.image-credit span:first-child');
-    var avatar   = document.querySelector('.image-credit img');
-    var username = document.querySelector('.image-credit .username');
-    var push     = document.querySelector('.image-credit .push');
-    var date     = document.querySelector('.image-credit .date');
+    var color    = document.querySelector('figcaption span:first-child');
+    var avatar   = document.querySelector('figcaption img');
+    var username = document.querySelector('figcaption .username');
+    var push     = document.querySelector('figcaption .push');
+    var date     = document.querySelector('figcaption .date');
 
     function hasClassName(element, className) {
       if (!element || !className) return;
