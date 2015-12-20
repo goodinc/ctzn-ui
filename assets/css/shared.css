@@ -2859,7 +2859,7 @@
     margin: 0;
     color: rgb(102, 102, 102); /* @tin */
     font-size: 0.75em; /* 12px / @font-size */
-    line-height: 1.6666666667;
+    line-height: 2; /* @line-height / 0.75em */
   }
   footer.primary .legal ul,
   footer.primary .legal li {
@@ -6420,6 +6420,7 @@
     transition: opacity 0.2s;
   }
   .scrolled-up .public.page > header h1 {
+    display: none; /* SHIM: Prevent the invisible header from taking up space on tiny screens */
     opacity: 0;
   }
 
@@ -6494,6 +6495,51 @@
     text-align: center;
   }
 
+  .featured-post-item.without-text {
+    border-width: 0.75em;
+  }  
+  .featured-post-item.without-text header {
+    padding-bottom: 1.5em;
+  }
+
+  /* OPTIONAL: Show thicker border around each post. */
+  @media (min-width: 30em) {
+    .featured-post-item {
+      border-width: 0.75em 0.75em 1.875em;
+    }
+    .featured-post-item.without-text {
+      border-width: 0.75em;
+    }
+    .featured-post-item.without-text header {
+      padding-bottom: 1.875em;
+    }
+  }
+  @media (min-width: 40em) {
+    .featured-post-item {
+      border-width: 1.5em 1.5em 3em;
+    }
+    .featured-post-item.without-text {
+      border-width: 1.5em;
+    }
+    .featured-post-item.without-text header {
+      padding-bottom: 3em;
+    }
+  }
+  @media (min-width: 50em) {
+    .featured-post-item {
+      border-width: 2.25em 2.25em 3em;
+    }
+    .featured-post-item.without-text {
+      border-width: 2.25em;
+    }
+  }
+  @media (min-width: 60em) {
+    .featured-post-item,
+    .featured-post-item.without-text {
+      border-width: 3em;
+    }
+  }
+
   /* SHIM: Reset styles intended for page containers */
   .page > .featured-post-item {
     margin: 0;
@@ -6562,6 +6608,22 @@
     /* @wrap-long-words */
     word-wrap     : break-word;
     overflow-wrap : break-word;
+  }
+
+  /* SHIM: Make space for a multi-line header on small screens */
+  .featured-post-item header {
+    min-height: 3em; /* @line-height x 2 */
+  }
+  .featured-post-item .text {
+    padding-bottom: 3.625em; /* normal amount of padding + (@line-height * header.font-size)       2.5em + (1.5em * 0.75em) */
+  }
+  @media (min-width: 30em) {
+    .featured-post-item header {
+      min-height: 0;
+    }
+    .featured-post-item .text {
+      padding-bottom: 2.5em;
+    }
   }
 
   @media (min-width: 40em) {
@@ -6796,44 +6858,6 @@
     }
     .public.page .details .name {
       font-size: 10vmin;
-    }
-  }
-
-  /* OPTIONAL: Show a border around each post. */
-  @media (min-width: 30em) {
-    .featured-post-item {
-      border-width: 0.75em 0.75em 1.875em;
-    }
-    .featured-post-item.without-text {
-      border-width: 0.75em;
-    }
-    .featured-post-item.without-text header {
-      padding-bottom: 1.875em;
-    }
-  }
-  @media (min-width: 40em) {
-    .featured-post-item {
-      border-width: 1.5em 1.5em 3em;
-    }
-    .featured-post-item.without-text {
-      border-width: 1.5em;
-    }
-    .featured-post-item.without-text header {
-      padding-bottom: 3em;
-    }
-  }
-  @media (min-width: 50em) {
-    .featured-post-item {
-      border-width: 2.25em 2.25em 3em;
-    }
-    .featured-post-item.without-text {
-      border-width: 2.25em;
-    }
-  }
-  @media (min-width: 60em) {
-    .featured-post-item,
-    .featured-post-item.without-text {
-      border-width: 3em;
     }
   }
 
