@@ -2838,6 +2838,8 @@
     color: white;
     text-align: center;
   }
+
+  /* DEPRECATED: (Use the .good and .ctzn elements instead.) */
   footer.primary .about {
     margin: 0;
     font-size: inherit;
