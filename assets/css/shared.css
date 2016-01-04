@@ -2825,12 +2825,11 @@
 
   /* =Footer
   ----------------------------------------------- */
-  /*
   footer.primary {
-    background: white;
+    background-color: rgb(246, 246, 246); /* @casper */
     color: black;
+    color: rgba(0, 0, 0, 0.95);
   }
-  */
   footer.primary .about,
   footer.primary .legal {
     padding: 0.75em;
@@ -2888,12 +2887,8 @@
     margin: 0 0.3125em; /* @line-height / 4 */
   }
 
-
   .push-card + footer.primary {
     margin-top: 0;
-    background-color: rgb(204, 204, 204); /* @aluminum */
-    color: black;
-    color: rgba(0, 0, 0, 0.95);
   }
   .push-card.lime + footer.primary {
     background-color: rgb(176, 224, 0); /* @lime */
@@ -2980,6 +2975,11 @@
     display: table;
     color: inherit;
   }
+  footer.primary .good a:hover,
+  footer.primary .good a:active,
+  footer.primary .good a:focus {
+    color: rgb(102, 102, 102); /* @tin */
+  }
   .push-card + footer.primary .good a:hover,
   .push-card + footer.primary .good a:active,
   .push-card + footer.primary .good a:focus {
@@ -3017,9 +3017,6 @@
     color: inherit;
     vertical-align: middle;
   }
-
-
-
 
 
   /* =Create (toolbar)
@@ -6236,9 +6233,14 @@
     font-weight: inherit;
     line-height: inherit;
     text-align: left;
+    position: relative;
+    padding-left: 3em;
+    min-height: 2.5em;
   }
   .shareable-mix h1 .avatar {
-    margin-right: 0.375em;
+    position: absolute;
+    top: -0.375em;
+    left: 0;
   }
   .shareable-mix h1 .avatar img[width="40"] {
     width: 2.5em; /* 40px / @font-size */
