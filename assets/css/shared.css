@@ -6422,8 +6422,15 @@
     transition: opacity 0.2s;
   }
   .scrolled-up .public.page > header h1 {
-    display: none; /* SHIM: Prevent the invisible header from taking up space on tiny screens */
     opacity: 0;
+  }
+
+  /* SHIM: Prevent the invisible header from taking up space on tiny screens */
+  .scrolled-up .public.page > header {
+    min-height: 3em;
+  }
+  .scrolled-up .public.page > header h1 {
+    display: none;
   }
 
   .public.page .powered-by {
