@@ -103,22 +103,22 @@
   }
 
   /* OPTIONAL: Increase the font size on big screens. */
-  @media (min-width: 600px) and (min-height: 600px) {
+  @media screen and (min-width: 600px) and (min-height: 600px) {
     body {
       font-size: 112.5%;
     }
   }
-  @media (min-width: 800px) and (min-height: 800px) {
+  @media screen and (min-width: 800px) and (min-height: 800px) {
     body {
       font-size: 125%;
     }
   }
-  @media (min-width: 1000px) and (min-height: 1000px) {
+  @media screen and (min-width: 1000px) and (min-height: 1000px) {
     body {
       font-size: 137.5%;
     }
   }
-  @media (min-width: 1200px) and (min-height: 1200px) {
+  @media screen and (min-width: 1200px) and (min-height: 1200px) {
     body {
       font-size: 150%;
     }
@@ -2639,7 +2639,7 @@
       padding-top: 0.75em;
     }
   }
-  @media (min-width: 20em) and (min-height: 20em) {
+  @media screen and (min-width: 20em) and (min-height: 20em) {
 
     /* OPTIONAL: Make the header sticky */
        main.page,
@@ -2808,7 +2808,7 @@
   }
 
   /* OPTIONAL: Make the header sticky */
-  @media (min-width: 20em) and (min-height: 20em) {
+  @media screen and (min-width: 20em) and (min-height: 20em) {
     header.primary {
       position: fixed;
       top: 0;
@@ -3046,7 +3046,7 @@
   }
 
   /* OPTIONAL: Make the create toolbar sticky */
-  @media (min-width: 20em) and (min-height: 20em) {
+  @media screen and (min-width: 20em) and (min-height: 20em) {
     ul.create {
       bottom: 0;
       left: 0;
@@ -4295,7 +4295,7 @@
   }
 
   /* OPTIONAL: Make selected images sticky */
-  @media (min-width: 20em) and (min-height: 20em) {
+  @media screen and (min-width: 20em) and (min-height: 20em) {
     .mix-editor .selected-images {
       position: fixed;
       z-index: 3; /* Just above the checkboxes */
@@ -6512,7 +6512,7 @@
   }
 
   /* OPTIONAL: Show thicker border around each post. */
-  @media (min-width: 30em) {
+  @media screen and (min-width: 30em) {
     .featured-post-item {
       border-width: 0.75em 0.75em 1.875em;
     }
@@ -6523,7 +6523,7 @@
       padding-bottom: 1.875em;
     }
   }
-  @media (min-width: 40em) {
+  @media screen and (min-width: 40em) {
     .featured-post-item {
       border-width: 1.5em 1.5em 3em;
     }
@@ -6534,7 +6534,7 @@
       padding-bottom: 3em;
     }
   }
-  @media (min-width: 50em) {
+  @media screen and (min-width: 50em) {
     .featured-post-item {
       border-width: 2.25em 2.25em 3em;
     }
@@ -6542,7 +6542,7 @@
       border-width: 2.25em;
     }
   }
-  @media (min-width: 60em) {
+  @media screen and (min-width: 60em) {
     .featured-post-item,
     .featured-post-item.without-text {
       border-width: 3em;
@@ -6626,7 +6626,7 @@
   .featured-post-item .text {
     padding-bottom: 3.625em; /* normal amount of padding + (@line-height * header.font-size)       2.5em + (1.5em * 0.75em) */
   }
-  @media (min-width: 30em) {
+  @media screen and (min-width: 30em) {
     .featured-post-item header {
       min-height: 0;
     }
@@ -6635,13 +6635,13 @@
     }
   }
 
-  @media (min-width: 40em) {
+  @media screen and (min-width: 40em) {
     .featured-post-item .text {
       padding: 1.875em 1.875em 3em;
     }
   }
 
-  @media (min-width: 60em) {
+  @media screen and (min-width: 60em) {
     .featured-post-item .text {
       padding: 2.25em 2.25em 3.75em;
     }
@@ -6653,7 +6653,7 @@
     padding-bottom: 10vw;
   }
 
-  @media (max-width: 29.9em) {
+  @media screen and (max-width: 29.9em) {
     .featured-post-item .text p {
       line-height: 1.25;
       margin-top : 0.625em; /* 1.25em / 2 */
@@ -6661,22 +6661,22 @@
     }
   }
 
-  @media (min-width: 40em) {
+  @media screen and (min-width: 40em) {
     .featured-post-item .text {
       font-size: 1.125em;
     }
   }
-  @media (min-width: 60em) {
+  @media screen and (min-width: 60em) {
     .featured-post-item .text {
       font-size: 1.25em;
     }
   }
-  @media (min-width: 80em) {
+  @media screen and (min-width: 80em) {
     .featured-post-item .text {
       font-size: 1.375em;
     }
   }
-  @media (min-width: 100em) {
+  @media screen and (min-width: 100em) {
     .featured-post-item .text {
       font-size: 1.5em;
     }
@@ -6837,7 +6837,7 @@
   }
 
   /* OPTIONAL: Make details fill more of the viewport height on tall screens */
-  @media (min-height: 40em) {
+  @media screen and (min-height: 40em) {
     .public.page .details {
       max-width: none;
 
@@ -6871,7 +6871,7 @@
   }
 
   /* OPTIONAL: Arrange the posts in columns. */
-  @media (min-width: 60em) {
+  @media screen and (min-width: 60em) {
     .featured-post-item:after {
       content: "";
       display: table;
@@ -6958,7 +6958,7 @@
   }
 
   /* OPTIONAL: Center the items vertically, in browsers that support flexbox */
-  @media (min-width: 60em) {
+  @media screen and (min-width: 60em) {
     .featured-post-item {
       display: -webkit-flex;
       display:         flex;
