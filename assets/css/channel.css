@@ -50,7 +50,7 @@
     border-width: 0;
   }
 
-  /* Fit media to the available width */
+  /* Shrink images to fit the available space */
   img {
     max-width: 100%;
     height: auto;
@@ -94,7 +94,7 @@
   }
 
 
-  /* Browsers sometimes render these as inline elements, by default */
+  /* Make new HTML elements look nice in older browsers */
   main, section, article, aside, nav, header, footer, figure {
     display: block;
   }
