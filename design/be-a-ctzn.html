@@ -24,6 +24,10 @@
       color: rgb(109, 90, 219); /* @periwinkle */
       text-decoration: none;
     }
+    .article .action {
+      text-align: center;
+      margin-bottom: 0;
+    }
     .article .action a {
       display: inline-block;
       background-color: black;
@@ -182,6 +186,66 @@ margin-right: 0;
       font-style: italic;
       padding: 14px;
     }
+
+    .article {
+      max-width: 600px;
+      padding: 40px;
+    }
+    .article h2 {
+      margin-top: 0;
+      margin-top: -120px;
+      margin-left: -10px;
+      font-size: inherit;
+      line-height: 1;
+      text-transform: uppercase;
+      background: black;
+      color: white;
+      display: table;
+      padding: 15px;
+      position: relative;
+      z-index: 1;
+    }
+    .article h3 {
+      margin: 70px 0 30px;
+      font-size: 60px;
+      line-height: 60px;
+      color: black;
+    }
+    .article .byline,
+    .article .twitter {
+      font-style: italic;
+      display: inline;
+      font-family: Georgia, Times, serif;
+      color: black;
+    }
+    .article .byline {
+      border-right-width: 1px;
+      border-right-style: solid;
+      border-right-color: black;
+      border-right-color: rgba(0, 0, 0, 0.5);
+      padding-right: 7px;
+      margin-right: 10px;
+    }
+    .article .avatar {
+      margin-right: 5px;
+      vertical-align: baseline;
+    }
+    .article p {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+    .article .intro {
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 30px;
+      padding: 0;
+
+/* SHIM: Reset */
+max-width: none;
+margin-left: 0;
+margin-right: 0;
+    }
+
   </style>
 
 </head>
@@ -237,16 +301,16 @@ margin-right: 0;
       <h2>Jan 2016</h2>
       <h3>The Real Proof of Citizenship</h3>
 
-      <p>      
+      <p class="byline">      
         <span class="avatar">
-          <img src="ericliu.jpg" width="30" height="30" alt="" />
+          <img src="ericliu.jpg" width="40" height="40" alt="" />
         </span>
         by
         <a href="https://magazine.good.is/contributors/eric-liu">Eric Liu</a>
       </p>
-      <p><a href="https://twitter.com/ericpliu">@ericpliu</a> on Twitter</p>
+      <p class="twitter"><a href="https://twitter.com/ericpliu">@ericpliu</a> on Twitter</p>
 
-      <p>Last week I spoke at a naturalization ceremony with 51 immigrants from 27 countries who were becoming U.S. citizens.</p>
+      <p class="intro">Last week I spoke at a naturalization ceremony with 51 immigrants from 27 countries who were becoming U.S. citizens.</p>
 
       <p>They had to take a test (which most native-born Americans would have struggled to pass). They had to swear an oath, declaring not only that they renounced prior allegiances but also that they would serve and participate in American civic life when called upon to do so. Each of them bore a crisp certificate attesting to their new status.</p>
 
