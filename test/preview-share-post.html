@@ -37,7 +37,7 @@
     window.onPublicPageImageLoad = function(image) {
       image.className += ' loaded';
 
-      // Remove the preview image for better performance while scrolling (particularly on mobile devices)
+      // OPTIONAL: Remove the preview image for better performance while scrolling (particularly on mobile devices)
       var figure = getAncestor(image, 'figure');
       if (figure) {
         var preview = figure.querySelector('img.preview');
