@@ -712,22 +712,6 @@
     display: none;
   }
 
-  .public.page .powered-by {
-    color: white;
-    padding: 1.5em 1.25em;
-    margin-bottom: 0;
-    font-size: inherit;
-    font-weight: inherit;
-  }
-  .public.page .powered-by a {
-    color: inherit;
-  }
-  .public.page .powered-by a svg.icon {
-    width: 2.625em; /* 42px / @font-size */
-    height: 1em;
-    vertical-align: baseline;
-  }
-
   .public.page .details {
     margin-top: 0;
     padding-top: 3.75em;
@@ -736,6 +720,27 @@
   .public.page .details .name a {
     text-decoration: none;
   }
+
+  .public.page .tags,
+  .public.page .tags li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .public.page .tags {
+    line-height: 1.25;
+
+    /* @wrap-long-words */
+    word-wrap     : break-word;
+    overflow-wrap : break-word;
+  }
+  .public.page .tags li {
+    display: inline;
+  }
+  .public.page .tags a {
+    color: inherit;
+  }
+
   .featured-posts,
   .featured-posts li {
     list-style: none;
@@ -750,7 +755,9 @@
   }
   .public.page .featured-posts     + nav,
   .public.page .featured-post-item + nav {
+    border-top-width: 0;
     margin-top: 2.25em;
+    padding-top: 0;
     margin-bottom: 0;
     padding-bottom: 2.25em;
   }
@@ -760,10 +767,24 @@
   .public.page nav p:last-child {
     margin-bottom: 0;
   }
-  .public.page .details + nav {
+
+  .public.page .tags,
+  .public.page nav {
     margin-top: 0;
     padding-bottom: 2.25em;
     padding-top: 2.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    border-top: 0.0625em solid rgba(0, 0, 0, 0.2);
+  }
+  .public.page .tags {
+    margin-bottom: 0;
+  }
+  .public.page .tags + h2 {
+    margin-top: 0;
+    padding-top: 2.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
     border-top: 0.0625em solid rgba(0, 0, 0, 0.2);
   }
 
@@ -1270,3 +1291,4 @@
               flex-direction: row-reverse;
     }
   }
+
