@@ -2511,7 +2511,7 @@
       </h2>
       <p class="good">
         <span>A new app from</span>
-        <a href="http://good.is">
+        <a href="https://good.is">
           <svg class="icon" width="56" height="28" viewbox="0 0 56 28"><switch><use xlink:href="#icon-good"></use><foreignobject>GOOD</foreignobject></switch></svg></a>
       </p>
     </div>
@@ -2855,8 +2855,8 @@
     var min = 0;
     var max = posts.length - 1;
 
-    var random = Math.floor(Math.random() * (max - min + 1) + min);
-    var cursor = random;
+    //var random = Math.floor(Math.random() * (max - min + 1) + min);
+    var cursor = 0; //random;
 
     var image    = document.querySelector('.about .primary');
     var preview  = document.querySelector('.about .preview');
@@ -2925,7 +2925,7 @@
     }
     window._aboutImages.play();
 
-    update(true);
+    // update(true);
 
     // Preload
     for (var index = 0; index < posts.length; index++) {
