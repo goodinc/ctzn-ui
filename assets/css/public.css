@@ -721,24 +721,35 @@
     text-decoration: none;
   }
 
-  .public.page .tags,
-  .public.page .tags li {
+  .public.page .words,
+  .public.page .words li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .public.page .tags {
-    line-height: 1.25;
-
+  .public.page .words {
+    max-width: 60em;
+    margin-left: auto;
+    margin-right: auto;
     /* @wrap-long-words */
     word-wrap     : break-word;
     overflow-wrap : break-word;
   }
-  .public.page .tags li {
+  .public.page .words li {
     display: inline;
   }
-  .public.page .tags a {
+  .public.page .words a {
     color: inherit;
+    text-decoration: none;
+  }
+  .public.page .words a:hover,
+  .public.page .words a:active,
+  .public.page .words a:focus {
+    text-decoration: underline;
+  }
+
+  .public.page .details + .words {
+    margin-bottom: 6em;
   }
 
   .featured-posts,
@@ -768,24 +779,25 @@
     margin-bottom: 0;
   }
 
-  .public.page .tags,
   .public.page nav {
     margin-top: 0;
     padding-bottom: 2.25em;
     padding-top: 2.25em;
     padding-left: 1.25em;
     padding-right: 1.25em;
+  }
+
+  .public.page nav {
     border-top: 0.0625em solid rgba(0, 0, 0, 0.2);
   }
-  .public.page .tags {
-    margin-bottom: 0;
+  .public.page .words {
+    margin-top: 3em;
+    margin-bottom: 3em;
   }
-  .public.page .tags + h2 {
-    margin-top: 0;
-    padding-top: 2.25em;
+  .public.page .words,
+  .public.page .words + h2 {
     padding-left: 1.25em;
     padding-right: 1.25em;
-    border-top: 0.0625em solid rgba(0, 0, 0, 0.2);
   }
 
   .featured-post-item header {
@@ -822,6 +834,10 @@
     .featured-post-item.without-text header {
       padding-bottom: 1.875em;
     }
+    .public.page .words {
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+    }
   }
   @media screen and (min-width: 40em) {
     .featured-post-item {
@@ -833,6 +849,10 @@
     .featured-post-item.without-text header {
       padding-bottom: 3em;
     }
+    .public.page .words {
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+    }
   }
   @media screen and (min-width: 50em) {
     .featured-post-item {
@@ -841,11 +861,19 @@
     .featured-post-item.without-text {
       border-width: 2.25em;
     }
+    .public.page .words {
+      padding-left: 2.25em;
+      padding-right: 2.25em;
+    }
   }
   @media screen and (min-width: 60em) {
     .featured-post-item,
     .featured-post-item.without-text {
       border-width: 3em;
+    }
+    .public.page .words {
+      padding-left: 3em;
+      padding-right: 3em;
     }
   }
 
