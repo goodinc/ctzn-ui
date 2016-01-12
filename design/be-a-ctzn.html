@@ -49,6 +49,7 @@
       background: black;
       text-align: center;
       padding: 120px 40px;
+      margin-top: 0;
       margin-bottom: 0;
     }
     .about-ctzn .action .icon {
@@ -97,8 +98,8 @@ margin-right: 0;
     }
     .headline {
       margin-top: 0;
-      background-color: rgb(109, 90, 219); /* @periwinkle */
-      padding: 30px 0 0 0;
+      background: rgb(109, 90, 219); /* @periwinkle */
+      padding: 20px 0 0 0;
       max-width: 680px;
     }
 
@@ -106,13 +107,14 @@ margin-right: 0;
 
       /* KUDOS: http://codepen.io/leaverou/pen/raGaNR */
       .headline {
+        padding-top: 30px !important;
         background:
           linear-gradient(135deg, transparent 0, rgb(109, 90, 219) 0) top left,
           linear-gradient(225deg, transparent 28px, rgb(109, 90, 219) 0) top right,
           linear-gradient(315deg, transparent 0, rgb(109, 90, 219) 0) bottom right,
-          linear-gradient(45deg,  transparent 0, rgb(109, 90, 219) 0) bottom left;
-        background-size: 50% 50%;
-        background-repeat: no-repeat;
+          linear-gradient(45deg,  transparent 0, rgb(109, 90, 219) 0) bottom left !important;
+        background-size: 50% 50% !important;
+        background-repeat: no-repeat !important;
         position: relative;
       }
       .headline::before {
@@ -130,34 +132,46 @@ margin-right: 0;
       background-color: black;
       color: white;
       font-style: italic;
-      font-size: 60px;
+      font-size: 40px;
       line-height: 1;
-      margin-left: 30px;
-      margin-right: 30px;
-      margin-bottom: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px;
       display: inline-block;
       padding: 15px 30px;
     }
+    @media (min-width: 700px) {
+      .headline h1 {
+        font-size: 60px !important;
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+        margin-bottom: 30px !important;
+      }
+    }
 
+    .headline .powered-by {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .headline .ctzn a {
+      /*
+      margin-right: 15px;
+      border-right-width: 0.0625em;
+      border-right-style: solid;
+      border-color: rgba(0, 0, 0, 0.25);
+      */
+    }
     .headline .good,
     .headline .ctzn {
       margin: 0;
       width: 50%;
-      padding-right: 15px;
-      padding-left: 15px;
     }
     .headline .ctzn {
       color: black;
-      border-right-width: 0.0625em;
-      border-right-style: solid;
-      border-color: rgba(0, 0, 0, 0.25);
-      line-height: 2.25;
+      padding: 0;
+      line-height: 24px;
       float: left;
       text-align: right;
-
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
 
 /* SHIM: Reset */
 font-size: inherit;
@@ -171,10 +185,11 @@ background-color: transparent;
       float: right;
       text-align: left;
       line-height: 1;
-
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
+    }
+    .headline .good a,
+    .headline .good span {
+      display: inline-block;
+      margin-left: 30px;
     }
 
     .headline .ctzn span,
@@ -184,11 +199,15 @@ background-color: transparent;
     }
     .headline .ctzn a {
       margin-left: 0.5em;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .headline .good a {
-      display: table;
+      display: block;
       color: inherit;
+      text-decoration: none;
+      font-weight: bold;
     }
     .headline .good a:hover,
     .headline .good a:active,
@@ -293,9 +312,16 @@ margin-right: 0;
     }
 
     .article {
-      max-width: 600px;
-      padding: 40px;
+      max-width: 640px;
+      padding: 20px;
     }
+    @media (min-width: 700px) {
+      .article {
+        max-width: 600px !important;
+        padding: 40px !important;
+      }
+    }
+
     .about-ctzn h2,
     .article h2 {
       margin-top: 0;
@@ -304,24 +330,31 @@ margin-right: 0;
       text-transform: uppercase;
       background: black;
       color: white;
-      display: table;
+      display: inline-block;
       padding: 15px;
     }
     .article h2 {
       margin-top: 0;
+      margin-bottom: 0;
     }
     .article h3 {
       margin: 40px 0 30px;
-      font-size: 60px;
-      line-height: 60px;
+      font-size: 40px;
+      line-height: 1;
       color: black;
 
       /* @wrap-long-words */
       word-wrap     : break-word;
       overflow-wrap : break-word;
     }
+    @media (min-width: 700px) {
+      .article h3 {
+        font-size: 60px !important;
+      }
+    }
     @media (min-width: 680px) {
       .article h2 {
+        display: table;
         position: relative;
         z-index: 1;
         margin-top: -120px;
@@ -417,14 +450,27 @@ margin-right: 0;
       .follow-good {
         background: white;
         color: black;
-        max-width: 600px;
-        padding: 40px;
+        max-width: 640px;
+        padding: 20px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
       }
+      @media (min-width: 700px) {
+        .about-ctzn,
+        .good-ctzn,
+        .add-group,
+        .partnerships,
+        .follow-good {
+          max-width: 600px !important;
+          padding: 40px !important;
+        }
+      }
+
       .about-ctzn {
+        text-align: left;
         background-color: rgb(101, 152, 254); /* @blue */
+        background-color: rgb(7, 177, 242);
       }
       .good-ctzn {
         background-color: rgb(109, 90, 219); /* @periwinkle */
@@ -440,7 +486,7 @@ margin-right: 0;
       }
       .follow-good h2 {
         color: white;
-        font-size: 33px;
+        font-size: 22px;
         line-height: 1;
         margin-top: 0;
 
@@ -449,7 +495,17 @@ margin-right: 0;
         overflow-wrap : break-word;
       }
       .follow-good h2 span {
-        font-size: 60px;
+        font-size: 40px;
+        display: block;
+      }
+
+      @media (min-width: 700px) {
+        .follow-good h2 {
+          font-size: 33px !important;
+        }
+        .follow-good h2 span {
+          font-size: 60px !important;
+        }
       }
 
       .follow-good ul,
@@ -484,9 +540,9 @@ margin-right: 0;
       }
       .follow-good a span {
         display: inline-block;
-        padding: 15px 25px;
-        margin-left: 10px;
-        margin-right: 10px;
+        padding: 0;
+        margin-left: 20px;
+        margin-right: 20px;
         /*
         border-width: 1px 0 0 0;
         border-style: solid;
@@ -494,11 +550,20 @@ margin-right: 0;
         */
       }
       .follow-good a .icon {
-        width: 40px;
-        height: 40px;
+        width: 25px;
+        height: 25px;
 
 /* SHIM: Reset */
 margin-right: 0;
+      }
+      @media (min-width: 700px) {
+        .follow-good a span {
+          padding: 10px !important;
+        }
+        .follow-good a .icon {
+          width: 40px !important;
+          height: 40px !important;
+        }
       }
 
 
@@ -538,47 +603,49 @@ margin-right: 0;
 
     <div class="headline">
       <h1>Be a CTZN.</h1>
-      <p class="ctzn">
-        <span>powered by</span>
-        <a href="http://getctzn.com">
-          <svg class="icon" viewBox="0 0 120 45.382" width="60" height="23">
-            <switch>
-              <g>
-                <path d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"/><path d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"/><path d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/><path d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"/>
-              </g>
-              <foreignobject>CTZN</foreignobject>
-            </switch>
-          </svg>
-        </a>
-      </p>
-      <p class="good">
-        <span>a new app from</span>
-        <a href="https://magazine.good.is">
-          <svg class="icon" viewBox="0 0 112 55.795" width="56" height="23">
-            <switch>
-              <path d="M104.198,44.138c0,2.142-1.748,3.885-3.901,3.885h-3.901V7.765h3.901c2.153,0,3.901,1.743,3.901,3.883
-                V44.138z M100.297,0H89.305c-0.392,0-0.709,0.313-0.709,0.705v54.38c0,0.394,0.317,0.71,0.709,0.71h10.992
-                C106.75,55.794,112,50.56,112,44.138v-32.49C112,5.225,106.75,0,100.297,0z M74.668,44.138c0,2.142-1.75,3.885-3.901,3.885
-                s-3.904-1.743-3.904-3.885v-32.49c0-2.139,1.753-3.883,3.904-3.883s3.901,1.743,3.901,3.883V44.138z M70.767,0
-                c-6.453,0-11.702,5.225-11.702,11.648v32.49c0,6.421,5.248,11.656,11.702,11.656c6.453,0,11.701-5.234,11.701-11.656v-32.49
-                C82.467,5.225,77.22,0,70.767,0z M11.701,0C5.25,0,0,5.225,0,11.648v32.49c0,6.421,5.25,11.656,11.701,11.656
-                c2.745,0,5.262-0.955,7.26-2.532l0.897,2.532h2.835c0.392,0,0.709-0.316,0.709-0.71V23.305c0-0.391-0.317-0.705-0.709-0.705H12.058
-                c-0.394,0-0.712,0.313-0.712,0.705v6.354c0,0.394,0.318,0.707,0.712,0.707h3.544v13.773c0,2.142-1.75,3.885-3.901,3.885
-                S7.8,46.281,7.8,44.139v-32.49c0-2.139,1.75-3.883,3.901-3.883s3.901,1.743,3.901,3.883v2.475c0,0.387,0.318,0.705,0.712,0.705
-                h6.379c0.392,0,0.709-0.318,0.709-0.705v-2.475C23.402,5.225,18.155,0,11.701,0z M45.135,44.138c0,2.142-1.752,3.885-3.901,3.885
-                c-2.151,0-3.901-1.743-3.901-3.885v-32.49c0-2.139,1.75-3.883,3.901-3.883c2.149,0,3.901,1.743,3.901,3.883V44.138z M41.234,0
-                C34.781,0,29.53,5.225,29.53,11.648v32.49c0,6.421,5.25,11.656,11.703,11.656s11.701-5.234,11.701-11.656v-32.49
-                C52.935,5.225,47.687,0,41.234,0z"/>
-              <foreignobject>GOOD</foreignobject>
-            </switch>
-          </svg>
-        </a>
-      </p>
+      <div class="powered-by">
+        <p class="ctzn">
+          <span>powered by</span>
+          <a href="http://getctzn.com">
+            <svg class="icon" viewBox="0 0 120 45.382" width="60" height="23">
+              <switch>
+                <g>
+                  <path d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"/><path d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"/><path d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"/><path d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"/>
+                </g>
+                <foreignobject>CTZN</foreignobject>
+              </switch>
+            </svg>
+          </a>
+        </p>
+        <p class="good">
+          <span>a new app from</span>
+          <a href="https://magazine.good.is">
+            <svg class="icon" viewBox="0 0 112 55.795" width="56" height="23">
+              <switch>
+                <path d="M104.198,44.138c0,2.142-1.748,3.885-3.901,3.885h-3.901V7.765h3.901c2.153,0,3.901,1.743,3.901,3.883
+                  V44.138z M100.297,0H89.305c-0.392,0-0.709,0.313-0.709,0.705v54.38c0,0.394,0.317,0.71,0.709,0.71h10.992
+                  C106.75,55.794,112,50.56,112,44.138v-32.49C112,5.225,106.75,0,100.297,0z M74.668,44.138c0,2.142-1.75,3.885-3.901,3.885
+                  s-3.904-1.743-3.904-3.885v-32.49c0-2.139,1.753-3.883,3.904-3.883s3.901,1.743,3.901,3.883V44.138z M70.767,0
+                  c-6.453,0-11.702,5.225-11.702,11.648v32.49c0,6.421,5.248,11.656,11.702,11.656c6.453,0,11.701-5.234,11.701-11.656v-32.49
+                  C82.467,5.225,77.22,0,70.767,0z M11.701,0C5.25,0,0,5.225,0,11.648v32.49c0,6.421,5.25,11.656,11.701,11.656
+                  c2.745,0,5.262-0.955,7.26-2.532l0.897,2.532h2.835c0.392,0,0.709-0.316,0.709-0.71V23.305c0-0.391-0.317-0.705-0.709-0.705H12.058
+                  c-0.394,0-0.712,0.313-0.712,0.705v6.354c0,0.394,0.318,0.707,0.712,0.707h3.544v13.773c0,2.142-1.75,3.885-3.901,3.885
+                  S7.8,46.281,7.8,44.139v-32.49c0-2.139,1.75-3.883,3.901-3.883s3.901,1.743,3.901,3.883v2.475c0,0.387,0.318,0.705,0.712,0.705
+                  h6.379c0.392,0,0.709-0.318,0.709-0.705v-2.475C23.402,5.225,18.155,0,11.701,0z M45.135,44.138c0,2.142-1.752,3.885-3.901,3.885
+                  c-2.151,0-3.901-1.743-3.901-3.885v-32.49c0-2.139,1.75-3.883,3.901-3.883c2.149,0,3.901,1.743,3.901,3.883V44.138z M41.234,0
+                  C34.781,0,29.53,5.225,29.53,11.648v32.49c0,6.421,5.25,11.656,11.703,11.656s11.701-5.234,11.701-11.656v-32.49
+                  C52.935,5.225,47.687,0,41.234,0z"/>
+                <foreignobject>GOOD</foreignobject>
+              </switch>
+            </svg>
+          </a>
+        </p>
+      </div>
       <div style="clear: both"></div>
-      <p class="tagline">reflections on citizenship from people leading movements</p>
+      <p class="tagline">reflections on citizenship from people leading&nbsp;movements</p>
     </div><!-- /.headline -->
 
-    <img class="featured" src="be-a-ctzn.jpg" alt="" />
+    <img class="featured" src="http://goodinc.github.io/ctzn-ui/design/be-a-ctzn.jpg" alt="" />
 
     <div class="article">
       <h2><abbr title="January">Jan</abbr> 2016</h2>
@@ -586,20 +653,20 @@ margin-right: 0;
 
       <p class="byline">      
         <span class="avatar">
-          <img src="ericliu.jpg" width="40" height="40" alt="" />
+          <img src="http://goodinc.github.io/ctzn-ui/design/ericliu.jpg" width="40" height="40" alt="" />
         </span>
         by
         <a href="https://magazine.good.is/contributors/eric-liu">Eric Liu</a>
       </p>
       <p class="twitter"><a href="https://twitter.com/ericpliu">@ericpliu</a> on Twitter</p>
 
-      <p class="intro">Last week I spoke at a naturalization ceremony with 51 immigrants from 27 countries who were becoming U.S. citizens.</p>
+      <p class="intro">Last week I spoke at a naturalization ceremony with 51 immigrants from 27 countries who were becoming U.S.&nbsp;citizens.</p>
 
-      <p>They had to take a test (which most native-born Americans would have struggled to pass). They had to swear an oath, declaring not only that they renounced prior allegiances but also that they would serve and participate in American civic life when called upon to do so. Each of them bore a crisp certificate attesting to their new status.</p>
+      <p>They had to take a test (which most native-born Americans would have struggled to pass). They had to swear an oath, declaring not only that they renounced prior allegiances but also that they would serve and participate in American civic life when called upon to do so. Each of them bore a crisp certificate attesting to their new&nbsp;status.</p>
 
-      <p>It was beautiful. But it also made me think, What about the rest of us? We who had the dumb luck to be born in the U.S. too often take our citizenship for granted. The Arizona ruling reminds us — as does the NSA-Prism controversy, in its own way — that to be a citizen is not just to rail against encroachments on liberties. It is also to take on the responsibility of self-government. Our job is to ask questions; to push our representatives to do more than fly on autopilot; to force debates about policy; to make sure we include ever more people in those debates; and then, when the votes are counted, to make the policies work.</p>
+      <p>It was beautiful. But it also made me think, What about the rest of us? We who had the dumb luck to be born in the U.S. too often take our citizenship for granted. The Arizona ruling reminds us — as does the NSA-Prism controversy, in its own way — that to be a citizen is not just to rail against encroachments on liberties. It is also to take on the responsibility of self-government. Our job is to ask questions; to push our representatives to do more than fly on autopilot; to force debates about policy; to make sure we include ever more people in those debates; and then, when the votes are counted, to make the policies&nbsp;work.</p>
 
-      <p>This is daily work, not just crisis work. If we fight for citizenship only when it’s being undermined, it’s sure to get undermined — just as if we exercise only when we’re getting sick, we are sure to get sick. It’s quite fitting, then, that the states can no longer force voters to show their papers. Documents can’t capture the true content of our citizenship. The proof is in the doing.</p>
+      <p>This is daily work, not just crisis work. If we fight for citizenship only when it’s being undermined, it’s sure to get undermined — just as if we exercise only when we’re getting sick, we are sure to get sick. It’s quite fitting, then, that the states can no longer force voters to show their papers. Documents can’t capture the true content of our citizenship. The proof is in the&nbsp;doing.</p>
 
       <p class="action"><a href="">read full article</a></p>
 
