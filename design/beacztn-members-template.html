@@ -1,0 +1,821 @@
+<html dir="ltr" lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Be a CTZN. January 2016. The Real Proof of Citizenship</title>
+
+  <link rel="stylesheet" href="../assets/css/email.css">
+
+  <style>
+    @media (min-width: 700px) { /* @main-column-width + (10 x 2) */
+      .container {
+        padding: 40px 0 60px !important; /* This is “!important” to override the inlined CSS rules */
+      }
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+      color: black;
+      text-decoration: underline;
+    }
+
+    .article a {
+      color: rgb(109, 90, 219); /* @periwinkle */
+      text-decoration: none;
+    }
+    .article a:hover,
+    .article a:active,
+    .article a:focus {
+      color: black;
+      text-decoration: underline;
+    }
+    .about-be-a-ctzn a {
+      text-decoration: underline;
+    }
+    .about-be-a-ctzn a:hover,
+    .about-be-a-ctzn a:active,
+    .about-be-a-ctzn a:focus {
+      color: black;
+      text-decoration: underline;
+    }
+    .article .action {
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .about-ctzn .action {
+      background: black;
+      text-align: center;
+      padding: 120px 40px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .about-ctzn .action .icon {
+      width: 30px;
+      height: 30px;
+
+/* SHIM: Reset */
+margin-right: 0;
+    }
+    .about-ctzn .action a,
+    .good-ctzn .action a,
+    .add-group .action a,
+    .article .action a {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      border-radius: 1.5em;
+      line-height: 1;
+      padding: 0.75em 2em;
+      font-size: 24px;
+      font-weight: normal;
+      text-decoration: none;
+      border: none;
+      border: 2px solid transparent;
+    }
+    .about-ctzn .action a,
+    .good-ctzn .action a,
+    .add-group .action a {
+      background: transparent;
+      color: white;
+      border-color: white;
+    }
+    .about-ctzn .action a:hover,
+    .about-ctzn .action a:active,
+    .about-ctzn .action a:focus,
+    .good-ctzn .action a:hover,
+    .good-ctzn .action a:active,
+    .good-ctzn .action a:focus,
+    .add-group .action a:hover,
+    .add-group .action a:active,
+    .add-group .action a:focus,
+    .article .action a:hover,
+    .article .action a:active,
+    .article .action a:focus {
+      text-decoration: underline;
+    }
+    .headline {
+      margin-top: 0;
+      background: rgb(109, 90, 219); /* @periwinkle */
+      padding: 20px 0 0 0;
+      max-width: 680px;
+    }
+
+    @media (min-width: 700px) { /* @main-column-width + (10 x 2) */
+
+      /* KUDOS: http://codepen.io/leaverou/pen/raGaNR */
+      .headline {
+        padding-top: 30px !important;
+        background:
+          linear-gradient(135deg, transparent 0, rgb(109, 90, 219) 0) top left,
+          linear-gradient(225deg, transparent 28px, rgb(109, 90, 219) 0) top right,
+          linear-gradient(315deg, transparent 0, rgb(109, 90, 219) 0) bottom right,
+          linear-gradient(45deg,  transparent 0, rgb(109, 90, 219) 0) bottom left !important;
+        background-size: 50% 50% !important;
+        background-repeat: no-repeat !important;
+        position: relative;
+      }
+      .headline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: linear-gradient(to left bottom, transparent 50%, black 0, black) 100% 0 no-repeat;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .headline h1 {
+      background-color: black;
+      color: white;
+      font-style: italic;
+      font-size: 40px;
+      line-height: 1;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 15px 30px;
+    }
+    @media (min-width: 700px) {
+      .headline h1 {
+        font-size: 60px !important;
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+        margin-bottom: 30px !important;
+      }
+    }
+
+    .headline .powered-by {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .headline .ctzn a {
+      /*
+      margin-right: 15px;
+      border-right-width: 0.0625em;
+      border-right-style: solid;
+      border-color: rgba(0, 0, 0, 0.25);
+      */
+    }
+    .headline .good,
+    .headline .ctzn {
+      margin: 0;
+      width: 50%;
+    }
+    .headline .ctzn {
+      color: black;
+      padding: 0;
+      line-height: 24px;
+      float: left;
+      text-align: right;
+
+/* SHIM: Reset */
+font-size: inherit;
+text-transform: none;
+background-color: transparent;
+    }
+    .headline .good {
+      padding-top: 5px;
+      color: white;
+      display: block;
+      float: right;
+      text-align: left;
+      line-height: 1;
+    }
+    .headline .good a,
+    .headline .good span {
+      display: inline-block;
+      margin-left: 30px;
+    }
+
+    .headline .ctzn span,
+    .headline .good span {
+      font-size: 12px;
+      text-transform: lowercase;
+    }
+    .headline .ctzn a {
+      margin-left: 0.5em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .headline .good a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .headline .good a:hover,
+    .headline .good a:active,
+    .headline .good a:focus {
+      color: black;
+    }
+    .push-card + footer.primary .good a:hover,
+    .push-card + footer.primary .good a:active,
+    .push-card + footer.primary .good a:focus {
+      color: white;
+    }
+
+    .footer h2 a,
+    .good-ctzn h2 a:first-child,
+    .headline .ctzn a {
+      display: inline-block;
+      border-radius: 50%;
+      width: 60px;
+      line-height: 60px;
+      text-align: center;
+      background-color: rgb(150, 255, 108); /* @honeydew */
+      color: black;
+    }
+    .good-ctzn h2 a:first-child {
+      width: 116px;
+      height: 116px;
+    }
+    .footer h2 a:hover,
+    .footer h2 a:active,
+    .footer h2 a:focus,
+    .good-ctzn h2 a:first-child:hover,
+    .good-ctzn h2 a:first-child:active,
+    .good-ctzn h2 a:first-child:focus,
+    .headline .ctzn a:hover,
+    .headline .ctzn a:active,
+    .headline .ctzn a:focus {
+      background: black;
+      color: white;
+    }
+    .good-ctzn h2 a:last-child:hover,
+    .good-ctzn h2 a:last-child:active,
+    .good-ctzn h2 a:last-child:focus {
+      color: white;
+    }
+
+    .footer h2 a .icon,
+    .good-ctzn h2 a:first-child .icon,
+    .headline .ctzn .icon {
+      width: 42px;
+      height: 60px;
+      vertical-align: top;
+      color: inherit;
+
+
+/* SHIM: Reset */
+margin-right: 0;
+
+    }
+    .headline .good .icon {
+      margin-top: 0.375em;
+      display: block;
+      width: 40px;
+      height: 20px;
+      color: inherit;
+      vertical-align: middle;
+    }
+    .good-ctzn h2 a:first-child .icon,
+    .good-ctzn h2 a:last-child .icon {
+      vertical-align: middle;
+    }
+    .good-ctzn h2 a:first-child .icon {
+      width: 80px;
+      height: 116px;
+    }
+    .good-ctzn h2 a:last-child .icon {
+      width: 76px;
+      height: 43px;
+    }
+    .good-ctzn h2 {
+      font-weight: normal;
+      font-size: 70px;
+      line-height: 116px;
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+    .good-ctzn .action,
+    .add-group .action {
+      text-align: center;
+      margin: 0;
+    }
+
+
+    .headline .tagline {
+      margin-top: 30px;
+      margin-bottom: 0;
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.1);
+      color: white;
+      font-size: 14px;
+      font-style: italic;
+      padding: 14px;
+    }
+
+    .article {
+      max-width: 640px;
+      padding: 20px;
+    }
+    @media (min-width: 700px) {
+      .article {
+        max-width: 600px !important;
+        padding: 40px !important;
+      }
+    }
+
+    .about-ctzn h2,
+    .article h2 {
+      margin-top: 0;
+      font-size: inherit;
+      line-height: 1;
+      text-transform: uppercase;
+      background: black;
+      color: white;
+      display: inline-block;
+      padding: 15px;
+    }
+    .article h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .article h3 {
+      margin: 40px 0 30px;
+      font-size: 40px;
+      line-height: 1;
+      color: black;
+
+      /* @wrap-long-words */
+      word-wrap     : break-word;
+      overflow-wrap : break-word;
+    }
+    @media (min-width: 700px) {
+      .article h3 {
+        font-size: 60px !important;
+      }
+    }
+    @media (min-width: 680px) {
+      .article h2 {
+        display: table;
+        position: relative;
+        z-index: 1;
+        margin-top: -120px;
+        margin-left: -10px;
+      }
+      .article h3 {
+        margin-top: 70px;
+      }
+    }
+    .article .byline,
+    .article .twitter {
+      font-style: italic;
+      display: inline;
+      font-family: Georgia, Times, "Times New Roman", serif;
+      color: black;
+    }
+    .article .byline {
+      border-right-width: 1px;
+      border-right-style: solid;
+      border-right-color: black;
+      border-right-color: rgba(0, 0, 0, 0.5);
+      padding-right: 7px;
+      margin-right: 10px;
+    }
+    .article .avatar {
+      margin-right: 5px;
+      vertical-align: baseline;
+    }
+    .article p {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+    .article .intro {
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 30px;
+      padding: 0;
+      font-weight: bold;
+
+/* SHIM: Reset */
+max-width: none;
+margin-left: 0;
+margin-right: 0;
+    }
+
+
+      .about-be-a-ctzn {
+        margin-top: 60px;
+        font-style: italic;
+        font-family: Georgia, Times, "Times New Roman", serif;
+        border-left: 10px solid rgb(109, 90, 219); /* @periwinkle */
+        padding-left: 30px;
+      }
+      .about-be-a-ctzn p {
+        margin: 0;
+        padding-top: 10px;
+      }
+      .about-be-a-ctzn .social {
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-width: 1px 0 0;
+        border-style: solid;
+        border-color: rgb(222, 222, 222); /* @silver */
+      }
+      .about-be-a-ctzn .social a {
+        background-color: rgb(246, 246, 246); /* @casper */
+        padding: 15px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 10px;
+      }
+      .about-be-a-ctzn .social a:hover,
+      .about-be-a-ctzn .social a:active,
+      .about-be-a-ctzn .social a:focus {
+        background-color: black;
+        color: white !important;
+      }
+      .about-be-a-ctzn .social a .icon {
+        width: 24px;
+        height: 24px;
+
+/* SHIM: Reset */
+margin-right: 0;
+
+      }
+
+
+      .about-ctzn,
+      .good-ctzn,
+      .add-group,
+      .partnerships,
+      .follow-good {
+        background: white;
+        color: black;
+        max-width: 640px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      @media (min-width: 700px) {
+        .about-ctzn,
+        .good-ctzn,
+        .add-group,
+        .partnerships,
+        .follow-good {
+          max-width: 600px !important;
+          padding: 40px !important;
+        }
+      }
+
+      .about-ctzn {
+        text-align: left;
+        background-color: rgb(101, 152, 254); /* @blue */
+        background-color: rgb(7, 177, 242);
+      }
+      .good-ctzn {
+        background-color: rgb(109, 90, 219); /* @periwinkle */
+      }
+      .good-ctzn a {
+        text-decoration: none;
+      }
+      .add-group {
+        background-color: rgb(255, 0, 86); /* @red */
+      }
+      .follow-good {
+        background-color: rgb(225, 229, 230);
+      }
+      .follow-good h2 {
+        color: white;
+        font-size: 22px;
+        line-height: 1;
+        margin-top: 0;
+
+        /* @wrap-long-words */
+        word-wrap     : break-word;
+        overflow-wrap : break-word;
+      }
+      .follow-good h2 span {
+        font-size: 40px;
+        display: block;
+      }
+
+      @media (min-width: 700px) {
+        .follow-good h2 {
+          font-size: 33px !important;
+        }
+        .follow-good h2 span {
+          font-size: 60px !important;
+        }
+      }
+
+      .follow-good ul,
+      .follow-good li {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+      }
+      .follow-good ul {
+        margin-bottom: 0;
+      }
+      .follow-good li {
+        /*
+        border-width: 0 0 0 1px;
+        border-style: solid;
+        border-color: white;
+        */
+        display: inline-block;
+      }
+      .follow-good li + li {
+        border-color: white;
+      }
+      .follow-good a {
+        color: rgb(156, 174, 179);
+        text-decoration: none;
+        display: inline-block;
+      }
+      .follow-good a:hover,
+      .follow-good a:active,
+      .follow-good a:focus {
+        color: black;
+      }
+      .follow-good a span {
+        display: inline-block;
+        padding: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        /*
+        border-width: 1px 0 0 0;
+        border-style: solid;
+        border-color: white;
+        */
+      }
+      .follow-good a .icon {
+        width: 25px;
+        height: 25px;
+
+/* SHIM: Reset */
+margin-right: 0;
+      }
+      @media (min-width: 700px) {
+        .follow-good a span {
+          padding: 10px !important;
+        }
+        .follow-good a .icon {
+          width: 40px !important;
+          height: 40px !important;
+        }
+      }
+
+
+      .partnerships {
+        font-size: 12px;
+        line-height: 18px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      .partnerships h2 {
+        margin-top: 0;
+        font-size: inherit;
+        text-transform: uppercase;
+      }
+      .partnerships p {
+        color: rgb(102, 102, 102); /* @tin */
+        margin-bottom: 0;
+        max-width: 33em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .footer h2 {
+        margin-top: 30px;
+        float: none;
+      }
+      .mute {
+        padding: 0;
+        border-width: 0;
+      }
+  </style>
+
+</head>
+<body data-pinterest-extension-installed="cr1.39.1">
+
+  <div class="container">
+
+    <div class="headline">
+      <h1>Be a CTZN.</h1>
+      <div class="powered-by">
+        <p class="ctzn">
+          <span>powered by</span>
+          <a href="http://getctzn.com">
+            <svg class="icon" viewBox="0 0 120 45.382" width="60" height="23">
+              <switch>
+                <g>
+                  <path d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"></path><path d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"></path><path d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"></path><path d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"></path>
+                </g>
+                <foreignObject>CTZN</foreignObject>
+              </switch>
+            </svg>
+          </a>
+        </p>
+        <p class="good">
+          <span>a new app from</span>
+          <a href="https://magazine.good.is">
+            <svg class="icon" viewBox="0 0 112 55.795" width="56" height="23">
+              <switch>
+                <path d="M104.198,44.138c0,2.142-1.748,3.885-3.901,3.885h-3.901V7.765h3.901c2.153,0,3.901,1.743,3.901,3.883
+                  V44.138z M100.297,0H89.305c-0.392,0-0.709,0.313-0.709,0.705v54.38c0,0.394,0.317,0.71,0.709,0.71h10.992
+                  C106.75,55.794,112,50.56,112,44.138v-32.49C112,5.225,106.75,0,100.297,0z M74.668,44.138c0,2.142-1.75,3.885-3.901,3.885
+                  s-3.904-1.743-3.904-3.885v-32.49c0-2.139,1.753-3.883,3.904-3.883s3.901,1.743,3.901,3.883V44.138z M70.767,0
+                  c-6.453,0-11.702,5.225-11.702,11.648v32.49c0,6.421,5.248,11.656,11.702,11.656c6.453,0,11.701-5.234,11.701-11.656v-32.49
+                  C82.467,5.225,77.22,0,70.767,0z M11.701,0C5.25,0,0,5.225,0,11.648v32.49c0,6.421,5.25,11.656,11.701,11.656
+                  c2.745,0,5.262-0.955,7.26-2.532l0.897,2.532h2.835c0.392,0,0.709-0.316,0.709-0.71V23.305c0-0.391-0.317-0.705-0.709-0.705H12.058
+                  c-0.394,0-0.712,0.313-0.712,0.705v6.354c0,0.394,0.318,0.707,0.712,0.707h3.544v13.773c0,2.142-1.75,3.885-3.901,3.885
+                  S7.8,46.281,7.8,44.139v-32.49c0-2.139,1.75-3.883,3.901-3.883s3.901,1.743,3.901,3.883v2.475c0,0.387,0.318,0.705,0.712,0.705
+                  h6.379c0.392,0,0.709-0.318,0.709-0.705v-2.475C23.402,5.225,18.155,0,11.701,0z M45.135,44.138c0,2.142-1.752,3.885-3.901,3.885
+                  c-2.151,0-3.901-1.743-3.901-3.885v-32.49c0-2.139,1.75-3.883,3.901-3.883c2.149,0,3.901,1.743,3.901,3.883V44.138z M41.234,0
+                  C34.781,0,29.53,5.225,29.53,11.648v32.49c0,6.421,5.25,11.656,11.703,11.656s11.701-5.234,11.701-11.656v-32.49
+                  C52.935,5.225,47.687,0,41.234,0z"></path>
+                <foreignObject>GOOD</foreignObject>
+              </switch>
+            </svg>
+          </a>
+        </p>
+      </div>
+      <div style="clear: both"></div>
+      <p class="tagline">reflections on citizenship from people leading&nbsp;movements</p>
+    </div><!-- /.headline -->
+
+    <img class="featured" src="http://goodinc.github.io/ctzn-ui/design/be-a-ctzn.jpg" alt="">
+
+    <div class="article">
+      <h2><abbr title="January">Jan</abbr> 2016</h2>
+      <h3>You are the frontlines of change</h3>
+
+      
+      
+
+      
+
+      
+<p>This is a concept we think about a lot at CTZN. How can we empower the individual to show the good they do in the world and connect with causes on a deeper level.</p>
+<p>We think you’re awesome. And we truly believe in the power of the individual to push movements forward.</p>
+<p>You might know that our sister company is GOOD Magazine. We’ve just kicked off the Be a CTZN series where we gather intimate reflections on citizenship from movement leaders.</p>
+<p>The first post is from Adam Horowitz, founder of the U.S. Department of Arts and Culture. There’s a preview below, and you can read the full article here. We’ll have a new post every week, including contributions from master storyteller MK Asante, Motherstruck star Staceyann Chinn, gangster gardener Ron Finley, billionaire philanthroper Manoj Bhargava, and park builder Gia Biagi, among others. 
+</p>
+
+      
+
+      
+
+      <p class="action"><a href="">read the article</a></p>
+
+      <div class="about-be-a-ctzn">
+        <p><b>Be a CTZN</b> shows the power of the individual’s role in pushing the world forward. <a href="">Read More</a>.</p>
+         
+      </div><!-- /.about-be-a-ctzn -->
+    </div><!-- /.article -->
+
+    <div class="about-ctzn">
+      <h2>About CTZN</h2>
+      <p class="action">
+        <a href="">
+          <svg class="icon" viewBox="0 0 15 20" width="15" height="20">
+            <switch>
+              <polygon points="0,0 0,20 15,10"></polygon>
+              <foreignObject>watch video</foreignObject>
+            </switch>
+          </svg>
+        </a>
+      </p>
+    </div><!-- /.about-ctzn -->
+
+    <div class="good-ctzn">
+      <h2>
+        <a href="">
+          <svg class="icon" viewBox="0 0 120 45.382" width="60" height="23">
+            <switch>
+              <g>
+                <path d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"></path><path d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"></path><path d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"></path><path d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"></path>
+              </g>
+              <foreignObject>CTZN</foreignObject>
+            </switch>
+          </svg>
+        </a>
+        /
+        <a href="">
+          <svg class="icon" viewBox="0 0 112 55.795" width="56" height="23">
+            <switch>
+              <path d="M104.198,44.138c0,2.142-1.748,3.885-3.901,3.885h-3.901V7.765h3.901c2.153,0,3.901,1.743,3.901,3.883
+                V44.138z M100.297,0H89.305c-0.392,0-0.709,0.313-0.709,0.705v54.38c0,0.394,0.317,0.71,0.709,0.71h10.992
+                C106.75,55.794,112,50.56,112,44.138v-32.49C112,5.225,106.75,0,100.297,0z M74.668,44.138c0,2.142-1.75,3.885-3.901,3.885
+                s-3.904-1.743-3.904-3.885v-32.49c0-2.139,1.753-3.883,3.904-3.883s3.901,1.743,3.901,3.883V44.138z M70.767,0
+                c-6.453,0-11.702,5.225-11.702,11.648v32.49c0,6.421,5.248,11.656,11.702,11.656c6.453,0,11.701-5.234,11.701-11.656v-32.49
+                C82.467,5.225,77.22,0,70.767,0z M11.701,0C5.25,0,0,5.225,0,11.648v32.49c0,6.421,5.25,11.656,11.701,11.656
+                c2.745,0,5.262-0.955,7.26-2.532l0.897,2.532h2.835c0.392,0,0.709-0.316,0.709-0.71V23.305c0-0.391-0.317-0.705-0.709-0.705H12.058
+                c-0.394,0-0.712,0.313-0.712,0.705v6.354c0,0.394,0.318,0.707,0.712,0.707h3.544v13.773c0,2.142-1.75,3.885-3.901,3.885
+                S7.8,46.281,7.8,44.139v-32.49c0-2.139,1.75-3.883,3.901-3.883s3.901,1.743,3.901,3.883v2.475c0,0.387,0.318,0.705,0.712,0.705
+                h6.379c0.392,0,0.709-0.318,0.709-0.705v-2.475C23.402,5.225,18.155,0,11.701,0z M45.135,44.138c0,2.142-1.752,3.885-3.901,3.885
+                c-2.151,0-3.901-1.743-3.901-3.885v-32.49c0-2.139,1.75-3.883,3.901-3.883c2.149,0,3.901,1.743,3.901,3.883V44.138z M41.234,0
+                C34.781,0,29.53,5.225,29.53,11.648v32.49c0,6.421,5.25,11.656,11.703,11.656s11.701-5.234,11.701-11.656v-32.49
+                C52.935,5.225,47.687,0,41.234,0z"></path>
+              <foreignObject>GOOD</foreignObject>
+            </switch>
+          </svg>
+        </a>
+      </h2>
+      <p class="action"><a href="">read more</a></p>
+    </div><!-- /.good-ctzn -->
+
+    <div class="add-group">
+      <p class="action"><a href="">add a group</a></p>
+    </div><!-- /.add-group -->
+
+    <div class="partnerships">
+      <h2>GOOD PARTNERSHIPS</h2>
+      <p>GOOD works with business and nonprofit partners to further our mission to distribute information we think helps the world. From time to time, we will feature them in The Daily GOOD. We will always let you know when an email is part of a partnership (like this one is). Thanks for supporting&nbsp;GOOD.</p>
+    </div><!-- /.partnerships -->
+
+    <div class="follow-good">
+      <h2>BE A BETTER CTZN<span>FOLLOW US!</span></h2>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/GOODHQ">
+            <span>
+              <svg class="icon" viewBox="0 0 20 20" width="24" height="24">
+                <switch>
+                  <path d="M17,2.1H3C2.5,2.1,2.1,2.5,2.1,3V17c0,0.5,0.4,0.9,0.9,0.9h7.6v-6.1H8.5V9.4h2.1V7.6c0-2,1.2-3.2,3.1-3.2
+                    c0.9,0,1.6,0.1,1.8,0.1v2.1l-1.3,0c-1,0-1.2,0.5-1.2,1.2v1.5h2.4l-0.3,2.4H13v6.1h4c0.5,0,0.9-0.4,0.9-0.9V3
+                    C17.9,2.5,17.5,2.1,17,2.1z"></path>
+                  <foreignObject>Facebook</foreignObject>
+                </switch>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/good">
+            <span>
+              <svg class="icon" viewBox="0 0 20 20" width="24" height="24">
+                <switch>
+                  <path d="M18.334 4.831c-0.614 0.271-1.273 0.456-1.964 0.539 0.706-0.424 1.249-1.094 1.504-1.891-0.661 0.391-1.393 0.676-2.171 0.83-0.624-0.665-1.512-1.080-2.496-1.080-1.889 0-3.42 1.531-3.42 3.42 0 0.269 0.030 0.529 0.089 0.779-2.839-0.144-5.36-1.505-7.046-3.574-0.294 0.506-0.464 1.093-0.464 1.72 0 1.186 0.604 2.232 1.521 2.846-0.56-0.019-1.087-0.171-1.549-0.429-0.001 0.014-0.001 0.029-0.001 0.044 0 1.656 1.179 3.039 2.742 3.354-0.286 0.077-0.589 0.119-0.901 0.119-0.22 0-0.434-0.021-0.644-0.061 0.435 1.359 1.699 2.346 3.194 2.374-1.17 0.918-2.644 1.464-4.246 1.464-0.276 0-0.549-0.016-0.815-0.049 1.514 0.97 3.311 1.536 5.241 1.536 6.29 0 9.729-5.211 9.729-9.729 0-0.149-0.004-0.296-0.010-0.442 0.669-0.481 1.247-1.084 1.706-1.769v0z"></path>
+                  <foreignObject>Twitter</foreignObject>
+                </switch>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/goodhq/">
+            <span>
+              <svg class="icon" viewBox="0 0 20 20" width="24" height="24">
+                <switch>
+                  <path d="M4.116 2.083h11.769c1.117 0 2.032 0.914 2.032 2.032v11.769c0 1.117-0.914 2.032-2.032 2.032h-11.769c-1.117 0-2.032-0.914-2.032-2.033v-11.768c0-1.117 0.914-2.032 2.032-2.032v0zM13.617 3.843c-0.392 0-0.713 0.321-0.713 0.713v1.706c0 0.392 0.321 0.713 0.713 0.713h1.79c0.392 0 0.713-0.321 0.713-0.713v-1.706c0-0.392-0.321-0.712-0.713-0.712-0.001 0-1.79 0-1.79 0zM16.127 8.778h-1.393c0.132 0.431 0.203 0.887 0.203 1.357 0 2.633-2.205 4.77-4.921 4.77s-4.922-2.135-4.922-4.769c0-0.471 0.071-0.929 0.202-1.357h-1.452v6.688c0 0.346 0.283 0.629 0.629 0.629h11.026c0.346 0 0.629-0.283 0.629-0.629v-6.689zM10.015 6.885c-1.756 0-3.179 1.38-3.179 3.082s1.424 3.082 3.179 3.082 3.179-1.38 3.179-3.082c0.001-1.703-1.423-3.082-3.179-3.082z"></path>
+                  <foreignObject>Instagram</foreignObject>
+                </switch>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="http://good.tumblr.com">
+            <span>
+              <svg class="icon" viewBox="0 0 20 20" width="24" height="24">
+                <switch>
+                  <path d="M12.6,15.2c-0.3,0-0.6,0-0.8-0.1c-0.2-0.1-0.4-0.2-0.5-0.4c-0.1-0.2-0.2-0.3-0.2-0.5c0-0.2-0.1-0.4-0.1-0.5V8.5h3.3V6H11
+                    V1.8H8.6c0,0-0.1,0-0.1,0c0,0,0,0.1,0,0.1c0,0.3-0.1,0.6-0.1,0.9C8.3,3.1,8.2,3.4,8,3.8s-0.3,0.7-0.6,1S6.9,5.4,6.6,5.7
+                    C6.2,6,5.8,6.2,5.3,6.4v2.1H7v5.3C7,14.2,7,14.6,7.1,15s0.3,0.8,0.5,1.2s0.6,0.7,0.9,1c0.4,0.3,0.8,0.5,1.4,0.7s1.2,0.3,1.9,0.3
+                    c0.6,0,1.2-0.1,1.7-0.3c0.6-0.2,0.9-0.4,1.1-0.6l-0.8-2.3C13.5,15.1,13.1,15.2,12.6,15.2z"></path>
+                  <foreignObject>Tumblr</foreignObject>
+                </switch>
+              </svg>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div><!-- /.follow-good -->
+
+    <div class="footer">
+      <h2>
+        <a href="http://getctzn.com">
+          <svg class="icon" viewBox="0 0 120 45.382" width="60" height="23">
+            <switch>
+              <g>
+                <path d="M10.531,44.042c-2.147-0.893-4.006-2.135-5.573-3.727s-2.786-3.523-3.655-5.791S0,29.747,0,26.998c0-2.75,0.434-5.248,1.303-7.492s2.087-4.174,3.655-5.79s3.426-2.858,5.573-3.727s4.5-1.303,7.057-1.303c3.088,0,5.682,0.518,7.781,1.556c2.099,1.037,3.631,2.111,4.596,3.221l-5.718,8.468c-0.628-0.724-1.363-1.315-2.208-1.774c-0.845-0.458-1.822-0.688-2.932-0.688c-1.834,0-3.39,0.652-4.668,1.955c-1.279,1.303-1.918,3.161-1.918,5.573s0.64,4.283,1.918,5.609c1.279,1.327,2.834,1.991,4.668,1.991c1.11,0,2.087-0.241,2.932-0.724c0.845-0.482,1.58-1.086,2.208-1.81l5.718,8.54c-0.965,1.11-2.497,2.183-4.596,3.221c-2.099,1.037-4.692,1.556-7.781,1.556C15.03,45.382,12.678,44.935,10.531,44.042z"></path><path d="M37.925,42.739c-1.738-1.762-2.605-4.427-2.605-7.998v-14.62h-4.415V9.554h4.415V0h12.232v9.554h5.501v10.567h-5.501V31.63c0,0.917,0.193,1.64,0.578,2.171c0.385,0.53,0.941,0.796,1.664,0.796c0.434,0,0.857-0.06,1.267-0.181s0.688-0.277,0.833-0.47l2.027,9.554c-0.676,0.53-1.676,0.977-3.004,1.339C49.59,45.2,48.01,45.38,46.176,45.38C42.413,45.382,39.662,44.501,37.925,42.739z"></path><path d="M56.815,35.538l11.363-15.416H56.815V9.554h27.07v8.612L72.377,33.946h11.797v10.567H56.815V35.538z"></path><path d="M107.768,23.378c0-1.399-0.313-2.4-0.941-3.004c-0.628-0.604-1.52-0.905-2.678-0.905s-2.111,0.338-2.86,1.013c-0.748,0.676-1.339,1.351-1.774,2.027v22.003H87.358V9.554h12.16v4.054c0.869-1.206,2.232-2.328,4.09-3.366s3.992-1.556,6.406-1.556c3.522,0,6.067,0.929,7.636,2.786S120,15.634,120,18.384v26.129h-12.232V23.378z"></path>
+              </g>
+              <foreignObject>CTZN</foreignObject>
+            </switch>
+          </svg>
+          <!--
+          <img src="../assets/images/email/ctzn.png" alt="CTZN" width="75" height="28" />
+          -->
+        </a>
+      </h2>
+
+      <div style="clear: both"></div>
+    </div><!-- /.footer -->
+
+    <p class="mute"><a href="https://ctznapp.com">Unsubscribe from emails like this one</a></p>
+
+  </div><!-- ./container -->
+
+
+
+<iframe id="rdbIndicator" width="100%" height="270" border="0" src="chrome-extension://oknpjjbmpnndlpmnhmekjpocelpnlfdi/indicator.html" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe><span style="height: 20px; width: 40px; position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none; top: 340px; left: 390px; background-image: url(&quot;data:image/png;base64,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&quot;); background-color: transparent; background-size: 40px 20px;"></span></body></html>
