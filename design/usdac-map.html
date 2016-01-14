@@ -339,9 +339,8 @@ img.emoji {
         L.mapbox.accessToken = 'pk.eyJ1IjoiamltdGhvYnVybiIsImEiOiJjaWpieWhxbnEwMGZqdjFtNHN2MG54c3dyIn0.xA-YYNgTGpMXeOfZjMr65g';
         var map = L.mapbox.map('map', 'mapbox.light')
           .setView([37.8, -96], 4);
-        var myLayer = L.mapbox.featureLayer().addTo(map);
 
-        var geojson = [
+        var geoJson = [
           {
             "type": "Feature",
             "geometry": {
@@ -349,11 +348,10 @@ img.emoji {
               "coordinates": [-77.031952,38.913184]
             },
             "properties": {
-              "title": '<h6 style="font-weight: bold; margin-bottom: 0">State of the Union, DC</h6>',
-              "description": '<p style="margin-top: 0;">February 7, 2016</p><p style="font-style: italic">1714 14th St NW, Washington DC</p><p style="margin-bottom: 0"><a href="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:brittanydelany&t=DareToImagine%20at%20On%20The%20Outside&page=2" target="_blank">View photos</a></p>',
               "marker-color": "#3ca0d3",
               "marker-size": "large",
-              "marker-symbol": "rocket"
+              "marker-symbol": "rocket",
+              "video": '<h6 style="font-weight: bold; margin-bottom: 0">State of the Union, DC</h6><p style="margin-top: 0;">February 7, 2016</p><p style="font-style: italic">1714 14th St NW, Washington DC</p><iframe style="display: block" width="320" height="240" src="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:brittanydelany&t=DareToImagine%20at%20On%20The%20Outside&page=2" frameborder="0" allowfullscreen></iframe>',
             }
           },
           {
@@ -363,22 +361,39 @@ img.emoji {
               "coordinates": [-122.413682,37.775408]
             },
             "properties": {
-              "title": '<h6 style="font-weight: bold; margin-bottom: 0">State of the Union, SF</h6>',
-              "description": '<p style="margin-top: 0;">February 2, 2016</p><p style="font-style: italic">155 9th St, San Francisco</p><p style="margin-bottom: 0"><a href="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:joy&t=Music%20Flash%20Mob%20At%20Chase%20Plaza&page=2" target="_blank">View photos</a></p>',
               "marker-color": "#63b6e5",
               "marker-size": "large",
-              "marker-symbol": "rocket"
+              "marker-symbol": "rocket",
+              "video": '<h6 style="font-weight: bold; margin-bottom: 0">State of the Union, SF</h6><p style="margin-top: 0;">February 2, 2016</p><p style="font-style: italic">155 9th St, San Francisco</p><iframe style="display: block" width="320" height="240" src="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:joy&t=Music%20Flash%20Mob%20At%20Chase%20Plaza&page=2" frameborder="0" allowfullscreen></iframe>'
             }
           }
         ];
 
         // Pass features and a custom factory function to the map
-        myLayer.setGeoJSON(geojson);
         /*
         myLayer.on('click', function(e) {
             window.open(e.layer.feature.properties.url);
         });
         */
+
+        var myLayer = L.mapbox.featureLayer().addTo(map);
+
+        // Add the iframe in a marker tooltip using the custom feature properties
+        myLayer.on('layeradd', function(e) {
+            var marker = e.layer,
+                feature = marker.feature;
+
+            // Create custom popup content from the GeoJSON property 'video'
+            var popupContent =  feature.properties.video;
+
+            // bind the popup to the marker http://leafletjs.com/reference.html#popup
+            marker.bindPopup(popupContent,{
+                closeButton: false,
+                minWidth: 320
+            });
+        });
+
+        myLayer.setGeoJSON(geoJson);
 
         // Disable drag and zoom handlers.
         // https://www.mapbox.com/mapbox.js/example/v1.0.0/disable-zooming-panning/
