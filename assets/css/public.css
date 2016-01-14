@@ -721,6 +721,10 @@
     text-decoration: none;
   }
 
+  .public.page > h2 a {
+    color: inherit;
+  }
+
   .public.page .words,
   .public.page .words li {
     list-style: none;
@@ -753,10 +757,6 @@
   .public.page .words a:active,
   .public.page .words a:focus {
     text-decoration: underline;
-  }
-
-  .public.page .details + .words {
-    margin-bottom: 6em;
   }
 
   .featured-posts,
@@ -801,8 +801,8 @@
     border-bottom: 0.0625em solid rgba(0, 0, 0, 0.2);
   }
   .public.page .words {
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
   }
   .public.page .words,
   .public.page .words + h2 {
