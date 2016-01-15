@@ -27,6 +27,8 @@
     height: 100%;
   }
   body {
+    background: white;
+    color: black;
     font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -346,7 +348,7 @@
   /* =Footer
   ----------------------------------------------- */
   footer.primary {
-    background-color: rgb(246, 246, 246); /* @casper */
+    background-color: white;
     color: black;
     color: rgba(0, 0, 0, 0.95);
   }
@@ -409,6 +411,9 @@
 
   .push-card + footer.primary {
     margin-top: 0;
+  }
+  .push-card + footer.primary {
+    background-color: rgb(246, 246, 246); /* @casper */
   }
   .push-card.lime + footer.primary {
     background-color: rgb(176, 224, 0); /* @lime */
@@ -648,9 +653,14 @@
     text-align: left;
     border-width: 0;
     box-shadow: none;
-    background-color: rgb(204, 204, 204); /* @aluminum */
     padding-left: 1.25em;
     padding-right: 9em;
+    background-color: white;
+    color: black;
+  }
+  .push-card.public.page > header {
+    background-color: rgb(204, 204, 204); /* @aluminum */
+    color: white;
   }
 
   /* Push Colors */
