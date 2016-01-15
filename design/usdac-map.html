@@ -234,9 +234,27 @@ img.emoji {
 .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style>
 
 
-<link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+<link href="https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css" rel="stylesheet" />
 <style>
-  #map { width:100%; height: 600px; margin-bottom: 3em; }
+  #ctzn-map {
+    width:100%;
+    height: 600px;
+  }
+  #ctzn-map h6 {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  #ctzn-map .date {
+    margin-top: 0;
+  }
+  #ctzn-map .location {
+    font-style: italic;
+  }
+  #ctzn-map iframe {
+    display: block;
+    width: auto;
+    height: 240px;
+  }
 </style>
 
 </head>
@@ -329,131 +347,40 @@ img.emoji {
         <!-- BEGIN MAIN -->
 
         <script src='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
-        <!--
-        <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
-        -->
 
-        <div id='map'></div>
+        <div id="ctzn-map"></div>
+
+        <script src="usdac-map-data.js"></script>
 
         <script>
-        L.mapbox.accessToken = 'pk.eyJ1IjoiamltdGhvYnVybiIsImEiOiJjaWpieWhxbnEwMGZqdjFtNHN2MG54c3dyIn0.xA-YYNgTGpMXeOfZjMr65g';
-        var map = L.mapbox.map('map', 'mapbox.light')
-          .setView([37.8, -96], 4);
+        (function() {
+          // TODO: Update this to USDAC’s mapbox key
+          L.mapbox.accessToken = 'pk.eyJ1IjoiamltdGhvYnVybiIsImEiOiJjaWpieWhxbnEwMGZqdjFtNHN2MG54c3dyIn0.xA-YYNgTGpMXeOfZjMr65g';
+          var map = L.mapbox.map('ctzn-map', 'mapbox.light')
+            .setView([37.8, -96], 4);
 
-        var geoJson = [
-          {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [-77.031952,38.913184]
-            },
-            "properties": {
-              "marker-color": "#FDCE10",
-              "marker-size": "large",
-              "video": '<h6 style="font-weight: bold; margin-bottom: 0">State of the Union, DC</h6><p style="margin-top: 0;">February 7, 2016</p><p style="font-style: italic">1714 14th St NW, Washington DC</p><iframe style="display: block" width="320" height="240" src="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:brittanydelany&t=DareToImagine%20at%20On%20The%20Outside&page=2" frameborder="0" allowfullscreen></iframe>',
-            }
-          },
-          {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [-122.413682,37.775408]
-            },
-            "properties": {
-              "marker-color": "#FDCE10",
-              "marker-size": "large",
-              "video": '<h6 style="font-weight: bold; margin-bottom: 0">State of the Union, SF</h6><p style="margin-top: 0;">February 2, 2016</p><p style="font-style: italic">155 9th St, San Francisco</p><iframe style="display: block" width="320" height="240" src="http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:joy&t=Music%20Flash%20Mob%20At%20Chase%20Plaza&page=2" frameborder="0" allowfullscreen></iframe>'
-            }
-          }
-        ];
+          var myLayer = L.mapbox.featureLayer().addTo(map);
 
-        // Pass features and a custom factory function to the map
-        /*
-        myLayer.on('click', function(e) {
-            window.open(e.layer.feature.properties.url);
-        });
-        */
+          // Add the iframe in a marker tooltip using the custom feature properties
+          myLayer.on('layeradd', function(e) {
+              var marker = e.layer,
+                  feature = marker.feature;
 
-        var myLayer = L.mapbox.featureLayer().addTo(map);
+              // Create custom popup content from the GeoJSON property 'video'
+              var popupContent =  feature.properties.video;
 
-        // Add the iframe in a marker tooltip using the custom feature properties
-        myLayer.on('layeradd', function(e) {
-            var marker = e.layer,
-                feature = marker.feature;
+              // bind the popup to the marker http://leafletjs.com/reference.html#popup
+              marker.bindPopup(popupContent,{
+                  closeButton: false,
+                  minWidth: 320
+              });
+          });
 
-            // Create custom popup content from the GeoJSON property 'video'
-            var popupContent =  feature.properties.video;
+          myLayer.setGeoJSON(_ctzn_geoJson);
 
-            // bind the popup to the marker http://leafletjs.com/reference.html#popup
-            marker.bindPopup(popupContent,{
-                closeButton: false,
-                minWidth: 320
-            });
-        });
-
-        myLayer.setGeoJSON(geoJson);
-
-        // Disable drag and zoom handlers.
-        // https://www.mapbox.com/mapbox.js/example/v1.0.0/disable-zooming-panning/
-        //map.dragging.disable();
-        //map.touchZoom.disable();
-        //map.doubleClickZoom.disable();
-        map.scrollWheelZoom.disable();
-        //map.keyboard.disable();
+          // map.scrollWheelZoom.disable();
+        })();
         </script>
-
-        <!--
-        <script>
-        L.mapbox.accessToken = 'pk.eyJ1IjoiamltdGhvYnVybiIsImEiOiJjaWpieWhxbnEwMGZqdjFtNHN2MG54c3dyIn0.xA-YYNgTGpMXeOfZjMr65g';
-        var map = L.mapbox.map('map', 'mapbox.streets')
-        .setView([38, -95.0], 4);;
-
-        // omnivore will AJAX-request this file behind the scenes and parse it:
-        // note that there are considerations:
-        // - The CSV file must contain latitude and longitude values, in column
-        //   named roughly latitude and longitude
-        // - The file must either be on the same domain as the page that requests it,
-        //   or both the server it is requested from and the user's browser must
-        //   support CORS.
-
-        // The omnivore functions take three arguments:
-        //
-        // - a URL of the file to fetch
-        // - options to the parser
-        // - a custom layer
-        //
-        // And they return the custom layer, which is by default an L.geoJson layer.
-        //
-        // The second two arguments are each optional. In this case we're supplying
-        // no arguments to the parser (null), but supplying a custom layer:
-        // an instance of L.mapbox.featureLayer
-        // This means that rows with simplestyle properties will be styled as they
-        // would be in GeoJSON and elsewhere.
-        //omnivore.csv('usdac-map-data.csv', null, L.mapbox.featureLayer()).addTo(map);
-
-        // omnivore will AJAX-request this file behind the scenes and parse it:
-        // note that there are considerations:
-        // - The file must either be on the same domain as the page that requests it,
-        //   or both the server it is requested from and the user's browser must
-        //   support CORS.
-        /*
-        var runLayer = omnivore.kml('usdac-map-data.kml')
-            .on('ready', function() {
-                map.fitBounds(runLayer.getBounds());
-
-                // After the 'ready' event fires, the GeoJSON contents are accessible
-                // and you can iterate through layers to bind custom popups.
-                runLayer.eachLayer(function(layer) {
-                    // See the `.bindPopup` documentation for full details. This
-                    // dataset has a property called `name`: your dataset might not,
-                    // so inspect it and customize to taste.
-                    layer.bindPopup(layer.feature.properties.name);
-                });
-            })
-            .addTo(map);
-        */
-        </script>
-        -->
 
         <div style="margin-top: 3em"></div>
 
