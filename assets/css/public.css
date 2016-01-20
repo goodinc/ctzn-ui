@@ -216,6 +216,7 @@
 
   /* =Buttons
   ----------------------------------------------- */
+  button,
   .action a {
     margin: 0;
     border-width: 0;
@@ -240,6 +241,9 @@
     display: inline-block;
     text-decoration: none;
   }
+  button:hover,
+  button:active,
+  button:focus,
   .action a:hover,
   .action a:active,
   .action a:focus {
@@ -252,20 +256,98 @@
   }
 
 
+  /* =Search
+  ----------------------------------------------- */
+  /* OPTIONAL: Hide the label */
+  .search label span {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+
+  .search p {
+    margin: 0;
+    padding: 1.5em 1.5em;
+    text-align: center;
+  }
+  .search input {
+    font-family: inherit;
+    font-size: inherit;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    line-height: 1.5;
+    min-height: 1.5em;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    transition: border-color 0.2s;
+    display: inline-block;
+    background: white;
+    border: 0.125em solid rgb(222, 222, 222); /* @silver */
+    margin-top: 0.25em;
+    margin-top: 0;
+    border-radius: 0.25em;
+    width: 10em;
+    -webkit-appearance: none;
+  }
+  .push-card.public.page + footer.primary .search input {
+    border-color: transparent;
+  }
+  @media (min-width: 30em) {
+    .search input {
+      width: 15em;
+    }
+  }
+  @media (min-width: 40em) {
+    .search input {
+      width: 25em;
+    }
+  }
+  @media (min-width: 20em) and (min-height: 20em) {
+    .search p {
+      padding-top: 4.5em;
+      padding-bottom: 4.5em;
+    }
+  }
+  @media (min-width: 30em) and (min-height: 30em) {
+    .search p {
+      padding-top: 9em;
+      padding-bottom: 9em;
+    }
+  }
+
+  .search .submit {
+    margin-top: 1.5em;
+    text-align: right;
+  }
+  .search .submit button {
+    font-size: 1.25em;
+    font-weight: inherit;
+  }
+
+  /* SHIM: Prevent whitespace below the no results message, when there’s a push color in the background. */
+  .no-results {
+    margin-bottom: 0;
+  }
+  .no-results a {
+    color: inherit;
+  }
+
+
   /* =Page Header
   ----------------------------------------------- */
   .page > header {
     text-align: center;
-    padding: 3em 0.75em 0.75em;
+    padding: 0.75em 1.25em;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    background-color: rgb(51, 51, 51); /* @iron */
-    color: white;
-    border-bottom: 0.0625em solid rgb(51, 51, 51); /* @iron */
+    background-color: white;
+    color: black;
+    border-bottom: 0.0625em solid transparent;
     position: relative;
     z-index: 2;
-    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+    text-align: center;
   }
   .page > header h1 {
     margin: 0;
@@ -288,11 +370,13 @@
   .page > header a:focus {
     color: white;
   }
-  .page > header .action {
-    position: absolute;
-    top: 0;
-    padding: 0.75em 1em; /* @line-height */ /* @header-padding */
-    border: 0 solid rgb(44, 44, 44); /* @thorium */
+  @media (min-width: 15em) {
+    .page > header .action {
+      position: absolute;
+      top: 0;
+      padding: 0.75em 1em; /* @line-height */ /* @header-padding */
+      border: 0 solid rgb(44, 44, 44); /* @thorium */
+    }
   }
   .page > header .action {
     right: 0;
@@ -308,16 +392,19 @@
   }
 
 
-  @media (min-width: 20em) {
+  @media (min-width: 15em) {
     .page > header {
+      text-align: left;
       padding-top: 0.75em;
+    }
+    .page > header.with-button {
+      padding-right: 9em;
     }
   }
   @media screen and (min-width: 20em) and (min-height: 20em) {
 
     /* OPTIONAL: Make the header sticky */
-       main.page,
-    section.page {
+    main.page {
       padding-top: 3.0625em; /* (@line-height x 2) + (1px / @font-size) */
     }
     .page > header {
@@ -325,11 +412,6 @@
       top: 0;
       left: 0;
       width: 100%;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-      padding: 0.75em 6em; /* The right/left padding numbers here are arbitrary, but ideally large
-                              enough to prevent the title from overlapping with the back/next buttons. */
     }
 
     /* OPTIONAL: Limit the headline to a single line. */
@@ -649,15 +731,6 @@
 
   /* =Public Page
   ----------------------------------------------- */
-  .public.page > header {
-    text-align: left;
-    border-width: 0;
-    box-shadow: none;
-    padding-left: 1.25em;
-    padding-right: 9em;
-    background-color: white;
-    color: black;
-  }
   .push-card.public.page > header {
     background-color: rgb(204, 204, 204); /* @aluminum */
     color: white;
@@ -760,13 +833,14 @@
     text-decoration: none;
   }
   .public.page:not(.push-card) .words a {
-    color: #878787;
-    background-color: rgba(0, 0, 0, 0.05);
+    color: rgb(102, 102, 102); /* @tin */
+    background-color: rgb(246, 246, 246); /* @casper */
   }
   .public.page .words a:hover,
   .public.page .words a:active,
   .public.page .words a:focus {
-    text-decoration: underline;
+    color: white;
+    background-color: black;
   }
 
   .featured-posts,
@@ -834,6 +908,11 @@
     background-color: white;
     border-color: white;
     text-align: center;
+  }
+
+  /* Attempt to make long text posts easier to read. */
+  .featured-post-item.with-long-text .text p {
+    text-align: left;
   }
 
   .featured-post-item.without-text {
@@ -996,7 +1075,7 @@
   }
 
   /* OPTIONAL: Make add more whitespace above and below text-only posts. */
-  .featured-post-item header + .text > div {
+  .featured-post-item:not(.with-long-text) header + .text > div {
     padding-top: 10vw; /* This number is arbitrary, but seems to work well. */
     padding-bottom: 10vw;
   }
@@ -1004,8 +1083,8 @@
   @media screen and (max-width: 29.9em) {
     .featured-post-item .text p {
       line-height: 1.25;
-      margin-top : 0.625em; /* 1.25em / 2 */
-      margin-bottom :0.625em;
+      margin-top   : 0.625em; /* 1.25em / 2 */
+      margin-bottom: 0.625em;
     }
   }
 
