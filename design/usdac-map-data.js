@@ -11,7 +11,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Story Circle</h6><p class=\"date\">2016-01-23 11:00:00 </p><p class=\"location\">Tara&#39;House</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:truth1ness&t=Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Story Circle</h6><p class=\"date\">Saturday, January 23, 2016 at 11am</p><p class=\"location\">Tara&#39;House</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:truth1ness&t=Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -26,7 +26,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Story Circle</h6><p class=\"date\">2016-01-27 19:00:00 </p><p class=\"location\">Private Event</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:arlenegoldbard&t=Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Story Circle</h6><p class=\"date\">Wednesday, January 27, 2016 at  7pm</p><p class=\"location\">Private Event</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:arlenegoldbard&t=Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -41,7 +41,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>People&#39;s State of the Union - Lexington, KY</h6><p class=\"date\">2016-01-28 19:00:00 </p><p class=\"location\">UK School of Art &amp; Visual Studies</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>People&#39;s State of the Union - Lexington, KY</h6><p class=\"date\">Thursday, January 28, 2016 at  7pm</p><p class=\"location\">UK School of Art &amp; Visual Studies</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?fsw=1\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -56,7 +56,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>#PSOTU2016 Exhibition + Story Circle</h6><p class=\"date\">2016-01-30 17:00:00 </p><p class=\"location\">Artspace Hamilton Lofts</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:4freepeople&t=#PSOTU2016 Exhibition + Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>#PSOTU2016 Exhibition + Story Circle</h6><p class=\"date\">Saturday, January 30, 2016 at  5pm</p><p class=\"location\">Artspace Hamilton Lofts</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:4freepeople&t=#PSOTU2016 Exhibition + Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -71,7 +71,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Story Circle @ 826CHI</h6><p class=\"date\">2016-01-29 17:30:00 </p><p class=\"location\">826CHI</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:826chi&t=Story Circle @ 826CHI&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Story Circle @ 826CHI</h6><p class=\"date\">Friday, January 29, 2016 at  5pm</p><p class=\"location\">826CHI</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:826chi&t=Story Circle @ 826CHI&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -86,7 +86,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>PSOTU SF screening</h6><p class=\"date\">2016-02-20 16:30:00 </p><p class=\"location\">The Red Victorian</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>PSOTU SF screening</h6><p class=\"date\">Saturday, February 20, 2016 at  4pm</p><p class=\"location\">The Red Victorian</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?fsw=1\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -101,7 +101,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>People&#39;s State of the Union: Racial Justice &amp; First Generation Students at Oregon State University</h6><p class=\"date\">2016-01-25 12:30:00 </p><p class=\"location\">Lonnie B. Harris Black Cultural Center</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:charlenemartinez&t=People's State of the Union: Racial Justice & First Generation Students at Oregon State University&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>People&#39;s State of the Union: Racial Justice &amp; First Generation Students at Oregon State University</h6><p class=\"date\">Monday, January 25, 2016 at 12pm</p><p class=\"location\">Lonnie B. Harris Black Cultural Center</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:charlenemartinez&t=People's State of the Union: Racial Justice & First Generation Students at Oregon State University&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -116,7 +116,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>People&#39;s State of the Union Story Circle</h6><p class=\"date\">2016-01-31 14:00:00 </p><p class=\"location\">TBD</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:flourishstudios&t=People's State of the Union Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>People&#39;s State of the Union Story Circle</h6><p class=\"date\">Sunday, January 31, 2016 at  2pm</p><p class=\"location\">TBD</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:flourishstudios&t=People's State of the Union Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -131,7 +131,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>People&#39;s State of the Union in Dekalb!</h6><p class=\"date\">2016-01-25 19:15:00 </p><p class=\"location\">New Hope Baptist Church</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:tlrogers&t=People's State of the Union in Dekalb!&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>People&#39;s State of the Union in Dekalb!</h6><p class=\"date\">Monday, January 25, 2016 at  7pm</p><p class=\"location\">New Hope Baptist Church</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:tlrogers&t=People's State of the Union in Dekalb!&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -146,7 +146,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>PSOTU2016</h6><p class=\"date\">2016-01-23 17:00:00 </p><p class=\"location\">My House</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:angelawaseskuk&t=PSOTU2016&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>PSOTU2016</h6><p class=\"date\">Saturday, January 23, 2016 at  5pm</p><p class=\"location\">My House</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:angelawaseskuk&t=PSOTU2016&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -161,7 +161,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Arizona Humanities PSOTU2016</h6><p class=\"date\">2016-01-26 18:15:00 </p><p class=\"location\">Arizona Humanities</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:azhumanities&t=Arizona Humanities PSOTU2016&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Arizona Humanities PSOTU2016</h6><p class=\"date\">Tuesday, January 26, 2016 at  6pm</p><p class=\"location\">Arizona Humanities</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:azhumanities&t=Arizona Humanities PSOTU2016&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -176,7 +176,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>laPWG &amp; Education</h6><p class=\"date\">2016-01-24 18:00:00 </p><p class=\"location\">laPWG&#39;s office</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:lapwg&t=laPWG & Education&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>laPWG &amp; Education</h6><p class=\"date\">Sunday, January 24, 2016 at  6pm</p><p class=\"location\">laPWG&#39;s office</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:lapwg&t=laPWG & Education&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -191,7 +191,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Citizens Response to the State of the Union</h6><p class=\"date\">2016-01-25 18:30:00 </p><p class=\"location\">Noel&#39;s House</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Citizens Response to the State of the Union</h6><p class=\"date\">Monday, January 25, 2016 at  6pm</p><p class=\"location\">Noel&#39;s House</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?fsw=1\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -206,7 +206,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>PSOTU @ Integrity Academy </h6><p class=\"date\">2016-01-25 09:00:00 </p><p class=\"location\">Integrity Academy at the Center for Integral Studies</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:court&t=PSOTU @ Integrity Academy &page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>PSOTU @ Integrity Academy </h6><p class=\"date\">Monday, January 25, 2016 at  9am</p><p class=\"location\">Integrity Academy at the Center for Integral Studies</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:court&t=PSOTU @ Integrity Academy &page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -221,7 +221,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Ithaca People&#39;s State of the Union</h6><p class=\"date\">2016-01-28 18:30:00 </p><p class=\"location\">The History Center in Tompkins County</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:ithacapsotu&t=Ithaca People's State of the Union&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Ithaca People&#39;s State of the Union</h6><p class=\"date\">Thursday, January 28, 2016 at  6pm</p><p class=\"location\">The History Center in Tompkins County</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:ithacapsotu&t=Ithaca People's State of the Union&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -236,7 +236,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Lost Keys PSOTU 2016</h6><p class=\"date\">2016-01-31 14:00:00 </p><p class=\"location\">The 567 Center for Reneweal </p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:lostkeys&t=Lost Keys PSOTU 2016&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Lost Keys PSOTU 2016</h6><p class=\"date\">Sunday, January 31, 2016 at  2pm</p><p class=\"location\">The 567 Center for Reneweal </p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:lostkeys&t=Lost Keys PSOTU 2016&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -251,7 +251,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>MLK Day Story Circle</h6><p class=\"date\">2016-01-18 10:15:00 </p><p class=\"location\">Trinity Episcopal Church</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:belanger&t=MLK Day Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>MLK Day Story Circle</h6><p class=\"date\">Monday, January 18, 2016 at 10am</p><p class=\"location\">Trinity Episcopal Church</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:belanger&t=MLK Day Story Circle&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -266,7 +266,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>BENEFICIENCE PR HOSTS #PSOTU2016 ONLINE</h6><p class=\"date\">2016-01-23 00:00:00 </p><p class=\"location\">Connecting Online</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>BENEFICIENCE PR HOSTS #PSOTU2016 ONLINE</h6><p class=\"date\">Saturday, January 23, 2016 at 12am</p><p class=\"location\">Connecting Online</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?fsw=1\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -281,7 +281,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>People&#39;s State of the Union DC</h6><p class=\"date\">2016-01-28 18:30:00 </p><p class=\"location\">Mount Pleasant Library</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>People&#39;s State of the Union DC</h6><p class=\"date\">Thursday, January 28, 2016 at  6pm</p><p class=\"location\">Mount Pleasant Library</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?fsw=1\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -296,7 +296,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Subcontinental Drift - NYC</h6><p class=\"date\">2016-01-22 19:00:00 </p><p class=\"location\">Muchmores</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:aaliyazaveri&t=Subcontinental Drift - NYC&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Subcontinental Drift - NYC</h6><p class=\"date\">Friday, January 22, 2016 at  7pm</p><p class=\"location\">Muchmores</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:aaliyazaveri&t=Subcontinental Drift - NYC&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -311,7 +311,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Carrollton Story Circle: #PSOTU</h6><p class=\"date\">2016-01-30 12:30:00 </p><p class=\"location\">Neva Lomason Library</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:interruralia&t=Carrollton Story Circle: #PSOTU&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Carrollton Story Circle: #PSOTU</h6><p class=\"date\">Saturday, January 30, 2016 at 12pm</p><p class=\"location\">Neva Lomason Library</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:interruralia&t=Carrollton Story Circle: #PSOTU&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -326,7 +326,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>People&#39;s State of the Union: Story Circles - Tempe</h6><p class=\"date\">2016-01-29 19:00:00 </p><p class=\"location\">The Empty Space (in APMA Building)</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:johngenette&t=People's State of the Union: Story Circles - Tempe&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>People&#39;s State of the Union: Story Circles - Tempe</h6><p class=\"date\">Friday, January 29, 2016 at  7pm</p><p class=\"location\">The Empty Space (in APMA Building)</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:johngenette&t=People's State of the Union: Story Circles - Tempe&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -341,7 +341,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Des Moines Story Circle/Poetic Address 2016</h6><p class=\"date\">2016-01-24 14:00:00 </p><p class=\"location\">The Future Sight </p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:emmettphillips&t=Des Moines Story Circle/Poetic Address 2016&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Des Moines Story Circle/Poetic Address 2016</h6><p class=\"date\">Sunday, January 24, 2016 at  2pm</p><p class=\"location\">The Future Sight </p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:emmettphillips&t=Des Moines Story Circle/Poetic Address 2016&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -356,7 +356,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Story Circle (Manistee County, MI)</h6><p class=\"date\">2016-01-30 13:00:00 </p><p class=\"location\">Onekama Township Hall</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:vincehancock&t=Story Circle (Manistee County, MI)&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Story Circle (Manistee County, MI)</h6><p class=\"date\">Saturday, January 30, 2016 at  1pm</p><p class=\"location\">Onekama Township Hall</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:vincehancock&t=Story Circle (Manistee County, MI)&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -371,7 +371,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>People&#39;s State of the Union Detroit 20160</h6><p class=\"date\">2016-01-26 18:00:00 </p><p class=\"location\">CAFE 1923</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:adhandelsman&t=People's State of the Union Detroit 20160&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>People&#39;s State of the Union Detroit 20160</h6><p class=\"date\">Tuesday, January 26, 2016 at  6pm</p><p class=\"location\">CAFE 1923</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:adhandelsman&t=People's State of the Union Detroit 20160&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -386,7 +386,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>DeKalb County&#39;s People&#39;s State of the Union Story Circle &amp; Reflection 3</h6><p class=\"date\">2016-01-28 18:30:00 </p><p class=\"location\">DeKalb Public Library</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:tracyrogers-tryba&t=DeKalb County's People's State of the Union Story Circle & Reflection 3&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>DeKalb County&#39;s People&#39;s State of the Union Story Circle &amp; Reflection 3</h6><p class=\"date\">Thursday, January 28, 2016 at  6pm</p><p class=\"location\">DeKalb Public Library</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:tracyrogers-tryba&t=DeKalb County's People's State of the Union Story Circle & Reflection 3&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -401,7 +401,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>DeKalb County&#39;s People&#39;s State of the Union Story Circle &amp; Reflection 2</h6><p class=\"date\">2016-01-27 17:30:00 </p><p class=\"location\">DeKalb County Community Foundation</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:tracyrogers-tryba&t=DeKalb County's People's State of the Union Story Circle & Reflection 2&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>DeKalb County&#39;s People&#39;s State of the Union Story Circle &amp; Reflection 2</h6><p class=\"date\">Wednesday, January 27, 2016 at  5pm</p><p class=\"location\">DeKalb County Community Foundation</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:tracyrogers-tryba&t=DeKalb County's People's State of the Union Story Circle & Reflection 2&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -416,7 +416,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>DeKalb County&#39;s People&#39;s State of the Union Story Circle &amp; Reflection 1</h6><p class=\"date\">2016-01-27 19:15:00 </p><p class=\"location\">New Hope Baptist Church</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:tracyrogers-tryba&t=DeKalb County's People's State of the Union Story Circle & Reflection 1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>DeKalb County&#39;s People&#39;s State of the Union Story Circle &amp; Reflection 1</h6><p class=\"date\">Wednesday, January 27, 2016 at  7pm</p><p class=\"location\">New Hope Baptist Church</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:tracyrogers-tryba&t=DeKalb County's People's State of the Union Story Circle & Reflection 1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -431,7 +431,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>West Charlotte People&#39;s State of the Union Story Circle</h6><p class=\"date\">2016-01-22 18:00:00 </p><p class=\"location\">QC Family Tree</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>West Charlotte People&#39;s State of the Union Story Circle</h6><p class=\"date\">Friday, January 22, 2016 at  6pm</p><p class=\"location\">QC Family Tree</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?fsw=1\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -446,7 +446,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Dominican University of California</h6><p class=\"date\">2016-01-28 12:00:00 </p><p class=\"location\">Albertus Magnus Room 102</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:lynnsondag&t=Dominican University of California&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Dominican University of California</h6><p class=\"date\">Thursday, January 28, 2016 at 12pm</p><p class=\"location\">Albertus Magnus Room 102</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:lynnsondag&t=Dominican University of California&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -461,7 +461,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>Story Circle @ 826CHI</h6><p class=\"date\">2016-01-29 17:30:00 </p><p class=\"location\">826CHI</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:826chi&t=Story Circle @ 826CHI&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>Story Circle @ 826CHI</h6><p class=\"date\">Friday, January 29, 2016 at  5pm</p><p class=\"location\">826CHI</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:826chi&t=Story Circle @ 826CHI&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -476,7 +476,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>First Generation at Oregon State University</h6><p class=\"date\">2016-01-27 12:30:00 </p><p class=\"location\">Lonnie B. Harris Black Cultural Center</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:charlenemartinez&t=First Generation at Oregon State University&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>First Generation at Oregon State University</h6><p class=\"date\">Wednesday, January 27, 2016 at 12pm</p><p class=\"location\">Lonnie B. Harris Black Cultural Center</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:charlenemartinez&t=First Generation at Oregon State University&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -491,7 +491,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>#PSOTU2016 Story Circle with United Story</h6><p class=\"date\">2016-01-24 15:00:00 </p><p class=\"location\">TBD</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>#PSOTU2016 Story Circle with United Story</h6><p class=\"date\">Sunday, January 24, 2016 at  3pm</p><p class=\"location\">TBD</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?fsw=1\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   },
   {
@@ -506,7 +506,7 @@ var _ctzn_geoJson = [
     "properties": {
       "marker-color": "#FDCE10",
       "marker-size": "medium",
-      "video": "<h6>People&#39;s State of the Union - Story Circle - Tucson</h6><p class=\"date\">2016-01-23 16:00:00 </p><p class=\"location\">La Pilita Cultural Center</p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/93311448/dare-to-imagine?channel=1&q=user:dirtyverbs&t=People's State of the Union - Story Circle - Tucson&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
+      "video": "<h6>People&#39;s State of the Union - Story Circle - Tucson</h6><p class=\"date\">Saturday, January 23, 2016 at  4pm</p><p class=\"location\">La Pilita Cultural Center</p><p><a href=\"\">View stories</a> / <a href=\"event['url']\">View event details</a></p><iframe width=\"200\" height=\"200\" src=\"http://www.ctznapp.com/push/A3039240/people-s-state-of-the-union-2016?channel=1&q=user:dirtyverbs&t=People's State of the Union - Story Circle - Tucson&page=2\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   }
 ];
