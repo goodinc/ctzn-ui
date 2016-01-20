@@ -57,8 +57,7 @@ e}b.call(this);d&&a.setAttribute("alt",c)};this.bootstrap=function(){var a=docum
   #ctzn-map {
     margin-top: 1em;
     width: 100%;
-    height: 600px;
-    height: 50vh;
+    height: 450px;
     margin-bottom: 3em;
   }
   #ctzn-map h6 {
@@ -73,19 +72,31 @@ e}b.call(this);d&&a.setAttribute("alt",c)};this.bootstrap=function(){var a=docum
   }
   #ctzn-map iframe {
     display: block;
-  width: auto;
+    width: auto;
     height: 240px;
   }
+  @media (min-height: 800px) {
+    #ctzn-map {
+      height: 600px;
+      height: 50vh;
+    }
+  }
+  
   #ctzn-stories {
     margin: 1em 0;
     padding: 2em 0;
     border-width: 1px 0;
     border-style: solid;
     border-color: #e6e6e6; /* navigation border color */
-  display: block;
+    display: block;
     width: 100%;
     height: 800px;
-    height: 150vh;
+    height: 80vh;
+  }
+  @media (min-aspect-ratio: 1/1) {
+    #ctzn-stories {
+      height: 150vh;
+    }
   }
 </style>
 <link href="//assets.juicer.io/embed.css" rel="stylesheet" />
