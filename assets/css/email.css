@@ -988,7 +988,7 @@
     margin-bottom: 0;
   }
   .article .body p {
-    max-width: 33em; /* @readable-line-limit */
+    max-width: 40em; /* @readable-line-limit */
 
     /* @wrap-long-words */
     word-wrap     : break-word;
@@ -1050,7 +1050,7 @@
     margin-top: 0;
     padding-left: 42px;
     margin-bottom: 10px;
-    max-width: 33em; /* @readable-line-limit */
+    max-width: 40em; /* @readable-line-limit */
 
     /* @wrap-long-words */
     word-wrap     : break-word;

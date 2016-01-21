@@ -731,6 +731,10 @@
 
   /* =Public Page
   ----------------------------------------------- */
+  .public.page > h2:first-child,
+  .public.page > header + h2 {
+    margin-top: 0;
+  }
   .push-card.public.page > header {
     background-color: rgb(204, 204, 204); /* @aluminum */
     color: white;
