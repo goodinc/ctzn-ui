@@ -1081,7 +1081,7 @@
     margin-bottom: 10px;
   }
   .article .summary p {
-    max-width: 33em; /* @readable-line-limit */
+    max-width: 40em; /* @readable-line-limit */
 
     /* @wrap-long-words */
     word-wrap     : break-word;
