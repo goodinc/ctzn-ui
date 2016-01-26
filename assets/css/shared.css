@@ -45,6 +45,15 @@
              a:focus {
     color: rgb(235, 29, 82); /* @raspberry */
   }
+
+  /* OPTIONAL: Display links without an href differently. */
+             a:not([href]),
+  .hoverable a:not([href]):hover,
+             a:not([href]):active,
+             a:not([href]):focus {
+    color: rgb(153, 153, 153); /* @nickel */
+  }
+
   a img {
     border-width: 0;
   }
@@ -2180,6 +2189,15 @@
     font-size: 0.6666666667em;
     text-transform: uppercase;
   }
+  .notifications .post-item .time a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .notifications .post-item .time a:hover,
+  .notifications .post-item .time a:active,
+  .notifications .post-item .time a:focus {
+    color: black;
+  }
 
   .post-item footer .more a,
   .comments .post-item {
@@ -4309,13 +4327,14 @@
     .mix-editor .selected-images {
       position: fixed;
       z-index: 3; /* Just above the checkboxes */
-      top: 3em;
+      top: 3.0625em; /* (@line-height x 2) + (1px / @font-size ) */
       left: 0;
       width: 100%;
       background: black;
       border-bottom: 0.0625em solid black;
       box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
     }
+
     .mix-editor .selected-images ol {
       padding-top: 0.0625em;
       white-space: nowrap;
@@ -4333,6 +4352,20 @@
     .mix-editor .empty-images,
     .mix-editor ul.image-list {
       margin-top: 3.4em; /* @line-height x 2 / image padding */
+    }
+    .mix-editor .error.upload-message {
+      position: fixed;
+      z-index: 3;
+      top: 3.0625em;
+      left: 0;
+      width: 100%;
+    }
+    .mix-editor .error.upload-message + form .selected-images {
+      top: 6.0625em;
+    }
+    .mix-editor .error.upload-message + form  .empty-images,
+    .mix-editor .error.upload-message + form  ul.image-list {
+      margin-top: 6.4em; /* @line-height x 2 / image padding */
     }
   }
 
@@ -4463,7 +4496,7 @@
     line-height: 1;
     opacity: 0;
   }
-  .mix-editor .image-list li input {
+  .mix-editor .image-list li .image input {
     position: absolute;
     z-index: 2; /* just above the image */
   }
@@ -4486,6 +4519,20 @@
   }
   .mix-editor .image-list li input[type="checkbox"]:checked:focus ~ .number {
     opacity: 1 !important;
+  }
+  .mix-editor .image-list li .order {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+  }
+  .mix-editor .image-list li .order input {
+    width: 5em;
+    padding: 0;
+  }
+  .mix-editor .image-list li .order.readonly {
+    z-index: -1;
+    visibility: hidden;
   }
 
   .mix-editor .more {
