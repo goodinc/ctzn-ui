@@ -2574,8 +2574,6 @@
   }
 
   /* OPTIONAL: Give edit and detail pages a white header. */
-  .action-details.page > header,
-  .actions.page      > header,
   .mix.page          > header,
   .mixes.page        > header,
   .mix-editor.page   > header,
@@ -2587,8 +2585,6 @@
     color: black;
     border-bottom-color: rgb(222, 222, 222); /* @silver */
   }
-  .action-details.page > header a,
-  .actions.page      > header a,
   .mix.page          > header a,
   .mixes.page        > header a,
   .mix-editor.page   > header a,
@@ -2599,12 +2595,6 @@
     border-color: transparent !important;
     color: rgb(102, 102, 102); /* @tin */
   }
-  .hoverable .action-details.page > header a:hover,
-             .action-details.page > header a:active,
-             .action-details.page > header a:focus,
-  .hoverable .actions.page      > header a:hover,
-             .actions.page      > header a:active,
-             .actions.page      > header a:focus,
   .hoverable .mix.page          > header a:hover,
              .mix.page          > header a:active,
              .mix.page          > header a:focus,
@@ -5224,7 +5214,6 @@
     margin-left: -1.25em;
     margin-right: -1.25em;
   }
-  .post-list-header + .actions .post-list,
   .post-list-header + .post-list {
     margin-top: 0;
   }
@@ -5325,413 +5314,6 @@
 
 
 
-  /* =Actions
-  -----------------------------------------------
-  -----------------------------------------------
-  ----------------------------------------------- */
-
-
-  /* =Action Navigation
-  ----------------------------------------------- */
-  .actions.page nav ul,
-  .actions.page nav ul li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .actions.page nav ul {
-    max-width: 33em;
-    margin: 0.75em auto 0;
-    padding: 0 0.75em;
-    transition: opacity 0.2s;
-    text-align: center;
-
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-justify-content: stretch;
-            justify-content: stretch;
-  }
-  .actions.page nav ul li {
-    position: relative;
-    display: inline-block;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
-  }
-  .actions.page nav ul a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    font-size: 0.75em;
-    line-height: 1.5;
-    padding: 0.75em;
-    text-align: center;
-    border: 1px solid rgb(102, 102, 102); /* @tin */
-  }
-  .actions.page nav ul li + li a {
-    border-left-width: 0;
-  }
-  .actions.page nav ul .active a,
-  .hoverable nav ul a:hover,
-             nav ul a:active,
-             nav ul a:focus {
-    background-color: rgb(102, 102, 102); /* @tin */
-    color: white;
-  }
-  .actions.page nav ul li:first-child a {
-    padding-left: 1.5em;
-    border-top-left-radius: 0.25em;
-    border-bottom-left-radius: 0.25em;
-  }
-  .actions.page nav ul li:last-child a {
-    padding-right: 1.5em;
-    border-top-right-radius: 0.25em;
-    border-bottom-right-radius: 0.25em;
-  }
-
-
-  /* =Action List
-  ----------------------------------------------- */
-  .actions.page        > .action,
-  .actions .introduction .action {
-    max-width: 32em;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.25em;
-    text-align: center;
-  }
-  .actions.page        > .action a,
-  .actions .introduction .action a {
-    width: 100%;
-    font-weight: normal;
-    font-size: 1.5em; /* 24px / @font-size */
-    border-radius: 0.1666666667em; /* 4px / 24px */
-    line-height: 1.4833333333em; /* 50px / 24px */
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center;
-
-    /* For the “Open this URL in Safari” page. */
-    /* @wrap-long-words */
-    word-wrap     : break-word;
-    overflow-wrap : break-word;
-  }
-
-  .actions .post-list {
-    padding-left: 1.25em;
-    padding-right: 1.25em;
-  }
-  .actions .post-list > li {
-    max-width: 32em;
-  }
-  .actions .post-list li ul,
-  .actions .post-list li ul li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .actions .post-list li ul li,
-  .actions .post-list li ul li form {
-    display: inline;
-  }
-
-  /* Main title */
-  .actions .post-item {
-    padding-top: 0;
-  }
-  .actions .post-item a.push-card {
-    margin: 0 -1.25em 0;
-    padding-top: 0;
-  }
-  .actions .post-item a.push-card,
-  .actions .post-item a.push-card:hover,
-  .actions .post-item a.push-card:active,
-  .actions .post-item a.push-card:focus {
-    color: white;
-  }
-  .actions .post-item a.push-card p:first-child {
-    margin: 0 -1.25em 0;
-    padding: 0.375em 1.25em;
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-  }
-  .actions .post-item a.push-card p:last-child {
-    margin: 0 -1.4285714286em -1.7142857143em; /* 1.25em / 0.875em */ /* 1.5em / 0.875em */
-    padding: 0.75em 1.4285714286em; /* 1.25em / 0.875em */
-    background: rgba(0, 0, 0, 0.4);
-    font-size: 0.875em;
-  }
-  .actions .post-item a.push-card h2 {
-    padding: 1.25em;
-    margin-left: -0.6666666667em; /* 1.25em / 1.875em */
-    margin-right: -0.6666666667em;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  .actions .post-item a.push-card h2[style*="background-image"] {
-    padding-top: 3.75em;
-    padding-bottom: 3.75em;
-    padding-top: 25vh;
-    padding-bottom: 25vh;
-  }
-  .actions .post-item a.push-card h2:before {
-    content: "";
-    display: block;
-    background: rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .actions .post-item a.push-card h2 span {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Sub title */
-  .actions .post-item .push-card + .action-members {
-    margin-top: 1em;
-  }
-  .actions .post-item .push-card + h3 + p {
-    font-size: 0.75em;
-  }
-  .actions .post-item .push-card + h3 + p .avatar {
-    margin-left: 0.375em;
-  }
-
-  .actions .post-item footer .action a,
-  .actions .post-item footer .action button {
-    font-size: inherit;
-  }
-
-
-  /* =Action Details
-  ----------------------------------------------- */
-  .action-details .header.push-card {
-    position: relative;
-    color: white;
-    padding: 0;
-  }
-  .action-details .header.push-card .details {
-    margin-top: 0;
-    padding-left: 1.25em;
-    padding-right: 1.25em;
-    padding-top: 5em;
-    padding-bottom: 1.25em;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    text-align: left;
-    max-width: none;
-  }
-  .action-details .header.push-card .details:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    /* 20% black PNG-24 (for browsers that don’t support RGBA) */
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEUAAACnej3aAAAAAXRSTlMz/za5cAAAAA1JREFUeNoBAgD9/wAAAAIAAVMrnDAAAAAASUVORK5CYII=);
-    background: rgba(0, 0, 0, 0.4);
-  }
-  .action-details .header.push-card .details h2 {
-    position: relative;
-    z-index: 1;
-  }
-  .action-details .header.push-card .name {
-    text-align: center;
-  }
-  .action-details .header.push-card .details p {
-    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 900; /* @extra-bold */
-
-    line-height: 1;
-    border-left: 0.3125em solid;
-    padding: 0.25em 0.75em;
-
-    margin-top: 2.25em;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 0;
-  }
-
-  /* Push Colors */
-  .action-details .header.push-card.lime .details p {
-    border-color: rgb(176, 224, 0); /* @lime */
-  }
-  .action-details .header.push-card.green .details p {
-    border-color: rgb(60, 210, 0); /* @green */
-  }
-  .action-details .header.push-card.teal .details p {
-    border-color: rgb(0, 204, 204); /* @teal */
-  }
-  .action-details .header.push-card.blue .details p {
-    border-color: rgb(101, 152, 254); /* @blue */
-  }
-  .action-details .header.push-card.periwinkle .details p {
-    border-color: rgb(109, 90, 219); /* @periwinkle */
-  }
-  .action-details .header.push-card.purple .details p {
-    border-color: rgb(181, 62, 194); /* @purple */
-  }
-  .action-details .header.push-card.magenta .details p {
-    border-color: rgb(250, 44, 162); /* @magenta */
-  }
-  .action-details .header.push-card.red .details p {
-    border-color: rgb(255, 0, 86); /* @red */
-  }
-  .action-details .header.push-card.gold .details p {
-    border-color: rgb(255, 204, 0); /* @gold */
-  }
-  .action-details .header.push-card.orange .details p {
-    border-color: rgb(255, 117, 9); /* @orange */
-  }
-
-  .action-details .header.push-card .time {
-    background-color: rgba(0, 0, 0, 0.2);
-    margin: 0;
-    padding: 0.75em 1.25em;
-    text-transform: lowercase;
-    text-align: center;
-  }
-
-  /* OPTIONAL: Make the header taller on big screens */
-  @media (min-width: 40em) and (min-height: 40em) {
-    .action-details > .push-card .name {
-      font-size: 6vmin;
-    }
-  }
-  @media (min-width: 40em) {
-    .action-details .header.push-card .details {
-      padding-top: 10em;
-      padding-top: calc(25vmin);
-    }
-    .action-details .header.push-card .details p {
-      margin-top: 7.25em;
-      margin-top: calc(25vmin - 2.75em);
-    }
-  }
-
-  /* OPTIONAL: Tweak sizes and margins in the about section */
-  .action-details .about h3 {
-    margin-top: 0;
-    font-size: inherit;
-    line-height: inherit;
-  }
-  .action-details .about .action {
-    margin-top: 1.5em;
-  }
-
-
-  /* =Action Members
-  ----------------------------------------------- */
-  .action-members h3 {
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    margin-right: 0.375em;
-  }
-  .action-members ol,
-  .action-members ul,
-  .action-members li {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-  }
-  .action-members ol,
-  .action-members ul {
-    margin-bottom: 0;
-  }
-  .action-members li {
-    display: inline-block;
-    margin-bottom: 0.25em;
-  }
-  .action-members li a {
-    text-decoration: none;
-  }
-
-
-  /* =Actions on the Push page
-  ----------------------------------------------- */
-
-  /* OPTIONAL: Make the “Add Me” button stand out */
-  .push .actions .post-item footer .primary.action button {  
-    border-color: rgb(255, 49, 102); /* @pitaya */
-    background-color: rgb(255, 49, 102); /* @pitaya */
-    color: white;
-  }
-  .hoverable .push .actions .post-item footer .primary.action button:hover,
-             .push .actions .post-item footer .primary.action button:active,
-             .push .actions .post-item footer .primary.action button:focus {
-    background-color: rgb(235, 29, 82); /* @raspberry */
-  }
-
-  /* OPTIONAL: Present the list of actions horizontally */
-  .push .post-list-header {
-    padding-left: 1.25em;
-    padding-right: 1.25em;
-    text-align: center;
-  }
-  .push .actions .post-list {
-    text-align: center;
-    padding-right: 0;
-    white-space: nowrap;
-    overflow-y: visible;
-    overflow-x: scroll;
-
-    /* http://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements */
-    -webkit-overflow-scrolling: touch;
-
-    padding-bottom: 1.25em;
-  }
-  .push .actions .post-list > li {
-    width: 32em;
-    max-width: 90%;
-    display: inline-block;
-    vertical-align: top;
-    white-space: normal;
-    background: white;
-    margin-right: 1em;
-  }
-
-  /* OPTIONAL: Attempt to make the items the same height */
-  .push .actions .post-item a.push-card h2,
-  .push .actions .post-item a.push-card h2[style*="background-image"] {
-    padding-top: 20%;
-    padding-bottom: 20%;
-  }
-  .push .actions .post-item a.push-card h2 span {
-    display: block;
-    height: 3.6em;
-    overflow: hidden;
-
-    /* OPTIONAL: Show an ellipses if the text has been truncated
-    http://dropshado.ws/post/1015351370/webkit-line-clamp */
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-  .push .action-members {
-    height: 4.125em; /* 1.875em + 0.75em + 1.5em */
-    word-wrap     : inherit;
-    overflow-wrap : inherit;
-    overflow: hidden;
-  }
-  .push .action-members h3 {
-    margin-top: 0;
-  }
-
-
   /* =Settings
   -----------------------------------------------
   -----------------------------------------------
@@ -5744,11 +5326,9 @@
     text-transform: uppercase;
     color: rgb(159, 165, 162); /* @barium */
   }
-  .actions  .introduction,
   .settings .introduction {
     margin-bottom: 3em;
   }
-  .actions  .introduction svg.icon,
   .settings .introduction svg.icon {
     display: block;
     width: 4.5em;
@@ -5756,7 +5336,6 @@
     margin: -0.375em auto;
     opacity: 0.15;
   }
-  .actions  .introduction h2,
   .settings .introduction h2 {
     text-align: center;
     font-weight: normal;
@@ -5765,14 +5344,12 @@
     margin-top: 1.3333333333em;
     color: rgb(102, 102, 102); /* @tin */
   }
-  .actions  .introduction h2 strong,
   .settings .introduction h2 strong {
     font-size: 1.3333333333em; /* 24px / 18px */
     color: black;
     font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900; /* @extra-bold */
   }
-  .actions  .introduction p,
   .settings .introduction p {
     text-align: center;
 
