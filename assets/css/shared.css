@@ -4041,11 +4041,11 @@
   }
   .mix-list {
     margin: 0;
-    padding: 0.0625em 0 0 0.0625em;
+    padding: 0;
   }
   .mix-list li {
     float: left;
-    margin: 0 0.0625em 0.0625em 0;
+    margin: 0;
   }
   .mix-list a {
     display: block;
@@ -4103,16 +4103,11 @@
     background-color: rgba(255, 49, 102, 0.85); /* @pitaya */
   }
   .mix-list li {
-    width: 32.5%;
+    width: 33.333333333%;
     min-height: 100px;
   }
   .mix-list li {
-    width: 32.5vw;
-    height: 32.5vw;
-  }
-  .mix-list li {
-    width: calc(33.333333333vw - 0.1333333333em); /* three per row (image size (100px) / 3) - padding (0.0625em) */
-    height: calc(33.333333333vw - 0.1333333333em);
+    height: 33.333333333vw;
   }
   .mix-list li a {
     width: 95%; /* image size / @font-size (125px / 16px) */
@@ -4389,10 +4384,17 @@
     display: block;
   }
   .mix-editor .selected-images li button {
+    margin: 0;
     padding: 0;
     border-radius: 0;
     background-color: rgb(204, 204, 204); /* @aluminum */
     background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* KUDOS: http://stackoverflow.com/questions/5517744/remove-extra-button-spacing-padding-in-firefox#answer-5518143 */
+  .mix-editor .selected-images li button::-moz-focus-inner {
+    padding: 0;
+    border: 0
   }
 
   .mix-editor .selected-images img {
