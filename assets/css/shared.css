@@ -5112,6 +5112,9 @@
   .ready.page aside > div img[height="50"] {
     height: 3.125em; /* 50px / 16px */
   }
+  .ready.page li a  > div img[height="25"] {
+    height: 1.75em;
+  }
   .ready.page li a > div {
     margin-bottom: 0.75em;    
   }
