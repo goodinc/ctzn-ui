@@ -3974,7 +3974,7 @@
     width: auto;
     height: 100%;
   }
-  form .images li span {
+  form .images li .close {
     position: absolute;
     top  : 0.375em; /* @line-height / 4 */
     right: 0.375em;
@@ -3989,12 +3989,33 @@
     transition: opacity 0.2s;
     font-size: 0.75em;
   }
-  form .images li .icon {
+  form .images li .close .icon {
     position: absolute;
     top: 0.25em;
     left: 0.25em;
     width: 1em;
     height: 1em;
+  }
+  form .images li .video {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    margin-top: -0.75em;
+  }
+  form .images li .uploading {
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.875em;
+    margin-left: -0.875em;
+  }
+  form .images li .uploading .text {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
   }
   .hoverable form .images li button:hover  span,
              form .images li button:active span,
