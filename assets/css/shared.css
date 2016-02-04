@@ -3055,7 +3055,10 @@
 
   /* OPTIONAL: Make the create toolbar sticky */
   @media screen and (min-width: 20em) and (min-height: 20em) {
-    ul.create {
+
+    /* TRICKY: This is prefixed with “.fixed-supported” (a classname added by JavaScript)
+    to avoid an issue in Opera Mini where the create buttons are invisible. */
+    .fixed-supported ul.create {
       bottom: 0;
       left: 0;
       position: fixed;
@@ -4331,14 +4334,16 @@
   /* OPTIONAL: Make selected images sticky */
   @media screen and (min-width: 20em) and (min-height: 20em) {
     .mix-editor .selected-images {
-      position: fixed;
-      z-index: 3; /* Just above the checkboxes */
-      top: 3.0625em; /* (@line-height x 2) + (1px / @font-size ) */
-      left: 0;
       width: 100%;
       background: black;
       border-bottom: 0.0625em solid black;
       box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1); /* @shadow */
+    }
+    .scripted-steps .mix-editor .selected-images {
+      position: fixed;
+      z-index: 3; /* Just above the checkboxes */
+      top: 3.0625em; /* (@line-height x 2) + (1px / @font-size ) */
+      left: 0;
     }
 
     .mix-editor .selected-images ol {
@@ -4359,7 +4364,7 @@
     .mix-editor ul.image-list {
       margin-top: 3.4em; /* @line-height x 2 / image padding */
     }
-    .mix-editor .error.upload-message {
+    .scripted-steps.step1-active .mix-editor .error.upload-message {
       position: fixed;
       z-index: 3;
       top: 3.0625em;
@@ -4470,7 +4475,6 @@
     position: relative;
   }
   .mix-editor .image-list li .number {
-    background-color: rgb(255, 117, 9); /* @orange */
     display: block;
     text-align: center;
     color: white;
@@ -4478,6 +4482,7 @@
     font-size: 10vw;
 
     position: absolute;
+    z-index: 1;
     width: 100%;
     min-height: 100%;
     border: 1px solid black;
@@ -4486,19 +4491,14 @@
             box-sizing: border-box;
     top: 0;
     left: 0;
-
-    /* TRICKY: This causes performance problems on an iPhone 5 (slow scrolling and response).
-    transition: opacity 0.2s;
-    */
-    opacity: 0;
-    z-index: 1;
   }
   .hoverable .mix-editor .image-list li:hover,
   .mix-editor .image-list li:focus {
     z-index: 1;
   }
   .hoverable .mix-editor .image-list li:hover .number {
-    opacity: 0.25;
+    display: block;
+    background-color: rgba(255, 117, 9, 0.25); /* @orange */
   }
   .mix-editor .image-list li .number span {
     position: absolute;
@@ -4507,32 +4507,42 @@
     width: 100%;
     margin-top: -0.5em;
     line-height: 1;
-    opacity: 0;
+
+    /* Hide the number until the checkbox is checked */
+    visibility: hidden;
   }
   .mix-editor .image-list li .image input {
     position: absolute;
     z-index: 2; /* just above the image */
   }
+
+  /* If advanced selectors are supported, hide the checkboxes… */
   .mix-editor .image-list li input[type="checkbox"]:checked,
   .mix-editor .image-list li input[type="checkbox"]:not(:checked) {
     opacity: 0;
   }
+  /* …and hint that the numbers are push-able. */
   .mix-editor .image-list li input[type="checkbox"]:checked ~ .number,
   .mix-editor .image-list li input[type="checkbox"]:not(:checked) ~ .number {
     cursor: pointer;
   }
-  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number span {
-    opacity: 1;
-  }
+
+  /* If a checkbox is checked, show the related number. */
   .mix-editor .image-list li input[type="checkbox"]:checked ~ .number {
-    opacity: 0.75 !important;
+    background-color: rgba(255, 117, 9, 0.75) !important; /* @orange */
   }
+  .mix-editor .image-list li input[type="checkbox"]:checked ~ .number span {
+    visibility: visible;
+  }
+
+  /* If a checkbox is focused, highlight the related number. */
   .mix-editor .image-list li input[type="checkbox"]:focus ~ .number {
-    opacity: 0.25 !important;
+    background-color: rgba(255, 117, 9, 0.25) !important; /* @orange */
   }
   .mix-editor .image-list li input[type="checkbox"]:checked:focus ~ .number {
-    opacity: 1 !important;
+    background-color: rgba(255, 117, 9, 1) !important; /* @orange */
   }
+
   .mix-editor .image-list li .order {
     position: absolute;
     z-index: 3;
